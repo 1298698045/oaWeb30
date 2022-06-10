@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="query.disinfection.record" type="WorkReportCore.DailyReport.Actions.QueryDisinfectionRecord,WorkReportCore"></Action>
+  <Action name="update.disinfection.record" type="WorkReportCore.DailyReport.Actions.UpdateDisinfectionRecord,WorkReportCore"></Action>
+  <Action name="query.ultravioletrays.record" type="WorkReportCore.DailyReport.Actions.QueryUltravioletRays,WorkReportCore"></Action>
+  <Action name="update.ultravioletrays.record" type="WorkReportCore.DailyReport.Actions.UpdateUltravioletRays,WorkReportCore"></Action>
+  <Action name="query.infectionpatient.record" type="WorkReportCore.DailyReport.Actions.QueryInfectionPatient,WorkReportCore"></Action>
+  <Action name="delete.infectionpatient.record" type="WorkReportCore.DailyReport.Actions.DeleteInfectionPatient,WorkReportCore"></Action>
+  <Action name="insert.infectionpatient.record" type="WorkReportCore.DailyReport.Actions.InsertInfectionPatient,WorkReportCore"></Action>
+  <Action name="edit.infectionpatient.record" type="WorkReportCore.DailyReport.Actions.EditInfectionPatient,WorkReportCore"></Action>
+  <Action name="querybyid.infectionpatient.record" type="WorkReportCore.DailyReport.Actions.QueryByIdInfectionPatient,WorkReportCore"></Action>
+  <Action name="query.roomaire.record" type="WorkReportCore.DailyReport.Actions.QueryRoomAire,WorkReportCore"></Action>
+  <Action name="delete.roomaire.record" type="WorkReportCore.DailyReport.Actions.DeleteRoomAire,WorkReportCore"></Action>
+  <Action name="insert.roomaire.record" type="WorkReportCore.DailyReport.Actions.InsertRoomAire,WorkReportCore"></Action>
+  <Action name="edit.roomaire.record" type="WorkReportCore.DailyReport.Actions.EditRoomAire,WorkReportCore"></Action>
+  <Action name="querybyid.roomaire.record" type="WorkReportCore.DailyReport.Actions.QueryByIdRoomAire,WorkReportCore"></Action>
+
+  <Action name="query.sharpinsthurt.record" type="WorkReportCore.DailyReport.Actions.QuerySharpInstHurt,WorkReportCore"></Action>
+  <Action name="delete.sharpinsthurt.record" type="WorkReportCore.DailyReport.Actions.DeleteSharpInstHurt,WorkReportCore"></Action>
+  <Action name="insert.sharpinsthurt.record" type="WorkReportCore.DailyReport.Actions.InsertSharpInstHurt,WorkReportCore"></Action>
+  <Action name="edit.sharpinsthurt.record" type="WorkReportCore.DailyReport.Actions.EditSharpInstHurt,WorkReportCore"></Action>
+  <Action name="querybyid.sharpinsthurt.record" type="WorkReportCore.DailyReport.Actions.QueryByIdSharpInstHurt,WorkReportCore"></Action>
+
+  <Action name="query.planbase.record" type="WorkReportCore.DailyReport.Actions.QueryPlanBaseContent,WorkReportCore"></Action>
+  <Action name="update.planbase.record" type="WorkReportCore.DailyReport.Actions.UpdatePlanBaseContent,WorkReportCore"></Action>
+  <Action name="query.workinfection.record" type="WorkReportCore.DailyReport.Actions.QueryWorkInfection,WorkReportCore"></Action>
+  <Action name="update.workinfection.record" type="WorkReportCore.DailyReport.Actions.UpdateWorkInfection,WorkReportCore"></Action>
+  <Action name="update.personnelinfo.record" type="WorkReportCore.DailyReport.Actions.UpdatePersonnel,WorkReportCore"></Action>
+  <Action name="query.personnelinfo.record" type="WorkReportCore.DailyReport.Actions.QueryPersonnel,WorkReportCore"></Action>
+  <Action name="query.infectionreport.record" type="WorkReportCore.DailyReport.Actions.QueryInfectionReport,WorkReportCore"></Action>
+  <Action name="insert.infectionreport.record" type="WorkReportCore.DailyReport.Actions.InsertInfectionReport,WorkReportCore"></Action>
+
+  <Action name="workinfection.record.update" type="WorkReportCore.DailyReport.Actions.WorkInfectionRecordUpdate,WorkReportCore"></Action>
+  <Action name="query.deptdutyinfection.record" type="WorkReportCore.DailyReport.Actions.DeptDutyInfectionRecord,WorkReportCore"></Action>
+
+</Actions>

@@ -1,0 +1,711 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PreviewContent.aspx.cs"
+    Inherits="WebClient.apps.scontent.PreviewContent" %>
+
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%=CTitle%></title>
+    <script src="jquery.min.js" type="text/ecmascript"></script>
+    <style type="text/css">
+        body {
+    font-family: "Microsoft YaHei","微软雅黑","SimSun","宋体";
+}
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, blockquote, th, td, a
+        {
+            padding: 0;
+            margin: 0;
+            /*list-style: none;*/
+        }
+
+        h2
+        {
+            font-size: 22px;
+            font-weight: normal;
+        }
+
+        .fr
+        {
+            float: right;
+        }
+
+        .fl
+        {
+            float: left;
+        }
+
+        .mR10
+        {
+            margin-right: 10px;
+        }
+
+        .w300
+        {
+            width: 300px;
+        }
+
+        .clearfix
+        {
+            clear: both;
+            font-size: 0;
+            height: 0;
+            line-height: 0;
+        }
+
+        .nv_R a
+        {
+            color: #333;
+            text-decoration: none;
+        }
+
+            .nv_R a:hover
+            {
+                text-decoration: underline;
+            }
+
+        .nv_mine
+        {
+            overflow: hidden;
+            /*width: 1000px;*/
+            width: 90%;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+
+        .nv_L
+        {
+            float: left;
+            width: 70%;
+        }
+
+        .nv_R
+        {
+            float: right;
+            /*width: 28%;*/
+            width: 200px;
+            padding-top: 40px;
+        }
+
+            .nv_R ul li
+            {
+                margin-bottom: 5px;
+                margin-top: 5px;
+                font-size: 13px;
+                /*line-height: 20px;*/
+            }
+        /*.nv_Cnt*/
+        .nv_Cnt
+        {
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 0 0;
+            font-size: 14px;
+            color: #666;
+            line-height: 25px;
+        }
+
+            .nv_Cnt h2
+            {
+                font-size: 30px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+        .nv_date
+        {
+            display: block;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .nv_Cnt img
+        {
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .nv_comt
+        {
+            border: 1px solid #ccc;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+            .nv_comt h2
+            {
+                font-size: 24px;
+                color: #333;
+                background: #f4f4f4;
+                border-bottom: 1px solid #ccc;
+                height: 60px;
+                line-height: 60px;
+                text-indent: 20px;
+            }
+
+            .nv_comt ul
+            {
+                margin: 0 20px 20px;
+                padding: 20px 0 0;
+                overflow: hidden;
+            }
+
+        .nv_comtList li.nv_comtL
+        {
+            width: 14%;
+            overflow: hidden;
+            float: left;
+        }
+
+            .nv_comtList li.nv_comtL img
+            {
+                width: 80px;
+                border-radius: 50%;
+            }
+
+        .nv_comtList li.nv_comtR
+        {
+            float: left;
+            width: 86%;
+        }
+
+        .nv_comtR dl dt
+        {
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+            .nv_comtR dl dt span
+            {
+                display: block;
+                float: left;
+            }
+
+        .nv_comtUserName
+        {
+            font-size: 18px;
+        }
+
+            .nv_comtUserName a
+            {
+                font-size: 18px;
+            }
+
+        .nv_comtDate
+        {
+            font-size: 14px;
+            color: #999;
+            padding-left: 30px;
+            margin-top: 5px;
+        }
+
+        .nv_comtR dl dt span.nv_comtBut
+        {
+            float: right;
+            overflow: hidden;
+        }
+
+        .nv_comtBut a
+        {
+            display: block;
+            float: left;
+            padding: 0 15px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            background: #f4f4f4;
+            margin-left: 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nv_comtR dl dd
+        {
+            font-size: 16px;
+        }
+
+        .nv_comtHistory ul
+        {
+            border: 1px solid #ceceaf;
+            padding: 0 10px;
+            margin: 0 0 10px;
+        }
+
+            .nv_comtHistory ul li
+            {
+                list-style-type: decimal;
+                list-style-position: inside;
+                border-bottom: 1px dashed #ceceaf;
+                padding: 10px 0;
+                font-size: 16px;
+            }
+
+                .nv_comtHistory ul li .nv_comtUserName
+                {
+                    float: none;
+                    color: #077ece;
+                    padding-left: 15px;
+                    font-size: 18px;
+                }
+
+        .nv_comtHistCnt
+        {
+            display: block;
+            padding-left: 35px;
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+        .nv_comtHistory ul li:last-child
+        {
+            border: 0;
+        }
+
+        .nv_comtLine
+        {
+            border: 1px dashed #d0d0d0;
+            border-width: 0 0 1px 0;
+            margin: 0;
+        }
+
+        .nv_comt ul.nv_comtForm
+        {
+            margin: 0;
+            background: #f4f4f4;
+            padding: 0;
+            overflow: visible;
+            position: relative;
+            padding: 30px 10px;
+        }
+
+        .nv_comtUP
+        {
+            background: url(images/comtTop.png) no-repeat 0 0;
+            width: 56px;
+            height: 23px;
+            right: 0;
+            top: -22px;
+            position: absolute;
+        }
+
+        .nv_comt ul.nv_comtForm li textarea
+        {
+            width: 98%;
+            padding: 1%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            height: 90px;
+        }
+
+        .nv_comt ul.nv_comtForm li input
+        {
+            float: right;
+            width: 80px;
+            height: 33px;
+            border: 1px solid #CCC;
+            background: #e6e6e6;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+
+        .nv_comtForm
+        {
+            display: none;
+        }
+
+        .nv_zNum
+        {
+            font-style: normal;
+        }
+        /*.nv_Cnt over*/
+
+        /*POPUP*/
+        .popBox
+        {
+            position: absolute;
+            top: 100px;
+            left: 40%;
+            z-index: 10000;
+            display: none;
+        }
+
+        .popBoxTitle
+        {
+            background: #f9f9f9;
+            height: 40px;
+            border-bottom: 1px solid #eee;
+        }
+
+            .popBoxTitle h3
+            {
+                display: inline-block;
+                padding-left: 15px;
+                line-height: 40px;
+                color: #555;
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+        .popBoxClose
+        {
+            float: right;
+            width: 17px;
+            height: 17px;
+            background-position: -30px -165px;
+            text-indent: -9999px;
+            margin: 10px 10px 0 0;
+            cursor: pointer;
+        }
+
+        .popUp .popBoxClose
+        {
+            margin: 2px 4px 0 0;
+        }
+
+        .popBoxClose:hover
+        {
+            background-position: -47px -165px;
+        }
+
+        .popMain
+        {
+            background: #FFF;
+            padding: 15px;
+        }
+
+        .loginBoxMain
+        {
+            background: #FFF;
+            padding: 30px 18px 30px 40px;
+        }
+
+        .remindText
+        {
+            border: 1px solid #CACACA;
+            padding: 15px 0;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .unPopBox
+        {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            height: 1000px;
+            z-index: 9999;
+            background: url(images/bg.png) repeat 0 0;
+            display: none;
+        }
+
+        .popBoxcjCnt
+        {
+            background: #fcdea0;
+            border: 3px solid #e65454;
+            padding: 45px 0 35px;
+        }
+
+            .popBoxcjCnt span
+            {
+                display: block;
+                text-align: center;
+                margin-bottom: 50px;
+                color: #e65454;
+                font-size: 18px;
+            }
+
+            .popBoxcjCnt a
+            {
+                background: url(../hdimg/gobut_03.jpg) no-repeat 0 0;
+                width: 100px;
+                height: 40px;
+                display: block;
+                margin: 0 auto;
+                line-height: 40px;
+                text-align: center;
+                font-size: 18px;
+                color: #FFF;
+            }
+
+        /*POPUP OVER*/
+        /*PopUp 举报*/
+        .reportWarp
+        {
+            display: block;
+            height: 25px;
+            line-height: 25px;
+        }
+
+            .reportWarp input
+            {
+                float: left;
+                margin: 6px 10px 0 0;
+            }
+
+        .shareItem
+        {
+            margin: -5px 0 5px 0;
+            height: 20px;
+            display: block;
+            line-height: 20px;
+        }
+
+            .shareItem label
+            {
+                margin-right: 5px;
+            }
+
+                .shareItem label input
+                {
+                    margin: 5px;
+                }
+
+        .btn
+        {
+            width: 65px;
+        }
+
+            .btn a
+            {
+                background: #2e83ed;
+                border: 1px solid #0060d7;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+                color: #FFF;
+            }
+
+                .btn a:hover
+                {
+                    background: #0861cf;
+                }
+
+        .btnLink
+        {
+            color: inherit;
+            display: block;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+            .btnLink:hover
+            {
+                text-decoration: none;
+            }
+
+        .corB5
+        {
+            border-radius: 0 0 5px 5px;
+        }
+
+        .corT5
+        {
+            border-radius: 5px 5px 0 0;
+        }
+
+        .custOrder
+        {
+            border: 1px solid #d5d5d5;
+        }
+
+            .custOrder .custOrderTit
+            {
+                background-color: #f5f7f8;
+                border-bottom: 1px solid #d5d5d5;
+                height: 34px;
+                line-height: 34px;
+                padding-left: 10px;
+            }
+
+                .custOrder .custOrderTit h2
+                {
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+        .f072
+        {
+            color: #072885;
+        }
+
+        a.f072:link, a.f072:visited
+        {
+            color: #072885;
+        }
+
+        a.f072:hover, a.f072:active, a.f072:focus
+        {
+            color: #0576ec;
+        }
+        .recReadCont ul {
+    padding: 12px 10px 11px 17px;
+}
+.recList li {
+    background: rgba(0, 0, 0, 0) url("http://i1.sinaimg.cn/cj/deco/2013/0603/images/bg.png") no-repeat scroll -497px 13px;
+    line-height: 28px;
+    padding-left: 8px;
+}
+    </style>
+</head>
+<body>
+    <div class="nv_mine">
+        <div class="nv_L">
+            <div class="nv_Cnt">
+                <h2><b><%=CTitle%></b></h2>
+                <div class="nv_date"><b>时间：</b><%=CreateOn%> <b>发布者：</b><%=BusinessUnitName%>   <b>阅读数：</b><%=ReadCount%></div>
+
+                <%=Contents%>
+
+                <p>
+                    <br />
+                    <hr />
+                    <div class="nv_date" style="text-align: left"><b>附件 </b></div>
+                    <%=AttachHTML%>
+                </p>
+            </div>
+
+
+            <div class="nv_comt" style="display: none">
+                <h2>评论</h2>
+                <!--评论开始-->
+                <div class="nv_comtBlk">
+                    <ul class="nv_comtList">
+                        <li class="nv_comtL">
+                            <img src="images/user.jpg" width="" height="" alt="">
+                        </li>
+                        <li class="nv_comtR">
+                            <dl>
+                                <dt>
+                                    <span class="nv_comtUserName">孙悟空</span>
+                                    <span class="nv_comtDate">更 新于今天17：58</span>
+                                    <span class="nv_comtBut">
+                                        <a class="nv_comtJB" href="javascript:void(0);">举报</a>
+                                        <a class="nv_comtZ" href="javascript:void(0);">赞(<i class="nv_zNum">0</i>)</a>
+                                        <a class="nv_comtHF" href="javascript:void(0);">回复</a>
+                                    </span>
+                                </dt>
+                                <dd>据交易员称，央行5月28日在公开市场继续暂停操作。!</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <ul class="nv_comtForm">
+                        <li>
+                            <div class="nv_comtUP"></div>
+                            <form action="" method="get">
+                                <textarea name="" cols="" rows=""></textarea>
+                                <input type="submit" value="发布">
+                            </form>
+                            <div class="clearfix">
+                                <!--清除浮动-->
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr class="nv_comtLine">
+                <!--评论结束-->
+
+            </div>
+        </div>
+
+        <div class="nv_R">
+            <div class="recRead custOrder" style="float: right;">
+                <div class="custOrderTit">
+                    <h2><a class="f072" target="_blank" href="http://finance.sina.com.cn/zl/">最新文章</a></h2>
+                </div>
+                <div class="recReadCont">
+                    <ul id="JS_Recommend_List" class="recList">
+                        <li><a target="_blank" href="http://finance.sina.com.cn/zl/china/20150911/080423219218.shtml">吴小平：互联网金融1.0谢幕，2.0何在？</a></li>
+
+                        <li><a target="_blank" href="http://finance.sina.com.cn/zl/china/20150911/084023219658.shtml">陆挺：中国经济并没有那么糟糕</a></li>
+
+                        <li><a target="_blank" href="http://finance.sina.com.cn/zl/china/20150911/082723219549.shtml">丁祖昱：房企今年能完成销售目标吗</a></li>
+
+                        <li><a target="_blank" href="http://finance.sina.com.cn/zl/lifestyle/20150911/074823219097.shtml">吴晓波：政府创造变革环境，唱戏的还是企业</a></li>
+
+                        <li><a target="_blank" href="http://finance.sina.com.cn/zl/stock/20150910/175923212724.shtml">李德林：躺枪的经济怎样爬起来</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="custOrderTit">
+                <h2>相关文章</h2>
+            </div>
+            <ul>
+                <!--
+                <li><a href="#">大盘猛涨，全体股民傻眼了</a></li>
+                <li><a href="#">两大行业现利好</a></li>
+                <li><a href="#">三利空致跳水！5类股必须调仓</a></li>
+                <li><a href="#">钢铁行业：欧盟反倾销影响甚微 量价齐升延续</a></li>
+                <li><a href="#">主板迎来区间调整 创业板强势</a></li>
+                <li><a href="#">三大期指风格迥异 中证500走势强劲</a></li>-->
+                <%=RelatedHTML%>
+            </ul>
+        </div>
+    </div>
+    <!--popUp 举报-->
+    <div class="popBox popBoxjubao">
+        <div class="popBoxTitle corT5">
+            <div class="popBoxClose">关闭</div>
+            <h3>举报</h3>
+        </div>
+        <div class="popMain corB5">
+            <div class="popBoxCnt w300">
+                <label class="reportWarp">
+                    <input type="radio" name="report" value="广告等垃圾信息" id="report_0" />广告等垃圾信息</label>
+                <label class="reportWarp">
+                    <input type="radio" name="report" value="不宜公开讨论的政治内容" id="report_1" />不宜公开讨论的政治内容</label>
+                <label class="reportWarp">
+                    <input type="radio" name="report" value="违法违规内容" id="report_2" />违法违规内容</label>
+                <label class="reportWarp">
+                    <input type="radio" name="report" value="其他" id="report_3" />其他</label>
+            </div>
+            <div class="popBoxBot">
+                <div class="btnW fr">
+                    <div class="btn fr"><a href="javascript:void(0);" class="btnLink nvJbQR">确认</a></div>
+                    <div class="cancel fr mR10"><a href="javascript:void(0);" class="btnLink">取消</a></div>
+                </div>
+                <div class="clearfix">
+                    <!--清除浮动-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="unPopBox"></div>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            /*评论*/
+            $(".nv_comtHF").click(function () {
+                $(this).parents(".nv_comtList").next(".nv_comtForm").slideToggle();
+            });
+            $(".nv_comtZ").click(function () {
+                var nvZnum = Number($(this).children(".nv_zNum").html()) + 1;
+                $(".nv_zNum").html(nvZnum);
+                //alert(nvZnum)
+            });
+            /*评论结束*/
+            /*popUP 举报*/
+            $(document).on("click", ".nv_comtJB", function () {
+                var pH = $(document.body).height();
+                var popBoxT = $(window).height() / 2 - $(".popBoxjubao").height() / 2 + $(document).scrollTop();
+                var popBoxL = $(window).width() / 2 - 340 / 2;
+                $(".unPopBox").css("height", pH).show();
+                $(".popBoxjubao").show().width(340).offset({ left: popBoxL, top: popBoxT });
+            });
+            $(".cancel").click(function () {
+                $(".popBox,.unPopBox").hide();
+            })
+            /*popUP 举报结束*/
+
+        });
+
+    </script>
+</body>
+</html>
+

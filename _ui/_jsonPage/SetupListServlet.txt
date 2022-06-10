@@ -1,0 +1,3219 @@
+﻿{
+    "inlineEditData": {
+        "saveUrl": "/_ui/perms/ui/listview/profile/ProfileInlineEditListSave",
+        "layoutInfo": {
+            "EditPublicDocuments": [
+                "EDIT",
+                false
+            ],
+            "UserSites": [
+                "EDIT",
+                false
+            ],
+            "Asset___9": [
+                "EDIT",
+                false
+            ],
+            "ChatterInternalUser": [
+                "EDIT",
+                false
+            ],
+            "Asset___8": [
+                "EDIT",
+                false
+            ],
+            "Asset___5": [
+                "EDIT",
+                false
+            ],
+            "ManageContentTypes": [
+                "EDIT",
+                false
+            ],
+            "OfflineProducts": [
+                "EDIT",
+                false
+            ],
+            "Asset___3": [
+                "EDIT",
+                false
+            ],
+            "Asset___4": [
+                "EDIT",
+                false
+            ],
+            "Asset___1": [
+                "EDIT",
+                false
+            ],
+            "CreatePackaging": [
+                "EDIT",
+                false
+            ],
+            "Asset___2": [
+                "EDIT",
+                false
+            ],
+            "Asset___0": [
+                "EDIT",
+                false
+            ],
+            "ManageReportsInPubFolders": [
+                "EDIT",
+                false
+            ],
+            "ManageSelfService": [
+                "EDIT",
+                false
+            ],
+            "CanUseNewDashboardBuilder": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyHEAW___10": [
+                "EDIT",
+                false
+            ],
+            "InsightsAppExecuteWorkflow": [
+                "EDIT",
+                false
+            ],
+            "ImportPersonal": [
+                "EDIT",
+                false
+            ],
+            "ManageMobile": [
+                "EDIT",
+                false
+            ],
+            "ChatterInviteExternalUsers": [
+                "EDIT",
+                false
+            ],
+            "TwoFactorApi": [
+                "EDIT",
+                false
+            ],
+            "ManageNetworks": [
+                "EDIT",
+                false
+            ],
+            "Contact___9": [
+                "EDIT",
+                false
+            ],
+            "ManageProfilesPermissionsets": [
+                "EDIT",
+                false
+            ],
+            "EditEvent": [
+                "EDIT",
+                false
+            ],
+            "AssignPublicGroups": [
+                "EDIT",
+                false
+            ],
+            "Contact___8": [
+                "EDIT",
+                false
+            ],
+            "ApproveOrder": [
+                "EDIT",
+                false
+            ],
+            "Contract___10": [
+                "EDIT",
+                false
+            ],
+            "Order___10": [
+                "EDIT",
+                false
+            ],
+            "Contact___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BJEA0___10": [
+                "EDIT",
+                false
+            ],
+            "Contact___2": [
+                "EDIT",
+                false
+            ],
+            "Contact___0": [
+                "EDIT",
+                false
+            ],
+            "Contact___5": [
+                "EDIT",
+                false
+            ],
+            "EditPublicReports": [
+                "EDIT",
+                false
+            ],
+            "Campaign___10": [
+                "EDIT",
+                false
+            ],
+            "AdminProvisioning": [
+                "EDIT",
+                false
+            ],
+            "Contact___3": [
+                "EDIT",
+                false
+            ],
+            "Contact___4": [
+                "EDIT",
+                false
+            ],
+            "ManageTwoFactor": [
+                "EDIT",
+                false
+            ],
+            "Lead___10": [
+                "EDIT",
+                false
+            ],
+            "Solution___10": [
+                "EDIT",
+                false
+            ],
+            "ManageExchangeConfig": [
+                "EDIT",
+                false
+            ],
+            "BypassEmailApproval": [
+                "EDIT",
+                false
+            ],
+            "ConfigCustomRecs": [
+                "EDIT",
+                false
+            ],
+            "ManageLocalNamespaces": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyHEAW___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyHEAW___4": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedback___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyHEAW___1": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedback___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyHEAW___2": [
+                "EDIT",
+                false
+            ],
+            "ManageCustomPermissions": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedback___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyHEAW___8": [
+                "EDIT",
+                false
+            ],
+            "EnableNotifications": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedback___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyHEAW___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001SlVREA0___9": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedback___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001SlVREA0___8": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedback___3": [
+                "EDIT",
+                false
+            ],
+            "ManageCallCenters": [
+                "EDIT",
+                false
+            ],
+            "ManageInteraction": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyHEAW___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001SlVREA0___5": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedback___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001SlVREA0___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001SlVREA0___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001SlVREA0___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001SlVREA0___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001SlVREA0___0": [
+                "EDIT",
+                false
+            ],
+            "PredictivePlatformQuery": [
+                "EDIT",
+                false
+            ],
+            "EditMyDashboards": [
+                "EDIT",
+                false
+            ],
+            "EnforceMutualAuthentication": [
+                "EDIT",
+                false
+            ],
+            "EditPublicTemplates": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyHEAW___0": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedback___9": [
+                "EDIT",
+                false
+            ],
+            "ManageRemoteAccess": [
+                "EDIT",
+                false
+            ],
+            "InsightsCreateApplication": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackTemplate___2": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackTemplate___1": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackTemplate___0": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackTemplate___5": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackTemplate___4": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackTemplate___3": [
+                "EDIT",
+                false
+            ],
+            "ModifySecureAgents": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackTemplate___9": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackTemplate___8": [
+                "EDIT",
+                false
+            ],
+            "DebugApex": [
+                "EDIT",
+                false
+            ],
+            "WorkGoal___1": [
+                "EDIT",
+                false
+            ],
+            "WorkGoal___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNaEAO___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNaEAO___0": [
+                "EDIT",
+                false
+            ],
+            "WorkGoal___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNaEAO___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNaEAO___2": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestion___0": [
+                "EDIT",
+                false
+            ],
+            "ManageSolutions": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNaEAO___5": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestion___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNaEAO___4": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestion___2": [
+                "EDIT",
+                false
+            ],
+            "WorkGoal___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNaEAO___9": [
+                "EDIT",
+                false
+            ],
+            "ApiUserOnly": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNaEAO___8": [
+                "EDIT",
+                false
+            ],
+            "WorkGoal___8": [
+                "EDIT",
+                false
+            ],
+            "WorkGoal___5": [
+                "EDIT",
+                false
+            ],
+            "WorkGoal___3": [
+                "EDIT",
+                false
+            ],
+            "PushDownReportAggregates": [
+                "EDIT",
+                false
+            ],
+            "WorkGoal___4": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestion___4": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestion___3": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestion___5": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestion___8": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestion___9": [
+                "EDIT",
+                false
+            ],
+            "Macro___9": [
+                "EDIT",
+                false
+            ],
+            "ViewAllData": [
+                "EDIT",
+                false
+            ],
+            "Macro___8": [
+                "EDIT",
+                false
+            ],
+            "Macro___5": [
+                "EDIT",
+                false
+            ],
+            "EditPayment": [
+                "EDIT",
+                false
+            ],
+            "Macro___3": [
+                "EDIT",
+                false
+            ],
+            "Macro___4": [
+                "EDIT",
+                false
+            ],
+            "Document___10": [
+                "EDIT",
+                false
+            ],
+            "EditReadonlyFields": [
+                "EDIT",
+                false
+            ],
+            "ResetPasswords": [
+                "EDIT",
+                false
+            ],
+            "AssignRoles": [
+                "EDIT",
+                false
+            ],
+            "RetainFieldHistory": [
+                "EDIT",
+                false
+            ],
+            "EditInvoice": [
+                "EDIT",
+                false
+            ],
+            "ImportLeads": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalCollaborator___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001SlVREA0___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyDEAW___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyDEAW___8": [
+                "EDIT",
+                false
+            ],
+            "Solution___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyDEAW___9": [
+                "EDIT",
+                false
+            ],
+            "DeleteActivatedContract": [
+                "EDIT",
+                false
+            ],
+            "Solution___8": [
+                "EDIT",
+                false
+            ],
+            "ApiImpersonateUser": [
+                "EDIT",
+                false
+            ],
+            "EditPublicFilters": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyDEAW___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyDEAW___1": [
+                "EDIT",
+                false
+            ],
+            "CanUseDshbdWoSameUsrLic": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyDEAW___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyDEAW___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyDEAW___4": [
+                "EDIT",
+                false
+            ],
+            "ModerateNetworkFiles": [
+                "EDIT",
+                false
+            ],
+            "InsightsAppAdmin": [
+                "EDIT",
+                false
+            ],
+            "EditBrandTemplates": [
+                "EDIT",
+                false
+            ],
+            "Solution___4": [
+                "EDIT",
+                false
+            ],
+            "ViewPublicReports": [
+                "EDIT",
+                false
+            ],
+            "Solution___5": [
+                "EDIT",
+                false
+            ],
+            "Solution___2": [
+                "EDIT",
+                false
+            ],
+            "Solution___3": [
+                "EDIT",
+                false
+            ],
+            "ExportReport": [
+                "EDIT",
+                false
+            ],
+            "Solution___0": [
+                "EDIT",
+                false
+            ],
+            "Macro___0": [
+                "EDIT",
+                false
+            ],
+            "Solution___1": [
+                "EDIT",
+                false
+            ],
+            "Macro___2": [
+                "EDIT",
+                false
+            ],
+            "Macro___1": [
+                "EDIT",
+                false
+            ],
+            "ContentHubOnPremiseUser": [
+                "EDIT",
+                false
+            ],
+            "ManageQuotas": [
+                "EDIT",
+                false
+            ],
+            "RunAsynchronousReports": [
+                "EDIT",
+                false
+            ],
+            "ScheduleReports": [
+                "EDIT",
+                false
+            ],
+            "PortalSuperUser": [
+                "EDIT",
+                false
+            ],
+            "AllowViewKnowledge": [
+                "EDIT",
+                false
+            ],
+            "EmailTemplateManagement": [
+                "EDIT",
+                false
+            ],
+            "Quote___10": [
+                "EDIT",
+                false
+            ],
+            "WorkDotComUserPerm": [
+                "EDIT",
+                false
+            ],
+            "CreateCustomizeReports": [
+                "EDIT",
+                false
+            ],
+            "EditOppLineItemUnitPrice": [
+                "EDIT",
+                false
+            ],
+            "WorkPerformanceCycle___8": [
+                "EDIT",
+                false
+            ],
+            "WorkPerformanceCycle___9": [
+                "EDIT",
+                false
+            ],
+            "DandBCompany___4": [
+                "EDIT",
+                false
+            ],
+            "ViewAllUsers": [
+                "EDIT",
+                false
+            ],
+            "ManageCustomReportTypes": [
+                "EDIT",
+                false
+            ],
+            "Account___3": [
+                "EDIT",
+                false
+            ],
+            "DandBCompany___3": [
+                "EDIT",
+                false
+            ],
+            "Account___2": [
+                "EDIT",
+                false
+            ],
+            "DandBCompany___2": [
+                "EDIT",
+                false
+            ],
+            "ApproveContract": [
+                "EDIT",
+                false
+            ],
+            "Account___5": [
+                "EDIT",
+                false
+            ],
+            "DandBCompany___1": [
+                "EDIT",
+                false
+            ],
+            "Account___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyEEAW___10": [
+                "EDIT",
+                false
+            ],
+            "DandBCompany___8": [
+                "EDIT",
+                false
+            ],
+            "Macro___10": [
+                "EDIT",
+                false
+            ],
+            "InstallPackaging": [
+                "EDIT",
+                false
+            ],
+            "Opportunity___10": [
+                "EDIT",
+                false
+            ],
+            "Account___9": [
+                "EDIT",
+                false
+            ],
+            "DandBCompany___5": [
+                "EDIT",
+                false
+            ],
+            "Account___8": [
+                "EDIT",
+                false
+            ],
+            "ViewPublicDashboards": [
+                "EDIT",
+                false
+            ],
+            "DandBCompany___9": [
+                "EDIT",
+                false
+            ],
+            "SubmitOrder": [
+                "EDIT",
+                false
+            ],
+            "Product2___10": [
+                "EDIT",
+                false
+            ],
+            "Order___0": [
+                "EDIT",
+                false
+            ],
+            "ApiEnabled": [
+                "EDIT",
+                false
+            ],
+            "Contact___10": [
+                "EDIT",
+                false
+            ],
+            "DuplicateRecordSet___3": [
+                "EDIT",
+                false
+            ],
+            "CreateReportFolders": [
+                "EDIT",
+                false
+            ],
+            "DuplicateRecordSet___4": [
+                "EDIT",
+                false
+            ],
+            "DuplicateRecordSet___1": [
+                "EDIT",
+                false
+            ],
+            "ManagePasswordPolicies": [
+                "EDIT",
+                false
+            ],
+            "ManageBusinessHourHolidays": [
+                "EDIT",
+                false
+            ],
+            "DuplicateRecordSet___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyEEAW___9": [
+                "EDIT",
+                false
+            ],
+            "DuplicateRecordSet___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyEEAW___8": [
+                "EDIT",
+                false
+            ],
+            "DuplicateRecordSet___5": [
+                "EDIT",
+                false
+            ],
+            "EditForecast": [
+                "EDIT",
+                false
+            ],
+            "ManageRealm": [
+                "EDIT",
+                false
+            ],
+            "ManageDashboards": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyEEAW___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyEEAW___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyEEAW___3": [
+                "EDIT",
+                false
+            ],
+            "Idea___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyEEAW___2": [
+                "EDIT",
+                false
+            ],
+            "Idea___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyEEAW___1": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestion___10": [
+                "EDIT",
+                false
+            ],
+            "EmailSingle": [
+                "EDIT",
+                false
+            ],
+            "Idea___3": [
+                "EDIT",
+                false
+            ],
+            "DuplicateRecordSet___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyEEAW___0": [
+                "EDIT",
+                false
+            ],
+            "Idea___2": [
+                "EDIT",
+                false
+            ],
+            "Idea___1": [
+                "EDIT",
+                false
+            ],
+            "Idea___0": [
+                "EDIT",
+                false
+            ],
+            "MergeTopics": [
+                "EDIT",
+                false
+            ],
+            "Idea___8": [
+                "EDIT",
+                false
+            ],
+            "Idea___9": [
+                "EDIT",
+                false
+            ],
+            "AllowEmailIC": [
+                "EDIT",
+                false
+            ],
+            "Account___0": [
+                "EDIT",
+                false
+            ],
+            "Account___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy7EAG___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy7EAG___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy7EAG___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy7EAG___1": [
+                "EDIT",
+                false
+            ],
+            "Case___10": [
+                "EDIT",
+                false
+            ],
+            "TransferAnyCase": [
+                "EDIT",
+                false
+            ],
+            "ModerateChatter": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy7EAG___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy7EAG___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy7EAG___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy7EAG___9": [
+                "EDIT",
+                false
+            ],
+            "EditReports": [
+                "EDIT",
+                false
+            ],
+            "IdentityEnabled": [
+                "EDIT",
+                false
+            ],
+            "ManagePublicGroups": [
+                "EDIT",
+                false
+            ],
+            "OverrideForecasts": [
+                "EDIT",
+                false
+            ],
+            "ProcessInvoice": [
+                "EDIT",
+                false
+            ],
+            "ViewPlatformEvents": [
+                "EDIT",
+                false
+            ],
+            "InsightsAppEQLEditor": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UJjREAW___10": [
+                "EDIT",
+                false
+            ],
+            "DuplicateRecordSet___9": [
+                "EDIT",
+                false
+            ],
+            "InsightsIntegrationUser": [
+                "EDIT",
+                false
+            ],
+            "WorkCoaching___10": [
+                "EDIT",
+                false
+            ],
+            "Order___9": [
+                "EDIT",
+                false
+            ],
+            "Order___5": [
+                "EDIT",
+                false
+            ],
+            "CustomMobileAppsAccess": [
+                "EDIT",
+                false
+            ],
+            "WorkGoal___10": [
+                "EDIT",
+                false
+            ],
+            "Order___8": [
+                "EDIT",
+                false
+            ],
+            "Order___1": [
+                "EDIT",
+                false
+            ],
+            "Order___2": [
+                "EDIT",
+                false
+            ],
+            "Order___3": [
+                "EDIT",
+                false
+            ],
+            "Order___4": [
+                "EDIT",
+                false
+            ],
+            "PushTopic___1": [
+                "EDIT",
+                false
+            ],
+            "PushTopic___0": [
+                "EDIT",
+                false
+            ],
+            "PushTopic___3": [
+                "EDIT",
+                false
+            ],
+            "CreateReductionOrder": [
+                "EDIT",
+                false
+            ],
+            "PushTopic___2": [
+                "EDIT",
+                false
+            ],
+            "PushTopic___5": [
+                "EDIT",
+                false
+            ],
+            "PushTopic___4": [
+                "EDIT",
+                false
+            ],
+            "PushTopic___9": [
+                "EDIT",
+                false
+            ],
+            "AssignQueues": [
+                "EDIT",
+                false
+            ],
+            "PushTopic___8": [
+                "EDIT",
+                false
+            ],
+            "ViewHelpLink": [
+                "EDIT",
+                false
+            ],
+            "ManageDashbdsInPubFolders": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyDEAW___10": [
+                "EDIT",
+                false
+            ],
+            "TransferAnyLead": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalLink___10": [
+                "EDIT",
+                false
+            ],
+            "XOrgProxyUser": [
+                "EDIT",
+                false
+            ],
+            "DelegatedPortalUserAdmin": [
+                "EDIT",
+                false
+            ],
+            "AuthorApex": [
+                "EDIT",
+                false
+            ],
+            "EmailMass": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy8EAG___10": [
+                "EDIT",
+                false
+            ],
+            "Contract___4": [
+                "EDIT",
+                false
+            ],
+            "Contract___3": [
+                "EDIT",
+                false
+            ],
+            "Contract___2": [
+                "EDIT",
+                false
+            ],
+            "Contract___1": [
+                "EDIT",
+                false
+            ],
+            "Contract___0": [
+                "EDIT",
+                false
+            ],
+            "ShareFilesWithNetworks": [
+                "EDIT",
+                false
+            ],
+            "WriteCrossOrgUsages": [
+                "EDIT",
+                false
+            ],
+            "ConnectOrgToEnvironmentHub": [
+                "EDIT",
+                false
+            ],
+            "ChatterFileLink": [
+                "EDIT",
+                false
+            ],
+            "Contract___9": [
+                "EDIT",
+                false
+            ],
+            "Contract___8": [
+                "EDIT",
+                false
+            ],
+            "AssignTopics": [
+                "EDIT",
+                false
+            ],
+            "Contract___5": [
+                "EDIT",
+                false
+            ],
+            "Lead___2": [
+                "EDIT",
+                false
+            ],
+            "Lead___1": [
+                "EDIT",
+                false
+            ],
+            "GovernNetworks": [
+                "EDIT",
+                false
+            ],
+            "Lead___0": [
+                "EDIT",
+                false
+            ],
+            "WorkCoaching___9": [
+                "EDIT",
+                false
+            ],
+            "WorkCoaching___8": [
+                "EDIT",
+                false
+            ],
+            "InsightsAppUploadUser": [
+                "EDIT",
+                false
+            ],
+            "InsightsAppUser": [
+                "EDIT",
+                false
+            ],
+            "WorkCalibrationUser": [
+                "EDIT",
+                false
+            ],
+            "ModifyAllData": [
+                "EDIT",
+                false
+            ],
+            "Lead___9": [
+                "EDIT",
+                false
+            ],
+            "WorkCoaching___4": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedback___10": [
+                "EDIT",
+                false
+            ],
+            "WorkCoaching___5": [
+                "EDIT",
+                false
+            ],
+            "WorkCoaching___2": [
+                "EDIT",
+                false
+            ],
+            "Lead___8": [
+                "EDIT",
+                false
+            ],
+            "WorkCoaching___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNfEAO___10": [
+                "EDIT",
+                false
+            ],
+            "Lead___5": [
+                "EDIT",
+                false
+            ],
+            "WorkCoaching___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNbEAO___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BLEA0___0": [
+                "EDIT",
+                false
+            ],
+            "WorkCoaching___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BLEA0___1": [
+                "EDIT",
+                false
+            ],
+            "Lead___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BLEA0___2": [
+                "EDIT",
+                false
+            ],
+            "Lead___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BLEA0___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyFEAW___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BLEA0___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BLEA0___3": [
+                "EDIT",
+                false
+            ],
+            "ViewSetup": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BLEA0___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BLEA0___8": [
+                "EDIT",
+                false
+            ],
+            "HasFileSync": [
+                "EDIT",
+                false
+            ],
+            "DandBCompany___0": [
+                "EDIT",
+                false
+            ],
+            "ViewGlobalHeader": [
+                "EDIT",
+                false
+            ],
+            "ManageUsers": [
+                "EDIT",
+                false
+            ],
+            "FreezeUsers": [
+                "EDIT",
+                false
+            ],
+            "Opportunity___9": [
+                "EDIT",
+                false
+            ],
+            "Opportunity___8": [
+                "EDIT",
+                false
+            ],
+            "Opportunity___5": [
+                "EDIT",
+                false
+            ],
+            "Opportunity___4": [
+                "EDIT",
+                false
+            ],
+            "AllowDeleteDandBCompany": [
+                "EDIT",
+                false
+            ],
+            "ManageDataIntegrations": [
+                "EDIT",
+                false
+            ],
+            "Document___1": [
+                "EDIT",
+                false
+            ],
+            "Opportunity___1": [
+                "EDIT",
+                false
+            ],
+            "Document___0": [
+                "EDIT",
+                false
+            ],
+            "Opportunity___0": [
+                "EDIT",
+                false
+            ],
+            "ChatterForSharePoint": [
+                "EDIT",
+                false
+            ],
+            "ForceTwoFactor": [
+                "EDIT",
+                false
+            ],
+            "Document___3": [
+                "EDIT",
+                false
+            ],
+            "Opportunity___3": [
+                "EDIT",
+                false
+            ],
+            "Document___2": [
+                "EDIT",
+                false
+            ],
+            "Opportunity___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BLEA0___10": [
+                "EDIT",
+                false
+            ],
+            "Document___8": [
+                "EDIT",
+                false
+            ],
+            "Document___9": [
+                "EDIT",
+                false
+            ],
+            "Document___4": [
+                "EDIT",
+                false
+            ],
+            "Document___5": [
+                "EDIT",
+                false
+            ],
+            "ManageSynonyms": [
+                "EDIT",
+                false
+            ],
+            "ManageLoginAccessPolicies": [
+                "EDIT",
+                false
+            ],
+            "ManageInternalUsers": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BKEA0___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BKEA0___1": [
+                "EDIT",
+                false
+            ],
+            "PredictivePlatformAnalyze": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U0RKEA0___10": [
+                "EDIT",
+                false
+            ],
+            "EditOwnQuota": [
+                "EDIT",
+                false
+            ],
+            "ActivitiesAccess": [
+                "EDIT",
+                false
+            ],
+            "ManagePackageLicenses": [
+                "EDIT",
+                false
+            ],
+            "CanSave": [
+                "EDIT",
+                false
+            ],
+            "ManagePartners": [
+                "EDIT",
+                false
+            ],
+            "PushTopic___10": [
+                "EDIT",
+                false
+            ],
+            "ViewMyTeamsDashboards": [
+                "EDIT",
+                false
+            ],
+            "EditBillingInfo": [
+                "EDIT",
+                false
+            ],
+            "TestInstanceCreate": [
+                "EDIT",
+                false
+            ],
+            "PermitImpersonation": [
+                "EDIT",
+                false
+            ],
+            "ManageCases": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BJEA0___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BJEA0___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BJEA0___1": [
+                "EDIT",
+                false
+            ],
+            "EditKnowledge": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BJEA0___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BJEA0___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BJEA0___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BKEA0___3": [
+                "EDIT",
+                false
+            ],
+            "WorkPerformanceCycle___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BKEA0___2": [
+                "EDIT",
+                false
+            ],
+            "AllowSFDCToAdminOrg": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BKEA0___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BKEA0___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BJEA0___9": [
+                "EDIT",
+                false
+            ],
+            "ManageAnalyticSnapshots": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BKEA0___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BKEA0___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BJEA0___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UJjREAW___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UJjREAW___3": [
+                "EDIT",
+                false
+            ],
+            "ManageAuthProviders": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UJjREAW___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UJjREAW___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UJjREAW___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UJjREAW___8": [
+                "EDIT",
+                false
+            ],
+            "ConsoleTab": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UJjREAW___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UJjREAW___9": [
+                "EDIT",
+                false
+            ],
+            "NewReportBuilder": [
+                "EDIT",
+                false
+            ],
+            "EditTask": [
+                "EDIT",
+                false
+            ],
+            "ManageKnowledgeImportExport": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyGEAW___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyGEAW___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyGEAW___4": [
+                "EDIT",
+                false
+            ],
+            "Quote___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyGEAW___5": [
+                "EDIT",
+                false
+            ],
+            "Quote___4": [
+                "EDIT",
+                false
+            ],
+            "EditCaseComments": [
+                "EDIT",
+                false
+            ],
+            "Quote___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyGEAW___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNgEAO___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyGEAW___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNgEAO___3": [
+                "EDIT",
+                false
+            ],
+            "Quote___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyGEAW___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNgEAO___0": [
+                "EDIT",
+                false
+            ],
+            "EditTopics": [
+                "EDIT",
+                false
+            ],
+            "Quote___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyGEAW___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNgEAO___1": [
+                "EDIT",
+                false
+            ],
+            "IPRestrictRequests": [
+                "EDIT",
+                false
+            ],
+            "Account___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNgEAO___5": [
+                "EDIT",
+                false
+            ],
+            "ManageLeads": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNgEAO___4": [
+                "EDIT",
+                false
+            ],
+            "Quote___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNgEAO___9": [
+                "EDIT",
+                false
+            ],
+            "Quote___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNgEAO___8": [
+                "EDIT",
+                false
+            ],
+            "Quote___1": [
+                "EDIT",
+                false
+            ],
+            "TagManager": [
+                "EDIT",
+                false
+            ],
+            "CreateCustomizeFilters": [
+                "EDIT",
+                false
+            ],
+            "PermitSubscriberLogin": [
+                "EDIT",
+                false
+            ],
+            "AssignPermissionSets": [
+                "EDIT",
+                false
+            ],
+            "EmailAdministration": [
+                "EDIT",
+                false
+            ],
+            "InsightsInDev3": [
+                "EDIT",
+                false
+            ],
+            "InsightsInDev2": [
+                "EDIT",
+                false
+            ],
+            "ManageTranslation": [
+                "EDIT",
+                false
+            ],
+            "InsightsInDev1": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalLink___0": [
+                "EDIT",
+                false
+            ],
+            "InboundMigrationToolsUser": [
+                "EDIT",
+                false
+            ],
+            "StreamingChannel___2": [
+                "EDIT",
+                false
+            ],
+            "Idea___10": [
+                "EDIT",
+                false
+            ],
+            "StreamingChannel___3": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalLink___9": [
+                "EDIT",
+                false
+            ],
+            "StreamingChannel___4": [
+                "EDIT",
+                false
+            ],
+            "StreamingChannel___5": [
+                "EDIT",
+                false
+            ],
+            "ManageQueues": [
+                "EDIT",
+                false
+            ],
+            "AllowUniversalSearch": [
+                "EDIT",
+                false
+            ],
+            "StreamingChannel___0": [
+                "EDIT",
+                false
+            ],
+            "StreamingChannel___1": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalLink___2": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalLink___1": [
+                "EDIT",
+                false
+            ],
+            "CidbPermission": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalLink___4": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalLink___3": [
+                "EDIT",
+                false
+            ],
+            "ManageRoles": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalLink___5": [
+                "EDIT",
+                false
+            ],
+            "StreamingChannel___8": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalLink___8": [
+                "EDIT",
+                false
+            ],
+            "StreamingChannel___9": [
+                "EDIT",
+                false
+            ],
+            "ManageEntitlements": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalCollaborator___8": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackTemplate___10": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalCollaborator___5": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalCollaborator___9": [
+                "EDIT",
+                false
+            ],
+            "ManageCategories": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNhEAO___9": [
+                "EDIT",
+                false
+            ],
+            "ManageChatterMessages": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNhEAO___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNhEAO___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNhEAO___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNhEAO___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNhEAO___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNhEAO___2": [
+                "EDIT",
+                false
+            ],
+            "ViewCaseInteraction": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNhEAO___0": [
+                "EDIT",
+                false
+            ],
+            "PublishPackaging": [
+                "EDIT",
+                false
+            ],
+            "ViewKnowledge": [
+                "EDIT",
+                false
+            ],
+            "ManagePartnerNetConn": [
+                "EDIT",
+                false
+            ],
+            "ForecastTab": [
+                "EDIT",
+                false
+            ],
+            "DivisionAffected": [
+                "EDIT",
+                false
+            ],
+            "ShareInternalArticles": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TpT3EAK___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TpT3EAK___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TpT3EAK___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNhEAO___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TpT3EAK___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TpT3EAK___9": [
+                "EDIT",
+                false
+            ],
+            "OutboundMigrationToolsUser": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalCollaborator___0": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalCollaborator___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TpT3EAK___0": [
+                "EDIT",
+                false
+            ],
+            "ManageContentProperties": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalCollaborator___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TpT3EAK___1": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalCollaborator___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TpT3EAK___2": [
+                "EDIT",
+                false
+            ],
+            "DeleteTopics": [
+                "EDIT",
+                false
+            ],
+            "WorkGoalCollaborator___4": [
+                "EDIT",
+                false
+            ],
+            "ViewAllForecasts": [
+                "EDIT",
+                false
+            ],
+            "EditHtmlTemplates": [
+                "EDIT",
+                false
+            ],
+            "DeferSharingCalculations": [
+                "EDIT",
+                false
+            ],
+            "BulkApiHardDelete": [
+                "EDIT",
+                false
+            ],
+            "ChatterEnabledForUser": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestionSet___10": [
+                "EDIT",
+                false
+            ],
+            "DuplicateRecordSet___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNdEAO___10": [
+                "EDIT",
+                false
+            ],
+            "UnrestrictedLogin": [
+                "EDIT",
+                false
+            ],
+            "IdentityConnect": [
+                "EDIT",
+                false
+            ],
+            "CreateDashboardFolders": [
+                "EDIT",
+                false
+            ],
+            "ManageUnlistedGroups": [
+                "EDIT",
+                false
+            ],
+            "S1DesktopAllowed": [
+                "EDIT",
+                false
+            ],
+            "AllowReadDandBCompany": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNaEAO___10": [
+                "EDIT",
+                false
+            ],
+            "SolutionImport": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestionSet___9": [
+                "EDIT",
+                false
+            ],
+            "ConvertLeads": [
+                "EDIT",
+                false
+            ],
+            "ViewPublicFiles": [
+                "EDIT",
+                false
+            ],
+            "CreateWorkBadgeDefinition": [
+                "EDIT",
+                false
+            ],
+            "ManageDataCategories": [
+                "EDIT",
+                false
+            ],
+            "ViewContent": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackRequest___10": [
+                "EDIT",
+                false
+            ],
+            "ManageDynamicDashboards": [
+                "EDIT",
+                false
+            ],
+            "ManageTenants": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNfEAO___0": [
+                "EDIT",
+                false
+            ],
+            "SalesConsole": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNfEAO___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNfEAO___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNfEAO___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNfEAO___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNfEAO___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy7EAG___10": [
+                "EDIT",
+                false
+            ],
+            "EditActivatedOrders": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNfEAO___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNfEAO___9": [
+                "EDIT",
+                false
+            ],
+            "FlowUFLRequired": [
+                "EDIT",
+                false
+            ],
+            "ManageTerritories": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TpT3EAK___10": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackRequest___8": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackRequest___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNcEAO___10": [
+                "EDIT",
+                false
+            ],
+            "ManageIpAddresses": [
+                "EDIT",
+                false
+            ],
+            "ManageContentPermissions": [
+                "EDIT",
+                false
+            ],
+            "DandBCompany___10": [
+                "EDIT",
+                false
+            ],
+            "Pricebook2___0": [
+                "EDIT",
+                false
+            ],
+            "Pricebook2___1": [
+                "EDIT",
+                false
+            ],
+            "UseAnyApiClient": [
+                "EDIT",
+                false
+            ],
+            "Pricebook2___2": [
+                "EDIT",
+                false
+            ],
+            "Pricebook2___3": [
+                "EDIT",
+                false
+            ],
+            "Pricebook2___4": [
+                "EDIT",
+                false
+            ],
+            "Pricebook2___5": [
+                "EDIT",
+                false
+            ],
+            "InsightsAppEltEditor": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackRequest___1": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackRequest___0": [
+                "EDIT",
+                false
+            ],
+            "Pricebook2___8": [
+                "EDIT",
+                false
+            ],
+            "Pricebook2___9": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackRequest___5": [
+                "EDIT",
+                false
+            ],
+            "ReadCrossOrgMetrics": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackRequest___4": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackRequest___3": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackRequest___2": [
+                "EDIT",
+                false
+            ],
+            "Campaign___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyFEAW___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNbEAO___9": [
+                "EDIT",
+                false
+            ],
+            "CreateTopics": [
+                "EDIT",
+                false
+            ],
+            "Campaign___3": [
+                "EDIT",
+                false
+            ],
+            "Campaign___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyFEAW___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNbEAO___8": [
+                "EDIT",
+                false
+            ],
+            "Campaign___1": [
+                "EDIT",
+                false
+            ],
+            "Campaign___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNcEAO___8": [
+                "EDIT",
+                false
+            ],
+            "Campaign___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNcEAO___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyFEAW___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNbEAO___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyFEAW___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNbEAO___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNcEAO___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyFEAW___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNbEAO___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNcEAO___5": [
+                "EDIT",
+                false
+            ],
+            "Campaign___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyFEAW___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNbEAO___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNcEAO___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNcEAO___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyFEAW___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNbEAO___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNcEAO___0": [
+                "EDIT",
+                false
+            ],
+            "SendSitRequests": [
+                "EDIT",
+                false
+            ],
+            "Campaign___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyFEAW___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNbEAO___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNcEAO___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNgEAO___10": [
+                "EDIT",
+                false
+            ],
+            "ActivateOrder": [
+                "EDIT",
+                false
+            ],
+            "ManageSearchPromotionRules": [
+                "EDIT",
+                false
+            ],
+            "DataExport": [
+                "EDIT",
+                false
+            ],
+            "ManageSharing": [
+                "EDIT",
+                false
+            ],
+            "CreateCustomizeDashboards": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNdEAO___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNdEAO___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNdEAO___4": [
+                "EDIT",
+                false
+            ],
+            "CustomizeApplication": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCyGEAW___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNdEAO___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNdEAO___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNdEAO___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNdEAO___9": [
+                "EDIT",
+                false
+            ],
+            "IsSsoEnabled": [
+                "EDIT",
+                false
+            ],
+            "Pricebook2___10": [
+                "EDIT",
+                false
+            ],
+            "CanInsertFeedSystemFields": [
+                "EDIT",
+                false
+            ],
+            "PasswordNeverExpires": [
+                "EDIT",
+                false
+            ],
+            "MassInlineEdit": [
+                "EDIT",
+                false
+            ],
+            "Asset___10": [
+                "EDIT",
+                false
+            ],
+            "01I90000001TSNdEAO___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U0RKEA0___5": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy8EAG___5": [
+                "EDIT",
+                false
+            ],
+            "CreateWorkspaces": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U0RKEA0___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U0RKEA0___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy8EAG___8": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U0RKEA0___1": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy8EAG___1": [
+                "EDIT",
+                false
+            ],
+            "ContentHubUser": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U0RKEA0___2": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy8EAG___2": [
+                "EDIT",
+                false
+            ],
+            "ActivateContract": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy8EAG___3": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U0RKEA0___0": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy8EAG___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U0RKEA0___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy8EAG___9": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U0RKEA0___8": [
+                "EDIT",
+                false
+            ],
+            "Case___1": [
+                "EDIT",
+                false
+            ],
+            "Case___2": [
+                "EDIT",
+                false
+            ],
+            "Product2___5": [
+                "EDIT",
+                false
+            ],
+            "Product2___4": [
+                "EDIT",
+                false
+            ],
+            "Case___0": [
+                "EDIT",
+                false
+            ],
+            "ViewEventLogFiles": [
+                "EDIT",
+                false
+            ],
+            "Case___5": [
+                "EDIT",
+                false
+            ],
+            "PortalTab": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestionSet___0": [
+                "EDIT",
+                false
+            ],
+            "Product2___9": [
+                "EDIT",
+                false
+            ],
+            "Case___3": [
+                "EDIT",
+                false
+            ],
+            "Product2___8": [
+                "EDIT",
+                false
+            ],
+            "Case___4": [
+                "EDIT",
+                false
+            ],
+            "Case___9": [
+                "EDIT",
+                false
+            ],
+            "ManageKnowledge": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestionSet___3": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestionSet___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001UCy8EAG___0": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestionSet___1": [
+                "EDIT",
+                false
+            ],
+            "Case___8": [
+                "EDIT",
+                false
+            ],
+            "ContentAdministrator": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestionSet___2": [
+                "EDIT",
+                false
+            ],
+            "Product2___3": [
+                "EDIT",
+                false
+            ],
+            "TransferAnyEntity": [
+                "EDIT",
+                false
+            ],
+            "Product2___2": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestionSet___8": [
+                "EDIT",
+                false
+            ],
+            "Product2___1": [
+                "EDIT",
+                false
+            ],
+            "ManageEncryptionKeys": [
+                "EDIT",
+                false
+            ],
+            "WorkFeedbackQuestionSet___5": [
+                "EDIT",
+                false
+            ],
+            "Product2___0": [
+                "EDIT",
+                false
+            ],
+            "RunFlow": [
+               "EDIT",
+                false
+            ],
+            "WorkPerformanceCycle___4": [
+                "EDIT",
+                false
+            ],
+            "01I90000001U3BKEA0___10": [
+                "EDIT",
+                false
+            ],
+            "WorkPerformanceCycle___5": [
+                "EDIT",
+                false
+            ],
+            "ManageEmailClientConfig": [
+                "EDIT",
+                false
+            ],
+            "WorkPerformanceCycle___0": [
+                "EDIT",
+                false
+            ],
+            "WorkPerformanceCycle___1": [
+                "EDIT",
+                false
+            ],
+            "WorkPerformanceCycle___2": [
+                "EDIT",
+                false
+            ],
+            "EditMyReports": [
+                "EDIT",
+                false
+            ],
+            "WorkPerformanceCycle___3": [
+                "EDIT",
+                false
+            ],
+            "ModerateNetworkFeeds": [
+                "EDIT",
+                false
+            ],
+            "InsightsAppDashboardEditor": [
+                "EDIT",
+                false
+            ],
+            "ViewEncryptedData": [
+                "EDIT",
+                false
+            ],
+            "UseTeamReassignWizards": [
+                "EDIT",
+                false
+            ],
+            "SecureGatewayAdmin": [
+                "EDIT",
+                false
+            ],
+            "ManageCssUsers": [
+                "EDIT",
+                false
+            ],
+            "CustomSidebarOnAllPages": [
+                "EDIT",
+                false
+            ],
+            "DistributeFromPersWksp": [
+                "EDIT",
+                false
+            ],
+            "ChatterOwnGroups": [
+                "EDIT",
+                false
+            ],
+            "StreamingChannel___10": [
+                "EDIT",
+                false
+            ],
+            "ViewApexLimitEvents": [
+                "EDIT",
+                false
+            ],
+            "ScheduleJob": [
+                "EDIT",
+                false
+            ],
+            "ValidateYubiKeyToken": [
+                "EDIT",
+                false
+            ],
+            "RunReports": [
+                "EDIT",
+                false
+            ],
+            "ViewDataCategories": [
+                "EDIT",
+                false
+            ]
+        },
+        "massEditable": true,
+        "dynamicData": null,
+        "_CONFIRMATIONTOKEN": "lpkgMAPNMigLq9eQYmea.m.wP6DlKcrpuWtlG_6Yz9iAAsJn5FIIoz1KS5oZu_BmARQNLatS.Mtekt145Pfz4EiTID8kOc7FDRA1.0tq3TdukqhAjIGFTEWomXTXzoPNLJA4yg==",
+        "nameLabel": "名称",
+        "entityType": "Profile",
+        "sysMod": null,
+        "editable": true
+    },
+    "rolodexIndex": -1,
+    "entityButtons": [
+        
+    ],
+    "buttons": [
+        
+    ],
+    "listButtons": [
+        "\u003Cinput value=\" 新建简档 \"  class=\"btn\" name=\"new\" onclick=\"navigateToUrl('/_ui/perms/ui/profile/ProfileClone/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&setupid=EnhancedProfiles',null,'new');\" title=\"新建简档\" type=\"button\" /\u003E"
+    ],
+    "capped": false,
+    "retURL": "/00e?fcf=00B90000008LrWl&rolodexIndex=-1&page=1",
+    "rowsPerPage": 25,
+    "page": 1,
+    "hasMassActions": false,
+    "sortState": [
+        {
+            "field": "ProfileName",
+            "dir": "ASC"
+        }
+    ],
+    "listData": {
+        "ACTION_COLUMN": [
+            [
+                "\u003Ca href=\"/00e90000001jAUY/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href
+=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001jAUY&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E
+\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUr/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex
+%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms
+/ui/profile/ProfileClone/e?id=00e90000001jAUr&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex
+%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUq/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page
+%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile
+/ProfileClone/e?id=00e90000001jAUq&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page
+%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca
+ href=\"/00e90000001jAUp/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E
+\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone
+/e?id=00e90000001jAUp&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid
+=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUX
+/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C
+/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001jAUX&amp
+;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"
+\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUW/e?retURL
+=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E
+\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001jAUW&amp;retURL=%2F00e
+%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan
+\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUk/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href
+=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001jAUk&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E
+\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUa/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex
+%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms
+/ui/profile/ProfileClone/e?id=00e90000001jAUa&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex
+%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUf/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page
+%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile
+/ProfileClone/e?id=00e90000001jAUf&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page
+%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca
+ href=\"/00e90000001txhU/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E
+\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/setup/own/deleteredirect.jsp?delID
+=00e90000001txhU&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;_CONFIRMATIONTOKEN
+=RKvzmz0e1bYEVEKDfYQq7ovhL8x8IyQgE3K47vBbYkCsZ9ZC504.7wvnCPynKSw61xVMGEWJWKUCjNU_aA8yk4c8144ZNALbf2LhBaKZv9XJaz
+.QlAf9TfOL2DugTro8DunNuFlUThVQ.1HWzs3ONpbn7cU%3D\" onclick=\"return confirmDelete();\"\u003E\u003Cspan
+\u003E删除\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001txhU
+&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles
+\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001txhT/e?retURL
+=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E
+\u003C/a\u003E",
+                "\u003Ca href=\"/setup/own/deleteredirect.jsp?delID=00e90000001txhT&amp;retURL=%2F00e
+%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;_CONFIRMATIONTOKEN=SdSh8wps3u3PAersxaNLRKyrLPXzhdv8YUA63tYdygznsegj2tTUzWMHTAR6cwt2DWx11WMoRR_ktmVoTDqJgl8IOC2FmHZjBqoaJ
+.GE9M.X48L8rs7buTRVMTxn3Z587heMdrctuP_sj0YRAb70BYdZbUk%3D\" onclick=\"return confirmDelete();\"\u003E
+\u003Cspan\u003E删除\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone
+/e?id=00e90000001txhT&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid
+=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001txhV
+/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C
+/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/setup/own/deleteredirect.jsp?delID=00e90000001txhV&amp;retURL
+=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;_CONFIRMATIONTOKEN=RSG8Ga4_YEQ2eb2qy7y
+.4H2EnNyyooXy.9mA3W7YgFeZVyhEK.yuSVeGWsXq8gkTBThOdzpe7Fks8MvHgrBx15D.ptJjtGZKbO8idDuPasm.ED3C9qgVQfIPjBx0VZ6G4S3oKrVdf7640r
+.nxvFMbXZEgRg%3D\" onclick=\"return confirmDelete();\"\u003E\u003Cspan\u003E删除\u003C/span\u003E\u003C
+/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001txhV&amp;retURL=%2F00e%3Ffcf
+%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E
+复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUg/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href
+=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001jAUg&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E
+\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUl/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex
+%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms
+/ui/profile/ProfileClone/e?id=00e90000001jAUl&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex
+%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUe/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page
+%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile
+/ProfileClone/e?id=00e90000001jAUe&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page
+%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca
+ href=\"/00e90000001jAUd/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E
+\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone
+/e?id=00e90000001jAUd&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid
+=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUb
+/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C
+/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001jAUb&amp
+;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"
+\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUh/e?retURL
+=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E
+\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001jAUh&amp;retURL=%2F00e
+%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan
+\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUj/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href
+=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001jAUj&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E
+\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUi/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex
+%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms
+/ui/profile/ProfileClone/e?id=00e90000001jAUi&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex
+%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001jAUc/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page
+%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile
+/ProfileClone/e?id=00e90000001jAUc&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page
+%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca
+ href=\"/00e90000001jAUZ/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E
+\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone
+/e?id=00e90000001jAUZ&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid
+=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001txhS
+/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C
+/span\u003E\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001txhS&amp
+;retURL=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"
+\u003E\u003Cspan\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001txhX/e?retURL
+=%2F00e%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E
+\u003C/a\u003E",
+                "\u003Ca href=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001txhX&amp;retURL=%2F00e
+%3Ffcf%3D00B90000008LrWl%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan
+\u003E复制\u003C/span\u003E\u003C/a\u003E"
+            ],
+            [
+                "\u003Ca href=\"/00e90000001txhW/e?retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1\"\u003E\u003Cspan\u003E编辑\u003C/span\u003E\u003C/a\u003E",
+                "\u003Ca href
+=\"/_ui/perms/ui/profile/ProfileClone/e?id=00e90000001txhW&amp;retURL=%2F00e%3Ffcf%3D00B90000008LrWl
+%26rolodexIndex%3D-1%26page%3D1&amp;setupid=EnhancedProfiles\"\u003E\u003Cspan\u003E复制\u003C/span\u003E
+\u003C/a\u003E"
+            ]
+        ],
+        "CustomProfile": [
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width
+=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked
+.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg
+ src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title
+=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16
+\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未
+选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked
+.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg
+ src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title
+=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16
+\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未
+选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_checked
+.gif\" alt=\"选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"选取的\" /\u003E",
+            "\u003Cimg src
+=\"/img/checkbox_checked.gif\" alt=\"选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"选取的
+\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_checked.gif\" alt=\"选取的\" width=\"21\" height=\"16\" class
+=\"checkImg\" title=\"选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width
+=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked
+.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg
+ src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title
+=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16
+\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未
+选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked
+.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg
+ src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title
+=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16
+\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未
+选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked
+.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg
+ src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title
+=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未选取的\" width=\"21\" height=\"16
+\" class=\"checkImg\" title=\"未选取的\" /\u003E",
+            "\u003Cimg src=\"/img/checkbox_unchecked.gif\" alt=\"未
+选取的\" width=\"21\" height=\"16\" class=\"checkImg\" title=\"未选取的\" /\u003E"
+        ],
+        "UserLicense": [
+            "Authenticated Website",
+            "Chatter External",
+            "Chatter Free",
+            "Chatter Free",
+            "XOrg Proxy User",
+            "Customer Community Login",
+            "Customer Community",
+            "Customer Portal Manager Custom",
+            "Customer Portal Manager Standard",
+            "Salesforce",
+            "Salesforce",
+            "Salesforce",
+            "Force.com - App Subscription",
+            "Force.com - Free",
+            "Gold Partner",
+            "High Volume Customer Portal",
+            "Identity",
+            "Partner App Subscription",
+            "Partner Community Login",
+            "Partner Community",
+            "Silver Partner",
+            "Work.com Only",
+            "Salesforce",
+            "Salesforce",
+            "Salesforce"
+        ],
+        "ProfileName": [
+            "\u003Ca href
+=\"/00e90000001jAUY\"\u003E\u003Cspan\u003EAuthenticated Website\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca
+ href=\"/00e90000001jAUr\"\u003E\u003Cspan\u003EChatter External User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUq\"\u003E\u003Cspan\u003EChatter Free User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUp\"\u003E\u003Cspan\u003EChatter Moderator User\u003C/span\u003E\u003C
+/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUX\"\u003E\u003Cspan\u003ECross Org Data Proxy User\u003C/span
+\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUW\"\u003E\u003Cspan\u003ECustomer Community Login
+ User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUk\"\u003E\u003Cspan\u003ECustomer
+ Community User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUa\"\u003E\u003Cspan\u003ECustomer
+ Portal Manager Custom\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUf\"\u003E\u003Cspan
+\u003ECustomer Portal Manager Standard\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001txhU
+\"\u003E\u003Cspan\u003ECustom: Marketing Profile\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001txhT
+\"\u003E\u003Cspan\u003ECustom: Sales Profile\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001txhV
+\"\u003E\u003Cspan\u003ECustom: Support Profile\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUg
+\"\u003E\u003Cspan\u003EForce.com - App Subscription User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href
+=\"/00e90000001jAUl\"\u003E\u003Cspan\u003EForce.com - Free User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca
+ href=\"/00e90000001jAUe\"\u003E\u003Cspan\u003EGold Partner User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca
+ href=\"/00e90000001jAUd\"\u003E\u003Cspan\u003EHigh Volume Customer Portal\u003C/span\u003E\u003C/a
+\u003E",
+            "\u003Ca href=\"/00e90000001jAUb\"\u003E\u003Cspan\u003EIdentity User\u003C/span\u003E\u003C
+/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUh\"\u003E\u003Cspan\u003EPartner App Subscription User\u003C
+/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUj\"\u003E\u003Cspan\u003EPartner Community
+ Login User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUi\"\u003E\u003Cspan\u003EPartner
+ Community User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUc\"\u003E\u003Cspan\u003ESilver
+ Partner User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001jAUZ\"\u003E\u003Cspan\u003EWork
+.com Only User\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001txhS\"\u003E\u003Cspan\u003E
+只读\u003C/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001txhX\"\u003E\u003Cspan\u003E合同经理\u003C
+/span\u003E\u003C/a\u003E",
+            "\u003Ca href=\"/00e90000001txhW\"\u003E\u003Cspan\u003E市场营销用户\u003C/span
+\u003E\u003C/a\u003E"
+        ],
+        "LIST_RECORD_ID": [
+            "00e90000001jAUY",
+            "00e90000001jAUr",
+            "00e90000001jAUq",
+            "00e90000001jAUp",
+            "00e90000001jAUX",
+            "00e90000001jAUW",
+            "00e90000001jAUk",
+            "00e90000001jAUa",
+            "00e90000001jAUf",
+            "00e90000001txhU",
+            "00e90000001txhT",
+            "00e90000001txhV",
+            "00e90000001jAUg",
+            "00e90000001jAUl",
+            "00e90000001jAUe",
+            "00e90000001jAUd",
+            "00e90000001jAUb",
+            "00e90000001jAUh",
+            "00e90000001jAUj",
+            "00e90000001jAUi",
+            "00e90000001jAUc",
+            "00e90000001jAUZ",
+            "00e90000001txhS",
+            "00e90000001txhX",
+            "00e90000001txhW"
+        ],
+        "ACTION_COLUMN_LABELS": [
+            
+        ]
+    },
+    "printURL": "/00e?fcf=00B90000008LrWl&rolodexIndex=-1&page=1",
+    "totalRowCount": 29,
+    "columnWidths": null
+}

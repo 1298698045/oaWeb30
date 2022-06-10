@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 380px;
+            overflow: auto;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+
+        .section-body {
+            padding: 0 20px;
+        }
+
+        .section {
+            padding-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+
+        .upsort {
+            border: 7px solid transparent;
+            border-bottom: 7px solid rgb(27, 82, 151);
+            margin: 5px 5px 10px 5px;
+        }
+
+        .downsort {
+            border: 7px solid transparent;
+            border-top: 7px solid rgba(27, 82, 151);
+            margin: 10px 5px 5px 5px;
+        }
+
+        .torightdiv button {
+            padding: 10px 5px 10px 15px;
+        }
+
+            .torightdiv button div {
+                border: 7px solid transparent !important;
+                border-left: 7px solid rgb(27, 82, 151) !important;
+                height: 0;
+            }
+
+        .toleftdiv button {
+            padding: 10px 10px 10px 5px;
+        }
+
+            .toleftdiv button div {
+                border: 7px solid transparent !important;
+                border-right: 7px solid rgb(27, 82, 151) !important;
+                height: 0;
+            }
+
+        .popup table option {
+            padding: 8px 10px;
+        }
+        .checkselect input{
+            width:18px;
+            float:left;
+            margin-right:5px;
+            margin-top:-5px;
+        }
+        .checkselect label{
+            overflow:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            选择要显示的字段
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+            <form id="editPage" name="editPage">
+                <table cellpadding="0" cellspacing="8" style="width: 100%;">
+                    <tr>
+                        <td style="font-size: .8125rem; text-align: left;">可选字段</td>
+                        <td>&nbsp;</td>
+                        <td style="font-size: .8125rem; text-align: left;">可视字段</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            <select id="duel_select_0" name="duel_select_0" style="width:300px; height: 220px;" multiple="multiple"></select>
+                        </td>
+                        <td width="50px">
+                            <div class="torightdiv">
+                                <button id="b1" type="button" class="s1 slds-button" style="background: none; border: 0;">
+                                    <div></div>
+                                </button>
+                            </div>
+                            <div class="toleftdiv">
+                                <button type="button" id="b3" class="s1 slds-button" style="background: none; border: 0;">
+                                    <div></div>
+
+                                </button>
+                            </div>
+                        </td>
+                        <td>
+                            <select id="duel_select_1" name="duel_select_1" style="width:300px; height: 220px;" multiple="multiple"></select>
+                        </td>
+                        <td width="50px">
+                            <p>
+                                <button id="upsort" type="button" class="s1 slds-button" style="background: none; border: 0;" onclick="javascript:window.editPage_DLBEInstance.instMoveUp(document.editPage.duel_select_1, 'NAME', null, '排班对象无法删除，并且必须是被排班的人。','editPage_duel_errorMsg');">
+                                    <div class="upsort"></div>
+                                </button>
+                            </p>
+                            <!--<p>
+                                <button type="button" id="b2" class="s1 slds-button">全部向右</button>
+                            </p>-->
+                            <p>
+                                <button type="button" id="downsort" class="s1 slds-button" style="background: none; border: 0;" onclick="javascript:window.editPage_DLBEInstance.instMoveDown(document.editPage.duel_select_1, 'NAME', null, '排班对象无法删除，并且必须是被排班的人。','editPage_duel_errorMsg');">
+                                    <div class="downsort"></div>
+                                </button>
+                            </p>
+                            <!--  <p>
+                                <button type="button" id="b4" class="s1 slds-button">全部向左</button>
+                            </p>-->
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <div style="text-align:left;margin-top:15px;font-size:14px;">
+                <div>
+                    排序字段
+                    <select class="checkselect"></select>
+                </div>
+                <div>
+                    <div style="margin-left:60px;margin-top:8px;" class="checkselect">
+                        <label style="display:block;">
+                            <input checked="checked" name="sortDir" type="radio" value="ASC">升序
+                        </label>
+                        <label style="display:block;">
+                            <input name="sortDir" type="radio" value="DESC">降序
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div id="Save" class="popup-foot-shur save-checking">确定</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/EXT/ext-3.3.3/ext.js"></script>
+    <script src="/jslibrary/sfdc/main_source.js"></script>
+    <script src="/jslibrary/jslabels/zh_CN.js"></script>
+    <script src="/jslibrary/sfdc/Chatter.js"></script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/alert.js"></script>
+    <script>window.editPage_DLBEInstance = new DuelingListBoxesElement(['duel_select_0', 'duel_select_1'], 'editPage_duel_errorMsg');</script>
+
+    <script>
+        $('#b1').click(function () {
+            $obj = $('table select option:selected').clone(true);
+            if ($obj.size() == 0) {
+                //alert("璇疯嚦灏戦€夋嫨涓€鏉�!");
+            }
+            $('.checkselect').eq(0).append($('table select option:selected').clone())
+            $('#duel_select_1').append($obj);
+            $('table select option:selected').remove();
+        });
+
+        //$('#b2').click(function () {
+        //    $('#s2').append($('#s1 option'));
+        //});
+
+        $('#b3').click(function () {
+            $obj = $('table select option:selected').clone(true);
+            $('.checkselect').eq(0).find('option[value=' + $('table select option:selected').attr('value')+ ']').remove()
+            if ($obj.size() == 0) {
+                //alert("璇疯嚦灏戦€夋嫨涓€鏉�!");
+            }
+            $('#duel_select_0').append($obj);
+            $('table select option:selected').remove();
+        });
+
+        //$('#b4').click(function () {
+        //    $('#s1').append($('#s2 option'));
+        //});
+
+        $('#closeds').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        $('#closedsa').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+    </script>
+    <script>
+        var objectTypeCode = getQueryString('objectTypeCode')
+        var id = getQueryString('relatedListId')
+        //console.log(objectTypeCode)
+        //console.log(id)
+        var url = ''
+        ajaxMethodGetAsyncData('layout.relatedlistitem.load', { id: id },false, renderOptions)
+        function renderOptions(data)
+        {
+            var selectFields  =null;
+            if (data.item.defaultColumns)
+            {
+               selectFields = data.item.defaultColumns
+            }
+
+
+            $('#duel_select_0').find('option').remove();
+            $('#duel_select_1').find('option').remove();
+
+            var datas = data.item.selectableColumns
+
+            console.log(datas)
+
+            var isSelected = isSelectedField(selectFields, datas);
+
+            $('.checkselect').eq(0).val(data.item.sortField)
+            $('.checkselect').eq(1).find('input[value=' + data.item.sortDir + ']').prop('checked', 'checked')
+
+            datas2 = data.item.selectableColumns
+            for (var i = 0; i < datas2.length; i++) {
+                var res = datas2[i]
+                var name = res
+                var label = ''
+                for (var j = 0; j < $('#duel_select_1 option').length; j++) {
+                    if(name==$('#duel_select_1 option').eq(i).attr('value')){
+                        $('#duel_select_1').append($('#s1 option').eq(i))
+                    }
+                }
+
+            }
+            $('option').dblclick(function () {
+                var flag = $(this).parent().attr('id');
+                if (flag == "duel_select_0") {
+                    var $obj = $(this).clone(true);
+                    $('#duel_select_1').append($obj);
+                    $('.checkselect').eq(0).append($($obj).clone())
+                    $(this).remove();
+                } else {
+                    var $obj = $(this).clone(true);
+                    $('#duel_select_0').append($obj);
+                    $('.checkselect').eq(0).find('option[value=' + $($obj).attr('value') + ']').remove()
+                    $(this).remove();
+                }
+            });
+        }
+
+        function isSelectedField(selectFields,datas)
+        {
+            if (selectFields) {
+                for (var r = 0; r < selectFields.length+1; r++) {
+                    var selField = selectFields[r];
+                    for (var i = 0; i < datas.length; i++) {
+                        var res = datas[i];
+                        var label = res.label;
+                        var name = res.name;
+                        if(selField==name)
+                        {
+                            $('#duel_select_1').append('<option value="'+name+'">'+label+'</option>');
+                            $('#duel_select_0').find('option[value="'+name+'"]').remove()
+                            $('.checkselect').eq(0).append('<option value="'+name+'">'+label+'</option>')
+                        }
+                        else if(r==0)
+                        {
+                            $('#duel_select_0').append('<option value="'+name+'">'+label+'</option>');
+                        }
+                    }
+
+                }
+            }else{
+                for (var i = 0; i < datas.length; i++) {
+                    var res = datas[i];
+                    var label = res.label;
+                    var name = res.name;
+                    $('#duel_select_0').append('<option value="'+name+'">'+label+'</option>');
+                }
+            }
+
+
+        }
+
+        $('#Save').click(function(){
+            var displayCols = ''
+            $('#duel_select_1 option').each(function(){
+                if(displayCols==''){
+                    displayCols = $(this).val()
+                }else{
+                    displayCols+=","+$(this).val()
+                }
+            })
+            var SortField = $('.checkselect').eq(0).val()
+            var sortDir = $('input[name="sortDir"]:checked').val()
+
+            var id = getQueryString('relatedListId')
+            var entityId = parent.getQueryString('id')
+
+            var d = {
+                id:id,
+                SelectedColumns: displayCols,
+                sort: SortField,
+                order: sortDir,
+                entityId: entityId
+            }
+            ajaxMethodPostData('layout.relatedlistitem.save', d, function (data) {
+                parent.$('#iframe').hide();
+                parent.$('.popup-mask').hide();
+                parent.success2('字段选择成功')
+                parent.getrelated()
+            })
+        })
+        $('.close').click(function () {
+            parent.$('#iframe').hide()
+            parent.$('.popup-mask').hide()
+        })
+
+        function success(type) {
+            parent.$("body").append('<div class="success green">'
+          +'        <span class="success_icon">'
+          +'        <i class="iconfont icon-duihao"></i>'
+          +'        </span>'
+          +'        <div class="toastContent slds-notify__content" style="flex: 1;">'
+          +'        <div class="slds-align-middle slds-hyphenate" style="font-size: 16px;">'
+          +'        <span class="toastMessage slds-text-heading--small forceActionsText">'+type+'</span>'
+          +'</div>'
+          +'</div>'
+          +'<button class="button">'
+          +'<i class="iconfont icon-cuohao"></i>'
+          +'</button>'
+          +'</div>')
+            setTimeout(function(){
+                parent.$(".success").remove()
+            },2000)
+        }
+    </script>
+</body>
+</html>

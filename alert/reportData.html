@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css">
+    <link rel="stylesheet" href="/css/themes/lightning/all.css">
+    <link rel="stylesheet" href="/css/themes/lightning/header.css">
+    <link rel="stylesheet" href="/css/themes/lightning/icon.css">
+    <link type="text/css" rel="stylesheet" href="/css/light/index.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/tasklist.css">
+    <link rel="stylesheet" href="/css/themes/lightning/emplst.css">
+    <link rel="stylesheet" href="/css/themes/lightning/bar.css">
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <script src="/easyui/jquery.min.js"></script>
+    <script src="/easyui/jquery.easyui.min.js"></script>
+    <script src="/easyui/easyui-lang-zh_CN.js"></script>
+    <script src="/easyui/datagrid-cellediting.js"></script>
+    <link href="/css/themes/lightning/date.css" rel="stylesheet" />
+    <link href="/css/themes/lightning/instypeview.css" rel="stylesheet" />
+    <link href="/css/attendtable.css" rel="stylesheet" />
+    <script src="/jslibrary/sfdc/hr.js"></script>
+    <script src="/attd/rpts/attendmonthStat.js"></script>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css">
+
+    <style>
+        .triggerLink.slds-button.slds-button--reset.slds-type-focus.slds-truncate.forceListViewPicker {
+            border: 0;
+        }
+
+        .slds-grid {
+            float: left;
+        }
+
+        .slds-grid-right {
+            float: right;
+        }
+
+        .slds-button-group.actionBarButtonGroup {
+            margin-left: 10px;
+        }
+
+            .slds-button-group.actionBarButtonGroup > div button {
+                width: 32px;
+                height: 32px;
+                background-color: #fff;
+                border-radius: .25rem;
+                line-height: 1;
+                vertical-align: middle;
+                color: rgb(112, 110, 107);
+                border: 1px solid rgb(221, 219, 218);
+                transition: border .15s linear;
+                border-color: rgb(221, 219, 218);
+                font-size: .75rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .slds-button-group.actionBarButtonGroup > button {
+                background-color: white;
+                padding-left: 15px;
+                padding-right: 15px;
+                line-height: 30px;
+            }
+
+                .slds-button-group.actionBarButtonGroup > button svg {
+                    height: 25px;
+                    width: 25px;
+                    margin-top: -3px;
+                    vertical-align: middle;
+                }
+
+            .slds-button-group.actionBarButtonGroup > div button svg {
+                margin-top: 2px;
+            }
+
+        #edit-btn {
+            border-right: 0px;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        #more-btn {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .datagrid-view2 .datagrid-header {
+            width: 100% !important;
+        }
+
+        .panel-body {
+            height: 100% !important;
+        }
+
+        .datagrid-view {
+            height: calc(100% - 35px) !important;
+        }
+
+        .rili_calender_header_jiantou > div {
+            float: right;
+        }
+
+        .rili_rili ul li {
+            cursor: pointer;
+        }
+
+        .slds-page-header.slds-page-header_joined {
+            border: 0;
+        }
+
+        .slds-page-header .slds-grid {
+            float: right;
+        }
+
+        .slds-button {
+            height: 32px;
+        }
+
+        .slds-page-header {
+            background-color: white;
+        }
+
+        .action-bars {
+            position: relative;
+        }
+
+        #NotFullAttend {
+            opacity: 1;
+            -webkit-appearance: none;
+            border: 1px solid #c9c9c9;
+            border-radius: 2px;
+            height: 16px;
+            width: 16px;
+            margin-top: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+            #NotFullAttend:checked {
+                border-color: rgb(21, 137, 238);
+            }
+
+        .DeptsContainor {
+            margin-right: 10px;
+        }
+
+            .DeptsContainor span {
+                display: block;
+                background-color: #1b5297;
+                color: white;
+                border-radius: 14px;
+                float: left;
+                margin-left: 10px;
+                height: 25px;
+                line-height: 25px;
+                padding: 0 10px;
+                margin-top: 4px;
+            }
+    </style>
+</head> 
+<body>
+    <div class="rows centerRegion  biaoge">
+        <div class="slds-gird listDisplays safari-workaround-anchor " style="width: 100%; height: 100%;">
+            <div class="centerRegions">
+                <div class="oneConsoleObjectHome">
+                    <div class="test-listViewManager slds-grid slds-grid--vertical forceListViewManager">
+                        <div class="slds-page-header--object-home">
+                            <div class="slds-grid">
+                                <div class="lds-has-flexi-truncate">
+                                    <div class="slds-media slds-grow slds-no-space">
+                                        <div class="slds-media__figure">
+                                            <span class="slds-icon_container">
+                                                <div class="slds-icon forceEntityIcon" style="background-color: #4BC076;">
+                                                    <span class="uiImage">
+                                                        <img src="/css/themes/lightning/images/task_120.png" alt="" style="width: 100%;">
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        <div class="slds-media__body slds-align-middle">
+                                            <nav style="display: block;">
+                                                <ol class="slds-list--horizontal">
+                                                    <li class="slds-breadcrumb__item slds-line-height--reset">
+                                                        <span class="uiOutputText">考勤报表
+                                                        </span>
+                                                    </li>
+                                                </ol>
+                                            </nav>
+                                            <h1 class="slds-page-header__title slds-text-color--default slds-p-right--x-small">
+                                                <div class="triggerLink slds-button slds-button--reset slds-type-focus slds-truncate forceListViewPicker" style="width: 98px; height: 27px; background: none;">
+                                                    <div class="triggerLinkTextAndIconWrapper slds-p-right--x-large">
+                                                        <span aria-valuemax="triggerLinkText selectedListView uiOutputText" id="pageTitle">月度汇总</span>
+
+                                                    </div>
+                                                </div>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-grid-right">
+                                <div class="slds-col slds-no-flex slds-grid slds-align-top slds-p-bottom_xx-small">
+                                    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+                                        <div class="action-bars">
+                                            <div class="slds-button-group actionBarButtonGroup" role="group">
+                                                 <button style="border-right:0;border-radius:0.25rem  0 0 0.25rem " class="slds-button slds-button_neutral action-bar-action-LightningReportEditAction reportAction report-action-LightningReportEditAction" type="button" id="btnLeaveTypeSummary">
+                                                                考勤明细查询</button>
+                                                <button style="border-right:0;border-radius: 0"id="ExportButton" class="slds-button slds-button_neutral action-bar-action-LightningReportEditAction reportAction report-action-LightningReportEditAction" type="button" id="edit-btn">
+                                                    导出Excel
+                                                </button>
+                                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-button_last" id="P3YyHsNNQe">
+                                                    <button class="slds-button slds-button_icon-border ignore-click-P3YyHsNNQe" tabindex="0" type="button" aria-expanded="false" aria-haspopup="true" id="more-btn">
+                                                        <svg aria-hidden="true" class="slds-button__icon" viewBox="0 0 24 24">
+                                                            <path d="M3.8 6.5h16.4c.4 0 .8.6.4 1l-8 9.8c-.3.3-.9.3-1.2 0l-8-9.8c-.4-.4-.1-1 .4-1z"></path>
+                                                        </svg>
+                                                        <span class="slds-assistive-text">更多操作</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <ul class="remarkList" aria-labelledby="dropdownMenu1" id="List" style="display: none;">
+                                                <li id="Li2" class="SalaryPostChange"><a onclick="showSelectFields();">按列导出考勤</a></li>
+                                                <!--<li id="Li3" class="SalaryPostChange"><a>打卡汇总</a></li>-->
+                                               <!-- <li id="Li4" class="SalaryPostChange"><a>按照部门导出排班</a></li>-->
+                                                <li id="Li5" class="SalaryPostChange"><a onclick="ExportMonthState(1)">月考勤汇总导出</a></li>
+                                                <li id="remarksalert" class="SalaryPostChange"><a onclick="ExportMonthState(0)">月考勤人员明细导出</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slds-page-header slds-page-header_joined" style="padding: 0.6rem 1rem; border-radius: 0; box-shadow: none;">
+
+                            <div class="slds-grid">
+                                <div class="slds-col slds-has-flexi-truncate">
+                                    <div class="slds-media slds-grow slds-no-space slds-no-space2">
+                                        <div class="slds-media__body">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-align-top slds-no-flex slds-grid">
+                                    <div class="rili_calender_header_jiantou">
+                                        <div id="DeptsContainor" class="rili_rili">
+                                            <a href="javascript:;" class="rili_rili_a">
+                                                <span>选择部门</span>
+                                                <i class="iconfont icon-f11 rili_rili_iconfont rili_rili_right"></i>
+                                            </a>
+                                        </div>
+                                        <div id="vueapp" style="margin:8px;" >
+                                            <span></span>
+                                            <el-select collapse-tags v-model="groups" multiple placeholder="请选择小组">
+                                                <el-option v-for="item in options"
+                                                           :key="item.ID"
+                                                           :label="item.Name"
+                                                           :value="item.ID">
+                                                </el-option>
+                                            </el-select>
+                                            <span @click="opengroupchoose" style="border:1px solid #dedede;height:32px;line-height:32px;border-radius:4px;padding:0 5px;cursor:pointer;display:inline-block;">搜索小组</span>
+                                        </div>
+                                        <link href="/element/element.css" rel="stylesheet" />
+
+                                        
+                                        <div class="rili_rili">
+                                            <a href="javascript:;" class="rili_rili_a" id="SelectedEmpCategoryCode">
+                                                <span>选择编制类型</span>
+                                                <i class="iconfont icon-f11 rili_rili_iconfont rili_rili_right"></i>
+                                            </a>
+                                            <ul>
+                                                <li value="-1">选择编制类型</li>
+                                                <li value="0">在编</li>
+                                                <li value="1">合同</li>
+                                                <li value="3">离职</li>
+                                                <li value="4">退休</li>
+                                                <li value="6">其它</li>
+                                                <li value="21">劳务派遣</li>
+                                                <li value="22">临时人员</li>
+                                                <li value="40">退休返聘</li>
+                                            </ul>
+                                        </div>
+                                        <div class="rili_rili">
+                                            <a href="javascript:;" class="rili_rili_a">
+                                                <span id="SelectedYear"></span>
+                                                <i class="iconfont icon-f11 rili_rili_iconfont rili_rili_right"></i>
+                                            </a>
+                                            <ul>
+                                                <li>2015</li>
+                                                <li>2016</li>
+                                                <li>2017</li>
+                                                <li>2018</li>
+                                                <li>2019</li>
+                                                <li>2020</li>
+                                                <li>2021</li>
+                                                <li>2022</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="rili_rili">
+                                            <a href="javascript:;" class="rili_rili_a">
+                                                <span id="SelectedMonth"></span>
+                                                <i class="iconfont icon-f11 rili_rili_iconfont rili_rili_right"></i>
+                                            </a>
+                                            <ul>
+                                                <li>1</li>
+                                                <li>2</li>
+                                                <li>3</li>
+                                                <li>4</li>
+                                                <li>5</li>
+                                                <li>6</li>
+                                                <li>7</li>
+                                                <li>8</li>
+                                                <li>9</li>
+                                                <li>10</li>
+                                                <li>11</li>
+                                                <li>12</li>
+                                            </ul>
+                                        </div>
+                                        <div class="head-btns" id="photo">
+                                            <span>只查询有请假的数据</span>
+                                            <input type="checkbox" name="NotFullAttend" id="NotFullAttend" />
+                                        </div>
+                                        <button id="RefreshButton" class="rili_back rili_filed" style="height: 2.1rem; border-radius: .25rem;">
+                                            <i class="iconfont icon-refresh"></i>
+                                        </button>
+                                        <div class="head-btns">
+                                            <button id="QueryButton" class="headbtn">报表查询</button>
+                                        </div>
+                                        <div class="head-btns">
+                                            <button id="CaculateButton" class="headbtn">重新计算</button>
+                                        </div>
+                                        <div class="head-btns" style="border: 0">
+                                            <!--<button id="btnSetGridColumn" class="headbtn">设置显示列</button>-->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="container1">
+                            <table id="reportOutput" striped="true" rownumbers="true" fix="true" fitcolumns="true" style="height: 100%;">
+                                <thead>
+                                    <tr>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+
+    <script>
+
+        $(".rili_rili").click(function () {
+            $(".rili_rili ul").hide()
+            $(this).find("ul").show()
+
+            return false;
+        })
+        $(document).click(function () {
+            $(".rili_rili ul").hide()
+        })
+        $(".rili_rili ul li").click(function () {
+            $(this).parent().prev().find("span").html($(this).html()).attr('value', $(this).attr('value'))
+            $(this).parent().hide()
+            return false;
+        })
+        $("#P3YyHsNNQe").click(function () {
+            $(".remarkList").show()
+            return false;
+        })
+        $(document).click(function () {
+            $(".remarkList").hide()
+
+        })
+        $('#DeptsContainor').click(function () {
+            var id = $(this).attr('id')
+            parent.$('#changeDiv2').css('display', 'block')
+            parent.$('#iframe1').attr('src', '/alert/bumenxuanze.html?lkn=' + id)
+        })
+        function showSelectFields(){
+            parent.$('#changeDiv2').css('display', 'block')
+            parent.$('#iframe1').attr('src', '/alert/attend/showSelectFields.html?')
+        }
+        $('#btnLeaveTypeSummary').click(function () {
+            parent.window.location.href = '/attd/rpts/AttendLeavebySummy.aspx?t=HRAttendMonthReport';
+            ///_ui/core/attend/ui/AttendQueryPage
+        })
+    </script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script>
+    var vum = new Vue({
+        el: '#vueapp',
+        data: {
+            groups: [],
+            options:[]
+        },
+        created: function () {
+            this.getData()
+        },
+        methods: {
+            choosegroup: function (data) {
+                this.groups = data
+            },
+            opengroupchoose: function () {
+                var ids = this.groups.join(',')
+                parent.$('#iframe1').attr('src', '/alert/choosegroup.html?ids=' + ids)
+                parent.$('#changeDiv2').show()
+            },
+            getData: function () {
+                var that = this
+                function callback(data) {
+                    that.options = data.listData;
+                }
+                d = {
+                    Lktp: 30041,
+                }
+                ajaxMethodGetData('ui.entity.lookup', d, callback)
+
+            },
+        }
+    })
+    </script>
+</body>
+</html>

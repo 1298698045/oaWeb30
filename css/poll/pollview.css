@@ -1,0 +1,10 @@
+﻿#pollview-iframe {
+    border:0;
+    width:100%;
+    height:600px;
+    background-color:#f4f6f8;
+    margin-top:-15px;
+}
+body {
+    margin-top:-15px;
+}

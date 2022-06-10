@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+
+  <Action name="workflow.suggestion.mine.getlist" type="Youyou.Workflow.Actions.SuggestionMineGetlist,OACore" desc="获取数量"></Action>
+  
+  <!--工作日志-->
+  <Action name="category.process.getlist" type="Youyou.Actions.Workflow.WFCategoryProcessGetList,Business"></Action>
+  <Action name="process.category.getlist" type="Youyou.Workflow.Actions.ProcessCategoryGetList,OACore"></Action>
+  <Action name="wf.process.search" type="Youyou.Actions.Workflow.WFProcessSearch,Business"></Action>
+  <Action name="wf.step.transition.getlist" type="Youyou.Actions.Workflow.WFStepTransitionGetList,Business" desc="获取下一步流转方向"></Action>
+  <Action name="wf.step.participator.getlist" type="Youyou.Actions.Workflow.WFStepParticipatorGetList,Business" desc="获取节点办理人员"></Action>
+  <Action name="wf.instance.entity.create" type="Supermore.Workflow.Actions.WFInstanceEntityCreate,Business"></Action>
+
+  <!--<Action name="process.instance.create" type="Youyou.Workflow.Actions.ProcessInstanceCreate,Business" desc="创建流程实例"></Action>-->
+  <Action name="process.instance.create" type="Youyou.Workflow.Actions.ProcessInstanceCreate,OACore" desc="创建流程实例"></Action>
+  
+  <Action name="process.entity.instance.submit" type="Youyou.Workflow.Actions.ProcessEntityInstanceSubmit,OACore" desc="先创建表单数据，然后同步到流程实例"></Action>
+  
+  <Action name="process.search" type="Youyou.Workflow.Actions.ProcessSearch,OACore"  desc="流程搜索"></Action>
+  
+  <Action name="process.step.getlist" type="Youyou.Workflow.Actions.ProcessStepGetlist,OACore"  desc="获取流程步骤"></Action>
+  <Action name="process.steppri.get" type="Youyou.Workflow.Actions.ProcessSteppriGet,OACore"  desc="获取流程步骤权限"></Action>
+  <Action name="process.steppri.save" type="Youyou.Workflow.Actions.ProcessSteppriSave,OACore"  desc="保存流程步骤权限"></Action>
+  <Action name="process.formfield.getlist" type="Youyou.Workflow.Actions.ProcessFormFieldGetlist,OACore"  desc="流程字段对应的"></Action>
+
+  <Action name="process.entity.attribute.getlist" type="Youyou.Workflow.Actions.ProcessEntityAttributeGetlist,OACore"  desc="获取流程相关字段"></Action>
+  
+  <Action name="process.transition.save" type="Youyou.Workflow.Actions.ProcessTransitionSave,OACore"  desc="节点转移规则保存"></Action>
+  <Action name="process.transition.get" type="Youyou.Workflow.Actions.ProcessTransitionGet,OACore"  desc="获取节点转移规则"></Action>
+  
+  <Action name="process.participantor.save" type="Youyou.Workflow.Actions.ProcessParticipantorSave,OACore"  desc="保存节点办理人员"></Action>
+  <Action name="process.participantor.getlist" type="Youyou.Workflow.Actions.ProcessParticipantorGetlist,OACore"  desc="获取节点办理人员"></Action>
+  <Action name="process.step.participator.getlist" type="Youyou.Workflow.Actions.ProcessStepParticipatorGetlist,OACore"  desc="获取流程步骤设置执行人"></Action>
+  <Action name="process.step.actualparticipator.getlist" type="Youyou.Workflow.Actions.ProcessStepActualParticipatorGetlist,OACore"  desc="获取流程步骤实际执行人"></Action>
+  
+  
+
+  <Action name="process.all.nodes" type="Youyou.Workflow.Actions.ProcessAllNodes,OACore"  desc="获取流程节点"></Action>
+  
+  <Action name="process.steptree.get" type="Youyou.Workflow.Actions.ProcessStepTreeGet,OACore"  desc="获取流程所有节点树"></Action>
+  
+  <Action name="process.academiceventrulebase.count" type="Youyou.Workflow.Actions.ProcessAcademicEventRuleBaseCount,OACore"  desc="获取外出参加学术会规则学习次数"></Action>
+  <Action name="process.academicevent.count" type="Youyou.Workflow.Actions.ProcessAcademicEventCount,OACore"  desc="获取统计职位对应的学习次数"></Action>
+  
+  
+  
+  <Action name="process.favorite.add" type="Youyou.Workflow.Actions.ProcessFavoriteAdd,OACore"  desc="流程搜索"></Action>
+  <Action name="process.favorite.delete" type="Youyou.Workflow.Actions.ProcessFavoriteDelete,OACore"  desc="流程搜索"></Action>
+  <Action name="process.favorite.getlist" type="Youyou.Workflow.Actions.ProcessFavoriteGetlist,OACore"  desc="获取收藏夹"></Action>
+  <Action name="process.latestused.getlist" type="Youyou.Workflow.Actions.ProcessLatestUsedGetlist,OACore" desc="最近使用流程"></Action>
+  
+  <Action name="process.form.search" type="Youyou.Workflow.Actions.ProcessFormSearch,OACore"  desc="获取对象表单"></Action>
+  
+  <Action name="workflow.gettree" type="Supermore.Workflow.Actions.ProcessGetTree,Business"></Action>
+  <!--<Action name="wf.instance.stat" type="Youyou.Actions.Workflow.WFInstanceStat,Business" desc="统计待办事务"></Action>-->
+  <Action name="wf.instance.stat" type="Youyou.Workflow.Actions.WFInstanceStat,OACore" desc="事务状态统计"></Action>
+  <Action name="wf.instance.export" type="Youyou.Workflow.Actions.WFInstanceExport,OACore" desc="事务管理导出"></Action>
+  
+  <Action name="process.instance.waitingtask.export" type="Youyou.Workflow.Actions.ProcessInstanceWaitingTaskExport,OACore" desc="已办事务导出"></Action>
+  <Action name="process.instance.owner.export" type="Youyou.Workflow.Actions.ProcessInstanceOwnerExport,OACore" desc="我的发起导出"></Action>
+  <Action name="process.instance.myread.export" type="Youyou.Workflow.Actions.ProcessInstanceMyReadExport,OACore" desc="收到的传阅导出"></Action>
+  <Action name="process.instance.createdread.export" type="Youyou.Workflow.Actions.ProcessInstanceCreatedReadExport,OACore" desc="我的传阅导出"></Action>
+  
+  <Action name="wf.instanceowner.search" type="Supermore.Actions.Workflow.WFInstanceOwnerSearch,Business" desc="我发起，已退回"></Action>
+  <Action name="workflow.instanceowner.search" type="Supermore.Actions.Workflow.WFInstanceOwnerSearch,Business" desc="我发起，已退回"></Action>
+  <Action name="process.instanceowner.search" type="Youyou.Workflow.Actions.ProcessInstanceOwnerSearch,OACore" desc="查询，我发起，已退回，草稿想"></Action>
+  <Action name="process.instance.owner.search" type="Youyou.Workflow.Actions.ProcessInstanceOwnerSearch,OACore" desc="查询，我发起，已退回，草稿想"></Action>
+  <Action name="process.instance.finishedtask.search" type="Youyou.Workflow.Actions.ProcessInstanceFinishedTaskSearch,OACore" desc="待办事务"></Action>
+  <Action name="process.instance.waitingtask.search" type="Youyou.Workflow.Actions.ProcessInstanceWaitingTaskSearch,OACore" desc="已办事务"></Action>
+  <Action name="process.instance.canceltask.search" type="Youyou.Workflow.Actions.ProcessInstanceCancelTaskSearch,OACore" desc="退件箱"></Action>
+  
+  <Action name="process.instance.favorite.search" type="Youyou.Workflow.Actions.ProcessInstanceFavoriteSearch,OACore" desc="我的收藏"></Action>
+  <Action name="process.instance.fowardreadlog.search" type="Youyou.Workflow.Actions.ProcessInstanceForwardReadLogSearch,OACore" desc="收到传阅"></Action>
+
+  <Action name="process.instance.delete" type="Youyou.Workflow.Actions.ProcessInstanceDelete,OACore" desc="流程示例删除"></Action>
+
+  <Action name="process.instance.privilege.search" type="Youyou.Workflow.Actions.ProcessInstancePrivilegeSearch,OACore" desc="分权事务查询"></Action>
+
+  <Action name="process.instance.notifyread.search" type="Youyou.Workflow.Actions.ProcessInstanceNotifyreadSearch,OACore" desc="收传阅和我传阅"></Action>
+  
+  <Action name="process.instance.rulelog.getlist" type="Youyou.Workflow.Actions.ProcessInstanceRulelogGetlist,OACore" desc="流转日志"></Action>
+  <Action name="process.instance.readlog.getlist" type="Youyou.Workflow.Actions.ProcessInstanceReadlogGetlist,OACore" desc="阅读日志"></Action>
+  <Action name="process.instance.related.getlist" type="Youyou.Workflow.Actions.ProcessInstanceRelatedGetlist,OACore" desc="获取流程关联事务"></Action>
+  <Action name="process.instance.related.delete" type="Youyou.Workflow.Actions.InstanceRelatedDelete,OACore" desc="删除流程关联事务"></Action>
+  
+  <Action name="workflow.counts.get" type="Supermore.WorkflowReport.Actions.WFCountsGet,WorkReportCore" desc="获取数量"></Action>
+
+  <Action name="workflow.dept.notfinished.get" type="Supermore.WorkflowReport.Actions.WFDeptNotFinishedGet,WorkReportCore" desc="获取部门待办数量\预期数量"></Action>
+  <Action name="workflow.deptuser.notfinished.get" type="Supermore.WorkflowReport.Actions.WFDeptUserNotFinishedGet,WorkReportCore" desc="获取部门的用户待办数量"></Action>
+
+  <Action name="workflow.user.notfinished.get" type="Supermore.WorkflowReport.Actions.WFUserNotFinishedGet,WorkReportCore" desc="获取用户待办数量\预期数量"></Action>
+  <Action name="workflow.user.notfinishedlist.get" type="Supermore.WorkflowReport.Actions.WFUserNotFinishedListGet,WorkReportCore" desc="获取用户待办数量列表"></Action>
+  
+  
+  
+
+  <Action name="workflow.process.notfinished.get" type="Supermore.WorkflowReport.Actions.WFProcessInstanceNotFinishedGet,WorkReportCore" desc="获取流程模板的实例数量"></Action>
+  <Action name="workflow.process.notfinishedlist.get" type="Supermore.WorkflowReport.Actions.WFProcessInstanceNotFinishedListGet,WorkReportCore" desc="获取流程模板的实例数量列表"></Action>
+  <Action name="workflow.processuser.notfinishedlist.get" type="Supermore.WorkflowReport.Actions.WFProcessUserNotFinishedListGet,WorkReportCore" desc="获取用户流程模板待办数量列表"></Action>
+
+
+  <Action name="workflow.process.overdue.get" type="Supermore.WorkflowReport.Actions.WFProcessInstanceOverdueGet,WorkReportCore" desc="(超期报表)获取流程模板的实例数量"></Action>
+  <Action name="workflow.user.overdue.get" type="Supermore.WorkflowReport.Actions.WFProcessUserOverdueGet,WorkReportCore" desc="(超期报表)获取用户待办数量\预期数量"></Action>
+  
+
+
+  <Action name="process.approve.entrust" type="Youyou.Workflow.Actions.ProcessApproveEntrust,OACore" desc="委托"></Action>
+  <Action name="process.approve.jump" type="Youyou.Workflow.Actions.ProcessApproveJump,OACore" desc="跳转"></Action>
+  <Action name="process.approve.addparticipator" type="Youyou.Workflow.Actions.ProcessApproveAddparticipator,OACore" desc="加签"></Action>
+  <Action name="process.instance.insertapprove" type="Youyou.Workflow.Actions.ProcessInstanceInsertApprove,OACore" desc="加签"></Action>
+  <Action name="process.instance.relate" type="Youyou.Workflow.Actions.ProcessInstanceRelate,OACore" desc="关联"></Action>
+  <Action name="process.instance.remind" type="Youyou.Workflow.Actions.ProcessInstanceRemind,OACore" desc="催办"></Action>
+  <Action name="process.instance.cancel" type="Youyou.Workflow.Actions.ProcessInstanceCancel,OACore" desc="收回撤销"></Action>
+  <Action name="process.instance.cc" type="Youyou.Workflow.Actions.ProcessInstanceCc,OACore" desc="传阅"></Action>
+  <Action name="process.rulelog.rehandle" type="Youyou.Workflow.Actions.ProcessRulelogRehandle,OACore" desc="重办"></Action>
+    
+  <Action name="workflow.search.get" type="Supermore.WorkflowReport.Actions.WFSearchGet,WorkReportCore" desc="获取用户流程模板待办数量列表"></Action>
+ 
+  
+  <Action name="workflow.archive" type="Supermore.WorkflowReport.Actions.WorkflowArchive,WorkReportCore" desc="收发文归档"></Action>
+  <Action name="workflow.archive.cancel" type="Supermore.WorkflowReport.Actions.WorkflowCancelArchive,WorkReportCore" desc="收发文取消归档"></Action>
+  <Action name="workflow.archive.dept.list" type="Supermore.WorkflowReport.Actions.WorkflowArchiveDeptList,WorkReportCore" desc="收发文归档所属部门"></Action>
+  <Action name="workflow.rename" type="Supermore.WorkflowReport.Actions.WorkflowRename,WorkReportCore" desc="收发文重命名"></Action>
+  
+  <Action name="wf.performance.employee.toplist" type="Youyou.Workflow.WfPerformanceEmployeeTopList,AppBusiness" desc="获取员工逾期排行"></Action>
+  <Action name="wf.performance.dept.toplist" type="Youyou.Workflow.WfPerformanceDeptTopList,AppBusiness" desc="获取部门逾期排行"></Action>
+  <Action name="wf.employee.process.overdue.stat" type="Youyou.Workflow.EmployeeProcessOverdueStat,AppBusiness" desc="获取员工逾期流程统计"></Action>
+  <Action name="wf.employee.process.overdue.list" type="Youyou.Workflow.EmployeeProcessOverdueList,AppBusiness" desc="获取某人员所有逾期流程明细"></Action>
+
+  <Action name="wf.from.export" type="Youyou.Workflow.WFFormToExport,WorkReportCore" desc="表单导出pdf,doc文件"></Action>
+  
+  <Action name="wf.related.getlist" type="Youyou.Workflow.FlowRelatedInsts,WorkReportCore" desc="查询关联事务列表"></Action>
+  <Action name="wf.related.completelist" type="Youyou.Workflow.ProcessCompleteSearch,WorkReportCore" desc="查询已办事务"></Action>
+  <Action name="wf.related.mylist" type="Youyou.Workflow.MyCreateProcessSearch,WorkReportCore" desc="查询我发起事务（不包含草稿）"></Action>
+  <Action name="wf.related.adds" type="Youyou.Workflow.AddFlowInstance,WorkReportCore" desc="添加关联事务列表"></Action>
+  
+
+  <Action name="prcoess.instance.publishtocontent" type="Youyou.workflow.Actions.ProcessInstancePublishToContent,OACore" desc="发布流程到内容"></Action>
+
+  <Action name="process.signature.search" type="Youyou.workflow.Actions.ProcessSignatureSearch,OACore" desc="签名搜索"></Action>
+  <Action name="process.signature.upload" type="Youyou.workflow.Actions.ProcessSignatureUpload,OACore" desc="签名上传"></Action>
+  <Action name="process.signature.delete" type="Youyou.workflow.Actions.ProcessSignatureDelete,OACore" desc="签名删除"></Action>
+
+  <Action name="process.request.collection" type="Youyou.workflow.Actions.ProcessRequestCollection,OACore" desc="我的请求|收藏"></Action>
+
+  <!--数据权限-->
+  <Action name="process.datapri.getlist" type="Youyou.Workflow.Actions.ProcessDatapriGetlist,OACore" desc="数据权限列表"></Action>
+  <Action name="process.datapri.add" type="Youyou.Workflow.Actions.ProcessDatapriAdd,OACore" desc="数据权限添加"></Action>
+  <Action name="process.datapri.update" type="Youyou.Workflow.Actions.ProcessDatapriUpdate,OACore" desc="数据权限更新"></Action>
+  <!--数据权限-->
+  <Action name="process.usepri.getlist" type="Youyou.Workflow.Actions.ProcessUsepriGetlist,OACore" desc="发起权限列表"></Action>
+  <Action name="process.usepri.add" type="Youyou.Workflow.Actions.ProcessUsepriAdd,OACore" desc="发起权限添加"></Action>
+  
+  <!--流程创建-->
+  <Action name="process.create" type="Youyou.Workflow.Actions.ProcessAdd,OACore" desc="流程创建"></Action>
+  <Action name="process.personal.settings.getlist" type="Youyou.Workflow.Actions.ProcessPersonalSettingsList,OACore" desc="获取个人设置"></Action>
+  <!--<Action name="process.personal.settings.add" type="Youyou.Workflow.Actions.ProcessPersonalSettingsAdd,OACore" desc="添加个人设置"></Action>-->
+  <Action name="process.personal.settings.update" type="Youyou.Workflow.Actions.ProcessPersonalSettingsUpdate,OACore" desc="更新个人设置"></Action>
+  <!--湖南肿瘤 归档到文件-->
+  <Action name="prcoess.archiveto.file" type="Youyou.Workflow.Actions.ArchiveToFile,OACore" desc="正文及附件到文件"></Action>
+
+  <Action name="process.participantor.upgrade" type="Youyou.Workflow.Actions.ProcessParticipantorUpgrade,OACore" desc="办理人员数据转换"></Action>
+  <Action name="process.delete" type="Youyou.Workflow.Actions.ProcessDelete,OACore" desc="流程删除"></Action>
+  <!--流程统计-->
+  <Action name="process.count.summary" type="Youyou.Workflow.Actions.ProcessCountSummary,OACore" descc="摘要统计结果"></Action>
+  <Action name="process.month.summary" type="Youyou.Workflow.Actions.ProcessMonthSummary,OACore" descc="月份统计图表"></Action>
+  <Action name="process.type.order.list" type="Youyou.Workflow.Actions.ProcessTypeOrderList,OACore" descc="流程类型创建数量排名图表"></Action>
+  <Action name="process.created.count.list" type="Youyou.Workflow.Actions.ProcessCreatedCountList,OACore" descc="流程创建数量列表"></Action>
+  <Action name="process.created.count.export" type="Youyou.Workflow.Actions.ProcessCreatedCountExport,OACore" descc="流程创建数量列表导出"></Action>
+
+  <Action name="process.handle.statistics.byuser" type="Youyou.Workflow.Actions.ProcessHandleStatisticsByUser,OACore" descc="流程办理统计按人员"></Action>
+  <Action name="process.handle.statistics.bybusiness" type="Youyou.Workflow.Actions.ProcessHandleStatisticsByBusiness,OACore" descc="流程办理统计按部门"></Action>
+
+  <Action name="process.label.getlist" type="Youyou.Workflow.Actions.ProcessLabelGetlist,OACore" descc="获取关注类型列表"></Action>
+  <Action name="process.instance.follow" type="Youyou.Workflow.Actions.ProcessInstanceFollow,OACore" descc="批量标注"></Action>
+  
+  <Action name="process.instance.label.getlist" type="Youyou.Workflow.Actions.ProcessInstanceLabelGetlist,OACore" descc="获取一个流程实例关注类型列表"></Action>
+
+  <Action name="process.instance.follow.search" type="Youyou.Workflow.Actions.ProcessInstanceFollowSearch,OACore" descc="获取关注列表"></Action>
+  
+  <Action name="process.instance.label.summary" type="Youyou.Workflow.Actions.ProcessInstanceLabelSummary,OACore" descc="获取个人标注列表数量统计"></Action>
+
+  <Action name="process.instance.file.getlist" type="Youyou.Workflow.Actions.ProcessInstanceFileGetList,OACore" descc="获取流程附件列表"></Action>
+  <Action name="process.instance.file.quantity.get" type="Youyou.Workflow.Actions.ProcessInstanceFileQuantityGet,OACore" descc="获取流程附件数量"></Action>
+
+  <!--关注流程-->
+  <Action name="process.instance.favorite.get" type="Youyou.Workflow.Actions.ProcessInstanceFavoriteGet,OACore" descc="获取关注列表"></Action>
+  <Action name="process.instance.tree.get" type="Youyou.Workflow.Reports.Actions.ProcessCategoryInstanceTreeStatisticsGet,OACore" descc="流程树"></Action>
+  
+  
+</Actions>
+
+  

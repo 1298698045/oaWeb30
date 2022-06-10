@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title class="title">视频播放</title>
+    <script type="text/javascript" src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/CommonUtils.js"></script>
+
+     <!--[if lt IE 9]> 
+         <link href="/content/video/v/video-js.css" rel="stylesheet" />
+         <script src="/content/video/v/videojs-ie8.js"></script>
+         <script src="/content/video/v/video.js"></script>
+         <script  type="text/javascript" src="/content/video/v/html5.js"></script>
+         <script  type="text/javascript" src="/content/video/v/html5media.min.js"></script>
+         
+         <script type="text/javascript">
+　　        videojs.options.flash.swf = '/content/video/v/flowplayer.swf';
+        </script>
+        <script src="./video4IE8.js"></script>
+    <![endif]-->
+
+     <!--[if gte IE 9]> 
+        <link href="./video-js.min.css" rel="stylesheet">
+        <script src="./video.min.js"></script>
+        <script src="./zh-CN.js"></script>
+        <script src="./video4NOTIE8.js"></script>
+    <![endif]-->
+
+    <!--[if !IE]><!-->  
+    <link href="./video-js.min.css" rel="stylesheet">
+    <script src="./video.min.js"></script>
+    <script src="./zh-CN.js"></script>
+    <script src="./video4NOTIE8.js"></script>
+    <!--<![endif]-->
+    
+    <link rel="stylesheet" href="/content/video/icon.css">
+    <link rel="stylesheet" href="/content/video/video.css">
+    
+    <style>
+        #my-video_html5_api {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .video-js {
+            width: 80%;
+            margin: 0 auto;
+            height: 700px;
+        }
+        .vjs-hidden {
+            display:none!important;
+        }article,aside,dialog,footer,header,section,footer,nav,figure,menu{  display:block;  }
+        html,body {
+            background-color:black;
+        }
+    </style>
+
+    <script src="/survey/js/tools.js"></script>
+</head>
+<body style="padding:0;height:100%;">
+
+    <div class="diva" style="text-align:center;height:100%;margin-bottom:0;">
+        <div class="detail-mn">
+            <div class="detail-left">
+                <h1 class="player-title">
+                    <a href="#" class="title-link"></a>
+                </h1>
+            </div>
+        </div>
+        <div class="m" style="padding-bottom: -30px;text-align:center;height:100%;">
+
+        </div>
+    </div>
+   
+</body>
+
+</html>

@@ -1,0 +1,730 @@
+﻿#bodyCell {
+    padding-left:0;
+    padding-right:0;
+}
+#sidebarCell {
+    padding-left:0;
+    padding-right:0;
+}
+#attendance {
+    width: 100%;
+    font-size: 14px;
+}
+
+body {
+    overflow-y:hidden;
+}
+#attendance .table2div {
+    overflow-x:hidden;
+    background-color:red;
+    width:1000px;
+    height:1000px;
+}
+.clear{
+    clear: both;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+#attendance select{
+    width: 100%;
+    margin-top:7px;
+}
+#attendance button,.hidepaiban{
+    background: white;
+    border: 1px solid #e4e8eb;
+    border-radius: 4px;
+    box-shadow: rgba(228, 232, 235, 1) solid 1px;
+    margin-left: 5px;
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+}
+#attendance button img{
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin-left: 1px;
+    margin-top: 1px;
+}
+#attendance .attendance-head{
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #e4e8eb;
+    min-width:1100px;
+}
+#attendance .attendance-body{
+    width: 100%;
+    height: 80%;
+    border-top: 1px solid #e4e8eb;
+}
+.table3 tr {
+    background-color:white;
+}
+#attendance .trcolo {
+    background-color:#f9f9f9;
+}
+#attendance .babo{
+    height: 10px;
+    width: 100%;
+    background-color: #f4f6f8;
+}
+.attendance-head-left{
+    float: left;
+}
+.attendance-head-right{
+    position:absolute;
+    right:0;
+    float: right;
+    margin-right: 20px;
+}
+.attendance-head-right .right-check{
+    float: right;
+    height: 30px;
+    margin-top: 10px;
+}
+
+    .attendance-head-right .right-set {
+        float: right;
+        height: 30px;
+        margin-top: 10px;
+    }
+.attendance-head-right .right-set p,.attendance-head-right .right-set button{
+    float: left;
+}
+.attendance-head-right .right-set>div{
+    height: 30px;
+    width:90px;
+    line-height: 28px;
+    margin-left: 10px;
+    padding-right: 6px;
+    background: white;
+    border: 1px solid #e4e8eb;
+    border-radius: 4px;
+    box-shadow: rgba(228, 232, 235, 1) solid 1px;
+    cursor: pointer;
+    float:left;
+      
+}
+ .attendance-head-right .right-set > div select{
+     padding-left:35px;
+     padding-right:0 !important;
+     box-sizing:border-box;
+     width:90px !important;
+
+ }
+ .attendance-head-right .right-set > div div {
+        text-align:center;
+        position:absolute;
+        background-color:white;
+        width:100%;
+    }
+.jiaqi-time {
+    margin-top:10px;
+}
+.jiaqi-time div.settime div {
+        width:30px;
+        height:30px;
+        position:absolute;
+        left:40%;
+        background-color:white;
+    }
+.attend-dayin {
+    position:absolute;
+    top:200px;
+    left:200px;
+    background-color:white;
+    z-index:10;
+    display:none;
+}
+.right-check button{
+    color: #108af9
+}
+#attendance .right-check>div{
+    float: right;
+    margin-left: 15px;
+    padding-left: 5px;
+    border: 1px solid #e4e8eb;
+    border-radius: 4px; 
+}
+#attendance .right-check>div button{
+    margin-left: -5px;
+    border: 0;
+    border-radius: 0; 
+
+}
+#attendance .right-check .button3{
+    border-left: 1px solid #e4e8eb;
+}
+
+.attendance-bodyhead{
+    margin-top: 5px;
+    padding-left:20px;
+}
+.attend-team button{
+    box-sizing: border-box;
+}
+.jiaqi-time{
+    margin-top: 5px;
+}
+.jiaqi-time div.settime{
+    position:relative;
+    float: left;
+    border: 1px solid #e4e8eb;
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px;
+}
+.jiaqi-time>span{
+    float: left;
+    margin-top: 10px;
+}
+.jiaqi-type{
+    margin-left: 230px;
+    margin-top: -5px;
+}
+.jiaqi-type span{
+    float: left;
+    height: 40px;
+    margin-top: 10px;
+}
+.jiaqi-type button{
+    margin-top: 5px;
+}
+#attendance .attendance-body button:hover{
+    color: white;
+    background-color: #3399ff;
+}
+#attendance .attendance-body button.active{
+    color: white;
+    background-color: #3399ff;
+}
+#attendance .clearchook{
+    width: 86px;
+    color: #108af9;
+}
+#attendance table th, #attendance table tr td { 
+    border:1px solid #d8d8d8; 
+    color: #333;
+    font-size:12px;
+}
+
+#attendance table tr th{
+    color: #333;
+
+}
+#attendance table{ 
+    margin: 0;
+    line-height: 20px; 
+    text-align: center; 
+    border-collapse: collapse; 
+}
+#attendance .inputcheck{
+    width: 14px;
+    height: 14px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+}  
+#attendance .right-liftbody{
+    padding: 100px;
+    width: 100px;
+    overflow-x: auto;
+    background-color: red;
+}
+.attendance-body-table{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 550px;
+    margin-top:5px;
+}
+#attendance .table1{
+    /*position: absolute;*/
+    position:static;
+    width: 231px;
+    height:47px;
+    background-color: #f4f7fc;
+    z-index:20;
+}
+#attendance .table2{
+    position: absolute;
+    left: 230px;
+    width: 3000px;
+    height: 47px;
+    overflow: hidden;
+    background-color: #f4f7fc;
+}
+#attendance .table2 tbody{
+    position: absolute;
+}
+#attendance .table3{
+    margin-top: 45px;
+    width: 231px;
+    height:550px;
+    position: relative;
+    top: 1px;
+    overflow: hidden;
+    z-index:10;
+}
+#attendance .table4{
+    position: relative;
+}
+#attendance .table4 td{
+    min-width:75px;
+    line-height:30px;
+}
+#attendance .right-set> div {
+    position:relative;
+}
+#attendance .jiaqi-time p{
+    position:relative;
+}
+#attendance .jiaqi-time img{
+    width:12px;
+    height:12px;
+    position:absolute;
+    right:10px;
+    top:8px;
+    z-index:1;
+    cursor:pointer;
+
+}
+#attendance .right-set>div img {
+    width:12px;
+    height:12px;
+    position:absolute;
+    right:10px;
+    top:8px;
+    cursor:pointer;
+    z-index:1;
+}
+.timechook {
+    z-index:10 !important;
+}
+#attendance .right-set > div .timechook {
+    left:10px;
+}
+#attendance .logo .img {
+    width:32px;
+    height:32px;
+    margin-left:20px;
+    margin-right:20px;
+    background-color:#1797c0;
+    float:left;
+}
+#attendance .qingjia{
+    color: #0000FF;
+    height: 25px;
+    line-height: 25px;
+    margin: 3px;
+    background-color: #f0fbf8;
+    font-size:12px;
+    white-space:nowrap;
+}
+#attendance .checktd{
+    position: relative;
+    left:1px \9;
+    top:1px \9;
+    line-height:0 \9;
+}
+#attendance .table1 td,.table2 th,.table3 td,.table4 td{
+    height: 41px;
+    /*width: 75px;*/
+    box-sizing: border-box;
+    text-align:center;
+    line-height:40px;
+}
+.table2 th {
+    line-height:22.5px;
+    min-width:75px;
+}
+#attendance .table2 .red-th div{
+    color: #ff6666;
+}
+#attendance .spancolo1{
+    color: #333;
+}
+#attendance  .spancolo2{
+    color: #333;
+}
+#attendance .inputcheck{
+    position: absolute;
+    left: 12px;
+    top: 40%;
+}
+#attendance .inputcheck img{
+    width: 12px;
+    height: 12px;
+    display: none;
+}
+#attendance .logo>div{
+    float: left;
+}
+#attendance .logo img{
+    width: 32px;
+    height: 32px;
+    float: left;
+}
+#attendance .logo{
+    float: left;
+    margin-top: 10px;
+}
+#attendance .attend-name{
+    color: #666666;
+    font-size:12px; 
+}
+#attendance .attend-time{
+    color: #333;
+    font-size:18px; 
+}
+#attendance .zhuangtai{
+    margin-left: 20px;
+    margin-top: 70px;
+    padding-bottom: 10px;
+}
+#attendance .zhuangtai span{
+    font-size: 12px;
+    float: left;
+    display: block;
+    margin-top: -10px;
+}
+#attendance .zhuangtai span.red{
+    font-weight:700;
+    color: #ff6666;
+}
+.gundongtiao {
+    overflow: auto;
+    position: absolute;
+    top: 46px;
+    left:230px;
+}
+.table3 tbody{
+    position: absolute;
+}
+#attendance .attendance-head-right button:hover,.hidepaiban:hover{
+    color: white;
+    background-color: #108af9;
+}
+#attendance .attendance-head-right .shuaxin:hover{
+    background-color: white;
+}
+.divdiv {
+    position:relative;
+    bottom:-20px;
+    width:300px;
+    height:70px;
+    background-color:white;
+    bottom:0px \9;
+    height:80px \9;
+}
+select::-ms-expand{ display: none; }
+
+#attendance .jiaqi-time div.settime select{
+padding-left: 15px;
+
+}
+#attendance tr input {
+    border:0;
+    -webkit-appearance: none;
+    width:14px;
+    height:14px;
+    outline:none;
+    float:left;
+}
+#attendance tr input[type="checkbox"]:checked{
+   background: url("/img/add/23.check_1(14x14).png") no-repeat center;
+   background-size:12px;
+}
+#attendance select {
+    border: solid 0px #000;
+    border-radius:4px;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    -ms-appearance:none;
+    padding-right: 14px;
+    opacity:0;
+    position:absolute;
+    z-index:2;
+    cursor:pointer;
+}
+#attendance .table1 td {
+    line-height:20px;
+}
+#attendance .even{
+    background-color: #f9f9f9;
+}
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+#attendance .table1 td,#attendance .table1 th {
+    vertical-align:middle;
+    height:30px;
+}
+#attendance .inputcheck {
+    top:6px;
+}
+/*.attendance-body-table {
+    height:auto !important;
+}*/
+#attendance .table1 {
+    position:absolute;
+}
+body {
+    overflow-y:auto !important;
+}
+#paging {
+    padding:10px;
+    height:30px;
+}
+#paging > a, #paging > span {
+    display: block;
+    float: left;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-right: 0;
+}
+#paging input{
+    width:30px;
+}
+#paging #TotalPageNumber {
+    border-right:1px solid #dedede;
+}
+#pagesizecheck {
+    width:40px !important;
+    position:static !important;
+    opacity:1 !important;
+    border:1px solid #dedede !important;
+    -webkit-appearance: menulist !important;
+    appearance: menulist !important;
+    padding-right:0 !important;
+    border-radius:0 !important;
+}
+#paging {
+    float:right;
+}
+#attendance > div {
+    clear:both;
+}
+#attendance .table1 select{
+    opacity:1;
+    position:static;
+    border:1px solid #333;
+    border-radius:0;
+    border-color:#dedede;
+    height:22px;
+    line-height:22px;
+    margin-top:0;
+    width:50px;
+}
+#TransferEmp #TransferEmpContentId{
+    height:500px !important;
+}
+#pagesizecheck{
+    width:50px !important;
+}
+#attendance .copyShift {
+    width: 86px;
+    color: #108af9;
+}
+/*.copysel{
+    border:1px solid #108af9;
+}*/
+.copysel .qingjia1{
+    border:1px solid #108af9;
+}
+#contentWrapper{
+    min-width:600px !important;
+}
+.attendance-head-left{
+    float:unset;
+    display:inline-block;
+    width:300px;
+    position:relative;
+}
+.attendance-head-right{
+    float:unset;
+    display:inline-block;
+    width:calc(100% - 330px);
+    position:relative;
+}
+.right-set .hidepaiban{
+    height:17px;
+}
+.attendance-head-right .right-set>div{
+    padding-left:0px;
+    margin-left:5px;
+}
+.attendance-head-right .right-set{
+    height:auto;
+}
+#attendance .attendance-head{
+    height:auto !important;
+}
+.attendance-head-left{
+    vertical-align: top;
+}
+.attendance-head-right .right-set p, .attendance-head-right .right-set button{
+    margin-bottom:3px;
+}
+#attendance td{
+    padding:0 !important;
+}
+#attendance .logo>div{
+    width:calc(100% - 72px) !important;
+}
+#attendance .zhuangtai{
+    margin-top:65px;
+}
+/*#table-content-flex{
+    display:none !important;
+}
+#table-content{
+    height:auto !important;
+    overflow:auto !important;
+}
+html{
+    overflow:unset !important;
+}
+body{
+    overflow:auto !important;
+}
+.gundongtiao{
+    overflow: unset;
+    width:100% !important;
+}*/
+#table-content{
+    overflow-x:hidden !important;
+}
+.attendance-body-table{
+    max-width:100% !important;
+    /*height:auto !important;*/
+    /*overflow:unset;*/
+}
+#attendance .table2{
+    width:100% !important;
+}
+/*#attendance table th, #attendance table tr td{
+    width: 79px !important;
+}*/
+#shiftContainer1{
+    display:none;
+}
+.table2 td{
+    line-height:30px !important;
+}
+#attendance .table1 td, .table2 th, .table3 td, .table4 td{
+    padding:0 !important;
+}
+.deptzhuangtai{
+    color: #ff6666;
+    font-size:12px;
+}
+#shiftBar{
+    height: auto !important;
+    overflow: auto;
+    max-height: 75px;
+}
+.jiaqi-type span{
+    height: 28px;
+}
+#attendance .inputcheck{
+    position: unset;
+    display: inline-block;
+}
+.attendance-body-table{
+    margin-top:0px !important;
+}
+.main-content{
+    margin-top:3px;
+}
+.tree-title{
+    white-space: normal !important;
+    height: auto !important;
+    width: 155px !important;
+}
+.tree-node{
+    height:auto !important;
+}
+body #iframe{
+    width: 60% !important;
+    left: 20% !important;
+    top:5% !important;
+}
+#attendance .logo>div{
+    float:unset;
+}
+#attendance .logo{
+    width:360px;
+}
+
+.hidepaiban{
+    height:16px !important;
+    font-weight: bold;
+    font-size: .9em;
+}
+.hidepaiban input{
+    position: relative;
+    top: 2px;
+}
+.moon-chook,.year-chook{
+    height:28px !important;
+}
+.attendance-head-left{
+    width:280px;
+}
+.attendance-head-right{
+    width: calc(100% - 310px);
+}
+#attendance .attend-name{
+    color:#000;
+}
+#weektime{
+    padding-left:28px;
+}
+.success{
+    z-index:99999 !important;
+}
+
+#attendance .attendance-head{
+    width:100%;
+    min-width:100%;
+}
+.bodyDiv{
+    width:100% !important;
+    min-width:100% !important;
+}
+#contentWrapper {
+  min-width: 100% !important;
+}
+body .bodyDiv #bodyTable{
+    width:100% !important;
+    min-width:100% !important;
+    display: inline-block;
+}
+body .bodyDiv #bodyTable>tbody{
+    width:100% !important;
+    min-width:100% !important;
+    display: inline-block;
+}
+body .bodyDiv #bodyTable>tbody>tr:first-child{
+    width:100% !important;
+    min-width:100% !important;
+    display: inline-block;
+}
+/*body .bodyDiv #bodyTable tbody tr td{
+    word-wrap:normal;
+    word-break:break-all;
+}*/
+#bodyCell{
+    width:100% !important;
+    min-width:100% !important;
+    display: inline-block;
+}
+#weektime{
+    width:170px !important;
+}

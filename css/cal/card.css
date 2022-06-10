@@ -1,0 +1,1808 @@
+﻿
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+    input{
+        border: 0;
+        outline: none;
+    }
+    .clear{
+        clear: both;
+    }
+       html,body {
+                margin: 0;
+                padding: 0;
+                height:100%;
+            }
+.neww img {
+     transition:all 0.5s linear;
+}
+.sousuo-tishi {
+    display:none;
+    position:absolute;
+    background-color:#108af9;
+    width:245px;
+    color:white;
+    padding:10px;
+    z-index:10;
+    top:73px;
+    left:10px;
+    border-radius:4px;
+}
+
+.sousuo-tishi1{
+    display:none;
+
+    position:absolute;
+    width:0px;
+    z-index:10;
+    top:55px;
+    left:30px;
+    border: 10px solid transparent;
+    border-bottom:10px solid #108af9;
+}
+#aaa{
+    overflow-y:hidden;
+    overflow: hidden;
+    width:100%;
+}
+.newmissq:hover{
+    cursor: pointer;
+    background-color:#f4f2f2;
+
+}
+#card .yiwancheng .name span{
+    color: #999999 !important;
+}
+#qqqq{
+        width:100%;
+        background-color: #f4f6f8;
+        overflow: hidden;
+}
+
+#card .new img {
+    margin-top:5px;
+}
+
+.mission-header2 .mission-header-right {
+    float:right;
+}
+.mission-header2 .mission-header-right > div {
+    float:left;
+    cursor:pointer;
+    }
+ .mission-header2 .mission-header-right > div p {
+            float:left;
+            cursor:pointer;
+        }
+
+.mission-header2 .mission-header-right p.active, .mission-header2 .yaoqingchakanzhe.active,.mission-header2 .mission-header-right .end.active{
+        color:#ffffff;
+        background-color:#108af9;
+
+    }
+.mission-header2 .end {
+	width: 93px;
+	height: 32px;
+    line-height:32px;
+    color: #108af9;
+    border:1px solid #dedede;
+	border-radius: 4px;
+	font-size: 14px;
+	text-align: center;
+    margin-right:10px;
+    background-color:white;
+}
+.mission-header2 .bianji, .mission-header2 .shanchu {
+    width: 60px;
+	height: 32px;
+    line-height:32px;
+    color: #108af9;
+    border:1px solid #dedede;
+    border-left:0;
+	font-size: 14px;
+	text-align: center;
+}
+.mission-header2 .bianji {
+    border:1px solid #dedede;
+    border-bottom-left-radius:4px;
+    border-top-left-radius:4px;
+}
+.mission-header2 .genggai {
+    width: 70px;
+	height: 32px;
+    line-height:32px;
+    color: #108af9;
+    border:1px solid #dedede;
+    border-left:0;
+	font-size: 14px;
+	text-align: center;
+}
+.mission-header2 .select{
+    width: 25px;
+	height: 32px;
+    line-height:32px;
+	color: #505050;
+    border:1px solid #50505033;
+    border:1px solid #dedede \9;
+    border-bottom-right-radius:4px;
+    border-top-right-radius:4px;
+    border-left:0;
+	font-size: 14px;
+	text-align: center;
+    
+    background-size:13px;
+    position: relative;
+}
+.mission-header2 .select img{
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    left: 50%;
+    top: 50%;
+}
+.mission-header2 select {
+    width: 25px;
+    height: 32px;
+}
+.mission-header2 .yaoqingchakanzhe {
+    width:110px;
+    height:32px;
+    margin-left:10px;
+    line-height:32px;
+    text-align:center;
+    border:1px solid #dedede;
+    color: #108af9;
+    border-radius:4px;
+    margin-right:20px;
+}
+.head-bottbo {
+    margin-top:52px;
+    height:8px;
+    background-color:#f4f6f8;
+    border-top:1px solid #e4e8eb;
+    border-bottom:1px solid #e4e8eb;
+}
+#card{
+     overflow-x:auto;
+     overflow-y:hidden;
+     padding-bottom:10px; 
+     height:100%;
+     padding-bottom:10px;
+    }
+#asd {
+    height:0;
+}
+    #card .main{
+        padding-bottom:70px;
+        width:600px;
+        background-color: #f4f6f8;
+    }
+    #card .main .item{
+        width: 300px;
+        padding-top:30px;
+        padding-bottom:45px;
+        margin: 0 auto;
+        float: left;
+        position:relative;
+    }
+.itemborder-size {
+    border-radius:4px;
+}
+    #card .main .item-border{
+        height: 100%;
+        width: 10px;
+        border-right: 1px solid #2c2c2c;
+        float: left;
+    }
+    #card .item-head{
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:2;
+        padding: 15px;
+        padding-top:0; 
+        width: 270px;
+        height: 30px;
+        background-color: #f4f6f8;
+    }
+    #card .item-head .name{
+        float: left;
+        height: 40px;
+        line-height: 50px;
+    }
+    #card .item-head .more{
+        float: right;
+        height: 40px;
+        line-height: 40px;
+        cursor: pointer;
+    }
+        #card .item-sc {
+        float:left;
+        width: 300px;
+        margin-top:10px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        }
+        #card .main .item .new {
+        position:absolute;
+        bottom:10px;
+        cursor: pointer;
+        border-radius:4px;
+        }
+    #card .item-main{
+        width: 270px;
+        height: 90px;
+        margin-left: 15px;
+        margin-top: 6px;
+        color: #505050;
+        background-color: #ffffff;
+        box-shadow: 0px 2px 2px 0px rgba(0,0,0,.1);
+        float:left;
+        border-radius: 4px;
+        font-size: 14px;
+        position:relative;
+        margin-bottom:4px;
+    }
+    #card .item-main .img img{
+        margin-left: 20px;
+        width: 24px;
+        height: 24px;
+    }
+    #card .item-main .name{
+        padding: 7px;
+        margin-left: 10px;
+        color: #108af9;
+
+        cursor: pointer;
+
+    }
+    #card .item-main .time{
+        font-size: 12px;
+        padding: 5px;
+        margin-left: 10px;
+    }
+    #card .item-main-border{
+        height: 86px;
+        position: absolute;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    #card .item .new{
+        width: 270px;
+        height: 30px;
+        margin-top: 10px;
+        margin-left: 15px;
+        background-color:  #ffffff;
+        cursor: pointer;        
+    }
+    #card .itemborder-size{
+        width: 160px;
+        height: 136px;
+        margin-left: 15px;
+        background-color: #ffffff;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        box-shadow: 0px 0px 10px 2px rgba(56, 56, 56, 0.2);
+    }
+        #card .itemborder-size li:hover{
+            background-color:#f5f5f5;
+
+          
+        }   
+         #card .itemborder-size li{
+            padding-left:15px;
+            height:38px;
+            padding-top:8px;
+        }
+         #card .itemborder-size li img{
+             display:none;
+             cursor:pointer;
+        } 
+         #card .itemborder-size li p{
+            cursor:pointer;
+        }
+            #card .itemborder-size li.active img {
+                display:block;
+            }
+    #card .itemborder-size p{
+        width: 60px !important;
+        height: 28px !important;
+        line-height: 28px !important;
+        text-align: center;
+        border-radius: 4px;
+    }
+    #card .itemborder-size .itemborder-sizel{
+        border: 1px solid #999999;
+        color: #999999;
+    }
+    #card .itemborder-size .itemborder-sizem{
+        border: 1px solid #66cc00;
+        color: #66cc00;
+        
+    }
+    #card .itemborder-size .itemborder-sizeh{
+        border: 1px solid #ff6666;
+        color: #ff6666;
+    }
+    #card .main .item .item-main  .item-borderl{
+        height: 86px;
+        border: 0px solid #a6a6a6;
+        margin:1px;
+    }
+#card .main .item .item-main:hover .item-main-border {
+        border-width: 4px ;
+        height: 82px;  
+}
+    #card .main .item .item-main .item-borderm{
+        height: 86px;
+        border: 2px solid #66cc00;
+    }
+    #card .main .item .item-main .item-borderh{
+        height: 86px;
+        border: 2px solid #ff6666;
+        border-color:#ff6666;
+    }
+    #card .newlist{
+        width: 150px;
+        height: 710px;
+        float: left;
+        position: relative;
+    }
+    #newlist{
+        width: 200px;
+        height: 40px;
+    }
+    #newlist:hover{
+        cursor: pointer;
+    }
+    #card .newlist .newlist-img{
+        margin-top: 15px;
+        margin-left: 15px;
+        float: left;
+    }
+    #card .newlist .newlist-name{
+        font-size: 14px;
+        text-align: center;
+        margin-top: 15px;
+        margin-left: 15px;
+        float: left;
+    }
+    #card .new{
+        overflow: hidden;
+        box-shadow: 0px 2px 2px 0px rgba(0,0,0,.1);
+    }
+    #card .new p{
+        width: 24px;
+        height: 24px;
+        margin-left: 120px;
+        margin-top: 3px;
+    }
+    #card .new p img{
+        width: 15px;
+        height: 15px;
+    }
+    #card .new-add{
+        width: 272px;
+        height: 330px;
+        position: relative;
+        margin-left: 13px;
+        padding: 15px;
+        box-sizing: border-box;
+        bottom: -10px;
+        z-index: 10;
+        overflow: hidden;
+        background-color: #ffffff;
+        box-shadow: 0px 2px 2px 0px rgba(228, 232, 235, 1);
+        border-radius:4px;
+    }
+    #card .new-add #na{
+        margin-top:10px;
+        line-height: 48px;
+        text-indent: 1em;
+    }
+    #card .new-add img{
+        width: 18px;
+        height: 18px;
+        margin-top:11px; 
+        float: left;
+    }
+    #card .new-add p{
+        height: 40px;
+        line-height: 40px;
+        font-size: 15px;
+        color: #666666;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    #card .new-add p:hover{
+        color: #108af9;
+
+    }
+    #card .new-add p span{
+        display: block;
+        float: left;
+        margin-left: 10px;
+    }
+    #card .new-add p input{
+        width: 60px;
+        height: 28px;
+        margin-left: 10px;
+        color: #505050;
+        border: #999999 solid 1px;            
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+    }
+#card .itemborder-size img {
+    width:14px;
+    height:14px;
+    float:right;
+    margin-top:-25px;
+    margin-right:20px;
+
+}
+    #card .newlist-add{
+        width: 272px;
+        height: 182px;
+        position: absolute;
+        top: 50px;
+        left: -70px;
+        color: #505050;
+        background-color: #ffffff;
+        border-radius: 4px;            
+        font-size: 14px;
+        line-height: 150%;
+        box-shadow: 0px 4px 4px 0px #e4e8eb;
+        text-align: center;
+        display: none;
+    }
+    #card .newlist-name2{
+        padding-top: 10px;
+        width: 272px;
+        height: 37px; 
+        border-bottom: 1px solid #292929 ;
+    }
+    #card .newlist-name3{
+        width: 244px;
+        height: 39px;
+        margin: 15px;
+        color: #505050;
+        box-shadow: #999999 solid 1px;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 150%;
+        text-align: left;
+        border: 1px solid #e4e8eb;
+    }
+    #card .newlist-name3 input{
+        outline: none;
+        -webkit-appearance: none;
+        border: 0;
+        height: 39px;
+        line-height: 39px;
+    }
+    .newlistadd{
+        margin-left: 15px;
+        margin-top: 10px;
+        width: 244px;
+        height: 38px;
+        line-height: 38px;
+        color: #505050;
+        background-color: #d9d9d9;
+        border-radius: 4px;
+        font-size: 14px;
+        text-align: center;
+    }    
+    #card .main .item::-webkit-scrollbar {
+        width: 8px;
+    }
+    #card .main .item::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px #00000033;
+    background: #00000033;
+    }
+    .sanjiao{
+        float: right;
+        width: 18px;
+        height: 18px;
+        border:1px solid #e4e8eb ;
+        border-radius:4px; 
+    }
+        .sanjiao:hover {
+            background-color:#f4f2f2;
+        }
+        .sanjiao img {
+            margin-left:2px;
+            margin-top:2px;
+            width:13px;
+            height:13px;
+        }
+    select {
+        width: 19px;
+        height: 19px;
+        /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+        border: solid 1px #66666680;
+        border-radius: 4px;
+        /*很关键：将默认的select选择框样式清除*/
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
+        /*在选择框的最右侧中间显示小箭头图片*/
+        background: url("../img/20.PNG") no-repeat scroll  center ;
+        background-size: 11px;
+        /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+      }
+      /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+      select::-ms-expand { display: none; }
+
+#bodyCell {
+    padding:0
+}
+
+.mission-header{
+    width: 1422px;
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+tr .sidebarCollapsible {
+    padding:0;
+}
+.mission-header-leftlogo{
+    width: 800px;
+    height: 45px;
+    float: left;
+
+}
+.mission-header-leftlogo .logo{
+    border-radius: 4px;
+    float: left;
+    width: 32px;
+    height: 32px;
+    background: url(/img/cal/21.png) no-repeat;
+    background-size: 28px;
+    background-color: #1797c0;
+
+}
+#qqq .mission-heade2 .mission-header-leftlogo {
+    width:300px;
+    overflow:hidden;
+}
+.mission-header-leftlogo p{
+    float: left;
+    font-size: 18px;
+    line-height: 45px;
+    margin-left: 20px;
+    height: 45px;
+    line-height: 35px;
+    font-weight: 700;
+    color:#505050;
+    margin-top:3px;
+}
+.mission-header-leftlogo .leftlogo-name {
+    margin-top:10px;
+}
+.mission-header-leftlogo div {
+    position:absolute;
+    left:75px;
+}
+.mission-hearder-message{
+    width: 1200px;
+    float: left;
+    font-size: 12px;
+    margin-left: 20px;
+    color: #666666;
+}
+.mission-hearder-right{
+    position: absolute;
+    padding: 0;
+    padding-right: 15px;
+    padding-top:0;
+    top: 0;
+    right: 0;
+}
+.mission-hearder-right>p{   
+    float: right; 
+	width: 86px;
+    height: 32px;
+    line-height: 30px;
+	color: #108af9;
+	background-color: #ffffff;
+	border: #e4e8eb solid 1px;
+	border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    box-sizing:border-box;
+}
+.mission-hearder-right>div{
+    padding-top: 3px;
+}
+.mission-hearder-right div>p{
+    height: 30px;
+    line-height: 32px;
+    margin-left: 8px;
+    float: left;
+    border: 1px solid #e4e8eb \9;
+    border: 1px solid rgba(71, 71, 71, 0.2);
+
+}
+.mission-hearder-right div select{
+    border: solid 1px #222222;
+    float: left;
+    width: 45px;
+    height: 34px;
+    margin-left: 8px;
+}
+.mission-hearder-right div .sousuo{
+	width: 264px;
+    height: 30px;
+    line-height: 32px;
+    color: #505050;
+    background: url(/img/cal/7.PNG) no-repeat left 10px center;
+    background-size: 16px;
+	background-color: #ffffff;
+	box-shadow: #e4e8eb solid 1px;
+	border-radius: 4px;
+	font-size: 14px;
+    text-indent: 3em;
+}
+.mission-hearder-right div .sousuo input {
+    height: 30px;
+    line-height: 30px \9;
+    float:  \9;
+}
+.mission-hearder1 .mission-hearder-right div .sousuo input {
+    height: 30px;
+    line-height: 30px \9;
+    float:  \9;
+}
+.mission-hearder-right .delete{
+    border-radius: 4px;
+    width: 45px;
+    height: 32px;
+    line-height: 32px;
+    color: #dedede;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+.mission-hearder-right .delete:hover{
+    color: white;
+    background-color: #108af9 ;
+
+}
+.mission-hearder-right .neww,.mission-hearder-right .set,.mission-hearder-right .ppp{
+    height: 30px;
+    width: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.select1{
+    border: none !important;
+   
+}
+.select2 {
+    border: none !important;
+    
+}
+
+.ppp{
+    position: relative;
+}
+.ppp img{
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -7px;
+}
+
+.newlistadd:hover {
+    color:#ffffff !important;
+}
+.newlistadd{
+    color:#ffffff !important;
+}
+#card .newlist-add .newlistadd:hover{
+    cursor: pointer;
+
+}
+#card .newlist-add img{
+    cursor: pointer;
+    float: right;
+}
+#card .newlist-name2{
+    font-size: 18px !important;
+    line-height: 30px !important;
+    color: #000 !important;
+    text-align: center !important;
+}
+#card .newlist-name3 input{
+    text-indent: 0.5em !important;
+}
+#card .new-add .newlistadd{
+    margin-left: 0;
+    margin-top: 10px;
+    height: 38px;
+    width: 244px;
+}
+#card .new-add .newlistadd:hover{
+    cursor: pointer;
+}
+#card .fengexian{
+    margin-top: 20px;
+    width: 100%;
+    height: 1px;
+    background-color: #e4e8eb;
+}
+#card .new-add .new-addinput{
+    text-align: left;
+    padding: 0;
+    width: 242px;
+    height: 48px;
+    border: 1px solid #999999;
+    border-radius:4px; 
+}
+#card .new-add .new-addinput input{
+    margin: 0;
+    padding: 0;
+    width: 220px;
+    height: 16px;
+    border: 0;
+    text-align: left;
+}
+#card .new-add .fengexian{
+    margin-top: 5px;
+    margin-left: -15px;
+    width: 270px;
+    height: 1px;
+    background-color: #e4e8eb;
+}
+#card .colocheck{
+    cursor: pointer;
+}
+#card .new-add .itemborder-size p {
+    color:#999;
+}
+#card .colocheck input{
+    background-color: white;
+    cursor: pointer;
+    margin-top:6px;
+}
+#card .new-add .colocheck input:hover{
+    color: #108af9;
+    border-color:#108af9;
+}
+#card p.item-borderm input{
+    color: #66cc00;
+    border-color: #66cc00
+}
+#card p.item-borderh input {
+    color:#ff6666;
+    border-color:#ff6666
+}
+#card .item-head .more{
+    font-size: 20px;
+    color: #999999;
+}
+#card .item-head .more:hover{
+    color: #108af9;
+}
+.sousuo.active{
+    border: 1px solid #108af9;
+
+}
+ .shituu{
+    border-radius:4px; 
+    width: 45px !important;
+    cursor: pointer;
+}
+.select1{
+    width: 45px;
+    height: 32px;
+    background: none !important;
+}
+#card .liebiaocaidan{
+    width: 252px;
+    height: 192px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px 2px rgba(56, 56, 56, 0.2);
+    position: absolute;
+    z-index:10;
+    left: 30px;
+    background-color: white;
+}
+
+#card .liebiaocaidan>div{
+width: 100%;
+}
+#card .liebiaocaidan .liebiaocaidan-head{
+height: 55px;
+line-height: 55px;
+border-bottom: 1px solid #e4e8eb;
+color: #333;
+}
+#card .liebiaocaidan .liebiaocaidan-head span{
+    margin-left:90px;
+    font-size: 18px;
+}
+#card .liebiaocaidan .liebiaocaidan-head img{
+cursor: pointer;
+float: right;
+margin: 20px;
+}
+#card .liebiaocaidan .liebiaocaidan-body{
+margin-top: 10px;
+}
+#card  .liebiaocaidan-body li{
+height: 44px;
+line-height: 44px;
+color: #666;
+}
+#card  .liebiaocaidan-body li:hover{
+background-color: #f5f5f5;
+cursor: pointer;
+}
+#card  .liebiaocaidan-body li img{
+margin-left: 15px;
+}
+#card  .liebiaocaidan-body li span{
+margin-left: 10px;
+}
+
+#card .bianjiliebiao-body{
+    border-bottom: 1px solid #e4e8eb;
+    text-align: center;
+    overflow:hidden;
+
+
+
+}
+#card .bianjiliebiao-body input{
+    
+        margin-top:10px;
+
+
+}
+#card .bianjiliebiao-save p{
+    width: 212px;
+    height: 34px;
+    line-height: 34px;
+    overflow:hidden;
+}
+#card .bianjiliebiao-save p input{
+    margin-top:10px;
+    
+}
+
+#card .bianjiliebiao-save{
+    width: 100%;
+    text-align: center;
+}
+#card .bianjiliebiao-save p{
+    width: 212px;
+    height: 38px;
+    line-height: 38px;
+    background-color: #d9d9d9;
+    text-align: center;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+
+#card .bianjiliebiao-save input{
+    background: none;
+    outline: none;
+    border: 0;
+    color:#ffffff;
+
+}
+#card .bianjiliebiao-body,#card .bianjiliebiao-save{
+    height: 55px;
+    padding-top:15px ;
+    cursor:pointer;
+    
+}
+#card .bianjiliebiao-body p{
+    width: 212px;
+    height: 38px;
+    line-height: 38px;
+    color: #108af9;
+    background-color: white;
+    margin-left: 20px;
+    border: 1px solid #e4e8eb;
+}
+#card .bianjiliebiao-body p input{
+    margin-left: -40px;
+    background: none;
+    outline: none;
+    border: 0;
+}
+.miss-bianji{
+    width: 100px;
+    height: 250px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px rgba(56, 56, 56, 0.2);
+    border-radius:4px;
+    overflow: hidden;
+    position: absolute;
+    left: 140px;
+    top: 0;
+    z-index:10;
+}
+ .miss-bianji div{
+    padding-left: 20px;
+    height: 42px;
+    line-height: 42px;
+    margin-top: 5px;
+    color: #108af9;
+}
+ .miss-bianji div:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+#newmission .peoplechook .card-people .sousuo p {
+    width:100%;
+    margin-left:15px;
+ }
+ #newmission .peoplechook .card-people li p {
+    margin-left: 35px;
+    margin-top: 5px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    background:none;
+    background-color: #65cae4;
+    text-align: center;
+}
+  #newmission .peoplechook .card-people .checkboxinput {
+    height:14px;
+    width:14px;
+    border:1px solid #d9d9d9;
+    margin-top:8px;
+    background-color:white;
+}
+ #newmission .peoplechook .card-people .checkboxinput.active{
+    background:url("/img/cal/23.check_1(14x14).png");
+    background-size:14px;
+    background-color:white;
+}
+ .card-people{
+    width: 252px;
+    height: 368px;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    z-index: 21;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px rgba(56, 56, 56, 0.2);
+    border-radius:4px;
+}
+.peoplechooked-body {
+    margin-top:5px;
+}
+.peoplechooked-body2 {
+    height:75px;
+    text-align:center
+}
+.peoplechooked-body2>div{
+    cursor:pointer;
+}
+.peoplechooked-body2 span{
+    text-align:center
+}
+.peoplechooked-body img {
+    float:left;
+    width:32px;
+    height:32px;
+    margin-left:10px;
+    margin-top:10px;
+}
+.spann1 {
+    float:left;
+    margin-top:15px;
+    margin-left:10px;
+}
+.peoplechooked-body input {
+    float:left;
+    margin-left:15px;
+    margin-top:20px;
+    width:15px;
+    height:15px;
+
+}
+ .card-people ul{
+    width: 250px;
+    height: 210px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display:none;
+}
+#allmission .peoplechooked-body span {
+    margin-top:10px;
+    margin-left:10px;
+    width:80px;
+}
+#allmission .sousuojieguo span {
+    float:none;
+    display:inline;
+    
+}
+#allmission .sousuojieguo {
+    border:0;
+}
+#allmission .main-head .peoplechooked-body input {
+    width:15px;
+    height:15px;
+}
+
+ .card-people .sousuo{
+    width: 220px;
+    height: 32px;
+    margin-top:20px;
+}
+.peoplechooked {
+    height:80px;
+    margin-top:15px;
+}
+.peoplechooktj {
+    height:85px;
+    margin-top:5px;
+}
+.peoplechookbm {
+    height:44px;
+    line-height:44px;
+    text-indent:15px;
+    color:#108af9;
+    font-size:14px;
+    background-color:#f5f5f5;
+}
+.peoplechooked-head {
+    color:#999;
+    font-size:14px;
+    padding-left:15px
+}
+.peoplechooked-body {
+
+}
+.card-people .sousuo p{
+    width: 220px;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #e4e8eb;
+    margin-left: 10px;
+
+}
+ .card-people .sousuo input{
+    border: 0;
+    outline: 0;
+    background: none;
+    text-indent: 0.5em;
+}
+.card-people p{
+    float: left;
+}
+ .card-people li{
+    text-align: left;
+    overflow: hidden;
+    float: left;
+    width: 250px;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 5px;
+    margin-left:0;
+}
+.card-people li:hover{
+    background-color:#e4e8eb;
+
+}
+.card-people li input{
+    float: left;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+.card-people li p{
+    margin-left: 15px;
+    margin-top: 5px;
+    width: 24px;
+    height: 24px;
+    line-height:24px;
+    background-color:#65cae4;
+    text-align:center;
+}
+.card-people li p img{
+    width: 20px;
+    height: 20px;
+}
+.card-people li span{
+    float: left;
+    margin-left: 15px;
+}
+
+ .card-people li input{
+    border:1px solid #e4e8eb;
+    width:15px;
+    height:15px;
+}
+ #allmission .card-people li input{
+    border:1px solid #e4e8eb;
+    width:15px;
+    height:15px;
+}
+  #allmission .card-people {
+      left:200px;
+}
+.card-people .queding{
+    margin:auto;
+    border-radius:4px;
+    border:1px solid #108af9;
+    color:#108af9;
+    width:212px;
+    height:38px;
+    line-height:38px;
+    text-align:center;
+    cursor:pointer;
+    margin-top:10px;
+     background-color:#108af9;
+     color:white;
+}
+.card-people .queding:hover{
+     color:white;
+     background-color:#108af9
+}
+
+.sousuojieguo {
+    padding-left:15px;
+    color:#999;
+    font-size:14px;
+}
+.peoplechookfg {
+    height:1px;
+    background-color:#f5f5f5;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+.save-save {
+    background-color:#108af9 !important;
+    color:white !important;
+}
+
+
+
+
+
+
+
+
+#card select{
+    width: 19px;
+    height: 19px;
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px #66666680;
+    border-radius: 4px;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("/img/cal/20.PNG") no-repeat scroll  right 4px center ;
+    background-size: 11px;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  }
+  /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+/*body::-webkit-scrollbar {
+    width:0;
+}*/
+
+ /*更改滚动条样式*/
+
+.mission-hearder-right>p:hover {
+    background-color:#f4f2f2;
+}
+.newlist-name:hover{
+    color: #108af9
+}
+.shituu2 {
+    position:relative;
+}
+.card-table {
+    position:absolute;
+    top:75px;
+    z-index:20;
+    right:100px;
+    width:127px;
+    height:139px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+    border:1px solid #e4e8eb;
+    border-radius:4px;
+    background-color:white;
+    color:#333;
+    font-size:14px;
+    display:none;
+}
+.card-table-div2 {
+    padding-left:40px;
+    background-color:#f2f2f2;
+    height:40px;
+    line-height:40px;
+    margin-top:5px;
+    position:relative;
+    cursor:pointer;
+
+}
+.card-table-div1 {
+    padding-left:15px;
+    height:40px;
+    line-height:40px;
+    margin-top:5px;
+
+
+}
+.card-table-div3 {
+    padding-left:40px;
+    height:40px;
+    line-height:40px;
+    margin-top:5px;
+    position:relative;
+        cursor:pointer;
+
+}
+.card-table-div3.active{
+        border-radius:4px
+    }    
+.card-table-div2.active{
+
+    border-radius:4px;
+}
+.card-table-div3 .img1 {
+    width:14px;
+    height:14px;
+    position:absolute;
+    right:15px;
+    top:12px;
+}
+.card-table-div2 .img1 {
+    width:14px;
+    height:14px;
+    position:absolute;
+    right:15px;
+    top:12px;
+}
+.card-table .img2 {
+    position:absolute;
+    left:10px;
+    top:12px;
+    width:14px;
+    height:14px;
+}
+.shituu2 .img2 {
+    width:10px;
+    height:10px;
+    position:absolute;
+    top:10px;
+    right:5px;
+}
+.posi {
+    position:absolute;
+    left:2px;
+    top:5px;
+}
+.item-head .name{
+    font-size:14px;
+    font-weight:700;
+}
+.delete-mask {
+    position:fixed;
+    z-index:100;
+    background-color:#000;
+    opacity:0.2;
+    height:100%;
+    width:100%;
+    display:none;
+}
+.delete-shur {
+    position:fixed;
+    top:40%;
+    z-index:101;
+    background-color:white;
+    width:40%;
+    left:30%;
+    top:40%;
+    height:180px;
+    border-radius:7px;
+    display:none;
+}
+    .delete-shur .popup-exit {
+    width:20px;
+    height:20px;
+    position:absolute;
+    right:0;
+    top:-25px;
+    background:url("/img/cal/4.closeIcon(24x24).png") no-repeat center;
+    background-size:18px;
+    cursor:pointer;
+    }
+.delete-bianji{
+    position:absolute;
+    z-index:101;
+    background-color:white;
+    width:60%;
+    min-width:1000px;
+    left:20%;
+    top:30%;
+    border-radius:7px;
+    display:none;
+}
+.delete-shur > div {
+    height:33%
+}
+.delete-shur-head {
+    color:#333;
+    height:60px;
+    line-height:60px;
+    font-size:16px;
+    text-align:center;
+    border-bottom:1px solid #dcdcdc
+}
+.delete-bianji-foot {
+    height:60px;
+    border-radius:7px;
+
+}
+.delete-bianji-body > div {
+    float:left;
+    margin-left:40px;
+}
+.delete-bianji-body .delete-bianji-title div{
+    width:280px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #e4e8eb;
+    background-color:#f2f2f2;
+    text-align:left;
+    text-indent:10px;
+    color:#333;
+    font-size:14px;
+    margin-top:16%;
+    border-radius:4px;
+}
+.delete-bianji-body .delete-liebiaochook>div{
+    position:relative;
+    width:280px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #e4e8eb;
+    text-align:left;
+    text-indent:10px;
+    color:#333;
+    font-size:14px;
+    margin-top:16%;
+    border-radius:4px;
+}
+.delete-bianji-body .delete-liebiaochook div img{
+    position:absolute;
+    right:12px;
+    top:8px;
+    width:13px;
+    height:13px;
+}
+.delete-bianji-body .delete-liebiaochook div div {
+    position:absolute;
+    top:-100px;
+    background-color:white;
+    border-radius:4px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border:1px solid #dddbda;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    display:none;
+}
+.delete-liebiaochook li {
+    width:278px;
+    height:34px;
+    text-indent:20px;
+    position:relative;
+}
+    .delete-liebiaochook li img {
+        height:16px;
+        width:16px;
+        position:absolute;
+        right:15px;
+        top:5px;
+        display:none;
+    }
+    .delete-liebiaochook li.active img {
+        display:block;
+    }
+.delete-liebiaochook li.active{
+    background-color:#f5f5f5;
+}
+.delete-liebiaochook li:hover{
+    background-color:#f5f5f5;
+}
+.delete-bianji-body .delete-liebiao {
+    margin-left:20%;
+}
+.delete-bianji-body {
+    height:120px;
+    text-align:center;
+    color:#333;
+    font-size:14px;
+    border-bottom:1px solid #dcdcdc;
+    line-height:120px;
+    min-width:800px;
+}
+.delete-bianji-head {
+    color:#333;
+    line-height:60px;
+    font-size:16px;
+    text-align:center;
+    border-bottom:1px solid #dcdcdc
+}
+.delete-shur-body {
+    text-align:center;
+    color:#333;
+    font-size:14px;
+    border-bottom:1px solid #dcdcdc;
+    line-height:60px;
+
+}
+.delete-shur-foo,.delete-bianji-foot{
+    background-color:#f2f2f2;
+}
+.delete-shur-foot > div,.delete-bianji-foot > div  {
+        float:right;
+        background-color:white;
+        border:1px solid #dcdcdc;
+        color:#108af9;
+        width:58px;
+        height:32px;
+        border-radius:4px;
+        text-align:center;
+        line-height:32px;
+        margin-right:10px;
+        cursor:pointer;
+        margin-top:10px;
+}
+.delete-shur-foot > div:hover{
+        float:right;
+        background-color:#108af9;
+        border:1px solid #dcdcdc;
+        color:white;
+}
+.card-people .sousuo input {
+    height:30px;
+}
+.mission-header4 {
+    overflow:hidden;
+}
+.mission-header1 {
+    border-bottom:1px solid #e4e8eb;
+}
+.popup-exit {
+    width:20px;
+    height:20px;
+    position:absolute;
+    right:0;
+    top:-25px;
+    background:url("/img/cal/4.closeIcon(24x24).png") no-repeat center;
+    background-size:18px;
+    cursor:pointer;
+}
+.card-people .checkboxinput {
+    height:14px;
+    width:14px;
+    border:1px solid #d9d9d9;
+    margin-top:8px;
+    background-color:white;
+}
+.card-people .checkboxinput.active{
+    background:url("/img/cal/23.check_1(14x14).png");
+    background-size:14px;
+    background-color:white;
+}
+.ca {
+    border-radius:4px;
+}
+.bianjiliebiao-body2{
+    height:40px !important; 
+    padding:10px;
+    padding-bottom:10px;
+    text-align:left !important;
+    font-size:14px;
+    cursor:default !important;
+    
+}
+.bianjiliebiao-save2 p{
+    background-color:#ff6666 !important;
+}
+
+#popup-zhuangtaichange {
+    padding:0;
+    width:50%;
+    margin-left:25%;
+}
+ #popup-zhuangtaichange .popup-body {
+     height:100px;
+     padding:20px;
+     box-sizing:border-box;
+    font-size:14px;
+
+}
+#popup-zhuangtaichange .body-main {
+    margin-top:5px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #dcdcdc;
+    border-radius:4px;
+    font-size:14px;
+    color:#333;
+    text-indent:10px;
+    background:url("/img/cal/20.PNG") no-repeat right 10px center;
+    background-size:14px;
+}
+#popup-zhuangtaichange .popup-popup {
+    display:none;
+    width:90%;
+    margin-left:5%;
+    position:absolute;
+    top:10px;
+    background-color:white;
+    border:1px solid #dddbda;
+    border-radius:4px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    padding:5px 0 5px 0;
+}
+#popup-zhuangtaichange .popup-popup div{
+    height:34px;
+    line-height:34px;
+    cursor:pointer;
+    padding-left:20px;
+}
+#popup-zhuangtaichange .popup-popup div.active{
+    background:url("/img/cal/checkedgrey.png") no-repeat right 15px center;
+    background-size:16px;
+}
+.popup-exit {
+    width:20px;
+    height:20px;
+    position:absolute;
+    right:0;
+    top:-25px;
+    background:url("/img/cal/4.closeIcon(24x24).png") no-repeat center;
+    background-size:18px;
+    cursor:pointer;
+}
+.peoplechooked-body > div {
+    float:left;
+    width:50px;
+}
+.popup-foot div:hover {
+    color:white;
+    background-color:#108af9;
+}
+.popup-foot .popup-foot-shur {
+    color: white;
+    background-color: #108af9;
+}
+.popup-foot .popup-foot-shur:hover {
+    background-color:#0d7ade;
+}
+.popup-popup > div:hover {
+    background-color:#f2f2f2;
+}
+#card .new-add .itemborder-size {
+    top:50px;
+}
+.timechook1 span {
+    font-size:14px;
+}
+.delete-maskp {
+    width:150px;
+    height:30px !important;
+    line-height:30px !important;
+    margin-top:10px !important;
+    padding-left:10px;
+    margin-left:-10px;
+    position:relative;
+    overflow:visible !important;
+}
+.delete-maskp:hover {
+    background-color:#f5f5f5;
+    border-radius:20px;
+}
+.delete-maskp img{
+    margin-top:5px !important;
+}
+.delete-maskp:hover .hideimg{
+    display:block;
+}
+.hideimg {
+    display:none;
+    position:absolute;
+    top:-10px;
+    right:-5px;
+}
+p.img {
+    height:30px;
+}
+p.img img {
+    float:left;
+}
+.img span {
+    float:left;
+    margin-left:10px;
+}
+#newmission #sex, #newmission #Select3,#newmission .jiezhishijian{
+   position:absolute;
+   left:90px;
+   top:40px;
+   background-color:white;
+   border-radius:7px;
+   padding:10px 0 10px 0;
+   width:70%;
+   height:110px;
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+   z-index:1;
+    display:none;
+
+}
+    #newmission #sex img, #newmission #Select3 img,#newmission .jiezhishijian img{
+        width:14px;
+        height:14px;
+        position:absolute;
+        right:15px;
+        top:10px;
+    }
+.email {
+    position:relative;
+}
+#newmission #sex li, #newmission #Select3 li,#newmission .jiezhishijian li{
+    height:38px;
+    line-height:38px !important;
+    padding-left:30px;
+    margin-left:0;
+    cursor:pointer;
+    position:relative;
+}
+#newmission #sex li img, #newmission #Select3 li img,#newmission .jiezhishijian li img{
+    display:none;
+}
+#newmission #sex li:hover, #newmission #Select3 li:hover,#newmission .jiezhishijian li:hover{
+    background-color:#f5f5f5;
+}
+#newmission #sex li.active img, #newmission #Select3 li.active img,#newmission .jiezhishijian li.active img{
+    display:block;
+}
+.returnimg {
+    position:absolute;
+    top:0;
+}
+.hidediv {
+    position:relative;
+}
+#Select3 {
+    height:180px !important;
+    
+}
+#Select3 span{
+    width:auto !important;
+} 
+.newmissq {
+                float: right;
+    width: 86px;
+    height: 32px;
+    line-height: 32px;
+    color: #108af9;
+    background-color: #ffffff;
+    border: #e4e8eb solid 1px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+            
+        }
+        .sousuo-tishi {
+            top:43px;
+        }
+        .sousuo-tishi1 {
+            top:25px;
+        }
+        #newmission .title input {
+            width:99% !important;
+        }
+        #newmission .missmessage-body {
+    min-width: 800px;
+}
+        #newmission .missmessage-body>div>div {
+    min-width: 350px;
+}
+        .card-table {
+            top:40px;
+        }
+        #newmission {
+            width:70%;
+            margin:auto;
+            position:absolute;
+            top:12.5%;
+            z-index:101;
+            background-color:white;
+            left:15%;
+            height:75%;            
+            display:none;
+            border-radius:4px;
+            background-color:transparent;
+        }
+        #qqqq {
+            display:block !important;
+        }
+        .mission-header4 {
+            display:none !important;
+        }
+        .mission-header1 {
+            display:block !important;
+        }
+        .popup-mask {
+            left:0;
+        }
+        #newmission > div {
+            width:100%;
+            background-color:white;
+        }
+        #newmission .newmission-bocy {
+            height:60%;
+            overflow:auto;
+            padding:0 5%;
+            width:90%;
+            padding-top:30px;
+            padding-bottom:30px;
+        }
+        .newmission-head {
+            margin-top:0 !important;
+            line-height:60px;
+            height:60px;
+            text-align:center;
+            font-size:18px;
+            border-bottom:1px solid #dedede;
+            border-radius: 4px 4px 0 0;
+        }
+        .newmission-foot {
+            border-top:1px solid #dedede;
+            height:70px;
+            border-radius:0 0 4px 4px;
+            background-color:#f2f2f2 !important;
+        }
+        #newmission > div {
+            margin-top:0;
+        }
+        .save {
+            width:100%;
+            text-align:right;
+            padding-right:20px;
+            box-sizing:border-box;
+            padding-top:20px;
+        }
+        .card-people {
+            margin-left:20px;
+            margin-top:-80px;
+        }
+        .username span {
+            display:inline-block;
+        }
+        .delete-maskp {
+            width:240px;
+            
+        }
+        #card {
+           
+        }
+        .mission-header1 {
+            height:60px;
+        }

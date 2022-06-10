@@ -1,0 +1,975 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>新建日程</title>
+    <link href="/element/element.css" rel="stylesheet" />
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        i {
+            color: #999;
+        }
+
+        .mask {
+            opacity: 0.3;
+            background-color: #000;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+
+        #vueapp {
+            position: absolute;
+            z-index: 2;
+            height: 80%;
+            margin-top: 5%;
+            width: 90%;
+            margin-left: 5%;
+            background-color: white;
+            border-radius: 4px;
+            padding-bottom: 5px;
+        }
+
+        .header {
+            height: 44px;
+            width: 100%;
+            border-bottom: 1px solid #dedede;
+        }
+
+        .body {
+            height: calc(100% - 44px);
+            overflow-y: auto;
+            box-sizing: border-box;
+            width: 100%;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .header-right-btn {
+            float: right;
+        }
+
+            .header-right-btn .i_btn {
+                font-size: 26px;
+                font-weight: 700;
+                cursor: pointer;
+                margin: 8px;
+                color: #999;
+            }
+
+        .main-item > div {
+            float: left;
+        }
+
+        .main-message {
+            clear: both;
+            box-sizing: border-box;
+        }
+
+        .main-item:after {
+            content: '.';
+            clear: both;
+            height: 0px;
+            overflow: hidden;
+            width: 0px;
+            display: block;
+        }
+
+        .commentlist:after {
+            content: '.';
+            clear: both;
+            height: 0px;
+            overflow: hidden;
+            width: 0px;
+            display: block;
+        }
+
+        .comment:after {
+            content: '.';
+            clear: both;
+            height: 0px;
+            overflow: hidden;
+            width: 0px;
+            display: block;
+        }
+
+        .main-item {
+            border-bottom: 1px solid #dedeed;
+        }
+
+        .finish-prog {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            border: 2px solid #666;
+            cursor: pointer;
+        }
+
+        .prog-title {
+            line-height: 32px;
+            margin-left: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .main-item {
+            padding: 15px;
+            margin: 0 15px;
+        }
+
+        .main-message li {
+            float: left;
+            margin-right: 30px;
+            font-size: 14px;
+        }
+
+            .main-message li i {
+                font-size: 16px;
+                background-color: #efefef;
+                border-radius: 50%;
+                padding: 5px;
+            }
+
+        .main-message {
+            margin-top: 15px;
+            margin-left: 40px;
+        }
+
+        .main-item .item-title {
+            float: none;
+            font-size: 16px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .item-body {
+            font-size: 14px;
+            color: #444;
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+            .item-body li > div {
+                float: left;
+            }
+
+            .item-body li {
+                height: 40px;
+                line-height: 40px;
+            }
+
+        .border_div {
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            height: 20px;
+            width: 20px;
+            margin-top: 10px;
+            line-height: 22px;
+        }
+
+            .border_div i {
+                color: #5cb6ff;
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+        .item-left {
+            width: 100px;
+        }
+
+            .item-left i {
+                margin-right: 10px;
+                font-size: 14px;
+            }
+
+        .main-item:last-child {
+            border: 0;
+        }
+
+        .comment {
+            border-top: 1px solid #dedede;
+            padding: 10px 0px;
+            padding-bottom: 80px;
+        }
+
+        .commentlist {
+            padding: 20px;
+        }
+
+        .peoplephoto {
+            background-color: #efefef;
+            font-size: 30px;
+            border-radius: 50%;
+            padding: 5px;
+            float: left;
+            margin-top: 3px;
+        }
+
+        .fake-textarea {
+            min-height: 0;
+            height: 48px;
+            box-sizing: border-box;
+            border: 0;
+            padding: 10px 15px;
+            background-color: #f6f6f6;
+            font-size: 16px;
+            color: #999;
+            line-height: 28px;
+            float: left;
+            width: calc(100% - 60px);
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .commentlist {
+            font-size: 14px;
+        }
+
+            .commentlist li > div {
+                float: left;
+                margin-left: 15px;
+                max-width: calc(100% - 150px);
+            }
+
+            .commentlist li {
+                position: relative;
+            }
+
+            .commentlist .commentlist-btn {
+                position: absolute;
+                right: 15px;
+                top: 0px;
+            }
+
+        .textarea {
+            float: left;
+            width: calc(100% - 60px);
+            margin-left: 20px;
+        }
+
+        .w-e-text-container {
+            height: 140px !important;
+        }
+
+        .el-input {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .el-input__inner {
+            height: 32px;
+            line-height: 32px;
+        }
+
+        .el-input .el-input__icon {
+            height: 30px;
+            line-height: 32px;
+            margin-top: 1px;
+            padding: 0;
+            background-color: transparent;
+        }
+
+        .editbtn {
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+            .editbtn:hover {
+                color: #5cb6ff;
+            }
+
+        .el-icon-delete:hover {
+            color: #108def;
+            cursor: pointer;
+        }
+
+        .left-content {
+            float: left;
+            width: 60%;
+        }
+
+        .right-content {
+            float: left;
+            width: 40%;
+            height: 100%;
+        }
+
+        .left-content {
+            height: 100%;
+            overflow: auto;
+        }
+
+        .w-e-toolbar {
+            flex-wrap: wrap;
+        }
+
+        .commentlist li {
+            clear: both;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .commentlist {
+            /*height:calc(100% - 200px);
+            overflow:auto;*/
+        }
+
+        .comment {
+            height: calc(100% - 42px);
+            overflow: auto;
+            box-sizing: border-box;
+        }
+
+        .w-e-droplist {
+            z-index: 10002;
+            background-color: white;
+        }
+
+        .w-e-menu {
+            margin: 5px;
+        }
+
+        .comment-head {
+            padding: 10px 20px;
+            border: 0 !important;
+        }
+
+        .comment {
+            border: 0;
+        }
+
+        .lookresultbtn {
+            top: 6px;
+            color: #666;
+        }
+
+        .lookresultbtn {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .input-with-select {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+            .input-with-select .el-input {
+                margin-right: 0 !important;
+            }
+
+        .searchtype {
+            width: 30%;
+        }
+
+        .searchtype, .searchbody {
+            float: left;
+        }
+
+        .search-body {
+            width: 70%;
+        }
+
+            .search-body input {
+                border-radius: 0 4px 4px 0;
+            }
+
+        .searchtype input {
+            border-right: 0;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .finished-prog {
+            background-color: #67C23A;
+            height: 30px;
+            width: 30px;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+            .finished-prog img {
+                margin-top: 4px;
+            }
+
+        .header-left-title {
+            line-height: 40px;
+            margin-left: 20px;
+            float: left;
+        }
+
+        body {
+            color: #333;
+        }
+
+        #iframe {
+            position: absolute;
+            width: 80%;
+            top: 50%;
+            left: 10%;
+            z-index: 9999 !important;
+            display: none;
+            height: 640px;
+            margin-top: -320px;
+            border: 0;
+            background-color: white;
+        }
+
+        .popup-mask {
+            opacity: 0.3;
+            background-color: #000;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 9998;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="mask"></div>
+    <div id="vueapp">
+        <div class="header">
+            <div class="header-left-title">日程</div>
+            <div class="header-right-btn">
+                <i @click="quite" class="i_btn el-icon-close"></i>
+            </div>
+        </div>
+        <div class="body">
+            <div class="left-content">
+                <div class="main-item">
+                    <div v-if="this.listedit.StateCode!=2" class="finish-prog" @click="savelist('StateCode')">
+
+                    </div>
+                    <div v-if="this.listedit.StateCode==2" class="finished-prog" style="" @click="savelist('StateCode')">
+                        <img src="/img/cal/23.check_2(12x12).png" style="width:22px;height:22px" />
+                    </div>
+                    <div class="prog-title">{{list.Subject}}</div>
+                    <div class="main-message">
+                        <ul>
+                            <li style="cursor:pointer;">
+                                <div @click="editowninguser=true" v-show="!editowninguser">
+                                    <i class="el-icon-s-custom"></i>
+                                    <span>{{list.OwningUser.Name}}</span>
+                                </div>
+                                <div v-show="editowninguser">
+                                    <el-select v-model="listedit.OwningUser.Id"
+                                               filterable
+                                               remote
+                                               @visible-change="getlookup('8','OwningUser')"
+                                               remote-method="function(query){searchlookup(query,'8','OwningUser')}"
+                                               placeholder="请选择">
+                                        <el-option v-for="item in search.OwningUser"
+                                                   key="item.ID"
+                                                   label="item.Name"
+                                                   value="item.ID">
+                                        </el-option>
+                                    </el-select>
+                                    <el-button size="mini" type="primary" @click="savelist('editowninguser')">完成</el-button>
+                                    <el-button size="mini" @click="closeedit('editowninguser')">取消</el-button>
+                                </div>
+                            </li>
+                            <li style="cursor:pointer;">
+                                <div v-show="!edittime" @click="edittime=true">
+                                    <i class="el-icon-date"></i>
+                                    <span>{{list.ScheduledStart}}</span>
+                                    -
+                                    <span>{{list.ScheduledEnd}}</span>
+                                </div>
+                                <div v-show="edittime">
+                                    <el-date-picker value-format="yyyy-MM-dd HH:mm:ss" type="datetime" v-model="listedit.ScheduledStart"></el-date-picker>
+                                    <el-date-picker value-format="yyyy-MM-dd HH:mm:ss" type="datetime" v-model="listedit.ScheduledEnd"></el-date-picker>
+                                    <el-button size="mini" type="primary" @click="savelist('edittime')">完成</el-button>
+                                    <el-button size="mini" @click="closeedit('edittime')">取消</el-button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-item">
+                    <div class="item-title">
+                        <span>基本信息</span>
+                        <span @click="editmainmessage=true" style="margin-left:10px;" class="el-icon-edit editbtn"></span>
+                    </div>
+                    <div class="item-body" v-show="!editmainmessage">
+                        <ul>
+                            <li>
+                                <div class="item-left"><i class="el-icon-location-outline"></i>位置：</div>
+                                <div class="item-right">{{list.Location}}</div>
+                            </li>
+                            <li>
+                                <div class="item-left"><i class="el-icon-mobile-phone"></i>联系电话：</div>
+                                <div class="item-right">{{list.Phone}}</div>
+                            </li>
+                            <li>
+                                <div class="item-left"><i class="el-icon-date"></i>日历类型：</div>
+                                <div class="item-right">{{list.CalendarType}}</div>
+                            </li>
+
+                            <li>
+                                <div class="item-left"><i class="el-icon-price-tag"></i>紧急程度：</div>
+                                <div class="item-right">{{list.PriorityCode}}</div>
+                            </li>
+                            <li>
+                                <div class="item-left"><i class="el-icon-time"></i>全天事件：</div>
+                                <div class="item-right">
+                                    <div class="border_div"><i v-show="list.IsAllDayEvent" class="el-icon-check"></i></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-left"><i class="el-icon-price-tag"></i>私有：</div>
+                                <div class="item-right">
+                                    <div class="border_div"><i v-show="list.IsPrivate" class="el-icon-check"></i></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-body" v-show="editmainmessage">
+                        <ul>
+                            <li>
+                                <div class="item-left"><i class="el-icon-location-outline"></i>位置：</div>
+                                <div class="item-right">
+                                    <el-input v-model="listedit.Location"></el-input>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-left"><i class="el-icon-mobile-phone"></i>联系电话：</div>
+                                <div class="item-right">
+                                    <el-input v-model="listedit.Phone"></el-input>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-left"><i class="el-icon-date"></i>日历类型：</div>
+                                <div class="item-right">
+                                    <el-select v-model="listedit.CalendarType"
+                                               placeholder="请选择">
+                                        <el-option key="0"
+                                                   label="个人"
+                                                   value="个人">
+                                        </el-option>
+                                        <el-option key="1"
+                                                   label="工作"
+                                                   value="工作">
+                                        </el-option>
+                                    </el-select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-left"><i class="el-icon-price-tag"></i>紧急程度：</div>
+                                <div class="item-right">
+                                    <el-select v-model="listedit.PriorityCode"
+                                               placeholder="请选择">
+                                        <el-option v-for="item in select.prioritycode" key="item.value"
+                                                   label="item.label"
+                                                   value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-left"><i class="el-icon-time"></i>全天事件：</div>
+                                <div class="item-right">
+                                    <el-checkbox v-model="listedit.IsAllDayEvent"></el-checkbox>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-left"><i class="el-icon-time"></i>私有：</div>
+                                <div class="item-right">
+                                    <el-checkbox v-model="listedit.IsPrivate"></el-checkbox>
+                                </div>
+                            </li>
+                            <el-button size="mini" type="primary" @click="savelist('editmainmessage')">完成</el-button>
+                            <el-button size="mini" @click="closeedit('editmainmessage')">取消</el-button>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="main-item">
+                    <div class="item-title">
+                        <span>提醒信息</span>
+                        <span @click="edittixingmessage=true" style="margin-left:10px;" class="el-icon-edit editbtn"></span>
+                    </div>
+                    <div class="item-body" v-show="!edittixingmessage">
+                        <ul>
+                            <li>
+                                <div class="item-left">提醒设置：</div>
+                                <div class="item-right">
+                                    <div class="border_div"><i v-show="list.IsRecurrence" class="el-icon-check"></i></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-left">提醒时间：</div>
+                                <div class="item-right">{{list.ReminderTime}}</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item-body" v-show="edittixingmessage">
+                        <ul>
+                            <li>
+                                <div class="item-left">提醒设置：</div>
+                                <div class="item-right">
+                                    <el-checkbox v-model="listedit.IsRecurrence"></el-checkbox>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-left">提醒时间：</div>
+                                <div class="item-right">
+                                    <div class="item-right">
+                                        <el-select v-model="listedit.ReminderTime"
+                                                   placeholder="请选择">
+                                            <el-option label="开始前15分钟"
+                                                       value="15">
+                                            </el-option>
+                                            <el-option label="开始前30分钟"
+                                                       value="30">
+                                            </el-option>
+                                            <el-option label="开始前60分钟"
+                                                       value="60">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                </div>
+                            </li>
+                            <el-button size="mini" type="primary" @click="savelist('edittixingmessage')">完成</el-button>
+                            <el-button size="mini" @click="closeedit('edittixingmessage')">取消</el-button>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-item" style="border:0;">
+                    <div class="item-title">
+                        <span>重复事件</span>
+                    </div>
+                    <div class="item-body">
+                        <ul>
+                            <li>
+                                <div class="item-left">重复：</div>
+                                <div class="item-right">
+                                    <div class="border_div"><i v-show="list.IsWorkflowCreated" class="el-icon-check"></i></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-left">重复频率：</div>
+                                <div class="item-right"></div>
+                            </li>
+                            <li>
+                                <div class="item-left">重复时间：</div>
+                                <div class="item-right"><span></span><span></span></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main-item" style="border:0;">
+                    <div class="item-title">
+                        <span>相关项</span>
+                        <span @click="editRegardingObject=true" style="margin-left:10px;" class="el-icon-edit editbtn"></span>
+
+                    </div>
+                    <div class="item-body" v-show="!editRegardingObject">
+                        <li>
+                            <div class="item-left">{{list.RegardingObjectTypeCode}}：</div>
+                            <div class="item-right">{{list.RegardingObjectId.Name}}</div>
+                        </li>
+                    </div>
+                    <div class="item-body" v-show="editRegardingObject">
+                        <ul>
+                            <div placeholder="请输入内容" class="input-with-select">
+                                <el-select @change="listedit.RegardingObjectId={}" class="searchtype" v-model="listedit.RegardingObjectTypeCode" placeholder="请选择">
+                                    <el-option label="项目" value="20290"></el-option>
+                                    <el-option label="流程事务" value="122"></el-option>
+                                    <el-option label="会议" value="5000"></el-option>
+                                    <el-option label="客户、合作伙伴" value="1"></el-option>
+                                    <el-option label="客户联系人" value="2"></el-option>
+                                </el-select>
+                                <el-select class="search-body"
+                                           v-model="listedit.RegardingObjectId.Id"
+                                           filterable
+                                           remote
+                                           @visible-change="getlookup(listedit.RegardingObjectTypeCode,'RegardingObjectId')"
+                                           remote-method="function(query){searchlookup(query,listedit.RegardingObjectTypeCode,'RegardingObjectId')}"
+                                           placeholder="请选择">
+                                    <el-option v-for="item in search.RegardingObjectId"
+                                               key="item.ID"
+                                               label="item.Name"
+                                               value="item.ID">
+                                    </el-option>
+                                </el-select>
+                                <div @click="openslookup('RegardingObjectId',listedit.RegardingObjectTypeCode)" class="lookresultbtn">
+                                    <i class="el-icon-search"></i>
+                                </div>
+                            </div>
+                            <el-button size="mini" type="primary" @click="savelist('editRegardingObject')">完成</el-button>
+                            <el-button size="mini" @click="closeedit('editRegardingObject')">取消</el-button>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="right-content">
+                <div class="comment-head">评论</div>
+                <div class="comment">
+                    <div class="commentlist">
+                        <ul>
+                            <li v-for="item in commentlist">
+                                <i class="el-icon-s-custom peoplephoto"></i>
+                                <div>
+                                    <div>
+                                        <span>{{item.CreatedBy}}</span>
+                                        <span>发表于 {{item.CreatedOn}}</span>
+                                    </div>
+                                    <div style="margin-top:5px;" v-html="item.Comment">
+                                    </div>
+                                </div>
+                                <div class="commentlist-btn">
+                                    <i class="el-icon-delete" @click="deletecomment(item.CommentId)"></i>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="margin-top:15px;padding:20px;">
+                        <i class="el-icon-s-custom peoplephoto"></i>
+                        <div class="fake-textarea" @click="writecontentf" v-show="!writecontent">
+                            点击发表评论
+                        </div>
+                        <div class="textarea" v-show="writecontent">
+                            <div id="editor" ref="editor"></div>
+                            <div class="editorfoot" style="margin-top:10px;">
+                                <el-button @click="savecontent" type="primary" size="small">发表评论</el-button>
+                                <el-button size="mini" style="border:0;" @click="qwritecontent">取消</el-button>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-mask"></div>
+    <iframe id="iframe"></iframe>
+
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/wangEditor/wangEditor.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+
+    <script>
+        function lookupPick(a, b, c, d, id, name) {
+            vum.listedit[b] = {
+                Id: id,
+                Name:name
+            }
+            vum.search[b] = [{
+                ID: id,
+                Name:name
+            }]
+        }
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                commentlist:[],
+                edittixingmessage:false,
+                editmainmessage:false,
+                edittime: false,
+                editowninguser: false,
+                editRegardingObject:false,
+                list: {
+                    OwningUser: {},
+                    RegardingObjectId:{}
+                },
+                listedit: {
+                    OwningUser: {},
+                    RegardingObjectId:{}
+                },
+                editorContent: '',
+                writecontent: false,
+                search: {
+                    OwningUser: [],
+                    RegardingObjectId:[]
+                },
+                select:{}
+            },
+            created: function () {
+                this.getdata()
+                this.getcomment()
+            },
+            mounted: function () {
+                var that = this
+                var E = window.wangEditor
+                var editordom = $('#editor')
+                var editor = new E(this.$refs.editor)
+                editor.customConfig.uploadImgShowBase64 = true
+                editor.customConfig.onchange = function(html) {
+                    that.editorContent = html
+                }
+                editor.create()
+                var index = 20000
+                $('.w-e-menu').each(function () {
+                    index--
+                    $(this).css('z-index',index)
+                })
+            },
+            methods: {
+                openslookup: function (name, objtypecode) {
+                    $('#changeDiv').show()
+                    $('.popup-mask').show()
+                    if (objtypecode == 30020) {
+                        //$('#iframe').attr('src', '/_ui/common/data/UserLookResult.html?name=' + name).show()
+                    } else if (objtypecode == 10) {
+                        //$('#iframe').attr('src', '/_ui/common/data/deptchose_form.html?name=' + name).show()
+                    } else if (objtypecode == 8) {
+                        //$('#iframe').attr('src', '/_ui/common/data/UserLookResult.html?name=' + name).show()
+                    } else {
+                        $('#iframe').attr('src', '/alert/lookupiframe.html?lknm=' + name + '&objtypecode=' + objtypecode).show()
+                    }
+                },
+                deletecomment: function (id) {
+                    var that = this
+                    ajaxMethodGetData('chatter.delete', {
+                        id:id
+                    }, function (data) {
+                        that.$message(data.msg);
+                        that.getcomment()
+                    })
+                },
+                getcomment: function () {
+                    var that = this
+                    ajaxMethodGetData('content.comment.search', {
+                        contentId: getQueryString('id'),
+                    }, function (data) {
+                        that.commentlist = data.rows
+                    })
+                },
+                savecontent: function () {
+                    var that = this
+                    ajaxMethodPostData('content.comment.post', {
+                        contentId: getQueryString('id'),
+                        comment: that.editorContent,
+                        objectTypeCode:4200
+                    }, function (data) {
+                        that.getcomment()
+                    })
+                },
+                writecontentf: function () {
+                    this.writecontent = true
+                    setTimeout(function () {
+                        $('.comment').scrollTop($('.comment').scrollTop() + 150)
+                    }, 0)
+                },
+                qwritecontent: function () {
+                    this.writecontent = false
+                },
+                getdata: function () {
+                    var that = this
+                    var msgid = getQueryString('id')
+                    var d = {
+                        Id: msgid,
+                        ObjTypeCode: 4200
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, function (data) {
+                        that.list = JSON.parse(JSON.stringify(data.record))
+                        that.listedit = JSON.parse(JSON.stringify(data.record))
+                        that.select = data.context.picklistValuesMap
+                        for (item in that.search) {
+                            if (item != 'searchname') {
+                                var name = item
+                                var ID = that.list[name].Id
+                                var Name = that.list[name].Name
+                                var newlist = {
+                                    ID: ID,
+                                    Name: Name
+                                }
+                                that.search[name]=[]
+                                that.search[name].push(newlist)
+                                Vue.set(that.list, name + 2, ID)
+                                Vue.set(that.listedit, name + 2, ID)
+                            }
+                        }
+                    })
+
+                },
+                quite: function () {
+                    parent.$('#changeDiv').hide()
+                    parent.$('#iframe1').hide()
+                },
+                savelist: function (name) {
+                    if (name == 'StateCode') {
+                        if (this.listedit.StateCode == 0) {
+                            this.listedit.StateCode = 2
+                        } else {
+                            this.listedit.StateCode = 0
+                        }
+                    }
+                    this[name] = false
+                    this.list = JSON.parse(JSON.stringify(this.listedit))
+                    var d = this.list
+                    d.id = getQueryString('id')
+                    for (item in d) {
+                        if (typeof d[item] == 'object' && d[item]!=null) {
+                            d[item] = d[item].Id
+                        }
+                    }
+                    var that = this
+                    ajaxMethodPostData('calendar.event.edit', d, function (data) {
+                        that.getdata()
+                    })
+                },
+                closeedit: function (name) {
+                    this[name] = false
+                    this.listedit = JSON.parse(JSON.stringify(this.list))
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                        var id = getQueryString('id')
+                        if (id != null) {
+                            var ID = that.list[name].Id
+                            var Name = that.list[name].Name
+                            var newlist = {
+                                ID: ID,
+                                Name: Name
+                            }
+                            if (ID) {
+                                if (JSON.stringify(that.search[name]).indexOf(JSON.stringify(newlist)) == -1) {
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                    }
+                },
+            },
+
+        })
+    </script>
+</body>
+</html>

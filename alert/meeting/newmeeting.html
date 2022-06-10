@@ -1,0 +1,1257 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/wangEditor/wangEditor.css" rel="stylesheet" />
+    <link href="/layouteditor/addsublistsubtable_layout.css" rel="stylesheet" />
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            padding: 0 15px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 45%;
+            margin-left: 2%;
+            box-sizing: border-box;
+        }
+
+            .item-left:first-child {
+                margin-right: 6%;
+            }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            padding-top: 30px;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 6px;
+            width: 100%;
+        }
+
+        .section-body .item {
+            padding: 0 !important;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        .section-body {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .section {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .popup-body {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .section .layui-input, .section .layui-select {
+            height: 32px;
+            border-radius: 4px;
+        }
+
+        .section .layui-input-block {
+            margin-left: 0;
+        }
+
+        .save-checking-input.disstatus {
+            border: 1px solid red;
+        }
+
+        .layui-input.layui-unselect.disstatus {
+            border: 1px solid red;
+        }
+
+        .popup-body {
+            overflow-y: auto;
+            height: 460px;
+        }
+
+        .popup .layui-tab {
+            margin: 0;
+        }
+
+        .popup {
+            background-color: white;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+
+        .searchimg {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            right: 8px;
+            top: 8px;
+            cursor: pointer;
+        }
+
+        .searchselect {
+            position: relative;
+        }
+
+            .searchselect .layui-edge {
+                display: none;
+            }
+
+        .disabled {
+            pointer-events: none;
+        }
+
+        .tableinput, .layui-form-select, .layui-select-title {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .section-body .layui-table-view .layui-table td, .section-body .layui-table-view .layui-table th {
+            padding: 0;
+        }
+
+        .section-body .layui-table-view .layui-table th {
+            padding: 0;
+            text-align: center;
+        }
+
+        .section-body .layui-table-cell {
+            padding: 0;
+        }
+
+        .section-body .layui-table-cell, .section-body .layui-table-tool-panel li {
+            overflow: initial;
+        }
+
+        .layui-table .layui-input, .layui-table .laydate {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .layui-table .layui-input-block {
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+        }
+
+        .section-body .layui-form-selectup dl {
+            top: 35px;
+            bottom: auto;
+        }
+
+        .section-body .layui-table-body, .section-body .layui-table-box {
+            overflow: inherit;
+        }
+
+        .section-body .layui-table .layui-form-selectup dl {
+            top: 35px;
+            bottom: auto;
+        }
+
+        .section-body .layui-table-grid-down {
+            display: none;
+        }
+
+        .tablebtn {
+            width: 100%;
+            border: 1px solid #dedede;
+            box-sizing: border-box;
+            text-align: right;
+            padding: 5px;
+        }
+
+        .section-body .layui-table-view {
+            margin-top: -1px;
+        }
+
+        .tablebtn > span {
+            cursor: pointer;
+            font-size: 18px;
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            margin-right: 10px;
+            padding: 2px;
+        }
+
+            .tablebtn > span:hover {
+                background-color: #f2f2f2;
+            }
+
+        .layui-tab-content > .section {
+            display: none;
+        }
+
+        .body-item-head {
+            display: none;
+        }
+
+        .tab-title {
+        }
+
+        .participantscontainer {
+            padding: 0 20px;
+        }
+
+        .participants > span {
+            margin: 10px 0;
+            display: block;
+        }
+
+        .participants li {
+            display: inline-block;
+            padding: 5px 8px;
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            margin-right: 10px;
+            line-height: 15px;
+            margin-bottom: 5px;
+        }
+
+            .participants li span {
+                float: right;
+                font-size: 22px;
+                margin-left: 5px;
+                cursor: pointer;
+            }
+        /*.popup {
+            display: block;
+            left: 50%;
+            top: 50%;
+            margin-left: -500px;
+            margin-top: -330px;
+            width: 1050px;
+            padding: 0;
+            overflow: hidden;
+            position:absolute;
+            border-radius: 7px;
+        }*/
+        .popup .layui-tab-content {
+            padding: 0;
+        }
+
+        .modal-header {
+            position: absolute;
+            width: 100%;
+            z-index: 999;
+            background-color: white;
+        }
+
+        .popup .form-error {
+            margin-top: 5px;
+        }
+
+        .popup .form-error2 {
+            margin-top: 5px;
+        }
+
+        .invitepeople {
+            margin-top: 10px;
+        }
+
+        .layui-tab-content {
+            overflow-y: auto;
+            height: 460px;
+        }
+
+        #iframe {
+            width: 100% !important;
+            left: 0 !important;
+        }
+
+        .pagination .pagination-num {
+            height: 22px;
+        }
+
+        .datagrid {
+            margin-top: 10px;
+        }
+
+        #iframe {
+            position: fixed;
+            z-index: 1001;
+            background-color: white;
+            width: 60%;
+            left: 20%;
+            top: 50%;
+            margin-top: -300px;
+            border-radius: 7px;
+            display: none;
+            height: 620px;
+            border: 0;
+            height: 620px;
+            margin-top: -310px;
+        }
+
+        .popup-mask {
+            opacity: 0.4;
+            position: absolute;
+            z-index: 1000;
+            background-color: #000;
+            height: 100%;
+            width: 100%;
+            display: none;
+            top: 0;
+        }
+
+        .item1 .item-left {
+            width: 96%;
+            margin-bottom: 10px;
+        }
+
+        .popup-body {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+
+        </div>
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+
+            <ul class="tab-title">
+                <li class="layui-this save-checking">基本信息</li>
+                <li class="save-checking">参会人员</li>
+            </ul>
+            <div class="modal-header"></div>
+
+            <div class="layui-tab-content">
+
+                <div class="section" style="display:block;">
+                    <div class="popup-body layui-form" lay-filter="layuiform">
+
+                    </div>
+                </div>
+                <div class="section participantscontainer">
+                    <div class="layui-btn layui-btn-normal invitepeople">邀请参会人</div>
+                    <div class="participants">
+                        <span>已选人员</span>
+                        <ul></ul>
+                    </div>
+                    <table id="datagrid" style="height:450px;"></table>
+
+                </div>
+
+                <div class="section">
+                    <div class="sublistsubtable">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+
+        </div>
+        <div class="popup-foot">
+            <div onclick="SaveEdit()" class="popup-foot-shur save-checking">保存</div>
+            <div onclick="CancelEdit()" class="">取消</div>
+        </div>
+        <iframe id="iframe"></iframe>
+        <div class="popup-mask"></div>
+    </div>
+
+    <script src="/js/jquery/1.12.4.jquery.min.js"></script>
+
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+
+    <script>
+        //var edititem = 'edititem'
+    </script>
+    <script type="text/javascript" src="/js/formcomponents.js"></script>
+    <script src="/layouteditor/addsublistsubtable_layout.js"></script>
+
+    <script type="text/javascript" src="/easyui/js/treeLoader.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script src="/wangEditor/wangEditor2.min.js"></script>
+    <script>
+        var parentobjIdName = 'MeetingId'
+        function invitepeople(ids, names) {
+            for (var i = 0; i < ids.length; i++) {
+                if ($('#' + ids[i]).length == 0) {
+                    $('.participants ul').append('<li id="' + ids[i] + '">'+names[i]+'<span class="removeparticipant">×</span></li>')
+                }
+            }
+            $('.removeparticipant').click(function () {
+                $(this).parent().remove()
+            })
+        }
+        $('.invitepeople').click(function () {
+            opencenterwindow('/_ui/common/data/invite_UserLookResult.html', '', 1150, 600)
+        })
+
+        function savepage() {
+            var objectTypeCode = window.objectTypeCode
+            setTimeout(function () {
+
+                var save = document.querySelectorAll('.save-checking.active');
+                if (save.length > 0 || $('.save-checking-input').length == 0) {
+                    if ($('[name="Location"]').val() == '' && ($('#RoomId').val() == '' || $('#RoomId').val() == null)) {
+                        layer.msg('会议地点和会议室不可全为空')
+                        return
+                    }
+                    var id = getQueryString('id')
+                    var d = {}
+                    for (var i = 0; i < $('.popup-body.layui-form input[name]').length; i++) {
+                        var key = $('.popup-body.layui-form input[name]').eq(i).attr('name')
+                        d[key] = $('.popup-body.layui-form input[name]').eq(i).val()
+                        if ($('.popup-body.layui-form input[name]').eq(i).attr('type') == 'checkbox') {
+                            if ($('.popup-body.layui-form input[name]').eq(i).attr('checked') == 'checked') {
+                                d[key] = true
+                            } else {
+                                d[key] = false
+                            }
+                        }
+                    }
+                    for (var i = 0; i < $('.popup-body.layui-form .selectcontent').length; i++) {
+                        var key = $('.popup-body.layui-form .selectcontent').eq(i).attr('name')
+                        d[key] = $('.popup-body.layui-form .selectcontent').eq(i).val()
+                    }
+                    for (var i = 0; i < $('.popup-body.layui-form textarea').length; i++) {
+                        var key = $('.popup-body.layui-form textarea').eq(i).attr('name')
+                        d[key] = $('.popup-body.layui-form textarea').eq(i).val()
+                    }
+                    for (var i = 0; i < $('.popup-body.layui-form .editor').length; i++) {
+                        var key = $('.popup-body.layui-form .editor').eq(i).attr('name')
+                        d[key] = window['editor'].$txt.html()
+                    }
+                    for (var i = 0; i < $('.popup-body.layui-form .searchselect').length; i++) {
+                        var key = $('.popup-body.layui-form .searchselect select[name]').eq(i).attr('name')
+                        var Name = $('.popup-body.layui-form .searchselect select[name]').eq(i).next().find('input').val()
+                        var Id = $('.popup-body.layui-form .searchselect select[name]').eq(i).val()
+                        //d[key] = {}
+                        //d[key].Name = Name
+                        //d[key].Id = Id
+                        d[key] = Id
+                        if (Id == null && $('.popup-body.layui-form .searchselect select[name]').eq(i).attr('layvalue') && $('.popup-body.layui-form .searchselect select[name]').eq(i).attr('layvalue') != '') {
+                            d[key].Id = $('.searchselect select[name]').eq(i).attr('layvalue')
+                        }
+                    }
+                    for (var i = 0; i < $('.popup-body.layui-form .openinpt').length; i++) {
+                        var key = $('.popup-body.layui-form .openinpt').eq(i).attr('name')
+                        var Name = $('.popup-body.layui-form .openinpt').eq(i).attr('layvalue')
+                        var Id = $('.popup-body.layui-form .openinpt').eq(i).val()
+                        //d[key] = {}
+                        //d[key].Name = Name
+                        //d[key].Id = Id
+                        d[key] = Id
+                    }
+                    if (id && id != null) {
+                        d.id = id
+                    }
+                    var t1 = new Date(d.ScheduledStart)
+                    var t2 = new Date(d.ScheduledEnd)
+                    if (t1.getTime() >= t2.getTime()) {
+                        layer.msg('会议结束时间必须大于会议开始时间！')
+                        return
+                    }
+
+                    var AvailableStartTime = getQueryString('AvailableStartTime')&&getQueryString('AvailableStartTime')!='null'?Number(getQueryString('AvailableStartTime').split(':')[0]):'';
+                    var AvailableEndTime = getQueryString('AvailableEndTime')&&getQueryString('AvailableEndTime')!='null'?Number(getQueryString('AvailableEndTime').split(':')[0]):'';
+                    if (AvailableStartTime && AvailableEndTime) {
+                        var h1 = d.ScheduledStart
+                        var h2 = d.ScheduledEnd
+                        if (h1 < AvailableStartTime || h1 > AvailableEndTime) {
+                            layer.msg('会议时间未在允许范围' + getQueryString('AvailableStartTime') + '~' + getQueryString('AvailableEndTime') + '内，请修改');
+                            return
+                        }
+                        if (h2 < AvailableStartTime || h2 > AvailableEndTime) {
+                            layer.msg('会议时间未在允许范围' + getQueryString('AvailableStartTime') + '~' + getQueryString('AvailableEndTime') + '内，请修改');
+                            return
+                        }
+                    }
+
+                    layerload = layer.load(1, { shade: [0.3, '#000'] })
+                    ajaxMethodPostData('meeting.edit', d, function (data) {
+                        if (data) {
+                            if (data.status != 0) {
+                                var valueid = data.data[0].ValueId
+                                saveother(valueid)
+                            } else {
+                                layer.msg(data.msg)
+                                layer.close(layerload)
+                            }
+                        } else {
+                            layer.close(layerload)
+                        }
+                    })
+                }
+            }, 500)
+        }
+        function saveother(valueid) {
+            saveinvitepeople(valueid)
+        }
+        function saveinvitepeople(valueid) {
+            function callback() {
+                layer.close(layerload)
+                parent.$('#iframe').hide()
+                parent.$('.popup-mask').hide()
+                parent.success2('保存成功')
+                parent.getdata()
+            }
+            var ids = []
+            if ($('.participants li').length > 0) {
+                for (var i = 0; i < $('.participants li').length; i++) {
+                    ids.push($('.participants li').eq(i).attr('id'))
+                }
+                ids = ids.join(',')
+                ajaxMethodPostData('meeting.people.invite', { invitee: ids, Meetingid: valueid }, function (data) {
+                    saverelated(valueid, callback)
+                })
+            } else {
+                saverelated(valueid, callback)
+            }
+
+        }
+
+        var pagetype = 'tabs'
+        //var returnValue = data.actions[0].returnValue
+        var selectdata = {
+            status: [{
+                label: '草稿',
+                value:'草稿'
+            }]
+        }
+        var yitilistComponent = {
+            label: '',
+            relatedSObject:'yiti',
+            selectedColumns: [{
+                filterColumn: "Name",
+                isSortable: true,
+                label: "标题",
+                name: "Name",
+                referencedEntityObjectTypeCode: 0,
+                sObjectType: 0,
+                type: "S"
+            },{
+                filterColumn: "dept",
+                isSortable: true,
+                label: "部门",
+                name: "dept",
+                referencedEntityObjectTypeCode: 10,
+                sObjectType: 10,
+                type: "O"
+            },{
+                filterColumn: "status",
+                isSortable: true,
+                label: "状态",
+                name: "status",
+                referencedEntityObjectTypeCode: 0,
+                sObjectType: 0,
+                type: "DT"
+            },{
+                filterColumn: "asd",
+                isSortable: true,
+                label: "执行结果",
+                name: "asd",
+                referencedEntityObjectTypeCode: 0,
+                sObjectType: 0,
+                type: "S"
+            },]
+        }
+        var cols = [{ field: '', title: 'ID', width: 40, type: 'checkbox', fixed: 'left' },
+                    { field: '', title: '序号', width: 50, type: 'numbers', fixed: 'left' },
+                    { field: 'Id', title: '', width: 50, hide: 'true' }, ]
+        for (var i = 0; i < yitilistComponent.selectedColumns.length; i++) {
+            var selectedColumn = yitilistComponent.selectedColumns[i]
+            cols.push({
+                field: selectedColumn.name,
+                title: selectedColumn.label,
+                name: yitilistComponent.relatedSObject,
+                objtypecode: selectedColumn.sObjectType,
+                type: selectedColumn.type,
+                minWidth: 150,
+                templet: function (d) {
+                    return sublistsubtableformatOper(d)
+                }
+            })
+        }
+        sublistsubtabletemplate[yitilistComponent.relatedSObject] = {
+            cols: cols,
+            data: [],
+            selectdata: selectdata,
+        }
+        sublistsubtabledata = [yitilistComponent]
+
+        var renwuComponent = {
+            label: '',
+            relatedSObject: 'renwu',
+            selectedColumns: [{
+                filterColumn: "Name",
+                isSortable: true,
+                label: "主题",
+                name: "Name",
+                referencedEntityObjectTypeCode: 0,
+                sObjectType: 0,
+                type: "S"
+            }, {
+                filterColumn: "Name",
+                isSortable: true,
+                label: "被分配人",
+                name: "Name",
+                referencedEntityObjectTypeCode: 8,
+                sObjectType: 8,
+                type: "O"
+            }, {
+                filterColumn: "status",
+                isSortable: true,
+                label: "状态",
+                name: "status",
+                referencedEntityObjectTypeCode: 0,
+                sObjectType: 0,
+                type: "DT"
+            }, {
+                filterColumn: "starttime",
+                isSortable: true,
+                label: "开始时间",
+                name: "starttime",
+                referencedEntityObjectTypeCode: 0,
+                sObjectType: 0,
+                type: "D"
+            }, {
+                filterColumn: "endtime",
+                isSortable: true,
+                label: "结束时间时间",
+                name: "endtime",
+                referencedEntityObjectTypeCode: 0,
+                sObjectType: 0,
+                type: "D"
+            }, ]
+        }
+        var cols = [{ field: '', title: 'ID', width: 40, type: 'checkbox', fixed: 'left' },
+                    { field: '', title: '序号', width: 50, type: 'numbers', fixed: 'left' },
+                    { field: 'Id', title: '', width: 50, hide: 'true' }, ]
+        for (var i = 0; i < renwuComponent.selectedColumns.length; i++) {
+            var selectedColumn = renwuComponent.selectedColumns[i]
+            cols.push({
+                field: selectedColumn.name,
+                title: selectedColumn.label,
+                name: renwuComponent.relatedSObject,
+                objtypecode: selectedColumn.sObjectType,
+                type: selectedColumn.type,
+                minWidth: 150,
+                templet: function (d) {
+                    return sublistsubtableformatOper(d)
+                }
+            })
+        }
+        sublistsubtabledata.push(renwuComponent)
+        sublistsubtabletemplate[renwuComponent.relatedSObject] = {
+            cols: cols,
+            data: [],
+            selectdata: selectdata,
+        }
+
+
+
+        var form = ''
+        layui.use(['form','table'], function () {
+            form = layui.form
+        });
+        var keyPrefix = ''
+        var objectTypeCode = ''
+
+        getlayout()
+
+        //获取布局
+        function getlayout() {
+            var entityName = getQueryString('entityName')
+            var type = getQueryString('type')
+            if (type == 'related') {
+                var inContextOfRecordId = parent.getQueryString('id')
+                if (!inContextOfRecordId) {
+                    inContextOfRecordId = getQueryString('inContextOfRecordId')
+                }
+                var message = {
+                    "actions": [{
+                        "params": {
+                            "record": null,
+                            "inContextOfRecordId": inContextOfRecordId,
+                            "inContextOfComponent": "",
+                            "entityApiNameOrKeyPrefix": entityName,
+                            "mode": "CREATE",
+                            "layoutType": "FULL",
+                            "layoutOverride": "",
+                            "defaultFieldValues": {
+                            },
+                            "changeRecordType": false,
+                            "navigationLocation": "RELATED_LIST",
+                            "navigationLocationId": "Contacts"
+                        },
+                        "storable": true
+                    }]
+                }
+                var id = getQueryString('id')
+                if (id && id != '') {
+                    message.actions[0].params.recordId = id
+                    message.actions[0].params.mode = 'EDIT'
+                }
+                var relatedObjectAttributeName = getQueryString('relatedObjectAttributeName')
+
+                if (relatedObjectAttributeName && relatedObjectAttributeName != '') {
+                    message.actions[0].params.defaultFieldValues[relatedObjectAttributeName] = inContextOfRecordId
+                }
+
+            } else {
+                var message = {
+                    "params": {
+                        "recordId": "",
+                        "record": null,
+                        "inContextOfComponent": "",
+                        "entityApiName": entityName,
+                        "mode": "CREATE",
+                        "layoutType": "FULL",
+                        "navigationLocation": "DETAIL"
+                    },
+                    "storable": true
+                }
+                var id = getQueryString('id')
+                if (id && id != '') {
+                    message.params.recordId = id
+                    message.params.mode = 'EDIT'
+                }
+            }
+            message = JSON.stringify(message)
+            var getlayoutdata = {
+                message: message
+            }
+
+            ajaxMethodPostData('entity.config.get', getlayoutdata, function (data) {
+                var id = getQueryString('id')
+                if (id) {
+                    $('.popup-head').html('编辑' + data.actions[0].returnValue.componentDef.localizedTitle)
+                } else {
+                    $('.popup-head').html('新建' + data.actions[0].returnValue.componentDef.localizedTitle)
+                }
+                window.keyPrefix = data.actions[0].returnValue.componentDef.keyPrefix
+                window.objectTypeCode = data.actions[0].returnValue.componentDef.objectTypeCode
+                $('.popup-head').html(data.localizedTitle)
+                addsection(data.actions[0].returnValue.componentDef.sections)
+                //addbtns(data.actions[0].returnValue.componentDef.headerActions)
+                getselect(data.context.picklistValuesMap)
+                createddata(data.actions[0].returnValue.record, data.context.picklistValuesMap)
+                if (typeof datadefault != 'undefined') {
+                    datadefault()
+                }
+            })
+        }
+        //加载区块
+        function addsection(data) {
+            var html = ''
+            for (var i = 0; i < data.length; i++) {
+                html += '<div class="section">'
+                + '<div class="section-title">' + data[i].title + '</div>'
+                + '<div class="section-body">'
+
+                for (var j = 0; j < data[i].rows.length; j++) {
+                    //html += '<div class="item divs">'
+                    if (data[i].title == '会议内容') {
+                        html += '<div class="item divs item1">'
+                    }
+                    else {
+                        html += '<div class="item divs">'
+                    }
+                    for (var k = 0; k < data[i].rows[j].attributes.length; k++) {
+                        //if (data[i].title=='会议内容') {
+                        //    html += '<div class="item-left item-left1">'
+                        //}
+                        //else{
+                        //    html += '<div class="item-left">'
+                        //}
+                        html += '<div class="item-left">'
+                        + '    <div class="item-body">'
+                        var classname = ''
+                        if (data[i].rows[j].attributes[k].attributes.required) {
+                            html += '<span class="red">*</span>'
+                            classname = 'save-checking-input'
+                        }
+                        var alwaysReadonly = data[i].rows[j].attributes[k].attributes.alwaysReadonly
+                        var disabled = ''
+                        if (alwaysReadonly == true) {
+                            disabled = 'disabled'
+                        } else {
+                            disabled = 'nodisabled'
+                        }
+                        html += '<span class="item-title">' + data[i].rows[j].attributes[k].label + '</span>'
+                        if (data[i].rows[j].attributes[k].attributes.type == 'S') {
+                            html += '<input ' + disabled + '="disabled" type="text" name="' + data[i].rows[j].attributes[k].localId + '"  autocomplete="off" class="layui-input ' + classname + '">'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'X' || data[i].rows[j].attributes[k].attributes.type == 'J') {
+                            html += '<textarea ' + disabled + '="disabled" name="' + data[i].rows[j].attributes[k].localId + '" class="layui-textarea ' + classname + '"></textarea>'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'z') {
+                            html += '<div id="editor" style="height:380px;" class="editor" name="' + data[i].rows[j].attributes[k].localId + '"></div>'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'D') {
+                            html += '<input ' + disabled + '="disabled" datatype="D" id="laydate' + i + j + k + '" class="laydate ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '" lay-verify="' + classname + '" />'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'Year') {
+                            html += '<input ' + disabled + '="disabled" datatype="Year" id="laydate' + i + j + k + '" class="laydate ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '" lay-verify="' + classname + '" />'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'Month') {
+                            html += '<input ' + disabled + '="disabled" datatype="Month" id="laydate' + i + j + k + '" class="laydate ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '" lay-verify="' + classname + '" />'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'F') {
+                            html += '<input ' + disabled + '="disabled" datatype="F" id="laydate' + i + j + k + '" class="laydate ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '" lay-verify="' + classname + '" />'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'L' || data[i].rows[j].attributes[k].attributes.type == 'DT' || data[i].rows[j].attributes[k].attributes.type == 'LT') {
+                            html += '<div class="layui-input-block"><select ' + disabled + '="disabled"lay-verify="" id="' + data[i].rows[j].attributes[k].localId + '" class="selectcontent ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '"><option value="">请选择</option></select></div>'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'O' || data[i].rows[j].attributes[k].attributes.type == 'Y_MD' || data[i].rows[j].attributes[k].attributes.type == 'Y' || data[i].rows[j].attributes[k].attributes.type == 'U') {
+                            html += '<div Lktp="' + data[i].rows[j].attributes[k].attributes.referencedEntityObjectTypeCode + '" class="layui-input-block searchselect"><select ' + disabled + '="disabled" lay-search lay-verify="" id="' + data[i].rows[j].attributes[k].localId + '" class="' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '"><option value="">请选择</option></select>'
+
+                            html += ' <img class="searchimg" src="/img/images/02.1-1.Search_.png" title="' + data[i].rows[j].attributes[k].label + '" />'
+                            html += '</div>'
+                        }
+                        else if (data[i].rows[j].attributes[k].attributes.type == 'MC' || data[i].rows[j].attributes[k].attributes.type == 'B') {
+                            html += '<div class="layui-input-block"><input ' + disabled + '="disabled" type="checkbox"name="' + data[i].rows[j].attributes[k].localId + '" lay-skin="primary"></div>'
+                        } else {
+                            html += '<input ' + disabled + '="disabled"  name="' + data[i].rows[j].attributes[k].localId + '"  class="' + classname + '">'
+                        }
+                        html += '</div>'
+                        html += '</div>'
+                    }
+                    html += '<div style="clear:both;"></div>'
+                    html += '</div>'
+                }
+                html += '</div>'
+                html += '</div>'
+
+
+            }
+            $('.popup-body').prepend(html)
+            getlookup()
+        }
+        //弹窗选人
+        function choosepeople(name) {
+            opencenterwindow('/_ui/common/data/UserLookResult.aspx?type=relatedchhoose&lknm=' + name, '', 1150, 600)
+        }
+        function lookupPick(formName, controlName, controlName2, null1, valId, valName) {
+            $('[name="' + controlName2 + '"]').attr('layvalue', valId)
+            $('[name="' + controlName2 + '"]').attr('value', valId)
+            $('[name="' + controlName2 + '"]').next().find('input').val(valName)
+
+        }
+        function choosedept(name) {
+            opencenterwindow('/alert/deptchose_form.html?type=relatedchhoose&lknm=' + name, '', 750, 520)
+        }
+        function lookupPickdept(id, label, name) {
+            $('[name="' + name + '"]').attr('layvalue', id);
+            $('[name="' + name + '"]').attr('value', id);
+            $('[name="' + name + '"]').next().find('input').val(label);
+        }
+        //填充数据
+        function createddata(data, picklistValuesMap) {
+            if ($('#editor').length) {
+                var editor = new wangEditor('editor')
+                editor.create()
+                window.editor = editor
+            }
+            for (var item in data) {
+                if (data[item] != null) {
+                    if (data[item].objectTypeCode == 10 || data[item].objectTypeCode == 8) {
+                        if (data[item].Id) {
+                            $('[name="' + item + '"]').attr('layvalue', data[item].Id)
+                            $('[name="' + item + '"]').append('<option value="' + data[item].Id + '">' + data[item].Name + '</option>')
+                            $('[name="' + item + '"]').val(data[item].Id)
+                            $('[name="' + item + '"]').next().find('input').val(data[item].Name)
+                        }
+                    } else if (data[item] === 'true' || data[item] === 'True' || data[item] === true) {
+                        $('[name="' + item + '"]').attr('checked', 'checked')
+                        $('[name="' + item + '"]').next().addClass('layui-form-checked')
+                    }
+                    else {
+                        if (!data[item].Id) {
+                            if ($('[name="' + item + '"]').length > 0 && data[item] != '') {
+                                $('[name="' + item + '"]').val(data[item])
+                            }
+                        } else {
+                            if ($('[name="' + item + '"]').length > 0) {
+                                $('[name="' + item + '"]').attr('layvalue', data[item].Id)
+                                $('[name="' + item + '"]').append('<option value="' + data[item].Id + '">' + data[item].Name + '</option>')
+                                $('[name="' + item + '"]').val(data[item].Id)
+                                $('[name="' + item + '"]').next().find('input').val(data[item].Name)
+                            }
+                        }
+                    }
+                    if (item == 'MeetingContent') {
+                        editor.$txt.html(data[item])
+                    }
+                }
+
+            }
+
+        }
+
+        //获取下拉框枚举值
+        function getselect(picklistValuesMap) {
+            for (var item in picklistValuesMap) {
+                for (var i = 0; i < picklistValuesMap[item].length; i++) {
+                    $('#' + item).append('<option value="' + picklistValuesMap[item][i].value + '">' + picklistValuesMap[item][i].label + '</option>')
+                }
+            }
+        }
+        //搜索类型
+        function getlookup() {
+            $('.searchselect').click(function () {
+                var that = this
+                d = {
+                    Lktp: $(that).attr('Lktp'),
+                }
+                if ($(this).find('select option').length < 2) {
+                    $(this).find('input').off()
+                    searchlookup(d, that)
+                }
+                $(this).find('input').off()
+                $(this).find('input').keyup(function () {
+                    $(this).find('input').off()
+                    d = {
+                        Lktp: $(that).attr('Lktp'),
+                        Lksrch: $(this).val()
+                    }
+                    searchlookup(d, that)
+                })
+            })
+        }
+
+        function searchlookup(d, that) {
+            ajaxMethodGetData('ui.entity.lookup', d, function (data) {
+                $(that).find('select').html('<option value="">请选择</option>')
+                $(that).find('.layui-anim.layui-anim-upbit').html('<dd class="layui-select-tips" lay-value="">请选择</dd>')
+                for (var i = 0; i < data.listData.length; i++) {
+                    $(that).find('select').append('<option value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</option>')
+                    $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</dd>')
+                }
+                $(that).find('.layui-anim.layui-anim-upbit dd').off()
+                $(that).find('.layui-anim.layui-anim-upbit dd').click(function () {
+                    if ($(this).attr('lay-value') != '') {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', $(this).html())
+                    } else {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', '')
+                    }
+                    $(this).parent().find('dd').removeClass('layui-this')
+                    $(this).addClass('layui-this')
+                })
+            })
+        }
+
+
+        $('.laydate').each(function () {
+            var id = $(this).attr('id')
+            var datatype = $(this).attr('datatype')
+            if (datatype == 'D') {
+                laydate.render({
+                    elem: '#' + id,
+                    format: 'yyyy-MM-dd',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'F') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'datetime',
+                    format: 'yyyy-MM-dd HH:mm:ss',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Year') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    format: 'yyyy',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Month') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'month',
+                    format: 'yyyy-MM',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            }
+        })
+
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+
+
+        function CancelEdit() {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        }
+        function SaveEdit() {
+            savepage()
+        }
+
+        function datadefault() {
+            var day = getQueryString('day')
+            var time = getQueryString('time')
+            var roomid = getQueryString('roomid')
+            var roomname = getQueryString('roomname')
+            var id = getQueryString('id')
+
+            if (!id) {
+                var day2 = new Date();
+                var s2 = day2.getFullYear() + "-" + ((day2.getMonth() + 1) < 10 ? '0' + (day2.getMonth() + 1) : (day2.getMonth() + 1)) + "-" + (day2.getDate() < 10 ? '0' + day2.getDate() : day2.getDate());
+                $('[name="ScheduledStart"]').val(s2 + ' 08:00:00')
+                $('[name="ScheduledEnd"]').val(s2 + ' 09:00:00')
+            }
+
+
+            if (day && day != '') {
+                var moon = parseInt(day.split('-')[1])
+                var date = parseInt(day.split('-')[2])
+                if (moon < 10) {
+                    moon = '0' + moon
+                }
+                if (date < 10) {
+                    date = '0' + date
+                }
+                day = day.split('-')[0] + '-' + moon + '-' + date
+                $('[name="ScheduledStart"]').val(day+' 08:00:00')
+                $('[name="ScheduledEnd"]').val(day+' 21:00:00')
+            }
+            if (time && time != '') {
+                var endtime = parseInt(time.split(':')[0]) + 1
+                if (endtime < 10) {
+                    endtime = '0' + endtime
+                }
+                endtime += ':00'
+                var moon = parseInt(day.split('-')[1])
+                var date = parseInt(day.split('-')[2])
+                if (moon < 10) {
+                    moon = '0' + moon
+                }
+                if (date < 10) {
+                    date = '0' + date
+                }
+                day = day.split('-')[0] + '-' + moon + '-' + date
+                $('[name="ScheduledStart"]').val(day + ' ' + time+':00')
+                $('[name="ScheduledEnd"]').val(day + ' ' + endtime+':00')
+            }
+            if (roomid && roomid != '') {
+                $('#RoomId').append('<option value="' + roomid + '">' + roomname + '</option>')
+                $('#RoomId').val(roomid)
+                $('#RoomId').next().find('input').val(roomname)
+            }
+
+        }
+        $('.tab-title li').eq(1).click(function () {
+            setTimeout(function () {
+                $('#datagrid').datagrid('resize')
+            }, 100)
+        })
+        getpeople()
+        //人员备注
+        function remarksdept(id) {
+            $('.popup-mask').show()
+            $('#iframe').attr('src', '/alert/remarks_ie8.html?Id=' + id + '&objTypeCode=5000').show().height(620).css('margin-top', '-300px')
+        }
+        //人员删除
+        function deletedept(id) {
+            //console.log(123)
+            $('#iframe').attr('src', '/alert/delete_ie8.html?id=' + id + '&objTypeCode=5002').height(280).css('margin-top', '-140px');
+            $('.popup-mask').show()
+            $('#iframe').show();
+        }
+        function getpeople(search) {
+            var url = "/apps/CommandProcessor.ashx?cmd=meeting.people.search&Meetingid=" + getQueryString('id')
+            if (search) {
+                url += search
+            }
+            $('#datagrid').datagrid({
+                columns: [[
+                    {
+                        field: 'Action', title: '操作', formatter: function (value, row, inde) {
+                            var html = ''
+                            //'<a style="color:#015ba7;font-size:13px;" onclick=remarksdept("' + row["Id"] + '"' + ',"8")>备注</a>'
+
+                            html += '<a style="color:#015ba7;font-size:13px;margin-left:5px;" onclick=deletedept("' + row["Id"] + '"' + ',"8")>删除</a>'
+                            return html
+                        }
+                    },
+                    { field: 'OwningUserName', title: '姓名', },
+                    { field: 'BusinessUnitIdName', title: '部门', },
+                    { field: 'Checkin', title: '签到时间', },
+                    { field: 'name', title: '签到地址', },
+                    { field: 'Checkout', title: '签退时间', },
+                    { field: 'StatusInfo', title: '接受状态', },
+                    { field: 'CheckinInfo', title: '签到状态', },
+                    { field: 'Description', title: '原因', }
+                ]],
+                fitCloumns: true,
+                idField: "LIST_RECORD_ID",
+                singleSelect: false,
+                checkOnSelect: true,
+                method: 'POST',
+                pagination: true,
+                rownumbers: true,
+                url: url,
+                striped: false,
+                // 隔行变色特性s
+                pageSize: 10,
+                pageList: [10, 15, 20, 25, 30, 50, 100],
+                queryParams: {
+                    message: window.messages
+                },
+                onLoadSuccess: function (data) {
+                }
+            })
+        }
+    </script>
+
+</body>
+</html>

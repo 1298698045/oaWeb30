@@ -1,0 +1,473 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>命名</title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+
+    <link rel="stylesheet" href="/css/themes/lightning/addpeople.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/tasklist.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+
+    <style>
+        .slds_section__content_div_col_element {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .form-element input {
+            position: static;
+        }
+
+        .form-element {
+            width: 250px;
+            line-height: 25px;
+        }
+
+        .contentWrapper .slds-dropdown_right {
+            margin-top: 2px;
+            margin-left: 60px;
+            top: auto;
+        }
+
+        .autocompleteWrapper .lookup {
+            margin-top: -240px;
+            width: 35%;
+            top: auto;
+        }
+
+        .slds_section__content_div_col_element {
+            position: static;
+        }
+
+        .addpeople {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 14px;
+            width: 60px;
+            background-color: #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .uiImage {
+            background-color: rgb(101, 202, 228);
+        }
+
+        .playsed {
+            margin-left: 40px;
+            margin-right: 40px;
+            padding-bottom: 10px;
+            padding-top: 5px;
+            border-bottom: 1px solid #ccc;
+            height: 30px;
+            margin-top: 5px;
+        }
+
+            .playsed img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .playsed .uiImage {
+                width: 30px;
+                height: 30px;
+            }
+
+            .playsed > div {
+                float: left;
+            }
+
+        .people-name {
+            line-height: 30px;
+            margin-left: 10px;
+        }
+
+        .playsed > .people-delete {
+            float: right;
+            margin-right: 30px;
+            cursor: pointer;
+        }
+
+        .people-delete {
+            width: 15px;
+            height: 15px;
+        }
+
+            .people-delete img {
+                width: 15px;
+                height: 15px;
+                margin-top: 8px;
+            }
+
+        .playsed .people-quanxian {
+            float: right;
+            margin-right: 50px;
+        }
+
+            .playsed .people-quanxian .el-select {
+                height: 30px;
+            }
+
+            .playsed .people-quanxian .el-input {
+                height: 30px;
+                margin-top: 0;
+            }
+
+            .playsed .people-quanxian input {
+                height: 30px;
+            }
+
+        .playsed .el-input__icon {
+            line-height: 30px;
+        }
+
+        .addpeople.active {
+            background-color: rgb(101, 202, 228);
+        }
+
+        .el-message.el-message--error {
+            z-index: 9999 !important;
+        }
+
+        .shift-name-title {
+            float: none;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .item-right .layui-form-select {
+            margin-top: 10px;
+        }
+
+        .people-delete img {
+            display: none;
+        }
+
+        .people-delete .deleteclass {
+            display: block;
+        }
+
+        .form-element > img {
+            display: none;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            padding: 10px 0;
+            line-height: 30px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            overflow: auto;
+            height: 200px;
+            box-sizing: border-box;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+
+        .section-body {
+            padding: 0 20px;
+        }
+
+        .section {
+            padding-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+
+        .modal-body {
+            padding: 15px;
+        }
+
+        .entityIcon .uiImage img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .contentWrapper_icon {
+            width: 14px;
+            height: 14px;
+        }
+
+        .contentWrapper_input.slds-grid.people_hidden {
+            display: block !important;
+            height: 36px;
+            line-height: 36px;
+        }
+
+            .contentWrapper_input.slds-grid.people_hidden > div {
+                float: left;
+            }
+
+        .contentWrapper_iconfont {
+            float: right !important;
+            margin-top: 10px;
+        }
+
+        .entiyMenu {
+            width: 44px;
+            height: 36px;
+            padding-left: 10px;
+        }
+
+        .entityIcon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .contentWrapper_icon {
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+
+        .contentWrapper .slds-dropdown_right {
+            width: 100px;
+            padding: 5px;
+            margin-left: -20px \9;
+            padding: 10px \9;
+            left: 0px \9;
+            left: 50px;
+            right: auto;
+        }
+
+        .slds-dropdown__item > a {
+            display: block;
+            padding: 8px 10px !important;
+        }
+
+        .slds-dropdown__item.active {
+            background-color: #f2f2f2;
+        }
+
+        .pillContainerListItem {
+            margin: 4px;
+        }
+
+        .addpeople {
+            margin: 10px 0 \9;
+        }
+
+        .item-left {
+            width: 100%;
+        }
+
+        #usercntent {
+            display: none;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            重命名
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+            <div class="section">
+                <div class="section-title">基本信息</div>
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <span class="red">*</span>
+                                <span class="item-title">列表名称</span>
+                                <div class="layui-input-block">
+                                    <input class="save-checking-input" id="Name" type="text" name="Name" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                 
+                </div>
+            </div>
+
+
+        </div>
+        <div class="popup-foot">
+            <div id="Save" class="popup-foot-shur save-checking active">确定</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+    <script src="/js/filter/filterGrid_ie8.js"></script>
+
+    <script>
+       
+        $('.close').click(function () {
+            parent.$('#iframe').hide()
+            parent.$('.popup-mask').hide()
+        })
+        layui.use('form', function () {
+
+        })
+
+        Rename()
+
+
+    </script>
+
+</body>
+</html>

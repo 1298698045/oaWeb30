@@ -1,0 +1,270 @@
+﻿@font-face {
+          font-family: "icon-mode-app";
+          src:url('/css/fhfont/iconfont.woff?t=1554176909234') format('woff');
+        }
+        .layui-icon.account{
+            font-family:'icon-mode-app' !important;
+        }
+        .layui-icon.account:before {
+            content: "\e604";
+        }
+        .bodyDiv {
+            min-width:0;
+            width:100%;
+            padding:10px;
+            box-sizing:border-box;
+            background-color:#fff;
+            border-bottom-right-radius: 4px;
+        }
+        body{
+            overflow:hidden;
+
+        }
+        .header{
+            background-color:white;
+        }
+       body #iframe {
+            position: fixed;
+            background-color: white;
+            width: 60%;
+            left: 20%;
+            top: 50%;
+            margin-top: -300px;
+            border-radius: 7px;
+            display: block;
+            height:620px;
+            border:0;
+            overflow:hidden;
+            z-index:9999;
+            display:none;
+        }
+        .popup-mask {
+            display:none;
+            position: fixed;
+            background-color:transparent;
+            width:100%;
+            height:100%;
+            top:0;
+            z-index:999;
+            left:0;
+            position:fixed;
+            background: url(/img/bgOverlayDialogBackground.png) ;
+            background-color: transparent;
+        }
+        .head-right-btn{
+            float:right;
+        }
+        .logo-img{
+            width:34px;
+            height:34px;
+            background-color:rgb(115,154,288);
+            border-radius:50%;
+            float:left;
+        }
+        .logo-img img{
+            width:34px;
+            height:34px;
+        }
+        .header-title{
+            float:left;
+            line-height:34px;
+            margin-left:15px;
+            font-size:14px;
+        }
+        .header-logo{
+            padding:20px;
+            background-color:#f4f4f4;
+            overflow:hidden;
+        }
+        .head-right-btn .layui-btn{
+            padding:0 15px;
+        }
+         .layui-tab-brief>.layui-tab-title .layui-this{
+             color:#1E9FFF;
+         }
+         .layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after {
+            border-bottom: 2px solid #1E9FFF;
+        }
+        .search-content .layui-form-item{
+            float:left;
+            padding:10px;
+            clear:none;
+            margin-bottom:0;
+        }
+        .layui-tab{
+            margin-bottom:0;
+        }
+        .search-content .layui-form-label{
+            display:block;
+            float:none;
+            text-align:left;
+            padding:0;
+            width:auto;
+        }
+        .layui-input-block{
+            margin-left:0px;
+        }
+        .search-content .layui-input,.search-content .layui-select,.search-content .layui-textarea{
+            height:32px;
+        }
+        .search-content::after{
+            
+        }
+        .search-content .layui-form::after{
+            content:'';
+            clear:both;
+            display:block;
+        }
+        .main-content{
+            background-color:rgb(241,241,241);
+        }
+        .statistics-left{
+            float:left;
+        }
+        .statistics-right{
+            float:right;
+        }
+        .statistics-right .layui-icon{
+            font-size:40px;
+            margin-top:12px;
+        }
+        .statistics-count{
+            font-weight:700;
+            font-size:22px;
+            color:#555;
+        }
+        .layui-card{
+            float:left;
+            color:#333;
+            margin-right:10px;
+            margin-bottom:0;
+        }
+        .statistics-content{
+            padding:10px;
+        }
+        .layui-card:last-child{
+            margin-right:0;
+        }
+        .statistics-content{
+            overflow:hidden;
+        }
+        .layui-card-body{
+            overflow:hidden;
+        }
+        .main-content{
+            clear:both;
+        }
+        .tag-format{
+            width:80px;
+            font-size:12px;
+            border-radius:10px;
+            text-align:center;
+            line-height:23px;
+            height:23px;
+            box-sizing:border-box;
+        }
+        .layui-progress{
+            background-color:#ccc !important;
+            margin-top:5px;
+        }
+        .layui-progres .layui-progress-bar.layui-bg-blue{
+            background-color:#1E9FFF !important
+        }
+        .layui-badge-rim{
+            border-color:#ccc !important;
+        }
+
+        .layui-progress-text{
+            font-size:12px;
+            top:2px;
+        }
+        .search-content .laydate.layui-input{
+            float:left;
+            width:200px;
+            margin-left:10px;
+        }
+        .search-content .layui-form-select{
+            float:left;
+        }
+        .searchimg {
+            position:absolute;
+            width:14px;
+            height:14px;
+            right:8px;
+            top:8px;
+            cursor:pointer;
+        }
+        .searchselect .layui-edge{
+            display:none;
+        }
+        td[field="Action"] .datagrid-cell{
+            overflow:initial;
+        }
+        .gridcontent .layui-nav .layui-nav-item{
+            line-height:20px;
+            margin-left:0;
+            background-color:white;
+            border:1px solid #dedede;
+            border-radius:4px;
+            color:#000;
+        }
+        .gridcontent .layui-nav-more{
+            color:#333;
+            border-color:transparent;
+            border-top-color:#999;
+        }
+        .gridcontent .layui-nav-mored{
+            border-color:transparent;
+            border-bottom-color:#999;
+        }
+        .gridcontent .layui-nav .layui-nav-item a{
+            color:#333;
+            padding:0 20px 0 5;
+            text-decoration:none;
+        }
+        .gridcontent .layui-nav{
+            padding:0;
+            background-color:white;
+        }
+        .gridcontent .layui-nav-bar{
+            display:none;
+        }
+        .gridcontent .layui-nav-child{
+            top:auto;
+            bottom:25px;
+        }
+        .layui-anim-downbit{
+            position:absolute;
+        }
+        .editoption{
+            border:1px solid #dedede;
+            box-sizing:border-box;
+            height:26px;
+            line-height:26px;
+            font-size:12px;
+            width:80px;
+            text-align:center;
+            color:#666;
+        }
+        .editoption .layui-icon{
+            font-size:12px;
+            margin-left:3px;
+        }
+        .zen .zen-tabMenu a{
+            font-size:13px;
+        }
+        .search-content .layui-input{
+            width:210px;
+        }
+        .search-content .layui-form-item{
+            padding-bottom:0;
+        }
+        .search-content .layui-form{
+            padding-bottom:10px;
+        }
+         .header-right{
+            display:inline-block;
+            margin: 10px;
+            float:right;
+            margin-top:30px;
+        }

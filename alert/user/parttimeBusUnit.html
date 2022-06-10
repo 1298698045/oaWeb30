@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        body, html{
+            width: 100%;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+        .popup-foot .popup-foot-shur {
+            color: white;
+            background-color: #108af9;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 10px;
+            height: 338px;
+            overflow: hidden;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+        .section-body {
+            padding: 0 20px;
+        }
+        .section {
+            padding-bottom: 20px;
+        }
+        .red {
+            color: red;
+        }
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+        #treePanel {
+            width: 400px;
+            position: absolute;
+        }
+        .item-body {
+            width: 400px;
+        }
+        .item-left {
+            width: 100%;
+        }
+        .centerdiv>div{
+            float:left;
+        }
+        .left{
+            width:400px;
+        }
+        .center{
+            width:100px;
+            text-align:center;
+            position:relative;
+            height:100%;
+        }
+        ul,li{
+            list-style:none;
+        }
+        #deptsearchkey{
+            width:353px;
+        }
+        .adddept{
+            position:absolute;
+            top:40%;
+            cursor:pointer;
+            color:#108def;
+            margin-left:-15px;
+        }
+        .centerdiv{
+            display:inline-block;
+            height:100%;
+        }
+        .popup-body{
+            text-align:center;
+        }
+        .right{
+            width:350px;
+            text-align:left;
+        }
+        .right ul{
+            border:1px solid #dedede;
+            height:300px;
+            overflow:auto;
+        }
+        .right-head{
+            height:36px;
+            line-height:36px;
+        }
+        .right ul li{
+            border-bottom:1px solid #dedede;
+            line-height:32px;
+            padding-left:10px;
+        }
+        .right ul li:hover{
+            background-color:#f2f2f2;
+        }
+        .right ul li img{
+            width:14px;
+            height:14px;
+            float:right;
+            margin-right:10px;
+            margin-top:8px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+
+        <div class="popup-head">
+            设置部门
+        </div>
+        <div class="popup-body layui-form">
+            <div class="centerdiv">
+                <div class="left">
+                    <div class="search" style="float:left;">
+                        <span>搜索 :</span>
+                        <input id="deptsearchkey" onchange="deptsearch()" type="search" name="name" value="" />
+                    </div>
+                    <div class="item divs" style="padding-bottom:10px;">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <div id="treePanel" class="easyui-panel" title="组织结构" style="padding: 5px; min-height: 0!important; min-height: 200px;">
+                                    <ul class="easyui-tree" id="leftTree" style="display: block; height: 100%; min-height: 300px;">
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div class="center">
+                    <span class="adddept">添加</span>
+                </div>
+                <div class="right">
+                    <div class="right-head">已选部门</div>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="clear:both;float:none;"></div>
+        </div>
+        <div class="popup-foot">
+            <div id="Save" class="popup-foot-shur">确定</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/alert.js"></script>
+    <link rel="stylesheet" href="/easyui/themes/bootstrap/easyui.css" type="text/css" />
+    <link rel="stylesheet" href="/easyui/themes/icon.css" type="text/css" />
+    <script type="text/javascript" src="/easyui/js/treeLoader.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+    <script>
+        
+        ajaxMethodGetData('user.businessunit.getlist', { userId: getQueryString('id') }, function (data) {
+            for (var i = 0; i < data.businessUnits.length; i++) {
+                var row = data.businessUnits[i]
+                var id = row.id
+                var name = row.name
+                $('.right ul').append('<li deptid="' + id + '">'
+                            + '<span>' + name + '</span>'
+                            + '<img onclick=deptremove("' + id + '") src="/img/cal/13.png">'
+                            + '</li>')
+            }
+        })
+
+        treeLoader.prototype.bindData = function (self, data) {
+            //build tree
+            //debugger;
+            var datas = GetFirstRow(data);
+            $("#" + self.a).tree({
+                data: datas,
+                checkbox: true,
+                cascadeCheck:false,
+            });
+        }
+        treeNode = new treeLoader("leftTree", "organizationtree", function () { });
+        treeNode.init();
+        //var grid = new listGrid("datagrid", "P01");
+        //grid.init();
+        var screenHeight = getClientHeight();
+        $("#treePanel").height(300);
+
+        $('.close').click(function () {
+            parent.$('#iframe').hide()
+            parent.$('.popup-mask').hide()
+        })
+        $("#Save").click(function () {
+            var businessUnitIds = []
+            for (var j = 0; j < $('.right li').length; j++) {
+                businessUnitIds.push($('.right li').eq(j).attr('deptid'))
+            }
+            businessUnitIds = businessUnitIds.join(',')
+            ajaxMethodPostData('user.businessunit.save', {
+                userId: getQueryString('id'),
+                businessUnitIds: businessUnitIds
+            }, function (data) {
+                parent.$('#iframe').hide()
+                parent.$('.popup-mask').hide()
+                parent.$('#datagrid').datagrid('reload')
+            })
+        })
+
+        function deptsearch() {
+            var deptsearchkey = $('#deptsearchkey').val()
+            $('#treePanel li').hide()
+            $('.tree-title').each(function () {
+                if ($(this).html().indexOf(deptsearchkey) != '-1') {
+                    $(this).parents('li').show()
+                }
+            })
+        }
+        $('.adddept').click(function () {
+            var ids = $('#leftTree').tree('getChecked')
+            if (ids.length > 0) {
+                for (var i = 0; i < ids.length; i++) {
+                    var rule = true
+                    $('.right li').each(function () {
+                        if ($(this).attr('deptid') == ids[i].id) {
+                            rule = false
+                        }
+                    })
+                    if (rule == true) {
+                        $('.right ul').append('<li deptid="' + ids[i].id + '">'
+                        + '<span>' + ids[i].text + '</span>'
+                        + '<img onclick=deptremove("' + ids[i].id + '") src="/img/cal/13.png">'
+                        + '</li>')
+                    }
+                }
+            } else {
+                alert('请先选择部门')
+            }
+        })
+        function deptremove(id) {
+            $('li[deptid="'+id+'"]').remove()
+        }
+    </script>
+</body>
+</html>

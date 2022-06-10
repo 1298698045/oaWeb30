@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mxGraphModel>
+  <root>
+    <Diagram label="My Process" href="http://www.supermore.com.cn/" id="0">
+      <mxCell/>
+    </Diagram>
+    <Layer label="Default Layer" id="1">
+      <mxCell parent="0"/>
+    </Layer>
+    <Roundrect label="填写表单" href="" id="500000013101">
+      <mxCell style="rounded" parent="1" vertex="1">
+        <mxGeometry x="140" y="90" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="部门领导" href="" id="500000013114">
+      <mxCell style="rounded" parent="1" vertex="1">
+        <mxGeometry x="280" y="90" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="分管科室院长" href="" id="500000013116">
+      <mxCell style="rounded" parent="1" vertex="1">
+        <mxGeometry x="540" y="90" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="分管财务院长" href="" id="500000013117">
+      <mxCell style="rounded" parent="1" vertex="1">
+        <mxGeometry x="690" y="90" width="88" height="40" as="geometry"/>
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="财务科长" href="" id="500000013120">
+      <mxCell style="rounded" parent="1" vertex="1">
+        <mxGeometry x="410" y="90" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Roundrect>
+    <Connector label="" href="" id="500000013648">
+      <mxCell parent="1" source="500000013120" target="500000013116" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Connector>
+    <Connector label="" href="" id="500000013649">
+      <mxCell parent="1" source="500000013116" target="500000013117" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Connector>
+    <Connector label="" href="" id="500000013653">
+      <mxCell parent="1" source="500000013114" target="500000013120" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points"/>
+          <mxPoint x="430" y="60" as="sourcePoint"/>
+          <mxPoint x="550" y="-10" as="targetPoint"/>
+        </mxGeometry>
+      </mxCell>
+    </Connector>
+    <Connector label="" href="" id="500000013678">
+      <mxCell parent="1" source="500000013101" target="500000013114" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Connector>
+    <Roundrect label="院长" href="" id="500000013121">
+      <mxCell style="rounded" parent="1" vertex="1">
+        <mxGeometry x="910" y="90" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Roundrect>
+    <Roundrect label="财务科备案" href="" id="500000013122">
+      <mxCell style="rounded" parent="1" vertex="1">
+        <mxGeometry x="1080" y="90" width="80" height="40" as="geometry"/>
+      </mxCell>
+    </Roundrect>
+    <Connector label="大于1万" href="" id="500000013679">
+      <mxCell style="verticalConnector" parent="1" source="500000013117" target="500000013121" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Connector>
+    <Connector label="" href="" id="500000013680">
+      <mxCell parent="1" source="500000013121" target="500000013122" edge="1">
+        <mxGeometry relative="1" as="geometry"/>
+      </mxCell>
+    </Connector>
+    <Connector label="小于1万" href="" id="500000013681">
+      <mxCell parent="1" source="500000013117" target="500000013122" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="930" y="180"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </Connector>
+  </root>
+</mxGraphModel>

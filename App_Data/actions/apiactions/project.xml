@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <!--项目管理-->
+  <Action name="project.get" type="WorkReportCore.DailyReport.Actions.Portal.QueryContentPlate,ProjectCore"  desc=""></Action>
+  <Action name="project.search" type="WorkReportCore.DailyReport.Actions.Portal.ProjectSearch,ProjectCore" desc=""></Action>
+  
+  <Action name="project.status.edit" type="Youyou.Projects.Actions.ProjectStatusEdit,ProjectCore" desc="项目状态编辑"></Action>
+  
+  <Action name="project.calendar.search" type="WorkReportCore.DailyReport.Actions.Portal.QueryNavigation,ProjectCore" desc="项目成本数据"></Action>
+  <Action name="project.chatreport" type="WorkReportCore.DailyReport.Actions.Portal.GetNoticeList,ProjectCore" desc=""></Action>
+  <Action name="project.files.getlist" type="WorkReportCore.DailyReport.Actions.Portal.GetLikesNum,ProjectCore" desc=""></Action>
+  <Action name="project.create" type="WorkReportCore.DailyReport.Actions.Portal.InsertLikesInfo,ProjectCore" desc=""></Action>
+  <Action name="project.delete" type="Youyou.Portal.HomeImageGetList,WorkReportCore" desc=""></Action>
+  <Action name="project.delete" type="Youyou.Portal.HomeImageGetList,WorkReportCore" desc=""></Action>
+
+  <Action name="project.tasklist.add" type="Youyou.Projects.Actions.ProjectTasklistAdd,ProjectCore" desc="任务列表"></Action>
+  <Action name="project.tasklist.delete" type="Youyou.Projects.Actions.ProjectTasklistDelete,ProjectCore" desc="任务列表"></Action>
+  <Action name="project.tasklist.getlist" type="Youyou.Projects.Actions.ProjectTasklistGetList,ProjectCore" desc="获取任务列表"></Action>
+
+  <Action name="project.task.edit" type="Youyou.Projects.Actions.ProjectTaskEdit,ProjectCore" desc="编辑任务"></Action>
+  <Action name="project.task.changelist" type="Youyou.Projects.Actions.ProjectTaskChangelist,ProjectCore" desc="编辑任务"></Action>
+  <Action name="project.task.delete" type="Youyou.Projects.Actions.ProjectTaskDelete,ProjectCore" desc="删除任务"></Action>
+ 
+  <Action name="project.task.assign" type="Youyou.Projects.Actions.ProjectTaskAssign,ProjectCore" desc="分配或变更执行人"></Action>
+  <Action name="project.task.finish" type="Youyou.Projects.Actions.ProjectTaskFinish,ProjectCore" desc="标记完成"></Action>
+  
+  <Action name="project.task.get" type="Youyou.Projects.Actions.ProjectTaskGet,ProjectCore" desc="获取任务"></Action>
+  <Action name="project.task.getlist" type="Youyou.Projects.Actions.ProjectTaskGetList,ProjectCore" desc="获取任务"></Action>
+  <Action name="project.task.search" type="Youyou.Projects.Actions.ProjectTaskSearch,ProjectCore" desc="搜索任务"></Action>
+  
+  <Action name="project.task.executor.add" type="Youyou.Projects.Actions.ProjectTaskExecutorAdd,ProjectCore" desc="添加任务执行人"></Action>
+  <Action name="project.task.executor.getlist" type="Youyou.Projects.Actions.ProjectTaskExecutorGetList,ProjectCore" desc="获取办理人员"></Action>
+
+  <Action name="project.cost.search" type="WorkReportCore.DailyReport.Actions.Portal.QueryNavigation,ProjectCore" desc="项目成本数据"></Action>
+
+  <Action name="activity.day.getlist" type="Youyou.Projects.Actions.ActivityDayGetList,ProjectCore" desc="获取日日程"></Action>
+  <Action name="activity.week.getlist" type="Youyou.Projects.Actions.ActivityWeekGetList,ProjectCore" desc="获取周日程"></Action>
+  <Action name="activity.month.getlist" type="Youyou.Projects.Actions.ActivityMonthGetList,ProjectCore" desc="获取月日程"></Action>
+
+  <Action name="calendar.create" type="Youyou.Projects.CalendarFellow,ProjectCore" desc="日历创建"></Action>
+  
+  <Action name="calendar.leader.getlist" type="Youyou.Projects.CalendarLeaderGetList,ProjectCore" desc="获取领导日程"></Action>
+  <Action name="calendar.leader.export" type="Youyou.Projects.CalendarLeaderExport,ProjectCore" desc="导出领导日程"></Action>
+  <Action name="calendar.leader.search" type="Youyou.Projects.Actions.CalendarLeaderSearch,ProjectCore" desc="领导日程列表"></Action>
+  <Action name="calendar.leader.search.export" type="Youyou.Projects.Actions.CalendarLeaderSearchExport,ProjectCore" desc="领导日程列表导出"></Action>
+  <Action name="calendar.leader.day.search" type="Youyou.Projects.Actions.CalendarLeaderDaySearch,ProjectCore" desc="领导日程一天内列表"></Action>
+  
+  <Action name="calendar.getlist" type="Youyou.Projects.CalendarsGetAll,ProjectCore" desc="获取所有日程，包括自己的以及别人共享的"></Action>
+  <Action name="calendar.soon.start.getlist" type="Youyou.Projects.CalendarsSonnStartList,ProjectCore" desc="获取我即将开始的日程"></Action>
+  <!--<Action name="calendar.getlist" type="Youyou.Projects.CalendarGetList,ProjectCore" desc="获取所有日程，包括自己的以及别人共享的"></Action>-->
+  <Action name="calendar.event.search" type="Youyou.Projects.CalendarEventSearch,ProjectCore" desc="日程数据搜索"></Action>
+  
+  <Action name="calendar.event.edit" type="Youyou.Projects.Actions.CalendarEventEdit,ProjectCore" desc="日程新增、编辑"></Action>
+  <Action name="calendar.event.delete" type="Youyou.Projects.Actions.CalendarEventDelete,ProjectCore" desc="日程新增、编辑"></Action>
+  
+  <Action name="calendar.share" type="Youyou.Projects.CalendarShare,ProjectCore" desc="日历共享"></Action>
+  <Action name="calendar.share.remove" type="Youyou.Projects.CalendarShareRemove,ProjectCore" desc="日历停止共享"></Action>
+  <Action name="calendar.shared.mylist" type="Youyou.Projects.Actions.MyCalendarShareList,ProjectCore" desc="获取我的日历共享记录"></Action>
+  <Action name="calendar.shared.otherlist" type="Youyou.Projects.Actions.CalendarShareOtherList,ProjectCore" desc="获取我的其他共享日历"></Action>
+  
+  <Action name="calendar.usershared.search" type="Youyou.Projects.Actions.CalendarShareSearch,ProjectCore" desc="搜索别人共享给我的日历"></Action>
+  <Action name="calendar.shared.display" type="Youyou.Projects.CalendarSharedDisplay,ProjectCore" desc="添加别人共享日历到当前用户"></Action>
+    
+  <Action name="calendar.shared.batchdisplay" type="Youyou.Projects.CalendarSharedDisplayBatch,ProjectCore" desc="批量添加别人共享日历到当前用户"></Action>
+  <Action name="calendar.shared.hide" type="Youyou.Projects.CalendarSharedHide,ProjectCore" desc="影藏当前用户添加的日历"></Action>  
+  <Action name="calendar.shared.color" type="Youyou.Projects.CalendarSharedColor,ProjectCore" desc="设置颜色"></Action>
+  <Action name="calendar.shared.right" type="Youyou.Projects.Actions.CalendarSharedRight,ProjectCore" desc="更新共享权限"></Action>
+  
+
+  <Action name="home.calendar.month" type="Youyou.Projects.HomeCalendarGet,ProjectCore" desc="主页日历获取月活动"></Action>
+  <Action name="home.activity.list" type="Youyou.Projects.HomeActivityGet,ProjectCore" desc="主页获取日程任务会议"></Action>
+
+  <Action name="meeting.getall" type="Youyou.Meetings.MeetingGetAll,ProjectCore" desc="获取所有会议信息"></Action>
+  <Action name="meeting.people.invite" type="Youyou.Meetings.PeopleInvite,ProjectCore" desc="参会人员邀请"></Action>
+  <Action name="meeting.people.invite.delete" type="Youyou.Meetings.PeopleInviteDelete,ProjectCore" desc="参会人员邀请删除"></Action>
+  <Action name="meeting.subject.people.invite" type="Youyou.Meetings.Actions.MeetingSubjectPeopleInvite,ProjectCore" desc="议题填写人员邀请"></Action>
+  <Action name="meeting.item.search" type="Youyou.Meetings.ItemSearch,ProjectCore" desc="会议议题搜索"></Action>
+  <Action name="meeting.people.search" type="Youyou.Meetings.PeopleSearch,ProjectCore" desc="会议参与人搜索"></Action>
+  <Action name="meeting.people.export" type="Youyou.Meetings.PeopleSearchExport,ProjectCore" desc="会议参与人搜索导出"></Action>
+  <Action name="meeting.audience.remark" type="Youyou.Meetings.Actions.MeetingAudienceRemark,ProjectCore" desc="人员备注"></Action>
+  <Action name="meeting.people.remind" type="Youyou.Meetings.Actions.RemindMessageSend,ProjectCore" desc="会议提醒"></Action>
+  <Action name="meeting.remindmessage.send" type="Youyou.Meetings.Actions.RemindMessageSend,ProjectCore" desc="会议提醒"></Action>
+  
+  <Action name="meeting.chatter.search" type="Youyou.Meetings.ChatterSearch,ProjectCore" desc="获取会议讨论列表"></Action>
+  <Action name="meeting.task.search" type="Youyou.Meetings.TaskSearch,ProjectCore" desc="获取会议任务列表"></Action>
+  <Action name="meeting.update.status" type="Youyou.Meetings.MeetingUpdateStatus,ProjectCore" desc="更新会议状态"></Action>
+  <Action name="meeting.chatter.delete" type="Youyou.Meetings.ChatterDelete,ProjectCore" desc="删除会议讨论"></Action>
+  
+  <Action name="meeting.summary.save" type="Youyou.Meetings.Actions.MeetingSummarySave,ProjectCore" desc="获取会议纪要"></Action>
+  <Action name="meeting.summary.get" type="Youyou.Meetings.Actions.MeetingSummaryGet,ProjectCore" desc="获取会议纪要"></Action>
+  <Action name="meeting.summary.reader.search" type="Youyou.Meetings.Actions.SummaryReaderSearch,ProjectCore" desc="获取会议纪要阅读人员名单"></Action>
+  <Action name="meeting.resourceorg.approvers" type="Youyou.Meetings.Actions.ResourceOrgApproversSearch,ProjectCore" desc="获取资源多个管理员信息"></Action>
+  <Action name="meeting.edit" type="Youyou.Meetings.Actions.MeetingEdit,ProjectCore" desc="会议新建及修改"></Action>
+  <Action name="meeting.delete" type="Youyou.Meetings.Actions.MeetingDelete,ProjectCore" desc="会议删除"></Action>
+  
+  
+  
+  <Action name="meeting.home.list" type="Youyou.Meetings.Actions.MeetingHomeList,ProjectCore" desc="首页会议显示(10条)"></Action>
+  <Action name="meeting.audience.accept" type="Youyou.Meetings.Actions.MeetingAudienceAccept,ProjectCore" desc="拒绝或接受会议"></Action>
+  
+
+
+  <Action name="project.expenditure.balance.get" type="Youyou.Projects.Actions.Expenditures.ExpenditureBalanceGet,ProjectCore" desc="获取项目余额"></Action>
+
+  <!-- 项目统计 -->
+  <Action name="project.statistics.overview" type="Youyou.Projects.Actions.ProjectTaskOverviewStatistics,ProjectCore" desc="项目概览统计"></Action>
+  <Action name="project.statistics.trend" type="Youyou.Projects.Actions.ProjectTaskTrendStatistics,ProjectCore" desc="项目任务趋势统计"></Action>
+  <Action name="project.statistics.distribution" type="Youyou.Projects.Actions.ProjectTaskDistributionStatistics,ProjectCore" desc="项目任务状态类型分布统计"></Action>
+  <Action name="project.statistics.completion" type="Youyou.Projects.Actions.ProjectTaskCompletionStatistics,ProjectCore" desc="项目成员任务完成情况统计"></Action>
+
+  <!-- 项目任务创建 -->
+  <Action name="project.task.init" type="Youyou.Projects.Actions.ProjectTaskInit,ProjectCore" desc="项目创建任务状态初始化"></Action>
+</Actions>

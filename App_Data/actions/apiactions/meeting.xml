@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="resource.room.stat" type="Youyou.Projects.Meetings.Actions.ResourceOrgStat,ProjectCore" desc="统计会议室每月使用次数-折线图"></Action>
+    <!--
+  <Action name="meetingroom.userreserve.getlist" type="OA.Web.Servlets.MeetingRoomUserReservationGetList,AppBusiness" desc="获取会议室"></Action>-->
+
+  <Action name="meetingroom.reservation.isappointment" type="Youyou.Rooms.MeetingRoomReservationIsAppointment,Youyou.Meetings" desc="会议室是否可预约"></Action>
+  
+  <Action name="meetingroom.reservation.edit" type="Youyou.Rooms.MeetingRoomReservationEdit,Youyou.Meetings" desc="预约会议室"></Action>
+  <Action name="meetingroom.reservation.get" type="Youyou.Rooms.MeetingRoomReservationGet,Youyou.Meetings" desc="获取单个会议室预约情况"></Action>
+  <Action name="meetingroom.reservation.getlist" type="Youyou.Rooms.MeetingRoomReservationGetList,Youyou.Meetings"  desc="获取会议室预约情况"></Action>
+  <Action name="meetingroom.reservation.getlist2" type="Youyou.Rooms.MeetingRoomReservationGetList2,Youyou.Meetings"  desc="获取会议室预约情况2"></Action>
+  
+  
+  <Action name="meetingroom.reservation.approve" type="Youyou.Rooms.MeetingRoomReservationApprove,Youyou.Meetings" desc="审批"></Action>
+  <Action name="meetingroom.reservation.approve2" type="Youyou.Rooms.MeetingRoomReservationApprove2,Youyou.Meetings" desc="审批2"></Action>
+  <Action name="meetingroom.peoplenumber.check" type="Youyou.Rooms.MeetingRoomPeopleNumberCheck,Youyou.Meetings" desc="会议室参与人数和容纳人数校验"></Action>
+  <Action name="meetingroom.serviceabletime.get" type="Youyou.Rooms.MeetingRoomServiceableTimeGet,Youyou.Meetings" desc="获取会议室可使用时间"></Action>
+  <Action name="meetingroom.reservation.businessapprove" type="Youyou.Rooms.MeetingRoomReservationBusinessApprove,Youyou.Meetings" desc="会议室审批"></Action>
+  
+  <Action name="meetingroom.statistics.list" type="Youyou.Rooms.MeetingRoomStatisticsList,Youyou.Meetings" desc="会议室每月使用次数（列表）"></Action>
+  <Action name="meetingroom.statistics.chart" type="Youyou.Rooms.MeetingRoomStatisticsChart,Youyou.Meetings" desc="会议室每月使用次数(统计图)"></Action>
+  
+  
+  <Action name="meeting.getall" type="Youyou.Meetings.MeetingGetAll,Youyou.Meetings" desc="获取所有会议信息"></Action>
+  <Action name="meeting.people.invite" type="Youyou.Meetings.PeopleInvite,Youyou.Meetings" desc="参会人员邀请"></Action>
+  <Action name="meeting.people.invite.delete" type="Youyou.Meetings.PeopleInviteDelete,Youyou.Meetings" desc="参会人员邀请删除"></Action>
+  <Action name="meeting.subject.people.invite" type="Youyou.Meetings.Actions.MeetingSubjectPeopleInvite,Youyou.Meetings" desc="议题填写人员邀请"></Action>
+  <Action name="meeting.item.search" type="Youyou.Meetings.ItemSearch,Youyou.Meetings" desc="会议议题搜索"></Action>
+  <Action name="meeting.people.search" type="Youyou.Meetings.PeopleSearch,Youyou.Meetings" desc="会议参与人搜索"></Action>
+  <Action name="meeting.people.export" type="Youyou.Meetings.PeopleSearchExport,Youyou.Meetings" desc="会议参与人搜索导出"></Action>
+  <Action name="meeting.audience.remark" type="Youyou.Meetings.Actions.MeetingAudienceRemark,Youyou.Meetings" desc="人员备注"></Action>
+  <Action name="meeting.people.remind" type="Youyou.Meetings.Actions.RemindMessageSend,Youyou.Meetings" desc="会议提醒"></Action>
+  <Action name="meeting.remindmessage.send" type="Youyou.Meetings.Actions.RemindMessageSend,Youyou.Meetings" desc="会议提醒"></Action>
+
+  <Action name="meeting.chatter.search" type="Youyou.Meetings.ChatterSearch,Youyou.Meetings" desc="获取会议讨论列表"></Action>
+  <Action name="meeting.task.search" type="Youyou.Meetings.TaskSearch,Youyou.Meetings" desc="获取会议任务列表"></Action>
+  <Action name="meeting.update.status" type="Youyou.Meetings.MeetingUpdateStatus,Youyou.Meetings" desc="更新会议状态"></Action>
+  <Action name="meeting.chatter.delete" type="Youyou.Meetings.ChatterDelete,Youyou.Meetings" desc="删除会议讨论"></Action>
+
+  <Action name="meeting.summary.save" type="Youyou.Meetings.Actions.MeetingSummarySave,Youyou.Meetings" desc="获取会议纪要"></Action>
+  <Action name="meeting.summary.get" type="Youyou.Meetings.Actions.MeetingSummaryGet,Youyou.Meetings" desc="获取会议纪要"></Action>
+  <Action name="meeting.summary.reader.search" type="Youyou.Meetings.Actions.SummaryReaderSearch,Youyou.Meetings" desc="获取会议纪要阅读人员名单"></Action>
+  <Action name="meeting.resourceorg.approvers" type="Youyou.Meetings.Actions.ResourceOrgApproversSearch,Youyou.Meetings" desc="获取资源多个管理员信息"></Action>
+  <Action name="meeting.edit" type="Youyou.Meetings.Actions.MeetingEdit,Youyou.Meetings" desc="会议新建及修改"></Action>
+  <Action name="meeting.delete" type="Youyou.Meetings.Actions.MeetingDelete,Youyou.Meetings" desc="会议删除"></Action>
+
+
+  <Action name="meeting.home.list" type="Youyou.Meetings.Actions.MeetingHomeList,Youyou.Meetings" desc="首页会议显示(10条)"></Action>
+  <Action name="meeting.audience.accept" type="Youyou.Meetings.Actions.MeetingAudienceAccept,Youyou.Meetings" desc="拒绝或接受会议"></Action>
+  
+  <Action name="meeting.batch.create" type="Youyou.Meetings.Actions.MeetingBatchCreate,Youyou.Meetings" desc="批量创建会议"></Action>
+
+
+</Actions>

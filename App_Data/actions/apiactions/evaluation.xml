@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="evaluation.my.getlist" type="Youyou.HRCore.Evaluations.Actions.EvaluationMyGetlist,HRCore"  desc="查询我的考评列表数据"></Action>
+  <Action name="evaluation.evaluation.publish" type="Youyou.HRCore.Actions.Evaluations.EvaluationPublish,HRCore" desc="发布考评"></Action>
+  
+  <Action name="evaluation.employee.add" type="Youyou.HRCore.Actions.Evaluations.EvaluationEmployeeAdd,HRCore" desc="添加被考评人员"></Action>
+  <Action name="evaluation.employee.delete" type="Youyou.HRCore.Actions.Evaluations.EvaluationEmployeeDelete,HRCore" desc="删除被考评人员"></Action>
+  <Action name="evaluation.employee.search" type="Youyou.HRCore.Actions.Evaluations.EvaluationEmployeeSearch,HRCore" desc="获取被考评人员"></Action>
+
+  <Action name="evaluation.businessunit.evaluationunit.search" type="Youyou.HRCore.Evaluations.DeptEvaluationUnitSearch,HRCore" desc="搜索可以被考评的部门单元"></Action>
+  <Action name="evaluation.objectbusinessunit.add" type="Youyou.HRCore.Actions.Evaluations.EvaluateObjectBusinessUnitAdd,HRCore" desc="添加被考评部门"></Action>
+  <Action name="evaluation.objectbusinessunit.delete" type="Youyou.HRCore.Actions.Evaluations.EvaluateObjectBusinessUnitDelete,HRCore" desc="删除被考评部门"></Action>
+
+  <Action name="evaluation.business.add" type="Youyou.HRCore.Actions.Evaluations.EvaluationBusinessAdd,HRCore" desc="添加考评部门"></Action>
+  <Action name="evaluation.businessunit.delete" type="Youyou.HRCore.Actions.Evaluations.EvaluationBusinessUnitDelete,HRCore" desc="删除部门汇总报表"></Action>
+  
+  <Action name="evaluation.employee.export" type="Youyou.HRCore.Actions.Evaluations.EvaluationEmployeeExport,HRCore" desc="导出考评人员"></Action>
+
+  <Action name="evaluation.evaluator.edit" type="Youyou.HRCore.Actions.Evaluations.EvaluationEvaluatorEdit,HRCore" desc="添加、修改评估人"></Action>
+  <Action name="evaluation.evaluator.delete" type="Youyou.HRCore.Actions.Evaluations.EvaluationEvaluatorDelete,HRCore" desc="删除评估人"></Action>
+  <Action name="evaluation.evaluator.search" type="Youyou.HRCore.Actions.Evaluations.EvaluationEvaluatorSearch,HRCore" desc="获取评估人"></Action>
+
+  <Action name="evaluation.dimension.getlist" type="Youyou.HRCore.Actions.Evaluations.EvaluationDimensionGetlist,HRCore" desc="获取考评表维度"></Action>
+  
+  <Action name="evaluation.evaluator.task.getlist" type="Youyou.HRCore.Actions.Evaluations.EvaluationEvaluatorTaskGetList,HRCore" desc="获取评估人评估任务"></Action>
+  <!--
+  <Action name="evaluation.evaluator.task.getlist" type="Youyou.HRCore.Actions.Evaluations.EvaluatorTaskGetList,HRCore" desc="获取评估人评估任务"></Action>
+  -->
+  <Action name="evaluation.response.submit" type="Youyou.HRCore.Actions.Evaluations.EvaluationResponseSubmit,HRCore" desc="考评卷提交"></Action>
+  
+  <Action name="evaluation.indexcategory.getlist" type="Youyou.HRCore.Actions.Evaluations.EvaluationIndexCategoryGetList,HRCore" desc="获取指标分类"></Action>
+  <Action name="evaluation.index.search" type="Youyou.HRCore.Actions.Evaluations.EvaluationIndexSearch,HRCore" desc="搜索指标"></Action>
+  <Action name="evaluation.form.index.add" type="Youyou.HRCore.Actions.Evaluations.EvaluationFormIndexAdd,HRCore" desc="添加指标到考评表"></Action>
+  <Action name="evaluation.form.get" type="Youyou.HRCore.Actions.Evaluations.EvaluationFormGet,HRCore" desc="获取考评表"></Action>
+  <Action name="evaluation.form.index.getlist" type="Youyou.HRCore.Actions.Evaluations.EvaluationFormIndexGetList,HRCore" desc="获取考评表指标"></Action>
+  <Action name="evaluation.form.index.sort" type="Youyou.HRCore.Actions.Evaluations.EvaluationFormIndexSort,HRCore" desc="考评表指标排序"></Action>
+
+  <Action name="evaluation.rule.result.getlist" type="Youyou.HRCore.Actions.Evaluations.EvaluationRuleResultGeList,HRCore" desc="获取结果规则"></Action>
+  <Action name="evaluation.rule.people.getlist" type="Youyou.HRCore.Actions.Evaluations.EvaluationRulePeopleGeList,HRCore" desc="获取结果规则"></Action>
+
+  <Action name="evaluation.businessunit.report" type="Youyou.HRCore.Actions.Evaluations.EvaluationBusinessUnitReport,HRCore" desc="部门汇总报表"></Action>
+  <Action name="evaluation.businessunit.export" type="Youyou.HRCore.Actions.Evaluations.EvaluationBusinessUnitExport,HRCore" desc="部门汇总导出"></Action>
+  <Action name="evaluation.summary.report" type="Youyou.HRCore.Actions.Evaluations.EvaluationSummaryReport,HRCore" desc="汇总报表"></Action>
+
+  <Action name="evaluation.search" type="Youyou.HRCore.Actions.Evaluations.EvaluationSearch,HRCore" desc=""></Action>
+  <Action name="evaluation.clone" type="Youyou.HRCore.Actions.Evaluations.EvaluationClone,HRCore" desc=""></Action>
+
+  <Action name="evaluation.ruleemploye.get" type="Youyou.HRCore.Actions.Evaluations.EvaluationRuleEmployeeGet,HRCore" desc="获取被考评人员规则"></Action>
+  <Action name="evaluation.ruleemploye.save" type="Youyou.HRCore.Actions.Evaluations.EvaluationRuleEmployeeSave,HRCore" desc="被考评人员规则保存"></Action>
+  <!--
+  <Action name="evaluation.businessunit.people.report" type="Youyou.HRCore.Actions.Evaluations.EvaluationBusinessUnitPeopleReport,HRCore" desc="部门人员报表"></Action>
+  <Action name="evaluation.indicator.getlist" type="Youyou.HRCore.Actions.Evaluations.EvaluationIndicatorGetList,HRCore" desc="维护分类下的指标"></Action>
+  -->
+
+  <Action name="examinations.paper.get" type="Youyou.Examinations.ExaminationPaperGet,HRCore" desc="获取考评试卷"></Action>
+  <Action name="evaluation.objectbusinessunit.getlist" type="Youyou.Examinations.EvaluationObjectGetlist,HRCore" desc="获取被考评对象部门"></Action>
+  <Action name="evaluation.submit" type="Youyou.Examinations.EvaluationSubmit,HRCore" desc="考评提交"></Action>
+</Actions>

@@ -1,0 +1,116 @@
+:root{
+    --var-primary-color: red;
+    --var-lan-color: #165dff;
+    --var-sizeWhite-color: #fff;
+    --var-size12:12px;
+    --var-size14:14px;
+    --var-size16:16px;
+    --var-size18:18px;
+    --var-size20:20px;
+}
+.pageWraper{
+    height: 100%;
+    background: #f0f2f6;
+}
+.dropMenuWapper.userModal{
+    width: 130px !important;
+    min-height: 162px !important;
+    left: inherit;
+    top: 54px;
+    right: 0;
+}
+.noticeModal{
+    width: 402px;
+    height: 510px;
+    position: absolute;
+    top: 54px;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    border-radius: 3px;
+    color: #1d2129;
+    z-index: 1;
+    display: none;
+}
+.noticeModal .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 14px 20px;
+    box-sizing: border-box;
+}
+.noticeModal .row .title{
+    font-size: 16px;
+    color: #1d2129;
+    font-weight: bold;
+}
+.switch{
+    display: flex;
+    align-items: center;
+}
+.switch .label{
+    padding-right: 12px;
+    color: #86909c;
+    font-size: 12px;
+}
+.tabContent{
+    height: 420px;
+    overflow: auto;
+}
+.tabContent .row{
+    padding: 13px 20px 0 20px;
+    color: #86909c;
+    font-size: 12px;
+}
+.tabContent .boxPanel{
+    height: 96px;
+    background: #fff;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e6eb;
+}
+.tabContent .boxPanel:hover{
+    background: #f7f8fa;
+}
+.tabContent .boxPanel .avatar .iconfont{
+    font-size: 36px !important;
+}
+.tabContent .boxPanel .avatar{
+    padding-right: 19px;
+}
+.tabContent .boxPanel .centerAffair{
+    flex: 1;
+}
+.tabContent .boxPanel .centerAffair .cell .affairTitle{
+    color: #1d2129;
+    font-weight: bold;
+    padding-right: 17px;
+}
+.tabContent .boxPanel .centerAffair .cell .time{
+    color: #4e5969;
+}
+.tabContent .boxPanel .centerAffair .cell .desc{
+    color: #b8bbcc;
+    font-size: 12px;
+}
+.tabContent .boxPanel .statusCell {
+    padding-top: 5px;
+}
+.tabContent .boxPanel .statusCell .iconfont{
+    color: #00B42A;
+    opacity: 1 !important;
+    font-size: 14px !important;
+}
+.tabContent .boxPanel .statusCell .statusText{
+    color: #4e5969;
+    padding-left: 10px;
+}
+.tabContent .boxPanel .statusIcon{
+    width: 6px;
+    height: 6px;
+    background: #165dff;
+    border-radius: 50%;
+    margin-top: 30px;
+}

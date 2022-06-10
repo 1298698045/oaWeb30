@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <query>
+    <name>reportcategory.getlist</name>
+    <type>array</type>
+    <comments>获取报表</comments>
+    <parameters>
+    </parameters>
+    <sql>
+      select itemid id, name,'' pid,'' ReportUrl from ItemTreeBase where ObjectTypeCode=9100 
+      union
+      select convert(nvarchar(36),ReportId) id,name,lower(convert(nvarchar(36),FolderId)) As pid,ReportUrl from ReportBase where FolderId is not null
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>report.category.search</name>
+    <type>array</type>
+    <comments>获取报表</comments>
+    <parameters>
+      <FolderId></FolderId>
+    </parameters>
+    <sql>
+      select convert(nvarchar(36),ReportId) id,name,lower(convert(nvarchar(36),FolderId)) As pid,ReportUrl from ReportBase where FolderId ='#{FolderId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+</root>

@@ -1,0 +1,135 @@
+.PCD_left_nav .WB_innerwrap {
+ padding: 2px;
+ position: relative;
+ z-index: 1;
+}
+.PCD_left_nav .left_nav {
+ text-shadow: none;
+}
+.PCD_left_nav .ficon_eye {
+ color: #ffa105;
+ margin-left: 3px;
+ vertical-align: text-bottom;
+}
+.PCD_left_nav .lev_box {
+ position:relative;
+}
+.PCD_left_nav .lev {
+ border-top-width: 1px;
+ border-top-style: solid;
+}
+.PCD_left_nav .lev:first-child {
+ border-top: none;
+}
+.PCD_left_nav .lev .lev_a {
+ display: block;
+ padding: 10px 14px;
+}
+.PCD_left_nav .lev .current {
+ font-weight: bold;
+}
+.PCD_left_nav .lev .num {
+ padding-left: 5px;
+}
+.PCD_left_nav a .S_ficon_dis,.PCD_left_nav a:hover .S_ficon_dis {
+ opacity: 1;
+ filter: alpha(opacity=100);
+}
+.PCD_left_nav a .S_ficon_dis:hover {
+ cursor: pointer;
+}
+.PCD_left_nav .expand .lev_a {
+ padding-bottom: 5px;
+}
+.PCD_left_nav .lev2_list {
+ padding: 0 0 5px 37px;
+}
+.PCD_left_nav .lev2 .lev_a {
+ padding: 7px 0;
+}
+.PCD_left_nav .lev2 .lev_a:hover .W_ficon {
+ color: #eb7350;
+}
+.PCD_left_nav .lev2 .W_ficon {
+ margin-right: 6px;
+ font-size: 12px;
+}
+.PCD_left_nav .lev2 .lev_cur .W_ficon {
+ font-size: 0;
+ *font-size: 12px;
+}
+.PCD_left_nav .lev2 .lev_cur .ficon_eye {
+ font-size: 12px;
+}
+.PCD_left_nav .lev2 .lev_cur .W_ficon:after {
+ content: "B";
+ font-size: 12px;
+}
+.PCD_left_nav .lev2 .lev_cur .ficon_eye:after {
+ content: "";
+ display: none;
+}
+.PCD_left_nav .lev2 .W_ficon,.PCD_left_nav .lev2 .num,.PCD_left_nav .lev2 span {
+ vertical-align: middle;
+}
+.PCD_left_nav .lev_add {
+ display: block;
+ padding: 2px 0 15px 38px;
+}
+.PCD_left_nav .lev_add .W_ficon {
+ margin-right: 6px;
+ vertical-align: middle;
+}
+.PCD_left_nav .lev_add .W_btn_b {
+ width: 88px;
+ padding: 0;
+ margin-right: 6px;
+}
+.PCD_left_nav .ficon_p_follow,.PCD_left_nav .ficon_fans,.PCD_left_nav .ficon_subscribe,.PCD_left_nav .ficon_p_rmd,.PCD_left_nav .ficon_p_quietfollow,.PCD_left_nav .ficon_p_interest,.PCD_left_nav .ficon_p_find,.PCD_left_nav .ficon_blacklist,.PCD_left_nav .ficon_interest,.PCD_left_nav .ficon_groupmember {
+ margin-right: 5px;
+ font-size: 18px;
+}
+.PCD_left_nav .ficon_music,.PCD_left_nav .ficon_place,.PCD_left_nav .ficon_movie,.PCD_left_nav .ficon_image,.PCD_left_nav .ficon_swtopic,.PCD_left_nav .ficon_book,.PCD_left_nav .ficon_games,.PCD_left_nav .ficon_longwb {
+ margin-right: 5px;
+ font-size: 16px;
+}
+.layer_checkgroup {
+ *position: relative;
+ width: 334px;
+}
+.layer_checkgroup .inner_checkgroup {
+ *position: relative;
+ padding: 16px;
+}
+.layer_checkgroup .checkgroup_li {
+ float: left;
+ width: 150px;
+}
+.layer_checkgroup .checkgroup_li .S_txt1 {
+ display: block;
+ width: 148px;
+ height: 15px;
+ padding: 6px 0 6px 1px;
+}
+.layer_checkgroup .checkgroup_li span {
+ vertical-align: middle;
+}
+.layer_checkgroup .checkgroup_li .W_ficon {
+ font-size: 12px;
+ vertical-align: middle;
+}
+.layer_checkgroup .W_layer_btn {
+ padding: 10px 16px;
+ text-align: left;
+ *position: relative;
+ zoom:1;
+ background: #f2f2f5!important;
+ border-top: none;
+ border-radius: 0;
+}
+.layer_checkgroup .W_layer_btn a {
+ margin:0 10px 0 0;
+}
+#js_style_css_module_pagecard_PCD_left_nav {
+ height: 42px;
+}

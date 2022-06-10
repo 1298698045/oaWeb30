@@ -1,0 +1,41 @@
+﻿<div id="{!id}" class="bRelatedList" style="margin-top: 5px;">
+    <a name="{!id}_target"></a>
+    <!-- Begin ListElement -->
+    <!-- motif: Setup -->
+    <!-- WrappingClass -->
+    <div class="listRelatedObject setupBlock">
+        <div class="bPageBlock brandSecondaryBrd secondaryPalette">
+            <div class="pbHeader" style=" margin-top:5px;">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="pbTitle" style="font-size:12px !important;">
+                                <img width="12" height="1" style="margin-right: 0.25em; margin-right: 0.25em;" title=""
+                                    class="minWidth" alt="" src="/s.gif" /><img title="" class="relatedListIcon" alt=""
+                                        src="/s.gif" /><h3>
+                                            {!title}</h3>
+                            </td>
+                            <td class="pbButton">
+                                {!buttons}
+                            </td>
+                            <td class="pbHelp">
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="{!id}_body" class="pbBody" style="font-size:12px !important;  margin-top:5px;">
+                {!tablelist}
+            </div>
+            <div class="pbFooter secondaryPalette1">
+                <div class="bg">
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- <div class="listElementBottomNav">
+    </div>-->
+    <script>    //    try { sfdcPage.registerRelatedList('{!id}', '{!totalrows}', '{!title}', false, 'null', 'null', false, false, true, null); } catch (e) { }</script>
+    <!-- End ListElement -->
+</div>

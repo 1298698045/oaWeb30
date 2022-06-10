@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+
+  <Action name="assessment.employee.add" type="Youyou.HRCore.Assessment.Actions.AssessmentEmployeeAdd,HRCore" desc="添加被考核人"></Action>
+  <Action name="assessment.employee.search" type="Youyou.HRCore.Assessment.Actions.AssessmentEmployeeSearch,HRCore" desc="搜索人员"></Action>
+  <Action name="assessment.report" type="Youyou.HRCore.Assessment.Actions.AssessmentReport,HRCore" desc="考核报表"></Action>
+  <Action name="assess.employee.add" type="Youyou.HRCore.Assessment.Actions.AssessEmployeeAdd,HRCore" desc="邀请被考评人"></Action>
+  <Action name="assess.employee.search" type="Youyou.HRCore.Assessment.Actions.AssessEmployeeSearch,HRCore" desc="获取被考评人列表"></Action>
+
+  <Action name="assess.publish" type="Youyou.HRCore.Assessment.Actions.AssessPublish,HRCore" desc="发布年度考评"></Action>
+  <Action name="assess.clone" type="Youyou.HRCore.Assessment.Actions.AssessYearClone,HRCore" desc="复制年度考评"></Action>
+
+  <Action name="assess.employee.yearsummary" type="Youyou.HRCore.Assessment.Actions.AssessEmployeeYearSummary,HRCore" desc="年度统计"></Action>
+  <Action name="assess.employee.cloneyear" type="Youyou.HRCore.Assessment.Actions.AssessYearClone,HRCore" desc="复制年度考核"></Action>
+  <Action name="assess.dept.employee.search" type="Youyou.HRCore.Assessment.Actions.AssessDeptEmployeeSearch,HRCore" desc="获取科室人员年度列表"></Action>
+  <Action name="assess.employee.deptid.submit" type="Youyou.HRCore.Assessment.Actions.AssessEmployeeDeptSubmit,HRCore" desc="获取科室人员年度提交"></Action>
+
+
+  <Action name="assessmentannual.ruleemploye.get" type="Youyou.HRCore.Assessment.Actions.AssessmentAnnualRuleEmployeeGet,HRCore" desc="获取被考评人员规则"></Action>
+  <Action name="assessmentannual.employee.generate"  type="Youyou.HRCore.Assessment.Actions.AssessmentEmployeeGenerate,HRCore" desc="考评人设置保存"></Action>
+  <Action name="assessmentannual.employee.process.change" type="Youyou.HRCore.Assessment.Actions.AssessmentEmployeeProcessChange,HRCore" desc="批量变更考评流程或者表格"></Action>
+  <Action name="assessmentannual.employee.businessunit.change" type="Youyou.HRCore.Assessment.Actions.AssessmentEmployeeBusinessunitChange,HRCore" desc="批量变更部门"></Action>
+  <Action name="assessmentannual.employee.batchdelete" type="Youyou.HRCore.Assessment.Actions.AssessmentEmployeeBatchDelete,HRCore" desc="批量删除"></Action>
+  <Action name="assessmentannual.businessunit.tree" type="Youyou.HRCore.Assessment.Actions.AssessmentBusinessunitTree,HRCore" desc="获取年度考评部门一级部门"></Action>
+  <Action name="assessmentannual.report.stat" type="Youyou.HRCore.Assessment.Actions.AssessmentReportStat,HRCore" desc="统计"></Action>
+  <Action name="assessmentannual.report.stat.export" type="Youyou.HRCore.Assessment.Actions.AssessmentReportStatExport,HRCore" desc="统计导出"></Action>
+  <Action name="assessmentannual.report.stat.allexport" type="Youyou.HRCore.Assessment.Actions.AssessmentReportStatAll,HRCore" desc="导出所有人统计"></Action>
+  <Action name="assessmentannual.year.export" type="Youyou.HRCore.Assessment.Actions.AssessmentYearExport,HRCore" desc="导出列表"></Action>
+
+
+
+  <Action name="assessment.current.businessunit.getlist"  type="Youyou.HRCore.Assessment.Actions.AssessmentCurrentBusinessUnitGetlist,HRCore" desc="获取当前考核的部门考核列表"></Action>
+  <Action name="assessment.businessunit.getlist"  type="Youyou.HRCore.Assessment.Actions.AssessmentBusinessUnitGetlist,HRCore" desc="获取当前用户的部门考核列表"></Action>
+  <Action name="assessment.businessunit.submit"  type="Youyou.HRCore.Assessment.Actions.AssessmentBusinessUnitSubmit,HRCore" desc="提交当前部门的人员考核结果"></Action>
+  <Action name="assessment.businessunit.employee.getlist"  type="Youyou.HRCore.Assessment.Actions.AssessmentBusinessUnitEmployeeGetlist,HRCore" desc="获取当前用户的部门的人员列表"></Action>
+</Actions>
+
+
+
+
+

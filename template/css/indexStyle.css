@@ -1,0 +1,223 @@
+﻿* {
+    margin:0;
+    padding:0;
+}
+ul, li {
+    list-style:none;
+}
+.selectlist {
+    /*display:none;
+    margin-top:33px;
+    margin-left:-20px;
+    position:absolute;
+    border:1px solid #dddbda;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+    background-color:#fff;
+    padding:5px 0;
+    border-radius:4px;
+    z-index:1000;*/
+}
+.selectlist li{
+    padding:0 30px 0 40px;
+    height:32px;
+    line-height:32px;
+    font-size:14px;
+    color:#333;
+    width:auto;
+    margin:0;
+
+}
+.selectlist li:hover{
+    background-color:#f2f2f2;
+    cursor:pointer;
+}
+.selectlist.selectlistcheck li.active{
+    background:url('/img/cal/checkedgrey.png') no-repeat left 13px center;
+    background-size:15px;
+}
+#iframe {
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+    height:100%;
+}
+.icon-duihao img {
+    width:14px;
+    height:10px;
+    margin-top:15px;
+}
+.left-table {
+    float:left;
+    background-color:#f4f6f8;
+    width:160px;
+    height:100%;
+    border-top:1px solid #D4D4D4;
+    border-bottom:1px solid #D4D4D4;
+    position:relative;
+    z-index:2;
+}
+.left-table li{
+    margin-left:0;
+    padding:12px;
+    padding-left:35px;
+    cursor:pointer;
+}
+.left-table li:hover{
+    background-color:#e1f1fe;
+}
+.left-table li.active{
+    background-color:#e1f1fe;
+    border-left:4px solid  #108af9;
+}
+.mycontlist1 {
+    background:url('/img/images/mystar1.png') no-repeat left 10px center;
+    background-size:16px;
+}
+.mycontlist1.active {
+    background:url('/img/images/mystar2.png') no-repeat left 10px center;
+    background-size:16px;
+}
+.mycontlist2 {
+    background:url('/img/images/lately1.png') no-repeat left 10px center;
+    background-size:16px;
+}
+.mycontlist2.active {
+    background:url('/img/images/lately2.png') no-repeat left 10px center;
+    background-size:16px;
+}    
+.mycontlist3 {
+    background:url('/img/images/02.Work.png') no-repeat left 10px center;
+    background-size:16px;
+}
+.mycontlist3.active {
+    background:url('/img/images/02.Work1.png') no-repeat left 10px center;
+    background-size:16px;
+}
+.mycontlist4 {
+    background:url('/img/images/02.Personal.png') no-repeat left 10px center;
+    background-size:16px;
+}
+.mycontlist4.active {
+    background:url('/img/images/02.Personal1.png') no-repeat left 10px center;
+    background-size:16px;
+}
+.mycontlist5 {
+    background:url('/img/images/30.png') no-repeat left 10px center;
+    background-size:16px;
+}
+.mycontlist5.active {
+    background:url('/img/images/30.2.png') no-repeat left 10px center;
+    background-size:16px;
+}
+        .green {
+    background: #04844B;
+}
+.success {
+    padding: 0 16px;
+    color: #fff;
+    border-radius: 4px;
+    width: 256px;
+    height: 40px;
+    line-height: 40px;
+    margin: 5px;
+}
+.success .button{
+     height:40px;
+}
+.success a{
+    color:white;
+}
+.success_icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 8px 15px;
+    position: relative;
+}
+.green .icon-duihao {
+    color: #04844B;
+    font-weight: 800;
+    position: absolute;
+    top: -7px;
+    left: 4px;
+}
+.button .icon-cuohao {
+    color: #fff;
+    font-weight: 900;
+}
+.success .button {
+    background: none;
+    border: 0;
+}
+.success {
+    position:fixed;
+    top:150px;
+    left:50%;
+    z-index:100;
+    margin-left:-148px;
+}
+.success.red {
+background: #C23934;
+}
+.success.red .iconfont.icon-duihao img{
+    width:14px;
+    height:14px;
+    margin-top:5px;
+    margin-left:5px;
+}
+.outer td {
+    vertical-align: middle; 
+}
+.selectlist.selectlistcheck li.newfileclass {
+    background: url('/img/cal/add.png') no-repeat left 13px center ;
+    background-size: 15px;
+    font-weight:700;
+}
+#changeDiv {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    display: none;
+}
+.missionright-body3 ul > span {
+    margin-left:15px;
+}
+.selectlist.selectlistcheck li {
+    position:relative;
+}
+.success_icon {
+    float:left;
+}
+.toastContent.slds-notify__content {
+    float:left;
+}
+#tabBar a{
+    font-size:13px;
+}
+#tsidMenu a {
+    font-size: 13px;
+}
+.file-preview iframe {
+    height: 92% !important;
+    background-color: #ffffff;
+    width: 98%;
+    position: absolute;
+    z-index: 10;
+    left: 1%;
+    bottom: 0;
+    border: 0;
+}
+.missionright-head>span{
+    font-size:14px;
+    font-weight:normal;
+}
+.missionright-head .morefile{
+    /*font-size:12px;*/
+}

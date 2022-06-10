@@ -1,0 +1,222 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/mission-header.css">
+    <link rel="stylesheet" href="/css/cal/mission.css">
+    <link rel="stylesheet" href="/css/cntrt/cntrt.css">
+    <link rel="stylesheet" href="/css/cal/newmission.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/template/css/alert.css">
+
+
+    <style>
+        #popup-newmission {
+            display: block;
+            left: 0;
+            top: 0;
+            margin-left: 0;
+            margin-top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #newmission{
+            height:calc(100% - 130px);
+        }
+        #popup-newmission{
+            height:auto !important;
+        }
+        .popup-mask {
+            display: block;
+        }
+
+        .form-element {
+            margin-left: 115px;
+            min-width: 300px !important;
+            width: 300px !important;
+        }
+
+            .form-element > input {
+                margin-top: -2px !important;
+                line-height: 25px !important;
+            }
+
+        #newmission .missmessage-body .tree span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+
+        #newmission .missmessage-body .appends span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+    .popup-foot > button:hover {
+    background-color: #f4f2f2;
+    color: #108af9;
+}
+    .popup-foot > button {
+
+    float: right;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    color: #108af9;
+    height: 32px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0 10px;
+}#popup-newmission{
+    overflow:visible;
+    }
+    .form-checking{
+        padding-left:115px;
+        color:#ff6666;
+        font-size:14px;
+    line-height:30px;
+    height:0;
+    position:absolute;
+    top:35px;
+    }
+    .activity{
+        border:1px solid #ff6666 !important;
+    }
+    .boxshaw{
+        top:-150px;
+    }
+    .form-error{
+        display:none;
+        width:90%;
+        margin-left:5%;
+        background: rgb(194, 57, 52);
+        padding:15px;
+        color:#fff;
+        border-radius:4px;
+        height:50px;
+        box-sizing:border-box;
+    }
+    .form-error2{
+        display:none;
+    color:rgb(194, 57, 52);
+    margin-left:65px;
+    margin-top:10px;
+    position:absolute;
+    font-size:14px;
+}
+    .popup-mask {
+            z-index:199;
+        }
+        .popup {
+            z-index:200;
+        }
+        #newmission .pinput3 {
+            width:50% !important;
+        }
+        #newmission .pinput2 {
+            width:35% !important;
+        }
+        .divinput {
+            width:auto;
+        }
+        .missmessage {
+            height:30px !important;
+        }
+        .popup #newmission {
+            height:80px;
+        }
+        #newmission > div {
+            margin-top:20px;
+            font-size:18px;
+            font-weight:700;
+            text-align:center;
+        }
+        #newmission .missmessage-body {
+            min-width:0;
+        }
+        .popup-mask{
+            background-color: #000;
+            opacity:0.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup-newmission">
+        <div class="popup-exit"></div>
+        <div class="popup-head">会议室预约删除</div>
+        
+        <form id="editPage" name="editPage">
+            <input type="hidden" name="objTypeCode" id="objTypeCode" value="1010" />
+            <div id="newmission">
+                <div class="missmessage">
+                    <div class="missmessage-body">
+                         确定要删除此预约吗？
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="popup-foot">
+            <button class="popup-foot-shur">确定</button>           
+            <button class="close">取消</button>
+        </div>
+    </div>
+    <div class="popup-mask"></div>
+    <script type="text/javascript" src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/mission-header.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/schedule.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/js/formcontrol.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+
+    <script>
+        var id = getQueryString('msgid')
+        var name = getQueryString('name')
+        if (name!=null) {
+            $('.missmessage-body').html('你确定要删除此' + name + '吗？')
+            $('.popup-head').html(name+'删除')
+        }
+        var ObjTypeCode = getQueryString('ObjTypeCode')
+        
+        $('.popup-foot-shur').click(function () {
+            var d = {
+                id: id,
+                ObjTypeCode: 5000
+            }
+            if (ObjTypeCode&&ObjTypeCode != null) {
+                d.ObjTypeCode = ObjTypeCode
+            }
+            function callback(data) {
+                console.log(data)
+                parent.$('#iframe').hide()
+                parent.$('#iframe').removeClass('deleteiframe')
+                parent.$('.popup-mask').hide()
+                parent.getdata()
+            }
+            ajaxMethodGetData('entity.delete', d, callback)
+        })
+
+        $(".popup-exit").click(function () {
+            parent.$('#iframe').hide()
+            parent.$('#iframe').removeClass('deleteiframe')
+            parent.$('.popup-mask').hide()
+        })
+        $(".close").off()
+        $(".close").click(function () {
+            parent.$('#iframe').hide()
+            parent.$('#iframe').removeClass('deleteiframe')
+            parent.$('.popup-mask').hide()
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <sql name="organizationtree">
+    select ParentBusinessUnitId pid,ParentBusinessUnitId _parentId, BusinessUnitId id,Name text from BusinessUnitBase Where IsDisabled=0 order by BusinessUnitNumber
+  </sql>
+  <sql name="objectCategroy" desc="对象分类">
+    select ParentId pid,ParentId _parentId, ItemId id,Name as text from ItemTreeBase Where ObjectTypeCode=100000 order by SortNumber
+  </sql>
+  <sql name="entitycategory" desc="表格分类">
+    select '' pid,ItemId id,Name As text from ItemTreeBase where ObjectTypeCode = 100000
+  </sql>
+  <sql name="contenttree">
+    select ParentId pid,ParentId _parentId, ItemId id,Name as text from ItemTreeBase Where ObjectTypeCode=100201 order by SortNumber
+  </sql>
+  <sql name="noticetree">
+    select ParentId pid,ParentId _parentId, ItemId id,Name text from ItemTreeBase Where ObjectTypeCode=100202 order by SortNumber
+  </sql>
+  <sql name="appChannelTree" desc="移动栏目">
+    select ParentId pid,ParentId _parentId, ItemId id,Name text from ItemTreeBase Where ObjectTypeCode=100230 order by SortNumber
+  </sql>
+  <sql name="filetree">
+    select ParentId pid,ParentId _parentId, ItemId id,Name as text from ItemTreeBase Where ObjectTypeCode=100100 order by SortNumber
+  </sql>
+  <sql name="itemCategory" desc="栏目分类">
+    select '' pid,'' _parentId, CategoryNumber id,Name text from ItemCategoryBase  order by SortNumber
+  </sql>  
+  <sql name="reporttree">
+    select ParentId pid,ParentId _parentId, ItemId id,Name as text from ItemTreeBase Where ObjectTypeCode=9100 order by SortNumber
+  </sql>  
+  <sql name="docintype"  desc="收文文种查询">
+    select '' pid,'' _parentId ,StringMapId id,  Value As text from StringMap  where ObjectTypeCode=100108 AND AttributeName='DocumentTypeCode'
+  </sql>
+  <sql name="docouttype"  desc="发文文种查询">
+    select '' pid,'' _parentId ,StringMapId id,  Value As text from StringMap  where ObjectTypeCode=100109 AND AttributeName='DocumentTypeCode'
+  </sql>
+  <sql name="contractcategory">
+    select ParentCategoryId pid, CategoryId id,Name text,s.FullName,c.ModifiedOn from ContractCategoryBase c
+    left join SystemUserBase s on c.ModifiedBy=s.SystemUserId  where {0} order by ParentCategoryId,SortNumber
+  </sql>
+  <sql name="contractcategoryAdd">
+    insert into ContractCategoryBase(ParentCategoryId,CategoryId,Name)values('{0}','{1}','{2}')
+  </sql>
+  <sql name="contractcategoryAddRoot">
+    insert into ContractCategoryBase(CategoryId,Name)values('{0}','{1}')
+  </sql>
+  <sql name="contractcategorySave">
+    update ContractCategoryBase set Name='{0}' where CategoryId='{1}'
+  </sql>
+  <sql name="contractcategoryDelete">
+    delete from ContractCategoryBase where CategoryId='{0}'
+  </sql>
+  <sql name="EvaluationIndexCategory" desc="指标分类">
+    select ParentCategoryId pid, ValueId id,Name text FROM HREvaluationIndexCategoryBase
+  </sql>
+  <sql name="profiletree"  desc="简档">
+    select '' pid,'' _parentId, ProfileId id,Name text From ProfileBase order by Name
+  </sql>
+  <sql name="processtree"  desc="流程分类">
+    <![CDATA[
+   select * from (
+    select '' pid,ItemId id,Name text,'' _parentId,SortNumber from ItemTreeBase where ObjectTypeCode=121  AND Name<>''
+    union
+    select lower(cast(FolderId As  nvarchar(36))) pid,ProcessId id,Name text,cast(FolderId As  nvarchar(36)) _parentId,1000 As SortNumber from WFProcess where StateCode=1) a
+    order by SortNumber
+    ]]>
+  </sql>
+  <sql name="processCategoryTree"  desc="流程分类数">
+    <![CDATA[
+   select '' pid,ItemId id,Name text,'' _parentId from ItemTreeBase where ObjectTypeCode=121  AND Name<>'' ORDER BY SortNumber
+    ]]>
+  </sql>
+   <sql name="workshiftcategory">
+     select '' pid,AttributeValue id,Value text,'' _parentId from StringMap where AttributeName='ShiftTypeCode' AND ObjectTypeCode=30040 ORDER BY DisplayOrder
+   </sql>
+  <sql name="knowledgeSubject"  desc="知识库目录">
+    <![CDATA[
+   select SubjectId id,Title As text,ParentSubject pid,ParentSubject _parentId FROM SubjectBase order by ParentSubject,DisplayOrder
+    ]]>
+  </sql>
+  <sql name="attendancesumary" desc="考勤汇总查询">
+    <![CDATA[
+    SELECT 
+       [DeptName]
+      ,[EmpNo]
+      ,[Name]
+      ,SUM(isnull([Attend0],0)) [Attend0]
+      ,SUM(isnull([Attend1],0)) [Attend1]
+      ,SUM(isnull([Attend2],0)) [Attend2]
+      ,SUM(isnull([Attend3],0)) [Attend3]
+      ,SUM(isnull([Attend4],0)) [Attend4]
+      ,SUM(isnull([Attend5],0)) [Attend5]
+      ,SUM(isnull([Attend6],0)) [Attend6]
+      ,SUM(isnull([Attend7],0)) [Attend7]
+      ,SUM(isnull([Attend8],0)) [Attend8]
+      ,SUM(isnull([Attend9],0)) [Attend9]
+      ,SUM(isnull([Attend10],0))[Attend10]
+      ,SUM(isnull([Attend11],0)) [Attend11]
+      ,SUM(isnull([Attend12],0)) [Attend12]
+      ,SUM(isnull([Attend13],0)) [Attend13]
+      ,SUM(isnull([Attend14],0)) [Attend14]
+      ,SUM(isnull([Attend15],0)) [Attend15]
+      ,SUM(isnull([Attend16],0)) [Attend16]
+      ,SUM(isnull([Attend17],0)) [Attend17]
+      ,SUM(isnull([Attend18],0)) [Attend18]
+      ,SUM(isnull([Attend19],0)) [Attend19]
+      ,SUM(isnull([Attend20],0)) [Attend20]
+      ,SUM(isnull([Attend21],0)) [Attend21]
+      ,SUM(isnull([Attend22],0)) [Attend22]
+      ,SUM(isnull([Attend23],0)) [Attend23]
+      ,SUM(isnull([Attend24],0)) [Attend24]
+      ,SUM(isnull([Attend25],0)) [Attend25]
+      ,SUM(isnull([Attend26],0)) [Attend26]
+      ,SUM(isnull([Attend27],0)) [Attend27]
+      ,SUM(isnull([Attend28],0)) [Attend28]
+      ,SUM(isnull([Attend29],0)) [Attend29]
+      ,SUM(isnull([Attend30],0)) [Attend30]
+      ,SUM(isnull([Attend31],0)) [Attend31]
+      ,SUM(isnull([Attend32],0)) [Attend32]
+      ,SUM(isnull([Attend33],0)) [Attend33]
+      ,SUM(isnull([Attend34],0)) [Attend34]
+      ,SUM(isnull([Attend35],0)) [Attend35]
+      ,SUM(isnull([Attend36],0)) [Attend36]
+      ,SUM(isnull([Attend37],0)) [Attend37]
+      ,SUM(isnull([Attend38],0)) [Attend38]
+      ,SUM(isnull([Attend39],0)) [Attend39]
+      ,SUM(isnull([Attend40],0)) [Attend40]
+      ,SUM(isnull([Attend41],0)) [Attend41]
+      ,SUM(isnull([Attend42],0)) [Attend42]
+      ,SUM(isnull([Attend43],0)) [Attend43]
+      ,SUM(isnull([Attend44],0)) [Attend44]
+      ,SUM(isnull([Attend45],0)) [Attend45]
+      ,SUM(isnull([Attend46],0)) [Attend46]
+      ,SUM(isnull([Attend47],0)) [Attend47]
+      ,SUM(isnull([Attend48],0)) [Attend48]
+      ,SUM(isnull([Attend49],0)) [Attend49]
+      ,SUM(isnull([Attend50],0)) [Attend50]
+      ,SUM(isnull([Attend100],0)) [Attend100]
+      ,SUM(isnull([TimesOfClock],0)) [TimesOfClock]
+      ,SUM(isnull([TimesOfNotCheck],0)) [TimesOfNotCheck]
+      ,SUM(isnull([TimesOfNotClockin],0)) [TimesOfNotClockin]
+      ,SUM(isnull([TimesOfNotClockout],0)) [TimesOfNotClockout]
+      ,SUM(isnull([TimesOfOutClock],0)) [TimesOfOutClock]
+      ,SUM(isnull([OutDays],0) )[OutDays]
+      ,SUM(isnull([AbsentDays],0)) [AbsentDays]
+      ,SUM(isnull([RestDays],0)) [RestDays]
+      ,SUM(isnull([AttendDays],0)) [AttendDays]
+      ,SUM(isnull([SalaryDays],0)) [SalaryDays]
+      ,SUM(isnull([AbsentSalaryDays],0)) [AbsentSalaryDays]
+      ,SUM(isnull([WorkHours],0)) [WorkHours]
+      ,SUM(isnull([NightHours] ,0)) [NightHours]
+      FROM [HRAttendanceStat]
+      GROUP BY DeptName,Name,EmpNo
+    ]]>
+  </sql>
+  <sql name="attdYearSummaryExport" desc="考勤汇总查询-导出">
+    <![CDATA[
+      SELECT 
+      DeptName,Name,EmpNo,EmpCategoryCodeName,ContractTypeCodeName
+      ,SUM(ISNULL(AttendDays,0)) As AttendDays,Sum(ISNULL(AbsentDays,0)) As AbsentDays
+
+      ,SUM(ISNULL(Attend1,0)) Attend1,Sum(ISNULL(Attend2,0)) As Attend2,Sum(ISNULL(Attend3,0)) As Attend3,Sum(ISNULL(Attend4,0)) As Attend4,SUM(ISNULL(Attend5,0)) Attend5
+      ,Sum(ISNULL(Attend6,0)) As Attend6,Sum(ISNULL(Attend7,0)) As Attend7,Sum(ISNULL(Attend8,0)) As Attend8
+
+      ,Sum(ISNULL(Attend14,0)) Attend14,Sum(ISNULL(Attend15,0)) Attend15,Sum(ISNULL(Attend16,0)) Attend16,Sum(ISNULL(Attend17,0)) As Attend17,Sum(ISNULL(Attend18,0)) As Attend18,Sum(ISNULL(Attend19,0)) As Attend19
+      ,Sum(ISNULL(Attend30,0)) As Attend30
+      ,Sum(ISNULL(Attend31,0)) As Attend31,Sum(ISNULL(Attend32,0)) As Attend32,Sum(ISNULL(Attend33,0)) As Attend33,Sum(ISNULL(Attend34,0)) As Attend34,Sum(ISNULL(Attend35,0)) As Attend35
+      ,Sum(ISNULL(Attend36,0)) As Attend36,Sum(ISNULL(Attend37,0)) As Attend37,Sum(ISNULL(Attend38,0)) As Attend38,Sum(ISNULL(Attend39,0)) As Attend39,SUM(ISNULL(Attend40,0)) As Attend40
+      ,Sum(ISNULL(Attend41,0)) As Attend41,Sum(ISNULL(Attend42,0)) As Attend42,Sum(ISNULL(Attend43,0)) As Attend43,Sum(ISNULL(Attend44,0)) As Attend44,Sum(ISNULL(Attend45,0)) As Attend45
+      ,Sum(ISNULL(Attend46,0)) As Attend46,Sum(ISNULL(Attend47,0)) As Attend47,Sum(ISNULL(Attend48,0)) As Attend48
+
+      ,Sum(ISNULL(Attend52,0)) As Attend52
+      
+      FROM [HRAttendanceStat]
+      where 1=1 {0}
+      GROUP BY DeptName,Name,EmpNo,EmpCategoryCodeName,ContractTypeCodeName
+      ORDER BY DeptName,EmpNo
+    ]]>
+  </sql>
+
+  <sql name="attdMonthSummaryExport" desc="考勤汇总查询-导出">
+    <![CDATA[
+     SELECT 
+      DeptName,Name,EmpNo,EmpCategoryCodeName,AttendYear,AttendMonth
+      ,(CASE WHEN IsFullAttend=1 THEN '是' ELSE '否' end ) IsFullAttend
+      ,(CASE WHEN IsSubmitted=1 THEN '是' ELSE '否' end ) IsSubmitted
+      ,AttendDays ,AbsentDays  
+
+      ,Attend1 ,Attend2,Attend3,Attend4,Attend5
+      ,Attend6 ,Attend7 ,Attend8
+
+      ,Attend14 ,Attend15 ,Attend16 ,Attend17 ,Attend18  Attend18,Attend19  Attend19
+      ,Attend30  
+      ,Attend31  ,Attend32  ,Attend33  ,Attend34  ,Attend35  
+      ,Attend36  ,Attend37  ,Attend38  ,Attend39  ,Attend40  
+      ,Attend41  ,Attend42  ,Attend43  ,Attend44  ,Attend45  
+      ,Attend46  ,Attend47  ,Attend48  
+
+      ,Attend52  
+      ,StatDesc
+      ,CONVERT(varchar, ModifiedOn, 120) ModifiedOn
+      FROM [HRAttendanceStat]
+      where 1=1 {0}
+      ORDER BY DeptName,EmpNo
+    ]]>
+  </sql>
+</root>

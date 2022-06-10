@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>流程统计</title>
+    <meta charset="utf-8" />
+</head>
+<script src="/js/jquery/1.7.1/jquery.min.js"></script>
+<script src="/js/jqueryui/1.8.17/jquery-ui.min.js"></script>
+
+<script src="/js/CommonUtils.js" type="text/javascript"></script>
+<link rel="stylesheet" href="/easyui/themes/bootstrap/easyui.css" type="text/css" />
+<link rel="stylesheet" href="/easyui/themes/icon.css" type="text/css" />
+<script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+<link href="/layui/layui/css/layui.css" rel="stylesheet" />
+<link href="/js/layoutlist/layoutlist.css" rel="stylesheet" />
+<link href="/template/css/indexStyle.css" rel="stylesheet" />
+<script type="text/javascript" src="/js/laydate/laydate.js"></script>
+<script type="text/javascript" src="/template/js/search.js"></script>
+<script type="text/javascript" src="/template/js/indexjs.js"></script>
+<script src="/js/laydate/laydate.js"></script>
+<script type="text/javascript" src="/layui/layui/layui.js"></script>
+<script type="text/javascript" src="/js/formcomponents.js"></script>
+
+<style>
+    body {
+        overflow: auto;
+    }
+
+    .header-logo .logo-img {
+        display: none;
+    }
+
+    .header-logo .header-title {
+        display: none;
+    }
+
+    .header-logo {
+        height: 0;
+        padding: 0;
+    }
+
+    .head-right-btn {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 10;
+    }
+
+    .layui-form-selectup dl {
+        top: 42px;
+        bottom: auto;
+    }
+
+    .charttitle {
+        font-weight: 600;
+        font-size: 17px;
+        background-color: #f2f2f2;
+        padding: 5px;
+        border: 1px solid #dedede;
+    }
+
+    .main-content {
+        background: rgb(236, 245, 255);
+    }
+
+    .statistics-content {
+        background-color: #f2f2f2;
+    }
+
+    .content-item {
+        height: 400px;
+        background-color: white;
+        box-sizing: border-box;
+        padding: 10px;
+        /*border-bottom:1px solid #dedede;*/
+        float: left;
+    }
+
+        .content-item .nodata {
+            font-size: 20px;
+            color: #666;
+            text-align: center;
+            line-height: 380px;
+            width: 100%;
+        }
+
+    .charttitle {
+        margin-top: 0px;
+        border-bottom: 0px;
+    }
+
+    .item-chart {
+        height: 320px;
+        padding: 10px;
+        border: 1px solid #dedede;
+    }
+
+    .gridcontent {
+        padding: 10px;
+        background: #fff;
+        padding-top: 0;
+    }
+</style>
+<body>
+    <div id="contentWrapper" style="vertical-align: middle">
+        <div class="bPageHeader" id="AppBodyHeader">
+            <uc1:TopRight ID="TopRight1" runat="server" />
+            <uc1:MainNav ID="MainNav1" runat="server" />
+        </div>
+        <div class="bodyDiv brdPalette brandPrimaryBrd">
+            <div class="header">
+                <div class="header-logo">
+                    <div class="logo-img">
+                        <img src="/template/hearder/logo.png" />
+                    </div>
+                    <span class="header-title">我的合同</span>
+                    <div class="head-right-btn">
+                    </div>
+                </div>
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                    <ul class="layui-tab-title"></ul>
+                </div>
+                <div class="search-content">
+                    <form class="layui-form" action=""></form>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="statistics-content"></div>
+                <div class="chartcontent"></div>
+                <div class="gridcontent"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        var newMap = Map
+    </script>
+    <iframe id="iframe" frameborder="0" src=""></iframe>
+    <div class="popup-mask"></div>
+    <script src="/js/g2plot.js"></script>
+    <script type="text/javascript" src="/js/layoutlist/instanceStatconfig.js"></script>
+    <script type="text/javascript" src="/js/layoutlist/instanceStalayout.js"></script>
+    <script src="/js/alert.js"></script>
+    <script type="text/javascript">
+        //mycontract
+        var isiframe = true
+        var gridcontentheight = $(window).height() - 100
+        var entityname = 'common'
+        if (getQueryString('name')) {
+            entityname = getQueryString('name')
+        }
+        layui.use(['element', 'form'], function () {
+            mylayout = new createdlayout(entityname)
+            mylayout.layoutelement = layui.element;
+
+            mylayout.layoutform = layui.form;
+            mylayout.init()
+
+        });
+
+    </script>
+</body>
+</html>

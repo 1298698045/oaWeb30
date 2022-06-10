@@ -1,0 +1,491 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+#newmission b{
+    display: block;
+    float: left;
+    color: #ff6666;
+    line-height: 30px;
+    height: 10px;
+    width: 5px;
+}
+#newmission select{
+    border: 0;
+    outline: none;
+	width: 400px;
+    height: 32px;
+    text-indent: 0.5em;
+}
+#newmission p:hover {
+    border-color:rgba(16, 138, 249,0.9) !important;
+}
+#newmission .save > div {
+    cursor:pointer;
+}
+#newmission .save > div:hover{
+    background-color:rgba(16, 138, 249,0.9);
+    color:white;
+}
+#newmission .pinlv > div:hover{
+    background-color:rgba(16, 138, 249,0.9);
+    cursor:pointer;
+    color:white;
+}
+#newmission{
+    margin-top: 40px;
+    color: #333333;
+    font-size: 15px;
+}
+#newmission input{
+    outline: none;
+}
+#newmission>div{
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+.clear {
+    float:none !important;
+}
+#newmission .missmessage{
+    height: 280px;
+}
+#newmission .markmessage{
+    height: 148px;
+}
+#newmission #sousuo{
+    background: url(/img/cal/7.PNG) no-repeat right 10px center ;
+    background-size: 18px;
+}
+#newmission .missmessage-head{
+	width: 100%;
+    height: 32px;
+    line-height: 32px;
+	left: 78px;
+	top: 261px;
+	color: #505050;
+	background-color: #f2f2f2;
+	border-radius: 4px;
+    font-size: 14px;
+    padding-left: 15px;
+}
+#newmission .missmessage-body{
+    padding-left: 15px;
+	width: 100%;
+    min-width:1050px;
+}
+#newmission .missmessage-body>div{
+    width: 45%;
+    float: left;
+}
+#newmission .pinput1{
+    width: 70% !important;
+}
+
+#newmission .pinput3{
+    width: 55% !important;
+}
+#newmission .pinput2{
+    width: 40% !important;
+}
+#newmission .missmessage-bodyright{
+    margin-left: 10%;
+}
+#newmission .missmessage-body>div>div{
+    min-width: 400px;
+    width: 90%;
+}
+#newmission .missmessage-body input{
+    border: 0;
+    height: 30px;
+    text-indent: 0.5em;
+    float: left ;
+    margin-top: 2px ;
+    line-height: 30px;
+    background-color: transparent \9;
+}
+#newmission .missmessage-body .time input{
+    width:70% !important;
+}
+.divinput{
+    margin-left: 90px;
+    height: 100%;
+    width: 72%;
+    margin-top:15px;
+}
+.divinput>p{
+    position:relative;
+}
+.time-tishi {
+    position:absolute;
+    font-size:14px; 
+    color:#333;
+    top:-30px;
+    left:-10px;
+}
+#newmission .divinput .starttime,#newmission .divinput .starttime2{
+    margin-top:20px;
+}
+#newmission .missmessage-body span,.missmessage-body p {
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    float: left;
+}
+#newmission .title,.phone,.email{
+	width: 510px;
+    height: 32px;
+    margin-top: 20px;
+}
+#newmission .title input,#newmission .phone input,#newmission .emali input,#newmission .title p,#newmission .phone p,#newmission .email p{
+    width: 400px;
+}
+#newmission .time{
+	width: 494px;
+    height: 60px;
+    margin-top: 20px;
+    
+}
+#newmission .missmessage-body p{
+    margin-left: 47px;
+    color: #505050;
+    border: 1px solid #e4e8eb;
+    border-radius: 4px;
+    height: 34px;
+    line-height: 34px ;
+
+
+}
+#newmission .missmessage-body span{
+    margin-left: 10px
+}
+#newmission .time p{
+    margin-left: 99px;
+    margin-top: 15px;
+
+}
+#newmission .email>span{
+    width: 60px;
+}
+#newmission .missmessage-body p.active{
+    border: 1px solid rgba(16, 138, 249,0.9);
+    border: 1px solid #108af9 \9;
+}
+#newmission .starttime{
+    width: 240px;
+    background: url(/img/cal/3.PNG) no-repeat right 10px center ;
+    background-size: 18px;
+}
+#newmission .endtime{
+    width: 240px;
+    background: url(/img/cal/3.PNG) no-repeat right 10px center ;
+    background-size: 18px;
+}
+#newmission .starttime2{
+    width: 240px;
+    background: url(/img/cal/6.PNG) no-repeat right 10px center ;
+    background-size: 18px;
+}
+#newmission .endtime2{
+    width: 240px;
+    background: url(/img/cal/6.PNG) no-repeat right 10px center ;
+    background-size: 18px;
+}
+
+#newmission .email p{
+    background: url(/img/cal/20.PNG) no-repeat right 10px center ;
+    background-size: 12px;
+}
+#newmission .email.peoplechook p{
+    margin-left: 50px;
+    background: url(/img/cal/7.PNG) no-repeat right 10px center ;
+    background-size: 18px;
+}
+#newmission .liuyan{
+    height: 100px;
+    width: 80px;
+    float: left;
+    padding: 15px;
+}
+#newmission textarea{
+    float: left;
+    margin-top: 20px;
+    width: 80%;
+}
+#newmission .tixing{
+    width: 100px;
+    height: 50px;
+    overflow:hidden;
+}
+.textarea-div{
+    width: 100%;
+    height: 100%;
+    min-width: 600px;
+}
+.tixing {
+    margin-top: 10px;
+}
+.tixing input{
+    margin-left: 30px;
+}
+.pinlv{
+    float: left;
+    margin-left: 20px;
+	width: 238px;
+	height: 50px;
+	border-radius: 4px;
+    font-size: 14px;
+}
+.pinlv div{
+    width: 56px;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #2c2c2c \9;
+    border: 1px solid rgba(80, 80, 80, 0.1)
+}
+.pinlv div.active{
+    background-color: rgba(16, 138, 249, 1);
+    background-color:#108AF9  \9;
+    color:white;
+}
+.other-messageright>div{
+    margin-top: 20px;
+}
+#chongfu{
+    margin-top: 70px;
+}
+.chongfu,.kaishi,.jieshu{
+    height: 50px;
+    width: 80%;
+}
+.save{
+    padding-top: 30px;
+    width: 250px;
+    height: 100px;
+    line-height: 32px;
+    margin: auto;
+    color: #108a;
+    font-size: 14px;
+    text-align: center;
+}
+.save div{
+    display: inline-block;
+    margin-left: 10px;
+}
+.save div{
+	width: 100px;
+	height: 32px;
+	left: 599px;
+	top: 382px;
+	color: #108af9;
+	background-color: #ffffff;
+	border-radius: 4px;
+	font-size: 14px;
+	border: #e4e8eb solid 1px;
+	text-align: center;
+}
+.save div.active{
+    color: #e4e8eb;
+    background-color: #108af9;
+    
+}
+#newmission select{
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: none;
+    background: none \9 ;
+    background-size: 11px;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  }
+#newmission .missmessage-body span.hidediv{
+    display:none;
+}
+.hidediv{
+    display:none;
+}
+.chongfuchooked.active {
+    display:block;
+}
+.tixingchooked.active {
+    display:block;
+}
+.tixingcheck,.chongfucheck{
+    width:14px;
+    height:14px;
+    border:1px solid #e4e8eb;
+    margin-left:90px;
+    margin-top:7px;
+}
+.tixingcheck.active, .chongfucheck.active {
+    background:url("/img/cal/23.check_1(14x14).png");
+    background-size:14px;
+}
+.missmessage-bodyright .tixing{
+    display:none;
+}
+.missmessage-body .peoplechook .card-people {
+    top:0;
+}
+.missmessage-body .sousuojieguo span {
+    display:inline !important;
+    width:30px !important;
+    float:none !important;
+    margin-left:0 !important;
+}
+.peoplechooked-body2>div{
+    height:50px;
+}
+.peoplechooked-body2 span {
+    height:25px !important;
+    line-height:20px !important;
+    width:50px !important;
+    margin-left:0 !important;
+    font-size:12px;
+    color:#333;
+}
+#newmission .spann1 {
+    font-size:12px;
+    margin-top:10px;
+}
+textarea {
+    border:1px solid rgba(80,80,80,0.1);
+    border-radius:4px;
+}
+.email p span,.email ul email { 
+    float:left;
+    margin-top:3px;
+    color:#333;
+    font-size:14px;
+}
+#newmission .ca-head {
+    display:none;
+}
+#newmission .schedule-bd.ul-box span {
+    margin-left:0px !important;
+}
+.people-head li {
+    cursor:pointer;
+}
+
+        body>#newmission {
+            width:70%;
+            margin:auto;
+            position:absolute;
+            top:12.5%;
+            z-index:101;
+            background-color:white;
+            left:15%;
+            height:75%;            
+            display:none;
+            border-radius:4px;
+            background-color:transparent;
+        }
+        #qqqq {
+            display:block !important;
+        }
+        .mission-header4 {
+            display:none !important;
+        }
+        .mission-header1 {
+            display:block !important;
+        }
+        .popup-mask {
+            left:0;
+        }
+        #newmission > div {
+            width:100%;
+            background-color:white;
+        }
+        #newmission .newmission-bocy {
+            height:60%;
+            overflow:auto;
+            padding:0 5%;
+            width:90%;
+            padding-top:30px;
+            padding-bottom:30px;
+        }
+        .newmission-head {
+            margin-top:0 !important;
+            line-height:60px;
+            height:60px;
+            text-align:center;
+            font-size:18px;
+            border-bottom:1px solid #dedede;
+            border-radius: 4px 4px 0 0;
+        }
+        .newmission-foot {
+            border-top:1px solid #dedede;
+            height:70px;
+            border-radius:0 0 4px 4px;
+            background-color:#f2f2f2 !important;
+        }
+        #newmission > div {
+            margin-top:0;
+        }
+        .save {
+            width:100%;
+            text-align:right;
+            padding-right:20px;
+            box-sizing:border-box;
+            padding-top:20px;
+        }
+        .card-people {
+            margin-left:20px;
+            margin-top:-80px;
+        }
+        .username span {
+            display:inline-block;
+        }
+        .delete-maskp {
+            width:240px;
+            
+        }
+        #card {
+           
+        }
+        .mission-header1 {
+            height:55px;
+        }
+        .newmissq {
+                float: right;
+    width: 86px;
+    height: 32px;
+    line-height: 32px;
+    color: #108af9;
+    background-color: #ffffff;
+    border: #e4e8eb solid 1px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+            
+        }
+        .sousuo-tishi {
+            top:43px;
+        }
+        .sousuo-tishi1 {
+            top:25px;
+        }
+        #newmission .title input {
+            width:99% !important;
+        }
+        #newmission .missmessage-body {
+    min-width: 800px;
+}
+        #newmission .missmessage-body>div>div {
+    min-width: 350px;
+}
+        .card-table {
+            top:40px;
+        }
+        #newmission .markmessage {
+            height:180px;
+        }
+        body .bPageTitle {
+    padding: 10px 0 0;
+}

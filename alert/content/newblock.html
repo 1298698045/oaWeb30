@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 480px;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+        .popup-body .layui-input-block {
+            margin-left:0;
+        }
+        .section-body {
+            padding:0 20px;
+        }
+        .section {
+            padding-bottom:20px;
+        }
+        .layui-form input{
+            text-indent:5px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            板块
+        </div>
+        <div class="modal-header"></div>
+        <div class="popup-body layui-form">
+            <div class="section">
+                <div class="section-title">基本信息</div>
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <span class="red">*</span>
+                                <span class="item-title">标题</span>
+                                <div class="layui-input-block searchselect">
+                                    <input class="save-checking-input" id="Name" type="" name="name" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-body">
+                                <span class="red">*</span>
+                                <span class="item-title">序号</span>
+                                <div class="layui-input-block searchselect">
+                                    <input class="save-checking-input" id="SortNumber" type="" name="name" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="item divs">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <span class="red">*</span>
+                                <span class="item-title">栏目</span>
+                                <div id="treePanel" class="easyui-panel" title="栏目" style="padding: 5px; width: 240px; min-height: 0!important;">
+                                    <ul class="easyui-tree" id="leftTree" style="display: block;">
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+
+
+
+                    </div>
+                </div>
+                
+            </div>
+            <div class="section">
+                <div class="section-title">其他信息</div>
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="">
+                            <div class="item-body">
+                                <span class="red">*</span>
+                                <span class="item-title">描述</span>
+                                <textarea class="save-checking-input" id="Description"></textarea>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+             </div>
+        </div>
+        <div class="popup-foot">
+            <div class="popup-foot-shur save-checking">确定</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+    <script type="text/javascript" src="/easyui/js/treeLoader.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script>
+        var noticetree = []
+        ajaxMethodPostData('tree.get', { entity: 'noticetree' }, function (data) {
+            noticetree = data.rows
+        })
+
+        treeLoader.prototype.bindData = function (self, data) {
+            for (var i = 0; i < noticetree.length; i++) {
+                console.log(data)
+                data.rows.push(noticetree[i])
+            }
+            var datas = GetFirstRow(data);
+            $("#" + self.a).tree({
+                checkbox:true,
+                data: datas,
+                cascadeCheck:false,
+            });
+        }
+        var treeNode = null;
+        var card = '';
+        var QueryCondition = ''
+        
+        var form = ''
+        layui.use(['form'], function () {
+            form = layui.form
+
+        });
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        var id = getQueryString('id')
+        if (id && id != '') {
+            ajaxMethodGetData('entity.detail.get', {
+                id: id,
+                objTypeCode:100212
+            }, function (data) {
+                var res = data.record
+                $('#Name').val(res.Name)
+                $('#Description').val(res.Description)
+                $('#SortNumber').val(res.SortNumber)
+                QueryCondition = data.record.QueryCondition
+                $(document).ready(function () {
+                    treeNode = new treeLoader("leftTree", "contenttree", null);
+                    treeNode.init();
+                    var screenHeight = getClientHeight();
+                    $("#treePanel").height(screenHeight - 500);
+                    if (QueryCondition != '') {
+                        QueryCondition = QueryCondition.split(',')
+                        for (var i = 0; i < QueryCondition.length; i++) {
+                            var tt = $('#leftTree').tree('find', QueryCondition[i])
+                            $('#leftTree').tree('check', tt.target)
+                        }
+
+                    }
+                });
+            })
+
+        } else {
+            treeNode = new treeLoader("leftTree", "contenttree", null);
+            treeNode.init();
+            var screenHeight = getClientHeight();
+            $("#treePanel").height(screenHeight - 500);
+        }
+        $('.save-checking').click(function () {
+            setTimeout(function(){
+                var QueryCondition = $('#leftTree').tree('getChecked')
+                var QueryConditions = []
+                if (QueryCondition.length > 0) {
+                    for (var i = 0; i < QueryCondition.length; i++) {
+                        QueryConditions.push(QueryCondition[i].id)
+                    }
+                    QueryConditions = QueryConditions.join(',')
+                    function callback(data) {
+                        parent.success2('编辑板块成功')
+                        parent.$('#iframe').hide()
+                        parent.$('.popup-mask').hide()
+                        parent.getblock(parent.$('.left-table .active').attr('pageid'))
+                    }
+                    var id = getQueryString('id')
+                    if ($('#IsPriviate').attr('checked') == 'checked') {
+                        var IsPriviate = true
+                    } else {
+                        var IsPriviate = false
+                    }
+                    var messages = {
+                        params: {
+                            recordRep: {
+                                objTypeCode: 100212,
+                                fields: {
+                                    ContentPageId: { Id: parent.$('.left-table .active').attr('pageid') },
+                                    SortNumber: $('#SortNumber').val(),
+                                    Description: $('#Description').val(),
+                                    QueryCondition: QueryConditions,
+                                    Name: $('#Name').val()
+                                }
+                            }
+                        }
+                    }
+                    var id = getQueryString('id')
+                    if (id && id != '') {
+                        messages.params.recordRep.id = id
+                    }
+                    messages = JSON.stringify(messages)
+                    var data = { messages: messages }
+                    var save = document.querySelectorAll('.save-checking.active');
+                    if (save.length > 0) {
+                        ajaxMethodPostData('entity.saverecord', data, callback)
+                    }
+                } else {
+                    alert('请选择栏目')
+                }
+            },1000)
+            
+            
+        })
+
+        getlookup()
+        function getlookup() {
+            $('.searchselect').click(function () {
+                var that = this
+                d = {
+                    Lktp: $(that).attr('Lktp'),
+                }
+                if ($(this).find('select option').length < 2) {
+                    $(this).find('input').off()
+                    searchlookup(d, that)
+                }
+                $(this).find('input').off()
+                $(this).find('input').keyup(function () {
+                    $(this).find('input').off()
+                    d = {
+                        Lktp: $(that).attr('Lktp'),
+                        Lksrch: $(this).val()
+                    }
+                    searchlookup(d, that)
+                })
+            })
+        }
+
+        function searchlookup(d, that) {
+            ajaxMethodGetData('ui.entity.lookup', d, function (data) {
+                $(that).find('select').html('<option value="">请选择</option>')
+                $(that).find('.layui-anim.layui-anim-upbit').html('<dd lay-value="" class="layui-select-tips">请选择</dd>')
+                for (var i = 0; i < data.listData.length; i++) {
+                    $(that).find('select').append('<option value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</option>')
+                    $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</dd>')
+                }
+                $(that).find('.layui-anim.layui-anim-upbit dd').off()
+                $(that).find('.layui-anim.layui-anim-upbit dd').click(function () {
+                    if ($(this).attr('lay-value') != '') {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', $(this).html())
+                    } else {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', '')
+                    }
+                    $(this).parent().find('dd').removeClass('layui-this')
+                    $(this).addClass('layui-this')
+                })
+            })
+        }
+    </script>
+</body>
+</html>

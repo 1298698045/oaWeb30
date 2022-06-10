@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <script type="text/javascript" async="" id="eloquaScript" src="/sites/resource/layout/js/elqCfg.min.js"></script>
+    <script type="text/javascript" src="/static/111213/js/perf/stub.js"></script>
+    <meta content="NO-CACHE" http-equiv="PRAGMA">
+    <meta content="Mon, 01 Jan 1990 12:00:00 GMT" http-equiv="Expires">
+    <link type="text/css" rel="stylesheet" href="/sites/resource/layout/css/setup-module.css">
+    <script type="text/javascript" src="/sites/resource/layout/js/setupmodule.js"></script>
+    <script type="text/javascript">
+        /* &lt;![CDATA[ */
+      
+        var b_version = navigator.appVersion;
+        // we'll make the default value for ieversion 10, so the ie6 stylesheet doesn't get loaded by default
+        // and the pie code doesn't get loaded by default.
+        var ieversion = 10;
+        // here we'll find the real ieversion
+        if (b_version.indexOf('MSIE')!=-1 && b_version.indexOf('Opera')==-1) { // test for MSIE but not Opera;
+            var ieversion = b_version.substr(b_version.indexOf('MSIE') + 5, 1); // find MSIE browser version
+        }
+        // if ieversion is less than 7: load ie6 stylesheet.
+        if (ieversion < 7){
+            document.write('<link rel="stylesheet" type="text/css" href="/sites/resource/layout/css/setup-appex-ie6.css" />');
+        }
+        // if ieversion is less than 9: load PIE.js code.
+        if (ieversion < 9){
+            document.write('<script type="text/javascript" src="/sites/resource/layout/js/PIE.js"><\/script>');
+        }
+
+
+        var slider1;
+        var autoSlidePause = 5000;
+       
+        $(document).ready(function(){    
+     
+            if (window.PIE) {
+                $('.rounded').each(function() {
+                    PIE.attach(this);
+                });
+            }
+      
+            numberOfPromotions = $('#slider1').children().size();
+            if(numberOfPromotions == 0) return null;
+        
+            if(numberOfPromotions == 1){
+                slider1 = $('#slider1').bxSlider({
+                    controls: false
+                });
+                return null;
+            }
+            else{
+                slider1 = $('#slider1').bxSlider({
+                    infiniteLoop: true,
+                    prevText: '&amp;#160;',
+                    nextText: '&amp;#160;',
+                    pager: true,  
+                    pagerSelector: '#pager1'
+                });
+                $('#pager1-outer').appendTo($('#slider1').parent().parent());
+                $($('#slider1').parent().parent().children('.bx-prev').appendTo($('#slider1').parent().parent()));
+                $($('#slider1').parent().parent().children('.bx-next').appendTo($('#slider1').parent().parent()));
+           
+                var ulId = $('.bx-wrapper').children(':first').children('ul:first').attr('id');
+                var autoShowIntervalId1 = setInterval("autoPlayShow(slider1)", autoSlidePause); 
+           
+                $('.bx-wrapper').mouseover( function() {
+                    var ulId = $(this).children(':first').children('ul:first').attr('id');
+                    if(autoShowIntervalId1 && ulId == 'slider1') {
+                        clearInterval(autoShowIntervalId1);
+                    }
+                });
+ 
+                $('.bx-wrapper').mouseout( function() {
+                    var ulId = $(this).children(':first').children('ul:first').attr('id');
+                    if (ulId == 'slider1') {
+                        autoShowIntervalId1 = setInterval("autoPlayShow(slider1)", autoSlidePause); 
+                    }
+                });   
+           
+            }
+           
+        });
+       
+        function autoPlayShow(slider) {
+            slider.goToNextSlide();
+        }
+        /* ]]&gt; */
+   </script>
+
+</head>
+<body>
+    <div class="custom-doc-outer">
+        <div class="custom-doc-inner small-doc-inner" style="width: 300px;">
+            <div class="slider-small-outer"><!--
+                <div class="slider-small-header">
+                    <a target="_blank" href="https://appexchange..com/">
+                        <div class="logo"></div>
+                    </a>
+                    <h1>推荐</h1>
+                    <a target="_blank" href="https://appexchange..com/" class="next-to-h1">显示所有</a>
+                </div>-->
+                <div style="width: 300px; position: relative;" class="bx-wrapper">
+                    <div style="position: relative; overflow: hidden; width: 280px;" class="bx-window"><!--width: 190px;-->
+                        <ul id="slider1" class="slider-small" style="width: 999999px; position: relative; left: -570px;">
+                            <li style="width: 280px; float: left; list-style: outside none none;">
+                                <div class="img">
+                                    <span id="j_id0:j_id3:4:j_id5">
+                                        <div class="logo-app logo-app-small " style="width:260px;height:100px;">
+                                            <div class="img-div" id="j_id0:j_id3:4:j_id5:logoImage:logoImagePanelWa">
+                                                <a target="_blank" id="logoLink-" href="#">
+                                                    <img class="logo-img rounded" style="width:260px;height:100px;" src="/SysFiles/Images/ee0e5dde-bb2f-4c3b-87e0-e3e16fae0c39.jpg" id="j_id0:j_id3:4:j_id5:logoImage:logoWa"><!--<img class="logo-img-glass noBorder" src="/resource/1445465560000/sharedlayout/img/logo-app-glass.png" id="j_id0:j_id3:4:j_id5:logoImage:regularGlassWa">-->
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="info" style="width: 260px;">
+                                    <a target="_blank" href="#" class="title">CPQ - Configure Price Quote b...</a>
+                                    <span class="sub">byApttus</span>
+                                    <div class="rating-one-line">
+                                        <span title="4.9" id="stars_4.0" class="rating-small rating-small-50">&nbsp;</span>
+                                        <a target="_blank" id="stars1_4.0" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016bGHEAY&amp;tab=r">(250)
+							</a>
+                                    </div>
+                                </div>
+                                <div class="text" style="width: 260px;height:50px;display:block;">
+                                    Apttus CPQ (Configure Price Quote) automates processes on Salesforce1. Salesforce uses Apttus...		         
+                                </div>
+                            </li><!--
+                            <li style="width: 280px; float: left; list-style: outside none none;" class="pager">
+                                <div class="img">
+                                    <span id="j_id0:j_id3:0:j_id5">
+
+                                        <div class="logo-app logo-app-small ">
+                                            <div class="img-div" id="j_id0:j_id3:0:j_id5:logoImage:logoImagePanelWa">
+                                                <a target="_blank" id="A1" href="listingDetail?listingId=a0N300000016YuMEAU">
+                                                    <img class="logo-img rounded" src="/servlet/servlet.FileDownload?file=00P3000000PZ9EKEA1" id="j_id0:j_id3:0:j_id5:logoImage:logoWa"><img class="logo-img-glass noBorder" src="/resource/1445465560000/sharedlayout/img/logo-app-glass.png" id="j_id0:j_id3:0:j_id5:logoImage:regularGlassWa">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="info">
+                                    <a target="_blank" href="listingDetail?listingId=a0N300000016YuMEAU" class="title">ServiceMax - Field Service Ma...</a>
+                                    <span class="sub">byServiceMax, In...</span>
+                                    <div class="rating-one-line">
+                                        <span title="4.7" id="stars_0.0" class="rating-small rating-small-45">&nbsp;</span>
+                                        <a target="_blank" id="stars1_0.0" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016YuMEAU&amp;tab=r">(26)
+							</a>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    The #1 native field service app on AppExchange. ServiceMax is the go-to app for 400+ companies...
+		         
+                                </div>
+                            </li>
+                            <li style="width: 280px; float: left; list-style: outside none none;" class="pager">
+                                <div class="img">
+                                    <span id="j_id0:j_id3:1:j_id5">
+
+                                        <div class="logo-app logo-app-small ">
+                                            <div class="img-div" id="j_id0:j_id3:1:j_id5:logoImage:logoImagePanelWa">
+                                                <a target="_blank" id="A2" href="listingDetail?listingId=a0N3000000B5llCEAR">
+                                                    <img class="logo-img rounded" src="/servlet/servlet.FileDownload?file=00P3000000P3ZhjEAF" id="j_id0:j_id3:1:j_id5:logoImage:logoWa"><img class="logo-img-glass noBorder" src="/resource/1445465560000/sharedlayout/img/logo-app-glass.png" id="j_id0:j_id3:1:j_id5:logoImage:regularGlassWa">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="info">
+                                    <a target="_blank" href="listingDetail?listingId=a0N3000000B5llCEAR" class="title">SurveyMonkey for Salesforce</a>
+                                    <span class="sub">bySurveyMonkey</span>
+                                    <div class="rating-one-line">
+                                        <span title="4.0" id="stars_1.0" class="rating-small rating-small-40">&nbsp;</span>
+                                        <a target="_blank" id="stars1_1.0" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000B5llCEAR&amp;tab=r">(15)
+							</a>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    Create, send, and analyze surveys directly in Salesforce with SurveyMonkey. Track customer...
+		         
+                                </div>
+                            </li>
+                            <li style="width: 280px; float: left; list-style: outside none none;" class="pager">
+                                <div class="img">
+                                    <span id="j_id0:j_id3:2:j_id5">
+
+                                        <div class="logo-app logo-app-small ">
+                                            <div class="img-div" id="j_id0:j_id3:2:j_id5:logoImage:logoImagePanelWa">
+                                                <a target="_blank" id="A3" href="listingDetail?listingId=a0N3000000B5ilaEAB">
+                                                    <img class="logo-img rounded" src="/servlet/servlet.FileDownload?file=00P3000000P3PjXEAV" id="j_id0:j_id3:2:j_id5:logoImage:logoWa"><img class="logo-img-glass noBorder" src="/resource/1445465560000/sharedlayout/img/logo-app-glass.png" id="j_id0:j_id3:2:j_id5:logoImage:regularGlassWa">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="info">
+                                    <a target="_blank" href="listingDetail?listingId=a0N3000000B5ilaEAB" class="title">ActionGrid&trade; - Excel-like Grid...</a>
+                                    <span class="sub">byCRMCulture, LL...</span>
+                                    <div class="rating-one-line">
+                                        <span title="5.0" id="stars_2.0" class="rating-small rating-small-50">&nbsp;</span>
+                                        <a target="_blank" id="stars1_2.0" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N3000000B5ilaEAB&amp;tab=r">(47)
+							</a>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    The Swiss Army Knife for productivity and reporting turns your List Views and Related Lists into...
+		         
+                                </div>
+                            </li>
+                            <li style="width: 280px; float: left; list-style: outside none none;" class="pager">
+                                <div class="img">
+                                    <span id="j_id0:j_id3:3:j_id5">
+
+                                        <div class="logo-app logo-app-small ">
+                                            <div class="img-div" id="j_id0:j_id3:3:j_id5:logoImage:logoImagePanelWa">
+                                                <a target="_blank" id="A4" href="listingDetail?listingId=a0N300000030psqEAA">
+                                                    <img class="logo-img rounded" src="/servlet/servlet.FileDownload?file=00P3000000QxAgTEAV" id="j_id0:j_id3:3:j_id5:logoImage:logoWa"><img class="logo-img-glass noBorder" src="/resource/1445465560000/sharedlayout/img/logo-app-glass.png" id="j_id0:j_id3:3:j_id5:logoImage:regularGlassWa">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="info">
+                                    <a target="_blank" href="listingDetail?listingId=a0N300000030psqEAA" class="title">iContact &mdash; Email Marketing</a>
+                                    <span class="sub">byiContact</span>
+                                    <div class="rating-one-line">
+                                        <span title="4.6" id="stars_3.0" class="rating-small rating-small-45">&nbsp;</span>
+                                        <a target="_blank" id="stars1_3.0" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000030psqEAA&amp;tab=r">(199)
+							</a>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    2x Best Mass Email App &mdash; iContact for Salesforce pairs trusted email marketing with Salesforce,...
+		         
+                                </div>
+                            </li>
+                            <li style="width: 280px; float: left; list-style: outside none none;" class="pager">
+                                <div class="img">
+                                    <span id="Span1">
+
+                                        <div class="logo-app logo-app-small ">
+                                            <div class="img-div" id="Div1">
+                                                <a target="_blank" id="A5" href="listingDetail?listingId=a0N300000016bGHEAY">
+                                                    <img class="logo-img rounded" src="/servlet/servlet.FileDownload?file=00P3000000P3W12EAF" id="Img1"><img class="logo-img-glass noBorder" src="/resource/1445465560000/sharedlayout/img/logo-app-glass.png" id="Img2">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="info">
+                                    <a target="_blank" href="listingDetail?listingId=a0N300000016bGHEAY" class="title">CPQ - Configure Price Quote b...</a>
+                                    <span class="sub">byApttus</span>
+                                    <div class="rating-one-line">
+                                        <span title="4.9" id="Span2" class="rating-small rating-small-50">&nbsp;</span>
+                                        <a target="_blank" id="A6" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016bGHEAY&amp;tab=r">(250)
+							</a>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    Apttus CPQ (Configure Price Quote) automates processes on Salesforce1. Salesforce uses Apttus...
+		         
+                                </div>
+                            </li>
+                            <li style="width: 280px; float: left; list-style: outside none none;">
+                                <div class="img">
+                                    <span id="Span3">
+
+                                        <div class="logo-app logo-app-small ">
+                                            <div class="img-div" id="Div2">
+                                                <a target="_blank" id="A7" href="listingDetail?listingId=a0N300000016YuMEAU">
+                                                    <img class="logo-img rounded" src="/servlet/servlet.FileDownload?file=00P3000000PZ9EKEA1" id="Img3"><img class="logo-img-glass noBorder" src="/resource/1445465560000/sharedlayout/img/logo-app-glass.png" id="Img4">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="info">
+                                    <a target="_blank" href="listingDetail?listingId=a0N300000016YuMEAU" class="title">ServiceMax - Field Service Ma...</a>
+                                    <span class="sub">byServiceMax, In...</span>
+                                    <div class="rating-one-line">
+                                        <span title="4.7" id="Span4" class="rating-small rating-small-45">&nbsp;</span>
+                                        <a target="_blank" id="A8" href="https://appexchange.salesforce.com/listingDetail?listingId=a0N300000016YuMEAU&amp;tab=r">(26)
+							</a>
+                                    </div>
+                                </div>
+                                <div class="text">
+                                    The #1 native field service app on AppExchange. ServiceMax is the go-to app for 400+ companies...
+		         
+                                </div>
+                            </li>-->
+                        </ul>
+                    </div>
+                    <div id="pager1-outer" class="pagination-outer-small">
+                        <div id="pager1" class="pagination"><a class="pager-link pager-1" href="" id="pagerLink1">1</a><a class="pager-link pager-2" href="" id="pagerLink2">2</a><a class="pager-link pager-3 pager-active" href="" id="pagerLink3">3</a><a class="pager-link pager-4" href="" id="pagerLink4">4</a><a class="pager-link pager-5" href="" id="pagerLink5">5</a></div>
+                    </div>
+                    <a class="bx-prev" href="" id="prev">&nbsp;</a><a class="bx-next" href="" id="next">&nbsp;</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--
+    <div id="conversion-tracking">
+        <img width="1" height="1" border="0" src="https://googleads.g..net/pagead/viewthroughconversion/966635447/?value=0&amp;guid=ON&amp;script=0"><img width="1" height="1" border="0" src="//d.adroll.com/ipixel/DJYCXIRNLNFD3BY4SE64DA/CB4N2L52HBA6JEK64P3DY5"></div>-->
+</body>
+</html>

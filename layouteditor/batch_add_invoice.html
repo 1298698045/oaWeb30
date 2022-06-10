@@ -1,0 +1,413 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+    <style>
+        .modal-container{
+            width:100%!important;
+            max-width: 100%!important;
+            padding:0 !important;
+            height: 100%!important;
+            min-height: 100%!important;
+        }
+        .shift-body-main{
+            padding-bottom:20px;
+        }
+        #photo .slds-modal__close{
+            top: 10px;
+            right: 10px;
+            color: #999;
+        }
+        .lookresultbtn{
+            font-size:14px;
+        }
+        .lookresultbtn{
+            top:36px;
+        }
+        .item-left,.item-right{
+            position:relative;
+        }
+        body #iframe {
+            position: fixed;
+            background-color: white;
+            width: 100% !important;
+            left: 0% !important;
+            top: 0% !important;
+            margin-top: -300px;
+            border-radius: 7px;
+            display: block;
+            height:620px;
+            border:0;
+            overflow:hidden;
+            z-index:9999;
+            display:none;
+        }
+        .popup-mask {
+            display:none;
+            position: fixed;
+            background-color:transparent;
+            width:100%;
+            height:100%;
+            top:0;
+            z-index:999;
+            left:0;
+            position:fixed;
+            background: url(/img/bgOverlayDialogBackground.png) ;
+            background-color: transparent;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">批量添加发票</h2>
+                            <button class="close slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>基本信息</span></div>
+                            <div class="shift-body-main">
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">合同</span>
+                                        <el-select class='save-checking-input'
+                                                   v-model="list.ContractId.Id"
+                                                   filterable
+                                                   remote
+                                                   @change="cntrchange"
+                                                   @visible-change="getlookup('1010','ContractId')"
+                                                   :remote-method="function(query){searchlookup(query,'1010','ContractId')}"
+                                                   placeholder="请选择">
+                                            <el-option v-for="(item,index) in search.ContractId"
+                                                       :key="index"
+                                                       :label="item.Name"
+                                                       :value="item.ID">
+                                            </el-option>
+                                        </el-select>
+                                        <div @click="openslookup('ContractId',1010,'合同')" class="lookresultbtn">
+                                            <i class="el-icon-search"></i>
+                                        </div>
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">开票单位</span>
+                                        <el-select class='save-checking-input'
+                                                   v-model="list.AccountId.Id"
+                                                   filterable
+                                                   remote
+                                                   @visible-change="getlookup('001','AccountId')"
+                                                   :remote-method="function(query){searchlookup(query,'001','AccountId')}"
+                                                   placeholder="请选择">
+                                            <el-option v-for="(item,index) in search.AccountId"
+                                                       :key="index"
+                                                       :label="item.Name"
+                                                       :value="item.ID">
+                                            </el-option>
+                                        </el-select>
+                                        <div @click="openslookup('AccountId',001,'开票单位')" class="lookresultbtn">
+                                            <i class="el-icon-search"></i>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">起始发票号</span>
+                                        <el-input class="save-checking-input" v-model="list.StartInvoiceNumber" placeholder="请输入数字" onkeyup="value=value.replace(/[^\d]/g,'')"></el-input>
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">结束发票号</span>
+                                        <el-input class="save-checking-input" v-model="list.EndInvoiceNumber" placeholder="请输入数字" onkeyup="value=value.replace(/[^\d]/g,'')"></el-input>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">发票类型</span>
+                                        <el-select class='save-checking-input' v-model="list.InvoiceType" placeholder="请选择">
+                                            <el-option v-for="item in select.InvoiceType"
+                                                       :key="item.value"
+                                                       :label="item.label"
+                                                       :value="item.value">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">发票状态</span>
+                                        <el-select class='save-checking-input' v-model="list.StateCode" placeholder="请选择">
+                                            <el-option v-for="item in select.statecode"
+                                                       :key="item.value"
+                                                       :label="item.label"
+                                                       :value="item.value">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">发票方向</span>
+                                        <el-select class='save-checking-input' v-model="list.InvoiceDirection" placeholder="请选择">
+                                            <el-option v-for="item in select.InvoiceDirection"
+                                                       :key="item.value"
+                                                       :label="item.label"
+                                                       :value="item.value">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="shift-name-title">发票抬头</span>
+                                        <el-input type="text" class='' v-model="list.Name" placeholder="请输入"></el-input>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="shift-name-title">开票日期</span>
+                                        <el-date-picker v-model="list.IssueDate"
+                                                        type="date" value-format="yyyy-MM-dd"
+                                                        placeholder="选择日期">
+                                        </el-date-picker>
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="shift-name-title">开票金额</span>
+                                        <el-input v-model="list.TotalAmount" placeholder="请输入" onkeyup="value=value.replace(/[^\d]/g,'')"></el-input>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+
+
+
+                            <!--<div class="shift-body-titme"><span>备注信息</span></div>
+                            <div class="shift-body-main">
+                                <span>备注</span>
+                                <div class="shift-item">
+                                    <el-input type="textarea"
+                                              rows="4"
+                                              placeholder="请输入内容"
+                                              v-model="list.Description">
+                                    </el-input>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>-->
+
+
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="close slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    ContractId: {Id:''},
+                    AccountId: {Id: ''},
+                    StartInvoiceNumber: '',
+                    EndInvoiceNumber: '',
+                    InvoiceType: '',
+                    StateCode: '',
+                    InvoiceDirection: '',
+                    Name:'',
+                    IssueDate:'',
+                    TotalAmount:''
+                    //Description: '',
+                },
+                select: {
+                },
+                search: {
+                    ContractId: [],
+                    AccountId: []
+                }
+            },
+            created: function () {
+                this.getselect()
+                this.getlookup('1010', 'ContractId')
+                this.getlookup('001', 'AccountId')
+            },
+            methods: {
+                createdentitydata:function (entityObjectTypeCode, id, attributes, newattributes) {
+                    var that = this
+                    ajaxMethodGetData('entity.detail.get', {
+                        ObjTypeCode: entityObjectTypeCode,
+                        id:id
+                    }, function (data) {
+                        for (var i = 0; i < attributes.length; i++) {
+                            that.list[newattributes[i]] = data.record[attributes[i]]
+                            if (that.search[attributes[i]]) {
+                                if (JSON.stringify(that.search[newattributes[i]]).indexOf(data.record[attributes[i]].Id) == -1) {
+                                    that.search[newattributes[i]].push({
+                                        ID: data.record[attributes[i]].Id,
+                                        Name: data.record[attributes[i]].Name
+                                    })
+                                }
+                    
+                            }
+                        }
+                    })
+                },
+                cntrchange:function(val){
+                    var that = this
+                    this.createdentitydata(1010, val, ['AccountId'], ['AccountId'])
+                },
+                getselect: function () {
+                    var that = this
+                    var d = {}
+                    var ObjectTypeCode = '1090'
+                    d = {
+                        ObjTypeCode: ObjectTypeCode,
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, callback)
+                    function callback(data) {
+                        //console.log(data)
+                        that.select = data.context.picklistValuesMap
+                    }
+                },
+                openslookup: function (name, objtypecode,title) {
+                   if (objtypecode == 10) {
+                        opencenterwindow('/alert/deptchose_form.html?type=relatedchhoose&lknm=' + name, '', 750, 520)
+                    } else if (objtypecode == 8) {
+                        opencenterwindow('/_ui/common/data/UserLookResult.aspx?type=relatedchhoose&lknm=' + name, '', 1150, 600)
+                    } else {
+                        $('#iframe').show().attr('src', '/alert/lookupiframe.html?objtypecode=' + objtypecode + '&lknm=' + name + '&title=' + title + '&search=').height(640).css('margin-top', '-320px')
+                        $('.popup-mask').show()
+                    }
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                        var id = getQueryString('id')
+                        if (id != null) {
+                            var ID = that.list[name].Id
+                            var Name = that.list[name].Name
+                            var newlist = {
+                                ID: ID,
+                                Name: Name
+                            }
+                            if (ID) {
+                                if (JSON.stringify(that.search[name]).indexOf(JSON.stringify(newlist)) == -1) {
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                    }
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        //var id = getQueryString('id')
+        $('#Save').click(function () {
+            function callback(data) {
+                if (data) {
+                    setTimeout(function () {
+                        parent.$("#iframe").hide();
+                        parent.$(".popup-mask").hide();
+                        parent.$("#datagrid").datagrid("reload");
+                        parent.layer.msg(data.msg)
+                    }, 500)
+                }
+            }
+            var d = vum.list
+            var messages = {
+                ContractId: d.ContractId.Id,
+                AccountId: d.AccountId.Id,
+                StartInvoiceNumber: d.StartInvoiceNumber,
+                EndInvoiceNumber: d.EndInvoiceNumber,
+                InvoiceType: d.InvoiceType,
+                StateCode: d.StateCode,
+                InvoiceDirection: d.InvoiceDirection,
+                Name: d.Name,
+                IssueDate: d.IssueDate,
+                TotalAmount: d.TotalAmount
+            }
+            messages = JSON.stringify(messages)
+            var data = { InvoiceModel: messages };
+            setTimeout(function () {
+                var save = document.querySelectorAll('.save-checking.active');
+                if (save.length > 0) {
+                    ajaxMethodPostData('contract.invoice.batch.create', data, callback)
+                }
+            },1000)
+        })
+        $(".close").click(function () {
+            parent.$("#iframe").hide();
+            parent.$(".popup-mask").hide();
+        });
+        function lookupPick(formName, controlName, controlName2, null1, valId, valName) {
+            var a = JSON.stringify(vum.search[controlName2])
+            if (a.indexOf(valId) == -1) {
+                vum.search[controlName2].push({ ID: valId, Name: valName })
+            }
+            vum.list[controlName2] = { Id: valId, Name: valName }
+        }
+    </script>
+    <iframe id="iframe" frameborder="0" src=""></iframe>
+    <div class="popup-mask"></div>
+</body>
+</html>

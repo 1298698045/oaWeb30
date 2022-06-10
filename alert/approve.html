@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/css/cntrt/cntrt.css" rel="stylesheet" />
+    <link href="/css/cal/mission.css" rel="stylesheet" />
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <style>
+        #popup-sp {
+            display: block;
+        }
+
+        #popup-sp {
+            width: 100%;
+            margin-left: 0;
+            max-width: 100%;
+            position: static;
+        }
+
+        .popup-exit {
+            right: 10px;
+            top: 10px;
+        }
+
+        .popup-body-list {
+            height: 330px;
+        }
+
+        .popup-foot {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .step2 {
+            display: none;
+        }
+
+        .popup-body {
+            background-color: white;
+        }
+
+        .sousuoliucheng input {
+            height: 32px;
+            width: 80%;
+        }
+
+        #subject {
+            height: 32px;
+            line-height: 32px;
+            border: 1px solid #dedede;
+            width: 100%;
+        }
+
+        .form-item {
+            padding: 15px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        select {
+            border: 1px solid #dedede !important;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup-sp">
+        <div class="popup-exit close">
+            <img style="width:18px;height:18px;" src="/img/cal/closegray.png" alt="" />
+        </div>
+        <div class="popup-head">
+            选择流程
+        </div>
+        <div class="popup-body step1">
+            <div class="sousuoliucheng">
+                <input type="text" placeholder="搜索流程...">
+                <img src="/img/cal/7.png">
+            </div>
+            <div class="chook-number">
+
+            </div>
+            <div class="popup-body-list">
+                <ul>
+                    <li class="popup-body-listfirst">
+                        <span>名称</span>
+                    </li>
+                    <li class="hoverli" processid="a39549b4-6f8f-44fd-93c1-6455b845f765"><div class="checkbox active"><img src="/img/cal/23.check_2(12x12).png" class="active"></div><span>02 合同会签单</span></li>
+                    <li class="hoverli" processid="aeb0651f-bd71-4ff9-b8ad-0c84c5ec57ae"><div class="checkbox"><img src="/img/cal/23.check_2(12x12).png"></div><span>03 设备合同会签单</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="popup-body step2 layui-form" style="display:none;">
+            <div class="popup-body">
+                <div class="point">
+                    <span>当前节点信息</span>
+                </div>
+                <div class="flow-path">
+                    <span>当前流程</span>
+                    &nbsp&nbsp&nbsp&nbsp
+                    <span class="bold">合同协议</span>
+                </div>
+                <div class="next-flow">
+                    <span>流转下一步骤</span>
+                </div>
+                <div class="people-list">
+                </div>
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div class="popup-foot-shur step1">下一步</div>
+            <div class="popup-foot-shur step2" id="save">下一步</div>
+            <div class="popup-foot-prev step2">上一步</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/alert.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+
+    <script>
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+
+
+        var method = "wf.process.search"
+        var d = {}
+        //parent.webContext.objectTypeCode
+        d.EntityType = 1010
+        $(".popup-body-list ul li.hoverli").remove()
+        getdata(d)
+        function getdata(d) {
+            ajaxMethodGetData(method, d, function (data) {
+                $('.popup-foot-shur').removeClass('active')
+                $(".popup-body-list li").remove()
+                for (var i = 0; i < data.listData.length; i++) {
+                    var datas = data.listData[i]
+                    var Name = datas.Name
+                    var ProcessId = datas.ProcessId
+                    $(".popup-body-list ul").append(
+                                '<li class="hoverli" ProcessId="' + ProcessId + '">'
+                               + '<div class="checkbox">'
+                               + '<img src="/img/cal/23.check_2(12x12).png"/>'
+                               + '</div>'
+                               + '<span>' + Name + '</span>'
+                            + '</li>')
+                }
+                $(".popup-body-list .checkbox").each(function () {
+                    $(this).click(function () {
+                        $(".popup-body-list .checkbox").removeClass("active")
+                        $(this).toggleClass("active")
+                        $(".popup-body-list .checkbox img").removeClass("active")
+                        $(this).find("img").toggleClass("active")
+                        if ($(".popup-body-list .checkbox.active").length != 0) {
+                            $("#popup-sp .popup-foot-shur").addClass("active")
+                            $(".chook-number span").eq(1).html(1)
+                            $(".chook-number span").css("color", "#108af9")
+                        }
+                        else {
+                            $("#popup-sp .popup-foot-shur").addClass("active")
+                        }
+                    })
+                })
+            })
+        }
+        $('.sousuoliucheng input').change(function () {
+            var d = {}
+            d.EntityType = parent.webContext.objectTypeCode
+            d.search = $(this).val()
+            getdata(d)
+        })
+        $('.popup-foot-shur').click(function () {
+            if ($(this).hasClass('active')) {
+                $('.step1').hide()
+                $('.step2').show()
+            }
+                    $(".chookone").find("ul").addClass("active")
+                    var processId = $(".popup-body-list .checkbox.active").parent().attr("processid")
+
+                    var method = "wf.step.transition.getlist"
+                    var processInstanceId = '430ef482-cea5-4f2c-8437-b1090ba86fb1'
+                    window.processId = processId
+                    window.entityId = processInstanceId
+                    var d = {}
+                    d.processInstanceId = processInstanceId
+                    d.processId = processId
+                    d.StepId = ""
+                    function callback(data) {
+                        //console.log(data)
+                        var SplitType = data.SplitType
+                        $(".people-list").html('')
+                        for (var i = 0; i < data.listData.length; i++) {
+                            var datas = data.listData[i]
+                            var Selected = datas.Selected
+                            var ToActivityName = datas.ToActivityName
+                            var ToActivityId = datas.ToActivityId
+                            var TransitionId = datas.TransitionId
+                            $(".people-list").append('<div class="chookone-input" ToActivityId="' + ToActivityId + '">'
+                                                + '<input type="checkbox" name="nextTransition" TransitionId="' + TransitionId + '" id="nextTransition_' + ToActivityId + '"></input>'
+                                                + '<div class="checkbox">'
+                                                    + '<img src="/img/cal/23.check_2(12x12).png"/>'
+                                                + '</div>'
+                                                + '<span>' + ToActivityName + '</span>'
+                                                + '<img src="/img/cal/148.png"  class="people-listup"/>'
+                                                + '<img src="/img/cal/149.png"  class="people-listdown" />'
+                                            + '</div>'
+                                            + '<div class="chookone">'
+                                                + '<div class="people-search">'
+                                                    + '<div class="float">'
+                                                    + '<div class="checkbox allcheck">'
+                                                        + '<img src="/img/cal/23.check_2(12x12).png"/>'
+                                                    + '</div>'
+                                                    + '<span>显示所选</span>'
+                                                    + '<span>0</span>'
+                                                    + '</div>'
+                                                    + '<div class="search-div">'
+                                                        + '<input type="text"placeholder="搜索联系人" />'
+                                                        + '<div class="search-chook"></div>'
+                                                    + '</div>'
+                                                    + '<div class="float">'
+                                                        + '<span class="margin-span1">添加</span>'
+                                                    + '</div>'
+                                                + '</div>'
+                                                + '<ul></ul>'
+                                            + '</div>'
+                                )
+                            if (Selected) {
+                                $(".chookone-input").eq(i).find(".checkbox").eq(0).addClass("active").find("img").addClass("active")
+                                $(".chookone-input>input").eq(i).prop("checked", true)
+                                $(".chookone-input").eq(i).find(".people-listup").eq(0).hide()
+                            }
+                            var ParticipantMember = datas.ParticipantMember
+                            for (var j = 0; j < ParticipantMember.length; j++) {
+                                var datas = ParticipantMember[j]
+                                var BusinessUnitIdName = datas.BusinessUnitIdName
+                                var FullName = datas.FullName
+                                var Selected = datas.Selected
+                                var OrganizationIdName = datas.OrganizationIdName
+                                var UserId = datas.UserId
+                                $(".chookone").eq(i).find("ul").append(
+                                    '<li>'
+                                    + '<input type="checkbox" name="participator_' + ToActivityId + '" id="participator_' + UserId + '"></input>'
+                                    + '<div class="checkbox">'
+                                    + '<img src="/img/cal/23.check_2(12x12).png"/>'
+                                    + '</div>'
+                                    + '<span>' + FullName + '</span>'
+                                    + '<span>' + BusinessUnitIdName + '</span>'
+                                    + '<span>' + OrganizationIdName + '</span>'
+                                    + '</li> '
+                               )
+                                if (Selected) {
+                                    $(".chookone").eq(i).find(".checkbox").eq(j + 1).addClass("active")
+                                    $(".chookone").eq(i).find(".checkbox img").eq(j + 1).addClass("active")
+                                    $(".chookone").eq(i).find(".checkbox").eq(j + 1).prev().prop("checked", true)
+                                    $(".allcheck").eq(i).next().css("color", "#2a82e4").next().css("color", "#2a82e4")
+                                }
+                            }
+                            $(".allcheck").eq(i).next().next().html($(".chookone").eq(i).find(".checkbox.active").length)
+                        }
+                        $(".search-div input").click(function () {
+                            $(this).parent().find(".search-chook").show()
+                            $(document).click(function (e) {
+                                if ($(e.target).parents(".search-div").length == 0) {
+                                    $(".search-chook").hide()
+                                }
+                            })
+                        })
+                        $(".margin-span1").each(function () {
+                            $(this).click(function () {
+                                if ($(this).parent().prev().find("input").val() && $(this).parent().prev().find("input").val() != "") {
+                                    var UserId = $(this).parent().prev().find("input").attr("systemuserid")
+                                    var FullName = $(this).parent().prev().find("input").val()
+                                    var BusinessUnitIdName = $(this).parent().prev().find("input").attr("BusinessUnitIdName")
+                                    var ToActivityId = $(this).parents(".chookone-input").attr("ToActivityId")
+                                    $(this).parents(".people-search").next().append(
+                                            '<li>'
+                                        + '<input type="checkbox" name="participator_' + ToActivityId + '" id="participator_' + UserId + '"></input>'
+                                        + '<div class="checkbox">'
+                                        + '<img src="/img/cal/23.check_2(12x12).png"/>'
+                                        + '</div>'
+                                        + '<span>' + FullName + '</span>'
+                                        + '<span>' + BusinessUnitIdName + '</span>'
+                                        + '<span></span>'
+                                        + '</li> '
+                                        )
+                                    $(this).parent().prev().find("input").val("")
+                                    $(this).parents(".people-search").next().find("li:last .checkbox").click(function () {
+                                        $(this).toggleClass("active").find("img").toggleClass("active")
+                                        var a = $(this).prev().prop("checked")
+                                        $(this).prev().prop("checked", !a)
+                                        if ($(this).find(".active").length != 0) {
+                                            $(this).parents(".chookone").prev().find(".checkbox").addClass("active").find("img").addClass("active")
+                                            $(this).parents(".chookone").prev().find(".checkbox").prev().prop("checked", true)
+                                        }
+                                    })
+                                }
+                            })
+
+                        })
+                        $(".search-div input").keyup(function () {
+                            var that = this
+                            //console.log($(this).val())
+                            var search = $(this).val()
+                            var method = "sys.user.search"
+                            var d = {}
+                            d.search = search
+                            function callback(data) {
+                                //console.log(data)
+                                $(".people-add").remove()
+                                for (var i = 0; i < data.listData.length; i++) {
+                                    var datas = data.listData[i]
+                                    var userName = datas.fullName
+                                    var systemUserId = datas.systemUserId
+                                    var BusinessUnitIdName = datas.BusinessUnitIdName
+                                    var fullName = datas.userName
+                                    $(that).next().append('<li class="people-add" BusinessUnitIdName="' + BusinessUnitIdName
+                                        + '"systemUserId="' + systemUserId + '"><span class="srarch-span">' + userName + '</span><span class="srarch-span">' + BusinessUnitIdName + "</span>" + fullName + '</li>')
+                                }
+                                $(".people-add").each(function () {
+                                    $(this).click(function () {
+                                        $(that).val($(this).find("span").eq(0).html())
+                                        $(that).attr("systemUserId", $(this).attr("systemUserId"))
+                                        $(that).attr("BusinessUnitIdName", $(this).attr("BusinessUnitIdName"))
+                                        $(that).next().hide()
+                                    })
+                                })
+                            }
+                            if (search.length > 0) {
+                                ajaxMethodGetData(method, d, callback)
+                            }
+                        })
+
+                        checkchoose()
+                        function checkchoose() {
+                            $(".popup-body.step2 ul .checkbox").off()
+                            $(".popup-body.step2 ul .checkbox").each(function () {
+                                $(this).click(function () {
+                                    $(this).toggleClass("active")
+                                    $(this).find("img").toggleClass("active")
+                                    var a = !$(this).prev().prop("checked")
+                                    $(this).prev().prop("checked", a)
+                                    if ($(this).find(".active").length != 0) {
+                                        $(this).parents(".chookone").prev().find(".checkbox").addClass("active").prev().prop("checked", true)
+                                        $(this).parents(".chookone").prev().find(".checkbox").find("img").addClass("active")
+                                    } else {
+                                    }
+                                    if ($(this).parents(".chookone").find("ul .checkbox.active").length != 0) {
+                                        $(this).parents(".chookone").find(".allcheck").next().css("color", "#2a82e4").next().css("color", "#2a82e4").html($(this).parents(".chookone").find("ul .checkbox.active").length)
+
+                                    } else {
+                                        $(this).parents(".chookone").find(".allcheck").next().css("color", "#ababab").next().css("color", "#ababab").html($(this).parents(".chookone").find("ul .checkbox.active").length)
+
+                                    }
+                                })
+                            })
+                        }
+                        $(".chookone-input>.checkbox").each(function () {
+                            if (SplitType == "and") {
+                                $(this).click(function () {
+                                    $(this).toggleClass("active")
+                                    $(this).find("img").toggleClass("active")
+                                    var a = !$(this).prev().prop("checked")
+                                    $(this).prev().prop("checked", a)
+                                    if ($(this).find(".active").length == 0) {
+                                        $(this).parent().next().find(".checkbox").removeClass("active").find("img").removeClass("active")
+                                        $(this).parent().next().find(".checkbox").prev().prop("checked", false)
+                                        $(this).parent().next().find(".allcheck").next().css("color", "#ababab").next().css("color", "#ababab").html(0)
+                                    } else {
+                                    }
+                                })
+                            } else {
+                                $(this).click(function () {
+                                    $(".chookone-input>.checkbox").removeClass("active").find("img").removeClass("active")
+                                    $(".chookone-input>.checkbox").prev().prop("checked", false)
+                                    $(".chookone-input>.checkbox").parent().next().find(".checkbox").removeClass("active").find("img").removeClass("active")
+                                    $(".chookone-input>.checkbox").parent().next().find(".checkbox").prev().prop("checked", false)
+                                    $(".chookone-input>.checkbox").parent().next().find(".allcheck").next().css("color", "#ababab").next().css("color", "#ababab").html(0)
+                                    $(this).addClass("active").find("img").addClass("active")
+                                    $(this).prev().prop("checked", true)
+                                })
+                            }
+
+                        })
+                        //全选
+                        $(".allcheck").each(function () {
+                            $(this).click(function () {
+                                $(this).toggleClass("active").find("img").toggleClass("active")
+                                if ($(this).find(".active").length != 0) {
+                                    $(this).parents(".chookone").find("ul .checkbox").addClass("active").find("img").addClass("active")
+                                    $(this).parents(".chookone").find("ul .checkbox").prev().prop("checked", true)
+                                    $(this).parents(".chookone").prev().find(".checkbox").addClass("active").prev().prop("checked", true)
+                                    $(this).parents(".chookone").prev().find(".checkbox").find("img").addClass("active")
+                                    $(this).next().css("color", "#2a82e4").next().css("color", "#2a82e4").html($(this).parents(".chookone").find("ul .checkbox.active").length)
+                                } else {
+                                    $(this).parents(".chookone").find("ul .checkbox").removeClass("active").find("img").removeClass("active")
+                                    $(this).parents(".chookone").find("ul .checkbox").prev().prop("checked", false)
+                                    $(this).next().css("color", "#ababab").next().css("color", "#ababab").html("0")
+                                }
+                            })
+                        })
+                        //收起
+                        $(".people-listup").each(function () {
+                            $(this).click(function () {
+                                $(this).parent().find(".people-listdown").show()
+                                $(this).parent().next().show()
+                                $(this).hide()
+                            })
+                        })
+                        //展开
+                        $(".people-listdown").each(function () {
+                            $(this).click(function () {
+                                $(this).parent().find(".people-listup").show()
+                                $(this).parent().next().hide()
+                                $(this).hide()
+                            })
+                        })
+                        $("#chockpeople .checkbox").each(function () {
+                            $(this).click(function () {
+                                if ($(this).parents("ul").attr("class") == "active") {
+                                    $(this).toggleClass("active")
+                                    $(this).find("img").toggleClass("active")
+                                    $(this).parents("ul").prev().find("span").eq(1).html($(this).parents("ul").find("img.active").length)
+                                    if ($(this).parents("ul").find("img.active").length != 0) {
+                                        $(this).parents("ul").prev().find("span").eq(1).css("color", "#2a82e4")
+                                        $(this).parents("ul").prev().find("span").eq(0).css("color", "#2a82e4")
+                                    } else {
+                                        $(this).parents("ul").prev().find("span").eq(1).css("color", "#999")
+                                        $(this).parents("ul").prev().find("span").eq(0).css("color", "#999")
+                                    }
+                                    $(this).parents("ul").parent().find(".checkbox").eq(0).removeClass("active")
+                                    $(this).parents("ul").parent().find(".checkbox img").eq(0).removeClass("active")
+                                }
+                            })
+                        })
+                    }
+                    ajaxMethodGetData(method, d, callback)
+        })
+        $('.popup-foot-prev').click(function () {
+            $('.step1').show()
+            $('.step2').hide()
+        })
+        $('#save').click(function () {
+           
+        })
+
+    </script>
+</body>
+</html>

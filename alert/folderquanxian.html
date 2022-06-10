@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+
+    <link href="/element/element.css" rel="stylesheet" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+     <link rel="stylesheet" href="/css/themes/lightning/addpeople.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/tasklist.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+
+
+    <style>
+        .slds_section__content_div_col_element {
+            display:block;
+            margin-top:5px;
+        }
+        .form-element input {
+            position:static;
+        }
+        .form-element {
+            width:250px;
+            line-height:25px;
+        }
+        .contentWrapper .slds-dropdown_right {
+            margin-top:2px;
+            margin-left:60px;
+            top:auto;
+        }
+        .autocompleteWrapper .lookup {
+            margin-top:8px;
+            width:35%;
+            top:auto;
+        }
+        .slds_section__content_div_col_element {
+            position:static;
+        }
+        .addpeople {
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            font-size:14px;
+            width:60px;
+            background-color:#ccc;
+            border-radius:4px;
+            cursor:pointer;
+            color:white;
+        }
+        .uiImage {
+            background-color: rgb(101, 202, 228)
+        }
+        .playsed {
+            margin-left:40px;
+            margin-right:40px;
+            padding-bottom:10px;
+            padding-top:5px;
+            border-bottom:1px solid #ccc;
+            height:30px;
+            margin-top:5px;
+        }
+        .playsed img {
+            width:30px;
+            height:30px;
+        }
+        .playsed .uiImage {
+            width:30px;
+            height:30px;
+
+        }
+        .playsed>div{
+            float:left;
+        }
+        .people-name {
+            line-height:30px;
+            margin-left:10px;
+        }
+        .playsed> .people-delete {
+            float:right;
+            margin-right:30px;
+            cursor:pointer;
+        }
+        .people-delete {
+            width:15px;
+            height:15px;
+        }
+        .people-delete img{
+            width:15px;
+            height:15px;
+            margin-top:8px;
+        }
+        .playsed .people-quanxian {
+            float:right;
+            margin-right:50px;
+        }
+        .playsed .people-quanxian .el-select{
+            height:30px;
+        }
+        .playsed .people-quanxian .el-input {
+            height:30px;
+            margin-top:0;
+        }
+        .playsed .people-quanxian input{
+            height:30px;
+        }
+        .playsed .el-input__icon {
+            line-height:30px;
+        }
+        .addpeople.active{
+            background-color:rgb(101, 202, 228)
+        }
+        .el-message.el-message--error{
+            z-index:9999 !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">文件夹分享</h2>
+                            <h3 class="title slds-text-heading--medium">文件夹</h3>
+
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-main">
+                               <div class="shift-item">
+                                   <div class="item-left">
+                                       <div class="slds_section__content_div_col_element">
+                                                    <label class="slds_section__content_div_col_element_label">
+                                                        <span class="">搜索</span>
+                                                        <span class="required "></span>
+                                                    </label>
+                                                    <div>
+                                                        <div class="contentWrapper" style="border-color: rgb(221, 219, 218); box-shadow: rgb(255, 255, 255) 0px 0px 0px;">
+                                                            <div class="contentWrapper_input slds-grid people_hidden" style="display: flex;">
+                                                                <div class="entiyMenu">
+                                                                    <a href="#" class="entityMenuTrigger">  
+                                                                        <div class="entityIcon" style="background-color: #65CAE4">
+                                                                            <span class="uiImage">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="contentWrapper_icon">
+                                                                            <img src="/img/cal/20.png" alt="">
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="autocompleteWrapper">
+                                                                    <div class="form-element">
+                                                            <input type="text" id="employeeIdName" placeholder="搜索角色">
+                                                            <input type="hidden" id="employeeId" name="employeeId" data-object="1036">
+                                                            <div class="lookup" style="display: none;">
+                                                                <ul>
+                                                                </ul>
+                                                            </div>
+                                                            <img src="/img/images/lookup.png">
+                                                            <ul id="employeeInfo">
+                                                            </ul>
+                                                        </div>
+                                                                   
+                                                                </div>
+                                                                <div class="contentWrapper_iconfont">
+                                                                    <i class="iconfont icon-sousuo"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pillContainerWrapper noSeparator people_show">
+                                                                <div class="uiPillContainer_default">
+                                                                    <ul class="orderedList">
+                                                                       
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="slds-dropdown slds-dropdown_right toop_second" style="width: 8rem; display: none;">
+                                                            <ul class="dropdown__list">
+                                                                <li class="slds-dropdown__item grid lista" object="1036">
+                                                                    <a href="javascript:;">
+                                                                        <span class="slds-truncate">
+                                                                            <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+
+                                                                            </span>
+                                                                            <span style="float: left">角色</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="slds-dropdown__item grid bans" object="9">
+                                                                    <a href="javascript:;">
+                                                                        <span class="slds-truncate">
+                                                                            <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+                                                                           
+                                                                            </span>
+                                                                            <span style="float: left">小组</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="slds-dropdown__item grid tu" object="10">
+                                                                    <a href="javascript:;">
+                                                                        <span class="slds-truncate">
+                                                                            <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+                                                                                
+                                                                            </span>
+                                                                            <span style="float: left">部门</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="slds-dropdown__item grid tu" object="8">
+                                                                    <a href="javascript:;">
+                                                                        <span class="slds-truncate">
+                                                                            <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+                                                                            </span>
+                                                                            <span style="float: left">用户</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="shift-name-title">访问权限</span>
+                                            <el-select  v-model="list.rightCode"placeholder="请选择">
+                                                <el-option
+                                                  label="无权限"
+                                                  value="0">
+                                                </el-option>
+                                                <el-option
+                                                  label="查看"
+                                                  value="2">
+                                                </el-option>
+                                                <el-option
+                                                  label="查看/上传"
+                                                  value="4">
+                                                </el-option>
+                                                <el-option
+                                                  label="管理"
+                                                  value="32">
+                                                </el-option>
+                                             </el-select>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="addpeople">添加</div>
+                            
+                              
+                         
+                               </div>
+                            <div class="shift-body-titme"><span>已添加人</span></div>
+                            <div class="playsed" v-for="item in people">
+                                <div class="uiImage">
+                                     <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" alt="用户">
+                                </div>
+                                <div class="people-name">
+                                    {{item.name}}
+                                </div>
+                                <div class="people-delete" >
+                                    <img @click="peopledelete(item.id)" v-show="item.deletecode=='1'" src="/img/images/02.Close_.png" alt="" />
+                                </div>
+                                <div class="people-quanxian">
+                                    <el-select  @change="updatecontentaccess(item.id,item.rightCode)"v-model="item.rightCode"placeholder="请选择">
+                                                <el-option
+                                                  label="无权限"
+                                                  value="0">
+                                                </el-option>
+                                                <el-option
+                                                  label="查看"
+                                                  value="2">
+                                                </el-option>
+                                                <el-option
+                                                  label="查看/上传"
+                                                  value="4">
+                                                </el-option>
+                                                <el-option
+                                                  label="管理"
+                                                  value="32">
+                                                </el-option>
+                                             </el-select>
+                                </div>
+
+                            </div>
+                         
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    Name: '',
+                    folderPicker: { Id: '', Name: '' },
+                    description: '',
+                    sortNumber: '',
+                    isPublic: '',
+                    rightCode: '2',
+                },
+                people: []
+            },
+            created: function () {
+                this.getfoldershareaccess()
+            },
+            methods: {
+                peopledelete: function (id) {
+                    var that = this
+                    ajaxMethodGetData('removecontentaccess', {id:id}, function (data) {
+                        that.getfoldershareaccess()
+                    })
+                },
+                updatecontentaccess: function (id, rightCode) {
+                    var that =this
+                    ajaxMethodGetData('updatecontentaccess', { rightCode:rightCode,id: id }, function (data) {
+                        that.getfoldershareaccess()
+                    })
+                },
+                 getfoldershareaccess: function () {
+                    var that =this
+                    var id = getQueryString('id')
+                    ajaxMethodGetData('folder.share.access', { id: id }, function (data) {
+                        that.people = []
+                        for (var i = 0; i < data.data.listData.length; i++) {
+                            var res = data.data.listData[i]
+                            var deletecode = '1'
+                            if (res.ObjectId == '00000000-0000-0000-0000-000000000000' || res.ObjectId == '00000000-0000-0000-0000-000000000001') {
+                                deletecode = '0'
+                            }
+                            that.people.push({
+                                id: res.Id,
+                                rightCode: res.Right+'',
+                                name: res.ObjectName,
+                                deletecode: deletecode,
+                            })
+                        }
+                        
+                    })
+                }
+            }
+        })
+    </script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+    <script>
+        var name = parent.$('.file-nav span:last').attr('name')
+        $('.title.slds-text-heading--medium').eq(1).html(name)
+        $('.addpeople').click(function () {
+            var objectId = []
+            if ($('.pillContainerListItem').length > 0) {
+                $('.pillContainerListItem').each(function () {
+                    objectId.push($(this).attr('id'))
+                })
+                objectId = objectId.join(',')
+                var rightCode = vum.list.rightCode
+                var entityId = getQueryString('id')
+                var data = {
+                    entityId: entityId,
+                    objectId: objectId,
+                    rightCode: rightCode,
+                }
+                ajaxMethodPostData('addcontentaccess', data, function (data) {
+                    vum.getfoldershareaccess()
+                })
+            } else {
+                vum.$message.error('请至少选择一个添加的项目');
+            }
+            
+        })
+
+        $('#Save').click(function () {
+            function callback(data) {
+                console.log(data)
+                parent.success('文件夹保存成功')
+                parent.$('#changeDiv').hide()
+            }
+            var d = vum.list
+            var id = getQueryString('id')
+
+            var messages = {
+                params: {
+                    recordRep: {
+                        objTypeCode: 1012,
+                        fields: d
+                    }
+                }
+            }
+            if (id != null) {
+                messages.params.recordRep.id = id
+            }
+            console.log(messages);
+            messages = JSON.stringify(messages)
+            var data = { message: messages };
+            var save = document.querySelectorAll('.save-checking.active');
+            if (save.length > 0) {
+                ajaxMethodPostData('entity.saverecord', data, callback)
+            }
+        })
+    </script>
+    <script src="/js/filter/filterGrid.js"></script>
+
+</body>
+</html>

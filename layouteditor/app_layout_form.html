@@ -1,0 +1,814 @@
+﻿
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+    <link rel="stylesheet" href="/css/app.css" />
+    <link href="/element/mint-ui-main.css" rel="stylesheet" />
+
+    <style>
+        #searchdiv {
+            font-size: 0.45rem;
+            background-color: white;
+            padding: 0.4rem 0 0.4rem 0.5rem;
+        }
+
+            #searchdiv img {
+                width: 0.5rem;
+                height: 0.5rem;
+                float: left;
+                margin-top: 0.05rem;
+                margin-right: 0.5rem;
+            }
+
+        .item-left {
+            float: left;
+            padding: 0.1rem;
+        }
+
+        .item-right {
+            float: left;
+            width: calc(100% - 2rem);
+            margin-left: 0.2rem;
+            overflow: hidden;
+        }
+
+        .item:first-child {
+            margin-top: 0.1rem;
+        }
+
+        .item {
+            background-color: white;
+            margin-top: 0.5rem;
+            padding: 0.2rem;
+        }
+
+        .people-head {
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            background-color: #3399ff;
+            color: white;
+            font-size: 0.4rem;
+            text-align: center;
+            line-height: 1.25rem;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .item-head {
+            font-size: 0.5rem;
+            color: #333;
+            font-weight: 700;
+            line-height: 1rem;
+        }
+
+        .msg-title {
+            color: #666666;
+            font-size: 0.4rem;
+        }
+
+        .msg-body {
+            color: #333;
+            font-size: 0.4rem;
+        }
+
+        .item-msg > div {
+            float: left;
+        }
+
+        .item-msg {
+            clear: both;
+            line-height: 0.7rem;
+        }
+
+        .searchcontentdiv {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 0 0 0 0.5rem;
+            background-color: white;
+            box-sizing: border-box;
+            display: none;
+            z-index: 2;
+        }
+
+        .mask {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            background-color: #000;
+            display: none;
+            z-index: 1;
+        }
+
+        .searchcontentdiv input {
+            border: 0;
+            outline: none;
+            text-indent: 1rem;
+            font-size: 0.4rem;
+            color: #333;
+            text-align: right;
+            width: calc(100% - 1rem);
+            height: 1.3rem;
+            line-height: 1.3rem;
+        }
+
+        .searchcontent {
+            clear: both;
+            height: 1.5rem;
+            line-height: 1.5rem;
+            box-sizing: border-box;
+            border-bottom: 1px solid #dedede;
+        }
+
+        .searchitem-name {
+            color: #666;
+            font-size: 0.48rem;
+            float: left;
+        }
+
+        .searchitem-right {
+            color: #666;
+            font-size: 0.46rem;
+            float: right;
+            padding-right: 0.3rem;
+            width: 50%;
+            text-align: right;
+        }
+
+        #choosetype, #choosedept {
+            width: 100%;
+        }
+
+        div[visible='visible'] {
+            display: block !important;
+        }
+
+        .input {
+            text-align: right;
+            border: 0;
+            outline: none;
+            margin-right: 0.3rem;
+        }
+
+        .item img {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        .mint-search {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 2;
+        }
+
+        .require {
+            color: red;
+            position: absolute;
+            margin-top: 13px;
+        }
+
+        .mint-cell {
+            margin-left: 15px;
+        }
+
+        .mint-cell-wrapper {
+            padding-left: 0;
+        }
+
+        .RelatedList {
+        }
+
+        .RelatedList-title {
+            margin-left: 15px;
+        }
+        /*.picker {
+            display:block;
+        }*/
+        .pickercontent {
+            width: 100%;
+        }
+
+        .mint-search .mint-cell {
+            margin-left: 0;
+            padding-left: 10px;
+        }
+
+        .mint-search .mint-cell-wrapper {
+            border-bottom: 1px solid #dedede;
+        }
+
+        .footer {
+            background-color: white;
+            position: fixed;
+            bottom: 0;
+            padding: 15px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .savebtn {
+            width: 100%;
+        }
+
+        #vueapp {
+            padding-bottom: 80px;
+        }
+
+        .requiredrule {
+            border: 1px solid red;
+        }
+
+        .requiredrulemessage {
+            padding: 10px;
+            background-color: #fde2e2;
+            border: 1px solid #fde2e2;
+            margin-top: 100px;
+            border-radius: 8px;
+            color: #f56c6c;
+        }
+
+        .mint-checklist-title {
+            font-size: 16px;
+            color: #333;
+            margin-left: 15px;
+        }
+
+        .mint-checklist {
+            position: relative;
+            top: 12px;
+            padding-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <script src="/element/vue.js"></script>
+    <script src="/element/mint-ui-main.js"></script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <div id="vueapp">
+        <div class="section">
+            <div class="item" v-for="(item,index) in list">
+                <div v-if="item.category=='CustomField'&&!item.readonly" :class="{'requiredrule':item.requiredrule}">
+                    <i class="require" v-if="item.require">*</i>
+                    <mt-cell :title="item.label" v-if="item.type=='S'||item.type=='S'||item.type=='E'||item.type=='N'||item.type=='H'">
+                        <input autocomplete="off" v-model="item.value" :placeholder="item.helpText" class="input" />
+                    </mt-cell>                    
+                    <mt-cell :title="item.label" v-else-if="item.type=='D'">
+                        <input autocomplete="off" @click="openPicker(index)" v-model="item.value" :placeholder="item.helpText" class="input" />
+                    </mt-cell>
+                    <mt-cell :title="item.label" v-else-if="item.type=='U'||item.type=='O'||item.type=='Y'||item.type=='Y_MD'">
+                        <input autocomplete="off" @click="opensearchPicker(index,item.sObjectType)" v-model="item.value.Name" :placeholder="item.helpText" class="input" />
+                    </mt-cell>
+                    <mt-cell :title="item.label" v-else-if="item.type=='L'||item.type=='DT'||item.type=='LT'">
+                        <input autocomplete="off" @click="openselectPicker(index,item.id)" v-model="item.value" :placeholder="item.helpText" class="input" />
+                    </mt-cell>
+                    <mt-cell :title="item.label" v-else-if="item.type=='Year'">
+                        <input autocomplete="off" @click="openYearPicker(index,item.id)" v-model="item.value" :placeholder="item.helpText" class="input" />
+                    </mt-cell>
+                    <mt-cell :title="item.label" v-else-if="item.type=='Month'">
+                        <input autocomplete="off" @click="openMonthPicker(index,item.id)" v-model="item.value" :placeholder="item.helpText" class="input" />
+                    </mt-cell>
+                    <mt-checklist :title="item.label" v-else-if="item.type=='LL'"
+                                  v-model="item.value"
+                                  :options="['optionA','optionB','optionC']">
+                    </mt-checklist>
+                    <mt-cell :title="item.label" v-else-if="item.type=='MC'">
+                        <mt-switch v-model="item.value"></mt-switch>
+                    </mt-cell>
+                    <div style="font-size:16px;padding-left:15px;" v-else-if="item.type=='X'||item.type=='J'">
+                        <div>{{item.label}}</div>
+                        <textarea style="border:1px solid #dedede;width:90%;margin-top:5px;height:80px;text-align:left;" autocomplete="off" v-model="item.value" :placeholder="item.helpText" class="input" />
+                        </textarea>
+                    </div>
+                    <div style="font-size:16px;padding-left:15px;" :title="item.label" v-else-if="item.type=='UC'">
+                        <div>{{item.label}}</div>
+                        <textarea autocomplete="off" v-model="item.value" :placeholder="item.helpText" class="input" />
+                        </textarea>
+                        <div>签名</div>
+                        <img src="/img/collaboration_logo" alt="" />
+                    </div> 
+
+
+
+                    <mt-cell :title="item.label" v-else>
+                        <input autocomplete="off" v-model="item.value" :placeholder="item.helpText" class="input" />
+                    </mt-cell>
+                    
+
+                </div>
+                <div v-if="item.readonly" style="opacity:0.5;">
+                    <mt-cell :title="item.label">
+                        <span style="color:#333;">{{item.value}}</span>
+                        <span>{{item.helpText}}</span>
+                    </mt-cell>
+                </div>
+
+                <div class="RelatedList" v-if="item.category=='StandardRelatedList'&&!item.readonly">
+                    <span class="RelatedList-title">{{item.label}}</span>
+                    <div v-for="(items,indexs) in item.fields" :class="{'requiredrule':items.requiredrule}">
+                        <i class="require" v-if="items.require">*</i>
+                        <mt-cell :title="items.label" v-if="items.type=='S'||items.type=='S'||items.type=='E'||items.type=='N'||items.type=='H'">
+                            <input autocomplete="off" v-model="items.value" :placeholder="items.helpText" class="input" />
+                        </mt-cell>
+                        <mt-cell :title="items.label" v-else-if="items.type=='D'">
+                            <input autocomplete="off" @click="openPicker2(index,indexs)" v-model="items.value" :placeholder="items.helpText" class="input" />
+                        </mt-cell>
+                        <mt-cell :title="items.label" v-else-if="items.type=='U'||items.type=='O'||items.type=='Y'||items.type=='Y_MD'">
+                            <input autocomplete="off" @click="opensearchPicker2(index,indexs,items.sObjectType)" v-model="items.value.Name" :placeholder="items.helpText" class="input" />
+                        </mt-cell>
+                        <mt-cell :title="items.label" v-else-if="items.type=='L'||items.type=='DT'||items.type=='LT'">
+                            <input autocomplete="off" @click="openselectPicker2(index,indexs,items.id)" v-model="items.value" :placeholder="items.helpText" class="input" />
+                        </mt-cell>
+                        <mt-checklist :title="items.label" v-else-if="items.type=='LL'"
+                                      v-model="items.value"
+                                      :options="['optionA','optionB','optionC']">
+                        </mt-checklist>
+                        <mt-cell :title="items.label" v-else-if="items.type=='MC'">
+                            <mt-switch v-model="items.value"></mt-switch>
+                        </mt-cell>
+                        <div style="font-size:16px;padding-left:15px;" v-else-if="items.type=='X'||items.type=='J'">
+                            <div>{{items.label}}</div>
+                            <textarea style="border:1px solid #dedede;width:90%;margin-top:5px;height:80px;text-align:left;" autocomplete="off" v-model="items.value" :placeholder="item.helpText" class="input" />
+                            </textarea>
+                        </div>
+
+                        <div style="font-size:16px;padding-left:15px;" v-else-if="items.type=='UC'">
+                            <div>{{items.label}}</div>
+                            <textarea style="border:1px solid #dedede;width:90%;margin-top:5px;height:80px;text-align:left;" autocomplete="off" v-model="items.value" :placeholder="items.helpText" class="input" />
+                            </textarea>
+                            <div>签名</div>
+                            <img src="/img/collaboration_logo" alt="" />
+                        </div>
+                        <mt-cell :title="items.label" v-else-if="items.type=='Year'">
+                            <input autocomplete="off" @click="openYearPicker2(index,indexs,item.id)" v-model="item.value" :placeholder="item.helpText" class="input" />
+                        </mt-cell>
+                        <mt-cell :title="items.label" v-else-if="items.type=='Month'">
+                            <input autocomplete="off" @click="openMonthPicke2r(index,indexs,item.id)" v-model="item.value" :placeholder="item.helpText" class="input" />
+                        </mt-cell>
+                        <mt-cell :title="items.label" v-else>
+                            <input autocomplete="off" v-model="items.value" :placeholder="items.helpText" class="input" />
+                        </mt-cell>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <mt-datetime-picker @confirm="timechook('yyyy-MM-dd')"
+                            ref="datepicker"
+                            type="date"
+                            v-model="time">
+        </mt-datetime-picker>
+        <mt-datetime-picker @confirm="timechook2('yyyy-MM-dd')"
+                            ref="RelatedListdatepicker"
+                            type="date"
+                            v-model="time">
+        </mt-datetime-picker>
+
+        <mt-datetime-picker @confirm="timechook('yyyy-MM-dd HH:mm:ss')"
+                            ref="datetimepicker"
+                            type="datetime"
+                            v-model="time">
+        </mt-datetime-picker>
+        <mt-datetime-picker @confirm="timechook2('yyyy-MM-dd HH:mm:ss')"
+                            ref="RelatedListdatetimepicker"
+                            type="datetime"
+                            v-model="time">
+        </mt-datetime-picker>
+
+        <!--<mt-datetime-picker @confirm="timechook()"
+                            ref="timetimepicker"
+                            type="time"
+                            v-model="time">
+        </mt-datetime-picker>
+        <mt-datetime-picker @confirm="timechook2()"
+                            ref="RelatedListtimetimepicker"
+                            type="time"
+                            v-model="time">
+        </mt-datetime-picker>-->
+        
+
+
+
+        <mt-popup v-model="pickercontent" position="bottom" class="mint-popup pickercontent">
+            <mt-picker :slots="pickerlist" @change="onValuesChange"></mt-picker>
+        </mt-popup>
+        
+        <mt-popup v-model="pickercontent2" position="bottom" class="mint-popup pickercontent">
+            <mt-picker :slots="pickerlist" @change="onValuesChange2"></mt-picker>
+        </mt-popup>
+
+
+        <mt-popup v-model="pickerYearcontent" position="bottom" class="mint-popup pickercontent">
+            <mt-picker :slots="pickerYearlist" @change="onValuesChange"></mt-picker>
+        </mt-popup>
+        <mt-popup v-model="pickerMonthcontent" position="bottom" class="mint-popup pickercontent">
+            <mt-picker :slots="pickerMonthlist" @change="onValuesChange"></mt-picker>
+        </mt-popup>
+
+        <mt-popup v-model="pickerYearcontent2" position="bottom" class="mint-popup pickercontent">
+            <mt-picker :slots="pickerYearlist" @change="onValuesChange2"></mt-picker>
+        </mt-popup>
+        <mt-popup v-model="pickerMonthcontent2" position="bottom" class="mint-popup pickercontent">
+            <mt-picker :slots="pickerMonthlist" @change="onValuesChange2"></mt-picker>
+        </mt-popup>
+
+
+        <div class="mint-search" style="" v-if="searchcontent">
+            <div class="mint-searchbar">
+                <div class="mint-searchbar-inner">
+                    <i class="mintui mintui-search"></i>
+                    <input v-model="searchkey" @change="searchlookup" type="search" placeholder="搜索" class="mint-searchbar-core" />
+                </div>
+                <a class="mint-searchbar-cancel" style="" @click="searchcontent=false">取消</a>
+            </div>
+            <div class="mint-search-list" style="">
+                <div class="mint-search-list-warp" v-for="item in searchlist" >
+                    <a class="mint-cell" @click="searchchook(item.ID,item.Name)">
+                        <div class="mint-cell-left"></div>
+                        <div class="mint-cell-wrapper" >
+                            <div class="mint-cell-title">
+                                <span class="mint-cell-text">{{item.Name}}</span>
+                            </div>
+                            <div class="mint-cell-value">
+                                <span>{{item.Id}}</span>
+                            </div>
+                        </div>
+                        <div class="mint-cell-right"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mint-search" style="" v-if="searchcontent2">
+            <div class="mint-searchbar">
+                <div class="mint-searchbar-inner">
+                    <i class="mintui mintui-search"></i>
+                    <input type="search" placeholder="搜索" class="mint-searchbar-core" />
+                </div>
+                <a class="mint-searchbar-cancel" style="" @click="searchcontent2=false">取消</a>
+            </div>
+            <div class="mint-search-list" style="">
+                <div class="mint-search-list-warp" v-for="item in searchlist">
+                    <a class="mint-cell" @click="searchchook2(item.ID,item.Name)">
+                        <div class="mint-cell-left"></div>
+                        <div class="mint-cell-wrapper">
+                            <div class="mint-cell-title">
+                                <span class="mint-cell-text">{{item.Name}}</span>
+                            </div>
+                            <div class="mint-cell-value">
+                                <span>{{item.Id}}</span>
+                            </div>
+                        </div>
+                        <div class="mint-cell-right"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <mt-button type="primary" class="savebtn" @click="savedata">提交</mt-button>
+        </div>
+        <mt-popup class="requiredrulemessage"
+                  v-model="requiredrule"
+                  position="top"
+                  :modal="false">
+            <div>请填写所有必填项</div>
+        </mt-popup>
+    </div>
+    <script>
+
+
+    </script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                pickerYearlist: [
+                    {
+                        flex: 1,
+                        values: ['', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', ],
+                        className: 'slot1',
+                        textAlign: 'center'
+                    }
+                ],
+                pickerMonthlist: [
+                    {
+                        flex: 1,
+                        values: ['', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                        className: 'slot1',
+                        textAlign: 'center'
+                    }
+                ],
+                pickerlist: [
+                    {
+                        flex: 1,
+                        values: ['','在职', '不在职', '在岗', '不在岗',],
+                        className: 'slot1',
+                        textAlign: 'center'
+                    }
+                ],
+                allpickerlist:{},
+                time: '',
+                index: '',
+                index2:'',
+                searchlist: [],
+                list: [],
+                search: '',
+                searchcontent: false,
+                searchcontent2: false,
+                pickercontent: false,
+                pickercontent2: false,
+                requiredrule: false,
+                pickerYearcontent: false,
+                pickerMonthcontent: false,
+                pickerYearcontent2: false,
+                pickerMonthcontent2: false,
+                searchkey: '',
+                obj:''
+            },
+            created: function () {
+                this.getlayout()
+                this.getdata()
+            },
+            methods: {
+                onValuesChange: function (dom, value) {
+                    if (this.index != '') {
+                        this.list[this.index].value = value[0]
+                    }
+                },
+                onValuesChange2: function (dom, value) {
+                    if (this.index != '') {
+                        this.list[this.index].fields[this.index2].value = value[0]
+                    }
+                    
+                },
+                openYearPicker: function (index) {
+                    this.index = index
+                    this.pickerYearcontent = true
+                },
+                openYearPicke2r: function (index,index2) {
+                    this.index = index
+                    this.index2 = index2
+                    this.pickerYearcontent2 = true
+                },
+                openMonthPicker: function (index) {
+                    this.index = index
+                    this.pickerMonthcontent = true
+                },
+                openMonthPicker2: function (index, index2) {
+                    this.index = index
+                    this.index2 = index2
+                    this.pickerMonthcontent2 = true
+                },
+
+                openselectPicker: function (index, id) {
+                    this.pickerlist[0].values = ['']
+                    for (var i = 0; i < this.allpickerlist[id].length; i++) {
+                        this.pickerlist[0].values.push(this.allpickerlist[id][i].label)
+                    }
+                    this.index = index
+                    this.pickercontent=true
+                },
+                openselectPicker2: function (index, index2, id) {
+                    this.pickerlist[0].values = ['']
+                    for (var i = 0; i < this.allpickerlist[id].length; i++) {
+                        this.pickerlist[0].values.push(this.allpickerlist[id][i].label)
+                    }
+                    this.index = index
+                    this.index2 = index2
+                    this.pickercontent2 = true
+                },
+                searchlookup: function () {
+                    var that = this
+                    var sessionkey = getQueryString('sessionkey')
+
+                    $.ajax({
+                        type: "get",
+                        async: false,
+                        url: "/apps/CommandProcessor.ashx?cmd=ui.entity.lookup&sessionKey=" + sessionkey,
+                        dataType: "json",
+                        data: {
+                            Lktp: that.obj,
+                            Lksrch: that.searchkey
+                        },
+                        success: function (res) {
+                            that.searchlist = res.listData
+                        }
+                    })
+                },
+                opensearchPicker: function (index, obj) {
+                    this.searchkey = ''
+                    this.searchcontent = true
+                    this.index = index
+
+                    this.obj = obj
+                    this.searchlookup()
+
+                },
+
+
+                opensearchPicker2: function (index,index2,obj) {
+                    this.searchcontent2 = true
+                    this.index = index
+                    this.index2 = index2
+
+                    this.obj = obj
+                    this.searchlookup()
+
+                },
+                searchchook: function (id,name) {
+                    this.list[this.index].value = {
+                        Id:id,
+                        Name:name
+                    }
+                    this.searchcontent = false
+                },
+                searchchook2: function (id,name) {
+                    this.list[this.index].fields[this.index2].value = {
+                        Id: id,
+                        Name: name
+                    }
+                    this.searchcontent2 = false
+                },
+                timechook: function (format) {
+                    this.list[this.index].value = formatDate(this.time, format)
+                },
+                timechook2: function (format) {
+                    this.list[this.index].fields[this.index2].value = formatDate(this.time, format)
+                },
+                openPicker: function (index) {
+                    this.index = index
+                    this.$refs.datepicker.open();
+                },
+                
+                openPicker2: function (index, index2) {
+                    this.index = index
+                    this.index2 = index2
+                    this.$refs.RelatedListdatepicker.open();
+                },
+                getdata: function () {
+                    var that = this
+                    var sessionkey = getQueryString('sessionkey')
+                    $.ajax({
+                        type: "get",
+                        async: false,
+                        url: "/apps/CommandProcessor.ashx?cmd=mobileform.layout.render&sessionKey=" + sessionkey,
+                        dataType: "json",
+                        data: {
+                            formId: '1479f8e2-6bf5-4e15-b612-8d4e5ff40c9a'
+                        },
+                        success: function (res) {
+                            that.allpickerlist = res.actions[0].returnValue.masterRecord.picklistValuesMap
+                            for (var i = 0; i < that.list.length; i++) {
+                                if (!that.list[i].fields) {
+                                    that.list[i].value = res.actions[0].returnValue.masterRecord.record[that.list[i].id]
+                                }
+                            }
+                            
+                        }
+                    })
+                },
+                getlayout: function () {
+                    var that = this
+                    var sessionkey = getQueryString('sessionkey')
+
+                    $.ajax({
+                        type: "get",
+                        async:false,
+                        url: "/apps/CommandProcessor.ashx?cmd=mobileform.layout.get&sessionKey=" + sessionkey,
+                        dataType: "json",
+                        data: {
+                            formId: '1479f8e2-6bf5-4e15-b612-8d4e5ff40c9a'
+                        },
+                        success: function (res) {
+                            that.list = []
+                            for (var i = 0; i < res.length; i++) {
+                                for (var i = 0; i < res.length; i++) {
+                                    res[i].value = ''
+                                    if (res[i].fields) {
+                                        for (var j = 0; j < res[i].fields.length; j++) {
+                                            res[i].fields[j].value=''
+                                        }
+                                    }
+                                    that.list.push(res[i])
+                                }
+                            }
+                        }
+                    })
+                },
+                savedata: function () {
+                    this.requiredrule = false
+                    for (var i = 0; i < this.list.length; i++) {
+                        if (this.list[i].fields) {
+                            for (var j = 0; j < this.list[i].fields.length; j++) {
+                                if (this.list[i].fields[j].require) {
+                                    if (this.list[i].fields[j].value == '') {
+                                        this.list[i].fields[j].requiredrule = true
+                                        this.requiredrule = true
+                                    } else {
+                                        this.list[i].fields[j].requiredrule = false
+                                    }
+                                }
+                            }
+                        } else {
+                            if (this.list[i].require) {
+                                if (this.list[i].value == '') {
+                                    this.list[i].requiredrule = true
+                                    this.requiredrule = true
+                                } else {
+                                    this.list[i].requiredrule = false
+                                }
+                            }
+                        }
+                    }
+                    if (this.requiredrule == true) {
+                        var that = this
+                        $('.requiredrulemessage').show()
+                        setTimeout(function () {
+                            $('.requiredrulemessage').hide()
+                        }, 3000)
+                    } else {
+                        var data = {}
+                        console.log(this.allpickerlist)
+                        for (var i = 0; i < this.list.length; i++) {
+                            data[this.list[i].id] = this.list[i].value
+                            if (this.list[i].type == 'L' || this.list[i].type == 'LT' || this.list[i].type == 'DT') {
+                                for (var j = 0; j < this.allpickerlist[this.list[i].id].length; j++) {
+                                    if (this.allpickerlist[this.list[i].id][j].label == this.list[i].value) {
+                                        data[this.list[i].id] = this.allpickerlist[this.list[i].id][j].value
+                                    }
+                                }
+                            }
+                        }
+                        console.log(data)
+                    }
+                }
+            }
+        })
+        function formatDate (date, fmt) {
+
+            if (/(y+)/.test(fmt)) {
+
+                fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
+
+            }
+
+            let o = {
+
+                'M+': date.getMonth() + 1,
+
+                'd+': date.getDate(),
+
+                'h+': date.getHours(),
+
+                'm+': date.getMinutes(),
+
+                's+': date.getSeconds()
+
+            }
+
+            for (let k in o) {
+
+            if (new RegExp(`(${k})`).test(fmt)) {
+
+                let str = o[k] + ''
+
+                fmt = fmt.replace(RegExp.$1, RegExp.$1.length === 1 ? str : padLeftZero(str))
+
+            }
+
+        }
+
+        return fmt
+
+        }
+
+
+
+        function padLeftZero (str) {
+
+            return ('00' + str).substr(str.length)
+
+        }
+
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = location.search.substr(1).match(reg);
+            if (r != null) return unescape(decodeURI(r[2])); return null;
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,1007 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/mission-header.css">
+    <link rel="stylesheet" href="/css/cal/mission.css">
+    <link rel="stylesheet" href="/css/cntrt/cntrt.css">
+    <link rel="stylesheet" href="/css/cal/newmission.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/template/css/alert.css">
+    <style>
+        #newmission select {
+            appearance:none;
+            -moz-appearance:none;
+            -webkit-appearance:none;
+            -ms-appearance:none;
+            border: none;
+            outline: none;
+        }
+        select::-ms-expand { display: none; }
+        .checkbox {
+            min-width:0px !important;
+        }
+        #popup-newmission {
+            display: block;
+            left: 50%;
+            top: 50%;
+            margin-left: -500px;
+            margin-top: -330px;
+        }
+
+        .popup-mask {
+            display: block;
+        }
+
+        .form-element {
+            margin-left: 115px;
+            min-width: 300px !important;
+            width: 300px !important;
+        }
+
+        .form-element > input {
+            margin-top: -2px !important;
+            line-height: 25px !important;
+        }
+
+        #newmission .missmessage-body .tree span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+
+        #newmission .missmessage-body .appends span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+    .popup-foot > button:hover {
+    background-color: #f4f2f2;
+    color: #108af9;
+}
+    .popup-foot > button {
+
+    float: right;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    color: #108af9;
+    height: 32px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0 10px;
+    }
+    #popup-newmission{
+        overflow:visible;
+    }
+    .form-checking{
+        padding-left:115px;
+        color:#ff6666;
+        font-size:14px;
+        line-height:30px;
+        height:0;
+        position:absolute;
+        top:35px;
+    }
+    .activity{
+        border:1px solid #ff6666 !important;
+    }
+    .boxshaw{
+        top:-150px;
+    }
+    .form-error{
+        width:90%;
+        margin-left:5%;
+        background: rgb(194, 57, 52);
+        padding:15px;
+        color:#fff;
+        border-radius:4px;
+        height:50px;
+        box-sizing:border-box;
+    }
+    .form-error2{
+        color:rgb(194, 57, 52);
+        margin-left:65px;
+        margin-top:10px;
+        position:absolute;
+        font-size:14px;
+    }
+    .popup-mask {
+            z-index:199;
+        }
+        .popup {
+            z-index:200;
+        }
+        #newmission .pinput3 {
+            width:50% !important;
+        }
+        #newmission .pinput2 {
+            width:35% !important;
+        }
+        .divinput {
+            width:auto;
+        }
+        .missmessage {
+            /*height:auto !important;*/
+        }
+        .disstatus {
+            border-color:rgb(194, 57, 52) !important;
+        }
+        #newmission #sex, #newmission #Select3 {
+            height:auto;
+            left:115px;
+        }
+        #newmission #Select3 {
+            left:115px;
+            
+        }
+        .checkbox {
+            border-radius:2px;
+        }
+        .pinlv div {
+            border-right-width:0;
+        }
+        .pinlv div:last-child{
+            border-right-width:1px;
+            border-radius:0 4px 4px 0;
+        }
+        .pinlv div:first-child{
+            border-radius: 4px 0 0 4px;
+        }
+        .pinlv div.active{
+            background-color: rgba(16, 138, 249,0.9);
+            color:white;
+        }
+        .repeatselect {
+            width:100% !important;
+        }
+        .pinlv {
+            margin-left:60px;
+        }
+        .pinlv2 .pinlv {
+            width:auto;
+            margin-left:20px;
+        }
+        .repeatselect {
+            padding-left:10px;
+        }
+       .title-img2 {
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+        .chongfu .pinput1 {
+            position:relative;
+        }
+        .missmessage-bodyright .tixing {
+    display: block;
+}
+        .checkbox {
+            margin-left:0;
+        }
+        .othermessage .tixing.title {
+            width:80% !important;
+        }
+        #chongfu {
+            margin-left:0 !important;
+            margin-top:0;
+            display:none;
+        }
+        .othermessage {
+            padding-bottom:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup-newmission">
+        <div class="popup-exit"></div>
+        <div class="popup-head">新建事件</div>
+        <div class="modal-header">
+        </div>
+        
+        <form id="editPage" name="editPage">
+            <input type="hidden" name="objTypeCode" id="objTypeCode" value="1010" />
+            <div id="newmission">
+                <div class="missmessage">
+                    <div class="missmessage-head">
+                        事件信息
+                    </div>
+                    <div class="missmessage-body">
+                        <div class="missmessage-bodyleft">
+                            <div class="title">
+                                <b>*</b>
+                                <span class="spanact1">主题</span>
+                                <p class="pinput1 save-checking-input">
+                                    <input class="" type="text" required="required" style="width: 300px" id="Subject" />
+                                </p>
+                            </div>
+                            <div class="title">
+                            <b>*</b>
+                            <span class="spanact1">被分配人</span>
+                            <div class="form-element save-checking-input">
+                                <input class="" type="text" placeholder="搜索联系人" />
+                                <input type="hidden" id="OwningUser" name="OwningUser" data-object="8" />
+                                <div class="lookup">
+                                    <ul></ul>
+                                </div>
+                                <img src="/img/images/02.1-1.Search_.png" />
+                                <ul></ul>
+                            </div>
+                        </div>
+                            <div class="title">
+                            <b></b>
+                            <span class="spanact1">联系电话</span>
+                             <p class="pinput1">
+                                    <input type="text" style="width: 300px" id="TelePhone" />
+                                </p>
+                        </div>
+                            
+                            <div id="Attachs">
+                            <div class="title">
+                                <b></b>
+                                <span>位置</span>
+                                <p class="pinput1">
+                                    <input class="" type="text" required="required" style="width: 300px" id="Location" />
+                                </p>    
+                                
+                            </div>
+                                <div class="title">
+                                    <b></b>
+                                    <span>全天事件</span>
+                                    <div class="checkbox" id="isAllDayEvent"></div>
+                                </div>
+                                <div class="title">
+                                    <b></b>
+                                    <span>私有</span>
+                                    <div class="checkbox" id="IsPrivate"></div>
+                                </div>
+                            <!--<div class="title">
+                                <b></b>
+                                <span></span>
+                                <div class="checkbox"></div>
+                                <span class="checkbox-msg">外出</span>  
+                            </div>-->
+                                </div>
+                        </div>
+                        <div class="missmessage-bodyright">
+                            
+                         <div class="time title">
+                            <b>*</b>
+                            <span>开始</span>
+                        <div class="divinput">
+                            <p class="starttime pinput3 save-checking-input" style="margin-left: 0px">
+                            <span class="time-tishi">日期</span>
+
+                                <input class="" type="text" placeholder="--开始日期--" id="laydate1">
+                            </p>
+
+                            <p style="width: 150px;margin-left: 8px" class="starttime2 pinput2">
+                            <span class="time-tishi">时间</span>
+                                <select onchange="starttimechange(this.value)" type="text" style="width: 110px">
+                                    <option value="00:00">00:00</option><option value="00:15">00:15</option><option value="00:30">00:30</option><option value="00:45">00:45</option><option value="01:00">01:00</option><option value="01:15">01:15</option><option value="01:30">01:30</option><option value="01:45">01:45</option><option value="02:00">02:00</option><option value="02:15">02:15</option><option value="02:30">02:30</option><option value="02:45">02:45</option><option value="03:00">03:00</option><option value="03:15">03:15</option><option value="03:30">03:30</option><option value="03:45">03:45</option><option value="04:00">04:00</option><option value="04:15">04:15</option><option value="04:30">04:30</option><option value="04:45">04:45</option><option value="05:00">05:00</option><option value="05:15">05:15</option><option value="05:30">05:30</option><option value="05:45">05:45</option><option value="06:00">06:00</option><option value="06:15">06:15</option><option value="06:30">06:30</option><option value="06:45">06:45</option><option value="07:00">07:00</option><option value="07:15">07:15</option><option value="07:30">07:30</option><option value="07:45">07:45</option><option value="08:00">08:00</option><option value="08:15">08:15</option><option value="08:30">08:30</option><option value="08:45">08:45</option><option value="09:00">09:00</option><option value="09:15">09:15</option><option value="09:30">09:30</option><option value="09:45">09:45</option><option value="10:00">10:00</option><option value="10:15">10:15</option><option value="10:30">10:30</option><option value="10:45">10:45</option><option value="11:00">11:00</option><option value="11:15">11:15</option><option value="11:30">11:30</option><option value="11:45">11:45</option><option value="12:00">12:00</option><option value="12:15">12:15</option><option value="12:30">12:30</option><option value="12:45">12:45</option><option value="13:00">13:00</option><option value="13:15">13:15</option><option value="13:30">13:30</option><option value="13:45">13:45</option><option value="14:00">14:00</option><option value="14:15">14:15</option><option value="14:30">14:30</option><option value="14:45">14:45</option><option value="15:00">15:00</option><option value="15:15">15:15</option><option value="15:30">15:30</option><option value="15:45">15:45</option><option value="16:00">16:00</option><option value="16:15">16:15</option><option value="16:30">16:30</option><option value="16:45">16:45</option><option value="17:00">17:00</option><option value="17:15">17:15</option><option value="17:30">17:30</option><option value="17:45">17:45</option><option value="18:00">18:00</option><option value="18:15">18:15</option><option value="18:30">18:30</option><option value="18:45">18:45</option><option value="19:00">19:00</option><option value="19:15">19:15</option><option value="19:30">19:30</option><option value="19:45">19:45</option><option value="20:00">20:00</option><option value="20:15">20:15</option><option value="20:30">20:30</option><option value="20:45">20:45</option><option value="21:00">21:00</option><option value="21:15">21:15</option><option value="21:30">21:30</option><option value="21:45">21:45</option><option value="22:00">22:00</option><option value="22:15">22:15</option><option value="22:30">22:30</option><option value="22:45">22:45</option><option value="23:00">23:00</option><option value="23:15">23:15</option><option value="23:30">23:30</option><option value="23:45">23:45</option><option value="24:00">24:00</option>
+                                </select>
+                            </p>
+                        </div>
+                        </div>
+                            <div class="time title">
+                            <b>*</b>
+                            <span>结束</span>
+                        <div class="divinput">
+                            <p class="starttime pinput3 save-checking-input" style="margin-left: 0px" >
+                            <span class="time-tishi">日期</span>
+
+                                <input class="" type="text" placeholder="--结束日期--" id="laydate2">
+                            </p>
+                            <p style="width: 150px;margin-left: 8px" class="starttime2 pinput2">
+                            <span class="time-tishi">时间</span>
+                                <select id="endtime-time" type="text" style="width: 110px">
+                                    <option value="00:00">00:00</option><option value="00:15">00:15</option><option value="00:30">00:30</option><option value="00:45">00:45</option><option value="01:00">01:00</option><option value="01:15">01:15</option><option value="01:30">01:30</option><option value="01:45">01:45</option><option value="02:00">02:00</option><option value="02:15">02:15</option><option value="02:30">02:30</option><option value="02:45">02:45</option><option value="03:00">03:00</option><option value="03:15">03:15</option><option value="03:30">03:30</option><option value="03:45">03:45</option><option value="04:00">04:00</option><option value="04:15">04:15</option><option value="04:30">04:30</option><option value="04:45">04:45</option><option value="05:00">05:00</option><option value="05:15">05:15</option><option value="05:30">05:30</option><option value="05:45">05:45</option><option value="06:00">06:00</option><option value="06:15">06:15</option><option value="06:30">06:30</option><option value="06:45">06:45</option><option value="07:00">07:00</option><option value="07:15">07:15</option><option value="07:30">07:30</option><option value="07:45">07:45</option><option value="08:00">08:00</option><option value="08:15">08:15</option><option value="08:30">08:30</option><option value="08:45">08:45</option><option value="09:00">09:00</option><option value="09:15">09:15</option><option value="09:30">09:30</option><option value="09:45">09:45</option><option value="10:00">10:00</option><option value="10:15">10:15</option><option value="10:30">10:30</option><option value="10:45">10:45</option><option value="11:00">11:00</option><option value="11:15">11:15</option><option value="11:30">11:30</option><option value="11:45">11:45</option><option value="12:00">12:00</option><option value="12:15">12:15</option><option value="12:30">12:30</option><option value="12:45">12:45</option><option value="13:00">13:00</option><option value="13:15">13:15</option><option value="13:30">13:30</option><option value="13:45">13:45</option><option value="14:00">14:00</option><option value="14:15">14:15</option><option value="14:30">14:30</option><option value="14:45">14:45</option><option value="15:00">15:00</option><option value="15:15">15:15</option><option value="15:30">15:30</option><option value="15:45">15:45</option><option value="16:00">16:00</option><option value="16:15">16:15</option><option value="16:30">16:30</option><option value="16:45">16:45</option><option value="17:00">17:00</option><option value="17:15">17:15</option><option value="17:30">17:30</option><option value="17:45">17:45</option><option value="18:00">18:00</option><option value="18:15">18:15</option><option value="18:30">18:30</option><option value="18:45">18:45</option><option value="19:00">19:00</option><option value="19:15">19:15</option><option value="19:30">19:30</option><option value="19:45">19:45</option><option value="20:00">20:00</option><option value="20:15">20:15</option><option value="20:30">20:30</option><option value="20:45">20:45</option><option value="21:00">21:00</option><option value="21:15">21:15</option><option value="21:30">21:30</option><option value="21:45">21:45</option><option value="22:00">22:00</option><option value="22:15">22:15</option><option value="22:30">22:30</option><option value="22:45">22:45</option><option value="23:00">23:00</option><option value="23:15">23:15</option><option value="23:30">23:30</option><option value="23:45">23:45</option><option value="24:00">24:00</option>
+                                </select>
+                            </p>
+                        </div>
+                        </div>
+                            <div class="title">
+                                <b>*</b>
+                                <span>日历类型</span>
+                                <p class="pinput1 selectinput">
+                                    <span id="calendarType">工作</span>
+                                    <img src="/img/cal/20.png" class="title-img2" />
+                                </p>
+                                <ul id="Select3" class="selectlist">
+                                    <li><span>工作</span>
+                                        <img src="/img/cal/checkedgrey.png" />
+                                    </li>
+                                    <li><span>个人</span>
+                                        <img src="/img/cal/checkedgrey.png" />
+                                    </li>
+                                </ul>
+                                <input type="hidden" name="name" value=" " />
+                            </div>
+                             
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="othermessage">
+                <div class="missmessage-head">
+                    提醒信息
+                </div>
+                <div class="missmessage-body" style="padding-bottom:10px;">
+                    <div class="missmessage-bodylift">
+                        <div class="tixing title"><span>提醒设置</span>
+                            <div class="checkbox"></div></div>
+                        <div style="margin-top: 10px;"class="title"><span>提醒时间</span>
+                            <p  class="pinput1 selectinput">
+                                <span>请选择</span>
+                                <img src="/img/cal/20.png" class="title-img2">
+                            </p>
+                            <ul class="jiezhishijian selectlist" id="sex">
+                                <li><span>截止前15分钟</span>
+                                        <img src="/img/cal/checkedgrey.png"  />
+
+                                </li>
+                                <li><span>截止前30分钟</span>
+                                        <img src="/img/cal/checkedgrey.png"  />
+
+                                </li>
+                                <li><span>截止前60分钟</span>
+                                        <img src="/img/cal/checkedgrey.png"  />
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    </div>
+                    </div>
+
+                <div class="othermessage">
+                <div class="missmessage-head">
+                    其他信息
+                </div>
+                <div class="missmessage-body">
+                    <div class="tixing title"><span>重复</span><div class="checkbox"></div></div>
+                  
+                    <div class="missmessage-bodyright other-messageright" id="chongfu">
+                        <div class="chongfu" id="Div5">
+                            <span>频率</span>
+                            <div class="pinlv repeattype">
+                            <div class="active">每日</div>
+                            <div>每周</div>
+                            <div>每月</div>
+                            <div>每年</div>
+                        </div>
+                        </div>
+                        <div class="chongfu pinlv1 hidediv" id="">
+                            <span>重复</span>
+                            <p style="margin-left: 60px" class=" pinput1">
+                                <img src="/img/cal/20.png" class="title-img2">
+                                <select class="repeatselect">
+                                    <option value="0">每天</option>
+                                    <option value="1">每隔1天</option>
+                                    <option value="2">每隔2天</option>
+                                    <option value="3">每隔3天</option>
+                                    <option value="4">每隔4天</option>
+                                    <option value="5">每隔5天</option>
+                                    <option value="6">每隔6天</option>
+                                    <option value="7">每隔7天</option>
+                                    <option value="8">每隔8天</option>
+                                    <option value="9">每隔9天</option>
+                                    <option value="10">每隔10天</option>
+                                    <option value="11">每隔11天</option>
+                                    <option value="12">每隔12天</option>
+                                    <option value="13">每隔13天</option>
+                                    <option value="14">每隔14天</option>
+                                    <option value="15">每隔15天</option>
+                                    <option value="16">每隔16天</option>
+                                    <option value="17">每隔17天</option>
+                                    <option value="18">每隔18天</option>
+                                    <option value="19">每隔19天</option>
+                                    <option value="20">每隔20天</option>
+                                    <option value="21">每隔21天</option>
+                                    <option value="22">每隔22天</option>
+                                    <option value="23">每隔23天</option>
+                                    <option value="24">每隔24天</option>
+                                    <option value="25">每隔25天</option>
+                                    <option value="26">每隔26天</option>
+                                    <option value="27">每隔27天</option>
+                                    <option value="28">每隔28天</option>
+                                    <option value="29">每隔29天</option>
+                                    <option value="30">每隔30天</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="chongfu pinlv2 hidediv" id="Div1">
+                            <span>重复</span>
+                            <p style="margin-left: 60px" class=" pinput1">
+                                <img src="/img/cal/20.png" class="title-img2">
+                                <select class="repeatselect">
+                                    <option value="0">每周</option>
+                                    <option value="1">每隔1周</option>
+                                    <option value="2">每隔2周</option>
+                                    <option value="3">每隔3周</option>
+                                    <option value="4">每隔4周</option>
+                                    <option value="5">每隔5周</option>
+                                    <option value="6">每隔6周</option>
+                                    <option value="7">每隔7周</option>
+                                    <option value="8">每隔8周</option>
+                                    <option value="9">每隔9周</option>
+                                    <option value="10">每隔10周</option>
+                                    <option value="11">每隔11周</option>
+                                    <option value="12">每隔12周</option>
+                                    <option value="13">每隔13周</option>
+                                    <option value="14">每隔14周</option>
+                                    <option value="15">每隔15周</option>
+                                    <option value="16">每隔16周</option>
+                                    <option value="17">每隔17周</option>
+                                    <option value="18">每隔18周</option>
+                                    <option value="19">每隔19周</option>
+                                    <option value="20">每隔20周</option>
+                                    <option value="21">每隔21周</option>
+                                    <option value="22">每隔22周</option>
+                                    <option value="23">每隔23周</option>
+                                    <option value="24">每隔24周</option>
+                                    <option value="25">每隔25周</option>
+                                    <option value="26">每隔26周</option>
+                                    <option value="27">每隔27周</option>
+                                    <option value="28">每隔28周</option>
+                                    <option value="29">每隔29周</option>
+                                    <option value="30">每隔30周</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="chongfu pinlv2 hidediv" id="Div4">
+                            <span>重复日期</span>
+                            <div class="pinlv">
+                            <div>周日</div>
+                            <div  class="active">周一</div>
+                            <div>周二</div>
+                            <div>周三</div>
+                            <div>周四</div>
+                            <div>周五</div>
+                            <div>周六</div>
+                        </div>
+                        </div>
+                        <div class="chongfu pinlv3 hidediv" id="Div2">
+                            <span>重复</span>
+                            <p style="margin-left: 60px" class=" pinput1">
+                                <img src="/img/cal/20.png" class="title-img2">
+                                <select class="repeatselect">
+                                    <option value="0">每月</option>
+                                    <option value="1">每隔1月</option>
+                                    <option value="2">每隔2月</option>
+                                    <option value="3">每隔3月</option>
+                                    <option value="4">每隔4月</option>
+                                    <option value="5">每隔5月</option>
+                                    <option value="6">每隔6月</option>
+                                    <option value="7">每隔7月</option>
+                                    <option value="8">每隔8月</option>
+                                    <option value="9">每隔9月</option>
+                                    <option value="10">每隔10月</option>
+                                    <option value="11">每隔11月</option>
+                                    <option value="12">每隔12月</option>
+                                    <option value="13">每隔13月</option>
+                                    <option value="14">每隔14月</option>
+                                    <option value="15">每隔15月</option>
+                                    <option value="16">每隔16月</option>
+                                    <option value="17">每隔17月</option>
+                                    <option value="18">每隔18月</option>
+                                    <option value="19">每隔19月</option>
+                                    <option value="20">每隔20月</option>
+                                    <option value="21">每隔21月</option>
+                                    <option value="22">每隔22月</option>
+                                    <option value="23">每隔23月</option>
+                                    <option value="24">每隔24月</option>
+                                    <option value="25">每隔25月</option>
+                                    <option value="26">每隔26月</option>
+                                    <option value="27">每隔27月</option>
+                                    <option value="28">每隔28月</option>
+                                    <option value="29">每隔29月</option>
+                                    <option value="30">每隔30月</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="chongfu pinlv3 hidediv" id="Div6">
+                            <span>时间</span>
+                            <p style="margin-left: 60px" class=" pinput1">
+                                <img src="/img/cal/20.png" class="title-img2">
+                                <select id="repeatselectmoon"class="repeatselect" onchange="repeatselectmoonchange()">
+                                    <option value="某一天">某一天</option>
+                                    <option value="相对的一天">相对的一天</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="chongfu pinlv3 hidediv" id="Div3">
+                            <span>天</span>
+                            <p style="margin-left: 75px" class="pinput1">
+                                <img src="/img/cal/20.png" class="title-img2">
+
+                                <select class="repeatselect">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="chongfu repeatselectmoon hidediv" id="Div7">
+                            <span>周</span>
+                            <p style="margin-left: 75px" class="pinput1">
+                                <select class="repeatselect">
+                                    <option value="1">第一个</option>
+                                    <option value="2">第二个</option>
+                                    <option value="3">第三个</option>
+                                    <option value="4">第四个</option>
+                                    <option value="5">最后一个</option>
+                                </select>
+                            </p>
+                            
+                        </div>
+                        <div class="chongfu repeatselectmoon hidediv" id="Div8">
+                            <span>重复日期</span>
+                            <p style="margin-left: 30px" class="pinput1">
+                                <select class="repeatselect">
+                                    <option value="0">星期日</option>
+                                    <option value="1">星期一</option>
+                                    <option value="2">星期二</option>
+                                    <option value="3">星期三</option>
+                                    <option value="4">星期四</option>
+                                    <option value="5">星期五</option>
+                                    <option value="6">星期六</option>
+                                </select>
+                            </p>
+                            
+                        </div>
+                        <div class="chongfu pinlv4 hidediv" id="Div9">
+                            <span>时间</span>
+                            <p style="margin-left: 60px" class=" pinput1">
+                                <img src="/img/cal/20.png" class="title-img2">
+                                <select id="repeatselectyear"class="repeatselect" onchange="repeatselectyearchange()">
+                                    <option value="某一天">某一天</option>
+                                    <option value="相对的一天">相对的一天</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="chongfu repeatselectyear hidediv" id="Div10">
+                            <span>月</span>
+                            <p style="margin-left: 75px" class="pinput1">
+                                <select class="repeatselect">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </p>
+                        </div>
+                        <div class="chongfu repeatselectyear hidediv" id="Div11">
+                            <span>周</span>
+                            <p style="margin-left: 75px" class="pinput1">
+                                <select class="repeatselect">
+                                    <option value="1">第一个</option>
+                                    <option value="2">第二个</option>
+                                    <option value="3">第三个</option>
+                                    <option value="4">第四个</option>
+                                    <option value="5">最后一个</option>
+                                </select>
+                            </p>
+                            
+                        </div>
+                        <div class="chongfu repeatselectyear hidediv" id="Div12">
+                            <span>重复日期</span>
+                            <p style="margin-left: 30px" class="pinput1">
+                                <select class="repeatselect">
+                                    <option value="0">星期日</option>
+                                    <option value="1">星期一</option>
+                                    <option value="2">星期二</option>
+                                    <option value="3">星期三</option>
+                                    <option value="4">星期四</option>
+                                    <option value="5">星期五</option>
+                                    <option value="6">星期六</option>
+                                </select>
+                            </p>
+                            
+                        </div>
+                        
+                        <div class="kaishi">
+                            <span>开始日期</span>
+                            <p class="starttime pinput1" style="margin-left: 30px;width: 400px">
+                                <input type="text" placeholder="" id="laydate3">
+                            </p>
+                        </div>
+                        <div class="jieshu">
+                            <span>结束日期</span>
+                            <p class="endtime pinput1" style="margin-left: 30px;width: 400px">
+                                <input type="text" placeholder="" id="laydate4">
+                            </p>
+                        </div>
+
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="markmessage">
+                    <div class="missmessage-head">
+                        备注信息
+                    </div>
+                    <div class="liuyan">内容</div>
+                    <div class="textarea-div">
+                        <textarea cols="140" rows="5" id="Remark" name="Remark"></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <div class="popup-foot">
+            <button class="popup-foot-shur save-checking">保存</button>           
+            <button class="close">取消</button>
+        </div>
+    </div>
+    <div class="popup-mask"></div>
+    <script src="/template/js/browser.min.js"></script>
+
+    <script type="text/javascript" src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/mission-header.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/schedule.js"></script>
+    <script type="text/babel" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/babel" src="/js/formcontrol.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+
+    <script>
+        var msgid = getQueryString('msgid')
+
+        $('.popup-foot-shur').click(function(){
+            var that = this
+            var Subject = $('#Subject').val()
+            var OwningUser = $('#OwningUser').parent().children('ul').find('li').attr('id')
+            var ResourceId = $('#ResourceId').parent().children('ul').find('li').attr('id')
+            var ScheduledStart = $('#laydate1').val()+' '+$('.starttime2.pinput2 select').eq(0).val()
+            var ScheduledEnd = $('#laydate2').val()+' '+$('.starttime2.pinput2 select').eq(1).val()
+            console.log(ScheduledStart)
+            var Description = $('#Remark').val()
+            //var Attachs = ''
+            var Location = $('#Location').val()
+            var isAllDayEvent = 0
+            if($('#isAllDayEvent').hasClass('active')){
+                isAllDayEvent = 1
+            }
+            var IsPrivate = false
+            if ($('#IsPrivate').hasClass('active')) {
+                IsPrivate = true
+            }
+            
+            //$('#Attachs').find('.checkbox').each(function(){
+            //    if($(this).hasClass('active')){
+            //        if(Attachs == ''){
+            //            Attachs = $(this).next().html()
+            //        }else{
+            //            Attachs = Attachs+','+$(this).next().html()
+            //        }
+            //    }
+            //})
+            var TelePhone = $('#TelePhone').val()
+            //var PeopleQty = $('#PeopleQty').val()
+            var calendarType = $('#calendarType').html()
+            var d= {
+                Subject:Subject,
+                OwningUser:OwningUser,
+                ScheduledStart:	ScheduledStart,
+                ScheduledEnd:ScheduledEnd,
+                Description:Description,
+                TelePhone:TelePhone,
+                isAllDayEvent:isAllDayEvent,
+                calendarType: calendarType,
+                Location: Location,
+                IsPrivate:IsPrivate
+            }
+            if (msgid != '' && msgid != 'null') {
+                d.Id = msgid
+            }
+            function callback(data){
+                console.log(data)
+                parent.$('#iframe').hide()
+                parent.getdata()
+                
+            }
+            setTimeout(function () {
+                if ($(that).hasClass('active')) {
+
+                    ajaxMethodPostData('calendar.event.edit', d, callback)
+                }
+            }, 500)
+            
+            
+        })
+        $(".form-tree").each(function () {
+            $(this).click(function () {
+                $(this).find(".element-tree").show()
+            })
+        })
+
+        
+        $(".popup-exit").click(function () {
+            parent.$('#iframe').hide()
+        })
+        $(".close").off()
+        $(".close").click(function () {
+            parent.$('#iframe').hide()
+        })
+        $(".currentDate").each(function () {
+            $(this).click(function () {
+                $(this).parents(".title").attr("status", "status")
+            })
+        })
+        $('.checkbox').click(function () {
+            $(this).toggleClass('active')
+        })
+        laydate.render({
+            elem: '#laydate1',
+        })
+        laydate.render({
+            elem: '#laydate2',
+        })
+        laydate.render({
+            elem: '#laydate3',
+            value:new Date()
+        })
+        laydate.render({
+            elem: '#laydate4',
+        })
+        var time = getQueryString('time')
+        var day = getQueryString('day')
+        var roomid = getQueryString('roomid')
+        var roomname = getQueryString('roomname')
+        if (time) {
+            $('.starttime2.pinput2 select').eq(0).val(time)
+            var endtime = parseInt(time.split(':')[0]) + 1 + ':00'
+            if (endtime.split(':')[0] < 10) {
+                endtime = '0' + endtime
+            }
+            $('.starttime2.pinput2 select').eq(1).val(endtime)
+        }
+        if (day) {
+            $('#laydate1').val(day)
+            $('#laydate2').val(day)
+        }
+        if (!time) {
+            var myDate = new Date();
+            var h = myDate.getHours();
+            var eh = h+1
+            if(h<10){
+                h = '0'+h
+            }
+            if(eh<10){
+                eh = '0'+eh
+            }
+            $('.starttime2.pinput2 select').eq(1).val(h+1+':00')
+
+            $('.starttime2.pinput2 select').eq(0).val(h + ':00')
+        }
+        if (roomid) {
+            $('.form-element').eq(0).addClass('active')
+            $('.form-element').eq(0).find('input').hide()
+            $('.form-element').eq(0).find('img').attr('src','/img/images/02.Close_.png')
+            $('.form-element').eq(0).find('input').val(roomid)
+
+            $('.form-element').eq(0).children('ul').append('<li id="'+roomid+'">'+roomname+'</li>')
+        }
+        if (!msgid && !roomid) {
+            var OwningUser = parent.$('#iframe').attr('contextuserid')
+            var OwningUsername = parent.$('#iframe').attr('contextname')
+            $('.form-element').eq(0).addClass('active')
+            $('.form-element').eq(0).find('input').hide()
+            $('.form-element').eq(0).find('input').val(OwningUser)
+
+            $('.form-element').eq(0).find('img').attr('src','/img/images/02.Close_.png')
+            $('.form-element').eq(0).children('ul').append('<li id="'+OwningUser+'">'+OwningUsername+'</li>')
+        }
+        if(msgid){
+            var d = {
+                Id:msgid,
+                ObjTypeCode:4200
+            }
+            function callback(data){
+                console.log(data)
+                var res = data.record
+                var Subject = res.Subject
+                var ResourceId = res.ResourceId
+                var Resourcename = res.ResourceId
+                var OwningUser = res.OwningUser.Id
+                var OwningUsername = res.OwningUser.Name
+                var PeopleQty = res.PeopleQty
+                var Description = res.Description
+                var Attachs = res.Attachs
+                var ScheduledEnd = res.ScheduledEnd
+                var Location = res.Location
+                var CalendarType = res.CalendarType
+                var IsPrivate = res.IsPrivate
+                if (IsPrivate) {
+                    $('#IsPrivate').addClass('active')
+                }
+                $('#calendarType').html(CalendarType)
+                var IsAllDayEvent = res.IsAllDayEvent
+                if (IsAllDayEvent == 'True') {
+                    $('#isAllDayEvent').addClass('active')
+                }
+                var ed = ''
+                var sd = ''
+                var et = ''
+                var st = ''
+                if(ScheduledEnd.indexOf('/')){
+                    ed = ScheduledEnd.split(' ')[0].split('/').join('-')
+                }else if(ScheduledEnd.indexOf('-')){
+                    ed = ScheduledEnd.split(' ')[0]
+                }
+                var ScheduledStart = res.ScheduledStart
+                if(ScheduledStart.indexOf('/')){
+                    sd = ScheduledStart.split(' ')[0].split('/').join('-')
+                }else if(ScheduledStart.indexOf('-')){
+                    sd = ScheduledStart.split(' ')[0]
+                }
+                et = ScheduledEnd.split(' ')[1]
+                st = ScheduledStart.split(' ')[1]
+                $('#laydate1').val(sd)
+                $('#laydate2').val(ed)
+                if(et.length>5){
+                    et = et.substring(0,et.length-3)
+                }
+                if(et.length == 4){
+                    et = '0'+et
+                }
+                if(st.length>5){
+                    st = st.substring(0,st.length-3)
+                }
+                if(st.length == 4){
+                    st = '0'+st
+                }
+                $('#Location').val(Location)
+                $('.starttime2.pinput2 select').eq(0).val(st)
+                $('.starttime2.pinput2 select').eq(1).val(et)
+                var TelePhone = res.TelePhone
+                $('#Subject').val(Subject)
+                $('#PeopleQty').val(PeopleQty)
+                $('#TelePhone').val(TelePhone)
+                $('#Remark').val(Description)
+                if(ResourceId!=''){
+                    $('.form-element').eq(1).addClass('active')
+                    $('.form-element').eq(1).find('input').hide()
+                    $('.form-element').eq(1).find('input').val(ResourceId)
+                    $('.form-element').eq(1).find('img').attr('src','/img/images/02.Close_.png')
+                    $('.form-element').eq(1).children('ul').append('<li id="'+ResourceId+'">'+Resourcename+'</li>')
+                }
+                if(OwningUser!=''){
+                    $('.form-element').eq(0).addClass('active')
+                    $('.form-element').eq(0).find('input').hide()
+                    $('.form-element').eq(0).find('input').val(OwningUser)
+                    $('.form-element').eq(0).find('img').attr('src','/img/images/02.Close_.png')
+                    $('.form-element').eq(0).children('ul').append('<li id="'+OwningUser+'">'+OwningUsername+'</li>')
+                }
+                if(OwningUser==''){
+                    var OwningUser = parent.$('#iframe').attr('OwningUser')
+                    var OwningUsername = parent.$('#iframe').attr('OwningUsername')
+                    $('.form-element').eq(0).addClass('active')
+                    $('.form-element').eq(0).find('input').hide()
+                    $('.form-element').eq(0).find('input').val(OwningUser)
+
+                    $('.form-element').eq(0).find('img').attr('src','/img/images/02.Close_.png')
+                    $('.form-element').eq(0).children('ul').append('<li id="'+OwningUser+'">'+OwningUsername+'</li>')
+                }              
+            }
+            ajaxMethodPostData('entity.detail.get',d,callback)
+        }
+        
+        
+        //选择频率
+        $('.pinlv1').show()
+        $('.pinlv.repeattype div').click(function(){
+            $(this).siblings().removeClass('active')
+            $(this).addClass('active')
+        })
+        $('.pinlv2 .pinlv div').click(function(){
+            $(this).toggleClass('active')
+        })
+        $('.repeattype div').click(function(){
+            var index = $(this).index()+1
+            $('.chongfu.hidediv').hide()
+            $('.pinlv'+index).show()
+            if($('.pinlv3').css('display')=='block'){
+                repeatselectmoonchange()
+            }
+            if($('.pinlv4').css('display')=='block'){
+                repeatselectyearchange()
+            }
+        })
+        function repeatselectmoonchange(){
+            if($('#repeatselectmoon').val()=='相对的一天'){
+                $('.repeatselectmoon').show()
+                $('#repeatselectmoon').parent().parent().next().hide()
+            }else{
+                $('.repeatselectmoon').hide()
+                $('#repeatselectmoon').parent().parent().next().show()
+            }
+        }
+        function repeatselectyearchange(){
+            if($('#repeatselectyear').val()=='相对的一天'){
+                console.log()
+                $('.repeatselectyear').show()
+            }else{
+                $('.repeatselectyear').hide()
+            }
+        }
+        $('.othermessage .tixing.title .checkbox').eq(1).click(function(){
+            $('#chongfu').toggle()
+        })
+        function starttimechange(time) {
+            var h = Number(time.split(':')[0]) + 1
+            if (h<10) {
+                h = '0'+h
+            }
+            var m = time.split(':')[1]
+            ntime = h+':'+m
+            $('#endtime-time').val(ntime)
+        }
+
+        $('.selectinput').click(function () {
+            $('.selectlist').hide()
+            $(this).next('.selectlist').show()
+            return false;
+        })
+        $('.selectinput').next('.selectlist').find('li').click(function () {
+            $(this).parent().prev().find('span').html($(this).find('span').html())
+            $(this).parent().find('li').removeClass('active')
+            $(this).addClass('active')
+            $('.selectlist').hide()
+        })
+        $(document).click(function () {
+            $('.selectlist').hide()
+            $('.search-lookup').hide()
+        })
+    </script>
+</body>
+</html>

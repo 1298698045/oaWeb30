@@ -1,0 +1,1048 @@
+.PCD_user_a .WB_innerwrap
+{
+    *zoom: 1;
+}
+
+.PCD_user_a .m_wrap
+{
+    margin: -16px 0;
+    overflow: hidden;
+}
+
+.PCD_user_a .m_box
+{
+    padding: 16px 0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin-bottom: -1px;
+    overflow: hidden;
+    *zoom: 1;
+}
+
+.PCD_user_a .picitems_ul
+{
+    *zoom: 1;
+}
+
+.PCD_user_a .picitems
+{
+    display: inline;
+    float: left;
+}
+
+    .PCD_user_a .picitems .pic_wrap, .PCD_user_a .picitems .pic_box, .PCD_user_a .picitems .pic_box .pic
+    {
+        width: 50px;
+        height: 50px;
+    }
+
+    .PCD_user_a .picitems .pic_wrap
+    {
+        position: relative;
+    }
+
+    .PCD_user_a .picitems .pic_box
+    {
+        border-radius: 50%;
+        text-align: center;
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+        .PCD_user_a .picitems .pic_box .pic
+        {
+            vertical-align: middle;
+        }
+
+    .PCD_user_a .picitems .name
+    {
+        width: 50px;
+        padding-top: 10px;
+        padding-top: 11px\0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+.PCD_user_a .row1hid .picitems_ul
+{
+    height: 82px;
+    overflow: hidden;
+    *position: relative;
+}
+
+.PCD_user_a .WB_cardtitle_c
+{
+    margin-top: -2px;
+}
+
+.PCD_user_a .picitems .pic_box .icon_bed
+{
+    position: absolute;
+    right: 0px;
+    bottom: 0;
+}
+
+.PCD_user_a .picitems .opt
+{
+    margin-top: 6px;
+}
+
+    .PCD_user_a .picitems .opt .W_btn_b
+    {
+        padding: 0;
+        width: 48px;
+    }
+
+        .PCD_user_a .picitems .opt .W_btn_b .W_loading
+        {
+            margin-right: 0px;
+        }
+
+.PCD_user_a .WB_minitab
+{
+    margin: -10px 0 6px 0;
+}
+
+.WB_frame_b .PCD_user_a .picitems_ul
+{
+    margin: -15px 0 0 -22px;
+}
+
+.WB_frame_b .PCD_user_a .picitems
+{
+    margin: 15px 0 0 22px;
+}
+
+.WB_frame_c .PCD_user_a .picitems_ul
+{
+    margin: -15px 0 0 -24px;
+}
+
+.WB_frame_c .PCD_user_a .picitems
+{
+    margin: 15px 0 0 24px;
+}
+
+#js_style_css_module_pagecard_PCD_user_a
+{
+    height: 42px;
+}
+
+.PCD_connectlist .ico_music, .PCD_connectlist .ico_movie, .PCD_connectlist .ico_read, .PCD_connectlist .ico_topic
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url("../../../images/connect/icon_connect.png?id=201406051403");
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.PCD_connectlist .ico_music
+{
+    background-position: 0 -50px;
+}
+
+.PCD_connectlist .ico_movie
+{
+    background-position: -50px -50px;
+}
+
+.PCD_connectlist .ico_read
+{
+    background-position: 0 -100px;
+}
+
+.PCD_connectlist .ico_topic
+{
+    background-position: -50px -100px;
+}
+
+.PCD_connectlist .WB_tab_a
+{
+    margin: 0;
+    box-shadow: none;
+}
+
+.PCD_connectlist .WB_innerwrap
+{
+    padding: 0;
+}
+
+    .PCD_connectlist .WB_innerwrap .WB_cardwrap
+    {
+        box-shadow: none;
+    }
+
+.PCD_connectlist .WB_empty
+{
+    margin-top: 6px;
+}
+
+    .PCD_connectlist .WB_empty .W_tips
+    {
+        margin: 0 16px;
+    }
+
+    .PCD_connectlist .WB_empty .WB_innerwrap
+    {
+        padding: 60px 16px 0;
+        height: 440px;
+    }
+
+    .PCD_connectlist .WB_empty .icon_warnS, .PCD_connectlist .WB_empty .icon_rederrorS
+    {
+        vertical-align: baseline;
+    }
+
+.PCD_connectlist .follow_box .follow_inner
+{
+    padding: 1px 16px 16px;
+    *zoom: 1;
+    *position: relative;
+}
+
+.PCD_connectlist .follow_box .follow_list
+{
+    margin-bottom: -16px;
+}
+
+.PCD_connectlist .follow_box .follow_item
+{
+    position: relative;
+    margin-top: -1px;
+    *margin-top: -4px;
+    padding: 16px 0;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+    .PCD_connectlist .follow_box .follow_item:first-child
+    {
+        border-top: none;
+    }
+
+.PCD_connectlist .follow_box .mod_pic
+{
+    float: left;
+    padding-right: 15px;
+}
+
+    .PCD_connectlist .follow_box .mod_pic img
+    {
+        border-radius: 50%;
+    }
+
+.PCD_connectlist .follow_box .mod_info
+{
+    margin-left: 65px;
+    vertical-align: top;
+    zoom: 1;
+}
+
+.PCD_connectlist .follow_box .info_connect, .PCD_connectlist .follow_box .info_add, .PCD_connectlist .follow_box .info_intro, .PCD_connectlist .follow_box .info_relation, .PCD_connectlist .follow_box .info_from, .PCD_connectlist .follow_box .info_recent
+{
+    margin-top: 8px;
+}
+
+.PCD_connectlist .follow_box .info_intro
+{
+    width: 350px;
+    max-height: 32px;
+    line-height: 16px;
+    overflow: hidden;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.PCD_connectlist .follow_box .info_recent
+{
+    width: 350px;
+    height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+    .PCD_connectlist .follow_box .info_recent img
+    {
+        vertical-align: middle;
+    }
+
+.PCD_connectlist .follow_box .info_extend .W_arrow_bor
+{
+    height: 4px;
+}
+
+    .PCD_connectlist .follow_box .info_extend .W_arrow_bor i
+    {
+        margin: -10px 0 0 16px;
+    }
+
+.PCD_connectlist .follow_box .info_extend .extend_detail
+{
+    padding: 16px 16px 0;
+    overflow: hidden;
+}
+
+.PCD_connectlist .follow_box .info_extend .intro_item
+{
+    position: relative;
+    margin-bottom: -1px;
+    padding: 16px 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.PCD_connectlist .follow_box .tit
+{
+    padding-right: 5px;
+}
+
+.PCD_connectlist .follow_box .info_extend .tit
+{
+    padding-right: 0;
+}
+
+.PCD_connectlist .follow_box .from
+{
+    padding: 3px;
+}
+
+.PCD_connectlist .follow_box .info_connect
+{
+    width: 100%;
+    *zoom: 1;
+}
+
+    .PCD_connectlist .follow_box .info_connect .conn_type
+    {
+        padding: 0 10px 0 0;
+    }
+
+    .PCD_connectlist .follow_box .info_connect .W_vline
+    {
+        display: inline;
+        width: auto;
+        padding: 0 10px;
+    }
+
+    .PCD_connectlist .follow_box .info_connect .count
+    {
+        padding-left: 5px;
+    }
+
+.PCD_connectlist .follow_box .opt_box
+{
+    position: absolute;
+    top: 16px;
+    right: 0px;
+    font-size: 0;
+}
+
+    .PCD_connectlist .follow_box .opt_box .layer_menu_list
+    {
+        position: absolute;
+        top: 29px;
+        right: 0;
+        z-index: 99;
+        font-size: 12px;
+    }
+
+    .PCD_connectlist .follow_box .opt_box .W_btn_b
+    {
+        margin-left: 6px;
+        vertical-align: top;
+    }
+
+.PCD_connectlist .follow_box .star_up
+{
+    padding: 0 3px;
+    vertical-align: text-top;
+    line-height: 1em;
+}
+
+.PCD_connectlist .follow_box .W_tips
+{
+    margin: 16px 0 0;
+}
+
+.PCD_connectlist .follow_box .mid_title
+{
+    *position: relative;
+    z-index: 2;
+}
+
+@media \0screen\,screen\9
+{
+    .PCD_connectlist .follow_box .mid_title legend
+    {
+        width: 210px;
+        text-align: center;
+        *width: auto;
+    }
+}
+
+.PCD_connectlist .group_box
+{
+    padding: 6px;
+}
+
+    .PCD_connectlist .group_box .group_list
+    {
+        margin: -6px 0 0 -6px;
+    }
+
+    .PCD_connectlist .group_box .group_grid
+    {
+        float: left;
+        margin: 6px 0 0 6px;
+        width: 291px;
+    }
+
+        .PCD_connectlist .group_box .group_grid .PCD_user_a .WB_innerwrap
+        {
+            padding: 16px 15px 16px 16px;
+        }
+
+        .PCD_connectlist .group_box .group_grid .PCD_user_a .picitems_ul
+        {
+            margin: -15px 0 0 -20px;
+        }
+
+        .PCD_connectlist .group_box .group_grid .PCD_user_a .picitems
+        {
+            margin: 15px 0 0 20px;
+        }
+
+.PCD_connectlist .member_box
+{
+    padding-bottom: 6px;
+    *position: relative;
+    *zoom: 1;
+}
+
+    .PCD_connectlist .member_box .member_li
+    {
+        float: left;
+        width: 290px;
+        height: 140px;
+        margin: 6px 0 0 6px;
+        border-radius: 2px;
+    }
+
+    .PCD_connectlist .member_box .member_wrap
+    {
+        width: 274px;
+        height: 108px;
+        padding: 16px 0 16px 16px;
+    }
+
+        .PCD_connectlist .member_box .member_wrap .mod_pic
+        {
+            float: left;
+            position: relative;
+            width: 66px;
+            height: 108px;
+            border-right-width: 1px;
+            border-right-style: solid;
+        }
+
+            .PCD_connectlist .member_box .member_wrap .mod_pic .pic_box
+            {
+                margin-top: 29px;
+            }
+
+        .PCD_connectlist .member_box .member_wrap .mod_info
+        {
+            margin-left: 82px;
+            *zoom: 1;
+        }
+
+            .PCD_connectlist .member_box .member_wrap .mod_info .title, .PCD_connectlist .member_box .member_wrap .mod_info .statu, .PCD_connectlist .member_box .member_wrap .mod_info .text
+            {
+                width: 100%;
+                margin-bottom: 5px;
+                *margin-bottom: 4px;
+            }
+
+            .PCD_connectlist .member_box .member_wrap .mod_info .text
+            {
+                margin-bottom: 4px;
+                *margin-bottom: 3px;
+            }
+
+            .PCD_connectlist .member_box .member_wrap .mod_info .info_from
+            {
+                margin-bottom: 4px;
+                *margin-bottom: 3px;
+            }
+
+            .PCD_connectlist .member_box .member_wrap .mod_info .title
+            {
+                height: 17px;
+                vertical-align: top;
+                line-height: 1em;
+                margin-bottom: 5px;
+                font-size: 14px;
+            }
+
+                .PCD_connectlist .member_box .member_wrap .mod_info .title .W_icon_thing, .PCD_connectlist .member_box .member_wrap .mod_info .title .W_ficon
+                {
+                    vertical-align: top;
+                }
+
+                .PCD_connectlist .member_box .member_wrap .mod_info .title a
+                {
+                    line-height: 16px;
+                }
+
+            .PCD_connectlist .member_box .member_wrap .mod_info .statu .W_ficon
+            {
+                margin-right: 2px;
+            }
+
+            .PCD_connectlist .member_box .member_wrap .mod_info .W_btn_b
+            {
+                width: 62px;
+                cursor: pointer;
+            }
+
+                .PCD_connectlist .member_box .member_wrap .mod_info .W_btn_b .txt
+                {
+                    display: inline-block;
+                    max-width: 4em;
+                    text-align: center;
+                    vertical-align: middle;
+                }
+
+            .PCD_connectlist .member_box .member_wrap .mod_info .btn_set
+            {
+                width: 24px;
+                min-width: 24px;
+                padding: 0;
+            }
+
+            .PCD_connectlist .member_box .member_wrap .mod_info .opt
+            {
+                position: relative;
+                *zoom: 1;
+                margin-bottom: 4px;
+                *margin-bottom: 3px;
+            }
+
+                .PCD_connectlist .member_box .member_wrap .mod_info .opt .W_btn_b
+                {
+                    vertical-align: top;
+                    margin-right: 6px;
+                }
+
+                .PCD_connectlist .member_box .member_wrap .mod_info .opt .ficon_arrow_down_lite
+                {
+                    vertical-align: middle;
+                }
+
+            .PCD_connectlist .member_box .member_wrap .mod_info .layer_menu_list
+            {
+                left: 88px;
+                top: 29px;
+            }
+
+    .PCD_connectlist .member_box .W_tips
+    {
+        margin: 16px 6px 10px;
+    }
+
+.PCD_connectlist .has_choose ul .member_li
+{
+    position: relative;
+    cursor: pointer;
+    z-index: auto!important;
+}
+
+    .PCD_connectlist .has_choose ul .member_li.choosed .member_wrap
+    {
+        border-width: 2px;
+        border-style: solid;
+        width: 272px;
+        height: 108px;
+        padding: 14px 0 14px 14px;
+    }
+
+    .PCD_connectlist .has_choose ul .member_li .markup_choose, .PCD_connectlist .has_choose ul .member_li.choosed .markup_choose
+    {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-image: url("/img/icon_connect.png");
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .PCD_connectlist .has_choose ul .member_li.choosed .markup_choose
+    {
+        background-position: -50px 0;
+    }
+
+.PCD_connectlist .myfollow_search .W_input
+{
+    width: 209px;
+}
+
+.PCD_connectlist .mod_fourline ul .member_li, .PCD_connectlist .mod_fourline ul .member_li.choosed
+{
+    height: 120px;
+}
+
+    .PCD_connectlist .mod_fourline ul .member_li .member_wrap, .PCD_connectlist .mod_fourline ul .member_li.choosed .member_wrap
+    {
+        height: 88px;
+    }
+
+.PCD_connectlist .mod_fourline ul .member_wrap .mod_pic
+{
+    height: 88px;
+}
+
+    .PCD_connectlist .mod_fourline ul .member_wrap .mod_pic .pic_box
+    {
+        margin-top: 18px;
+    }
+
+.PCD_connectlist .mod_fourline ul .member_wrap .mod_info .text
+{
+    width: 15em;
+}
+
+.PCD_connectlist .mod_threeline ul .member_li, .PCD_connectlist .mod_threeline ul .member_li.choosed
+{
+    height: 100px;
+}
+
+    .PCD_connectlist .mod_threeline ul .member_li .member_wrap, .PCD_connectlist .mod_threeline ul .member_li.choosed .member_wrap
+    {
+        height: 68px;
+    }
+
+.PCD_connectlist .mod_threeline ul .member_wrap .mod_pic
+{
+    height: 68px;
+}
+
+.PCD_connectlist .mod_threeline ul .member_wrap .mod_info .W_btn_b .txt
+{
+    max-width: none;
+}
+
+.PCD_connectlist .mod_threeline ul .member_wrap .mod_pic .pic_box
+{
+    margin-top: 9px;
+}
+
+.PCD_connectlist .mod_threeline ul .member_wrap .mod_info .W_btn_b
+{
+    width: 62px;
+}
+
+.PCD_connectlist .mod_threeline ul .member_wrap .mod_info .btn_set
+{
+    width: 24px;
+}
+
+.PCD_connectlist .mod_threeline ul .member_wrap .mod_info .text
+{
+    width: 180px;
+}
+
+.PCD_connectlist .mod_threeline ul .member_wrap .mod_info .W_btn_b .txt
+{
+    max-width: none;
+}
+
+.PCD_connectlist .mod_subscribe .btn_bed .W_btn_b
+{
+    width: 60px;
+    padding: 0;
+    margin-right: 6px;
+}
+
+.PCD_connectlist .mod_subscribe ul .member_li, .PCD_connectlist .mod_subscribe ul .member_li.choosed
+{
+    height: 100px;
+}
+
+    .PCD_connectlist .mod_subscribe ul .member_li .member_wrap, .PCD_connectlist .mod_subscribe ul .member_li.choosed .member_wrap
+    {
+        height: 68px;
+    }
+
+.PCD_connectlist .mod_subscribe ul .member_wrap .mod_pic
+{
+    height: 68px;
+}
+
+    .PCD_connectlist .mod_subscribe ul .member_wrap .mod_pic .pic_box
+    {
+        margin-top: 9px;
+    }
+
+.PCD_connectlist .mod_blacklist ul .member_li, .PCD_connectlist .mod_blacklist ul .member_li.choosed, .PCD_connectlist .mod_reclist ul .member_li, .PCD_connectlist .mod_reclist ul .member_li.choosed
+{
+    height: 100px;
+}
+
+    .PCD_connectlist .mod_blacklist ul .member_li .member_wrap, .PCD_connectlist .mod_blacklist ul .member_li.choosed .member_wrap, .PCD_connectlist .mod_reclist ul .member_li .member_wrap, .PCD_connectlist .mod_reclist ul .member_li.choosed .member_wrap
+    {
+        height: 68px;
+    }
+
+.PCD_connectlist .mod_blacklist ul .member_wrap .mod_pic, .PCD_connectlist .mod_reclist ul .member_wrap .mod_pic
+{
+    height: 68px;
+}
+
+.PCD_connectlist .mod_blacklist ul .member_wrap .mod_info .W_btn_b .txt, .PCD_connectlist .mod_reclist ul .member_wrap .mod_info .W_btn_b .txt
+{
+    max-width: none;
+}
+
+.PCD_connectlist .mod_blacklist ul .member_wrap .mod_pic .pic_box, .PCD_connectlist .mod_reclist ul .member_wrap .mod_pic .pic_box
+{
+    margin-top: 9px;
+}
+
+.PCD_connectlist .mod_reclist ul .member_wrap .mod_info .W_btn_b
+{
+    width: 74px;
+}
+
+    .PCD_connectlist .mod_reclist ul .member_wrap .mod_info .W_btn_b .txt
+    {
+        max-width: none;
+    }
+
+.PCD_connectlist .mod_interest ul .member_li, .PCD_connectlist .mod_interest ul .member_li.choosed
+{
+    height: 120px;
+}
+
+    .PCD_connectlist .mod_interest ul .member_li .member_wrap, .PCD_connectlist .mod_interest ul .member_li.choosed .member_wrap
+    {
+        height: 88px;
+    }
+
+.PCD_connectlist .mod_interest ul .member_wrap .mod_pic
+{
+    height: 88px;
+}
+
+    .PCD_connectlist .mod_interest ul .member_wrap .mod_pic .pic_box
+    {
+        margin-top: 18px;
+    }
+
+.PCD_connectlist .mod_interest ul .member_wrap .mod_info .text
+{
+    width: 180px;
+}
+
+.PCD_connectlist .mod_interest_manage ul .member_li, .PCD_connectlist .mod_interest_manage ul .member_li.choosed
+{
+    height: 86px;
+}
+
+    .PCD_connectlist .mod_interest_manage ul .member_li .member_wrap, .PCD_connectlist .mod_interest_manage ul .member_li.choosed .member_wrap
+    {
+        height: 54px;
+    }
+
+.PCD_connectlist .mod_interest_manage ul .member_wrap .mod_pic
+{
+    height: 54px;
+}
+
+    .PCD_connectlist .mod_interest_manage ul .member_wrap .mod_pic .pic_box
+    {
+        margin-top: 0;
+    }
+
+.PCD_connectlist .mod_interest_manage ul .member_wrap .mod_info .title
+{
+    margin-bottom: 3px;
+}
+
+.PCD_connectlist .mod_interest_manage ul .member_wrap .mod_info .text
+{
+    margin-bottom: 6px;
+}
+
+.PCD_connectlist .tag_box
+{
+    padding: 6px 0 9px 16px;
+}
+
+    .PCD_connectlist .tag_box li
+    {
+        float: left;
+        width: 94px;
+        margin: 0 7px 7px 0;
+        padding: 0 7px;
+        height: 26px;
+        line-height: 26px;
+        background-color: #ededed;
+        border-radius: 2px;
+        font-size: 0;
+        position: relative;
+    }
+
+        .PCD_connectlist .tag_box li a
+        {
+            display: block;
+            color: #333;
+        }
+
+            .PCD_connectlist .tag_box li a:hover
+            {
+                text-decoration: none;
+            }
+
+    .PCD_connectlist .tag_box .name
+    {
+        display: inline-block;
+        width: 70px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    .PCD_connectlist .tag_box .stress, .PCD_connectlist .tag_box .tag_new
+    {
+        position: absolute;
+        height: 14px;
+        line-height: 14px;
+        padding: 0 3px;
+        background-color: #84858a;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: normal;
+        top: 6px;
+        right: 10px;
+    }
+
+    .PCD_connectlist .tag_box .tag_new
+    {
+        background-color: #fa7d3c;
+    }
+
+.PCD_connectlist .mod_setgroup ul .member_li
+{
+    width: 192px;
+    height: 70px;
+}
+
+    .PCD_connectlist .mod_setgroup ul .member_li .member_wrap
+    {
+        width: 182px;
+        height: 50px;
+        padding: 10px 0 10px 10px;
+    }
+
+    .PCD_connectlist .mod_setgroup ul .member_li.choosed .member_wrap
+    {
+        width: 180px;
+        height: 50px;
+        padding: 8px 0 8px 8px;
+    }
+
+.PCD_connectlist .mod_setgroup ul .member_wrap .mod_pic
+{
+    width: 50px;
+    height: 50px;
+    border-right: none;
+}
+
+    .PCD_connectlist .mod_setgroup ul .member_wrap .mod_pic .pic_box
+    {
+        margin-top: 0;
+    }
+
+.PCD_connectlist .mod_setgroup ul .member_wrap .mod_info
+{
+    margin-left: 60px;
+}
+
+    .PCD_connectlist .mod_setgroup ul .member_wrap .mod_info .title
+    {
+        padding-top: 20px;
+    }
+
+.layer_setgroup .inner_setgroup
+{
+    *position: relative;
+    width: 288px;
+    padding: 16px;
+}
+
+    .layer_setgroup .inner_setgroup .title
+    {
+        height: 30px;
+        line-height: 30px;
+        margin-top: -10px;
+    }
+
+.layer_setgroup .setgroup_li
+{
+    float: left;
+    width: 150px;
+}
+
+    .layer_setgroup .setgroup_li .S_txt1
+    {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    .layer_setgroup .setgroup_li .W_ficon
+    {
+        font-size: 12px;
+    }
+
+.layer_setgroup .setgroup_li
+{
+    float: left;
+    *zoom: 1;
+    width: 144px;
+    height: 30px;
+    line-height: 30px;
+}
+
+    .layer_setgroup .setgroup_li label
+    {
+        display: block;
+        width: 100%;
+        padding-top: 9px;
+        *padding-top: 0;
+    }
+
+    .layer_setgroup .setgroup_li .W_checkbox, .layer_setgroup .setgroup_li .group_name
+    {
+        vertical-align: text-top;
+        text-align: left;
+        text-indent: 0;
+    }
+
+    .layer_setgroup .setgroup_li .group_name
+    {
+        line-height: 1.1em;
+    }
+
+.layer_setgroup .opt_area, .layer_setgroup .add_group
+{
+    margin: 8px 0 0;
+}
+
+    .layer_setgroup .add_group .W_input
+    {
+        width: 140px;
+    }
+
+    .layer_setgroup .add_group .W_btn_a, .layer_setgroup .add_group .W_btn_b
+    {
+        margin-left: 7px;
+    }
+
+.layer_menu_list .disable a
+{
+    cursor: default;
+}
+
+.layer_setgroup .W_tips
+{
+    text-align: left;
+    margin-bottom: 9px;
+    background: none;
+}
+
+    .layer_setgroup .W_tips.tips_succ
+    {
+        border: 1px solid #c5ccc4;
+        line-height: 12px;
+        color: #808080;
+    }
+
+.PCD_text_e .t_tit
+{
+    font-weight: bold;
+}
+
+.PCD_connectlist .has_choose ul .member_li.choosed .member_wrap
+{
+    border-color: #eb7350;
+}
+
+.PCD_connectlist .follow_box .opt_box .W_btn_pf_menu
+{
+    width: 24px;
+    padding: 0;
+}
+
+    .PCD_connectlist .follow_box .opt_box .W_btn_pf_menu .W_ficon
+    {
+        width: 100%;
+        margin: 0;
+        line-height: 25px;
+    }
+
+.PCD_connectlist .PCD_user_b
+{
+    margin: 21px -16px 12px -81px;
+}
+
+.PCD_connectlist .follow_box .opt_box .W_layer_pop
+{
+    font-size: 12px;
+}
+
+.PCD_connectlist_spe .member_box .member_wrap .mod_info .opt .W_btn_b
+{
+    padding: 0;
+}
+
+.PCD_connectlist_spe .member_box .member_wrap .mod_info .btn_set
+{
+    width: 24px;
+}
+
+.PCD_connectlist_spe .member_box .member_wrap .mod_info .btn_spe
+{
+    width: 72px;
+}
+
+.PCD_connectlist_spe .member_box .member_wrap .mod_info .W_btn_b .txt
+{
+    max-width: 3em;
+}
+
+.PCD_connectlist_spe .member_box .member_wrap .mod_info .layer_menu_list
+{
+    left: 94px;
+}
+
+.PCD_connectlist_spe .member_box .member_wrap .mod_info .layer_spe
+{
+    left: 70px;
+}
+
+#js_style_css_module_pagecard_PCD_connectlist
+{
+    height: 42px;
+}

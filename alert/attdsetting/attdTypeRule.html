@@ -1,0 +1,853 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <style>
+    </style>
+    <link href="/css/setupedit.css" rel="stylesheet" />
+    <style>
+        .el-switch__label.is-active {
+            color: #666;
+        }
+
+        .el-switch__label {
+        }
+
+        .scheme-item .el-input {
+            float: left;
+            width: 100px;
+            height: 32px;
+            line-height: 32px;
+            margin: 0 5px;
+        }
+
+        .shift-body-main .scheme-item {
+            height: auto;
+            line-height: 32px;
+        }
+
+        .scheme-item .el-input__inner {
+            height: 32px;
+            line-height: 32px;
+        }
+
+        .scheme-item > div {
+            min-height: 50px;
+        }
+
+        .scheme-item i {
+            line-height: 32px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+            .scheme-item i:hover {
+                color: #108def;
+            }
+
+        .addrows {
+            cursor: pointer;
+            width: 80px;
+        }
+
+            .addrows:hover {
+                color: #108def;
+            }
+
+        .scheme-name .el-select {
+            float: left;
+            width: auto;
+        }
+
+        .scheme-body {
+        }
+
+            .scheme-body > div {
+                height: 50px;
+            }
+
+        .scheme-item {
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .addrows {
+            height: 30px !important;
+            min-height: 30px !important;
+        }
+
+        .addscheme {
+            height: 20px !important;
+            cursor: pointer;
+        }
+
+            .addscheme:hover {
+                color: #108def;
+            }
+
+            .addscheme span {
+                line-height: 20px;
+            }
+
+            .addscheme i {
+                font-size: 20px;
+            }
+
+            .addscheme span {
+                float: left;
+                margin-left: 5px;
+            }
+
+        .scheme-item .el-checkbox__input {
+            margin-top: 0;
+        }
+
+        .scheme-item .el-checkbox {
+            margin-right: 20px;
+        }
+
+        .scheme-body {
+            padding-left: 80px;
+        }
+
+        .item-label {
+            width: 80px;
+            display: inline-block;
+        }
+
+        .scheme-people .el-input {
+            float: left;
+            width: 300px;
+            margin-left: 0;
+        }
+
+        .scheme-people {
+            position: relative;
+            width: 400px;
+        }
+
+        .lookresultbtn {
+            position: absolute;
+            right: 30px;
+            top: 0px;
+            cursor: pointer;
+        }
+
+            .lookresultbtn:hover {
+                color: #108def;
+            }
+
+        .el-icon-search {
+            font-size: 16px !important;
+        }
+
+        .setbtn {
+            color: #108def;
+            cursor: pointer;
+        }
+
+        .el-table {
+            margin-top: -15px;
+        }
+
+            .el-table .el-select, .el-table .el-input {
+                float: none;
+                width: 100%;
+            }
+
+            .el-table th {
+                padding: 5px 0;
+            }
+
+        .el-input__icon.el-icon-time {
+            font-size: 16px;
+        }
+
+        .el-table .el-input__inner.el-date-editor--datetimerange {
+            width: 100%;
+        }
+
+            .el-table .el-input__inner.el-date-editor--datetimerange i {
+                line-height: 24px;
+            }
+
+        .el-table .el-range-separator {
+            line-height: 24px;
+        }
+
+        .el-range-editor.el-input__inner {
+            padding: 3px 5px;
+        }
+
+        .el-table .cell {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+        .scheme-item > div{
+            min-height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">设置规则</h2>
+                            <button class="close slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>假期方案</span></div>
+                            <div class="shift-body-main shift-body-main1" style="max-width:800px;">
+                                <div class="scheme-item" v-for="(item,index) in scheme">
+                                    <el-popover placement="top"
+                                                width="160"
+                                                v-model="item.visible">
+                                        <p>该操作不可撤销,确定删除吗？</p>
+                                        <div style="text-align: right; margin: 0">
+                                            <el-button size="mini" type="text" @click="item.visible = false;">取消</el-button>
+                                            <el-button type="primary" size="mini" @click="item.visible = false;deletescheme(item,index)">确定</el-button>
+                                        </div>
+                                        <i slot="reference" style="float:right;" class="el-icon-delete"></i>
+                                    </el-popover>
+
+                                    <div>
+                                        <span class="item-label" style="float:left;">方案名称</span>
+                                        <el-input style="width:200px;" class="save-checking-input" v-model="item.Name" placeholder="请输入名称"></el-input>
+                                    </div>
+                                    <div class="scheme-name">
+                                        <span class="item-label" style="float:left;">计算方式</span>
+                                        <el-select class="save-checking-input" v-model="item.CalculateMethodCode" placeholder="请选择">
+                                            <el-option v-for="(option,index) in schemeoptions"
+                                                       :key="index"
+                                                       :label="option.label"
+                                                       :value="option.value">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                    <div class="scheme-body" v-if="item.CalculateMethodCode!=3">
+                                        <div class="" v-for="(row,index) in item.rows">
+                                            <span style="float:left;">满</span>
+                                            <el-input class="save-checking-input" class="" v-model.number="row.value"></el-input>
+                                            <span style="float:left;">年，享有</span>
+                                            <el-input class="save-checking-input" class="" v-model.number="row.days"></el-input>
+                                            <span style="float:left;">天年假</span>
+                                            <i @click="deleterows(item.rows,index)" class="el-icon-close" style="float:left;margin-left:10px;"></i>
+                                        </div>
+                                        <div @click="addrows(item.rows)" class="addrows"><i class="el-icon-circle-plus-outline" style="float:left;"></i><span style="float:left;margin-left:8px;">添加行</span></div>
+                                    </div>
+                                    <div class="scheme-body" v-if="item.CalculateMethodCode==3">
+                                        <span style="float:left;">享有</span>
+                                        <el-input class="save-checking-input" class="" v-model.number="item.rows[0].days"></el-input>
+                                        <span style="float:left;">天年假</span>
+                                    </div>
+                                    <!--<div style="margin-top:5px">
+                                        <span class="item-label"style="float:left;margin-right:10px;">适用聘用形式</span>
+                                        <el-checkbox-group v-model="item.checkList">
+                                            <el-checkbox label="正式"></el-checkbox>
+                                            <el-checkbox label="实习"></el-checkbox>
+                                            <el-checkbox label="劳务"></el-checkbox>
+                                            <el-checkbox label="顾问"></el-checkbox>
+                                            <el-checkbox label="返聘"></el-checkbox>
+                                            <el-checkbox label="外包" ></el-checkbox>
+                                        </el-checkbox-group>
+                                    </div>-->
+                                    <div style="margin-top:5px">
+                                        <span class="item-label" style="float:left;">适用部门</span>
+                                        <el-checkbox-group v-model="item.checkList">
+                                            <el-checkbox label="选择部门"></el-checkbox>
+                                            <!--<el-checkbox label="职级"></el-checkbox>
+                                            <el-checkbox label="岗位"></el-checkbox>
+                                            <el-checkbox label="工作城市"></el-checkbox>-->
+                                        </el-checkbox-group>
+                                    </div>
+                                    <div style="margin-top:5px" class="scheme-people" v-if="item.checkList.join(',').indexOf('部门')!=-1">
+                                        <span class="item-label" style="float:left;">部门</span>
+                                        <el-select style="float:left;"
+                                                   multiple
+                                                   :collapse-tags="true"
+                                                   v-model="item.DeptId"
+                                                   filterable
+                                                   remote
+                                                   @visible-change="getlookup(10,'DeptId')"
+                                                   :remote-method="function(query){searchlookup(query,10,'DeptId')}"
+                                                   placeholder="请选择">
+                                            <el-option v-for="(item,index) in search.DeptId"
+                                                       :key="index"
+                                                       :label="item.Name"
+                                                       :value="item.ID">
+                                            </el-option>
+                                        </el-select>
+                                        <div @click="openslookup('DeptId',10,index)" class="lookresultbtn">
+                                            <i class="el-icon-search"></i>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top:5px">
+                                        <span class="item-label" style="float:left;">人员筛选</span>
+                                        <el-checkbox label="设置筛选条件" v-model="item.filter"></el-checkbox>
+                                    </div>
+                                    <div class="shift-item" style="width:100%;" v-if="item.filter">
+                                        <el-table ref="moviesTable"
+                                                  :data="item.tableData"
+                                                  stripe>
+                                            <el-table-column width="160px"
+                                                             prop="Name"
+                                                             label="搜索字段">
+                                                <template slot-scope="scope">
+                                                    <el-select class='tableinput save-checking-input'
+                                                               @change="function(val){
+                                                        entitychange(val,scope.row)
+                                                     }"
+                                                               v-model="scope.row.entity"
+                                                               filterable
+                                                               placeholder="请选择">
+                                                        <el-option v-for="(item,index) in search.entity"
+                                                                   :key="index"
+                                                                   :label="item.label"
+                                                                   :value="item.fieldName">
+                                                        </el-option>
+                                                    </el-select>
+                                                </template>
+                                            </el-table-column>
+                                            <el-table-column width="140px"
+                                                             label="运算符">
+                                                <template slot-scope="scope">
+                                                    <el-select class="save-checking-input" v-model="scope.row.operatorname" placeholder="请选择">
+                                                        <el-option v-for="(item,index) in scope.row.fieldoperator"
+                                                                   :key="index"
+                                                                   :label="item.label"
+                                                                   :value="item.operator">
+                                                            <span @click="operatorchange(scope.row,item)" style="float: left;position:absolute;width:100%;">{{ item.label }}</span>
+                                                        </el-option>
+                                                    </el-select>
+                                                </template>
+                                            </el-table-column>
+                                            <el-table-column prop="address">
+                                                <template slot="header" slot-scope="scope">
+                                                    <span>值</span>
+                                                </template>
+                                                <template slot-scope="scope">
+                                                    <el-date-picker v-if="scope.row.type=='Date'"
+                                                                    v-show="scope.row.operatorType!='0'&&scope.row.operatorType!='3'"
+                                                                    v-model="scope.row.Value"
+                                                                    format="yyyy-MM-dd"
+                                                                    value-format="yyyy-MM-dd"
+                                                                    type="date"
+                                                                    placeholder="选择日期">
+                                                    </el-date-picker>
+                                                    <el-date-picker v-if="scope.row.type=='DateTime'"
+                                                                    v-show="scope.row.operatorType!='0'&&scope.row.operatorType!='3'"
+                                                                    v-model="scope.row.Value"
+                                                                    format="yyyy-MM-dd HH:mm"
+                                                                    value-format="yyyy-MM-dd HH:mm"
+                                                                    type="datetime"
+                                                                    placeholder="选择日期">
+                                                    </el-date-picker>
+                                                    <el-date-picker v-if="scope.row.type=='Date'"
+                                                                    v-show="scope.row.operatorType=='3'"
+                                                                    v-model="scope.row.Value"
+                                                                    format="yyyy-MM-dd"
+                                                                    value-format="yyyy-MM-dd"
+                                                                    type="daterange"
+                                                                    placeholder="选择日期">
+                                                    </el-date-picker>
+                                                    <el-date-picker @change="timechange(scope.row)"
+                                                                    v-if="scope.row.type=='DateTime'"
+                                                                    v-show="scope.row.operatorType=='3'"
+                                                                    v-model="scope.row.Value2"
+                                                                    format="yyyy-MM-dd HH:mm"
+                                                                    value-format="yyyy-MM-dd HH:mm"
+                                                                    type="datetimerange"
+                                                                    placeholder="选择日期">
+                                                    </el-date-picker>
+                                                    <el-select multiple
+                                                               collapse-tags
+                                                               v-if="scope.row.type=='Picklist'"
+                                                               v-model="scope.row.Value" placeholder="请选择">
+                                                        <el-option v-for="(item,index) in scope.row.filterValues"
+                                                                   :key="index"
+                                                                   :label="item.label"
+                                                                   :value="item.name">
+                                                        </el-option>
+                                                    </el-select>
+                                                    <el-select v-if="scope.row.type=='DroplistText'||scope.row.type=='MutipleCheckbox'"
+                                                               v-model="scope.row.Value" placeholder="请选择">
+                                                        <el-option v-for="(item,index) in scope.row.filterValues"
+                                                                   :key="index"
+                                                                   :label="item.label"
+                                                                   :value="item.name">
+                                                        </el-option>
+                                                    </el-select>
+
+                                                    <el-input v-if="scope.row.type=='Text'||scope.row.type=='Numeric'||scope.row.type=='AutoNumber'||scope.row.type=='TextArea'"
+                                                              class="tableinput " v-model="scope.row.Value"></el-input>
+
+                                                </template>
+
+                                            </el-table-column>
+                                            <el-table-column label=""
+                                                             width="60px">
+                                                <template slot="header" slot-scope="scope">
+                                                    操作
+                                                </template>
+                                                <template slot-scope="scope">
+                                                    <i class="el-icon-delete handlebtn"
+                                                       @click="handleDelete(item,scope.$index, scope.row)"></i>
+                                                </template>
+                                            </el-table-column>
+                                        </el-table>
+                                        <i style="margin-top:10px;"
+                                           class="el-icon-circle-plus-outline handlebtn"
+                                           size="mini"
+                                           @click="handleAdd(item)"><span style="font-size:14px;float:right;margin-left:5px;">添加搜索条件</span></i>
+                                    </div>
+                                </div>
+
+                                <div class="addscheme" @click="addscheme()"><i class="el-icon-circle-plus-outline" style="float:left;"></i><span style="float:left;margin-left:8px;">添加规则</span></div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer slds-modal__footer foot">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class="label bBody">取消</span>
+                                </button>
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class="label bBody">保存</span>
+                                </button>
+                                
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="changeDiv">
+        <iframe id="iframe"></iframe>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                schemeoptions: [{ label: '工龄', value: 1 }, { label: '司龄', value: 2 }, { label: '固定天数', value: 3 }, ],
+                scheme: [{
+                    CalculateMethodCode:1,
+                    checkList: [],
+                    DeptId:[],
+                    rows: [{
+                        value: 1,
+                        days:5
+                    },],
+                    name:'方案一',
+                    tableData: []
+                },],
+                list: {
+                },
+                select: {
+                    operator: []
+                },
+                search: {
+                    entity: [],
+                    DeptId: [],
+                },
+                checked: {
+                    DeptId: [],
+                },
+
+            },
+            created: function () {
+                this.getselect()
+                this.getentity()
+                this.getData()
+            },
+            methods: {
+                getentity: function () {
+                    var that = this
+                    var d = {}
+                    d = {
+                        entityCode: 'a0V'
+                    }
+                    ajaxMethodGetAsyncData('entity.attribute.getlist', d,false, callback)
+                    function callback(data) {
+                        that.search.entity = data.attributes
+                    }
+                },
+                entitychange: function (val, row) {
+                    row.Value = ''
+                    row.operatorname = ''
+                    row.operator = []
+                    for (var i = 0; i < this.search.entity.length; i++) {
+                        if (val == this.search.entity[i].fieldName) {
+                            row.label = this.search.entity[i].label
+                            row.type = this.search.entity[i].dType
+                            row.fieldoperator = this.search.entity[i].operator
+                            row.filterValues = this.search.entity[i].filterValues
+                            break;
+                        }
+                    }
+                },
+                handleAdd: function (item) {
+                    item.tableData.push({ entity: '', OldValue: '', Value: '', type: 'Text', field: [], operatorname: '' })
+                },
+                handleDelete: function (item,index, row) {
+                    item.tableData.splice(index, 1)
+                },
+                openslookup: function (name, objtypecode, index) {
+                    //$('#changeDiv').show()
+                    if (objtypecode == 10) {
+                        opencenterwindow('/alert/deptchose_form.html?type=1&index='+index+'&lknm=' + name+'&name=' + name, '', 750, 520)
+                        //$('#iframe').attr('src', '/alert/deptchose.html?name=' + name+'&type=1&index='+index)
+                    }
+                },
+                addrows: function (rows) {
+                    rows.push({})
+                },
+                deleterows: function (item, index) {
+                    item.splice(index,1)
+                },
+                addscheme: function () {
+                    this.scheme.push({
+                        checkList: [],
+                        DeptId: [],
+                        rows: [{
+                        },
+                        ],
+                        Name: '方案' + (this.scheme.length+1),
+                        tableData: [{ entity: '', operatorname: '', Value: '', type: 'Text', fieldoperator: [], filterValues: [] }, ]
+                    })
+                },
+                deletescheme: function (item, index) {
+                    var d = {
+                        id: item.id,
+                        ObjectTypeCode: 30094
+                    }
+                    ajaxMethodGetData('entity.delete', d, function (data) {
+
+                    })
+                    this.scheme.splice(index,1)
+                },
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('id')
+                    if (id) {
+                        $('.slds-text-heading--medium').html('编辑规则')
+                        var d = {
+                            attendTypeId:id,
+                        }
+                        function callback(data) {
+                            if (data && data.listData&&data.listData.length > 0) {
+                                that.scheme = []
+                                for (var i = 0; i < data.listData.length; i++) {
+                                    var res = data.listData[i]
+
+                                    var d = {
+                                        id: res.LIST_RECORD_ID,
+                                        Name: res.Name,
+                                        CalculateMethodCode: res.CalculateMethodCode,
+                                        checkList: [],
+                                        DeptId: [],
+                                        rows: [],
+                                        tableData: []
+                                    }
+
+                                    var DeptRange = res.DeptRange
+                                    if (DeptRange != '') {
+                                        DeptRange = JSON.parse(DeptRange)
+
+                                    }
+                                    if (DeptRange.length > 0) {
+                                        d.checkList = ['选择部门']
+                                        for (var j = 0; j < DeptRange.length; j++) {
+                                            d.DeptId.push(DeptRange[i].Id)
+                                            that.search.DeptId.push({
+                                                ID: DeptRange[i].Id,
+                                                Name: DeptRange[i].Name,
+                                            })
+                                        }
+                                    }
+
+
+
+                                    var CalculateRule = res.CalculateRule
+                                    CalculateRule = JSON.parse(CalculateRule)
+                                    for (var j = 0; j < CalculateRule.length; j++) {
+                                        d.rows.push({
+                                            value: CalculateRule[j].action,
+                                            days: CalculateRule[j].days,
+                                        })
+                                    }
+
+
+                                    var QueryCondition = res.QueryCondition
+                                    QueryCondition = JSON.parse(QueryCondition)
+                                    if (QueryCondition.length > 0) {
+                                        d.filter = true
+                                        for (var j = 0; j < QueryCondition.length; j++) {
+                                            var Value = QueryCondition[j].operands
+                                            if(Value.length==1){
+                                                Value = [QueryCondition[j].operands[0]]
+                                            }
+                                            var tableData = {
+                                                entity: QueryCondition[j].attribute,
+                                                operatorname: QueryCondition[j].operator,
+                                                logical: QueryCondition[j].logical,
+                                                Value: Value,
+                                                type: '',
+                                                fieldoperator: [],
+                                                filterValues: []
+                                            }
+
+                                            for (var k = 0; k < that.search.entity.length; k++) {
+                                                if (QueryCondition[j].attribute == that.search.entity[k].fieldName) {
+                                                    tableData.type = that.search.entity[k].dType
+                                                    tableData.fieldoperator = that.search.entity[k].operator
+                                                    tableData.filterValues = that.search.entity[k].filterValues
+                                                    if (that.search.entity[k].filterValues.length == 0) {
+                                                        tableData.Value = tableData.Value[0]
+                                                    }
+                                                }
+                                            }
+
+                                            d.tableData.push(tableData)
+
+                                        }
+                                    }
+                                    that.scheme.push(d)
+                                }
+                                //console.log(that.scheme)
+                            }
+
+                        }
+                        ajaxMethodGetData('attendance.attendtype.solution.getlist', d, callback)
+                    } else {
+                        $('.slds-text-heading--medium').html('新建规则');
+                    }
+                },
+                saveData: function () {
+
+                },
+                getselect: function () {
+                    var that = this
+                    var d = {}
+                    var ObjectTypeCode = '30094'
+                    d = {
+                        ObjTypeCode: ObjectTypeCode,
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, callback)
+                    function callback(data) {
+                        console.log(data)
+                        that.select = data.context.picklistValuesMap
+                    }
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        //that.search[name] = data.listData
+                        that.search[name] = that.search[name].concat(data.listData)
+                        that.search[name] = uniqu(that.search[name],'ID')
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        //that.search[name] = data.listData
+                        that.search[name] = that.search[name].concat(data.listData)
+                        that.search[name] = uniqu(that.search[name], 'ID')
+                        //that.search[name] = uniqu(that.search[name],'ID')
+                    }
+                },
+                timechange: function (row) {
+                    if (row.Value2.length > 0) {
+                        row.Value = row.Value2.join('-')
+                    }
+                },
+                operatorchange: function (row, item) {
+                    this.$set(row, 'operatorType', item.operatorType + '')
+                    this.$set(row, 'logical', item.label)
+                },
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        $('#Save').click(function () {
+            function callback(data) {
+                parent.success2('保存考勤规则成功')
+                //window.location.href = '/hr/setup/AttendRulesPage.aspx'
+                parent.$('#changeDiv').hide()
+                parent.$('.popup-mask').hide()
+                parent.$('#iframe').hide()
+                parent.$('#childreniframe')[0].contentWindow.gettable()
+            }
+            var id = getQueryString('id')
+            setTimeout(function () {
+                var save = document.querySelectorAll('.save-checking.active');
+                if (save.length > 0) {
+                    for (var i = 0; i < vum.scheme.length; i++) {
+                        var DeptRange = []
+                        for (var j = 0; j < vum.scheme[i].DeptId.length; j++) {
+                            for (var k = 0; k < vum.search.DeptId.length; k++) {
+                                if (vum.scheme[i].DeptId[j] == vum.search.DeptId[k].ID) {
+                                    DeptRange.push({
+                                        Id: vum.search.DeptId[k].ID,
+                                        Name: vum.search.DeptId[k].Name
+                                    })
+                                    break;
+                                }
+                            }
+                        }
+                        var d = {
+                            AttendTypeId: { Id: id },
+                            Name: vum.scheme[i].Name,
+                            CalculateMethodCode: vum.scheme[i].CalculateMethodCode,
+                            CalculateRule: [],
+                            QueryCondition: [],
+                            DeptRange: DeptRange
+                        }
+                        d.DeptRange = JSON.stringify(d.DeptRange)
+                        for (var j = 0; j < vum.scheme[i].rows.length; j++) {
+                            d.CalculateRule.push({
+                                condition: {
+                                    attributeName: vum.scheme[i].CalculateMethodCode,
+                                    operator: 'ge',
+                                    value: vum.scheme[i].rows[j].value
+                                },
+                                action: vum.scheme[i].rows[j].value,
+                                days: vum.scheme[i].rows[j].days,
+                            })
+                        }
+                        d.CalculateRule = JSON.stringify(d.CalculateRule)
+                        if (vum.scheme[i].filter) {
+                            for (var j = 0; j < vum.scheme[i].tableData.length; j++) {
+                                var QueryCondition = vum.scheme[i].tableData[j]
+
+                                var picklistValues = []
+                                var operands = []
+
+                                var value = QueryCondition.Value
+                                if (typeof value == 'object') {
+                                    for (var k = 0; k < value.length; k++) {
+                                        if (QueryCondition.filterValues.length > 0) {
+                                            for (var m = 0; m < QueryCondition.filterValues.length; m++) {
+                                                if (value[k] == QueryCondition.filterValues[m].name) {
+                                                    operands.push(QueryCondition.filterValues[m].name)
+                                                    picklistValues.push(QueryCondition.filterValues[m].label)
+                                                }
+                                            }
+                                        } else {
+                                            picklistValues.push(value[k])
+                                        }
+                                    }
+                                } else {
+                                    picklistValues.push(value)
+                                    operands.push(value)
+                                }
+
+
+
+                                d.QueryCondition.push({
+                                    "sort": j,
+                                    "attribute": QueryCondition.entity,
+                                    "label": QueryCondition.label,
+                                    "operator": QueryCondition.operatorname,
+                                    "logical": QueryCondition.logical,
+                                    "picklistValues": picklistValues,
+                                    "isEditable": true,
+                                    "column": QueryCondition.entity,
+                                    "operands": operands,
+                                    "id": j
+                                })
+
+                            }
+                        }
+
+                        d.QueryCondition = JSON.stringify(d.QueryCondition)
+
+                        var messages = {
+                            params: {
+                                recordRep: {
+                                    objTypeCode: 30094,
+                                    fields: d
+                                }
+                            }
+                        }
+                        if (vum.scheme[i].id && vum.scheme[i].id != '') {
+                            messages.params.recordRep.id = vum.scheme[i].id
+                        }
+                        messages = JSON.stringify(messages)
+                        var data = { message: messages };
+                        if (i == vum.scheme.length - 1) {
+                            end = 1
+                        }
+                        ajaxMethodPostData('entity.saverecord', data, callback(data, end))
+
+                    }
+                }
+            }, 300)
+            //if (id != null) {
+            //    messages.params.recordRep.id = id
+            //}
+
+
+        })
+        $('#closedsa').click(function () {
+            //window.history.back();
+            parent.$('#changeDiv').hide()
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('#closeds').click(function () {
+            //window.history.back();
+            parent.$('#changeDiv').hide()
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        function uniqu(array, name) {
+            var arr = []
+            for (var j = 0; j < array.length; j++) {
+                if (JSON.stringify(arr).indexOf(array[j][name]) == -1) {
+                    arr.push(array[j])
+                }
+            }
+            return arr
+        }
+    </script>
+</body>
+</html>

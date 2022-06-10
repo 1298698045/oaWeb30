@@ -1,0 +1,404 @@
+﻿.calendarTable th.timeCol {
+    padding-right: .3em;
+}
+
+.eventBusy {
+    background-color: #f0faff !important;
+}
+
+.weekendBusy {
+    /*background-color: #e4393c;*/
+}
+
+.btnShift {
+    height: 25px;
+    margin-top: 3px;
+    border-bottom-left-radius: 3px;
+    border-left: 1px solid #b5b5b5;
+    border-top-left-radius: 3px;
+    border-bottom: 1px solid #b5b5b5;
+    border-top: 1px solid #b5b5b5;
+    border-right: 1px solid #b5b5b5;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background: #e8e8e9 url("/img/alohaSkin/togglePill_bg.png") repeat-x scroll right top;
+}
+
+.selectedShift {
+    COLOR: #000000;
+    BACKGROUND-COLOR: silver;
+    background-position: left -120px;
+    display: inline-block;
+}
+
+.mytable-box {
+    background-color: #fff;
+}
+
+    .mytable-box .mytable {
+        width: 100%;
+        border: #444;
+        color: rgb(81, 79, 77);
+        border-bottom: 1px solid #444;
+    }
+
+        .mytable-box .mytable tr td {
+            height: 36px;
+            text-align: center;
+            border-top: 1px solid #444;
+            border-right: 1px solid #444;
+            vertical-align: central;
+        }
+
+.mytable-box .even td {
+  background-color: #f9f9f9;
+}
+
+.mytable-box .mytable tr th {
+        height: 36px;
+        text-align: center;
+        border-top: 1px solid #444;
+        border-right: 1px solid #444;
+        vertical-align: central;
+}
+
+    .mytable-box .mytable tr td:first-child, th:first-child {
+        /*background-color: red;*/
+        border-left: 1px solid #444;
+    }
+
+    .mytable-box .mytable tr td:last-child {
+        /*border-bottom: 1px solid #444;*/
+    }
+
+    .mytable-box .tgroup {
+        text-align: left;
+        font-size: 16px;
+        font-weight: bold;
+        vertical-align: middle;
+        padding-top: 5px;
+    }
+
+    .mytable-box .mytable tr {
+        border-left: 1px solid #444;
+    }
+
+.nameCol {
+    vertical-align: middle !important;
+    text-align: center;
+    background-color: #ebebeb;
+}
+
+.mytable-box .mytable tr td small {
+    color: red;
+}
+
+.bgc-g {
+    background-color: green;
+}
+
+.col-r {
+    color: red;
+}
+
+.memoText {
+    width: 90%;
+    height: 96%;
+    border: 1px solid #ccc;
+    margin-left: 2px;
+    margin-right: 2px;
+    text-align: center;
+    /*padding:2px; */
+}
+
+.moveShiftBar {
+    padding: 10px 0px 10px 0px;
+    margin: 0px;
+    width: 100%;
+    position: absolute;
+    z-index: 301;
+    min-width: 1000px;
+    background: #fff;
+    border-bottom: 1px solid #ebebeb;
+    left: 25px;
+    top: 0px;
+    position: fixed;
+    _position: absolute;
+    -webkit-transform: translateZ(0);
+    min-height: 40px;
+}
+.card-hover-point {
+    position:absolute;
+    top: 38%;
+    left: -11px;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #dddbda;
+    transform: rotate(45deg);
+    z-index:1000;
+
+}
+.card-hover-point {
+    left:-1000px;
+}
+.meetingroom-message {
+    width:218px;
+    color:#080707;
+    font-size:12px;
+    border-left-width:3px;
+    border-left-style:solid;
+    height:60px;
+    padding:5px;
+    box-sizing:border-box;
+}
+.eventList .meetingroom-message {
+    position:absolute;
+}
+.meetingroom-message4 {
+    border-color:#b3b3b3;
+    background-color:#e6e6e6;
+}
+.meetingroom-message4:hover{
+    background-color:#d9d9d9;
+}
+.meetingroom-message1 {
+    border-color:#0070d2;
+    background-color:#ebf7ff;
+}
+.meetingroom-message1:hover{
+    background-color:#d7efff;
+}
+.meetingroom-message3 {
+    border-color:#81cf9f;
+    background-color:#eafdf3;
+}
+.meetingroom-message3:hover{
+    background-color:#d6fbe7;
+}
+.meetingroom-message2 {
+    border-color:#f7aa2d;
+    background-color:#fef7ea;
+}
+.meetingroom-message2:hover{
+    background-color:#fcedd4;
+}
+.shift-hover-title>div{
+    float:left;
+}
+.header-left-logo {
+    background-color:#1797c0;
+    float:left;
+    border-radius:4px;
+    height:32px;
+    width:32px;
+}
+.header-left-logo img{
+    height:32px;
+    width:32px;
+}
+.header-left-title {
+    margin-left:10px;
+    margin-top:-3px
+}
+.header-left-title-name {
+    font-size:18px;
+    color:#333;
+    font-weight:700;
+    margin-top:8px;
+}
+.shift-hover {
+    width:270px;
+    height:0px;
+    background-color:#f3f2f2;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+    border:1px solid #dddbda;
+    border-radius: 5px;
+    box-sizing:border-box;
+    position:absolute;
+}
+.shift-hover-title {
+    height:50px;
+}
+.shift-hover-body-message {
+    float:left;
+    width:100%;
+    font-size:12px;
+
+}
+.shift-hover-body-message1 {
+    float:unset;
+    width:100%;
+    font-size:12px;
+}
+.shift-hover-body-message p{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    top: 2px;
+}
+.Description{
+    white-space: pre-line;
+    display: block;
+    padding-top: 5px;
+}
+.shift-hover-foot {
+    margin-top:10px;
+    float:left;
+    width:100%;
+}
+.shift-hover-left {
+    float:left;
+    color:#006dcc;
+    font-size:13px;
+    margin-top:5px;
+    cursor:pointer;
+}
+.shift-hover-foot-right {
+    float:right;
+}
+.shift-hover-foot-right>div{
+    float:left;
+    margin-left:10px;
+}
+.close {
+    cursor:pointer;
+    position:absolute;
+    right:5px;
+    top:10px;
+    width:32px;
+    height:32px;
+    background:url('/img/cal/closegray.png') no-repeat center;
+    background-size:14px;
+    z-index:999;
+}
+.widthitem2 p {
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.meetingroom-message.widthitem2 {
+    height:40px;
+    padding:5px;
+}
+.widthitem3 {
+    width:14.15%;
+}
+.meetingroom-moremessage {
+    width:100%;
+    height:28px;
+    line-height:20px;
+    padding:5px 10px;
+}
+.shift-hover2 .shift-hover-body {
+    max-height:145px;
+    /*overflow-y:auto;*/
+    margin-top:-5px;
+}
+.shift-hover {
+    display:none;
+}
+.shift-hover > div {
+    position:relative;
+    z-index:1001;
+    background-color: #f3f2f2;
+    padding: 12px;
+}
+.clear {
+    clear:both;
+    
+}
+.meetingroom-message {
+    margin-bottom:2px;
+}
+ .shift-hover {
+    padding: 5px;
+    display:none;
+    border:none;
+    background:none;
+    width:270px;
+    box-shadow:none;
+}
+.shift-hover > div{
+    border-radius:8px;
+    border: 1px solid #ddd;
+}
+.shift-hover-title{
+    height:0;
+}
+.shift-hover-body{
+    width:100%;
+}
+.shift-hover-body-message p{
+    height:33px;
+}
+.shift-hover-body-message p input{
+    height:20px;
+}
+.shift-hover-body-message p select{
+    height:25px;
+}
+.shift-hover2{
+    width:360px;
+}
+.shift-hover-label{
+    width:75px;
+    text-align:right;
+    display: inline-block;
+}
+.shift-hover-value{
+    width:80px;
+    display: inline-block;
+}
+.meetingroom-message-hover-title{
+    height:50px;
+    top:-5px;
+    position:relative;
+}
+.header-left-title{
+    position: relative;
+    top: 3px;
+    left: 10px;
+}
+.buttonbtn {
+    border: 1px solid #dddbda;
+    border-radius: 4px;
+    background-color: white;
+    padding: 0 15px;
+    line-height: 30px;
+    height: 32px;
+    font-size: 12px;
+    color: #108af9;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.shift-hover > div{
+    background-color:#fff;
+}
+.card-hover-point{
+    background:#fff !important;
+}
+.jiaqi-type{
+    margin-left:0;
+}
+
+.meetingroom-message-hover-title{
+    height:42px;
+}
+.shift-hover-body-message p{
+    height:28px;
+}
+.shift-hover2 > div{
+    padding-bottom:0;
+    padding-top:8px;
+}
+.header-left-logo{
+    height:31px;
+}
+.close{
+    top:6px;
+}
+.header-left-title-name{
+    font-size:17px;
+}

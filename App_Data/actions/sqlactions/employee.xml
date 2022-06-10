@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <query>
+    <name>hr.employee.get</name>
+    <type>obj</type>
+    <comments>获取单个员工信息</comments>
+    <parameters>
+      <EmployeeId>日期</EmployeeId>
+    </parameters>
+    <sql>
+      SELECT * From HREmployeeBase Where EmployeeId='#{EmployeeId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.business.get</name>
+    <type>obj</type>
+    <comments>获取单个部门</comments>
+    <parameters>
+      <BusinessUnitId>部门ID</BusinessUnitId>
+    </parameters>
+    <sql>
+      SELECT * From BusinessUnitBase Where BusinessUnitId='#{BusinessUnitId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>employee.dept.getlist</name>
+    <type>array</type>
+    <comments>根据部门搜索</comments>
+    <parameters>
+      <DeptId>部门</DeptId>
+    </parameters>
+    <sql>
+      select FullName as name,EmployeeId as id,'U' as type from HREmployee where DeptId='#{DeptId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+</root>

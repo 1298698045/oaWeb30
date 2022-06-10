@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 358px;
+            overflow: hidden;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+
+        .section-body {
+            padding: 0 20px;
+        }
+
+        .section {
+            padding-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        #treePanel {
+            width: 400px;
+            position: absolute;
+        }
+
+        .item-body {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .item-left {
+            width: 100%;
+        }
+        .popup-body{
+            width:388px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-head">
+            <div class="search" style="float:right;width:50%;margin-right:30px;">
+                <span style="width:18%;display:inline-block;text-align:center;">搜索 :</span>
+                <input id="deptsearchkey" onchange="deptsearch()" onkeyup="deptsearch()" style="width:80%;" type="search" name="name" value="" />
+            </div>
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+            <div class="item divs">
+                <div class="item-left">
+                    <div class="item-body">
+                        
+                        <div id="treePanel" class="easyui-panel" title="组织结构" style="padding: 5px; min-height: 0!important; min-height: 200px;">
+                            <ul class="easyui-tree" id="leftTree" style="display: block; height: 100%; min-height: 300px;">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div id="Save" class="popup-foot-shur save-checking">确定</div>
+            <div class="closepopup">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/alert.js"></script>
+    <link rel="stylesheet" href="/easyui/themes/bootstrap/easyui.css" type="text/css" />
+    <link rel="stylesheet" href="/easyui/themes/icon.css" type="text/css" />
+    <script type="text/javascript" src="/easyui/js/treeLoader.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+    <script>
+        treeLoader.prototype.bindData = function (self, data) {
+            //build tree
+            //debugger;
+            var datas = GetFirstRow(data);
+            $("#" + self.a).tree({
+                data: datas,
+                cascadeCheck: false,
+                onLoadSuccess:function(node,data){
+                    var t = $(this);
+                    if(data){
+                        $(data).each(function(index,d){
+                            if(this.state == 'closed'){
+                                t.tree('expandAll');
+                            }
+                        });
+                    }
+                },
+                onCheck: function (node, checked) {
+                    console.log(node)
+                    if (checked == true) {
+                        var root = $('#' + self.a).tree('getChecked');
+                        if (root.length > 1) {
+                            for (var i = 0; i < root.length; i++) {
+                                if (root[i].id != node.id) {
+                                    $("#"+self.a).tree('uncheck', root[i].target);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        treeNode = new treeLoader("leftTree", "organizationtree", function () { });
+        treeNode.init();
+        //var grid = new listGrid("datagrid", "P01");
+        //grid.init();
+        var screenHeight = getClientHeight();
+        $("#treePanel").height(350);
+
+        $('.closepopup').click(function () {
+            parent.$('#iframe').hide()
+            parent.$('.popup-mask').hide()
+            window.close()
+        })
+        $("#Save").click(function () {
+            var rows = $('#leftTree').tree('getSelected')
+            ids = rows.id
+            names = rows.text   
+            var lknm = getQueryString('lknm')
+            var type = getQueryString('type')
+            if (type == 'lookupfiltergridcustomize') {
+                chooselookup(ids, names)
+                function chooselookup(id, label) {
+                    var name = getQueryString('lknm')
+                    var entityType = getQueryString('entityType')
+                    opener.vuesearchgrid[entityType].$set(opener.vuesearchgrid[entityType].list, name, id)
+                    if (JSON.stringify(opener.vuesearchgrid[entityType].search[name]).indexOf(id) == -1) {
+                        opener.vuesearchgrid[entityType].search[name].push({
+                            ID: id,
+                            Name: label
+                        })
+                    }
+                }
+            }
+            else if (opener.formcomponents) {
+                opener.formcomponents.lookupPick(lknm, ids, names)
+            } else if (window.opener.lookupPick3) {
+                window.opener.lookupPick3(lknm, ids, names)
+            } else if (window.opener.lookupPick) {
+                window.opener.lookupPick('', lknm, lknm, '', ids, names)
+            }else {
+                opener.lookupPickdept(ids, names, lknm)
+            }
+            window.close()
+        })
+
+        function deptsearch() {
+            var deptsearchkey = $('#deptsearchkey').val()
+            $('#treePanel li').hide()
+            $('.tree-title').each(function () {
+                if ($(this).html().indexOf(deptsearchkey) != '-1') {
+                    $(this).parents('li').show()
+                } 
+            })
+        }
+    </script>
+</body>
+</html>

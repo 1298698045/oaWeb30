@@ -1,0 +1,60 @@
+﻿.attend-clock {
+    float:right;
+    height:40px;
+}
+.attend-clock > div {
+    float:left;
+    margin-right:10px;
+}
+.clockstatus1 {
+    font-size:12px;
+    color:#333;
+    line-height:20px;
+    font-weight:700;
+}
+.clockstatus2 {
+    font-size:12px;
+    color:#999;
+    line-height:20px;
+}
+.clockstatus3 {
+    font-size:12px;
+    color:#108af9;
+    line-height:20px;
+    font-weight:700;
+}
+.clockstatus4 {
+    font-size:12px;
+    color:#333;
+    line-height:20px;
+    font-weight:700;
+}
+.attendontime {
+    margin-left:15px;
+}
+.attendclockbtn {
+    width:70px;
+    height:40px;
+	left: 990px;
+	top: 139px;
+	background-color: rgba(16, 138, 249, 1);
+	border-radius: 4px;
+	font-size: 12px;
+	text-align: center;
+    color:white;
+    margin-top:4px;
+    cursor:pointer;
+    margin-left:15px;
+    padding:5px 0;
+    box-sizing:border-box;
+}
+.clockstatus5 {
+    color:#ff6666;
+    font-size:12px;
+}
+.forbidden {
+    border:1px solid #dddbda;
+    color:#e5e5e5;
+    background-color:white;
+    cursor:no-drop;
+}

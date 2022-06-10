@@ -1,0 +1,5 @@
+/*
+ * This code is for Internal Salesforce use only, and subject to change without notice.
+ * Customers shouldn't reference this file in any web pages.
+ */
+body.massDelete .searchButton{text-align:center;margin-bottom:10px}body.massDelete #head_mdStep4_ep{margin-top:0}body.massDelete .pbSubsection .detailList input[type="checkbox"]{margin-top:0}body.massDelete .pbSubsection .detailList label{margin-left:5px;vertical-align:middle}body.massDelete .bPageBlock .detailList th,body.massDelete .bPageBlock .detailList td{border-width:0}body.massDelete .bPageBlock .detailList tr.headerRow th,body.massDelete .bPageBlock .detailList td.dataCell{border-width:0 0 1px 1px}body.massDelete .bPageBlock .detailList .listRelatedObject .bPageBlock{border-top-width:0}body.massDelete .hardDelete{padding-bottom:15px}body.massDelete .delBtns{text-align:center;padding-bottom:15px}body.massDelete #maxRowsInfo{margin-top:-8px;margin-bottom:10px}

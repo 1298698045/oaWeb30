@@ -1,0 +1,792 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .popup {
+            background: white;
+            border-radius: 7px;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: auto;
+            min-width: 242px;
+        }
+
+        .item-left1 {
+            min-width: 242px;
+            margin-right: 12px;
+        }
+
+        .item-left item-left1 {
+            float: left;
+            min-width: 242px;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 460px;
+            overflow: auto;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+
+        .section-body {
+            padding: 0 20px;
+        }
+
+        .section {
+            padding-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+
+        .searchselect .layui-input {
+            height: 35px;
+            line-height: 35px;
+            border-radius: 4px;
+        }
+
+        .layui-form-select dl {
+            max-height: 190px !important;
+        }
+
+        .selectUp .layui-form-select dl {
+            /*top: auto;*/
+            bottom: 36px;
+        }
+
+        .DateType .layui-input {
+            height: 30px;
+            padding: 0 1px !important;
+        }
+
+        .DateType .layui-form-select .layui-edge {
+            right: 5px !important;
+        }
+
+        .DateType .layui-form-selected dl {
+            height: auto !important;
+        }
+        .layui-form input.Hour{
+            text-indent: 10px !important;
+        }
+        .searchimg {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            right: 8px;
+            top: 10px;
+            cursor: pointer;
+            background: #fff;
+        }
+        body #iframe {
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            left: 0;
+            top: 50%;
+            margin-top: -300px;
+            border-radius: 7px;
+            display: block;
+            height:620px;
+            border:0;
+            overflow:hidden;
+            z-index:9999;
+            display:none;
+        }
+        .popup-mask {
+            display:none;
+            position: fixed;
+            background-color:transparent;
+            width:100%;
+            height:100%;
+            top:0;
+            z-index:999;
+            left:0;
+            position:fixed;
+            background: url(/img/bgOverlayDialogBackground.png) ;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            新建班次模板
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+            <div class="section">
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red">*</span>
+                                <span class="item-title">名称：</span>
+                                <div class="layui-input-block">
+                                    <input id="Name" type="text" name="Name" value="" placeholder="请输入" class="save-checking-input" style="width: 240px;" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red"></span>
+                                <span class="item-title">状态：</span>
+                                <div class="layui-input-block searchselect searchselect1">
+                                    <select lktp="" lay-search lay-verify="" id="StatusCode">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">星期一：</span>
+                                <div class="layui-input-block searchselect searchselect2">
+                                    <select lktp="" lay-search lay-verify="" id="W1">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <img class="searchimg ' + disabled + '" onclick="chooselookup('30040', 'W1', '可选班次')" src="/img/images/02.1-1.Search_.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">岗位类别：</span>
+                                <div class="layui-input-block searchselect searchselect3">
+                                    <select lktp="" lay-search lay-verify="" id="PostCategory1">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red"></span>
+                                <span class="item-title">时长：</span>
+                                <div class="layui-input-block">
+                                    <input id="Hour1" type="number" name="samplerate" value="" placeholder="小时数" style="width: 240px;" class="Hour" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">星期二：</span>
+                                <div class="layui-input-block searchselect searchselect2">
+                                    <select lktp="" lay-search lay-verify="" id="W2">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <img class="searchimg ' + disabled + '" onclick="chooselookup('30040', 'W2', '可选班次')" src="/img/images/02.1-1.Search_.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">岗位类别：</span>
+                                <div class="layui-input-block searchselect searchselect3">
+                                    <select lktp="" lay-search lay-verify="" id="PostCategory2">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red"></span>
+                                <span class="item-title">时长：</span>
+                                <div class="layui-input-block">
+                                    <input id="Hour2" type="number" name="samplerate" value="" placeholder="小时数" style="width: 240px;" class="Hour" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">星期三：</span>
+                                <div class="layui-input-block searchselect searchselect2">
+                                    <select lktp="" lay-search lay-verify="" id="W3">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <img class="searchimg ' + disabled + '" onclick="chooselookup('30040', 'W3', '可选班次')" src="/img/images/02.1-1.Search_.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">岗位类别：</span>
+                                <div class="layui-input-block searchselect searchselect3">
+                                    <select lktp="" lay-search lay-verify="" id="PostCategory3">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red"></span>
+                                <span class="item-title">时长：</span>
+                                <div class="layui-input-block">
+                                    <input id="Hour3" type="number" name="samplerate" value="" placeholder="小时数" style="width: 240px;" class="Hour" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">星期四：</span>
+                                <div class="layui-input-block searchselect searchselect2">
+                                    <select lktp="" lay-search lay-verify="" id="W4">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <img class="searchimg ' + disabled + '" onclick="chooselookup('30040', 'W4', '可选班次')" src="/img/images/02.1-1.Search_.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">岗位类别：</span>
+                                <div class="layui-input-block searchselect searchselect3">
+                                    <select lktp="" lay-search lay-verify="" id="PostCategory4">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red"></span>
+                                <span class="item-title">时长：</span>
+                                <div class="layui-input-block">
+                                    <input id="Hour4" type="number" name="samplerate" value="" placeholder="小时数" style="width: 240px;" class="Hour" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">星期五：</span>
+                                <div class="layui-input-block searchselect searchselect2">
+                                    <select lktp="" lay-search lay-verify="" id="W5">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <img class="searchimg ' + disabled + '" onclick="chooselookup('30040', 'W5', '可选班次')" src="/img/images/02.1-1.Search_.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">岗位类别：</span>
+                                <div class="layui-input-block searchselect searchselect3">
+                                    <select lktp="" lay-search lay-verify="" id="PostCategory5">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red"></span>
+                                <span class="item-title">时长：</span>
+                                <div class="layui-input-block">
+                                    <input id="Hour5" type="number" name="samplerate" value="" placeholder="小时数" style="width: 240px;" class="Hour" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">星期六：</span>
+                                <div class="layui-input-block searchselect searchselect2">
+                                    <select lktp="" lay-search lay-verify="" id="W6">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <img class="searchimg ' + disabled + '" onclick="chooselookup('30040', 'W6', '可选班次')" src="/img/images/02.1-1.Search_.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">岗位类别：</span>
+                                <div class="layui-input-block searchselect searchselect3">
+                                    <select lktp="" lay-search lay-verify="" id="PostCategory6">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red"></span>
+                                <span class="item-title">时长：</span>
+                                <div class="layui-input-block">
+                                    <input id="Hour6" type="number" name="samplerate" value="" placeholder="小时数" style="width: 240px;" class="Hour" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">星期日：</span>
+                                <div class="layui-input-block searchselect searchselect2">
+                                    <select lktp="" lay-search lay-verify="" id="W7">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <img class="searchimg ' + disabled + '" onclick="chooselookup('30040', 'W7', '可选班次')" src="/img/images/02.1-1.Search_.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red"></span>
+                                <span class="item-title">岗位类别：</span>
+                                <div class="layui-input-block searchselect searchselect3">
+                                    <select lktp="" lay-search lay-verify="" id="PostCategory7">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red"></span>
+                                <span class="item-title">时长：</span>
+                                <div class="layui-input-block">
+                                    <input id="Hour7" type="number" name="samplerate" value="" placeholder="小时数" style="width: 240px;" class="Hour" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div class="close">取消</div>
+            <div class="popup-foot-shur save-checking">保存</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/hr/attendsubmit.js" type="text/javascript"></script>
+    <script>
+        getlookup1()
+        function getlookup1() {
+            ajaxMethodGetData('layout.picklistvalues.get&objectTypeCode=30253', null, function (data) {
+                $('.searchselect1 select').html('<option value="">请选择</option>')
+                var list = data.actions[0].returnValue.picklistFieldValues.StatusCode.values;
+                if (list) {
+                    for (var i = 0; i < list.length; i++) {
+                        $('.searchselect1 select').append('<option value="' + list[i].value + '">' + list[i].label + '</option>')
+                    }
+                }
+            })
+        }
+
+        getlookup2()
+        function getlookup2() {
+            ajaxMethodGetData('workshift.owner.getlist&isPaginaTion=true&Name=&page=1&rows=100', null, function (data) {
+                $('.searchselect2 select').html('<option value="">请选择</option>')
+                var list = data.rows;
+                if (list) {
+                    for (var i = 0; i < list.length; i++) {
+                        $('.searchselect2 select').append('<option value="' + list[i].ValueId + '">' + list[i].Name + '</option>')
+                    }
+                }
+            })
+        }
+
+        getlookup3()
+        function getlookup3() {
+            $('.searchselect3 select').html(PostCategoryHtml)
+        }
+    </script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+    
+    <script>
+        var form = ''
+        layui.use(['form'], function () {
+            form = layui.form
+        });
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('.save-checking').click(function () {
+            function callback(data) {
+                //layer.msg(data.msg)
+                parent.$('#datagrid').datagrid('reload')
+                //setTimeout(function () {
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                //}, 3000)
+
+            }
+            setTimeout(function () {
+                var save = document.querySelectorAll('.save-checking.active');
+                if (save.length > 0) {
+
+                    var messages = {
+                        params: {
+                            recordRep: {
+                                objTypeCode: 30253,
+                                fields: {
+                                    Name: $('#Name').val(),
+                                    PostCategory1: $('#PostCategory1').val(),
+                                    PostCategory2: $('#PostCategory2').val(),
+                                    PostCategory3: $('#PostCategory3').val(),
+                                    PostCategory4: $('#PostCategory4').val(),
+                                    PostCategory5: $('#PostCategory5').val(),
+                                    PostCategory6: $('#PostCategory6').val(),
+                                    PostCategory7: $('#PostCategory7').val(),
+                                    Hour1: $('#Hour1').val(),
+                                    Hour2: $('#Hour2').val(),
+                                    Hour3: $('#Hour3').val(),
+                                    Hour4: $('#Hour4').val(),
+                                    Hour5: $('#Hour5').val(),
+                                    Hour6: $('#Hour6').val(),
+                                    Hour7: $('#Hour7').val(),
+                                    StatusCode: $('#StatusCode').val(),
+                                    W1: {
+                                        Name: $('#W1').next('.layui-form-select').find('.layui-this').html(),
+                                        Id: $('#W1').val()
+                                    },
+                                    W2: {
+                                        Name: $('#W2').next('.layui-form-select').find('.layui-this').html(),
+                                        Id: $('#W2').val()
+                                    },
+                                    W3: {
+                                        Name: $('#W3').next('.layui-form-select').find('.layui-this').html(),
+                                        Id: $('#W3').val()
+                                    },
+                                    W5: {
+                                        Name: $('#W4').next('.layui-form-select').find('.layui-this').html(),
+                                        Id: $('#W4').val()
+                                    },
+                                    W4: {
+                                        Name: $('#W5').next('.layui-form-select').find('.layui-this').html(),
+                                        Id: $('#W5').val()
+                                    },
+                                    W6: {
+                                        Name: $('#W6').next('.layui-form-select').find('.layui-this').html(),
+                                        Id: $('#W6').val()
+                                    },
+                                    W7: {
+                                        Name: $('#W7').next('.layui-form-select').find('.layui-this').html(),
+                                        Id: $('#W7').val()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    var id = getQueryString('id')
+                    if (id != null) {
+                        messages.params.recordRep.id = id
+                    }
+
+                    messages = JSON.stringify(messages)
+                    var data = { message: messages };
+                    ajaxMethodPostData('entity.saverecord', data, callback)
+                }
+            })
+            
+        })
+        getdata();
+        function getdata() {
+            var message = {
+                "params": {
+                    "recordId": "",
+                    "record": null,
+                    "inContextOfComponent": "",
+                    "entityApiName": "HRWorkShiftTemplate",
+                    "mode": "CREATE",
+                    "layoutType": "FULL",
+                    "navigationLocation": "DETAIL"
+                },
+                "storable": true
+            }
+            var id = getQueryString('id')
+            if (id && id != '') {
+                message.params.recordId = id
+                message.params.mode = 'EDIT'
+            }
+        message = JSON.stringify(message)
+        var getlayoutdata = {
+            message: message
+        }
+                    
+        ajaxMethodPostData('entity.config.get', getlayoutdata, function (data) {
+            var id = getQueryString('id')
+            if (id) {
+                $('.popup-head').html('编辑' + data.actions[0].returnValue.componentDef.localizedTitle)
+                createddata(data.actions[0].returnValue.record, data.context.picklistValuesMap)
+            } else {
+                $('.popup-head').html('新建' + data.actions[0].returnValue.componentDef.localizedTitle)
+            }
+        })
+        }
+        function createddata(data) {
+            console.log(data)
+            $('#Name').val(data.Name);
+            $('#PostCategory1').val(data.PostCategory1);
+            $('#PostCategory2').val(data.PostCategory2);
+            $('#PostCategory3').val(data.PostCategory3);
+            $('#PostCategory4').val(data.PostCategory4);
+            $('#PostCategory5').val(data.PostCategory5);
+            $('#PostCategory6').val(data.PostCategory6);
+            $('#PostCategory7').val(data.PostCategory7);
+            $('#Hour1').val(data.Hour1);
+            $('#Hour2').val(data.Hour2);
+            $('#Hour3').val(data.Hour3);
+            $('#Hour4').val(data.Hour4);
+            $('#Hour5').val(data.Hour5);
+            $('#Hour6').val(data.Hour6);
+            $('#Hour7').val(data.Hour7);
+            $('#StatusCode').val(data.StatusCode);
+            $('#W1').val(data.W1.value);
+            $('#W2').val(data.W2.value);
+            $('#W3').val(data.W3.value);
+            $('#W4').val(data.W4.value);
+            $('#W5').val(data.W5.value);
+            $('#W6').val(data.W6.value);
+            $('#W7').val(data.W7.value);
+        }
+        function chooselookup(objtypecode, name, title, search) {
+            $('#iframe').show().attr('src', '/alert/workshift/lookupiframe_shift.html?objtypecode=' + objtypecode + '&lknm=' + name + '&title=' + title + '&search=' + search + '&type=workshift').height(640).css('margin-top', '-320px')
+            $('.popup-mask').show()
+        }
+
+        $('.laydate').each(function () {
+            var id = $(this).attr('id')
+            var datatype = $(this).attr('datatype')
+            if (datatype == 'D') {
+                laydate.render({
+                    elem: '#' + id,
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'F') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'datetime',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Year') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Month') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            }
+
+        })
+    </script>
+    <iframe id="iframe" frameborder="0" src=""></iframe>
+    <div class="popup-mask"></div>
+</body>
+</html>

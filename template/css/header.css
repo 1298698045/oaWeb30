@@ -1,0 +1,343 @@
+﻿.clear {
+    float:none !important;
+    clear:both;
+}
+.miss-header {
+    padding: 19px 15px;
+    box-sizing:border-box;
+    min-width:1100px;
+    min-height:70px;
+}
+.miss-header>div{
+    float:left;
+}
+.header-left-logo {
+    background-color:#1797c0;
+    float:left;
+    border-radius:4px;
+    height:32px;
+    width:32px;
+}
+.header-left-logo img{
+    height:32px;
+    width:32px;
+}
+.miss-header .header-left-title {
+    margin-left:10px;
+    margin-top:-3px
+}
+.miss-header .header-left-title-name {
+    font-size:12px;
+    color:#666666;
+    margin-top:0;
+}
+.miss-header .header-left-title-time {
+    font-size:18px;
+    color:#333;
+    font-weight:700;
+}
+.header-mi-sign {
+    padding:10px;
+    margin-left:10%;
+}
+.sign-item {
+    float:left;
+}
+.sign-item > div {
+    float:left;
+    margin-left:10px;
+}
+.sign-item-color {
+    width:10px;
+    height:10px;
+    margin-top:3px;
+}
+.color-sp {
+    background-color:#f7aa2d;
+}
+.color-notstart {
+    background-color:#0070d2;
+}
+.color-started {
+    background-color:#81cf9f;
+}
+.color-end {
+    background-color:#b3b3b3;
+}
+.sign-item-name {
+    font-size:12px;
+    color:#333;
+}
+.header-right-buttonbtn {
+    float:right;
+}
+.buttonbtn-group {
+    border:1px solid #dddbda;
+    border-radius:4px;
+    height:32px;
+    background-color:white;
+    cursor:pointer;
+    box-sizing:border-box;
+}
+.buttonbtn-group>div{
+    border:0;
+    border-radius:0;
+    background-color:transparent;
+
+}
+.buttonbtn-group>div{
+    float:left;
+    border-right:1px solid #dddbda;
+    height:30px;
+
+}
+.buttonbtn-group>div:hover{
+    background-color:#f2f2f2;
+}
+.buttonbtn-group>div:last-child{
+    border-right:0;
+}
+.prev-buttonbtn {
+    height:30px;
+    width:32px;
+    background:url('/img/images/leftArrow.png') no-repeat center;
+    background-size:12px;
+}
+.next-buttonbtn {
+    height:30px;
+    width:32px;
+    background:url('/img/images/rightArrow.png') no-repeat center;
+    background-size:12px;
+}
+.miss-header .header-right-buttonbtn {
+    float:right;
+}
+.header-right-buttonbtn > div {
+    float:left;
+    margin-left:10px;
+}
+.buttonbtn {
+    border:1px solid #dddbda;
+    border-radius:4px;
+    background-color:white;
+    padding:0 15px;
+    line-height:30px;
+    height:32px;
+    font-size:12px;
+    color:#108af9;
+    cursor:pointer;
+    box-sizing:border-box;
+}
+.buttonbtn:hover{
+    background-color:#f2f2f2;
+}
+.shuaxin {
+    background:url('/img/cal/refresh.png') no-repeat center;
+    background-size:14px;
+    background-color:white;
+}
+.header-right-buttonbtn .shuaxin:hover{
+    background:url('/img/cal/14.refresh_2(14x14).png') no-repeat center;
+    background-size:14px;
+    background-color:white;
+}
+ .header-right-buttonbtn .calander {
+    background:url('/img/images/02.Programme.png') no-repeat left 8px center,url('/img/cal/20.png') no-repeat right 6px center;
+    background-size:14px,10px;
+    background-color:white;
+    width:45px;
+}
+.header-right-buttonbtn .sort {
+    color:#000;
+    background:url('/img/images/02.4.Sort.png') no-repeat center ;
+    background-size:14px;
+    background-color:white;
+}
+.header-right-buttonbtn .sort.active {
+    background:url('/img/images/3.rows_3(14x14).png') no-repeat center ;
+    background-size:14px;
+    background-color:#108af9;
+}
+.tody-true {
+    color:#e5e5e5 !important;
+    border:1px solid #dddbda !important;
+}
+.search-cont {
+    float:right !important;
+    margin-top:5px;
+}
+.miss-header .header-left-title2 {
+    margin-left: 10px;
+}
+.header-left-title2 .header-left-title-name {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    margin-top:3px;
+}
+.header-left-title-listname{
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    margin-top: -3px;
+    cursor:pointer;
+}
+.header-left-title-listname img{
+    width:14px;
+    height:14px;
+    margin-left:8px;
+    margin-top: 2px;
+}
+.selectlist li {
+    padding-left:15px;
+    padding-right:20px;
+}
+.selectlistcheck li {
+    padding-left:40px;
+}
+.viewlist {
+    background: url('/img/cal/settings_1.png') no-repeat left 8px center,url(/img/cal/20.png) no-repeat right 6px center;
+    background-size: 14px,10px;
+    background-color: white;
+    width: 45px;
+}
+.morebtn {
+    background: url(/img/cal/20.png) no-repeat center ;
+    background-size:12px;
+    background-color: white;
+}
+.finishbtn {
+    background: url(/img/images/00.3.Check.png) no-repeat left 10px center ;
+    background-size:14px;
+    background-color: white;
+    padding-left:30px;
+    
+}
+.morebtn .selectlist{
+    right:20px;
+    margin-top:35px;
+    width:auto;
+}
+.morebtn .selectlist li{
+    color:#108af9;
+}
+.header-left-title .selectlistcheck {
+    margin-top:0;
+}
+.header-left-title .selectlistcheck li{
+    background:none !important;
+
+}
+.header-left-title .selectlistcheck li:hover{
+    background:#f2f2f2 !important;
+}
+.header-left-title .selectlistcheck li img{
+    display: none;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    margin-top: 8px;
+    left: 15px;
+}
+.header-left-title .selectlistcheck li.active img{
+    display: block;
+}
+.limits-li {
+    color:#ccc !important;
+    pointer-events: none;
+}
+.selectlist > span {
+    margin-left:10px;
+    color:#333;
+}
+.header-right-buttonbtn .shaixuan.ban{
+    background: url('/img/cal/22.filterList_1(14x14).png') no-repeat center;
+    background-size: 14px;
+    background-color: white;
+}
+.header-right-buttonbtn .shaixuan.active{
+    background: url('/img/cal/22.filterList_3(14x14).png') no-repeat center;
+    background-size: 14px;
+    background-color: white;
+}
+.header-right-buttonbtn .shaixuan{
+    background: url('/img/cal/22.filterList_2(14x14).png') no-repeat center;
+    background-size: 14px;
+    background-color: white;
+}
+.objectManagerLeftNav.active{
+    width:calc(100% - 360px);
+}
+.shaixuans {
+    position:absolute;
+    right:0;
+    width:360px;
+    float:left;
+    top:0;
+}
+.table-body {
+    position:relative;
+}
+.buttonbtn a {
+    color:#108af9;
+    text-decoration:none;
+}
+.buttonbtnsousuo input {
+    height:28px;
+    outline:none;
+    width:100%;
+    border:0 !important;
+}
+.buttonbtnsousuo {
+    background-color:white !important;
+}
+.shituu {
+    padding:5px 7px;
+}
+.shituu img {
+    width:13px;
+    height:13px;
+    float:left;
+}
+.shituu .img2 {
+    width:10px;
+    height:10px;
+    margin-left:5px;
+    margin-top:5px;
+}
+.shituu .img1{
+    margin-left:3px;
+    margin-top:3px;
+}
+.shituu .card-table .img1 {
+    margin-top:8px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.shituu .card-table .img2 {
+    width:16px;
+    height:16px;
+    visibility:hidden;
+}
+.shituu .card-table .active .img2{
+    visibility:visible;
+}
+.head-tworows .header-left-logo,.head-tworows .header-left-title2{
+    margin-top:20px;
+}
+.search-cont{
+    clear:right;
+}
+
+
+.header-left-title-listname span{
+    position:relative;
+    top:5px;
+}
+.header-left-title-listname.selectinput img{
+    position:relative;
+    top:5px;
+}
+.header-left-title-listname.selectinput .fixed-list img{
+    top:0px;
+}

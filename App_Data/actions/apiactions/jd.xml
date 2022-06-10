@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <!--嘉定排班 -->
+  <Action name="workshift.deptmonthjd.list" type="Youyou.HRCore.Attendance.Actions.WorkshiftDeptMonthEmployeeList,HRAttendance" desc="获取嘉定科室月考勤表"></Action>
+  <Action name="workshift.deptmonthjd.export" type="Youyou.HRCore.Attendance.Actions.WorkshiftDeptMonthEmployeeExport,HRAttendance" desc="获取嘉定科室月考勤表导出下载excel"></Action>
+  <Action name="workshift.deptmonthjd.month.update" type="Youyou.HRCore.Attendance.Actions.UpdateWorkShiftEmpMonth,HRAttendance" desc="更新嘉定某人某月的月考勤数据"></Action>
+  <Action name="workshift.deptmonthjd.month.workday.update" type="Youyou.HRCore.Attendance.Actions.UpdateWorkShiftEmpWorkDays,HRAttendance" desc="更新嘉定某人某月的月考勤数据"></Action>
+  <Action name="workshift.rule.list" type="Youyou.HRCore.Attendance.Actions.GetAttendRuleList,HRAttendance" desc="获取考勤规则列表"></Action>
+</Actions>

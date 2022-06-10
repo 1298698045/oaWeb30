@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/css/dashboard.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .popup {
+            background: white;
+            border-radius: 0;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 50px;
+            /*line-height: 52px;*/
+            font-size: 15px;
+            text-align: left;
+            width:100%;
+            /*border-bottom: 1px solid #dcdcdc;*/
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            /*float:right;*/
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 8px;
+            padding: 0 10px;
+        }
+        .save-checking{
+            float:right;
+            margin-right: 15px !important;
+        }
+        .close{
+            float:left;
+            margin-left: 15px !important;
+        }
+        .popup-foot {
+            border-radius: 0;
+            border-top: 1px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 8px;
+            height: 40px;
+            background:#F5F5F5;
+        }
+
+        .popup-foot .popup-foot-shur {
+            color: white;
+            background-color: #108af9;
+        }
+
+
+        .popup-body {
+            padding: 0 10px;
+            height: 265px;
+            overflow: auto;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+     
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+
+        .section-body {
+            padding: 0;
+        }
+
+        .section {
+            padding-bottom: 0;
+        }
+
+        .red {
+            color: red;
+        }
+        .popup{
+            /*border:1px solid #dcdcdc;*/
+        }
+        .popup-title {
+            display:inline-block;
+            width:90px;
+            background: #eee;
+            border: 1px solid #F5F5F5;
+            border-radius:15px;
+            padding:5px 5px;
+            text-align:center;
+            margin:12px 0 0 20px;
+            font-weight:bold;
+        }
+        .remindlist{
+            border-top:1px solid #eee;
+        }
+        .tab_headers{
+            padding: 0; 
+            /*border-bottom: 1px solid #eee;*/ 
+            width:430px;
+            background:#fff;
+        }
+        .tab_headers_item_header{
+            background:#fff;
+        }
+        /*.tab_headers_item a{
+            color:#108af9;
+            cursor:pointer;
+        }*/
+        .tab_headers_item a{
+            color:#333;
+            cursor:pointer;
+        }
+        .tab_headers_item a:hover{
+            color:#108af9;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            <span class="popup-title">管理员通知</span>
+        </div>
+        <div class="popup-body">
+            <div class="modal-header"></div>
+            <div class="section">
+                <div class="section-body">
+
+                    <div class="item divs">
+                        <div class="tabs_content">
+                           <div class="tab_headers">
+                               <span class="tab_headers_item tab_headers_item_header" style="width: 240px;">名称</span>
+                               <span class="tab_headers_item tab_headers_item_header" style="width: 180px;">数量</span>
+                               <!--<span class="tab_headers_item tab_headers_item_header" style="width: 100px;">操作</span>-->
+                           </div>
+                            <ul id="soon" class="table" style="list-style:none;width: 430px; font-size: 14px; border: none;"></ul>
+                            <div style="clear:both;"></div>
+                       </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div class="popup-foot-shur save-checking">查看全部</div>
+            <div class="close">忽略</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+    <script>
+        ajaxMethodGetData('task.remind.my.getlist', null, function (data) {
+            var html = ''
+            if (data && data.data.length > 0) {
+                for (var i = 0; i < data.data.length; i++) {
+                    var item = data.data[i]
+                    html += '<li class="remindlist">'
+                         + '    <span class="tab_headers_item" style="width: 240px;"><a href="' + item.LinkURL + '" target="blank">' + item.Name + '</a></span>'
+                         + '    <span class="tab_headers_item" style="width: 180px;"><a href="' + item.LinkURL + '" target="blank">' + item.Quantity + '</a></span>'
+                         //+ '    <span class="tab_headers_item" style="width: 100px;"><a href="' + item.LinkURL + '" target="blank">查看</a></span>'
+                         + '</li>'
+                }
+            }
+            $('#soon').html(html)
+        })
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('.save-checking').click(function () {
+            window.open('/contract/remind/home')
+        })
+    
+    </script>
+</body>
+</html>

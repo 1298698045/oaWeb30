@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+
+  <!--消息提醒-->
+  <Action name="message.template.getlist" type="Youyou.Messages.Actions.MessageRemindType,OACore" desc="消息提醒类型"></Action>
+  <Action name="message.status.getlist" type="Youyou.Messages.Actions.MessageRemindSearch,OACore" desc="消息提醒列表"></Action>
+  <Action name="message.readestatus.update" type="Youyou.Messages.Actions.MessageReadStatusUpdate,OACore" desc="修改消息阅读状态"></Action>
+</Actions>

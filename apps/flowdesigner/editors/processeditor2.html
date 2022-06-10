@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>mxGraph Process Example - MyWorkflow</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <style media="screen" type="text/css">
+        div.base
+        {
+            position: absolute;
+            overflow: hidden;
+            font-family: Arial;
+            font-size: 8pt;
+        }
+        div.base#toolbar
+        {
+            padding-left: 8px;
+            padding-top: 1px;
+            background: url('images/toolbar.gif');
+        }
+        div.base#status
+        {
+            color: gray;
+            border-style: none;
+            border-top-style: solid;
+            border-color: silver;
+            border-width: 1px;
+            padding-top: 6px;
+            _padding-top: 4px;
+            padding-right: 8px;
+            background: url('images/toolbar.gif');
+        }
+    </style>
+    <script type="text/javascript">
+        mxBasePath = '../src';
+	</script>
+    <script src="../src/js/mxClient2.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="../src/css/common2.css" charset="ISO-8859-1" type="text/css">
+    <script src="js/mxApplication2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        mxConstants.DEFAULT_HOTSPOT = 1;
+
+        // Enables guides
+        mxGraphHandler.prototype.guidesEnabled = true;
+
+        // Alt disables guides
+        mxGuide.prototype.isEnabledForEvent = function (evt) {
+            return !mxEvent.isAltDown(evt);
+        };
+
+        // Enables snapping waypoints to terminals
+        mxEdgeHandler.prototype.snapToTerminals = true;
+
+        window.onbeforeunload = function () { return mxResources.get('changesLost'); };
+	</script>
+    <link rel="stylesheet" href="css/process.css" charset="ISO-8859-1" type="text/css">
+</head>
+<body style="margin: 0px; overflow: hidden;" onload="new mxApplication('config/processeditor.xml');">
+    <div style="top: 0px; height: 36px; left: 0px; right: 0px;" class="base" id="toolbar">
+        <!-- Toolbar Here -->
+    </div>
+    <div style="left: 0px; right: 0px; top: 36px; bottom: 20px; background: white;" class="base"
+        id="graph" oncontextmenu="return false;">
+        <!-- Graph Here -->        
+    </div>
+    <div align="right" style="height: 20px; bottom: 0px; left: 0px; right: 0px; white-space: nowrap;"
+        class="base" id="status">
+        mxGraph 3.0.1.1</div>    
+</body>
+</html>

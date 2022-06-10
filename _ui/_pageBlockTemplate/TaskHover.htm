@@ -1,0 +1,63 @@
+﻿<div class="taskBlock">
+    <div id="TaskHoverPage_00T90000018FhOy_page" class="bPageBlock brandSecondaryBrd secondaryPalette">
+        <div class="pbHeader brandSecondaryBrd">
+            <table cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                    <tr>
+                        <td class="pbTitle">
+                            <h2 class="mainTitle">任务详细信息</h2>
+                        </td>
+                        <td class="pbButton">
+                            <input type="button" title="编辑" onclick="navigateToUrl('/00T/e?retURL={!retURL}&amp;id={!activityid}',null,'edit');" name="edit" class="btn" value=" 编辑 "><input type="button" title="删除" onclick="    if ((Modal.confirm &amp;&amp; Modal.confirm('是否确定？')) || (!Modal.confirm &amp;&amp; window.confirm('是否确定？'))) navigateToUrl('/setup/own/deleteredirect.aspx?type=00T&delID={!activityid}&amp;retURL={!retURL}&amp;_CONFIRMATIONTOKEN=',null,'delete');" name="delete" class="btn" value=" 删除 "></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="pbBody">
+            <div class="pbSubsection">
+                <table cellspacing="0" cellpadding="0" border="0" class="detailList">
+                    <tbody>
+                        <tr>
+                            <td class="labelCol">被分配人</td>
+                            <td class="dataCol"><a href="/0059000000390Wh">{!owningusername}</a></td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">主题</td>
+                            <td class="dataCol">{!subject}</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">到期日期</td>
+                            <td class="dataCol">{!scheduleend}</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">优先级</td>
+                            <td class="dataCol">{!prioritycode}</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">状态</td>
+                            <td class="dataCol">{!statuscode}</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">名称</td>
+                            <td class="dataCol">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol">相关项</td>
+                            <td class="dataCol">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="labelCol last">提醒</td>
+                            <td class="dataCol last">
+                                <div>
+                                    <img height="16" width="21" title="未选取的" class="checkImg" alt="未选取的" src="/img/checkbox_unchecked.gif"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pbFooter secondaryPalette">
+            <div class="bg"></div>
+        </div>
+    </div>
+</div>

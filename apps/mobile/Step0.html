@@ -1,0 +1,94 @@
+﻿<form action="/apps/mobile/SendSmsStage.aspx" id="stageForm" method="POST" name="stageForm" onsubmit="if (window.ffInAlert) { return false; }">
+     {!hiddens}
+    <div class="bWizardBlock tertiaryPalette">
+        <div class="pbWizardTitle tertiaryPalette brandTertiaryBgr">
+            <div class="ptRightTitle">
+                第 1 步，共 2 步
+            </div>
+            <h2>步骤 1. 选择目标发送组
+            </h2>
+        </div>
+        <div class="pbBody">
+
+            <div class="pbWizardHeader">
+                <div class="pbTopButtons" style="white-space: nowrap">
+                   <input value="下一步" class="btn" name="goNext" onclick="if (!verifyChecked(stageForm, 'ids', '请至少选择一行')) { return false; } " title="下一步" type="submit" />&nbsp;<input type="submit" title="取消" name="cancel" class="btnCancel" value=" 取消 ">&nbsp;
+                </div>
+            </div>
+
+            <div class="pbJumpTo">
+            </div>
+
+            <div class="pbDescription ">
+                选择一个或多个分组，然后进行发送操作。
+            </div>
+
+            <div class="pbWizardBody">
+                <br />
+                <!-- Begin ListElement -->
+
+                <!-- motif: Campaign -->
+                <div class="bNext">
+                    <div class="withFilter">
+                        <div class="filter"><!--
+                            <div class="bFilterView">
+                                <span class="bFilter">
+                                    <label for="fcf" style="text-align: left; font-weight: bold; padding-right: .69em;"><span class="assistiveText">*</span>视图：</label><span class="fBody"><select id="fcf" name="fcf" onchange="refreshWizardPage('')" title="视图："><option value="00B90000008ViBi">New Last Week</option>
+                                        <option value="00B90000008ViBu">本月份生日</option>
+                                        <option value="00B90000008ViCR" selected="selected">全部联系人</option>
+                                        <option value="00B90000008ViCg">我的联系人</option>
+                                        <option value="00B90000008ViBs">新建本周</option>
+                                        <option value="00B90000008ViCU">最近已查看联系人</option>
+                                    </select></span><span class="fFooter"><a href="/ui/list/FilterEditPage?id=00B90000008ViCR&amp;retURL=%2Fui%2Fcampaign%2FMassAddCampaignMembersWizard%3F_CONFIRMATIONTOKEN%3DVmpFPSxNakF4TlMwd09TMHhObFF3TXpvek5qb3dNQzR4TXpWYSx3bkUtLE56RTJZalpo%26currentStage%3D1%26macmw_campaignId%3D70190000000uODW%26macmw_campaignName_lspfsub%3D0%26macmw_memberStatus%3DSent%26macmw_memberStatusEnum%3D4%26macmw_mode%3DAdd%26macmw_type%3DContact%26prcl_id_baseName%3Dmacmw_campaignName%26prcl_id_eParams%3D%2526enableScopes%253D1%26prcl_id_formName%3DstageForm%26prcl_id_lType%3Dcampaign%26prcl_id_nullable%3D0%26prcl_id_prId%3Dprcl_id%26prcl_id_sParent%3D%26prms_id_cId%3D70190000000uODW%26prms_id_fName%3DstageForm%26prms_id_prId%3Dprms_id%26prms_id_seName%3Dmacmw_memberStatusEnum%26visited_0%3D1%26visited_1%3D1%26wizardRetUrl%3D%252F003%252Fo%26macmw_startingTimestamp%3D1439955402983%26macmw_numAdded%3D0%26macmw_numUpdated%3D0%26macmw_numRemoved%3D0%26jump%3D1">编辑</a> | <a href="/ui/list/FilterEditPage?ftype=c&amp;retURL=%2Fui%2Fcampaign%2FMassAddCampaignMembersWizard%3F_CONFIRMATIONTOKEN%3DVmpFPSxNakF4TlMwd09TMHhObFF3TXpvek5qb3dNQzR4TXpWYSx3bkUtLE56RTJZalpo%26currentStage%3D1%26macmw_campaignId%3D70190000000uODW%26macmw_campaignName_lspfsub%3D0%26macmw_memberStatus%3DSent%26macmw_memberStatusEnum%3D4%26macmw_mode%3DAdd%26macmw_type%3DContact%26prcl_id_baseName%3Dmacmw_campaignName%26prcl_id_eParams%3D%2526enableScopes%253D1%26prcl_id_formName%3DstageForm%26prcl_id_lType%3Dcampaign%26prcl_id_nullable%3D0%26prcl_id_prId%3Dprcl_id%26prcl_id_sParent%3D%26prms_id_cId%3D70190000000uODW%26prms_id_fName%3DstageForm%26prms_id_prId%3Dprms_id%26prms_id_seName%3Dmacmw_memberStatusEnum%26visited_0%3D1%26visited_1%3D1%26wizardRetUrl%3D%252F003%252Fo%26macmw_startingTimestamp%3D1439955402983%26macmw_numAdded%3D0%26macmw_numUpdated%3D0%26macmw_numRemoved%3D0%26jump%3D1">新建视图</a></span></span>
+                            </div>-->
+                        </div>
+                        <div class="clearingBox"></div>
+                    </div>
+                </div>
+                <div class="bNext">
+                    <div class="withFilter">
+                        <div class="rolodex"></div>
+                    </div>
+                </div>
+                <!-- WrappingClass -->
+                <div class="listRelatedObject campaignBlock">
+                    <div class="bPageBlock brandSecondaryBrd secondaryPalette">
+                        <div class="pbHeader"></div>
+                        <div class="pbBody">
+                            <table class="list" border="0" cellspacing="0" cellpadding="0">
+                                <tr class="headerRow">
+                                    <th class="actionColumn" scope="col">
+                                        <input id="allBox" name="allBox" onclick="SelectAllOrNoneByCheckbox(Sfdc.Dom.getParent(this, 'FORM'), 'ids', this)" title="切换所有行" type="checkbox" value="" />&nbsp;操作</th>
+                                    <th scope="col" class=" zen-deemphasize"><a href="#" title="组名 - 已按升序排序">组名<img src="/s.gif" alt="按升序排序" class="sortAsc" title="按升序排序" /></a></th>
+                                    <th scope="col" class=" zen-deemphasize"><a href="#" title="数量 - 单击此处按升序排序">数量</a></th>
+                                </tr>
+                                {!Groups}
+
+
+
+                            </table>
+                            <!--<div class="fewerMore" onclick="return ListElement.getList('stageForm').cbWarn();">每一列表页显示 <a href="javascript: refreshWizardPage(%27?rowsperpage=90%27);">更少<img src="/s.gif" alt="显示较少信息" class="fewerArrow" title="显示较少信息" /></a>  项记录</div>-->
+                        </div>
+                        <div class="pbFooter secondaryPalette">
+                            <div class="bg"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="listElementBottomNav">
+                    <div class="bNext">
+                        <div class="rolodex"><a href="javascript: refreshWizardPage(%27?lsc=0%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">A</span></a><a href="javascript: refreshWizardPage(%27?lsc=1%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">B</span></a><a href="javascript: refreshWizardPage(%27?lsc=2%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">C</span></a><a href="javascript: refreshWizardPage(%27?lsc=3%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">D</span></a><a href="javascript: refreshWizardPage(%27?lsc=4%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">E</span></a><a href="javascript: refreshWizardPage(%27?lsc=5%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">F</span></a><a href="javascript: refreshWizardPage(%27?lsc=6%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">G</span></a><a href="javascript: refreshWizardPage(%27?lsc=7%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">H</span></a><a href="javascript: refreshWizardPage(%27?lsc=8%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">I</span></a><a href="javascript: refreshWizardPage(%27?lsc=9%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">J</span></a><a href="javascript: refreshWizardPage(%27?lsc=10%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">K</span></a><a href="javascript: refreshWizardPage(%27?lsc=11%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">L</span></a><a href="javascript: refreshWizardPage(%27?lsc=12%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">M</span></a><a href="javascript: refreshWizardPage(%27?lsc=13%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">N</span></a><a href="javascript: refreshWizardPage(%27?lsc=14%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">O</span></a><a href="javascript: refreshWizardPage(%27?lsc=15%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">P</span></a><a href="javascript: refreshWizardPage(%27?lsc=16%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">Q</span></a><a href="javascript: refreshWizardPage(%27?lsc=17%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">R</span></a><a href="javascript: refreshWizardPage(%27?lsc=18%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">S</span></a><a href="javascript: refreshWizardPage(%27?lsc=19%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">T</span></a><a href="javascript: refreshWizardPage(%27?lsc=20%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">U</span></a><a href="javascript: refreshWizardPage(%27?lsc=21%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">V</span></a><a href="javascript: refreshWizardPage(%27?lsc=22%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">W</span></a><a href="javascript: refreshWizardPage(%27?lsc=23%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">X</span></a><a href="javascript: refreshWizardPage(%27?lsc=24%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">Y</span></a><a href="javascript: refreshWizardPage(%27?lsc=25%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">Z</span></a><a href="javascript: refreshWizardPage(%27?lsc=26%27);" class="listItem" onclick="return ListElement.getList('stageForm').cbWarn();" shouldstayinownframe="true"><span class="listItemPad">其他</span></a><span class="listItemSelected listItemLast" onclick="return ListElement.getList('stageForm').cbWarn();">全部</span></div>
+                    </div>
+                </div>
+                <script>try { ListElement.createListElement('stageForm'); } catch (e) { }</script>
+                <!-- End ListElement -->
+                
+            </div>
+            <div class="pbWizardFooter">
+                <div class="pbBottomButtons">
+
+                     <input value="下一步" class="btn" name="goNext" onclick="if (!verifyChecked(stageForm, 'ids', '请至少选择一行')) { return false; } " title="下一步" type="submit" />&nbsp;<input type="submit" title="取消" name="cancel" class="btnCancel" value=" 取消 ">&nbsp;
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

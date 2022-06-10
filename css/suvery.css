@@ -1,0 +1,225 @@
+﻿body {
+}
+
+
+#msg, #waiting {
+    position: fixed;
+    left: 36%;
+    top: 60%;
+}
+
+#msg {
+    background-color: yellow;
+    color: black;
+    padding: 20px;
+}
+
+#north {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 30px;
+    background-color: white;
+}
+
+#content {
+    border: 1px solid rgba(204, 204, 204, 0.7 );
+    /*text-align: left;*/
+    padding: 20px;
+}
+
+.A4 {
+    max-width: 200mm;
+}
+
+.tl{
+    text-align:left;
+}
+.w100 {
+    width: 99%;
+}
+
+.nomalstat {
+    width: 800px;
+}
+
+.hide {
+    display: none;
+}
+
+.b {
+    font-weight: 600;
+}
+
+.bar {
+    height: 20px;
+    border: 1px solid rgba(204, 204, 204, 0.27);
+    opacity: 0.7;
+}
+
+.b0 {
+    background-color: red;
+}
+
+.b1 {
+    background-color: yellow;
+}
+
+.b2 {
+    background-color: blue;
+}
+
+.b3 {
+    background-color: green;
+}
+
+.b4 {
+    background-color: #808080;
+}
+
+.opt {
+    width: 120px;
+}
+
+.required {
+    color: navy;
+    font-weight: 600;
+}
+
+.pcent {
+    width: 120px;
+}
+
+.count {
+    width: 100px;
+}
+
+.tl {
+    text-align: left;
+}
+
+body {
+    padding-top: 30px;
+}
+
+#d0, #d1 {
+    width: 80px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.description {
+    font-size: 14px;
+    text-align: left;
+    text-indent: 30px;
+    letter-spacing: 1.5px;
+    line-height: 20px;
+}
+/*tr:nth-child(odd) {
+    background: rgba(204, 204, 204, 0.27);
+}*/
+
+.odd {
+    background: rgba(204, 204, 204, 0.27);
+}
+
+td {
+    /*max-width: 70px;*/
+    min-width: 50px;
+    min-height: 32px;
+    text-align: center;
+    padding: 4px 2px;
+}
+
+.tdgroup {
+    max-width: 100px;
+    background: #fff;
+}
+
+.tdquestion {
+    max-width: 320px;
+    text-align: left;
+}
+
+caption {
+    padding: 14px;
+    font-size: 22px;
+}
+
+.cell {
+    /*font-family: Webdings !important;*/
+    font-size: 22px;
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+}
+
+.pie {
+    background-color: yellow;
+    border-radius: 10px;
+    border: 1px solid;
+    float: right;
+    padding: 0 3px;
+    font-size: 10px;
+}
+
+.textquestion {
+    font-size: 20px;
+    background-color: #e4f1f7;
+}
+
+.department {
+    width: 120px;
+}
+
+.responsetext {
+    text-align: left;
+    text-indent: 30px;
+    letter-spacing: 1px;
+}
+
+.svyname {
+    padding: 14px;
+    font-size: 22px;
+    text-align: center;
+}
+
+.svydescription {
+    text-indent: 30px;
+    line-height: 25px;
+}
+
+.svyquestion {
+    padding: 10px;
+}
+
+    .svyquestion input[type=radio], .svyquestion input[type=checkbox] {
+        margin-right: 10px;
+    }
+
+    .svyquestion .answertext {
+        width: 99%;
+        margin-top: 1px;
+    }
+
+    .svyquestion .header {
+        text-indent: 3px;
+        line-height: 25px;
+        background-color: rgba(201, 232, 245, 0.82);
+        clear: both;
+    }
+
+.option0, .option1, .option2 {
+    padding: 5px 12px;
+}
+
+.option1 {
+    float: left;
+}
+
+.cb{
+    clear:both;
+}

@@ -1,0 +1,50 @@
+﻿<div class="eventBlock" style="">
+    <div class="bPageBlock brandSecondaryBrd secondaryPalette" id="ShiftHoverPage_{!ContainId}_page">
+        <div class="pbHeader brandSecondaryBrd" style="{!ShowEdit}">
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="pbTitle">
+                        <h2 class="mainTitle">排班详细信息</h2>
+                    </td>
+                    <td class="pbButton">
+                        <!--<input value=" 编辑 " class="btn" name="edit" onclick="CalFunctions.fixReturnUrlAndNavigateToUrl('/00U/e?id={!activityid}&retURL={!retURL}');" title="编辑" type="button" /><input value=" 清除当日排班 " class="btn" name="delete" onclick="    if ((Modal.confirm && Modal.confirm('是否确定？')) || (!Modal.confirm && window.confirm('是否确定？'))) CalFunctions.fixReturnUrlAndNavigateToUrl('/setup/own/deleteredirect.aspx?type=06e&delID={!activityid}&retURL={!retURL}');" title="删除" type="button" />-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="pbBody">
+            <div class="pbSubsection">
+                <table cellspacing="0" cellpadding="0" border="0" class="list">
+                    <tbody>
+                        <tr class="headerRow">
+                            <th scope="col" class="actionColumn">删除</th>
+                            <th class=" zen-deemphasize" scope="col">班次</th>
+                            <th class="DateElement zen-deemphasize" scope="col">时间</th>
+                            <th class=" zen-deemphasize" scope="col">职责</th>
+                        </tr>
+                        <!-- ListRow -->
+                        <!--
+                        <tr onmouseover="if (window.hiOn){hiOn(this);}" onmouseout="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}" onblur="if (window.hiOff){hiOff(this);}" class="dataRow even first">
+                            <td class="actionColumn"><a title="标记 拜访客户 完成" class="actionLink" href="/00T90000018FhOy/e?close=1&amp;retURL=%2Fhome%2Fhome.jsp%3Ftsid%3D02u900000017n3K">X</a></td>
+                            <td class=" dataCell  ">Not Started</td>
+                            <th class=" dataCell  DateElement" scope="row">&nbsp;</th>                            
+                            <td class=" dataCell  ">拜访客户</td>
+                        </tr> -->
+                        {!WorkShifts}                      
+                    </tbody>
+                </table>
+                <table cellspacing="0" cellpadding="0" border="0" class="detailList">
+                    <tbody>
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pbFooter secondaryPalette">
+            <div class="bg">
+            </div>
+        </div>
+    </div>
+</div>

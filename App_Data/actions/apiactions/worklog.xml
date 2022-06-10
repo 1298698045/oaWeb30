@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <!--工作日志-->
+  <Action name="worklog.add.workloginfo" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogAddWorklogInfo,WorkReportCore"></Action>
+
+  <Action name="worklog.query.receivedworklog" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogQueryReceivedWorklog,WorkReportCore"></Action>
+  <Action name="worklog.click.like" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogClickLike,WorkReportCore"></Action>
+  <Action name="worklog.add.comment" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogAddComment,WorkReportCore"></Action>
+  <Action name="worklog.query.commentlist" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogQueryCommentList,WorkReportCore"></Action>
+  <Action name="worklog.query.grouplist" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogQueryGroupList,WorkReportCore"></Action>
+  <Action name="worklog.click.favor" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogClickFavor,WorkReportCore"></Action>
+  <Action name="worklog.detail.worklogbyid" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogDetailWorklogByID,WorkReportCore"></Action>
+  <Action name="worklog.query.user" type="WorkReportCore.DailyReport.Actions.Worklog.WorkLogQueryUser,WorkReportCore"></Action>
+  <Action name="worklog.insert.follow" type="WorkReportCore.DailyReport.Actions.Worklog.WorklongInsertFollow,WorkReportCore"></Action>
+  <Action name="worklog.cancel.follow" type="WorkReportCore.DailyReport.Actions.Worklog.WorklongCancelFollow,WorkReportCore"></Action>
+  <Action name="worklog.my.fellows" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogMyFellows,WorkReportCore"></Action>
+  <Action name="worklog.delete.info" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogDeleteInfo,WorkReportCore"></Action>
+  <Action name="worklog.groupby.userlist" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogGroupByUserList,WorkReportCore"></Action>
+  <Action name="worklog.read.listbyid" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogReadListById,WorkReportCore"></Action>
+  <Action name="worklog.get.fellowers" type="WorkReportCore.DailyReport.Actions.Worklog.WorklogGetFellowers,WorkReportCore"></Action>
+</Actions>

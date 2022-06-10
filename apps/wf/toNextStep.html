@@ -1,0 +1,75 @@
+﻿<div class="overlay_panel">
+    <form name="editPage" id="editPage">
+        <div style="height: 330px;">
+            <table>
+                <tr style="vertical-align: top;">
+                    <td style="min-width:220px;">
+                        <div style="float: left; overflow-y: auto; font-size: 14px;  margin-top: 5px; margin-right:5px;">
+                            <div style="font-weight:bold;">请选择下一步：</div>
+                            <div class="step">
+                                <input type="radio" name="nextActivity" value="1" />步骤1                          
+                            </div>
+                            <div class="step">
+                                <input type="checkbox" name="nextActivity" value="2" />步骤2  
+                                <input type="radio" name="nextActivity" value="2" />步骤2                          
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="mw_container">
+                            <div id="duel_reports" class="duelingListBox">
+                                <div style="display: none" id="editPage_duel_reports_errorMsg" class="errorMsg">
+                                    &nbsp;
+                                </div>
+                                <table class="layout">
+                                    <tbody>
+                                        <tr valign="top">
+                                            <td class="selectCell">
+                                                <div class="selectTitle">
+                                                    <label for="duel_reports_select_0">
+                                                        可选的办理人员</label>
+                                                </div>
+                                                <select size="14" name="duel_people_select_0" multiple="multiple" id="duel_people_select_0" style="height: 226px; min-width: 120px; display: block;" ondblclick="selectItems()">
+                                                </select>
+
+                                            </td>
+                                            <td class="zen-phs buttonCell">
+                                                <div class="text">
+                                                    添加
+                                                </div>
+                                                <div class="zen-mbs text">
+                                                    <a id="duel_reports_select_0_right" href="javascript:if (!document.getElementById('duel_people_select_0').disabled&amp;&amp; !document.getElementById('duel_people_select_1').disabled) {window.editPage_DLBEInstance.instMoveOption(document.editPage.duel_people_select_0, document.editPage.duel_people_select_1,'--无--', [], null,'--无--',false,null,'editPage_duel_reports_errorMsg');}">
+                                                        <img title="添加" class="rightArrowIcon" alt="添加" src="/s.gif"></a>
+                                                </div>
+                                                <div class="text">
+                                                    <a id="duel_reports_select_0_left" href="javascript:if (!document.getElementById('duel_people_select_0').disabled&amp;&amp; !document.getElementById('duel_people_select_1').disabled) {window.editPage_DLBEInstance.instMoveOption(document.editPage.duel_people_select_1, document.editPage.duel_people_select_0,'--无--', [],  [] ,'--无--',false,null,'editPage_duel_reports_errorMsg');}">
+                                                        <img title="删除" class="leftArrowIcon" alt="删除" src="/s.gif"></a>
+                                                </div>
+                                                <div class="duelingText">
+                                                    删除
+                                                </div>
+                                            </td>
+                                            <td class="selectCell">
+                                                <div class="selectTitle">
+                                                    <label for="duel_reports_select_1">
+                                                        已选的办理人员</label>
+                                                </div>
+                                                <select size="14" name="duel_people_select_1" multiple="multiple" id="duel_people_select_1" style="height: 226px; min-width: 120px;" ondblclick="removeItems()">
+                                                </select>
+                                            </td>
+                                            <td valign="top" class="selectCell"><a href="javascript:openLookup('/_ui/common/data/PeopleOnlyPicker.aspx?lkfm=editPage&lknm=&lktp=&showuserOnly=1' ,760,'1','&lksrch=')">
+                                                <img src="/img/cal/addNew_on.gif" alt="" title="加签" />加签</a>
+                                                <div style="height: 100px"></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
+

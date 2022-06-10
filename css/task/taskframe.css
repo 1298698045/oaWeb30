@@ -1,0 +1,145 @@
+﻿
+[class^="ms-Icon--"]:before, [class*=" ms-Icon--"]:before {
+    font-family: "Office365Icons";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+ ._fce_a {
+    height: 100%;
+    padding-left: 15px;
+}
+ ._fce_b {
+    height: 100%;
+    overflow: hidden;
+    direction: inherit;
+}
+ ._fce_i {
+    display: inline-block;
+    padding: 0 10px 0 10px;
+    margin: 0;
+    height: 100%;
+    float: left;
+    direction: inherit;
+}
+ ._fce_t {
+    position: absolute;
+    width: 22px;
+}
+ .ms-bg-transparent {
+    background: transparent;
+}
+ .absoluteBottom {
+    bottom: 0;
+}
+.flex.flexwrap {
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+ .ms-bg-color-themeLighterAlt, .ms-bgc-tlra, .ms-bg-color-themeLighterAlt-hover:hover, .ms-bg-color-themeLighterAlt-focus:focus, .ms-bg-color-themeLighterAlt-before:before, .ms-bgc-tlra-h:hover, .ms-bgc-tlra-f:focus, .ms-bgc-tlra-b:before {
+    background-color: #EFF6FC;
+}
+.ms-bg-color-neutralLighter, .ms-bgc-nlr, .ms-bg-color-neutralLighter-hover:hover, .ms-bg-color-neutralLighter-focus:focus, .ms-bg-color-neutralLighter-before:before, .ms-bgc-nlr-h:hover, .ms-bgc-nlr-f:focus, .ms-bgc-nlr-b:before {
+    background-color: #f4f4f4;
+}
+.ms-border-color-neutralTertiary, .ms-bcl-nt, .ms-border-color-neutralTertiary-hover:hover, .ms-border-color-neutralTertiary-focus:focus, .ms-border-color-neutralTertiary-before:before, .ms-bcl-nt-h:hover, .ms-bcl-nt-f:focus, .ms-bcl-nt-b:before {
+    border-color: #a6a6a6;
+}
+.ms-font-color-neutralPrimary, .ms-fontColor-neutralPrimary, .ms-fcl-np, .ms-font-color-neutralPrimary-hover:hover, .ms-font-color-neutralPrimary-focus:focus, .ms-font-color-neutralPrimary-before:before, .ms-fcl-np-h:hover, .ms-fcl-np-f:focus, .ms-fcl-np-b:before {
+    color: #333;
+}
+.ms-border-color-neutralLight, .ms-bcl-nl, .ms-border-color-neutralLight-hover:hover, .ms-border-color-neutralLight-focus:focus, .ms-border-color-neutralLight-before:before, .ms-bcl-nl-h:hover, .ms-bcl-nl-f:focus, .ms-bcl-nl-b:before {
+    border-color: #eaeaea;
+}
+.ms-bg-color-themeLight, .ms-bgc-tl, .ms-bg-color-themeLight-hover:hover, .ms-bg-color-themeLight-focus:focus, .ms-bg-color-themeLight-before:before, .ms-bgc-tl-h:hover, .ms-bgc-tl-f:focus, .ms-bgc-tl-b:before {
+    background-color: #C7E0F4;
+}
+.ms-font-color-neutralTertiaryAlt, .ms-fontColor-neutralTertiaryAlt, .ms-fcl-nta, .ms-font-color-neutralTertiaryAlt-hover:hover, .ms-font-color-neutralTertiaryAlt-focus:focus, .ms-font-color-neutralTertiaryAlt-before:before, .ms-fcl-nta-h:hover, .ms-fcl-nta-f:focus, .ms-fcl-nta-b:before {
+    color: #c8c8c8;
+}
+.ms-font-color-black, .ms-fontColor-black, .ms-fcl-b, .ms-font-color-black-hover:hover, .ms-font-color-black-focus:focus, .ms-font-color-black-before:before, .ms-fcl-b-h:hover, .ms-fcl-b-f:focus, .ms-fcl-b-b:before {
+    color: #000;
+}
+.ms-icon-font-size-21 {
+    font-size: 21px!important;
+}
+.conductorContent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.pickerContainer {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}
+._dx_2 {
+    margin: 0;
+    text-align: left;
+    width: 100%;
+    padding: 0;
+    padding-left: 6px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+div {
+    display: block;
+}
+.absoluteposition, .absoluteBottom {
+    position: absolute;
+}
+.ms-bgc-tlra
+{
+        background-color: #EFF6FC;
+}
+.folderPaneGradient {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAPoCAYAAAAftpReAAAAGXRFW…IfHiDXtM3MPjzh3DAELvgN8aCHFNADaglvCMlgdnzDEmAA7DIK1OrY5xYAAAAASUVORK5CYII=);
+    background-size: 100% 100%;
+}
+.o365button {
+    background: transparent;
+    border-width: 0;
+    padding: 0;
+    cursor: pointer!important;
+    font-size: 14px;
+}
+.ms-font-s {
+    color: #333;
+    font-family: "wf_segoe-ui_normal", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+}
+.ms-font-l {
+    color: #333;
+    font-family: "wf_segoe-ui_semilight", "Segoe UI Semilight", "Segoe WP Semilight", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: normal;
+}
+
+.ms-font-xl {
+    color: #333;
+    font-family: "wf_segoe-ui_light", "Segoe UI Light", "Segoe WP Light", "Segoe UI", "Segoe WP", Tahoma, Arial, sans-serif;
+    font-size: 21px;
+    font-weight: normal;
+}

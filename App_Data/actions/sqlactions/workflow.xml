@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!--<query>
+    <name>wf.process.getlist</name>
+    <type>array</type>
+    <comments>根据分类获取流程</comments>
+    <parameters>
+      <FolderId>目录id</FolderId>
+    </parameters>
+    <sql>
+      SELECT ProcessId id,Name name,FolderId pid FROM WFProcess WHERE FolderId='#{FolderId}' ORDER BY Name
+    </sql>
+    <msg>查询成功！</msg>
+  </query>-->
+</root>  

@@ -1,0 +1,324 @@
+﻿body,html{
+            height:100%;
+        }
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            padding:0 15px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+        .popup-foot .popup-foot-shur {
+            color: white;
+            background-color: #108af9;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 45%;
+            margin-left:2%;
+            box-sizing:border-box;
+        }
+        .item-left:first-child{
+            margin-right:6%;
+        }
+        .item-right {
+            float: right;
+
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            box-sizing:border-box;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+            width:100%;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .section-title {
+            padding:5px;
+            background-color:#f2f2f2;
+            border-radius:4px;
+        }
+        .section-body {
+        }
+        .section-body  .item{
+            padding:10px;
+            box-sizing:border-box;
+        }
+        .section {
+            width:100%;
+            box-sizing:border-box;
+
+        }
+        .popup-body {
+            width:100%;
+            box-sizing:border-box;
+        }
+        .section .layui-input,.section .layui-select {
+            height:32px;
+            border-radius:4px;
+        }
+        .section .layui-input-block {
+            margin-left:0;
+        }
+        .save-checking-input.disstatus {
+            border:1px solid red;
+        }
+        .layui-input.layui-unselect.disstatus {
+            border:1px solid red;
+        }
+        .popup-body {
+            overflow-y:auto;
+            height:499px;
+        }
+        .popup {
+            background-color:white;
+        }
+        .layui-form input{
+            text-indent:5px !important;
+        }
+        .searchimg {
+            position:absolute;
+            width:14px;
+            height:14px;
+            right:8px;
+            top:8px;
+            cursor:pointer;
+        }
+        .searchselect {
+            position:relative;
+        }
+        .searchselect .layui-edge {
+            display:none;
+        }
+         .disabled {
+            pointer-events:none;
+        }
+        .tableinput,.layui-form-select,.layui-select-title {
+            width:100%;
+            height:100%;
+            border:0;
+        }
+        .section-body .layui-table-view .layui-table td,.section-body .layui-table-view .layui-table th {
+            padding:0;
+        }
+        .section-body .layui-table-view .layui-table th {
+            padding:0;
+            text-align:center;
+        }
+        .section-body .layui-table-cell {
+            padding:0;
+        }
+        .section-body .layui-table-cell, .section-body .layui-table-tool-panel li {
+            overflow: initial;
+        }
+        .layui-table .layui-input,.layui-table .laydate{
+            width:100%;
+            height:100%;
+            border:0;
+        }
+        .layui-table .layui-input-block {
+            width:100%;
+            height:100%;
+            min-height:0;
+        }
+        .section-body .layui-form-selectup dl {
+            top:35px ;
+            bottom:auto ;
+        }
+        .section-body .layui-table-body ,.section-body .layui-table-box{
+            overflow: inherit;
+        }
+        .section-body .layui-table .layui-form-selectup dl {
+            top:auto ;
+            bottom:35px ;
+        }
+        .section-body  .layui-table-grid-down {
+            display:none;
+        }
+        .tablebtn {
+            width:100%;
+            border:1px solid #dedede;
+            box-sizing:border-box;
+            padding:10px;
+        }
+        .section-body .layui-table-view {
+            margin-top:-1px;
+        }
+        .tablebtn > span {
+            cursor:pointer;
+            font-size:18px;
+            border:1px solid #dedede;
+            border-radius:4px;
+            margin-right:10px;
+            padding:2px;
+        }
+        .tablebtn > span:hover{
+            background-color:#f2f2f2;
+        }
+        .saverule{
+            border-color:red !important;
+        }
+
+.layui-tab-brief .tab-title .layui-this:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 41px;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom-color: #fff;
+    border-radius: 2px 2px 0 0;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+.layui-tab-brief .tab-title .layui-this {
+    color: #009688;
+}
+.layui-tab-brief .tab-title li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+    font-size: 14px;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    position: relative;
+    line-height: 40px;
+    min-width: 65px;
+    padding: 0 15px;
+    text-align: center;
+    cursor: pointer;
+}
+.layui-tab-brief .tab-title {
+    position: relative;
+    left: 0;
+    height: 40px;
+    white-space: nowrap;
+    font-size: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    transition: all .2s;
+    -webkit-transition: all .2s;
+}
+
+.layui-tab-brief .tab-title .layui-this:after {
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #5FB878;
+}
+.layui-tab-brief .tab-title{
+    border-color:#eee
+}

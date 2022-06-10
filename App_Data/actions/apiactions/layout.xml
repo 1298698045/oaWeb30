@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="layout.troughdata.get" type="Youyou.Layouts.Actions.TroughdataGet,HRCore" desc="获取糟数据,可以编辑字段"></Action>
+
+  <Action name="layout.load.relatedlist" type="Youyou.Layouts.Actions.LayoutLoadRelatedList,HRCore" desc="获取页面布局"></Action>
+  <Action name="layout.save.relatedlist" type="Youyou.Layouts.Actions.LayoutSaveRelatedList,HRCore" desc="保存页面布局"></Action>
+  <Action name="layout.delete.relatedlist" type="Youyou.Layouts.Actions.LayoutDeleteRelatedList,HRCore" desc="保存页面布局"></Action>
+
+
+  <Action name="layout.relatedlist.delete" type="Youyou.Layouts.Actions.LayoutRelatedListDelete,Yoyou.UIFramework" desc="获取页面布局下的相关列表显示项目"></Action>
+
+  <Action name="layout.relatedlistitem.load" type="Youyou.Layouts.Actions.LayoutRelatedListItemLoad,Yoyou.UIFramework" desc="获取页面布局下的相关列表显示项目"></Action>
+  <Action name="layout.relatedlistitem.save" type="Youyou.Layouts.Actions.LayoutRelatedListItemSave,Yoyou.UIFramework" desc="保存页面布局下的相关列表显示项目"></Action>
+
+  <Action name="compactlayout.detail.getlsit" type="Youyou.Layouts.Actions.CompactLayoutDetailGetList,HRCore" desc="保存页面布局"></Action>
+
+  <Action name="entity.layout.get" type="Youyou.Layouts.Actions.EntityLayoutGet,HRCore" desc="获取单个布局"></Action>
+
+  <Action name="entity.layout.getlist" type="Youyou.Layouts.Actions.EntityLayoutGetlist,HRCore" desc="获取对象布局列表"></Action>
+
+  <Action name="entity.config.get" type="Youyou.Layouts.Actions.GetEntityConfig,HRCore" desc="获取实体布局与数据"></Action>
+
+  <Action name="recordui.getrecordwithfields" type="Youyou.UI.Actions.RecordUiGetRecordWithFields,Yoyou.UIFramework" desc="获取实体字段数据"></Action>
+  <Action name="recordui.relatedlistdata.getlist" type="Youyou.UI.Layouts.Actions.RecordUiRelatedlistDataGetlist,Yoyou.UIFramework" desc="获取对象相关列表数据"></Action>
+  <!--获取布局-->
+  <Action name="entity.recordandlayout.get" type="Youyou.Layouts.Actions.EntityRecordAndLayoutGet,HRCore" desc="获取布局和数据getRecordAndLayout"></Action>
+
+  <Action name="entity.relatedlistinfos.get" type="Youyou.Layouts.Actions.RelatedListInfosGet,HRCore" desc="获取布局和数据getRecordAndLayout"></Action>
+  <Action name="entity.relatedlist.sort" type="Youyou.Layouts.Actions.RelatedListSort,HRCore" desc="设置排序"></Action>
+  <Action name="entity.relatedrecords.get" type="Youyou.Layouts.Actions.RelatedListRecordsGet,HRCore" desc="获取相关列表数据"></Action>
+
+
+  <Action name="entity.relatedlist.getlist" type="Youyou.Layouts.Actions.LayoutRelatedListGetlist,HRCore" desc="布局设置相关列表"></Action>
+  <Action name="entity.relatedlist.get" type="Youyou.Layouts.Actions.LayoutRelatedListGet,HRCore" desc="获取单个布局设置相关列表"></Action>
+  <Action name="entity.relatedlistanddata.get" type="Youyou.Layouts.Actions.LayoutRelatedListAndDataGet,HRCore" desc="获取某个布局单个相关列表与数据"></Action>
+
+  <Action name="entity.detail.getrecord" type="Youyou.Layouts.Actions.EntityDetailGetRecord,HRCore" desc="新增，编辑"></Action>
+
+  <Action name="pagelayout.trough.get" type="Youyou.Layouts.Actions.PageLayoutThroughGet,HRCore" desc="获取简单的布局数据"></Action>
+  <Action name="pagelayout.trough.save" type="Youyou.Layouts.Actions.PageLayoutThroughSave,HRCore" desc="获取简单的布局数据"></Action>
+
+  <Action name="pagelayout.searchlayout.get" type="Youyou.Layouts.Actions.SearchLayoutGet,HRCore" desc="搜索布局获取，显示列，搜索条件"></Action>
+  <Action name="pagelayout.searchlayout.get" type="Youyou.Layouts.Actions.LookupSearch,HRCore" desc="搜索布局获取，显示列，搜索条件"></Action>
+
+  <Action name="pagelayout.mobile.save" type="Youyou.Layouts.Actions.PageLayoutMobileSave,HRCore" desc="移动布局保存"></Action>
+
+  <Action name="mobileform.layout.troughdata.get" type="Youyou.Layouts.Actions.MobileFormLayoutTroughdataGet,HRCore" desc="获取移动布局糟数据,包含相关列表与字段"></Action>
+  <Action name="mobileform.layout.save" type="Youyou.Layouts.Actions.MobileFormLayoutSave,HRCore" desc="移动布局保存"></Action>
+  <Action name="mobileform.layout.get" type="Youyou.Layouts.Actions.MobileFormLayoutGet,HRCore" desc="移动布局获取"></Action>
+  <Action name="mobileform.layout.render" type="Youyou.Layouts.Actions.MobileFormLayoutRender,HRCore" desc="预览或者展现移动布局"></Action>
+  <Action name="mobileform.record.save" type="Youyou.Layouts.MobileFormRecordSave,HRCore" desc="保存移动布局数据"></Action>
+
+
+  <Action name="entity.lookupfilter.getlist" type="Youyou.UI.Actions.LookupFilterGetlist,Yoyou.UIFramework" desc="获取查找类型字段的筛选字段类型"></Action>
+  <Action name="entity.searchfilter.getlist" type="Youyou.UI.Actions.SearchFilterGetlist,Yoyou.UIFramework" desc="获取查找类型字段的筛选字段类型"></Action>
+  <Action name="entity.lookup.search" type="Youyou.UI.Layouts.EntityLookupSearch,Yoyou.UIFramework" desc="查找字段，弹窗搜索，返回列表"></Action>
+  <Action name="entity.attributelookup.inputrequest" type="Youyou.Layouts.Actions.EntityAttributeLookupInputRequest,Yoyou.UIFramework" desc="返回列表中选中值，再获取匹配字段"></Action>
+
+  <Action name="layout.picklistvalues.get" type="Youyou.Layouts.Actions.GetPicklistValuesByRecordType,Yoyou.UIFramework" desc="字段弹窗搜索"></Action>
+
+</Actions>

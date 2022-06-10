@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">新建相册</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>基本信息</span></div>
+                            <div class="shift-body-main">
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">相册名称</span>
+                                        <el-input class="save-checking-input" v-model="list.name"></el-input>
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="shift-name-title">序号</span>
+                                        <el-input class="" v-model="list.sortNumber"></el-input>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        设置公用目录
+                                        <el-checkbox style="margin-top:10px;" v-model="list.isPublic">公用目录</el-checkbox>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div class="shift-body-titme"><span>备注信息</span></div>
+                            <div class="shift-body-main">
+                                <span>备注</span>
+                                <div class="shift-item">
+                                    <el-input type="textarea"
+                                              rows="4"
+                                              placeholder="请输入内容"
+                                              v-model="list.description">
+                                    </el-input>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    name: '',
+                    folderPicker: '10010000-0000-0000-0000-000000000011',
+                    description: '',
+                    sortNumber: '',
+                    isPublic:'',
+                },
+                select: {
+                },
+                search: {
+                }
+            },
+            created: function () {
+                this.getData()
+                //this.getselect
+            },
+            methods: {
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('id')
+                    if (id != null&&id!='') {
+                        var ObjectTypeCode = ObjectTypeCode
+                        var d = {
+                            id: id,
+                        }
+                        function callback(data) {
+                            var res = data.data
+                            var isPublic = res.IsPublic
+                            if (isPublic == 0) {
+                                isPublic = false
+                            } else {
+                                isPublic = true
+                            }
+                            that.list = {
+                                name: res.name,
+                                folderPicker: res.parentId,
+                                description: res.description,
+                                sortNumber: res.sortNumber,
+                                isPublic: res.ispublic==1?true:false
+                            };
+                        }
+                        ajaxMethodGetData('folder.info', d, callback)
+                    }
+                },
+                getselect: function () {
+                    var that = this
+                    var d = {}
+                    var ObjectTypeCode = '1012'
+                    d = {
+                        ObjTypeCode: ObjectTypeCode,
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, callback)
+                    function callback(data) {
+                        that.select = data.context.picklistValuesMap
+                    }
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                        var id = getQueryString('id')
+                        if (id != null) {
+                            var ID = that.list[name].Id
+                            var Name = that.list[name].Name
+                            var newlist = {
+                                ID: ID,
+                                Name: Name
+                            }
+                            if (ID) {
+                                if (JSON.stringify(that.search[name]).indexOf(JSON.stringify(newlist)) == -1) {
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                    }
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        var id = getQueryString('id')
+        if (id && id != null) {
+            $('.slds-text-heading--medium').html('编辑相册')
+        }
+        $('#Save').click(function () {
+            function callback(data) {
+                console.log(data)
+                success2('相册保存成功')
+                parent.$('#changeDiv').hide()
+                parent.vum.getffolders()
+            }
+            var d = vum.list
+            var id = getQueryString('id')
+            var messages = vum.list
+            if (id&&id != '') {
+                messages.id = id
+            }
+            if (vum.list.isPublic == true) {
+                messages.isPublic = 1
+            } else {
+                messages.isPublic = 0
+
+            }
+
+            var save = document.querySelectorAll('.save-checking.active');
+            if (save.length > 0) {
+                ajaxMethodPostData('folder.create', messages, callback)
+            }
+        })
+    </script>
+</body>
+</html>

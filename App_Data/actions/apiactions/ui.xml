@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+
+  <Action name="entity.saverecord" type="Youyou.UI.Actions.EntitySaveRecord,Yoyou.UIFramework" desc="保存单个表单数据"></Action>
+  <Action name="entity.batchsaverecord" type="Youyou.UI.Actions.EntityBatchSaveRecord,Yoyou.UIFramework" desc="保存多个表单数据"></Action>
+
+  <!--通用数据删除-->
+  <Action name="entity.detail.get" type="Supermore.Forms.EntityDetailGet,Business" desc="根据视图获取单条数据"></Action>
+  <Action name="entity.delete" type="Supermore.Forms.EntityDelete,Business" desc="通用数据删除"></Action>
+  <Action name="entity.rename" type="Supermore.Actions.EntityRename,Business" desc="重命名"></Action>
+
+  <Action name="entity.logicalfield.add" type="Youyou.UI.Actions.EntityLogicalFieldAdd,Yoyou.UIFramework" desc="逻辑字段添加"></Action>
+
+  <Action name="entity.related.getlist" type="Youyou.WebAPI.EntityRelatedGetList,Business" desc="获取实体相关记录"></Action>
+
+  <Action name="entity.grid.search" type="Youyou.WebAPI.EntityGridSearch,Business" desc="直接传视图名称，条件搜索"></Action>
+  <Action name="entity.advance.search" type="Youyou.UI.Actions.AdvanceSearch,Yoyou.UIFramework" desc="直接传视图名称，高级搜索"></Action>
+
+  <Action name="entity.attribute.getlist" type="Youyou.HRCore.Actions.EntityAttributeGetList,HRCore" desc="搜索"></Action>
+
+  <Action name="entity.fieldvalue.get" type="Youyou.HRCore.Actions.RichFieldValueGet,HRCore" desc="富文本字段值获取"></Action>
+
+  <Action name="ui.entity.lookup" type="Youyou.Actions.UIEntityLookup,Business" desc="下拉字段搜索接口"></Action>
+  <Action name="ui.droplist" type="Youyou.Actions.UIDroplist,Business" desc="下拉选项数据选择"></Action>
+  <Action name="ui.form.save" type="Supermore.Forms.FormSaveAction,Business" desc="通用数据保存"></Action>
+  <Action name="form.save.action" type="Supermore.Forms.FormSaveAction,Business" desc="表单保存"></Action>
+
+  <Action name="listviewmanager.getmetadata.initialload" type="Youyou.UI.Listviews.ListViewManagergetMetadataInitialLoad,Yoyou.UIFramework" desc="初始列表页面数据"></Action>
+  <Action name="listviewmanager.getactions" type="Youyou.UI.Listviews.ListViewManagerGetActions,Yoyou.UIFramework" desc="获取列表的操作按钮"></Action>
+  
+  <!--获取查询字段-->
+  <Action name="grid.config.get" type="Youyou.UI.Actions.GridConfigGet,Yoyou.UIFramework" desc="获取表格配置"></Action>
+  <Action name="grid.data.load" type="Youyou.UI.Actions.GridDataLoad,Yoyou.UIFramework" desc="获取表格配置"></Action>
+  <Action name="grid.export" type="Youyou.UI.Actions.GridExport,Yoyou.UIFramework" desc="导出数据"></Action>
+  <!--通用表格-->
+  <Action name="entitygrid.config.get" type="Youyou.UI.Actions.EntityGridConfigGet,Yoyou.UIFramework" desc="获取表格配置"></Action>
+  <Action name="entitygrid.list" type="Youyou.UI.Actions.EntityGridList,Yoyou.UIFramework" desc="获取表格配置"></Action>
+
+  <Action name="entity.related.record.search" type="Youyou.UI.Actions.EntityRelatedRecordSearch,Yoyou.UIFramework" desc="获取相关对象记录数据"></Action>
+
+  <Action name="entity.filter.create" type="Youyou.UI.Actions.Listviews.EntityFilterCreate,Yoyou.UIFramework" desc="创建查询视图"></Action>
+  <Action name="entity.filter.share" type="Youyou.UI.Actions.Listviews.EntityFilterShare,Yoyou.UIFramework" desc="共享查询器"></Action>
+  <Action name="entity.filter.clone" type="Youyou.UI.Actions.Listviews.EntityFilterClone,Yoyou.UIFramework" desc="复制"></Action>
+  <Action name="entity.filter.rename" type="Youyou.UI.Actions.Listviews.EntityFilterRename,Yoyou.UIFramework" desc="复制"></Action>
+  <Action name="entity.filter.pin" type="Youyou.UI.Listviews.EntityFilterPin,Yoyou.UIFramework" desc="固定住"></Action>
+  <Action name="entity.filter.get" type="Youyou.UI.Actions.Listviews.EntityFilterGet,Yoyou.UIFramework" desc="对象定义查询列表显示"></Action>
+  <Action name="entity.filter.getlist" type="Youyou.UI.Actions.Listviews.EntityFilterGetList,Yoyou.UIFramework" desc="对象定义查询列表显示"></Action>
+  <Action name="entity.filter.expression.save" type="Youyou.UI.Actions.Listviews.EntityFilterExpressionSave,Yoyou.UIFramework" desc="保存查询条件"></Action>
+  <Action name="entity.filter.column.save" type="Youyou.UI.Actions.Listviews.EntityFilterColumnSave,Yoyou.UIFramework" desc="保存显示列"></Action>
+
+  <Action name="listview.share.getlist" type="Youyou.Listviews.ListViewEntityShareGetList,Yoyou.UIFramework" desc="获取筛选器共享数据"></Action>
+  
+  <Action name="filter.exportfile" type="Youyou.UI.Actions.FilterExportFile,Yoyou.UIFramework" desc="视图导出Excel"></Action>
+  <Action name="listview.left" type="Youyou.UI.Actions.ListViewLeft,Yoyou.UIFramework" desc="分屏列表"></Action>
+  <!--获取一科树-->
+  <Action name="tree.get" type="Youyou.UI.Actions.TreeGet,Yoyou.UIFramework"></Action>
+</Actions>

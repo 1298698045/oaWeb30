@@ -1,0 +1,660 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1300px">
+    <link rel="stylesheet" href="/sCSS/49.0/sprites/1585769954000/Theme3/zh/icon/iconfont.css" />
+    <link rel="stylesheet" href="/sCSS/49.0/sprites/1585769954000/Theme3/zh/blue/common.css">
+    <link rel="stylesheet" href="/sCSS/49.0/sprites/1585769954000/Theme3/zh/blue/detail.css">
+    <link rel="stylesheet" href="/utils/index.min.css">
+    <title>列表详情</title>
+</head>
+<body>
+    <div class="pageWrapper" id="app">
+        <div class="header">
+            <div class="leftBox">
+                <div class="title">流程事务：02 差旅费报销审批单202004 项目管理部 余海</div>
+                <div class="tabContainer notBorder">
+                    <div class="tabList">
+                        <div class="tab active" currentTab="tab1">
+                            <div class="tabHover">
+                                <span class="tabText">
+                                    表单信息
+                                </span>
+                            </div>
+                        </div>
+                        <div class="tab" currentTab="tab2">
+                            <div class="tabHover">
+                                <span class="tabText">
+                                    正文信息
+                                </span>
+                            </div>
+                        </div>
+                        <div class="tab" currentTab="tab3">
+                            <div class="tabHover">
+                                <span class="tabText">
+                                    流程图
+                                </span>
+                            </div>
+                        </div>
+                        <div class="tab" currentTab="tab4">
+                            <div class="tabHover">
+                                <span class="tabText">
+                                    相关事务与附件信息
+                                </span>
+                            </div>
+                        </div>
+                        <div class="tab" currentTab="tab5">
+                            <div class="tabHover">
+                                <span class="tabText">
+                                    流转信息
+                                </span>
+                            </div>
+                        </div>
+                        <div class="tab" currentTab="tab6">
+                            <div class="tabHover">
+                                <span class="tabText">
+                                    阅读记录
+                                </span>
+                            </div>
+                        </div>
+                        <div class="tab" currentTab="tab7">
+                            <div class="tabHover">
+                                <span class="tabText">
+                                    讨论
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="tabs">
+                    <div class="tab active">
+                        <span>
+                            表单信息
+                        </span>
+                    </div>
+                    <div class="tab">
+                        <span>
+                            正文信息
+                        </span>
+                    </div>
+                    <div class="tab">
+                        <span>
+                            相关事务与附件信息
+                        </span>
+                    </div>
+                    <div class="tab">
+                        <span>
+                            流转信息
+                        </span>
+                    </div>
+                    <div class="tab">
+                        <span>
+                            流转信息
+                        </span>
+                    </div>
+                    <div class="tab">
+                        <span>
+                            流转信息
+                        </span>
+                    </div>
+                    <div class="tab">
+                        <span>
+                            讨论
+                        </span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="rightBtns">
+                <button class="btn primary">保存表单</button>
+                <button class="btn primary">提交流程</button>
+                <button class="btn primary">传阅他人</button>
+                <button class="btn">审批拒绝</button>
+                <button class="btn">结束流程</button>
+                <div class="moreBox">
+                    <div class="more">
+                        <i class="iconfont icon-xinjian"></i>
+                        <div class="dropMenuWapper">
+                            <div class="dropMenu">
+                                <div class="dropMenuItem">
+                                    <span class="name">
+                                        正文
+                                    </span>
+                                </div>
+                                <div class="dropMenuItem">
+                                    <span class="name">
+                                        打印审批单
+                                    </span>
+                                </div>
+                                <div class="dropMenuItem">
+                                    <span class="name">
+                                        PDF
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="moreModal">
+                            <div class="item">
+                                正文
+                            </div>
+                            <div class="item">
+                                打印审批单
+                            </div>
+                            <div class="item">
+                                PDF
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <div class="container containerForm">
+                <div class="tableBox">
+
+                </div>
+                <div class="rightAside">
+                    <div class="panel">
+                        <div class="row">
+                            <p class="title">相关事务</p>
+                            <p class="textBtn">
+                                添加
+                            </p>
+                        </div>
+                    </div>
+                    <div class="panel upload">
+                        <div class="row">
+                            <p class="title">相关事务 <span class="num">（7）</span></p>
+                            <p class="textBtn">
+                                上传
+                            </p>
+                        </div>
+                        <div class="uploadForm">
+                            <!-- <select name="" id="">
+                                <option value="">
+                                    人力资源类
+                                </option>
+                                <option value="">
+                                    差旅类
+                                </option>
+                                <option value="">
+                                    餐饮类
+                                </option>
+                            </select> -->
+                            <div class="select">
+                                <p class="val">全部分类</p>
+                                <p class="arrowIcon">
+                                    <i class="iconfont icon-xiala"></i>
+                                </p>
+                                <div class="dropMenuWapper selectModal">
+                                    <div class="dropMenu">
+                                        <div class="dropMenuItem">
+                                            <span class="name">
+                                                正文
+                                            </span>
+                                        </div>
+                                        <div class="dropMenuItem">
+                                            <span class="name">
+                                                打印审批单
+                                            </span>
+                                        </div>
+                                        <div class="dropMenuItem">
+                                            <span class="name">
+                                                PDF
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="selectModal">
+                                    <div class="item">
+                                        正文
+                                    </div>
+                                    <div class="item">
+                                        打印审批单
+                                    </div>
+                                    <div class="item">
+                                        PDF
+                                    </div>
+                                </div> -->
+                            </div>
+                            <span class="iconBox">
+                                <i class="iconfont icon-jichushezhi"></i>
+                            </span>
+                            <span class="iconBox">
+                                <i class="iconfont icon-jichushezhi"></i>
+                            </span>
+                        </div>
+                        <div class="fileList">
+                            <div class="fileItem">
+                                <div class="lImg">
+                                    <img src="/static/images/02.3.1.Pdf.png" alt="">
+                                </div>
+                                <div class="fileInfo">
+                                    <div class="name rowEllipsis">1. 滴滴电子发票</div>
+                                    <div class="operation">
+                                        <span class="text">查看</span>  ·
+                                        <span class="text">下载</span>
+                                    </div>
+                                    <div class="size">
+                                        <span class="time">15:21</span> ・ 40.18k
+                                    </div>
+                                </div>
+                                <div class="iconBox more">
+                                    <i class="iconfont icon-xiala"></i>
+                                    <div class="dropMenuWapper uploadDrop">
+                                        <div class="dropMenu">
+                                            <div class="dropMenuItem">
+                                                <span class="name">
+                                                    正文
+                                                </span>
+                                            </div>
+                                            <div class="dropMenuItem">
+                                                <span class="name">
+                                                    打印审批单
+                                                </span>
+                                            </div>
+                                            <div class="dropMenuItem">
+                                                <span class="name">
+                                                    PDF
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fileItem">
+                                <div class="lImg">
+                                    <img src="/static/images/02.3.1.PPT.png" alt="">
+                                </div>
+                                <div class="fileInfo">
+                                    <div class="name rowEllipsis">1. 滴滴电子发票</div>
+                                    <div class="operation">
+                                        <span class="text">查看</span> ·
+                                        <span class="text">下载</span>
+                                    </div>
+                                    <div class="size">
+                                        <span class="time">15:21</span> ・ 40.18k
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container"></div>
+            <div class="container"></div>
+            <!-- 相关事务与附件信息 -->
+            <div class="container relevantEnclosure">
+                <div class="relevantWrap">
+                    <div class="panelWrap">
+                        <div class="panelHead">
+                            <div class="leftTitle">
+                                关联事务
+                            </div>
+                            <div class="rightBtn">
+                                <button class="btn primary">添加关联</button>
+                            </div>
+                        </div>
+                        <div class="panelBody">
+                            <!-- panelTableWrap 表格 -->
+                            <div class="panelTableWrap">
+                                <el-table class-name="table" ref="multipleTable" :data="selectTableData" tooltip-effect="dark" style="width: 100%"
+                                          @selection-change="handleSelectionChange">
+                                    <el-table-column type="selection" width="55">
+                                    </el-table-column>
+                                    <el-table-column label="关联事务">
+                                        <template slot-scope="scope">
+                                            {{ scope.row.date }}
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column prop="name" label="关联时间">
+                                    </el-table-column>
+                                    <el-table-column label="操作">
+                                        <template slot-scope="scope">
+                                            <button @click="handleClickPreview(scope.row)" type="text" class="btnText btnTextPrimary">查看</button>
+                                            <button class="btnText btnTextPrimary">删除</button>
+                                        </template>
+                                    </el-table-column>
+                                </el-table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panelWrap">
+                        <div class="panelHead">
+                            <div class="leftTitle">
+                                备注和附件
+                            </div>
+                            <div class="rightBtn">
+                                <button class="btn primary">添加附件</button>
+                            </div>
+                        </div>
+                        <div class="panelBody">
+                            <!-- panelTableWrap 表格 -->
+                            <div class="panelTableWrap">
+                                <el-table class-name="table" ref="multipleTable" :data="remarksFile" tooltip-effect="dark"
+                                          style="width: 100%" @selection-change="selectRemarksChange">
+                                    <el-table-column type="selection" width="55">
+                                    </el-table-column>
+                                    <el-table-column label="关联事务">
+                                        <template slot-scope="scope">
+                                            {{ scope.row.date }}
+                                        </template>
+                                    </el-table-column>
+                                    <el-table-column prop="name" label="关联时间">
+                                    </el-table-column>
+                                    <el-table-column label="操作">
+                                        <template slot-scope="scope">
+                                            <button class="btnText btnTextDefault">编辑</button>
+                                            <button @click="handleClickPreview(scope.row)" type="text"
+                                                    class="btnText btnTextPrimary">
+                                                查看
+                                            </button>
+                                            <button class="btnText btnTextPrimary">删除</button>
+                                            <button class="btnText btnTextPrimary">下载</button>
+                                        </template>
+                                    </el-table-column>
+                                </el-table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 流转信息 -->
+            <div class="container">
+                <div class="panelWrap">
+                    <div class="panelHead">
+                        <div class="leftTitle">
+                            详细信息
+                        </div>
+                        <div class="rightBtn">
+                            <button class="btn">催办</button>
+                        </div>
+                    </div>
+                    <div class="panelBody">
+                        <!-- panelFlexBoxInfoWrap 信息展示 -->
+                        <div class="panelFlexBoxInfoWrap">
+                            <div class="panelFlexBoxInfo">
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        督办:
+                                    </div>
+                                    <div class="value">
+                                        02 差旅费报销审批单202004 项目管理部 余海
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        标题:
+                                    </div>
+                                    <div class="value">
+                                        02 差旅费报销审批单202004 项目管理部 余海
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        流程分类:
+                                    </div>
+                                    <div class="value">
+                                        公司
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        状态:
+                                    </div>
+                                    <div class="value">
+                                        流转中
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        办理期限:
+                                    </div>
+                                    <div class="value">
+                                        3
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        催办次数:
+                                    </div>
+                                    <div class="value">
+                                        02 差旅费报销审批单202004 项目管理部 余海
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        优先级别:
+                                    </div>
+                                    <div class="value">
+                                        紧急
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panelFlexBoxInfo">
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        督办提醒时间:
+                                    </div>
+                                    <div class="value rowEllipsis">
+                                        02 差旅费报销审批单202004 项目管理部 余海
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        发起部门:
+                                    </div>
+                                    <div class="value rowEllipsis">
+                                        项目管理部
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        流程名称:
+                                    </div>
+                                    <div class="value rowEllipsis">
+                                        02 差旅费报销审批单
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        当前步骤:
+                                    </div>
+                                    <div class="value rowEllipsis">
+                                        票据审核 财务部
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        逾期时间:
+                                    </div>
+                                    <div class="value rowEllipsis">
+                                        2022-05-13
+                                    </div>
+                                </div>
+                                <div class="rowInfo">
+                                    <div class="label">
+                                        附件数量:
+                                    </div>
+                                    <div class="value rowEllipsis">
+                                        7
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panelWrap">
+                    <div class="panelHead">
+                        <div class="leftTitle">
+                            流转信息
+                        </div>
+                    </div>
+                    <div class="panelBody">
+                        <!-- panelTableWrap 表格 -->
+                        <div class="panelTableWrap">
+                            <el-table :data="tableData" style="width: 100%">
+                                <el-table-column prop="start" label="来源环节">
+                                </el-table-column>
+                                <el-table-column prop="name" label="办理环节">
+                                </el-table-column>
+                                <el-table-column prop="address" label="应办人">
+                                </el-table-column>
+                                <el-table-column prop="address" label="实办人">
+                                </el-table-column>
+                                <el-table-column prop="address" label="来源类型">
+                                </el-table-column>
+                                <el-table-column prop="address" label="提交人">
+                                </el-table-column>
+                                <el-table-column prop="address" label="分配时间">
+                                </el-table-column>
+                                <el-table-column prop="address" label="结束时间">
+                                </el-table-column>
+                                <el-table-column prop="address" label="办理时长">
+                                </el-table-column>
+                                <el-table-column prop="address" label="期限">
+                                </el-table-column>
+                                <el-table-column prop="address" label="办理结果">
+                                </el-table-column>
+                                <el-table-column prop="address" label="留言">
+                                </el-table-column>
+                            </el-table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 阅读记录 -->
+            <div class="container">
+                <div class="panelWrap">
+                    <div class="panelHead">
+                        <div class="leftTitle">
+                            传阅记录
+                        </div>
+                    </div>
+                    <div class="panelBody">
+                        <!-- panelTableWrap 表格 -->
+                        <div class="panelTableWrap">
+                            <el-table :data="circulationRecord" style="width: 100%">
+                                <el-table-column prop="start" label="序号">
+                                </el-table-column>
+                                <el-table-column prop="name" label="传阅人">
+                                </el-table-column>
+                                <el-table-column prop="address" label="传阅时间">
+                                </el-table-column>
+                                <el-table-column prop="address" label="IP地址">
+                                </el-table-column>
+                                <el-table-column prop="address" label="浏览器名称与版本">
+                                </el-table-column>
+                            </el-table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panelWrap">
+                    <div class="panelHead">
+                        <div class="leftTitle">
+                            浏览记录
+                        </div>
+                    </div>
+                    <div class="panelBody">
+                        <!-- panelTableWrap 表格 -->
+                        <div class="panelTableWrap">
+                            <el-table :data="tableData" style="width: 100%">
+                                <el-table-column prop="start" label="序号">
+                                </el-table-column>
+                                <el-table-column prop="name" label="传阅人">
+                                </el-table-column>
+                                <el-table-column prop="address" label="传阅时间">
+                                </el-table-column>
+                                <el-table-column prop="address" label="IP地址">
+                                </el-table-column>
+                                <el-table-column prop="address" label="浏览器名称与版本">
+                                </el-table-column>
+                            </el-table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 讨论 -->
+            <div class="container">
+                <div class="panelWrap">
+                    <div class="panelHead">
+                        <div class="leftTitle">
+                            传阅记录
+                        </div>
+                    </div>
+                    <!-- 公共面板评论 -->
+                    <!-- <div class="panelBody">
+                        <div class="panelCommentWrap">
+                            <div class="commentBox">
+                                <div class="leftAvatar">
+                                    <i class="iconfont icon-morentouxiang"></i>
+                                </div>
+                                <div class="rightTextare">
+                                    <textarea placeholder-class="placeholder" placeholder="说点什么吧..." name="" id="" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="optionalWrap">
+                                <button class="btn">取消</button>
+                                <button class="btn primary">讨论</button>
+                            </div>
+                            <div class="commentList">
+                                <div class="commentItemBox">
+                                    <div class="leftAvatar">
+                                        <i class="iconfont icon-morentouxiang"></i>
+                                    </div>
+                                    <div class="rightComment">
+                                        <div class="commentName">张某某</div>
+                                        <div class="commentContent">麻烦尽快审批。</div>
+                                        <div class="commentTime">2022-05-03 17:42:43</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <Comment />
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/utils/jquery.min.js"></script>
+<script src="/utils/vue.js"></script>
+<script src="/utils/index.min.js"></script>
+<script src="/js/detail.js" defer></script>
+<script src="/js/mixin.js"></script>
+<script>
+    $(function(){
+        $('.select').click(function(e){
+            e.stopPropagation();
+            $(this).toggleClass('active');
+            $(this).find('.selectModal').toggle();
+            $(this).find('.selectModal .dropMenuItem').click(function(){
+                var val = $(this).html();
+                $('.select .val').html(val)
+            })
+        })
+        $('body').click(function(){
+            $('.select').removeClass('active')
+            $('.select').find('.selectModal').hide();
+        })
+        $('.upload .more').click(function(){
+            $(this).find('.dropMenuWapper').toggle();
+            $(this).find('.dropMenuWapper .dropMenuItem').click(function(e){
+                e.stopPropagation();
+                console.log($(this),'----')
+                $(this).parents('.dropMenuWapper').hide();
+            })
+        })
+        $(".notBorder .tab").click(function () {
+            $(".notBorder .tab").removeClass("active");
+            $(this).addClass("active");
+            var index = $(this).index();
+            var currentTab = $(this).attr('currentTab');
+            $('.center .container').hide();
+            $('.center .container').eq(index).show();
+        });
+    })
+</script>
+</html>

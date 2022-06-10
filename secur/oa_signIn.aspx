@@ -1,0 +1,233 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="oa_signIn.aspx.cs" Inherits="secur.oa_signIn" ValidateRequest="false" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="description" content="OA,协同办公系统。登录到您的  客户帐户。" />
+    <title>OA协同办公系统 - 客户安全登录页面 - 北京凤凰世纪科技有限公司</title>
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="/css/oa_signIn.css" />
+    <style type="text/css">a{color: #0b7aae;}input.primary, .button, .btnPrimary{background: #3198d8;border: 1px solid #4176ba;}.button, .button, .btnPrimary, .btnPrimary {border: 1px solid, #1c78b1 (0.11,0.471,0.694);background: #2e8ec9;background: -moz-linear-gradient(bottom,  #2789c7 0%, #3f9fd9 100%);background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,#2789c7), color-stop(100%,#3f9fd9));background: -webkit-linear-gradient(bottom,  #2789c7 0%,#3f9fd9 100%);background: -o-linear-gradient(bottom,  #2789c7 0%,#3f9fd9 100%);background: -ms-linear-gradient(bottom,  #2789c7 0%,#3f9fd9 100%);background: linear-gradient(bottom, #2789c7 0%, #3f9fd9 100%) bottom (0.153,0.537,0.78) to top(0.247,0.624,0.851)filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3f9fd9', endColorstr='#2789c7',GradientType=0 );} .button:hover, .button:focus, .btnPrimary:hover, .btnPrimary:focus {background: #278ac7 ( 0.153, 0.541, 0.78)}body{background-color:#2a94d6;}#footer, #footer a{color:#ffffff;}#content{background-color:#ffffff;}#content{border:1px solid #CCCCCC; border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px; padding:10px;}#left_side { float:left; width: 320px;}#right_side{text-align:right;vertical-align:top;}</style>
+    <script type="text/javascript">       if (self == top) { document.documentElement.style.visibility = 'visible'; } else { document.write = ''; top.location = self.location; /*setTimeout(function () { document.body.innerHTML = ''; }, 1); window.self.onload = function (evt) { document.body.innerHTML = ''; };*/ }</script>
+    <script>        var SFDCSessionVars = { "ic": false, "lh": false, "host": "", "le": false, "su": "#p# 已保存用户名", "sum": "#p# 个已保存用户名", "server": "", "im": false, "suo": "1 个已保存用户名" };</script>
+    <script src="/jslibrary/SfdcSessionBase191.js"></script>
+    <script src="/jslibrary/LoginHint191.js"></script>
+    <script type="text/javascript" src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <!-- <script>        LoginHint.hideLoginForm();</script>  
+  onload="lazyload();"
+    -->
+     <script type="text/javascript">
+         function getCookie(c_name) {
+             //debugger;
+             var i, x, y, ARRcookies = document.cookie.split(";");
+             for (i = 0; i < ARRcookies.length; i++) {
+                 x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+                 y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+                 x = x.replace(/^\s+|\s+$/g, "");
+                 if (x == c_name) {
+                     //return unescape(y);
+                     return decodeURIComponent(y);
+                 }
+             }
+         }
+         function loadUser() {
+
+             var errorCode = getQueryString("ec");
+             if (errorCode == "1" || errorCode == "2" || errorCode == "3") {
+                 document.getElementById("error").style.display = "block";
+                 document.getElementById("error").innerText = "用户名密码错误！";
+             }
+
+             document.getElementById("username").value = "";
+             return;
+             var un = getCookie("SM_USER_NAME");
+             //debugger;
+             if (un != undefined) {
+                 document.getElementById("username").value = un;
+             }
+             
+         }
+         function getQueryString(name) {
+             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+             var r = location.search.substr(1).match(reg);
+             if (r != null) return unescape(decodeURI(r[2])); return null;
+         }
+    </script>
+    <link href="/secur/oa_signIn.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color:white;
+        }
+    </style>
+</head>
+<body onload="loadUser()">
+    <div class="header" >
+        <img src="/secur/loginImg/loginImg.png" alt="" />
+        <span style="margin-left:10px;">协同办公系统</span>
+        <%--<div style="font-size:30px;">OA协同办公系统</div>
+        <div style="font-size:12px;">OA COLLABORATIVE OFFICE SVSTEM</div>--%>
+    </div>
+    <div border="0" cellpadding="0" cellspacing="0" class="tablewrapper body">
+        <div valign="middle" class="middle">
+            <div>
+                <div id="login">
+                    <div id="login_wrapper">
+                        <div id="left_side">
+                            <div id="login_component">
+                                <div id="logo_wrapper">
+                                <div id="loginwidget">
+                                    <div id="loginformarea">
+                                        <div id="idscales" class="loginbox_container">
+                                            <div class="login-title">账号登录</div>
+                                            <div id="theloginform">
+                                                <form name="login" method="post"  onsubmit="handleLogin();" action="/processing_login.aspx"   target="_top" novalidate="novalidate">
+                                                <input type="hidden" id="pqs" name="pqs" value="?locale=cn" /><fieldset style="display: none">
+                                                    <input type="hidden" name="sourcetype" value="0" />
+                                                    <input type="hidden" name="un" value="" />
+                                                    <input type="hidden" name="width" value="" />
+                                                    <input type="hidden" name="height" value="" />
+                                                    <input type="hidden" name="hasRememberUn" value="true" />
+                                                    <input type="hidden" id="login_startUrl" name="startURL" value="" />
+                                                    <input type="hidden" name="loginURL" value="" />
+                                                    <input type="hidden" name="loginType" value="" />
+                                                    <input type="hidden" name="useSecure" value="true" />
+                                                    <input type="hidden" name="local" value="" />
+                                                    <input type="hidden" name="lt" value="standard" />
+                                                    <input type="hidden" name="qs" value="" />
+                                                    <input type="hidden" name="locale" value="cn" />
+                                                    <input type="hidden" name="oauth_token" value="" />
+                                                    <input type="hidden" name="oauth_callback" value="" />
+                                                    <input type="hidden" name="login" value="" />
+                                                    <input type="hidden" name="serverid" value="" />
+                                                    <input type="hidden" name="display" value="page" /></fieldset>
+                                                    <div id="error" class="loginError" style="display: none;">要访问此页面，您必须登录 。</div>
+                                                    <div class="loginbox_container" onclick="document.login.username.focus();">
+                                                        <div onclick="LoginHint.clearUsr();" id="clrUsr" class="clrField" style="display: none;">
+                                                            &nbsp;</div>
+                                                        <div class="identity first">
+                                                            <span class="t"><img id="loginthumb" src="/img/user188.png" alt="用户名"
+                                                                    width="28" height="28" class="thumbnail" title="用户名" /></span><input type="email"
+                                                                        placeholder="用户名" value="" class="input identityinput" name="username"
+                                                                        id="username" onkeyup="if(this.value != ''){}else{document.getElementById('clrUsr').style.display='none';}" /></div>
+                                                    </div>
+                                                <div class="loginbox_container" >
+                                                    <div class="wrapper_remember" style="color:blue;">
+                                                        <label for="UserFullName" id="UserFullName" ></label>
+                                                    </div>
+                                                </div>
+                                                <div class="loginbox_container" onclick="document.login.password.focus();" style="">
+                                                    <div onclick="document.getElementById('password').value = '';this.style.display='none';document.login.pw.focus();"
+                                                        id="clrPw" class="clrField" >
+                                                        &nbsp;</div>
+                                                    <div class="identity last">
+                                                        <span class="t"><img src="/img/lock188.png" alt="密码" width="28" height="28"
+                                                                class="thumbnail" title="密码" /></span><input type="password" placeholder="密码" class="input identityinput"
+                                                                    id="password" name="pw" onblur="validatePwd()" onkeypress="checkCaps(event)" autocomplete="off" onkeyup="if(this.value != ''){document.getElementById('clrPw').style.display='block'}else{document.getElementById('clrPw').style.display='none';}"/></div>
+                                                    <!--
+                                                        
+                                                        -->
+                                                </div>
+                                                <div class="loginbox_container">
+                                                    <button class="button" id="Login" name="Login">
+                                                        <span class="label">登录到 OA</span></button></div>
+                                                <div class="loginbox_container" style="display:none;">
+                                                    <div id="rem" class="wrapper_remember">
+                                                        <input type="checkbox" id="rememberUn" name="rememberUn" checked="checked" />
+                                                        &nbsp;<label for="rememberUn">记住用户名</label></div>
+                                                </div>
+                                                <div class="loginbox_container" id="forgot">
+                                                  </div>
+                                                </form>
+                                                <script>   //LoginHint.getSavedIdentities(false);</script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <script src="/jslibrary/baselogin.js"></script>
+                <script>                 
+                    function handleLogin() {  document.login.un.value = document.login.username.value; document.login.width.value = screen.width; document.login.height.value = screen.height; }
+                    function lazyload() {
+                        document.getElementById("pwcapsicon").src = "/img/icon/warning16.png";
+                       // document.getElementById("marketing").src = "https://c..com/login-messages/cn/messages.html?noroundedcorner";
+                        document.getElementById("marketing").src = "http://www..com.cn/";
+                    }
+                    function validatePwd()
+                    {
+                        var pwd = document.getElementById("password").value;
+                        if (pwd != "")
+                        {
+                            if (pwd.length > 18)
+                            {
+                                document.getElementById("password").value = "";
+                                document.getElementById("error").style.display = "block";
+                                document.getElementById("error").innerText = "密码太长！";
+                            }
+                        }
+                    }
+
+
+                    loader();
+                    $(document).ready(function () {
+                        $(document).off()
+
+                            $("#username").off()
+                            $("#username").blur(function () {
+                                var username = $("#username").val();
+                                if (username == "") return;
+                                var data = { username: username }
+                                ajaxMethodPOSTData('user.fullname.get', data, function (data) {
+                                    //console.log(data);
+                                    if (data != null && data.status == 1) {
+                                        $("#UserFullName").text(data.msg);
+                                    }
+                                })
+                            });
+
+                            $("#username").keydown(function (event) {
+                                var username = $("#username").val();
+                                if (event.keyCode == 13) {
+                                    if (username == "") {
+                                        document.getElementById("error").innerText = "用户名不能为空！";
+                                        $("#error").show()
+                                    } else {
+                                        document.getElementById('password').focus();
+                                    }
+                                    return false
+                                }
+                            });
+                            $('#password').keydown(function (event) {
+                                if (event.keyCode == 13) {
+                                    if ($(this).val() == "") {
+                                        document.getElementById("error").innerText = "密码不能为空！";
+                                        $("#error").show()
+                                        return false
+                                    }
+                                    if ($("#username").val() == '') {
+                                        document.getElementById("error").innerText = "用户名不能为空！";
+                                        $("#error").show()
+                                        document.getElementById('username').focus();
+                                        return false
+                                    }
+                                }
+                            })
+                    });
+                    
+                  </script>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+
+        <div id="footer" style="font-size:13px">
+                        Copyright &copy; 北京凤凰世纪科技有限公司 技术支持。<a href='/download/appsdown.htm' target='_blank'>移动客户端（苹果、安卓）下载</a>&nbsp;|&nbsp;<a href='/download/firefox40.exe' target='_blank'>火狐下载</a>&nbsp;|&nbsp;<a href='/download/iWebPlugin.msi' target='_blank'>火狐插件</a>&nbsp;|&nbsp;<a href='/download/IE8-WindowsXP-x86-CHS.exe' target='_blank'>Xp IE8</a></div>
+    </div>
+
+</body>
+</html>

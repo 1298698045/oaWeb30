@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <!--通讯录-->
+  <Action name="addresslist.search" type="Youyou.Security.Actions.AddressListSearch,OACore" desc="通讯录"></Action>
+  <Action name="addresslist.group.getlist" type="Youyou.Actions.AddresslistGroupGetList,OACore" desc="获取组"></Action>
+  <Action name="addresslist.user.search" type="Youyou.Actions.AddresslistUserSearch,OACore" desc="人员搜索"></Action>
+
+  <Action name="addresslist.latestuse.getlist" type="Youyou.Actions.AddresslistLatestUseGetList,OACore" desc="最近使用用户"></Action>
+  
+  
+  <Action name="contact.owner.getlist" type="Youyou.Actions.MyContactList,OACore" desc="我的通讯录"></Action>
+  <Action name="oa.excel.import" type="Youyou.Actions.ImportExcel,OACore" desc="excel导入"></Action>
+  <Action name="oa.excel.download.temp" type="Youyou.Actions.DownloadTemplateExcel,OACore" desc="下载excel导入模板"></Action>
+
+  <!--个人通讯录-->
+  <Action name="contact.bulk.add" type="Youyou.Contacts.Actions.ContactBulkAdd,OACore" desc="联系人批量添加"></Action>
+  <Action name="contact.bulk.import" type="Youyou.Contacts.Actions.ContactBulkImport,OACore" desc="联系人导入"></Action>
+  <Action name="contact.owning.search" type="Youyou.Contacts.Actions.ContactOwningList,OACore" desc="个人通讯录"></Action>
+  <Action name="contact.group.search" type="Youyou.Contacts.Actions.ContactGroupList,OACore" desc="个人通讯录组"></Action>
+  <Action name="contact.my.search" type="Youyou.Contacts.Actions.ContactMyList,OACore" desc="个人通讯录"></Action>
+  <Action name="contact.group.membership.add" type="Youyou.Contacts.Actions.ContactGroupMembershipAdd,OACore" desc="通讯录添加到组成员"></Action>
+  <Action name="contact.group.membership.delete" type="Youyou.Contacts.Actions.ContactGroupMembershipDelete,OACore" desc="组成员删除"></Action>
+  <Action name="contact.group.export" type="Youyou.Contacts.Actions.ContactGroupExport,OACore" desc="个人通讯录"></Action>
+
+  <Action name="oa.quicklink.getlist" type="Youyou.Actions.QuickLinkGetlist,OACore" desc="获取快捷链接接口列表"></Action>
+
+  <!--邮件-->
+  <Action name="email.attachfile.saveusbfolder" type="OACore.Actions.EmailAttachSaveUsbFolder,OACore" desc="单个邮件附件保存到我的优盘目录"></Action>
+  <!--评论-->
+  <Action name="object.comment.add" type="OA.Web.Servlets.ObjectCommentAdd,AppBusiness" desc="目录改名"></Action>
+  <Action name="object.comment.delete" type="OA.Web.Servlets.ObjectCommentDelete,AppBusiness" desc="移动目录"></Action>
+  <Action name="object.comment.getlist" type="OA.Web.Servlets.ObjectCommentsGetList,AppBusiness" desc="目录删除，有文件提示不允许删除"></Action>
+  <Action name="object.comment.like" type="OA.Web.Servlets.ObjectCommentLike,AppBusiness" desc="评论与点赞"></Action>
+
+
+  <Action name="vehicle.reservation.getlist" type="Youyou.Vehicles.Actions.VehicleReservationGetlist,OACore"  desc="获取车辆预约情况"></Action>
+  
+
+  <Action name="resource.type.list" type="Youyou.Projects.Meetings.Actions.ResourceOrgList,ProjectCore" desc="获取资源列表-会议室车辆"></Action>
+  <Action name="resource.room.stat" type="Youyou.Projects.Meetings.Actions.ResourceOrgStat,ProjectCore" desc="统计会议室每月使用次数-折线图"></Action>
+  <Action name="resource.vehicle.stat" type="Youyou.Projects.Meetings.Actions.ResourceOrgStat,ProjectCore" desc="统计车辆每月使用次数-折线图"></Action>
+
+  <Action name="hr.attendance.outlist" type="Youyou.Projects.HR.Actions.HrAttendanceOutList,ProjectCore" desc="获取人员外出列表"></Action>
+  <Action name="hr.attendance.month.outlist" type="Youyou.Projects.HR.Actions.HrAttendanceOutMonthList,ProjectCore" desc="获取人员月外出明细"></Action>
+
+  <Action name="oa.suggestion.mylist" type="Youyou.Actions.SuggestionLibraryMyList,OACore" desc="获取我的意见"></Action>
+  <Action name="oa.suggestion.delete" type="Youyou.Actions.SuggestionLibraryDelete,OACore" desc="删除我的意见"></Action>
+  <Action name="oa.templatefile.mylist" type="Youyou.Actions.TemplateFileMyList,OACore" desc="获取我的模板文件"></Action>
+  <Action name="oa.templatefile.delete" type="Youyou.Actions.TemplateFileDelete,OACore" desc="删除模板文件"></Action>
+
+  <!--报销-->
+  <Action name="oa.travelexpense.mylist" type="Youyou.Actions.TravelExpenseMyList,OACore" desc="我的报销单"></Action>
+  <Action name="oa.travelexpense.detai" type="Youyou.Actions.TravelExpenseDetailList,OACore" desc="报销单明细"></Action>
+
+  <!--合同分类-->
+  <Action name="oa.contractcategory.list" type="OACore.Actions.ContractCategoryList,OACore" desc="获取合同分类列表"></Action>
+
+  <!--短信管理-->
+  <Action name="oa.mysms.list" type="OACore.Actions.MySmsList,OACore" desc="获取我的短信列表"></Action>
+  <Action name="oa.sms.log.list" type="OACore.Actions.SmsLogList,OACore" desc="短信发送记录查询列表"></Action>
+  <Action name="oa.sms.log.detail" type="Youyou.Actions.SmsLogDetail,OACore" desc="短信发送明细"></Action>
+  <Action name="oa.sms.owning.template" type="Youyou.Actions.SmsOwnTemplateList,OACore" desc="短信发送模板"></Action>
+  
+  <Action name="oa.user.login.validation" type="Youyou.Actions.UserLoginValidation,OACore" desc="用户登录验证"></Action>
+  
+  <!--薪资管理-->
+  <Action name="salary.month.clear" type="Youyou.Salary.Actions.SalaryMonthClear,OACore" desc="月工资删除"></Action>
+  <Action name="salary.my.getlist" type="Youyou.Salary.Actions.SalaryMyGetlist,OACore" desc="个人薪资查询"></Action>
+
+ 
+
+ 
+  <!--问卷 信息 邀请所有人-->
+  <Action name="object.user.inviteall" type="Youyou.Security.Actions.ObjectUserInviteAll,OACore" desc="问卷 信息 邀请所有人"></Action>
+
+  <Action name="groups.owning.search" type="Youyou.Security.Actions.GroupSearch,OACore" desc="获取个人小组"></Action>
+  <!--<Action name="contact.owning.add" type="Youyou.Contacts.Actions.ContactOwningAdd,OACore" desc="个人通讯录新增"></Action>
+  <Action name="contact.owning.update" type="Youyou.Contacts.Actions.ContactOwningUpdate,OACore" desc="个人通讯录编辑"></Action>
+  <Action name="contact.owning.delete" type="Youyou.Contacts.Actions.ContactOwningDelete,OACore" desc="个人通讯录删除"></Action>-->
+  
+  
+  <!-- 获取我的任务提醒 -->
+  <Action name="task.remind.my.getlist" type="Youyou.Actions.TaskRemindMyGetList,OACore" desc="获取个人任务"></Action>
+
+
+  <!-- 获取站点志愿者信息-->
+  <Action name="volunteer.activityinfo.getlist" type="Youyou.Volunteer.Actions.VolunteerActivityInfoGetList,OACore" desc="获取站点志愿者信息"></Action>
+
+  <!-- 志愿者报名-->
+  <Action name="volunteer.activity.appoint" type="Youyou.Volunteer.Actions.VolunteerActivityAppoint,OACore" desc="志愿者报名"></Action>
+
+  <!-- 志愿者取消报名-->
+  <Action name="volunteer.activity.noappoint" type="Youyou.Volunteer.Actions.VolunteerActivityNoAppoint,OACore" desc="志愿者取消报名"></Action>
+
+  <!-- 重新导入月工资 -->
+  <Action name="salary.again.import" type="Youyou.Salary.Actions.SalaryAgainImport,OACore" desc="重新导入月工资"></Action>
+  
+</Actions>

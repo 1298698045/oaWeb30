@@ -1,0 +1,507 @@
+﻿.question {
+    width:95%;
+    border:1px solid #e4e8eb;
+    border-radius:4px;
+    padding:0 20px 20px 20px;
+}
+.question-item-head {
+    height:50px;
+    line-height:50px;
+    color:#333;
+    font-size:16px;
+    font-weight:700;
+}
+.question-item-body-form-check {
+    min-height:45px;
+    line-height:45px;
+    color:#333;
+    font-size:16px;
+    margin-left:20px;
+}
+.question-item-body-form-check label{
+    cursor:pointer;
+}
+.question-item{
+    margin-top:10px;
+}
+.question-textinput {
+    border:1px solid #e4e8eb;
+    width:80%;
+    height:43px;
+    line-height:43px;
+    text-indent:5px;
+    border-radius:4px;
+    font-size:16px;
+}
+.missionmession .message-mask {
+    width:100%;
+}
+.missionmession {
+    height:300px;
+}
+#anonymous {
+    margin-top:8px;
+    width:15px;
+    height:15px;
+}
+input[type="checkbox"] {
+    width:15px;
+    height:15px;
+}
+input[type="redio"] {
+    width:15px;
+    height:15px;
+}
+.people {
+    border:0;
+}
+.people-sousuo input{
+    height:32px;
+    line-height:32px;
+}
+.people-sousuo p {
+    width:95%
+}
+.people-body {
+    border:1px solid #e4e8eb;
+}
+.main-body > .body-head {
+    width:100%;
+}
+.body-main {
+    height:100%;
+    max-height:400px;                
+    margin-top:0;
+}
+.page {
+    height:50px;
+    float:right;
+}
+.body-head .chakan,.body-head .deletepeople {
+    cursor:pointer;
+    color:#108af9;
+}
+.body-main .body-head:hover {
+    background-color: #f9f9f9;
+}
+.zhenwen .question-item {
+    cursor: move;
+}
+.question {
+    position:relative;
+}
+        .mission-header {
+            overflow:visible;
+            background-color:#fafafa;
+            padding-top:20px;
+            margin-top:0;
+            height:143px;
+
+        }
+        .contract-message {
+            height: 80px;
+            margin-top: 10px;
+            overflow: hidden;
+            background-color: white;
+        }
+       .contract-message ul {
+            height: 20px;
+       }
+       .contract-message ul li {
+           float: left;
+           width: 150px;
+           font-size: 12px;
+       }
+        .contract-message-head {
+            margin-top: 20px;
+        }
+        td.right {
+            float:none;
+        }
+.mission-header-leftlogo div {
+    position: absolute;
+    left: 72px;
+    top: 20px;
+}
+.mission-header2 .mission-header-right{
+    margin-right:20px;
+}
+.mission-header2 .end{
+    color:#108af9;
+    text-align:right;
+    padding-right:10px;
+    background:url("/img/images/00.3.Check_.png") no-repeat left 12px center;
+    background-size:16px;
+    background-color:#fafafa;
+}
+.mission-header2 .end:hover{
+    background:url("/img/cal/23.check_2(12x12).png") no-repeat left 12px center;
+    background-size:16px;
+    background-color:#108af9;
+}
+.mission-header2 .end.active{
+    background-size:16px;
+    background-color:#108af9;
+}
+.head-bottbo {
+    margin-top:0;
+    border-bottom:0;
+    height:7px;
+}
+.mission{
+    margin-top:0;
+}
+li.active{
+    background-color:white;
+}
+div.active{
+    background-color:white;
+}
+.listshow-type{      
+    color: #505050;
+    border: 1px solid #e4e8eb;
+    border-radius: 4px;
+    height: 30px;
+    line-height: 34px;
+    width:90%;
+    margin-left:5%;
+    text-indent:10px;
+    background:url("/img/cal/20.png") no-repeat right 13px center;
+    background-size:14px;
+    position:relative;
+}
+.listshow-type:hover{
+    border-color:#108af9;
+}
+.listshow-chooktype{
+    display:none;
+    position: absolute;
+    left: 0px;
+    top: 32px;
+    background-color: white;
+    border-radius: 7px;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.listshow-chooktype>li{
+    padding-left:15px;
+    margin-left:0;
+    height: 38px;
+    line-height: 38px;
+    padding-left: 30px;
+    cursor: pointer;
+    position: relative;
+}
+.listshow-chooktype>li.active img{
+    display:block;
+}
+.listshow-chooktype>li img{
+    display:none;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+}
+.listshow-chooktype>li:hover{
+    background-color:#f4f6f8;
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+.chart-mession{
+    margin-top:20px;
+}
+.chart-mession>div{
+    height:40px;
+    line-height:40px;
+    border-top:1px solid #e4e8eb;
+    padding-left:10px;
+    padding-right:100px;
+    margin-left:5%;
+    margin-right:5%;
+}
+.delete-mask{
+    top:0;
+    left:0;
+}
+.delete-shur{
+    top:50%;
+    margin-top:-90px;
+}
+.gvChart{
+    height:280px;
+    overflow:hidden;
+}
+.addplays{
+    margin-right:10px;
+    padding-left:5px;
+    padding-right:5px;
+    border-radius:4px;
+    height: 32px;
+    line-height: 32px;
+    color: #108af9;
+    border: 1px solid #50505033;
+    border: 1px solid #2b2a2a \9;
+    font-size: 14px;
+    text-align: center;
+}
+.addplays:hover{
+   background-color:#f4f2f2
+}
+.people-head li{
+    cursor:pointer;
+}
+#addplays {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.people-body li:hover{
+    background-color:#f4f2f2;
+}
+.people-body li{
+    position:relative;
+}
+.people-delete{
+    position:absolute;
+    right:0;
+    float:right;
+    color:#999;
+    margin-right:50px;
+    top:10px;
+    cursor:pointer;
+}
+.people-delete:hover{
+    color:#108af9;
+}
+.edit,.copy{
+    width: 60px;
+    height: 32px;
+    line-height: 32px;
+    color: #108af9;
+    border: 1px solid #50505033;
+    border: 1px solid #2b2a2a \9;
+    border-left: 0;
+    font-size: 14px;
+    text-align: center;
+}
+.edit{
+    width:70px;
+}
+ .edit:hover,.copy:hover{
+     background-color:#f4f2f2;
+ }
+ .caozuo>p,.addplays{
+     background-color:white;
+ }
+ .people-print {
+     float:right;
+     margin-right: 10px;
+     padding-left: 5px;
+     padding-right: 5px;
+     border-radius: 4px;
+     height: 32px;
+     line-height: 32px;
+     color: #108af9;
+     border: 1px solid #50505033;
+     border: 1px solid #2b2a2a \9;
+     font-size: 14px;
+     text-align: center;
+     cursor:pointer;
+}
+.people-print:hover {
+    background-color:#f4f2f2;
+}
+.people-sousuo {
+    width:90%;
+    height: 40px;
+}
+.people-sousuo p{
+    margin-top:0;
+}
+.popup-mask {
+    left:0;
+}
+#popup-zhuangtaichange .popup-popup {
+    padding:0;
+}
+#popup-copy .popup-body {
+    height:50px;
+    background-color:white;
+    padding:15px;
+}
+#popup-copy {
+    padding:0;
+    width:50%;
+    left:25%;
+    top:30%;
+}
+#popup-copy .body-main{
+    margin-top: 5px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    text-indent: 10px;
+}
+#popup-copy .body-main input {
+    width:98%;
+    height:30px;
+    line-height:30px;
+}
+.people-body {
+    border:0;
+    height:auto;
+    overflow:visible;
+}
+.outer td {
+    vertical-align: middle;
+}
+.pagination table {
+    float: right!important;
+    height: 30px;
+}
+.panel-body-noheader {
+    border-right: 1px solid #D4D4D4; 
+    box-sizing:border-box;
+}
+.missionleft-body {
+    width:100%;
+}
+.missionleft-body>div{
+    float:none;
+}
+.people {
+    margin-left:0;
+}
+#popup-zhuangtaichange .popup-body{
+    background-color:white;
+}
+.zhenwen {
+    overflow-y:auto;
+}
+.question-item {
+    padding:0 10px;
+}
+.question-item-body-form-check textarea {
+    height:55px;
+    line-height: 16px;
+}
+
+.questionedit {
+    color:#108af9;
+    cursor:pointer;
+    float:right;
+    margin-right:20px;
+    display:none;
+}
+.question-item:hover .questionedit {
+    display:block;    
+}
+.fenxi-result{
+    float:right;
+}
+.result-bottom {
+    width:200px;
+    height:10px;
+    border-radius:2px;
+    background-color:#e5e5e5;
+    float:left;
+    margin-top:17px;
+    margin-right:30px;
+}
+.result-top {
+    width:80%;
+    height:10px;
+    background-color:#3399ff;
+}
+.result-number {
+    float:right;
+    color:#999;
+    font-size:14px;
+}
+.missionleft-body > div {
+    height:auto !important;
+}
+.mission-left {
+    height:auto;
+}
+.button-btn {
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 4px;
+    height: 32px;
+    line-height: 32px;
+    color: #108af9;
+    border: 1px solid #dedede !important;
+    font-size: 14px;
+    text-align: center;
+    background-color:white;
+}
+.mission-header-right > div {
+    border-color:#dedede !important;
+}
+.caozuo > p {
+    border-color:#dedede !important;
+}
+.button-btn:hover{
+    background-color:#f4f2f2
+}
+.mission-mi{
+    height:1px;
+}
+.mission-right{
+    height:auto;
+}
+.zhenwen .question-item:hover {
+    border:1px dashed #108af9;
+    opacity:0.5;
+}
+.question-item[draggable="true"] {
+    border:1px dashed #108af9;
+}
+.fenxi {
+    border:1px solid #e4e8eb;
+    border-radius:4px;
+}
+.fenxi .question-item{
+    border:1px solid #e4e8eb;
+    margin:15px 10px;
+    border-radius:4px;
+}
+.select img {
+    left:7px !important;
+    top:10px !important;
+}
+.listshow-chooktype {
+    z-index:10;
+    background-color:white;
+    height:76px;
+    border:1px solid #dedeed;
+}
+.result-number {
+    width:50px;
+}
+#content {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top:20px;
+}
+#content td {
+    min-width: 50px;
+    border: 1px solid #333;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}

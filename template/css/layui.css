@@ -1,0 +1,156 @@
+﻿.layui-laydate-header {
+    margin-left:40% !important;
+    width:60%;
+    font-weight:700;
+}
+.laydate-prev-y {
+    display:none !important;
+}
+.laydate-next-y {
+    display:none !important;
+}
+.layui-laydate-header {
+    padding: 25px 10px  25px !important;
+    color:#108af9;
+}
+.layui-laydate-header i.laydate-prev-m,.layui-laydate-header i.laydate-prev-y {
+    left: 20px !important;
+    top:30px !important;
+    height:20px;
+    width:20px;
+}
+.layui-laydate-header i.laydate-next-m,.layui-laydate-header i.laydate-next-y {
+    right: 20px !important;
+    top:30px !important;
+    height:20px;
+    width:20px;
+}
+
+.calder-content {
+    float:left;
+    width:300px;
+    position:relative;
+}
+.layui-laydate.layui-laydate-static {
+    width: 100% !important;
+    border-left: 0 !important;
+    border-bottom: 0 !important;
+    border-right: 0 !important;
+    box-shadow: none !important;
+}
+.layui-laydate-main {
+    width: 100% !important;  
+}
+.layui-laydate-content table {
+    width: 100% !important;    
+}
+.calder-content-head {
+    position:absolute;
+    z-index:999;
+    border:1px solid #e2e2e2;
+    border-left:0;
+    border-top:0;
+    width:40%;
+    height:82px;
+    box-sizing:border-box;
+    text-align:center;
+}
+.calder-content-head p:first-child{
+    font-size:36px;
+    color:#108af9;
+    font-weight:700;
+    margin-top:10px;
+}
+.calder-content-head p:last-child{
+    font-size:14px;
+    color:#999;
+}
+ .layui-laydate .layui-laydate-content .layui-this {
+    background-color: #108af9 !important;
+    color: #fff!important;
+    border-radius:50%;
+}
+.layui-laydate-content td {
+    height:35px !important;
+    margin-top:8px;
+}
+.layui-laydate-content .msg-true:hover{
+    background-color:#66cc00;
+    color:white !important;
+}
+.layui-laydate-content td,.layui-laydate-content th{
+    display:inline-block;
+    line-height:25px;
+    width:35px !important;
+    transition-duration: 0.001s !important;
+    -webkit-transition-duration: 0.001s !important;
+    border-radius:50%;
+    margin-left:2.5px;
+    margin-right:2.5px;
+}
+.layui-laydate-content tr{
+    height:50px;
+}
+.msg-true {
+    background-color:#66cc00;
+    color:white !important;
+}
+.calender-line {
+    position:absolute;
+    top:55px;
+    left:0;
+    width:100%;
+    height:1px;
+    background-color:#e4e8eb;
+}
+.tody {
+    border:1px solid #108af9;
+    color:#108af9;
+}
+.layui-laydate-header .laydate-icon {
+    font-family: Arial !important;
+}
+.laydate-prev-m,.laydate-prev-y {
+    background:url('/img/images/7.left(12x12)_1.png') no-repeat center;
+    background-size:12px;
+
+}
+.laydate-prev-m:hover,.laydate-prev-y:hover{
+    background:url('/img/images/7.left(12x12)_2.png') no-repeat center;
+    background-size:12px;
+}
+.laydate-next-m,.laydate-next-y {
+    background:url('/img/images/7.right(12x12)_1.png') no-repeat center;
+    background-size:12px;
+}
+.laydate-next-m:hover,.laydate-next-y:hover{
+    background:url('/img/images/7.right(12x12)_2.png') no-repeat center;
+    background-size:12px;
+}
+.displedclick {
+    pointer-events: none;
+}
+.layui-laydate-content tr {
+    height:40px;
+}
+.layui-laydate-content td {
+    margin-top:3px;
+}
+.calender-line {
+    top:50px;
+}
+.calder-content-head {
+    height:72px;
+}
+.calder-content-head p:first-child {
+    margin-top:5px;
+}
+.layui-laydate-header {
+    padding:20px 10px  20px !important
+}
+.layui-laydate-header i.laydate-prev-m,.layui-laydate-header i.laydate-next-m {
+    top:25px !important;
+}
+.mbrMenuItems a{
+    line-height:16px;
+}

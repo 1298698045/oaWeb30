@@ -1,0 +1,140 @@
+﻿.Originalmail {
+    padding: 15px;
+    height:220px;
+    background: rgb(242, 242, 242);
+}
+.back {
+    height: 34px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(204, 204, 204, 1);
+    border-radius: 5px;
+}
+
+.button_list button {
+    font-family: 'PingFangSC-Regular', 'PingFang SC';
+    font-weight: 400;
+    font-style: normal;
+    color: #0070D2;
+    line-height: 28px;
+    padding: 2px 11px;
+    position: relative;
+}
+.button_list button:hover {
+    text-decoration:underline;
+}
+
+.first {
+    border-radius: 5px 0 0 5px;
+    border-right: 0;
+}
+.second {
+    margin-left: -4px;
+    border-radius: 0;
+}
+.third {
+    margin-left: -4px;
+    border-radius:0 5px 5px 0;
+    border-left: 0;
+}
+.title {
+    padding-right: 1px;
+}
+.biaoji {
+    width: 16px;
+    margin-top: 3px;
+    float: right;
+    margin-right: 0;
+}
+.text_list {
+    margin-top: 32px;
+}
+.text_list p {
+    margin:10px 0;
+}
+.email_content {
+    padding: 10px;
+}
+.email_content textarea {
+    width:100%;
+    height:120px;
+    border:0;
+}
+.annex {
+    position:relative;
+    width: 96%;
+    margin: 0 auto;
+    margin-top:15px;
+    height: 165px;
+}
+.annex_header {
+    /*position: absolute;
+    left: 0px;
+    top: 0px;*/
+    width: 100%;
+    height: 60px;
+    background: inherit;
+    background-color: rgba(242, 242, 242, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(204, 204, 204, 1);
+    padding: 25px;
+}
+.img {
+    width: 14px;
+    height: 14px;
+}
+.annex_cont {
+    /*position: absolute;
+    left: 0px;
+    top: 59px;*/
+    width: 100%;
+    
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(204, 204, 204, 1);
+    border-radius: 0 0 5px 0 ;
+    padding:20px;
+    /*margin-bottom: 20px;*/
+}
+.imgs {
+    width: 41px;
+    height: 41px;
+    float: left;
+    margin-right:10px;
+}
+.uiScroller.native {
+    background: #fff;
+}
+.span {
+    font-family: 'PingFangSC-Regular', 'PingFang SC';
+    font-weight: 400;
+    font-style: normal;
+    color: #0070D2;
+    cursor:pointer;
+}
+.span:hover {
+    text-decoration:underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

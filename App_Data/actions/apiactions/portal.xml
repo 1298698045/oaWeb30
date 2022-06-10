@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <!--门户-->
+  <Action name="query.contentplate" type="WorkReportCore.DailyReport.Actions.Portal.QueryContentPlate,WorkReportCore"></Action>
+  <Action name="insert.comments" type="WorkReportCore.DailyReport.Actions.Portal.InsertContentComments,WorkReportCore"></Action>
+  <Action name="update.content.readnum" type="WorkReportCore.DailyReport.Actions.Portal.UpdateContentReadNum,WorkReportCore"></Action>
+  <Action name="query.navigation" type="WorkReportCore.DailyReport.Actions.Portal.QueryNavigation,WorkReportCore"></Action>
+  <Action name="query.noticelist" type="WorkReportCore.DailyReport.Actions.Portal.GetNoticeList,WorkReportCore"></Action>
+  <Action name="query.likesnum" type="WorkReportCore.DailyReport.Actions.Portal.GetLikesNum,WorkReportCore"></Action>
+  <Action name="insert.likes" type="WorkReportCore.DailyReport.Actions.Portal.InsertLikesInfo,WorkReportCore"></Action>
+  <Action name="home.image.getlist" type="Youyou.Portal.HomeImageGetList,WorkReportCore"></Action>
+
+  <Action name="home.quicklink.getlist" type="Youyou.Contents.Actions.HomeQuicklinkGetlist,ContentCore" desc="快速链接"></Action>
+</Actions>

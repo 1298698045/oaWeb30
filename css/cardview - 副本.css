@@ -1,0 +1,170 @@
+ .cardView
+        {
+            clear: both;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            margin-top: 5px;
+            font-size: 12px;
+        }
+
+        .card
+        {
+            background-color: #ffffff;
+            border: 1px solid #d8dde6;
+            border-radius: 4px;
+            color: #16325c;
+            margin: 0 auto;
+            padding: 20px;
+            margin-bottom: 24px;
+            width: 45%;
+            /*width:260px;*/
+            /*width:25%;
+            height:100%;*/
+            max-height:300px;
+            height:220px;
+            float: left;
+            position: relative;
+            margin-left: 6px;
+        }
+
+            .card .cardInner
+            {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .card .label
+            {
+                color: #001419;/*#54698d;*/
+                font-size: 14px;
+                font-weight:bold;
+                line-height: inherit;
+                margin: 0 0 8px;
+            }
+
+            .card a
+            {
+                color: #0070d2;
+                text-decoration: none;
+                transition: all 0.1s ease 0s;
+            }
+
+            .card .small
+            {
+                font-size: 12px;
+            }
+
+            .card .fr
+            {
+                float: right;
+            }
+
+            .card .scrollable
+            {
+                /*
+                border-bottom: 1px solid #d8dde6;
+                border-radius: 4px;
+                border-top: 1px solid #d8dde6;
+                border-left: 1px solid #d8dde6;
+                border-right: 1px solid #d8dde6;
+                max-height: 250px;*/
+                height:100%;
+               /* overflow: auto;*/
+                padding: 0px;
+                
+            }
+
+            .card .mt8
+            {
+                margin-top: 8px;
+            }
+
+            .card ul
+            {
+                margin: 0;
+                padding: 0;
+            }
+
+            .card ul
+            {
+                list-style-type: disc;
+                padding-left: 20px;
+            }
+
+            .card li
+            {
+                border-bottom: 1px solid #f4f6f9;
+                border-left: 1px solid #d8dde6;
+                border-right: 1px solid #d8dde6;
+                font-size: 14px;
+                list-style-type: none;
+                margin-bottom: 0;
+                position: relative;
+            }
+
+
+
+        .card .content
+        {
+            /*
+            box-sizing: border-box;
+            padding: 5px 10px;
+           */
+            height: 100%;
+            color: #16325c;
+            font-size: 13px;
+            /*max-height:230px;
+              display: block;
+            */
+            /*padding: 12px;*/
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .thumbnail, .thumbnail_img, .thumbnail_div
+        {
+            border-radius: 32px;
+            display: inline-block;
+            height: 32px;
+            margin-right: 8px;
+            vertical-align: middle;
+            width: 32px;
+        }
+
+        .card img
+        {
+            border: 0 none;
+            vertical-align: middle;
+        }
+
+        .card .activity
+        {
+            border-radius: 0;
+            margin-right: 8px;
+            vertical-align: middle;
+            width: 8px;
+        }
+        #idlist a
+        {
+            box-sizing: border-box;
+            color: #16325c;
+            display: block;
+            font-size: 12px;
+            height: 100%;
+            padding: 12px;
+            text-decoration: none;
+            width: 100%;
+        }
+        #idlist span
+        {
+            left: 68px;
+            line-height: 32px;
+            overflow: hidden;
+            position: absolute;
+            right: 12px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+   

@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css">
+    <link rel="stylesheet" href="/css/themes/lightning/all.css">
+    <link rel="stylesheet" href="/css/themes/lightning/header.css">
+    <link rel="stylesheet" href="/css/themes/lightning/content_header.css">
+    <link rel="stylesheet" href="/css/themes/lightning/icon.css">
+    <link type="text/css" rel="stylesheet" href="/css/light/index.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/tasklist.css">
+    <link rel="stylesheet" href="/css/themes/lightning/bar.css">
+    <link rel="stylesheet" href="/css/themes/lightning/emplstDetail.css">
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css">
+    <link rel="stylesheet" href="/css/file.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .handlebtn {
+            font-size:20px;
+            cursor:pointer;
+        }
+        .handlebtn:hover{
+            color:#0094ff;
+        }
+        .el-table td {
+            text-align:center;
+        }
+        .section {
+            padding:20px 50px;
+            margin:20px;
+            border:1px solid #dedede;
+        }
+        #vueapp {
+            padding-bottom:80px;
+            max-width:1000px;
+            margin:0 auto;
+        }
+        .el-input__inner {
+            line-height:32px;
+            height:32px;
+        }
+        .Sectionsview {
+            float:left;
+            margin-left:-30px;
+            font-size:22px;
+            cursor:pointer;
+            z-index:999;
+            margin-top:5px;
+        }
+        .Sectionsview:hover{
+            color:#0094ff;
+        }
+        .section .red {
+            color:red;
+            float:left;
+            margin-top:2px;
+            margin-right:5px;
+        }
+        .error .el-input__inner{
+            border-color:red;
+        }
+        .slds-table.forceRecordLayout {
+            border-collapse:collapse;
+            border:0;
+        }
+    </style>
+</head>
+<body>
+    <div id="vueapp">
+        <div style="text-align:center;padding:15px;">{{layout.Label}} {{layout.Name}}</div>
+        <el-tabs v-model="activeName">
+            <el-tab-pane label="主表" name="first">
+        <draggable :list="layout.Sections"
+                   class="list-group"
+                   @end="endMove"
+                   ghost-class="ghost">
+            
+        <div class="section" v-for="(item,index) in layout.Sections">
+            <div style="padding-bottom:10px;height:40px;">
+                <i class="el-icon-arrow-down Sectionsview" @click="Sectionshide(item)" v-if="item.show!='0'"></i>
+                <i class="el-icon-arrow-right Sectionsview"@click="Sectionsshow(item)" v-if="item.show=='0'"></i>
+                <span class="red">*</span>
+                <span style="float:left;line-height:32px;">区块：</span>
+                <el-input :class="{'error':item.LabelKey==''}" style="float:left;width:150px;margin-bottom:10px;" v-model="item.LabelKey"></el-input>
+                <span class="red" style="margin-left:5px;">*</span>
+                <span style="float:left;line-height:32px;">Name：</span>
+                <el-input :class="{'error':item.Name==''}" style="float:left;width:150px;margin-bottom:10px;" v-model="item.Name"></el-input>
+                <span style="float:left;line-height:32px;margin-left:15px;">序号：</span>
+                <el-input style="float:left;width:80px;margin-bottom:10px;margin-left:15px;" v-model="item.Position"></el-input>
+                <span style="float:left;line-height:32px;margin-left:15px;">可折叠：</span>
+                <el-checkbox style="float:left;margin-top:6px;margin-right:15px;" v-model="item.IsCollapsible"></el-checkbox>
+                <span style="float:left;line-height:32px;margin-left:15px;">折叠：</span>
+                <el-checkbox style="float:left;margin-top:6px;" v-model="item.IsCollapsed"></el-checkbox>
+                <el-popover
+                  placement="top"
+                  width="160"
+                  v-model="item.visible">
+                  <p>确定要删除整个区块吗？</p>
+                  <div style="text-align: right; margin: 0">
+                    <el-button size="mini" type="text" @click="item.visible = false">取消</el-button>
+                    <el-button type="primary" size="mini" @click="handleSectionsDelete(item,index)">确定</el-button>
+                  </div>
+                  <i slot="reference" style="float:right;margin-right:10px;"
+                   class="el-icon-delete handlebtn"
+                   >
+                  </i>
+                </el-popover>
+            </div>
+            <el-table
+                v-show="item.show!='0'"
+            border
+            ref="moviesTable"
+           :data="item.Fields"
+           stripe>
+            <el-table-column
+             prop="Name"
+             label="字段">
+                <template slot-scope="scope">
+                    <el-select class='tableinput'
+                     @change="function(val){EntityChange(val,scope.row)}"
+                     v-model="scope.row.Name"
+                     filterable
+                     remote
+                     placeholder="请选择">
+              <el-option 
+                  v-for="item in search.EntityId"
+                         :key="item.ID"
+                         :label="item.Name+' '+item.ID"
+                         :value="item.ID"
+                         :disabled="item.checked">
+              </el-option>
+          </el-select>
+                 </template>
+           </el-table-column>
+            <el-table-column
+             prop="OldAmount"
+             label="显示名称">
+                <template slot-scope="scope">
+                   <el-input class="tableinput" v-model="scope.row.LabelKey"></el-input>
+                 </template>
+           </el-table-column>
+            <el-table-column prop="address"width="50px">
+               <template slot="header" slot-scope="scope">
+                   <span>必填</span>
+                 </template>
+                <template slot-scope="scope">
+                   <el-checkbox v-model="scope.row.Required"></el-checkbox>
+                 </template>
+           </el-table-column>
+            <el-table-column prop="address"width="50px">
+               <template slot="header" slot-scope="scope">
+                   <span>只读</span>
+                 </template>
+                <template slot-scope="scope">
+                     <el-checkbox v-model="scope.row.Readonly"></el-checkbox>
+                 </template>
+           </el-table-column>
+           <el-table-column prop="address"width="100px">
+               <template slot="header" slot-scope="scope">
+                   <span>行号</span>
+                 </template>
+                <template slot-scope="scope">
+                   <el-input class="tableinput" v-model="scope.row.RowNumber"></el-input>
+                 </template>
+           </el-table-column>
+            <el-table-column prop="address"width="100px">
+               <template slot="header" slot-scope="scope">
+                   <span>列号</span>
+                 </template>
+                <template slot-scope="scope">
+                   <el-input class="tableinput" v-model="scope.row.ColumnNumber"></el-input>
+                 </template>
+           </el-table-column>
+            <el-table-column label=""
+                width="60px">
+                <template slot="header" slot-scope="scope">
+                    操作
+                   
+                 </template>
+             <template slot-scope="scope">
+               <i
+                 class="el-icon-delete handlebtn"
+                 @click="handleDelete(scope.$index,scope.row,item)"></i>
+             </template>
+           </el-table-column>
+         </el-table>
+        <i
+            v-if="item.show!='0'"
+         style="margin-top:10px;"
+        class="el-icon-circle-plus-outline handlebtn"
+        size="mini"
+        @click="handleAdd(item)"><span style="font-size:14px;float:right;margin-top:3px;margin-left:5px;">添加行</span> </i>
+
+        </div>
+        </draggable>
+                
+         <i
+         style="margin-top:10px;"
+        class="el-icon-circle-plus-outline handlebtn"
+        size="mini"
+        @click="handleAddsection()"><span style="font-size:14px;float:right;margin-top:3px;margin-left:5px;">添加区块</span> </i>
+           </el-tab-pane>
+            <el-tab-pane label="相关列表" name="second">
+                <div id="vueRelatedListBlock" class="tabs__content" style="display:block;">
+                    <li @click="RelatedListSort" class="btns newbtns btn-default Btn hove peoples  slds-button slds-button--neutral " style="border-radius: 0.25rem; float: right;">
+                        <a href="javascript:;" draggable="false">
+                            <div class="slds-truncate">
+                                设置相关列表
+                            </div>
+                        </a>
+                    </li>
+                <draggable style="margin-top:50px;" :list="relatedLists"
+                           class="list-group"
+                           @end="relatedListendMove"
+                           ghost-class="ghost">
+                    
+                        <div v-for="relatedLists in relatedLists" class="slds-tabs_card" style="padding: 0;">
+                            <div class="right_top" style="padding:.75rem 1rem;">
+                                <div class="slds-media__figure" data-aura-rendered-by="1213:0">
+                                    <div class="extraSmall forceEntityIcon" style="background-color: #b19f7e">
+                                        <span class="uiImage">
+                                            <img :src="relatedLists.themeIcon">
+                                        </span>
+                                    </div>
+                                </div>
+                                <h2 class="right_top_title"><span>{{relatedLists.label}}</span>(0)</h2>
+                                <li @click="addRelatedItem(relatedLists.id,relatedLists.relatedObjectAttributeName)" class="btns newbtns btn-default Btn hove peoples  slds-button slds-button--neutral " style="border-radius: .25rem;float:right;">
+                                    <a href="javascript:;">
+                                        <div class="slds-truncate">
+                                            编辑字段
+                                        </div>
+                                    </a>
+                                </li>
+                            </div>
+                            <div class="right_select">
+                                <div class="centerRegiona" style="height: calc(100% - 0px); overflow: hidden;">
+                                    <div class="centerRegionab">
+                                        <div class="detailsOuter allow-horizontal-form runtime_sales_activitiesTaskDetails inlineEditEnabled">
+                                            <div class="details" style="margin: 0;">
+                                                <div style="height: 100%;" id="processList">
+                                                    <div class="slds-grid listDisplays safari-workaround-anchor">
+                                                        <div class="slds-grid listViewContainer" style="width: 100%;">
+                                                            <div class="slds-col slds-no-space forceListViewManagerPrimaryDisplayManager">
+                                                                <div class="forceListViewManagerGrid">
+                                                                    <div class="listViewContent slds-table--header-fixed_container">
+                                                                        <div class="uiScroller scroller-wrapper scroll-bidirectional native">
+                                                                            <div class="scroller actionBarPlugin" style="min-width: 100%; height: 100%;">
+                                                                                <div class="slds-table--edit_container slds-is-relative  inlineEdit--enabled keyboardMode--inactive inlineEditGrid forceInlineEditGrid" style="position: static;">
+                                                                                    <table class="slds-table forceRecordLayout slds-table--header-fixed slds-table--edit slds-table--bordered resizable-cols slds-table--resizable-cols uiVirtualDataTable slds-no-cell-focus">
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <th v-for="listItems in listItems[relatedLists.relatedSObject]" class="initialSortAsc sortable  slds-is-sortable  slds-is-resizable" style="width: 50%;">
+                                                                                                    <div class="slds-cell-fixed">
+                                                                                                        <a href="javascript:;" class="toggle slds-th__action slds-text-link--reset ">
+                                                                                                            <span class="slds-truncate" style="color: rgb(81, 79, 77);">{{listItems.title}}</span>
+                                                                                                            <i class="iconfont icon-jiantou1" style="display: none;"></i>
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
+                                                                                            <tr class="dataRow even"
+                                                                                                v-if="recordIds[relatedLists.relatedSObject]"
+                                                                                                v-for="recordId in recordIds[relatedLists.relatedSObject].recordIds">
+                                                                                                <td class="dataCell" v-for="listItems in listItems[relatedLists.relatedSObject]">
+                                                                                                    {{records[recordId][relatedLists.relatedSObject].record.fields[listItems.field].displayValue}}
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="second_bottom" v-if="recordIds[relatedLists.relatedSObject].recordIds.length>0">
+                                <a href="'/apps/listView.aspx?entityName='+relatedLists.relatedSObject">查看全部</a>
+                            </div>
+                        </div>
+                    </div>
+                    </draggable>
+</el-tab-pane>
+        </el-tabs>
+        
+        <div style="position:fixed;bottom:0px;width:100%;text-align:center;background-color:white;z-index:999;padding:15px;left:0">
+            <el-button @click="returnhistory">取消</el-button>
+            <el-button @click="savetable" type="primary">保存</el-button>
+        </div>
+    </div>
+
+
+
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+
+
+    <script src="/js/sortable.js"></script>
+    <script src="/js/draggable.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                relatedLists:[],
+                activeName:'first',
+                loading:'',
+                layout:{},
+                list: {
+                    EntityId: {}
+                },
+                select: {
+                },
+                search: {
+                    EntityId: []
+                },
+                tableData: [{ Name: '', OldAmount: '', Amount: '' }, ],
+                listItems: {},
+                recordIds: {},
+                records: {},
+            },
+            created: function () {
+                this.loading = this.$loading({
+                    lock: true,
+                    text: 'Loading',
+                    spinner: 'el-icon-loading',
+                    background: 'rgba(0, 0, 0, 0.7)'
+                });
+                this.getlookup()
+                this.getrelatedlistinfos()
+            },
+            mounted: function () {
+            },
+            methods: {
+                addRelatedItem: function (relatedListId, name) {
+                    console.log(relatedListId)
+                    parent.$('#changeDiv').show()
+                    parent.$('#iframe').attr('src', '/layouteditor/layout_relatedlistshow.html?relatedListId=' + relatedListId + '&name=' + name)
+                },
+                relatedListendMove: function (evt) {
+                    var message = JSON.stringify(this.relatedLists)
+                    ajaxMethodPostData('entity.relatedlist.sort', { message: message }, function (data) {
+                        
+                    })
+                },
+                endMove: function (evt) {
+                    for (var i = 0; i < this.layout.Sections.length; i++) {
+                        this.layout.Sections[i].Position = (i+1)
+                    }
+                },
+                EntityChange: function (val, row) {
+                    for (var i = 0; i < this.search.EntityId.length; i++) {
+                        if (row.Name == this.search.EntityId[i].ID) {
+                            this.$set(this.search.EntityId[i], 'checked', false)
+                        }
+                        if (val == this.search.EntityId[i].ID) {
+                            this.$set(this.search.EntityId[i], 'checked', true)
+                            row.LabelKey = this.search.EntityId[i].Name
+                        }
+                    }
+                },
+                Sectionshide: function (item) {
+                    this.$set(item,'show',0)
+                },
+                Sectionsshow: function (item) {
+                    this.$set(item, 'show', 1)
+                },
+                handleSectionsDelete: function (item, index) {
+                    this.layout.Sections.splice(index, 1)
+                },
+                returnhistory:function(){
+                    window.history.go(-1)
+                },
+                handleAddsection: function () {
+                    this.layout.Sections.push({
+                        CanChangeColumns: true,
+                        CanDeleteSection: true,
+                        Fields: [{ Name: '', LabelKey: '', Readonly: false, Required: false, RowNumber: 1, ColumnNumber: 1 }],
+                        IsCollapsed: false,
+                        IsCollapsible: false,
+                        LabelKey: "",
+                        Name: "",
+                        NameReadonly: true,
+                        Position: this.layout.Sections.length+1,
+                        SectionId: "66e001bf-e5d6-4bc8-8ae4-c26e0435509d",
+                        ShowDetailHeader: true,
+                        ShowEditHeader: true,
+                        SortOrder: "h",
+                    })
+                },
+                handleAdd: function (item) {
+                    if (item.Fields.length > 0) {
+                        var last = item.Fields[item.Fields.length - 1]
+                        var ColumnNumber = last.ColumnNumber
+                        var RowNumber = last.RowNumber
+                        if (ColumnNumber < 2) {
+                            ColumnNumber++
+                        } else {
+                            RowNumber++
+                            ColumnNumber = 1
+                        }
+                    } else {
+                        var ColumnNumber = 1
+                        var RowNumber = 1
+                    }
+                    item.Fields.push({ Name: '', LabelKey: '', Readonly: false, Required: false, RowNumber: RowNumber, ColumnNumber: ColumnNumber })
+                },
+                handleDelete: function (index, row,item) {
+                    item.Fields.splice(index, 1)
+                },
+                getrelatedlistinfos: function () {
+                    var that = this
+                    var objectTypeCode = parent.getQueryString('objectTypeCode');
+                    var d = {
+                        objectTypeCode: objectTypeCode
+                    }
+
+                    ajaxMethodGetAsyncData('entity.relatedlist.getlist', d, false, function (data) {
+                        that.relatedLists = data.actions[0].returnValue.relatedLists;
+                    })
+                    that.getrelatedrecords()
+
+                },
+                getrelatedrecords: function () {
+                    var that = this
+                    var d = { objectTypeCode: parent.getQueryString('objectTypeCode') }
+                    ajaxMethodGetAsyncData('entity.relatedrecords.get', d, false, function (data) {
+                        that.listItems = data.actions[0].returnValue.listItems
+                        that.recordIds = data.actions[0].returnValue.recordIds
+                        that.records = data.actions[0].returnValue.records
+                        console.log(that.listItems)
+                        console.log(that.recordIds)
+                        console.log(that.records)
+                    })
+                },
+                getlookup: function () {
+                    var that = this
+                    var d = {}
+                    d = {
+                        all: 1,
+                        EntityId: parent.getQueryString('id'),
+                    }
+                    ajaxMethodGetData('entity.attribute.getlist', d, callback)
+
+                    function callback(data) {
+                        that.search[name] = []
+                        for (var i = 0; i < data.attributes.length; i++) {
+                            that.search.EntityId.push({
+                                ID: data.attributes[i].fieldName,
+                                Name: data.attributes[i].label
+                            })
+                        }
+                        that.getData()
+
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        all:1,
+                        EntityId: parent.getQueryString('id'),
+                        search: query
+                    }
+                    ajaxMethodGetData('entity.attribute.getlist', d, callback)
+                    function callback(data) {
+                        for (var i = 0; i < data.attributes.length; i++) {
+                            that.search[name].push({
+                                ID: data.attributes[i].fieldName,
+                                Name: data.attributes[i].label
+                            })
+                        }
+                    }
+                },
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('id')
+                    if (id != null) {
+                        var d = {
+                            id: id,
+                        }
+                        function callback(data) {
+                            that.layout = data
+
+                                for (var i = 0; i < data.Sections.length; i++) {
+                                    for (var j = 0; j < data.Sections[i].Fields.length; j++) {
+                                        for (var k = 0; k < that.search.EntityId.length; k++) {
+                                            if (data.Sections[i].Fields[j].Name == that.search.EntityId[k].ID) {
+                                                that.$set(that.search.EntityId[k], 'checked', true)
+                                            }
+                                        }
+                                    }
+                                }
+                            that.loading.close();
+
+                            
+                        }
+                        ajaxMethodGetData('pagelayout.trough.get', d, callback)
+                        
+                    }
+                },
+                saveData: function () {
+
+                },
+                savetable: function () {
+                    var message = this.layout
+                    for (var i = 0; i < message.Sections.length; i++) {
+                        if (message.Sections[i].LabelKey == '' || message.Sections[i].Name == '') {
+                            this.$message.error('请填写所有区块的名称');
+                            return false;
+                        }
+                    }
+                    message = JSON.stringify(message)
+                    ajaxMethodPostData('pagelayout.trough.save', { message: message }, function (data) {
+                        if (data.state == 'SUCCESS') {
+                            window.history.go(-1)
+                        } else {
+                            this.$message.error('保存失败');
+                        }
+                    })
+
+                },
+                RelatedListSort: function () {
+                    parent.$('#changeDiv').show()
+                    parent.$('#iframe').attr('src', '/layouteditor/layout_RelatedListSort.html')
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>

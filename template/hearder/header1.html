@@ -1,0 +1,210 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="/template/css/indexStyle.css" rel="stylesheet" />
+    <link href="/template/css/header.css" rel="stylesheet" />
+    <link href="/template/css/search.css" rel="stylesheet" />
+    <style>
+        .miss-header {
+            background:#f2f2f2;
+            margin-top:20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header-mi-sign">
+            <div class="sign-item">
+                <div class="sign-item-color color-sp"></div>
+                <div class="sign-item-name">
+                    审批中
+                </div>
+            </div>
+            <div class="sign-item">
+                <div class="sign-item-color color-notstart"></div>
+                <div class="sign-item-name">
+                    未开始
+                </div>
+            </div>
+            <div class="sign-item">
+                <div class="sign-item-color color-started"></div>
+                <div class="sign-item-name">
+                    进行中
+                </div>
+            </div>
+            <div class="sign-item">
+                <div class="sign-item-color color-end"></div>
+                <div class="sign-item-name">
+                    已结束
+                </div>
+            </div>
+        </div>
+    <div class="miss-header">
+        <div class="header-left-logo">
+            <img src="logo.png"/>
+        </div>
+        <div class="header-left-title">
+            <p class="header-left-title-name">合同管理</p>
+            <p class="header-left-title-listname selectinput"><span>我的合同</span><img src="/img/cal/20.png" alt="" /></p>
+            <div class="selectlist selectlistcheck">
+                <ul>
+                    
+                </ul>
+           </div>
+        </div>
+        
+        <div class="header-right-buttonbtn">
+            <div class="buttonbtn finishbtn">
+                 <div>标记结束</div>
+            </div>
+            <div class="buttonbtn shituu" title="显示为 看板">
+                 <img src="/img/cal/20.kanban_1(14x14).png" class="img1 posi">
+                 <img src="/img/cal/20.PNG" class="img2">               
+            </div>
+            <div class="buttonbtn viewlist selectbuttonbtn">
+                <div class="selectlist">
+                    <span>列表控制视图</span>
+                    <ul>
+                        <li>新建</li>
+                        <li>导出</li>
+                        <li>复制</li>
+                        <li>重命名</li>
+                        <li>共享设置</li>
+                        <li>显示列表筛选器</li>
+                        <li>选择要显示的字段</li>
+                        <li>删除</li>
+                        <li>Kanban设置</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="buttonbtn shaixuan ban"></div>
+            <div class="buttonbtn-group">
+                <div class="prev-buttonbtn"></div>
+                <div class="next-buttonbtn"></div>
+            </div>
+            <div class="buttonbtn tody">
+                <div>今天</div>
+            </div>
+            <div class="buttonbtn shuaxin "></div>
+            <div class="buttonbtn calander selectbuttonbtn">
+                <div class="selectlist selectlistcheck">
+                    <ul>
+                        <li>日</li>
+                        <li>星期</li>
+                        <li>月</li>
+                        <li>列表</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="buttonbtn-group">
+                <div class="buttonbtn">新建</div>
+                <div class="buttonbtn">导出</div>
+            </div>
+            <div class="buttonbtn">
+                <div>会议室管理</div>
+            </div>
+            <div class="buttonbtn">
+                <div>车辆管理</div>
+            </div>
+            <div class="buttonbtn selectbuttonbtn morebtn">
+                <div class="selectlist" style="display: none;">
+                    <ul>
+                        <li>新建</li>
+                        <li class="limits-li">备注</li>
+                        <li class="limits-li">签到二维码</li>
+                        <li class="limits-li">签退二维码</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="buttonbtn sort">
+                <div></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+        <div class="miss-header head-tworows">
+        <div class="header-left-logo">
+            <img src="logo.png"/>
+        </div>
+        <div class="header-left-title2">
+            <p class="header-left-title-name">合同管理</p>
+        </div>
+        <div class="header-right-buttonbtn">
+            
+            <div class="buttonbtn-group">
+                <div class="buttonbtn">新建</div>
+            </div>
+        </div>
+            <div class="clear"></div>
+      <div style="" class="search-cont">
+        <div class="search-group" 
+            name="statuscode"
+            type="select" 
+            text="名字">
+            <div class="search-name">状态:</div>
+            <div class="search-select selectinput">
+                <span name="0">全部</span>
+                <img src="/img/cal/20.png" alt="" />
+            </div>
+            <div class="selectlist selectlistcheck">
+                <ul>
+                    <li value="0"><img src="/img/cal/checkedgrey.png" /><span>全部</span></li>
+                    <li value="0"><img src="/img/cal/checkedgrey.png" /><span>草稿</span></li>
+                    <li value="1"><img src="/img/cal/checkedgrey.png" /><span>未完成</span></li>
+                    <li value="2"><img src="/img/cal/checkedgrey.png" /><span>已完成</span></li>
+                    <li value="3"><img src="/img/cal/checkedgrey.png" /><span>123</span></li>
+                </ul>
+           </div>
+        </div>
+        <div class="search-group"
+            name="name" 
+            type="text" 
+            text="名字">
+        </div>
+        <div class="search-group search-groupposition" 
+            name="deptid" 
+            type="search" 
+            text="部门" 
+            data-object="10">
+        </div>
+         <div class="search-group search-groupposition" 
+             name="starttime" 
+             type="time"
+             text="开始时间">
+        </div>
+         <div class="search-group search-groupposition"
+             name="timestart"
+             type="time"
+             text="时间">
+        </div>
+         <div class="search-group search-groupposition"
+             name="timestart"
+             type="time"
+             text="至">
+        </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+   
+
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <link href="/element/element.css" rel="stylesheet" />
+    <script src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/template/js/search.js"></script>
+    <script src="/template/js/indexjs.js"></script>
+    <script src="/easyui/js/GridEasy.js"></script>
+    <script src="/template/js/filter.js"></script>
+    <script>
+        $('.header-left-title .selectinput').one('click',function () {
+            getFilterList()
+        })
+    </script>
+
+</body>
+</html>

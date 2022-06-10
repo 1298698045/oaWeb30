@@ -1,0 +1,318 @@
+﻿.view_title {
+    font-size:14px;
+    cursor:pointer;
+    margin:15px 0;
+}
+.view_index {
+    color:#999999;
+}
+.view_titles {
+    color:#108AF9;
+}
+.view_new {
+    color:#333333;
+    font-size: 13px;
+}
+.catelist {
+    width:69%;
+    float: left;
+}
+.catelist_title {
+    color: rgb(80, 80, 80);
+	font-size: 28px;
+	text-align: left;
+	font-weight: bold;
+    margin: 30px 0 16px 0;
+}
+.catelist_Remarks {
+    margin:5px;
+    cursor:pointer;
+    line-height: 31px;
+}
+.catelist_Remarks span {
+    display:inline-block;
+}
+.catelist_label {
+    /*width: 55px;*/
+	height: 18px;
+    color: rgb(16, 138, 249);
+	border: rgb(16, 138, 249) solid 1px;
+	border-radius: 1px;
+	font-size: 9px;
+	line-height: 18px;
+	text-align: center;
+}
+.catelist_img {
+    width: 18px;
+	height:14px;
+    position: relative;
+    margin: 0 5px;
+    display: inline-block;
+}
+.catelist_img img {
+    width:100%;
+    height:18px;
+    position: absolute;
+    top: 0px;
+}
+.catalist_date {
+    color:rgb(204, 204, 204);
+}
+.cate_content_img {
+    height:462px;
+    width:100%;
+}
+.cate_content_img img {
+    width:100%;
+    height:100%;
+}
+.cate_content_text {
+    color: rgb(51, 51, 51);
+	font-size: 16px;
+	line-height: 200%;
+	text-align: left;
+    margin:20px 0;
+}
+.cate_content_Remarks {
+    margin:10px 0;
+}
+.cate_content_title {
+    color: rgb(153, 153, 153);
+	font-size: 14px;
+}
+.cate_content_label {
+    color: rgb(80, 80, 80);
+	background-color: rgb(240, 240, 240);
+	border-radius: 15px;
+	font-size: 14px;
+	line-height:30px;
+	text-align: center;
+    /*width: 52px;*/
+    padding:0 6px;
+	height: 30px;
+    display: inline-block;
+}
+.cate_content_annex,.cate_contentComment {
+    margin: 20px 0;
+    text-align:center;
+}
+.cate_content_annex_item {
+    /*width: 471px;*/
+    padding:0 6px;
+	height: 52px;
+	color: rgb(16, 138, 249);
+	background-color: rgb(255, 255, 255);
+	border: rgb(228, 232, 235) solid 1px;
+	border-radius: 26px;
+	font-size: 15px;
+	line-height: 52px;
+	text-align: center;
+    margin-bottom:10px;
+}
+    .cate_content_annex_item a {
+        color: rgb(16, 138, 249);
+        font-size: 12px;
+	    line-height: 52px;
+	    text-align: center;
+    }
+.catelists {
+    width:31%;
+    float: left;
+}
+.cate_content_annex_like,.cate_content_annex_dislike {
+    width: 90px;
+	height: 36px;
+	color: rgb(80, 80, 80);
+	border: rgb(228, 232, 235) solid 1px;
+	border-radius: 18px;
+	font-size: 14px;
+	line-height: 36px;
+	text-align: center;
+    float: left;
+    cursor:pointer;
+     
+}
+.cate_content_annex_like {
+}
+.reds {
+	color: rgb(255, 102, 102);
+	border:rgb(255, 102, 102)  solid 1px;
+}
+.cate_contentComment_img {
+    width:5.55%;
+    height:45px;
+    float: left;
+    margin-right: 10px;
+}
+.cate_contentComment_img img {
+    width:100%;
+    height:100%;
+}
+.cate_contentComment_input {
+    padding-left: 10px;
+    width: 98%;
+    height: 40px;
+    border:1px solid rgb(16, 138, 249);
+}
+.cate_contentComment_btn {
+    width: 77px;
+    height: 41px;
+    margin-left: -9px;
+    background: rgb(16, 138, 249);
+    border: 1px solid rgb(16, 138, 249);
+    color: #fff;
+    font-size: 15px;
+    font-weight: inherit;
+    float: right;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor:pointer;
+    z-index:9;
+}
+.comment_list {
+    margin: 20px 0;
+}
+.comment_list_ul {
+    border-bottom: 1px solid rgb(228, 232, 235);
+}
+.comment_list_ul_item {
+    width: 60px;
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    margin-left: 0;
+    margin-right: 30px;
+    cursor:pointer;
+}
+.comment_list_ul_item_active {
+    border-bottom:4px solid rgb(16, 138, 249);
+    color:rgb(16, 138, 249);
+}
+.comment_list_ul_item_num {
+    color:rgb(204, 204, 204)!important;
+}
+.comment_list_cont {
+    display:none;
+}
+.comment_list_cont_ul {
+}
+.comment_list_cont_ul_item {
+    margin-left: 0;
+    border-bottom: 1px solid rgb(228, 232, 235);
+}
+.comment_list_cont_ul_item:last-child {
+    border-bottom:0;
+}
+.comment_list_cont_ul_item_img {
+    width: 5.55%;
+    float: left;
+    height: 100%;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+.comment_list_cont_ul_item_img img {
+    width: 40px;
+    height: 40px;
+}
+.comment_list_cont_ul_item_text {
+    width: 92%;
+    float: right;
+    font-size: 15px;
+}
+.comment_list_cont_ul_item_text_title {
+        margin-bottom: 0;
+}
+.comment_list_cont_ul_item_text_cancel {
+    margin-top:4px;
+}
+.comment_list_cont_ul_item_text_title_people {
+    color: rgb(16, 138, 249);
+    display: inline-block;
+    margin-right: 10px;
+    cursor:pointer;
+}
+.comment_list_cont_ul_item_text_title_date {
+    color: rgb(204, 204, 204);
+    margin-left:8px;
+}
+.comment_list_cont_ul_item_text_test {
+    color:rgb(119, 119, 119);
+}
+.comment_list_cont_ul_item_text_cancel_txt {
+    color:rgb(16, 138, 249);
+    cursor:pointer;
+}
+.comment_list_cont_ul_item_text_cancel_zan {
+    color:rgb(153, 153, 153);
+    cursor:pointer;
+    float: right;
+}
+.comment_list_cont_ul_item_text_cancel_zan_num {
+    display:inline-block;
+    margin-right:3px;
+    font-size: 13px;
+}
+.look_more {
+    color: rgb(16, 138, 249);
+	background-color: rgb(244, 245, 246);
+	font-size: 14px;
+	line-height: 30px;
+    height:30px;
+    margin: 10px 0;
+	text-align: center;
+    cursor:pointer;
+}
+
+.catelists_title {
+    padding:20px 0 0 81px;
+    font-weight: bold;
+    font-size: 20px;
+    color:rgb(16, 138, 249);
+}
+.catelists_ul {
+    padding-left:81px;
+}
+.catelists_item {
+    margin-left:0;
+    border-top: 1px solid rgb(228, 232, 235);
+}
+.catelists_item_title {
+    color: rgb(80, 80, 80);
+    font-size: 18px;
+    text-align: left;
+    font-weight: 500;
+    margin: 5px 0;
+}
+#top {
+    width:50px;
+    height:120px;
+    position:fixed;
+    right: 14%;
+    top: 51%;
+}
+.Gotop {
+    width:50px;
+    height:50px;
+    margin-bottom:20px;
+    cursor:pointer;
+}
+.Gotop img,.Gocomment img {
+    width:100%;
+    height:100%;
+}
+.Gocomment {
+    width:50px;
+    cursor:pointer;
+    height:50px;
+}
+li {
+    list-style:none;
+    margin-left:0;
+}
+.clear {
+    clear:both;
+}

@@ -1,0 +1,675 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>条件设置</title>
+    <link href="/css/createdfilter.css" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 500px;
+            overflow: auto;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+
+        .section-body {
+            padding: 0 20px;
+        }
+
+        .section {
+            padding-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+        .filter-list{
+            width:15%;
+            float:left;
+            background-color:#f2f2f2;
+            height:400px;
+            overflow-y:auto;
+            border-right:1px solid #dedede;
+            box-sizing:border-box;
+        }
+        .filter-view{
+            width:85%;
+            float:left;
+            box-sizing:border-box;
+            padding:15px;
+        }
+        .popup-body{
+            padding:0;
+        }
+        .section{
+            padding:10px;
+        }
+        .filterlist-body{
+            margin-top:10px;
+        }
+        .filterlist-body{
+            height:400px;
+            border-top:1px solid #dedede;
+        }
+        .filterlist-title{
+            height:40px;
+            line-height:40px;
+            padding:0 15px;
+            font-size:14px;
+            float:left;
+        }
+        .filterlist-head{
+            border-bottom:1px solid #dedede;
+            height:40px;
+
+        }
+        .filter-list li{
+            height:40px;
+            line-height:40px;
+            padding:0 25px;
+            font-size:12px;
+        }
+        .filter-list li:hover{
+            background-color:white;
+            cursor:pointer;
+        }
+        .filterlist-add{
+            width:28px;
+            height:28px;
+            background-color:white;
+            text-align:center;
+            float:right;
+            border:1px solid #dedede;
+            margin-top:5px;
+            border-radius:4px;
+            cursor:pointer;
+            margin-right:20px;
+        }
+        .filterlist-add img{
+            width:12px;
+            height:12px;
+        }
+        .filter-contend-head{
+            height:30px;
+        }
+        .filter-contend-head-title{
+            font-size:14px;
+            color:#666;
+            float:left;
+        }
+        .filter-contend-head-btn{
+            float:right;
+            height:32px;
+            line-height:32px;
+            padding:0 15px;
+            color:#108def;
+            border:1px solid #dedede;
+            border-radius:4px;
+            font-size:14px;
+        }
+        .filter-contend-head-btn:hover{
+            cursor:pointer;
+            background-color:#f2f2f2;
+        }
+        .filter-list .active{
+            background-color:white;
+        }
+        .filter-view{
+            display:none;
+        }
+        .DroplistTextvalue{
+            min-width:300px;
+        }
+        .popup-mask {
+            position: fixed;
+            background: url(/img/bgOverlayDialogBackground.png);
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index: 100;
+        }
+
+        body #iframe {
+            position: fixed;
+            z-index: 101;
+            background-color: white;
+            width: 80%;
+            left: 10%;
+            top: 50%;
+            margin-top: -240px;
+            border-radius: 7px;
+            display: none;
+            height: 480px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            设置条件
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+            <div class="section">
+                <div class="">
+                    <div class="item divs">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <span class="red">*</span>
+                                <span class="item-title">标签</span>
+                                <div class="layui-input-block">
+                                    <input class="save-checking-input" id="Name" type="text" name="name" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-body">
+                                <span class="item-title">API名称</span>
+                                <div class="layui-input-block">
+                                    <input id="ApiName" type="text" name="name" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="item divs">
+                        <div class="">
+                            <div class="item-body">
+                                <span class="item-title">备注</span>
+                                <textarea class="" id="Description" rows="10" cols="80"></textarea>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                    </div>
+                        <div class="" style="margin-left:20px;">设置转移条件</div>
+                        <div class="filterlist-body">
+                            <div class="filter-list">
+                                <div class="filterlist-head">
+                                    <div class="filterlist-title">条件顺序</div>
+                                    <div class="filterlist-add">
+                                        <img src="/img/cal/add1.png" alt="" />
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li class="active">
+                                        条件1
+                                    </li>
+                                    <li>
+                                        条件2
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+        <div class="popup-foot">
+            <div class="popup-foot-shur save-checking">确定</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+    <script src="/js/createdfilter.js"></script>
+    <script>
+
+        var ContractId = getQueryString('pid')
+        var ContractIdName = getQueryString('pname')
+        var form = ''
+        var filter = [];
+        layui.use(['form'], function () {
+            form = layui.form
+            getdata()
+        });
+        function getdata() {
+            ajaxMethodGetData('process.transition.get', {
+                ProcessId: getQueryString('ProcessId'),
+                RuleCode: getQueryString('RuleCode'),
+            }, function (data) {
+                if (data && data.returnValue && data.returnValue.TransitionResultsets) {
+                var res = data.returnValue.TransitionResultsets
+                    $('#Name').val(res.Name)
+                $('#ApiName').val(res.ApiName)
+                $('#Description').val(res.Description)
+                $('.filter-list ul').html('')
+                $('.filter-view').remove()
+                if (res.Resultsets.length > 0) {
+                    for (var i = 0; i < res.Resultsets.length; i++) {
+                        var item = res.Resultsets[i]
+                        $('.filter-list ul').append('<li class="" id="' + item.Id + '">' + item.Name + '</li>')
+                        $('.filterlist-body').append(filterviewhtml)
+                        $('.filter-content').eq(i).attr('id', 'filter-content' + (i + 1))
+                        //console.log(filter)
+                        filter[i] = new gridFilter('filter-content' + (i + 1));
+                        filter[i].init();
+                        filter[i].getfilter(item.Conditions)
+                        $('.filter-view').eq(i).find('.Name').val(item.Name);
+                        $('.filter-view').eq(i).find('.ApiName').val(item.ApiName);
+                        $('.filter-view').eq(i).find('.logical').val(item.LogicalExpression);
+                        
+                    }
+                } else {
+                    $('.filter-list ul').append('<li class="" id="">新条件</li>')
+                    $('.filterlist-body').append(filterviewhtml);
+                    filter[0] = new gridFilter('filter-content1');
+                    filter[0].init();
+                    filter[0].getfilter();
+                }
+                $('.filter-contend-head-btn').click(function () {
+                    filter.splice($(this).parents('.filter-view').index() - 1, 1)
+                    $('.filter-list li').eq($(this).parents('.filter-view').index() - 1).remove()
+                    $(this).parents('.filter-view').remove()
+                })
+                $('.filter-list ul li:first').addClass('active')
+                $('.filter-view:first').show()
+                $('.filter-list li').click(function () {
+                    $('.filter-list li').removeClass('active')
+                    $(this).addClass('active')
+                    $('.filter-view').hide()
+                    $('.filter-view').eq($(this).index()).show()
+                })
+            }
+            })
+
+        }
+
+
+
+        
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('.save-checking').click(function () {
+            function callback(data) {
+                parent.success2('保存成功')
+                parent.$('#iframe').hide()
+                parent.$('.popup-mask').hide()
+            }
+            var id = getQueryString('id')
+            if ($('#IsPriviate').attr('checked') == 'checked') {
+                var IsPriviate = true
+            } else {
+                var IsPriviate = false
+            }
+            var Resultset = []
+
+            for (var i = 0; i < filter.length; i++) {
+                filter[i].getrowdata()
+                console.log($('.filter-view').eq(i).find('.logical'), 555)
+                console.log($('.filter-view').eq(i).find('.logical').val(), 555)
+                Resultset.push({
+                    "Id": $('.filter-list li').eq(i).attr('id'),
+                    "Name": $('.filter-view').eq(i).find('.Name').val(),
+                    "ApiName": $('.filter-view').eq(i).find('.ApiName').val(),
+                    "Position": i,
+                    "RuleId": getQueryString('RuleId'),
+                    "LogicalExpression": $('.filter-view').eq(i).find('.logical').val(),
+                    "Conditions": filter[i].rowdata
+                })
+            }
+            var messages = {
+                "params": {
+                    "recordRep": {
+                        "Description": $('#Description').val(),
+                        "Id": getQueryString('RuleId'),
+                        "ProcessId": getQueryString('ProcessId'),
+                        "RuleCode": getQueryString('RuleCode'),
+                        "Name": $('#Name').val(),
+                        "ApiName": $('#ApiName').val(),
+                        "LogicalExpression": "OR",
+                        "Resultsets": Resultset,
+                        "FromActivityId": "",
+                        "ToActivityId": ""
+                    }
+                }
+            }
+            console.log(messages)
+
+            messages = JSON.stringify(messages)
+            var data = { messages: messages }
+            setTimeout(function () {
+                var save = document.querySelectorAll('.save-checking.active');
+                if (save.length > 0) {
+                    ajaxMethodPostData('process.transition.save', data, callback)
+                }
+            },100)
+        })
+
+        getlookup()
+        function getlookup() {
+            $('.searchselect').click(function () {
+                var that = this
+                d = {
+                    Lktp: $(that).attr('Lktp'),
+                }
+                if ($(this).find('select option').length < 2) {
+                    $(this).find('input').off()
+                    searchlookup(d, that)
+                }
+                $(this).find('input').off()
+                $(this).find('input').keyup(function () {
+                    $(this).find('input').off()
+                    d = {
+                        Lktp: $(that).attr('Lktp'),
+                        Lksrch: $(this).val()
+                    }
+                    searchlookup(d, that)
+                })
+            })
+        }
+
+        function searchlookup(d, that) {
+            ajaxMethodGetData('ui.entity.lookup', d, function (data) {
+                $(that).find('select').html('<option value="">请选择</option>')
+                $(that).find('.layui-anim.layui-anim-upbit').html('<dd lay-value="" class="layui-select-tips">请选择</dd>')
+                for (var i = 0; i < data.listData.length; i++) {
+                    $(that).find('select').append('<option value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</option>')
+                    $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</dd>')
+                }
+                $(that).find('.layui-anim.layui-anim-upbit dd').off()
+                $(that).find('.layui-anim.layui-anim-upbit dd').click(function () {
+                    if ($(this).attr('lay-value') != '') {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', $(this).html())
+                    } else {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', '')
+                    }
+                    $(this).parent().find('dd').removeClass('layui-this')
+                    $(this).addClass('layui-this')
+                })
+            })
+        }
+        $('.laydate').each(function () {
+            var id = $(this).attr('id')
+            var datatype = $(this).attr('datatype')
+            if (datatype == 'D') {
+                laydate.render({
+                    elem: '#' + id,
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'F') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'datetime',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Year') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Month') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    done: function (value) {
+                    }
+                });
+            }
+        })
+        $('.filterlist-add').click(function () {
+            $('.filter-list .active').removeClass('active')
+            $('.filter-list ul').append('<li class="active">新条件</li>')
+
+            $('.filterlist-body').append(filterviewhtml)
+            $('.filter-content:last').attr('id','filter-content' + (filter.length + 1))
+            //console.log(filter)
+            filter[filter.length] = new gridFilter('filter-content' + (filter.length+1))
+            filter[filter.length - 1].init()
+            filter[filter.length - 1].getfilter()
+
+            $('.filter-view').hide()
+            $('.filter-view:last').show()
+            $('.filter-view:last').find('.Name').val('新条件')
+
+            $('.filter-list li').click(function () {
+                $('.filter-list li').removeClass('active')
+                $(this).addClass('active')
+                $('.filter-view').hide()
+                $('.filter-view').eq($(this).index()).show()
+            })
+            $('.filter-contend-head-btn:last').click(function () {
+                filter.splice($(this).parents('.filter-view').index() - 1, 1)
+                $('.filter-list li').eq($(this).parents('.filter-view').index() - 1).remove()
+                $(this).parents('.filter-view').remove()
+            })
+        })
+        function filternamechange(that) {
+            $('.filter-list li.active').html($(that).val())
+        }
+        var filterviewhtml = '<div class="filter-view">'
+                            +'    <div class="filter-contend-head">'
+                            +'        <div class="filter-contend-head-title">条件详细信息</div>'
+                            +'        <div class="filter-contend-head-btn">删除条件</div>'
+                            +'    </div>'
+                            + '    <div class="filter-content" id="filter-content1">'
+                            +'        <div class="item divs">'
+                            +'            <div class="item-left">'
+                            +'                <div class="item-body">'
+                            +'                    <span class="red">*</span>'
+                            +'                    <span class="item-title">标签</span>'
+                            +'                    <div class="layui-input-block">'
+                            + '                        <input class="save-checking-input Name" onchange="filternamechange(this)" type="text" name="name" value="">'
+                            +'                    </div>'
+                            +'                </div>'
+                            +'            </div>'
+                            +'            <div class="item-right">'
+                            +'                <div class="item-body">'
+                            +'                    <span class="item-title">API名称</span>'
+                            +'                    <div class="layui-input-block">'
+                            +'                        <input class="ApiName" type="text" name="name" value="">'
+                            +'                    </div>'
+                            +'                </div>'
+                            +'            </div>'
+                            +'            <div style="clear:both;"></div>'
+                            +'        </div>'
+                            +'        <div class="item divs">'
+                            +'            <div class="item-left">'
+                            +'                <div class="item-body">'
+                            +'                    <span class="item-title">逻辑运算符</span>'
+                            +'                    <select lay-verify="" class="logical">'
+                            + '                        <option value="AND">满足所有条件(AND)</option>'
+                            + '                        <option value="OR">满足一个条件(OR)</option>'
+                            +'                    </select>'
+                            +'                </div>'
+                            +'            </div>'
+                            +'            <div style="clear:both;"></div>'
+                            +'        </div>'
+                            +'        <div class="filter-main">'
+                            +'            <table>'
+                            + '                <tr class="filter-row-head">'
+                            + '                    <td>逻辑运算符</td>'
+
+                            +'                    <td>字段</td>'
+                            +'                    <td>运算符</td>'
+                            +'                    <td>值</td>'
+                            +'                    <td></td>'
+                            + '                </tr>'
+                            +'            </table>'
+                            +'        </div>'
+                            +'        <div class="filter-addbtn">'
+                            +'            <img src="/img/cal/add.png" alt="Alternate Text">'
+                            +'        </div>'
+                            +'    </div>'
+                            +'</div>'
+    </script>
+    <iframe id="iframe" frameborder="0"></iframe>
+    <div class="popup-mask"></div>
+</body>
+</html>

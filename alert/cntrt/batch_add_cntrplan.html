@@ -1,0 +1,698 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>设置合同计划</title>
+    <link rel="stylesheet" href="/layui/layui/css/layui.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 458px;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+
+        .childBody {
+            padding: 15px;
+        }
+
+        .layui-btn-sm {
+            line-height: normal;
+            font-size: 12.5px;
+        }
+        .layui-table-cell .layui-input.layui-unselect {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .table-overlay .layui-table-view,
+        .table-overlay .layui-table-box,
+        .table-overlay .layui-table-body {
+            overflow: visible;
+        }
+         .layui-table-view .layui-table-body {
+            min-height: 246px;
+            height: 246px;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .table-overlay .layui-table-cell {
+            height: auto;
+            overflow: visible;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .layui-btn1 {
+            float: right;
+            position: relative;
+            top: 10px;
+            margin-right: 20px;
+            height: 33px;
+            line-height: 33px;
+        }
+
+        .add-btn {
+            margin-left: 0;
+            background-color: #3D95E5;
+        }
+        .add-btn1 {
+            text-align:right;
+            margin-bottom: 10px;
+        }
+        .add-btn1 .add-btn {
+            width: 85px;
+            padding: 5px;
+            padding-left: 2px;
+        }
+        .add-btn1 .layui-btn .layui-icon{
+            padding:0;
+        }
+        #tableRes{
+            height: 328px;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+        #tableRes .layui-table-view{
+            margin:0;
+        }
+        #tableRes .layui-table-cell select{
+            width: 180px;
+            height: 30px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding-left: 10px;
+            color: #666;
+        }
+        /*#tableRes .layui-form-selected dl{
+            height: 80px;
+        }*/
+        #tableRes .layui-form-selectup dl {
+            top:30px !important;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            设置合同计划
+        </div>
+        <div class="popup-body">
+            <div class="layui-card-body layui-text">
+                <div>
+                    <span class="pname" style="margin-right: 50px;margin-bottom: 10px;display: inline-block;">合同名称：<span class="pnamev"></span></span><span class="pnumber" style="margin-right: 50px;margin-bottom: 10px;display: inline-block;">合同编号：<span class="pnumberv"></span></span><span class="pamount" style="">总金额：<span class="pamountv"></span></span>
+                </div>
+                <div id="toolbar">
+                    <div class="add-btn1">
+                        <button type="button" class="layui-btn add-btn layui-btn-sm" data-type="addRow" title="添加一行">
+                            <i class="layui-icon layui-icon-add-1"></i> 新增阶段
+                        </button>
+                    </div>
+                </div>
+                <div id="tableRes" class="table-overlay">
+                    <table id="dataTable" lay-filter="dataTable" class="layui-hide"></table>
+                </div>
+                <div id="vueapp">
+                    <span class="paymethod" style="margin: 20px 50px 10px 0;display: inline-block;">付款方式：<span class="paymethodv">按进度</span></span>
+                    <span class="enddate" style="margin: 20px 50px 10px 0;display: inline-block;">合同截止日期：<span class="enddatev">2021-09-25</span></span>
+                    <span class="OwningUser" style="margin: 20px 0px 10px 0;display: inline-block;">执行人：<span class="OwningUserv">jackliu</span></span>
+                </div>
+            </div>
+        </div>
+        <div id="action" class="popup-foot">
+            <button type="button" name="btnSave" class="layui-btn layui-btn1 popup-foot-shur save-checking" data-type="save">保存</button>
+            <button type="reset" name="btnReset" class="layui-btn layui-btn1 layui-btn-primary close">取消</button>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script type="text/javascript" src="/layui/layui/layui.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script type="text/javascript">
+       
+	//准备视图对象
+	window.viewObj = {
+		tbData: [{
+			tempId: new Date().valueOf(),
+			Name: '',
+			Rate: 0,
+			Amount: 0,
+			PlanPayOn: null,
+		}],
+		NameData: [
+            { id: 1, name: '首付款' },
+           // { id: 2, name: '首款' },
+            { id: 3, name: '进度款' },
+            { id: 4, name: '尾款' },           
+			{ id: 5, name: '按进度（首付款）' },
+			{ id: 6, name: '按进度（中期款）'},
+			{ id: 7, name: '按进度（尾款）'},
+			{ id: 8, name: '签订后一次性付款' },
+            //{ id: 9, name: '完成后一次性付款' },
+		    { id: 10, name: '完工后一次性付款' },
+            { id: 11, name: '验收款' },
+            { id: 12, name: '签订后全额收款' },
+            { id: 13, name: '分期收款' },
+            { id: 14, name: '收首款' },
+            { id: 15, name: '收中期款' },
+            { id: 16, name: '收尾款' }
+		],
+		renderSelectOptions: function(data, settings){
+			settings =  settings || {};
+			var valueField = settings.valueField || 'value',
+				textField = settings.textField || 'text',
+				selectedValue = settings.selectedValue || "";
+			var html = [];
+			for(var i=0, item; i < data.length; i++){
+				item = data[i];
+				html.push('<option value="');
+				html.push(item[valueField]);
+				html.push('"');
+				if(selectedValue && item[valueField] == selectedValue ){
+					html.push(' selected="selected"');
+				}
+				html.push('>');
+				html.push(item[textField]);
+				html.push('</option>');
+			}
+			return html.join('');
+		}
+	};
+	var planlist = []
+	//var gradeChange = function (index) {
+	//    var myselect = document.getElementById("Name"+index);
+	//    var index = myselect.selectedIndex;
+	//    var selectedValue = myselect.options[index].value;
+	//    if (planlist[index]&&planlist[index].Name !='undefined' ) {
+    //    planlist[index].Name = selectedValue
+    //    }
+	//}
+	var userId = ''
+    var that=this
+	layui.use(['jquery', 'table', 'layer', 'laydate', 'form'], function () {
+	    var $ = layui.$, table = layui.table, form = layui.form, layer = layui.layer;
+	    var form = layui.form;
+		var pid = getQueryString('pid')
+		var pname = getQueryString('pname')
+		var pamount = getQueryString('pamount')
+		$('.pnamev').html(pname)
+		$('.pamountv').html(pamount)
+		$.ajax({
+		    type: "GET",
+		    url: "/apps/CommandProcessor.ashx?c=1&cmd=entity.detail.get&objTypeCode=1010&id=" + pid,
+		    dataType: "json",
+		    success: function (data) {
+		        var pnumber = data.record.ContractNumber
+		        var paymethod = data.record.PaymentMethod?data.record.PaymentMethod:'按进度'
+		        var enddate = data.record.ExpiresOn
+		        var Id = data.context.appContextUser.userId ? data.context.appContextUser.userId : ''
+		        var Name = data.context.appContextUser.name ? data.context.appContextUser.name : ''
+		        $('.pnumberv').html(pnumber)
+		        $('.paymethodv').html(paymethod)
+		        $('.enddatev').html(enddate)
+		        $('.OwningUserv').html(Name)
+		        that.userId = Id
+		        
+		    }
+		})
+		$.ajax({
+		    type: "GET",
+		    url: "/apps/CommandProcessor.ashx?c=1&cmd=contract.plan.bulk.add&contractId=" + pid,
+		    dataType: "json",
+		    success: function (data) {
+		        //console.log(data);
+		        if (data.data && data.data.Table && data.data.Table.length > 0) {
+		            for (var i = 0, row; i < data.data.Table.length; i++) {
+		                row = data.data.Table[i];
+		                planlist.push({
+		                    tempId: row.ValueId,
+		                    Name: row.Name,
+		                    Rate: row.Rate,
+		                    Amount: row.Amount,
+		                    PlanPayOn: (row.PlanPayOn).replace('T00:00:00', ' '),
+		                })
+		            }
+		            $('.popup-head').html('批量编辑合同计划')
+		        }
+		        else {
+		            planlist = viewObj.tbData
+		        }
+		        //数据表格实例化
+		        var tbWidth = $("#tableRes").width();
+		        var layTableId = "layTable";
+		        var tableIns = table.render({
+		            elem: '#dataTable',
+		            id: layTableId,
+		            data: planlist,
+		            //width: tbWidth,
+		            page: false,
+		            loading: true,
+		            even: false,
+		            totalRow: true,
+		            cols: [[
+                        { title: '序号', type: 'numbers' },
+                        {
+                            field: 'Name', title: '阶段名称', align: 'center', totalRowText: '合计', templet: function (d) {
+                                    //console.log('rows',d)
+                                var options = viewObj.renderSelectOptions(viewObj.NameData, { valueField: "name", textField: "name", selectedValue: d.Name });
+                                return '<a lay-event="Name"></a><select id="Name' + d.LAY_TABLE_INDEX + '" onchange="gradeChange(' + d.LAY_TABLE_INDEX + ')" name="Name" lay-filter="Name"><option value="">请选择阶段</option>' + options + '</select>';
+                            }
+                        },
+                        {
+                            field: 'Rate', title: '比例%', edit: 'Rate', event: 'Rate', align: 'center', totalRow: true, templet: function (d) {
+                                var Rate = parseFloat(d.Rate).toFixed(2); //设置小数点后个数
+                                return Rate;
+                            }
+                        },
+                        {
+                            field: 'Amount', title: '金额￥', event: 'Amount', align: 'center', totalRow: true, templet: function (d) {
+                                var Amount = parseFloat(d.Amount).toFixed(2); //设置小数点后个数
+                                return Amount;
+                            }
+                        },
+                        {
+                            field: 'PlanPayOn', title: '付款日期', edit: 'PlanPayOn', event: 'PlanPayOn', align: 'center',
+                        },
+                        {
+                            field: 'tempId', title: '操作', align: 'center', width: 80, templet: function (d) {
+                                return '<a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="del" lay-id="' + d.tempId + '"><i class="layui-icon layui-icon-delete"></i>移除</a>';
+                            }
+                        }
+		            ]],
+		            limit: 100,
+		            done: function (res, curr, count) {
+		                planlist = res.data;
+		            }
+		        });
+
+		        //定义事件集合
+		        var updateRow = function (obj) {
+		            var oldData = table.cache[layTableId];
+		            //console.log(oldData);
+		            tableIns.reload({
+		                data: oldData
+		            });
+		            for (var i = 0, row; i < oldData.length; i++) {
+		                row = oldData[i];
+		                if (row.tempId && row.tempId == obj.tempId) {
+		                    $.extend(oldData[i], obj);
+		                    return;
+		                }
+		            }
+		        };
+		        var active = {
+		            addRow: function () {	//添加一行
+		                var oldData = table.cache[layTableId];
+		                var newRow = { tempId: new Date().valueOf(), Name: '', Rate: 0, Amount: 0, PlanPayOn: null };
+		                oldData.push(newRow);
+		                tableIns.reload({
+		                    data: oldData
+		                });
+		                //console.log(planlist)
+		            },
+		            removeEmptyTableCache: function () {
+		                var oldData = table.cache[layTableId];
+		                for (var i = 0, row; i < oldData.length; i++) {
+		                    row = oldData[i];
+		                    if (!row || !row.tempId) {
+		                        oldData.splice(i, 1);    //删除一项
+		                    }
+		                    continue;
+		                }
+		                tableIns.reload({
+		                    data: oldData
+		                });
+		            },
+		            save: function () {
+		                var oldData = table.cache[layTableId];
+		                //console.log(oldData);
+		                var plans = [];
+		                for (var i = 0, row; i < oldData.length; i++) {
+		                    row = oldData[i];
+		                    if (!row.Name) {
+		                        layer.msg("阶段未填完整", { icon: 5 }); //提示
+		                        return;
+		                    }
+		                    else if (row.Rate == 0) {
+		                        layer.msg("比例不能为0", { icon: 5 }); //提示
+		                        return;
+		                    }
+		                    else if (!row.PlanPayOn) {
+		                        layer.msg("付款日期未填完整", { icon: 5 }); //提示
+		                        return;
+		                    }
+		                    else {
+		                        plans.push({
+		                            name: row.Name,
+		                            planPayOn: row.PlanPayOn,
+		                            rate: row.Rate,
+		                            amount: row.Amount,
+		                            OwningUserId: that.userId
+		                        })
+		                    }
+		                }
+
+		                var ratesumv = 0;
+		                var amountsumv = 0;
+		                for (var i = 0; i < oldData.length; i++) {
+		                    ratesumv = ratesumv + Number(oldData[i].Rate ? oldData[i].Rate : 0)
+		                    amountsumv = amountsumv + Number(oldData[i].Amount ? oldData[i].Amount : 0)
+		                }
+		                if (Number(amountsumv) == Number(pamount) && Number(ratesumv) == 100) {
+		                    var messages = {
+		                        contractId: pid,
+		                        Executive: userId,
+		                        plans: plans,
+		                    }
+		                    messages = JSON.stringify(messages)
+		                    var data = { messages: messages };
+		                    $.ajax({
+		                        type: "POST",
+		                        url: "/apps/CommandProcessor.ashx?cmd=contract.plan.bulk.add",
+		                        data: data,
+		                        dataType: "json",
+		                        success: function (data) {
+		                            //console.log(data);
+		                            //layer.msg(data.msg)
+		                            parent.$('#iframe').hide();
+		                            parent.$('.popup-mask').hide();
+		                            parent.$('#changeDiv').hide();
+		                            parent.layer.msg(data.msg)
+		                        }
+		                    })
+		                }
+		                else {
+		                    layer.msg("总比例必须等于100%", { icon: 5 }); //提示
+		                }
+
+
+
+		            }
+		        }
+
+		        //激活事件
+		        var activeByType = function (type, arg) {
+		            if (type) {
+		                active[type] ? active[type].call(this, arg) : '';
+		            } else {
+		                active[type] ? active[type].call(this) : '';
+		            }
+		        }
+
+		        //注册按钮事件
+		        $('.layui-btn[data-type]').on('click', function () {
+		            var type = $(this).data('type');
+		            activeByType(type);
+		        });
+
+		        //监听select下拉选中事件
+		        form.on('select(Name)', function (data) {
+		            var elem = data.elem; //得到select原始DOM对象
+		            $(elem).prev("a[lay-event='Name']").trigger("click");
+		        });
+		        table.on('edit(dataTable)', function (obj) {
+		            var oldData = table.cache[layTableId];
+		            var data = obj.data, event = obj.event, tr = obj.tr; //获得当前行 tr 的DOM对象;
+		            var Rate = Number(data['Rate']);
+		            var re = /^[0-9]+.?[0-9]*$/;
+		            if (re.test(Rate)) {
+		                var ratesumv = 0;
+		                var amountsumv = 0;
+		                for (var i = 0; i < oldData.length; i++) {
+		                    ratesumv = ratesumv + Number(oldData[i].Rate ? oldData[i].Rate : 0)
+		                    amountsumv = amountsumv + Number(oldData[i].Amount ? oldData[i].Amount : 0)
+		                }
+		                if (Number(amountsumv) <= Number(pamount) && Number(ratesumv) <= 100) {
+		                    var AmountVal = Number(Rate) * Number(pamount) / 100;
+		                    $.extend(obj.data, { 'Rate': Rate, 'Amount': AmountVal })
+		                    updateRow(obj.data);	//更新行记录对象
+		                }
+		                else {
+		                    layer.msg("总比例请勿超过100%", { icon: 5 }); //提示
+		                    $.extend(obj.data, { 'Rate': 0, 'Amount': 0 })
+		                    updateRow(obj.data);	//更新行记录对象
+
+		                }
+		            }
+		            else {
+		                layer.msg("请输入数字", { icon: 5 }); //提示
+		                $.extend(obj.data, { 'Rate': 0, 'Amount': 0 })
+		                updateRow(obj.data);	//更新行记录对象
+		            }
+		            var Amount = Number(data['Amount']);
+		            if (Number(Amount) <= Number(pamount)) {
+		                $.extend(obj.data, { 'Amount': Amount })
+		                updateRow(obj.data);	//更新行记录对象
+		            }
+		            else {
+		                layer.msg("请勿超过合同总金额", { icon: 5 }); //提示
+		                $.extend(obj.data, { 'Amount': 0 })
+		                updateRow(obj.data);	//更新行记录对象
+		            }
+		            var Name = Number(data['Name']);
+		            if (Name) {
+		                $.extend(obj.data, { 'Name': Name });
+		                updateRow(obj.data);	//更新行记录对象
+		            }
+		            var PlanPayOn = Number(data['PlanPayOn']);
+		            if (PlanPayOn) {
+		                $.extend(obj.data, { 'PlanPayOn': PlanPayOn });
+		                updateRow(obj.data);	//更新行记录对象
+		            }
+		        })
+		        //监听工具条
+		        table.on('tool(dataTable)', function (obj) {
+		            var data = obj.data, event = obj.event, tr = obj.tr; //获得当前行 tr 的DOM对象;
+		            //console.log(data);
+		            switch (event) {
+		                case "Name":
+		                    var select = tr.find("select[name='Name']");
+		                    if (select) {
+		                        var selectedVal = select.val();
+		                        if (!selectedVal) {
+		                            layer.tips("请选择一个阶段", select.next('.layui-form-select'), { tips: [3, '#FF5722'] }); //吸附提示
+		                        }
+		                        else if (selectedVal == '签订后一次性付款') {
+		                            $('.paymethodv').html(selectedVal)
+		                        }
+		                        else if (selectedVal == '完成后一次性付款') {
+		                            $('.paymethodv').html(selectedVal)
+		                        }
+		                        else {
+		                            $('.paymethodv').html('按进度')
+		                        }
+		                        //console.log(selectedVal);
+		                        $.extend(obj.data, { 'Name': selectedVal });
+		                        updateRow(obj.data);	//更新行记录对象
+		                        updateRow(obj.data);	//更新行记录对象
+		                    }
+		                    break;
+		                    //case "Rate":
+		                    //    var Rate = Number(data['Rate']);
+		                    //    if ( Rate <= 100) {
+		                    //        var AmountVal = Number(Rate) * Number(pamount) / 100;
+		                    //        console.log(AmountVal)
+		                    //        $.extend(obj.data, { 'Rate': Rate, 'Amount': AmountVal })
+		                    //        activeByType('updateRow', obj.data);	//更新行记录对象
+		                    //    }
+		                    //    else {
+		                    //        layer.msg("请输入正确的百分比", { icon: 5 }); //提示
+		                    //        $.extend(obj.data, { 'Rate': 0, 'Amount': 0 })
+		                    //        activeByType('updateRow', obj.data);	//更新行记录对象
+		                    //    }
+		                    //    break;
+		                    //case "Amount":
+		                    //    var Amount = Number(data['Amount']);
+		                    //        if (Number(Amount) <= Number(pamount)) {
+		                    //            $.extend(obj.data, { 'Amount': Amount })
+		                    //            activeByType('updateRow', obj.data);	//更新行记录对象
+		                    //        }
+		                    //        else {
+		                    //            layer.msg("请勿超过合同总金额", { icon: 5 }); //提示
+		                    //            $.extend(obj.data, { 'Amount': 0 })
+		                    //            activeByType('updateRow', obj.data);	//更新行记录对象
+		                    //        }
+		                    //    break;
+		                case "PlanPayOn":
+		                    var field = data['PlanPayOn'];
+		                    layui.laydate.render({
+		                        elem: this.firstChild,
+		                        show: true,//直接显示
+		                        closeStop: this,
+		                        done: function (value, date) {
+		                            $.extend(obj.data, { 'PlanPayOn': value })
+		                            updateRow(obj.data);	//更新行记录对象
+		                            updateRow(obj.data);	//更新行记录对象
+		                        }
+		                    });
+		                    break;
+		                case "del":
+		                    layer.confirm('真的删除行么？', function (index) {
+		                        obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+		                        layer.close(index);
+		                        activeByType('removeEmptyTableCache');
+		                    });
+		                    break;
+		            }
+		        });
+		    }
+		})
+		$('.close').click(function () {
+		    parent.$('.popup-mask').hide()
+		    parent.$('#iframe').hide()
+		})
+	});
+
+    </script>
+</body>
+</html>

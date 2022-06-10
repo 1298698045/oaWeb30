@@ -1,0 +1,112 @@
+﻿.cont {
+    margin-top:10px;
+    background:#fff;
+    padding: 0 15px;
+}
+.cont_button {
+    font-size: 1rem;
+    line-height: 1.875rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    padding-bottom: .5rem;
+}
+.slds-section__title-action {
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    color: currentColor;
+    font-size: inherit;
+    background-color:#fff;
+    background-image:url(/img/up.png);
+    background-repeat: no-repeat;
+    background-position: .5% 50%;
+    border:0;
+}
+.up {
+    background-image:url(/img/right.png);
+    background-repeat: no-repeat;
+    background-position: .5% 50%;
+}
+.slds-section__title-action:hover {
+    background-repeat: no-repeat;
+    background-position: .5% 50%!important;
+
+}
+.slds-section__title-action span {
+    display: inline-block;
+    margin-left: 33px;
+}
+.slds-col--padded {
+    padding-right: .75rem;
+    padding-left: .75rem;
+}
+.slds-p-vertical_xx-small {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+.oneAppLauncherItem {
+    float: left;
+}
+.app-launcher-link {
+    display: inline-block;
+    margin: .25rem 0;
+    color: #0070d2;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.clear {
+    clear:both;
+}
+.slds-p-horizontal_small {
+    float: left;
+    margin: 10px 8rem 10px 0;
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;
+    height: 96px;
+    width: 25%;
+}
+.slds-app-launcher__tile-figure {
+    float: left;
+    height: 100%;
+    width: 30%;
+    text-align: center;
+}
+.figure_img {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    background: rgba(239, 246, 255, 1);
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 8px;
+}
+.figure_img img {
+    width: 46px;
+    height: 46px;
+    margin-top: 14px;
+}
+.slds-app-launcher__tile-body {
+    float: right;
+    background:rgb(242, 242, 242);
+    height: 100%;
+    width: 70%;
+}
+.slds-app-launcher__tile-body a {
+    font-size: 18px;
+    font-weight:700;
+}
+.slds-app-launcher__tile-body p {
+    color: rgb(153, 153, 153);
+	font-size: 14px;
+}
+.Lasts li:hover {
+    border:1px solid rgb(16, 138, 249);
+}
+
+
+
+
+
+

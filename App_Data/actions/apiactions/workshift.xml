@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+
+  <Action name="workshift.dept.employee.search" type="Youyou.HRCore.WorkShifts.Actions.WorkshiftDeptEmployeeSearch,HRAttendance" desc="按部门排班"></Action>
+
+  <Action name="workshift.dept.employee.week.search" type="Youyou.HRCore.WorkShifts.Actions.WorkshiftDeptEmployeeWeekSearch,HRAttendance" desc="按部门周排班数据获取"></Action>
+
+  <Action name="workshift.group.employee.week.search" type="Youyou.HRworkshift.departhourstat.exportCore.WorkShifts.Actions.WorkshiftGroupEmployeeWeekSearch,HRAttendance" desc="按组周排班数据获取"></Action>
+
+  <Action name="workshift.group.employee.month.search" type="Youyou.HRCore.WorkShifts.Actions.WorkshiftGroupEmployeeMonthSearch,HRAttendance" desc="按组月排班数据获取"></Action>
+
+  <Action name="workshift.dept.month.remark" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftDeptMonthRemark,HRAttendance"  desc="给部门排班保存备注"></Action>
+
+  <Action name="workshift.dept.week.submit" type="Youyou.HRCore.Actions.WorkShifts.WorkShiftDeptWeekSubmit,HRAttendance"  desc="给部门周提交排班"></Action>
+
+
+  <Action name="workshift.dept.week.message" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftDeptWeekMessage,HRAttendance"  desc="给部门周排班保存备注"></Action>
+
+  <Action name="workshift.dept.week.get" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftDeptWeekRemarkGet,HRAttendance"  desc="获取部门周排班保存备注"></Action>
+
+  <Action name="workshift.dept.week.remark" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftDeptWeekRemark,HRAttendance"  desc="给部门个人周排班保存备注"></Action>
+
+
+  <Action name="workshift.dept.month.remark.get" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftDeptMonthRemarkGet,HRAttendance"  desc="排班备注"></Action>
+
+  <Action name="workshift.dept.month.submit" type="Youyou.HRCore.Actions.WorkShifts.WorkShiftDeptMonthSubmit,HRAttendance" desc="按部门提交排班"></Action>
+  <Action name="workshift.dept.month.employee.delete" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftDeptMonthEmployeeDelete,HRAttendance" desc="选择员工，删除月排班"></Action>
+  <Action name="workshift.deptgroup.employee.month.delete" type="Youyou.Workshift.Actions.DeptGroupEmployeeMonthDataDelete,HRAttendance" desc="部门与组下，选择员工删除月排班"></Action>
+
+
+  <Action name="workshift.dept.week.employee.delete" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftDeptWeekEmployeeDelete,HRAttendance" desc="选择员工，删除周排班"></Action>
+  <Action name="workshift.employee.day.set" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftEmployeeDaySet,HRAttendance" desc="单个排班"></Action>
+  <Action name="workshift.employee.exchange" type="Youyou.HRCore.Actions.WorkShifts.WorkShiftEmployeeExchange,HRAttendance" desc="班次调换"></Action>
+  <Action name="workshift.employee.follow" type="Youyou.HRCore.Actions.Shifts.WorkShiftEmployeeFollow,HRAttendance" desc="追随排班"></Action>
+
+  <Action name="workshift.employee.batch.set" type="Youyou.HRCore.Actions.Shifts.WorkShiftEmployeeBatchSet,HRAttendance" desc="批量排班"></Action>
+  <Action name="workshift.employee.batchturn.set" type="Youyou.HRCore.Actions.Shifts.WorkShiftEmployeeBatchturnSet,HRAttendance" desc="批量轮排班"></Action>
+
+  <Action name="workshift.employee.month.delete" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftEmployeeMonthDelete,HRAttendance" desc="根据排班ID,排班删除"></Action>
+
+  <Action name="workshift.template.getlist" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftTemplateGetList,HRAttendance" desc="获取排班模板数据"></Action>
+  <Action name="workshift.template.employee.arrange" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftTemplateEmployeeArrange,HRAttendance" desc="模板排班"></Action>
+
+  <Action name="workshift.owner.getlist" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftOwnerGetList,HRAttendance" desc="个人中心 - 获取我可用班次"></Action>
+
+  <Action name="workshift.owner.add" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftOwnerAdd,HRAttendance" desc="删除个人已选班次"></Action>
+
+  <Action name="workshift.owner.delete" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftOwnerDelete,HRAttendance" desc="删除个人已选班次"></Action>
+
+  <Action name="workshift.available.save" type="Youyou.HRCore.Actions.Workshifts.AvailableWorkshiftSave,HRAttendance" desc="设置个人可用班次"></Action>
+
+  <!--<Action name="attendance.employee.monthshift.delete" type="Youyou.HRCore.Actions.Attendance.AttendanceEmployeeMonthShiftDelete,HRCore" desc="选择删除排班"></Action>-->
+
+  <Action name="workshift.attendgroup.month.save" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftAttendGroupMonthSave,HRAttendance"  desc="排班组保存，保存备注"></Action>
+  <Action name="workshift.group.month.submit" type="Youyou.HRCore.Actions.WorkShifts.WorkShiftGroupMonthSubmit,HRAttendance" desc="排班组上报提交"></Action>
+
+  <Action name="workshift.monthowner.getlist" type="Youyou.HRCore.Attendance.Actions.WorkshiftMonthOwnerGetlist,HRAttendance" desc="个人中心 -按获取个人月排班数据"></Action>
+
+  <Action name="workshift.deptshiftdetail.getlist" type="Youyou.HRCore.Actions.Shifts.DeptShiftDetailList,HRCore" desc="员工排班明细查询（按科室）"></Action>
+  <Action name="workshift.deptshiftdetail.export" type="Youyou.HRCore.Actions.Shifts.DeptShiftDetailExport,HRCore" desc="导出排班明细查询（按科室）"></Action>
+
+  <Action name="evaluation.more.getlist" type="Youyou.HRCore.Attendance.Actions.EvaluationMoreGetList,HRAttendance" desc="考评更多"></Action>
+
+  <Action name="entity.savebatchsetting" type="Youyou.HRCore.Actions.Settings.HolidayBatchAdd,HRAttendance" desc="批量设置假期"></Action>
+
+  <Action name="workshift.employee.month.sort" type="Youyou.HRCore.Actions.WorkShifts.WorkshiftEmployeeMonthSort,HRAttendance" desc="人员排序"></Action>
+
+  <Action name="workshift.search" type="Youyou.HRCore.Actions.Shifts.Search,HRAttendance" desc="获取班次"></Action>
+  <Action name="workshift.deptweekshift.export" type="Youyou.HRCore.WorkShifts.Actions.ExporDeptShiftWeekData,WorkReportCore" desc="按照周导出排班"></Action>
+ <!--attendance.dutyshift.dept.employee.search-->
+  <Action name="dutyshift.dept.employee.search" type="Youyou.Attendance.Workshift.DutyshiftDeptEmployeeSearch,HRAttendance" desc="获取值班(月)"></Action>
+  <Action name="dutyshift.dept.statistical" type="Youyou.Attendance.Workshift.DutyshiftDeptStatistical,HRAttendance" desc="值班统计(日期范围)"></Action>
+  <Action name="dutyshift.dept.statistical.export" type="Youyou.Attendance.Actions.Workshifts.DutyshiftDeptStatisticalExport,HRAttendance" desc="值班统计导出(日期范围)"></Action>
+
+  <Action name="dutyshift.dept.month.submit" type="Youyou.Dutyshift.Actions.DutyshiftDeptMonthSubmit,HRAttendance" desc="值班排班提交"></Action>
+  
+  <Action name="employee.dutyroster.export" type="Youyou.Attendance.ExportEmployeeDutyRoster,WorkReportCore" desc="按照月导出值班(月)"></Action>
+  <Action name="workshift.deptmonthshift.export" type="Youyou.HRCore.WorkShifts.Actions.ExporDeptShiftMonthData,WorkReportCore" desc="按照月导出排班"></Action>
+  <Action name="workshift.depart.workhour.list" type="Youyou.HRCore.Actions.Shifts.DepartMentShifthourStatList,HRAttendance" desc="排班统计（按部门护理工时）"></Action>
+  
+  <!--BEGIN按部门与组排班 -->
+  <Action name="workshift.month.deptgroup.headerinfo.get" type="Youyou.Workshift.Actions.WorkshiftMonthDeptGroupHeaderInfoGet,HRAttendance" desc="按部门与组排班头部"></Action>
+  <Action name="workshift.month.deptgroup.employee.getlist" type="Youyou.Workshift.Actions.MonthDeptGroupEmployeeGetlist,HRAttendance" desc="按部门与组排班头部"></Action>
+  <Action name="workshift.month.deptgroup.employee.arranage" type="Youyou.Workshift.Actions.WorkshiftDeptgroupEmployeeDayArranage,HRAttendance" desc="按部门与组排班头部设置"></Action>
+
+  <Action name="workshift.deptgroup.employee.add" type="Youyou.Workshift.Actions.DeptGroupEmployeeAdd,HRAttendance" desc="往部门组排添加人员"></Action>
+  <Action name="workshift.deptgroup.employee.remove" type="Youyou.Workshift.Actions.DeptGroupEmployeeRemove,HRAttendance" desc="从部门组排删除人员"></Action>
+
+  <Action name="workshift.deptgroup.batch.scheduling" type="Youyou.Workshift.Actions.DeptGroupBatchScheduling,HRAttendance" desc="批量设置排班"></Action>
+
+  <!--END按部门与组排班 -->
+</Actions>

@@ -1,0 +1,72 @@
+.zheng{
+    z-index: 1;
+    width: calc(1.25rem + .0625rem);
+    height: calc(1.25rem + .0625rem);
+    transform: rotate(45deg);
+    border-top: 1px solid #d8dde6;
+    border-left: 1px solid #d8dde6;
+    background: #fff;
+    right: 115px;
+    top: -11px;
+    position: absolute;
+}
+.zhengs{
+    z-index: 0;
+    width: calc(1.25rem + .0625rem);
+    height: calc(1.25rem + .0625rem);
+    transform: rotate(45deg);
+    border-top: 1px solid #d8dde6;
+    border-left: 1px solid #d8dde6;
+    background: #fff;
+    left: 59px;
+    top: -11px;
+    position: absolute;
+}
+.fang{
+    z-index: 1;
+    width: calc(1.25rem + .0625rem);
+    height: calc(1.25rem + .0625rem);
+    transform: rotate(45deg);
+    border-top: 1px solid #d8dde6;
+    border-left: 1px solid #d8dde6;
+    background: #fff;
+    right: 51px;
+    top: -11px;
+    position: absolute;
+}
+.lings{
+    z-index: 1;
+    width: calc(1.25rem + .0625rem);
+    height: calc(1.25rem + .0625rem);
+    transform: rotate(45deg);
+    border-top: 1px solid #d8dde6;
+    border-left: 1px solid #d8dde6;
+    background: #fff;
+    right: 38px;
+    top: -11px;
+    position: absolute;
+}
+.she{
+    z-index: 0;
+    width: calc(0.8rem + .0625rem);
+    height: calc(0.8rem + .0625rem);
+    transform: rotate(45deg);
+    border-top: 1px solid #d8dde6;
+    border-left: 1px solid #d8dde6;
+    background: #fff;
+    right: 30px;
+    top: -9px;
+    position: absolute;
+}
+.people{
+    z-index: 1;
+    width: calc(1.25rem + .0625rem);
+    height: calc(1.25rem + .0625rem);
+    transform: rotate(45deg);
+    border-top: 1px solid #d8dde6;
+    border-left: 1px solid #d8dde6;
+    background: #fff;
+    right: 11px;
+    top: -11px;
+    position: absolute;
+}

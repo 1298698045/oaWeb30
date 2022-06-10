@@ -1,0 +1,43 @@
+﻿<div id="{!id}" class="bRelatedList">
+    <a name="{!id}_target"></a>
+    <!-- Begin ListElement -->
+    <!-- motif: Setup -->
+    <!-- WrappingClass -->
+    <div class="listRelatedObject setupBlock">
+        <div class="bPageBlock brandSecondaryBrd secondaryPalette">
+            <div class="pbHeader">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="pbTitle">
+                                <img width="12" height="1" style="margin-right: 0.25em; margin-right: 0.25em;" title=""
+                                    class="minWidth" alt="" src="/s.gif" /><img title="" class="relatedListIcon" alt=""
+                                        src="/s.gif" /><h3>
+                                            {!title}</h3>
+                            </td>
+                            <td class="pbButton">
+                                {!buttons}
+                            </td>
+                            <td class="pbHelp">
+                                <span title="{!title} 帮助 （新窗口）" class="help"><a class="linkCol" href="javascript:openPopupFocusEscapePounds('','Help', 1024, 768, %27width=1024,height=768,resizable=yes,toolbar=yes,status=yes,scrollbars=yes,menubar=yes,directories=no,location=yes,dependant=no%27, false, false);">
+                                    <span class="linkSpan">{!title}帮助</span>
+                                    <img title="{!title} 帮助 （新窗口）" class="helpIcon" alt="{!title} 帮助 （新窗口）" src="/s.gif" /></a></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="{!id}_body" class="pbBody">
+                {!tablelist}
+            </div>
+            <div class="pbFooter secondaryPalette">
+                <div class="bg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="listElementBottomNav">
+    </div>
+    <script>        try { sfdcPage.registerRelatedList('{!id}', '{!totalrows}', '{!title}', false, 'null', 'null', false, false, true, null); } catch (e) { }</script>
+    <!-- End ListElement -->
+</div>

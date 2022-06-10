@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <!--邮件-->
+  <Action name="email.send" type="EmailCore.Actions.EmailSend,EmailCore" desc="发邮件"></Action>
+  <Action name="email.files.upload" type="EmailCore.Actions.EmailUpladFiles,EmailCore" desc="上传邮件附件"></Action>
+  
+  <Action name="email.setstar" type="Supermore.Email.Actions.StarEmail,WorkReportCore" desc="set star"></Action>
+  <Action name="email.markread" type="Supermore.Email.Actions.MarkReadEmail,WorkReportCore" desc="set star"></Action>
+  
+  <Action name="email.contact.search" type="EmailCore.Actions.ContactSearch,EmailCore" desc="搜索收件人"></Action>
+  
+  <Action name="email.inbox.search" type="EmailCore.Actions.InboxSearch,EmailCore" desc="收件箱"></Action>
+  <Action name="email.info.get" type="EmailCore.Actions.EmailInfoGet,EmailCore" desc="获取单个邮件信息"></Action>
+  <Action name="email.inbox.stat.get" type="EmailCore.Actions.InboxStatGet,EmailCore" desc="获取各个邮箱邮件数量"></Action>
+  <Action name="email.forward.get" type="EmailCore.Actions.EmailForwardGet,EmailCore" desc="获取邮件转发信息"></Action>
+  <Action name="email.respond.get" type="EmailCore.Actions.EmailRespondGet,EmailCore" desc="获取邮件回复信息"></Action>
+
+  <Action name="email.star.mark" type="EmailCore.Actions.EmailStarMark,EmailCore" desc="标记星邮件"></Action>
+  <Action name="email.read.mark" type="EmailCore.Actions.EmailReadMark,EmailCore" desc="标记邮件已读/未读"></Action>
+  <Action name="email.delete.mark" type="EmailCore.Actions.EmailDeleteMark,EmailCore" desc="删除邮件"></Action>
+  <Action name="email.delete" type="EmailCore.Actions.EmailCompletelyDelete,EmailCore" desc="彻底删除邮件"></Action>
+
+  <Action name="email.folder.my" type="EmailCore.Actions.MyEmailFolder,EmailCore" desc="获取我的文件夹"></Action>
+  <Action name="email.folder.add" type="EmailCore.Actions.EmailFolderAdd,EmailCore" desc="邮件目录创建"></Action>
+  <Action name="email.folder.move" type="EmailCore.Actions.EmailFolderMove,EmailCore" desc="邮件移动目录"></Action>
+  <Action name="email.folder.rename" type="EmailCore.Actions.EmailFolderRename,EmailCore" desc="文件夹重命名"></Action>
+  <Action name="email.folder.delete" type="EmailCore.Actions.EmailFolderDelete,EmailCore" desc="文件夹删除"></Action>
+
+  <Action name="email.stat" type="EmailCore.Actions.EmailStat,EmailCore" desc="邮件统计"></Action>
+  <Action name="email.files.clear" type="EmailCore.Actions.EmailFilesClear,EmailCore" desc="邮件附件清空"></Action>
+</Actions>

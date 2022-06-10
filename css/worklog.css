@@ -1,0 +1,411 @@
+﻿
+/*
+ BODY {
+    cursor: default;
+    font-family: "Arial", "Verdana", "Helvetica", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    color: rgb(68, 68, 68);
+    font-size: 13px;
+    font-weight: normal;
+}
+*/
+.clsStandardTextField {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(187, 187, 187);
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+.clsBorderBox {
+    box-sizing: border-box;
+    outline: medium none currentcolor;
+}
+.clsListRowHover{background-color:#DDF1FB}.clsListRowSelected{background-color:#C6E6F7}
+.clsButton{border:1px solid transparent;overflow:hidden;border-radius:2px}.clsButton.clsReadOnly{cursor:default}.clsButton.clsUnstyledIconButton{overflow:visible}.clsButtonContent{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;align-items:center;justify-content:center;border-radius:1px;font-weight:normal;box-sizing:border-box;font-size:13px;color:#fff}.clsButtonContent.clsButtonContentAlignStart{justify-content:flex-start}.clsButtonContent.clsButtonContentAlignStart :first-child{margin:auto auto auto 10px}.clsStandardButton{background:#1C9DE0}.clsStandardButton:hover,.clsStandardButtonMouseOver{background:#1E94D4}.clsStandardButton:active,.clsStandardButtonMouseDown{background:#208CC8}.clsNegativeActionButton{background:#888}.clsNegativeActionButton:hover,.clsNegativeActionButtonMouseOver{background:#7D7D7D}.clsNegativeActionButton:active,.clsNegativeActionButtonMouseDown{background:#777}.clsTertiaryLightActionButton{background:#E4E4E4;border-color:#ccc}.clsTertiaryLightActionButton .clsButtonContent{color:#444}.clsTertiaryLightActionButtonMouseOver{background:#C3C3C3;border-color:transparent}.clsTertiaryLightActionButtonMouseDown,.clsTertiaryLightActionButtonSelected{background:#bbb;border-color:transparent}.clsTertiaryLightActionButtonSelected{font-weight:bold}.clsUnstyledIconButton{border:none;cursor:default}.clsAddElementButton{border:none;cursor:default}.clsNavigationButton{outline:none;border:none}.clsToolbarButton{font-size:11px;color:#444;border:1px solid #AAAAAA;background:#F3F3F3;cursor:default}.clsToolbarButton span{font-size:11px;color:#444}.clsToolbarButtonMouseOver{background:#C3C3C3}.clsToolbarButtonMouseDown,.clsToolbarButtonSelected{background:#bbb}.clsSkypeActionButton{background:#00AFF0;font-weight:bold;cursor:default}
+
+.clsButtonContent{color:inherit;font-size:inherit}
+.clsAddElementButton{overflow:hidden;margin:10px;border-radius:5px;cursor:pointer}
+.clsAddElementButton .clsButtonContent{background:#fff;border-radius:5px;color:#444;font-size:13px;font-weight:bold;border:1px #999 dashed;box-sizing:border-box}
+
+/*HOME START*/
+.clsHomePageExplorePane {
+position:absolute;
+overflow:hidden;
+background-color:#fff;
+}
+
+.clsHomePageResizeBar {
+position:absolute;
+background-color:#F3F3F3;
+border-left:1px solid #999;
+box-sizing:border-box;
+}
+
+.clsHomePageDetailTableWrapper {
+background-color:#fff;
+position:absolute;
+overflow:auto;
+border-left:1px solid #999;
+border-right:1px solid #999;
+border-bottom:1px solid #999;
+box-sizing:border-box;
+}
+
+.clsHomePageDetailTable td {
+padding:3px 0;
+}
+
+.clsHomePageDetailTable .clsListRowSelected.clsHomeTabFocusElement {
+background-color:#B8D8EB;
+}
+
+.clsHomePageDetailTable td div {
+height:16px;
+}
+
+.clsHomePageDetailTable .clsCellWrapper {
+padding:0 4px;
+}
+
+.clsHomePageDetailTable .clsCellWrapper div {
+overflow:hidden;
+white-space:nowrap;
+}
+
+.clsHomePageDetailTable td.clsIconTextCell .clsCellWrapper {
+height:24px;
+overflow:hidden;
+}
+
+.clsHomePageDetailTable td.clsIconTextCell .clsCellWrapper .clsCellContent {
+display:inline-block;
+height:16px;
+line-height:16px;
+margin-top:4px;
+padding-left:25px;
+overflow:hidden;
+white-space:nowrap;
+}
+
+.clsHomePageDetailTable .clsDetailItemOpenable.clsDetailItemTitleHover {
+cursor:pointer;
+color:#1C9DE0;
+text-decoration:underline;
+}
+
+.clsHomePageDetailTable td.clsSelectRow,.clsHomePageDetailTable td.clsFavorite {
+text-align:center;
+}
+
+.clsExploreButtonWrapper {
+overflow:hidden;
+margin:10px 15px;
+padding:4px 0;
+}
+
+.clsExploreButtonWrapper .clsCreateNewButton {
+float:left;
+}
+
+.clsExploreButtonWrapper .clsImportButton {
+float:right;
+}
+
+.clsExploreButtonWrapper .clsImportButton.clsWrapped {
+margin-top:10px;
+}
+
+.clsExploreTreeWrapper {
+position:absolute;
+overflow-y:auto;
+overflow-x:hidden;
+}
+
+.clsHomePageExploreTree {
+list-style-type:none;
+margin:0 0 10px;
+padding:0;
+}
+
+.clsHomePageExploreTree ul.clsPlaceholder {
+padding-left:0;
+margin-left:0;
+}
+
+.clsHomePageExploreTree ul {
+list-style-type:none;
+margin-left:0;
+padding:0;
+}
+
+.clsHomePageExploreTree .clsRootExploreNode {
+height:25px;
+border:solid 2px transparent;
+font-size:15px;
+font-weight:700;
+white-space:nowrap;
+position:relative;
+padding:0 0 0 9px;
+}
+
+.clsHomePageExploreTree .clsRootExploreNode .clsToggle {
+height:16px;
+width:16px;
+display:inline-block;
+white-space:normal;
+vertical-align:top;
+margin:5px 0;
+}
+
+.clsHomePageExploreTree .clsRootExploreNode .clsTreeNodeRightImage {
+height:20px;
+width:20px;
+right:10px;
+position:absolute;
+display:inline-block;
+white-space:nowrap;
+vertical-align:top;
+margin-top:3px;
+}
+
+.clsHomePageExploreTree .clsChildExploreNode {
+height:25px;
+border:solid 2px transparent;
+white-space:nowrap;
+position:relative;
+}
+
+.clsHomePageExploreTree .clsChildExploreNode .clsToggle {
+height:16px;
+width:16px;
+display:inline-block;
+white-space:normal;
+vertical-align:top;
+margin:3px 0;
+}
+
+.clsHomePageExploreTree ul.clsEmpty {
+display:none;
+}
+
+.clsTreeItemDragWrapper,.clsDetailItemDragWrapper {
+list-style-type:none;
+box-shadow:3px 3px 4px 0 rgba(0,0,0,0.3);
+margin:0;
+padding:0;
+}
+
+.clsTreeItemDrag,.clsDetailItemDrag {
+opacity:0.75;
+height:16px;
+background-color:#DBEBF6;
+font-size:15px;
+font-weight:700;
+color:#000;
+padding:4px;
+}
+
+.clsTreeItemDrag .clsDragItemText,.clsDetailItemDrag .clsDragItemText {
+line-height:16px;
+height:16px;
+white-space:nowrap;
+padding:0 0 0 20px;
+}
+
+.clsHomePageExploreTree .clsHomePageExploreTreeNode .clsRootExploreNode.clsTreeItemDrop,.clsHomePageExploreTree .clsHomePageExploreTreeNode .clsChildExploreNode.clsTreeItemDrop {
+border:solid 2px #B8D8EB;
+}
+
+.clsHomePageExploreTree .clsRootExploreNode .clsIcon,.clsHomePageExploreTree .clsChildExploreNode .clsIcon {
+height:25px;
+width:25px;
+display:inline-block;
+white-space:normal;
+vertical-align:top;
+}
+
+.clsHomePageExploreTree .clsRootExploreNode .clsTreeNodeTitle,.clsHomePageExploreTree .clsChildExploreNode .clsTreeNodeTitle {
+height:25px;
+line-height:25px;
+margin-left:2px;
+display:inline-block;
+white-space:nowrap;
+vertical-align:top;
+}
+/*HOME*/
+
+.clsGalleryContainer {
+display:flex;
+height:100%;
+width:100%;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane {
+background-color:#FFF;
+flex:1 1 220px;
+min-width:220px;
+border-right:1px solid #e4e4e4;
+overflow-y:auto;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow1 {
+border-bottom:1px solid #e4e4e4;
+padding:10px 0;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow1 .clsGalleryNav ul li.clsGalleryCreate {
+background:url(/workreport/images/icon_sheet.2x.png);
+background-position:12px 7px;
+background-repeat:no-repeat;
+background-size:16px 16px;
+image-rendering:0;
+padding-left:32px;
+cursor:pointer;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow1 .clsGalleryNav ul li.clsGalleryImport {
+background:url(/workreport/images/icon_import.2x.png);
+background-position:12px 7px;
+background-repeat:no-repeat;
+background-size:16px 16px;
+image-rendering:0;
+padding-left:32px;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow2 .clsGallerySearch {
+padding:15px 15px 10px;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow2 .clsGalleryCategoryList {
+padding:0 0 10px;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow1 .clsGalleryNav ul,.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow2 .clsGalleryCategoryList ul {
+list-style:none;
+padding-left:0;
+margin:0;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow1 .clsGalleryNav ul li,.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow2 .clsGalleryCategoryList ul li {
+height:30px;
+line-height:30px;
+white-space:nowrap;
+text-overflow:ellipsis;
+overflow:hidden;
+padding:0 15px 0 21px;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow1 .clsGalleryNav ul li.clsGallerySelected,.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow2 .clsGalleryCategoryList ul li.clsGallerySelected {
+background-color:#b8d8eb;
+font-weight:700;
+}
+
+.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow1 .clsGalleryNav ul li:hover,.clsGalleryContainer .clsGalleryLeftPane .clsGalleryRow2 .clsGalleryCategoryList ul li:hover {
+background-color:#c6e6f7;
+}
+
+
+/*
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.container-right {
+    margin-left: 230px;
+    height: 100%;
+    min-width: 772px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 96;
+    overflow: hidden;
+}
+.worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-1, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-2, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-3, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-4, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-5, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-6, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-7, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-8, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-9, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-10, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-11, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-12, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-13, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-14, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-15, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-16, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-17, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-18, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-19, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-20, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-21, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-22, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-23, .worklog .list-wrapper .worklog-list .worklog-list-item .jgui-col-24 {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+.worklog .container-right-warp.gray {
+    background: #e6e6e6;
+}
+.worklog .list-wrapper {
+    height: 100%;
+    overflow: auto;
+}
+.worklog .list-wrapper .worklog-list {
+    padding-left: 4px;
+    margin: 16px;
+}
+.worklog .list-wrapper .worklog-list .worklog-list-item {
+    white-space: nowrap;
+    line-height: 64px;
+    color: #999;
+    cursor: pointer;
+}
+.worklog .list-wrapper .worklog-list .worklog-list-item {
+    white-space: nowrap;
+    margin-top: 8px;
+    background: #fff;
+    height: 64px;
+    line-height: 64px;
+    width: 100%;
+    min-width: 800px;
+    color: #999;
+    box-shadow: 0 0 1px rgba(0,0,0,.1);
+    padding-right: 8px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.worklog .list-wrapper .worklog-list .worklog-list-item .avatar-panel {
+    text-align: center;
+    width: 32px;
+    margin: 0 16px;
+    display: inline-block;
+    vertical-align: top;
+}
+.worklog .list-wrapper .worklog-list .worklog-list-item .account-panel .date {
+    font-size: 14px;
+    line-height: 16px;
+    color: #333;
+    white-space: nowrap;
+    font-weight: 700;
+}
+.worklog .list-wrapper .worklog-list .worklog-list-item .list-content-ellipsis .ellipsis {
+    max-width: 90%;
+}
+.worklog .list-wrapper .worklog-list .worklog-list-item .list-content-ellipsis .content {
+    padding: 0 0 0 8px;
+    float: left;
+}
+.worklog .list-wrapper .worklog-list .worklog-list-item .content {
+    padding: 0 16px 0 8px;
+    color: #999;
+}
+.worklog .list-wrapper .worklog-list .worklog-list-item .account-panel .name {
+
+    margin-top: 6px;
+    line-height: 14px;
+
+}
+.jgui-row::after {
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
+}
+.jgui-row::after, .jgui-row::before {
+    content: " ";
+    display: table;
+}
+.jgui-row {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    zoom: 1;
+    display: block;
+}
+.jgui-col-7 {
+    display: block;
+    width: 29.16667%;
+}*/

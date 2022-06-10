@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .file-preview {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 300;
+        }
+        .file-preview-mask {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.8;
+        }
+        .file-preview-head {
+    position: relative;
+    z-index: 301;
+    height: 60px;
+    background-color: #000;
+    color: white;
+    line-height: 60px;
+}
+        .file-preview-head>div {
+    float: left;
+}
+        .file-preview-head-left>div {
+    float: left;
+}
+        .file-preview-type img {
+    height: 32px;
+    width: 32px;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+        .file-preview-name {
+    margin-left: 15px;
+}
+        .file-preview-head-middle {
+    margin-left: 25%;
+}
+        .file-preview-head-middle > div {
+    float: left;
+    overflow: hidden;
+    height: 36px;
+    width: 80px;
+    margin-top: 12px;
+    line-height: 36px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+        .file-preview-head-middle img {
+    margin-top: 8px;
+    float: left;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+        .file-preview-head .file-preview-head-right {
+    float: right;
+}
+        .file-preview-head-right img {
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+        .edit-btn {
+    position: absolute;
+    top: 60px;
+    z-index: 400;
+    width: 64%;
+    left: 13%;
+    background-color: white;
+    padding: 10px 5%;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+        .edit-btn button {
+    border: 0;
+    width: 9%;
+    min-width: 70px;
+    height: 32px;
+    line-height: 32px;
+    background: none;
+    background-color: #dddddd;
+    border-radius: 4px;
+    outline: none;
+    font-size: 12px;
+    margin-right: 1.5%;
+    cursor: pointer;
+}
+ .miss-bianji5 {
+    display: none;
+    top: 110px;
+    left: 280px;
+    z-index: 600;
+    width: 160px;
+    height: 200px;
+    color: #333;
+}
+.miss-bianji {
+    width: 100px;
+    height: 250px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px rgba(56, 56, 56, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    left: 140px;
+    top: 0;
+    z-index: 10;
+}
+.file-preview iframe {
+    height: 89%;
+    background-color: #ffffff;
+    width: 98%;
+    position: absolute;
+    z-index: 10;
+    left: 1%;
+    bottom: 0;
+    border: 0;
+}
+    </style>
+</head>
+<body>
+    <div class="file-preview" style="display: block;">
+        <div class="file-preview-mask"></div>
+        <div class="file-preview-head">
+            <div class="file-preview-head-left">
+                <div class="file-preview-type">
+                    <img src="http://localhost:65371/img/filetype/Image.png">
+                </div>
+                <div class="file-preview-name">
+                    <span>00.2.Close_关闭</span>
+                </div>
+            </div>
+            <div class="file-preview-head-middle">
+                <div class="file-preview-download" src="#">
+                    <img src="/img/cal/679 (2).png" style="width: 18px; height: 18px;">
+                    <span>下载</span>
+                </div>
+                <div class="file-preview-edit" src="#" style="display: none;">
+                    <img src="/img/cal/679 (1).png" style="width: 18px; height: 18px;">
+                    <span>编辑</span>
+                </div>
+                <div class="file-preview-share">
+                    <img src="/img/cal/679.png" style="width: 18px; height: 18px;">
+                    <span>分享</span>
+                </div>
+            </div>
+            <div class="file-preview-head-right">
+                <img src="/img/cal/4.closeIcon(24x24).png" style="width: 20px; height: 20px;">
+            </div>
+        </div>
+        <div class="edit-head">
+            <div class="edit-btn" style="display: none;">
+                <button>选择模板</button>
+                <button>应用模板</button>
+                <button>电子盖章</button>
+                <button>刷新</button>
+                <button>重新载入</button>
+                <button>打印</button>
+                <button>另存为本地</button>
+                <button>文字批注</button>
+                <button>保存</button>
+            </div>
+            <div class="miss-bianji miss-bianji5">
+                <div>劳务合同</div>
+                <div>劳务派遣</div>
+                <div>人事代理</div>
+                <div>技术合作合同</div>
+            </div>
+        </div>
+        <iframe  style="height: 89%;"></iframe>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+
+    <script>
+
+        function getQueryString(name) {
+            var url = window.location.href.split(name + '=')[1]
+            if (url.indexOf('&&') != -1) {
+                url = url.split('&&')[0]
+            }
+            return url
+        }
+        var url = getQueryString('url')
+        var link = getQueryString('link')
+        var name = getQueryString('name')
+        if (name) {
+            $('.file-preview-name').html(decodeURI(name))
+        }
+        $('iframe').attr('src',url)
+        $('.file-preview-head-right').click(function () {
+            if (parent.vum) {
+                if (parent.vum.showiframe) {
+                    parent.vum.showiframe = false
+                }
+            }
+             else {
+                parent.$('#changeDiv').hide()
+
+            }
+            parent.$('#iframe2').hide()
+        })
+        var FileExtension = getQueryString('FileExtension')
+        if (FileExtension == "xls" || FileExtension == "xlsx") {
+            imgsrc = "/img/filetype/xls.png"
+        }
+        else if (FileExtension == "docx" || FileExtension == "doc") {
+            imgsrc = "/img/filetype/doc.png"
+        }
+        else if (FileExtension == "zip") {
+            imgsrc = "/img/filetype/rar.png"
+        }
+        else if (FileExtension == "png" || FileExtension == "jpg") {
+            imgsrc = "/img/filetype/Image.png"
+        }
+        else if (FileExtension == "bmp" || FileExtension == "jpeg") {
+            imgsrc = "/img/filetype/Image.png"
+        } else if (FileExtension == "txt") {
+            imgsrc = "/img/filetype/Folder.png"
+        }
+        else if (FileExtension == "pdf") {
+            imgsrc = "/img/filetype/Pdf.png"
+        } else {
+            imgsrc = "/img/filetype/Folder.png"
+        }
+        $('.file-preview-type img').attr('src', imgsrc)
+
+
+
+
+        //下载
+        $('.file-preview-download').click(function () {
+            window.open(link)
+        })
+
+
+
+
+
+
+
+        function shareIframeImg(id) {
+            console.log(id)
+        }
+        
+    </script>
+</body>
+</html>

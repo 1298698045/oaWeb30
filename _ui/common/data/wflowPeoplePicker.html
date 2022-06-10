@@ -1,0 +1,867 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>设置办理人员</title>
+    <link href="/sCSS/32.0/sprites/1420068168000/Theme3/zh/base/extended.css" rel="stylesheet" />
+    <link href="/css/createdfilter.css" rel="stylesheet" />
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 428px;
+            overflow: auto;
+            padding-bottom:50px;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+        .section-body {
+            padding: 0 20px;
+        }
+        .section {
+            padding-bottom: 20px;
+        }
+        .red {
+            color: red;
+        }
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+        .selectCell{
+            font-size:14px;
+        }
+        .selectCell select{
+            height:300px;
+        }
+        .filter-main{
+            padding-left:0;
+        }
+        .filter-addbtn{
+            margin-left:15px;
+        }
+        .treePanel{
+            width:240px;
+            margin-top:25px;
+            margin-right:10px;
+            display:none;
+        }
+        .section-edit{
+            float:right;
+            margin-right:15px;
+            cursor:pointer;
+            color:#108def;
+            font-size:14px;
+        }
+        .section-up{
+            display:none;
+        }
+        #Variables .layui-form-checkbox,#StepVariables .layui-form-checkbox{
+            width:40%;
+        }
+        .popup-mask {
+            position: fixed;
+            background: url(/img/bgOverlayDialogBackground.png);
+            background-color: transparent;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            z-index: 100;
+        }
+
+        body #iframe {
+            position: fixed;
+            z-index: 101;
+            background-color: white;
+            width: 80%;
+            left: 10%;
+            top: 50%;
+            margin-top: -240px;
+            border-radius: 7px;
+            display: none;
+            height: 480px;
+            border: 0;
+        }
+        #FromStepIdcontent{
+            display:none;
+        }
+    </style>
+
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+    <script src="/js/createdfilter.js"></script>
+    <script type="text/javascript" src="/easyui/js/treeLoader.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            选择人员
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+            <div class="section">
+                <div class="section-title">选择人员/小组
+                    <span class="section-down section-edit">收起</span>
+                    <span class="section-up  section-edit">展开</span>
+                </div>
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="item">
+                            <div class="item-body">
+                                <span class="item-title">人员类型</span>
+                                <div class="layui-input-block lktpcontent">
+                                    <input lay-filter="lktp" type="radio" name="radio" value="U" title="用户"checked>
+                                    <input lay-filter="lktp" type="radio" name="radio" value="A" title="角色">
+                                    <input lay-filter="lktp" type="radio" name="radio" value="P" title="个人小组">
+                                    <input lay-filter="lktp" type="radio" name="radio" value="R" title="公共小组">
+                                    <input lay-filter="lktp" type="radio" name="radio" value="B" title="部门">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="item divs">
+                        <div id="duel" class="duelingListBox">
+                            <div class="item-left">
+                                <input id="lksearch" onchange="getpeople()" type="text" name="" value="" placeholder="请输入搜索字符" />
+                            </div>
+                            <div style="clear:both;"></div>
+                            <div class="item-left treePanel" id="depttree">
+                                <div id="treePanel" class="easyui-panel" title="部门" style="padding: 5px; width: 240px; min-height: 0!important;">
+                                    <ul class="easyui-tree" id="leftTree" style="display: block;">
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="item-left treePanel" id="deptchook">
+                                <div  class="easyui-panel" title="部门" style="padding: 5px; width: 240px; min-height: 0!important;">
+                                    <ul class="easyui-tree" id="leftTreedeptchook" style="display: block;">
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <table class="layout">
+                                <tbody>
+                                    <tr>
+                                        <td class="selectCell selectCell1">
+                                            <div class="selectTitle">
+                                                <label for="duel_select_0">
+                                                    可用
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <select lay-ignore size="16" style="width:240px;" name="duel_select_0" multiple="multiple" id="duel_select_0" ondblclick="addItems()" tabindex="4">
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td class="zen-phs buttonCell">
+                                            <div class="text">
+                                                添加
+                                            </div>
+                                            <div class="zen-mbs text" onclick="addItems()">
+                                                <span>
+                                                    <img title="添加" class="rightArrowIcon" alt="添加" src="/s.gif">
+                                                </span>
+                                            </div>
+                                            <div class="text" onclick="removeItems()">
+                                                <span>
+                                                    <img title="删除" class="leftArrowIcon" alt="删除" src="/s.gif">
+                                                </span>
+                                            </div>
+                                            <div class="duelingText">
+                                                删除
+                                            </div>
+                                        </td>
+                                        <td class="selectCell">
+                                            <div class="selectTitle">
+                                                <label for="duel_select_1">
+                                                    已选：
+                                                </label>
+                                            </div>
+                                            <div>
+                                            <select lay-ignore size="16" style="width:240px;" name="duel_select_1" multiple="multiple" id="duel_select_1" ondblclick="removeItems()" tabindex="4">
+                                                </select></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            </div>
+                    </div>
+               </div>
+
+            </div>
+            <div class="section">
+                <div class="section-title">流程变量
+                    <span class="section-down section-edit">收起</span>
+                    <span class="section-up  section-edit">展开</span>
+                </div>
+                <div class="section-body">
+                    <div class="item divs" id="Variables">
+                        <input lay-skin="primary" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000001" title="发起人" />
+                        <input lay-skin="primary" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000002" title="流程参与人" />
+                        <input lay-skin="primary" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000003" title="发起人部门负责人" />
+                        <input lay-skin="primary" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000004" title="发起人部门分管领导" />
+                        <input lay-skin="primary" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000006" title="与发起人相同部门人员" />
+                        <input lay-skin="primary" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000007" title="主管部门负责人" />
+                        <input lay-skin="primary" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000041" title="发起人部门分管业务领导" />
+                        <input lay-skin="primary" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000020" title="发起人的护士长" />
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+
+            </div>
+            <div class="section">
+                <div class="section-title">节点流程变量
+                    <span class="section-down section-edit">收起</span>
+                    <span class="section-up  section-edit">展开</span>
+                </div>
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <span class="item-title">节点</span>
+                                <div class="layui-input-block">
+                                    <select lktp="8" lay-filter="StepVariablesId" lay-search lay-verify="" id="StepVariablesId">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+
+                    </div>
+                    <div class="item divs" id="StepVariables">
+                        <input lay-skin="primary" disabled="disabled" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000042" title="来源节点相同办理人员" />
+                        <input lay-skin="primary" disabled="disabled" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000043" title="来源节点办理人的部门负责人" />
+                        <input lay-skin="primary" disabled="disabled" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000044" title="来源节点办理人的部门分管领导" />
+                        <input lay-skin="primary" disabled="disabled" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000045" title="来源节点办理人的部门人员" />
+                        <input lay-skin="primary" disabled="disabled" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000046" title="来源节点办理人的部门的相同岗位类别人员" />
+                        <input lay-skin="primary" disabled="disabled" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000047" title="来源节点办理人的部门的相同职务人员" />
+                        <input lay-skin="primary" disabled="disabled" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000048" title="来源节点办理人的部门的相同职称人员" />
+                        <input lay-skin="primary" disabled="disabled" type="checkbox" name="name" value="00000000-0000-0000-0000-000000000060" title="来源节点办理人的护士长" />
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                
+            </div>
+            <div class="section">
+                <div class="section-title">条件查询
+                    <span class="section-down section-edit">收起</span>
+                    <span class="section-up  section-edit">展开</span>
+                </div>
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="filterlist-body">
+                            <div id="filter-content" class="filter-content">
+                                <div class="item divs">
+                                    <div class="item-left">
+                                        <div class="item-body">
+                                            <span class="item-title">查询范围</span>
+                                            <div class="layui-input-block">
+                                                <input lay-filter="Scope" type="radio" name="Scope" value="all" title="全部" checked>
+                                                <input lay-filter="Scope" type="radio" name="Scope" value="draftby" title="发起人所在部门">
+                                                <input lay-filter="Scope" type="radio" name="Scope" value="step" title="来源节点">
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both;"></div>
+
+                                </div>
+                                <div class="item divs" id="FromStepIdcontent">
+                                    <div class="item-left">
+                                        <div class="item-body">
+                                            <span class="item-title">节点</span>
+                                            <div class="layui-input-block">
+                                                <select lktp="8" lay-filter="FromStepId" lay-search lay-verify="" id="FromStepId">
+                                                    <option value="">请选择</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="clear:both;"></div>
+
+                                </div>
+                                <div class="filter-main">
+                                    <table>
+                                        <tr class="filter-row-head">
+                                            <td>逻辑运算符</td>
+                                            <td>字段</td>
+                                            <td>运算符</td>
+                                            <td>值</td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="filter-addbtn">
+                                    <img src="/img/cal/add.png" alt="Alternate Text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div class="popup-foot-shur save-checking">确定</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        var treeNode = new treeLoader("leftTree", 'organizationtree', function (data) {
+            getpeople(data.id)
+        });
+        treeNode.init();
+
+        var leftTreedeptchookNode = new treeLoader("leftTreedeptchook", 'organizationtree', function (data) {
+           // getpeople(data.id)
+        }); 
+        leftTreedeptchookNode.init()
+        $("#treePanel").height(280);
+        $("#leftTreedeptchook").height(260);
+        function addItems() {
+            $('#duel_select_1').append($('#duel_select_0 option:checked'))
+            if ($('#deptchook').hasClass('active')) {
+                var data = $('#leftTreedeptchook').tree('getSelected')
+                $('#duel_select_1').append('<option value="10:' + data.id + '">部门：'+data.text+'</option>')
+            }
+        }
+        function removeItems() {
+            $('#duel_select_0').append($('#duel_select_1 option:checked'))
+        }
+
+
+        var ContractId = getQueryString('pid')
+        var ContractIdName = getQueryString('pname')
+        $('#ContractId').val(ContractId)
+        $('#ContractIdName').val(ContractIdName)
+        var form = ''
+        var filter = ''
+        layui.use(['form'], function () {
+            form = layui.form
+            filter = new gridFilter('filter-content')
+            filter.init()
+            //filter.getfilter()
+
+            form.on('radio(lktp)', function (data) {
+                getpeople()
+            });
+            form.on('radio(Scope)', function (data) {
+                if (data.value == 'step') {
+                    $('#FromStepIdcontent').show()
+                } else {
+                    $('#FromStepIdcontent').hide()
+                }
+            });
+            
+            form.on('select(StepVariablesId)', function (data) {
+                if (data.value != '') {
+                    $('#StepVariables').find('input').prop('disabled', '') 
+                    $('#StepVariables').find('.layui-form-checkbox').removeClass('layui-disabled').removeClass('layui-checkbox-disbaled')
+                } else {
+                    $('#StepVariables').find('input').prop('disabled', 'disabled')
+                    $('#StepVariables').find('input').removeAttr('checked')
+                    $('#StepVariables').find('.layui-form-checkbox').addClass('layui-disabled').addClass('layui-checkbox-disbaled').removeClass('layui-form-checked')
+
+                }
+            });
+            getprocessnodes()
+            getdata()
+            //getpeople()
+
+        });
+
+
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('.save-checking').click(function () {
+            function callback(data) {
+                parent.success2('选择人员成功')
+                parent.$('#iframe').hide()
+                parent.$('.popup-mask').hide()
+
+                var lknm = 'participantor'
+                values = values.join(',')
+                names = names.join(',')
+                if (typeof parent.peopleLookupPick != 'undefined') {
+                    parent.peopleLookupPick('editPage', lknm + '_lkid', lknm, '', values, names, 'null', '');
+                } else {
+                    parent.location.reload()
+                }
+            }
+
+            var people = []
+
+            var values = []
+            var names = []
+
+            if ($('#IsPriviate').attr('checked') == 'checked') {
+                var IsPriviate = true
+            } else {
+                var IsPriviate = false
+            }
+            var Variables = []
+            for (var i = 0; i < $('#Variables input:checked').length; i++) {
+                Variables.push({
+                    Id: $('#Variables input:checked').eq(i).val(),
+                    Name: $('#Variables input:checked').eq(i).attr('title')
+                })
+                values.push($('#Variables input:checked').eq(i).val())
+                names.push($('#Variables input:checked').eq(i).attr('title'))
+            }
+            var StepVariables = []
+            for (var i = 0; i < $('#StepVariables input:checked').length; i++) {
+                StepVariables.push({
+                    Id: $('#StepVariables input:checked').eq(i).val(),
+                    Name: $('#StepVariables input:checked').eq(i).attr('title')
+                })
+                values.push($('#StepVariables input:checked').eq(i).val())
+                names.push($('#StepVariables input:checked').eq(i).attr('title'))
+            }
+            var StepVariablesId = $('#StepVariablesId').val()
+            var StepVariablesIdName = $('#StepVariablesId').next().find('input').val()
+            var Groups = []
+            for (var i = 0; i < $('#duel_select_1 option').length; i++) {
+                Groups.push({
+                    Id: $('#duel_select_1 option').eq(i).val().split(':')[1],
+                    ObjectTypeCode: $('#duel_select_1 option').eq(i).val().split(':')[0],
+                    Name: $('#duel_select_1 option').eq(i).text(),
+                })
+                values.push($('#duel_select_1 option').eq(i).val())
+                names.push($('#duel_select_1 option').eq(i).text())
+            }
+
+            filter.getrowdata()
+            var FilterExpresssion = filter.rowdata
+            var FromStepId = ''
+            var FromStepName = '';
+            //debugger;
+            var Scope = jQuery('input[name="Scope"]::checked').val()
+            if (Scope == 'step') {
+                FromStepId = jQuery('#FromStepId').val()
+                FromStepName = jQuery('#FromStepId').next().find('input').val()
+            }
+            var FilterScope = {
+                FromStepId: FromStepId,
+                FromStepName: FromStepName,
+                Scope: Scope
+            }
+            var messages = {
+                    "Participantors": {
+                        "StepId": getQueryString('StepId'),
+                        "StepCode": getQueryString('StepCode'),
+                         ProcessId: getQueryString('ProcessId'),
+                        "Name": "",
+                        "Variables": Variables,
+                        "StepVariables": {
+                            "FromStepId": StepVariablesId,
+                            "Name": StepVariablesIdName,
+                            "Variables": StepVariables
+                        },
+                        "Groups": Groups,
+                        "FilterExpresssion": FilterExpresssion,
+                        FilterScope: FilterScope
+                    }
+            }
+            var id = getQueryString('id')
+            if (id) {
+                messages.id = id
+            }
+            //console.log(messages)
+            messages = JSON.stringify(messages)
+            var data = { messages: messages }
+            var save = document.querySelectorAll('.save-checking.active');
+            ajaxMethodPostData('process.participantor.save', data, callback)
+        })
+        $('#treePanel li').show()
+        $('.selectCell1').show()
+        $('#depttree').show()
+        function getpeople(id) {
+            $('#treePanel li').show()
+            $('.selectCell1').show()
+            $('#depttree').hide()
+            $('#deptchook').hide().removeClass('active')
+            var Lktp = $('.lktpcontent input:checked').val()
+            if (Lktp == 'U') {
+                $('#depttree').show()
+                var d = {
+                    search: $('#lksearch').val()
+                }
+                if (id) {
+                    d.businessUnitId = id
+                }
+                ajaxMethodGetData('user.search',d, function (data) {
+                    $('#duel_select_0').html('')
+                    for (var i = 0; i < data.listData.length; i++) {
+                        $('#duel_select_0').append('<option value="' + '8:' + data.listData[i].systemUserId + '">用户：' + data.listData[i].fullName + '('+data.listData[i].BusinessUnitIdName + ')</option>')
+                    }
+                })
+            } else if (Lktp == 'A') {
+                ajaxMethodGetData('sys.role.search', {
+                    search: $('#lksearch').val()
+                }, function (data) {
+                    $('#duel_select_0').html('')
+                    for (var i = 0; i < data.listData.length; i++) {
+                        $('#duel_select_0').append('<option value="' + '1036:' + data.listData[i].RoleId + '">角色：' + data.listData[i].Name + '</option>')
+                    }
+                })
+            } else if (Lktp == 'P') {
+                ajaxMethodGetData('sys.group.search', {
+                    scope: 'public',
+                    search: $('#lksearch').val()
+                }, function (data) {
+                    $('#duel_select_0').html('')
+                    for (var i = 0; i < data.listData.length; i++) {
+                        $('#duel_select_0').append('<option value="' + '9:' + data.listData[i].GroupId + '">个人小组：' + data.listData[i].Name + '</option>')
+                    }
+                })
+            } else if (Lktp == 'R') {
+                ajaxMethodGetData('sys.group.search', {
+                    scope: 'owner',
+                    search: $('#lksearch').val()
+                }, function (data) {
+                    $('#duel_select_0').html('')
+                    for (var i = 0; i < data.listData.length; i++) {
+                        $('#duel_select_0').append('<option value="' + '9:' + data.listData[i].GroupId + '">公共小组：' + data.listData[i].Name + '</option>')
+                    }
+                })
+            }
+            else if (Lktp == 'B') {
+                $('.selectCell1').hide()
+                $('#deptchook').show().addClass('active')
+                $('.tree-title').each(function (index) {
+                    $(this).parent().parent().hide()
+                    if ($(this).text().indexOf($('#lksearch').val()) != '-1') {
+                        $(this).parents('li').show()
+                    }
+                })
+            }
+            $('#duel_select_0 option').each(function () {
+                var id = $(this).attr('value')
+                for (var i = 0; i < $('#duel_select_1 option').length; i++) {
+                    if (id == $('#duel_select_1 option').eq(i).attr('value')) {
+                        $(this).remove()
+                    }
+                }
+            })
+            
+        }
+        getlookup()
+        function getlookup() {
+            $('.searchselect').click(function () {
+                var that = this
+                d = {
+                    Lktp: $(that).attr('Lktp'),
+                }
+                if ($(this).find('select option').length < 2) {
+                    $(this).find('input').off()
+                    searchlookup(d, that)
+                }
+                $(this).find('input').off()
+                $(this).find('input').keyup(function () {
+                    $(this).find('input').off()
+                    d = {
+                        Lktp: $(that).attr('Lktp'),
+                        Lksrch: $(this).val()
+                    }
+                    searchlookup(d, that)
+                })
+            })
+        }
+
+        function searchlookup(d, that) {
+            ajaxMethodGetData('ui.entity.lookup', d, function (data) {
+                $(that).find('select').html('<option value="">请选择</option>')
+                $(that).find('.layui-anim.layui-anim-upbit').html('<dd lay-value="" class="layui-select-tips">请选择</dd>')
+                for (var i = 0; i < data.listData.length; i++) {
+                    $(that).find('select').append('<option value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</option>')
+                    $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</dd>')
+                }
+                $(that).find('.layui-anim.layui-anim-upbit dd').off()
+                $(that).find('.layui-anim.layui-anim-upbit dd').click(function () {
+                    if ($(this).attr('lay-value') != '') {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', $(this).html())
+                    } else {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', '')
+                    }
+                    $(this).parent().find('dd').removeClass('layui-this')
+                    $(this).addClass('layui-this')
+                })
+            })
+        }
+        $('.laydate').each(function () {
+            var id = $(this).attr('id')
+            var datatype = $(this).attr('datatype')
+            if (datatype == 'D') {
+                laydate.render({
+                    elem: '#' + id,
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'F') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'datetime',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Year') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Month') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    done: function (value) {
+                    }
+                });
+            }
+        })
+
+        function getprocessnodes() {
+            ajaxMethodGetAsyncData('process.all.nodes', { ProcessId: getQueryString('ProcessId') },false, function (data) {
+                var rows = data.rows;
+                //rows = JSON.parse(rows)
+                for (var i = 0; i < rows.length; i++) {
+                    $('#StepVariablesId').append('<option value="' + rows[i].StepID + '">' + rows[i].Name + '</option>')
+                    $('#FromStepId').append('<option value="' + rows[i].StepID + '">' + rows[i].Name + '</option>')
+                }
+                form.render()
+            })
+        }
+        function getdata() {
+            ajaxMethodGetAsyncData('process.participantor.getlist',
+                {
+                    ProcessId: getQueryString('ProcessId'),
+                    StepId: getQueryString('StepId'),
+                    StepCode: getQueryString('StepCode'),
+                },false, function (data) {
+                //var data = { "Participantors": { "StepId": null, "StepCode": null, "Name": "", "Variables": [{ "Id": "", "Name": "流程1" }], "StepVariables": { "FromStepId": "U", "Name": "用户", "Variables": [{ "Id": "", "Name": "流程1" }] }, "Groups": [{ "Id": "27a909e1-9fb4-4c67-afcd-3dc9032fdd6b", "ObjectTypeCode": "8", "Name": "123" }], "FilterExpresssion": [{ "id": 0, "sort": 0, "label": "排序", "column": "SortNumber", "attribute": "SortNumber", "dataType": "Numeric", "picklistValues": ["102"], "operator": "gt", "isEditable": false, "operands": [""] }, { "id": 1, "sort": 1, "label": "职务", "column": "Title", "attribute": "Title", "dataType": "DroplistText", "picklistValues": ["0", "1"], "operator": "eq", "isEditable": false, "operands": ["科长", "主任"] }] } }
+                //data = JSON.parse(data.rows)
+                //console.log(data)
+                var res = data
+                var FilterScope = res.FilterScope
+                $('input[value="' + FilterScope.Scope + '"]').attr('checked', 'checked')
+                if (FilterScope.Scope == 'step') {
+                    $('#FromStepIdcontent').show()
+                    $('#FromStepId').val(FilterScope.FromStepId)
+                }
+                for (var i = 0; i < res.Groups.length; i++) {
+                    var Groups = res.Groups[i]
+                    $('#duel_select_1').append('<option value="' + Groups.ObjectTypeCode + ':' + Groups.Id + '">' + Groups.Name + '</option>')
+                }
+                for (var i = 0; i < res.Variables.length; i++) {
+                    for (var j = 0; j < $('#Variables input').length; j++) {
+                        if (res.Variables[i].Id == $('#Variables input').eq(j).val()) {
+                            $('#Variables input').eq(j).attr('checked', 'checked')
+                        }
+                    }
+                }
+                if (res.StepVariables) {
+                    if (res.StepVariables.FromStepId != '') {
+                        $('#StepVariables').find('input').prop('disabled', '')
+                        $('#StepVariables').find('.layui-form-checkbox').removeClass('layui-disabled').removeClass('layui-checkbox-disbaled')
+
+                    }
+                }
+                $('#StepVariablesId').val(res.StepVariables.FromStepId)
+                for (var i = 0; i < res.StepVariables.Variables.length; i++) {
+                    for (var j = 0; j < $('#StepVariables input').length; j++) {
+                        if (res.StepVariables.Variables[i].Id == $('#StepVariables input').eq(j).val()) {
+                            $('#StepVariables input').eq(j).attr('checked', 'checked')
+                        }
+                    }
+                }
+                filter.getfilter(res.FilterExpresssion)
+            })
+        }
+        $('.section-down').click(function () {
+            $(this).hide()
+            $(this).parent().find('.section-up').show()
+            $(this).parent().next().hide()
+        })
+        $('.section-up').click(function () {
+            $(this).hide()
+            $(this).parent().find('.section-up').show()
+            $(this).parent().next().show()
+        })
+
+    </script>
+    <iframe id="iframe" frameborder="0"></iframe>
+    <div class="popup-mask"></div>
+</body>
+</html>

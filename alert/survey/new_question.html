@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert2.css" rel="stylesheet" />
+    <style>
+        .modal-body {
+            padding:30px;
+        }
+        .option .el-input {
+            float:left;
+        }
+        .option .el-form-item {
+            float:left;
+            width:100%;
+        }
+        .option span {
+            float:left;
+        }
+        .option > span {
+            font-size:14px;
+        }
+        .option .el-form-item span {
+            margin-left:1%;
+            margin-right:1%;
+        }
+        .el-input-number {
+            float:left;
+            width:130px;
+        }
+        .el-input-number span{
+            margin:0 !important;
+        }
+        .option .el-form-item__content > div {
+            margin-left:10px;
+        }
+        .option-head {
+            height:25px;
+            margin-left:90px;
+        }
+        .el-icon-remove-outline {
+            color:#c9c7c5;
+            font-size:22px;
+            cursor:pointer;
+            margin-left:10px;
+        }
+        .el-icon-remove-outline:hover{
+            color:#ff6666;
+        }
+        .el-icon-circle-plus-outline {
+            color:#c9c7c5;
+            font-size:22px;
+            cursor:pointer;
+            margin-left:5px;
+        }
+        .el-icon-circle-plus-outline:hover {
+            color:#108af9;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">新增问题</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                             <el-form 
+                                 label-position="left"
+                                 :model="ruleForm" 
+                                 :rules="rules" 
+                                 ref="ruleForm" 
+                                 label-width="80px" 
+                                 class="demo-ruleForm">
+                                  <el-form-item label="问题类型" prop="QuestionType" style="width:35%;float:left;">
+                                    <el-select v-model="ruleForm.QuestionType" placeholder="请选择问题类型">
+                                         <el-option
+                                          v-for="item in options"
+                                          :key="item.value"
+                                          :label="item.label"
+                                          :value="item.value">
+                                        </el-option>
+                                    </el-select>
+                                  </el-form-item>
+                                   <el-form-item label="此题必答" style="float:right">
+                                    <el-switch v-model="ruleForm.Required"></el-switch>
+                                  </el-form-item>
+                                 <div class="clear"></div>
+                                  <el-form-item label="问题" prop="Question">
+                                    <el-input type="textarea"v-model="ruleForm.Question"></el-input>
+                                  </el-form-item>
+                                 <el-form-item label="分组1" style="width:50%;float:left;">
+                                    <el-input v-model="ruleForm.QuestionGroup"></el-input>
+                                  </el-form-item>
+                                 <el-form-item label="序号" prop="SortNumber" style="width:35%;float:right;">
+                                    <el-input v-model="ruleForm.SortNumber"></el-input>
+                                  </el-form-item>
+                                 <div class="clear"></div>
+                                 <el-form-item label="分组2" style="width:50%;float:left;">
+                                    <el-input v-model="ruleForm.SubCategory"></el-input>
+                                  </el-form-item>
+                                 <el-form-item label="问题分值" style="float:right">
+                                    <el-switch v-model="ruleForm.delivery2"></el-switch>
+                                  </el-form-item>
+                                 <el-form-item label="问题分组" style="float:right;margin-right:30px">
+                                    <el-switch v-model="list.delivery3"></el-switch>
+                                  </el-form-item>
+                                 <div class="clear"></div>
+
+                                 <div class="option" v-show="ruleForm.QuestionType==1||ruleForm.QuestionType==2">
+                                     <div class="option-head">
+                                         <span style="margin-right:49%">选项</span>
+                                         <span style="margin-right:14%" v-show="list.delivery3">分组</span>
+                                         <span v-show="ruleForm.delivery2">分值</span>
+                                     </div>
+                                     <el-form-item  :label="'选项'+(key+1)" v-for="(item,key) in ruleForm.Options">
+                                         <span></span>
+                                         <el-input v-model="item.AnswerOption" style="width:50%;"></el-input>
+                                         <el-input v-model="item.AnswerOptionGroup" style="width:15%;"v-show="list.delivery3"></el-input>
+                                         <el-input-number v-model="item.Points" v-show="ruleForm.delivery2" :min="1" :max="10" label="描述文字"></el-input-number> 
+                                         <i class="el-icon-remove-outline" @click="removeoption(key)"></i>
+                                         <i class="el-icon-circle-plus-outline" @click="addoption"></i>
+                                    </el-form-item>
+                                     <div class="clear"></div>
+                                 </div>
+                                 <!-- <el-form-item>
+                                    <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+                                    <el-button >重置</el-button>
+                                  </el-form-item>-->
+                                </el-form>
+
+
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button @click="submitForm('ruleForm')" id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var pid = parent.getQueryString('id')
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                options: [{
+                    value: 1,
+                    label: '单选'
+                }, {
+                    value: 2,
+                    label: '多选'
+                }, {
+                    value: 5,
+                    label: '单行文本'
+                }, {
+                    value: 52,
+                    label: '多行文本'
+                }, ],
+                list: {
+                    delivery3: false,
+                },
+                ruleForm: {
+                    SurveyId:'',
+                    Question: '',
+                    QuestionGroup: '',
+                    SubCategory: '',
+                    SortNumber: '',
+                    QuestionType: '',
+                    Required: true,
+                    EnableCore:false,
+                    Options: [{
+                        AnswerOption: '',
+                        Points: '',
+                        AnswerOptionGroup: '',
+                        QuestionAnswerOptionId: ''
+                    },
+                    {
+                        AnswerOption: '',
+                        Points: '',
+                        AnswerOptionGroup: '',
+                        QuestionAnswerOptionId: ''
+                    }, ]
+                },
+                rules: {
+                    QuestionType: [
+                        { required: true, message: '请选择问题类型', trigger: 'change' }
+                    ],
+                    Question: [
+                      { required: true, message: '请输入问题名称', trigger: 'blur' },
+                    ],
+                }
+            },
+
+            created: function () {
+                this.getData()
+                this.ruleForm.SurveyId = pid
+            },
+            methods: {
+                submitForm:function(formName) {
+                this.$refs[formName].validate(function(valid){
+                    if (valid) {
+                        function callback(data) {
+                            parent.success('保存问题成功')
+                            parent.$('#changeDiv').hide()
+                            parent.getdata()
+                        }
+                        var d = vum.ruleForm
+                        var id = getQueryString('id')
+                        if (id) {
+                            d.id = id
+                        }
+                        messages = JSON.stringify(d)
+                        var data = { message: messages };
+                        console.log(data)
+                        ajaxMethodPostData('survey.question.edit', data, callback)
+                } else {
+                    return false;
+                }
+                });
+                },
+                removeoption: function (key) {
+                    if (this.ruleForm.Options.length > 1) {
+                        this.ruleForm.Options.splice(key, 1)
+                    }
+                },
+                addoption: function () {
+                    this.ruleForm.Options.push({
+                        AnswerOption: '',
+                        Points: '',
+                        AnswerOptionGroup: '',
+                        QuestionAnswerOptionId: ''
+                    })
+                },
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('id')
+                    if (id != null) {
+                        var d = {
+                            id: id,
+                        }
+                        function callback(data) {
+                            console.log(data)
+                            that.ruleForm = data.listData
+                            if (data.listData.Options.length == 0) {
+                                that.ruleForm.Options.push({
+                                    AnswerOption: '',
+                                    Points: '',
+                                    AnswerOptionGroup: '',
+                                    QuestionAnswerOptionId: ''
+                                })
+                            }
+                        }
+                        ajaxMethodGetData('survey.question.get', d, callback)
+                    }
+                },
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,596 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .el-input {
+            float:left;
+            width:100%;
+            margin-top:5px;
+        }  
+        .shift-name-title {
+            float:left;
+            margin-top:5px;
+        }
+        .modal-body {
+            font-size:12px;
+            color:#606266;
+        }
+        #photo .uiModal--medium .modal-container {
+            width: 70%;
+        }
+        .title-text {
+             color: rgb(196, 196, 196)
+        }
+        .number-title {
+            margin-left:60px;
+        }
+        .ant-radio-group-time {
+            float:left;
+            margin-left:15px;
+            margin-right:40px;
+        }
+        .ant-radio-group-set-number{
+            float:left;
+            margin-top:5px;
+            
+        }
+        .ant-radio-group-set {
+            margin-top:10px;
+        }
+        .ant-radio-group-time>span {
+            float:left;
+            margin-top:5px;
+        }
+        .ant-radio-group-time .el-input {
+            margin-left:5px;
+            width:100px;
+        }
+        .el-time-panel {
+            z-index:10000 !important;
+        }
+        .ant-radio-group-set {
+            height:30px;
+        }
+        .rest {
+            float:left;
+            margin-top:5px;
+        }
+        .el-input--prefix .el-input__inner {
+            padding-left: 22px;
+            padding-right: 20px;
+        }
+        .el-input__prefix {
+            left:0px;
+        }
+        .el-input__suffix {
+            right:0px;
+        }
+        .el-input-number {
+            top:10px;
+        }
+        .el-input-number:hover .el-input-number__decrease {
+            display:block;
+        }
+        .el-input-number:hover .el-input-number__increase {
+            display:block;
+        }
+        .el-input-number__decrease {
+            height:13px;
+            line-height:13px;
+            width:20px;
+            bottom:1px;
+            top:auto;
+            left:auto;
+            right:1px;
+            border:0;
+            border-left:1px solid #C0C4CC;
+            border-top:1px solid #C0C4CC;
+            border-radius:0;
+            display:none;
+        }
+        .el-input-number__increase {
+            height:12px;
+            line-height:12px;
+            width:20px;
+            top:1px;
+            left:auto;
+            right:1px;
+            border:0;
+            border-left:1px solid #C0C4CC;
+            border-radius:0;
+            display:none;
+
+        }
+        .el-input-number .el-input {
+            width:50px;
+            margin-left:0;
+        }
+        .el-input-number .el-input input{
+            width:50px;
+            padding:0;
+            text-align:left;
+            text-indent:5px;
+
+        }
+        .el-input-number {
+            width:50px;
+        }
+        .class-manage-section-interval .title-text {
+            margin-top:13px;
+        }
+        .class-manage-section-interval {
+            margin-top:10px;
+        }
+        .late {
+            margin-top:10px;
+            float:left;
+            width:50%;
+            height:30px;
+            margin-top:10px;
+        }
+        .late .el-input-number{
+            margin-left:10px;
+        }
+        .late .el-input-number,.late .el-input input{
+            width:70px;
+        }
+        .timesizechecked {
+            margin-top:10px;
+        }
+        .timesizechecked-tr {
+            height:40px;
+            line-height:40px;
+        }
+        .table-coloer {
+            background-color:#f6f6f6;
+            padding-left:30px;
+        }
+        .timesizechecked-tr .ant-radio-group-time .el-input {
+            margin-top:6px;
+        }
+        .timesizechecked-tr .ant-radio-group-set-number {
+            margin:0;
+        }
+        .timesizechecked-tr .ant-radio-group-time > span {
+            margin:0;
+            
+        }
+        .timesizechecked-tr .ant-radio-group-time > span {
+            float:left;
+        }
+        .size-time {
+            float:left;
+            margin-left:60px;
+            height:40px;
+        }
+        .size-time .ant-radio-group-time {
+            margin:0;
+        }
+        .size-time .el-input {
+            margin-left:0;
+        }
+        .size-time .ant-radio-group-time > span {
+            margin-left:5px;
+            margin-right:5px;
+        }
+        .shift-head .el-input {
+            margin-right:10px;
+        }
+       .shift-head .el-select,.shift-head .el-input{
+            float:right;
+        }
+       .shift-body-foot .el-select,.shift-body-foot .el-input{
+            float:right;
+        }
+       .shift-body-foot .el-input {
+            margin-right:15px;
+        }
+        .shift-item {
+            width:235px;
+            margin-top:10px;
+        }
+        .shift-body-main {
+            width:100%;
+            padding:0rem 3rem;
+            box-sizing:border-box;
+        }
+        .modal-body {
+            padding:0;
+        }
+        .shift-body-titme {
+            height:30px;
+            background-color: rgb(243, 242, 242);
+            line-height:30px;
+            border-radius:4px;
+            padding-left:15px;
+            margin:2rem 2rem 0.5rem 2rem;
+        }
+        .late4 + div {
+            float:left;
+            width:100%;
+        }
+        .clear {
+            clear:both;
+        }
+        .shift-item .el-checkbox{
+            margin-top:5px;
+        }
+        .shift-item-cheekbox {
+            float:left;
+            margin-top:20px;
+        }
+        .shift-item-cheekbox .el-checkbox{
+            margin-right:5px;
+        }
+        .el-popper {
+            z-index:10000 !important;
+        }
+        #photo .el-select__input:focus{
+            outline: none;
+            border: 0;
+            box-shadow: none;
+        }
+        .required {
+            margin-top:3px;
+        }
+        .item-left {
+            float:left;
+            width:48%;
+        }
+        .item-right {
+            float:right;
+            width:48%;
+        }
+        .shift-item {
+            width:100%;
+        }
+        .el-select {
+            width:100%;
+        }
+        .el-date-editor.el-input {
+            margin-top:5px;
+            width:100%;
+        }
+        .el-textarea {
+            margin-bottom:20px;
+        }
+        .timechook {
+            margin-top:25px;
+        }
+        .timechook .el-date-editor {
+            width:55% ;
+        }
+        .timechook>div:last-child {
+            width:40% ;
+            margin-left:5%;
+        }
+        .el-textarea {
+            margin-top:5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">新建加分</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>加分</span></div>
+                            <div class="shift-body-main">
+                               <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">姓名</span>
+                                        <el-select 
+                                            @visible-change="getlookup('30020','EmployeeId')"
+                                            class="save-checking-input"
+                                            searchname="FolderId"
+                                            Lktp ="100200"
+                                            v-model="list.EmployeeId.Id" 
+                                            filterable 
+                                            remote
+                                            :remote-method="function(query){searchlookup(query,'30020','EmployeeId')}"
+                                            placeholder="请选择">
+                                            <el-option
+                                              v-for="item in search.EmployeeId"
+                                              :key="item.ID"
+                                              :label="item.Name"
+                                              :value="item.ID">
+                                            </el-option>
+                                          </el-select>  
+                                   </div>
+                                   <div class="item-right">
+                                       <span class="required">*</span>
+                                        <span class="shift-name-title">名称</span>
+                                       <el-autocomplete
+                                           style="display:block;"
+                                          class="save-checking-input"
+                                          v-model="list.Name"
+                                          :fetch-suggestions="function(query,cb){searchlookup(query,'30245','Name',cb)}"
+                                          placeholder="请输入名称"
+                                        ></el-autocomplete>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                       <span class="required">*</span>
+                                        <span class="shift-name-title">加分日期</span>
+                                        <el-date-picker 
+                                            class="save-checking-input"
+                                            v-model="list.OccurredOn"  
+                                            value-format="yyyy-MM-dd"
+                                            placeholder="选择日期">
+
+                                        </el-date-picker>
+                                        
+                                   </div>
+                                   <div class="item-right">
+                                       <span class="required">*</span>
+                                        <span class="shift-name-title">加分分数</span>
+                                        <el-input class="save-checking-input" v-model="list.Points" placeholder="请输入数字" onkeyup="value=value.replace(/[^\d]/g,'')"></el-input>  
+                                         
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <!--<div class="shift-item">
+                                   <div class="">
+                                       <span class="required">*</span>
+                                        <span class="shift-name-title">状态</span>
+                                        <el-select class="save-checking-input" v-model="list.StatusCode" placeholder="请选择">
+                                                <el-option
+                                                  v-for="item in select.StatusCode"
+                                                  :key="item.value"
+                                                  :label="item.label"
+                                                  :value="item.value">
+                                                </el-option>
+                                            </el-select>  
+                                   </div>
+                                   <div class="clear"></div>
+
+                                   </div>-->
+                                    </div>
+
+                                    <div class="shift-body-titme"><span>其他信息</span></div>
+                                    <div class="shift-body-main">
+                                        <div class="shift-item">
+                                            <div class="">
+                                        <span class="shift-name-title">备注</span>
+
+                                        <el-input type="textarea" class="" v-model="list.Description"></el-input>  
+
+                                                </div>
+                                                </div>
+                               </div>
+                                
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class="label bBody">取消</span>
+                                </button>
+                                <!--<button class="saveAndNew save-checking slds-button slds-button--neutral uiButton forceActionButton" type="button" title="保存并继续" id="saveAndNew">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class="label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+
+
+
+
+
+    <script>
+        var ObjTypeCode = 30235
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    EmployeeId: {Id:''},
+                    Name: '',
+                    OccurredOn: '',
+                    Points: '',
+                    StatusCode: '',
+                    Description: '',
+                    ObjTypeCode: 30235
+                },
+                search: {
+                    EmployeeId: [],
+                },
+                select: {
+                }
+            },
+            created: function () {
+                this.getlookup('30020', 'EmployeeId')
+                var edit = getQueryString('edit')
+                var EmployeeId = getQueryString('EmployeeId')
+                var Name = getQueryString('Name')
+                if (edit) {
+                    $('.slds-text-heading--medium').html('编辑加分')
+                }
+                if (EmployeeId) {
+                    this.list.EmployeeId.Id = EmployeeId
+                }
+                if (Name) {
+                    this.list.Name = Name
+                }
+                this.getData()
+                this.getselect()
+            },
+            methods: {
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('id')
+                    if (id&&id != null) {
+                        var d = {
+                            Id: id,
+                            ObjTypeCode: 30235
+                        }
+                        function callback(data) {
+                            console.log(data)
+                            that.list = data.record;
+                            that.list.ObjTypeCode = that.ObjTypeCode
+                            for (item in that.search) {
+                                if (item != 'searchname') {
+                                    var name = item
+                                    var ID = that.list[name].Id
+                                    var Name = that.list[name].Name
+                                    var newlist = {
+                                        ID: ID,
+                                        Name: Name
+                                    }
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                        ajaxMethodGetData('entity.detail.get', d, callback)
+                    }
+                },
+                getselect: function () {
+                    var that = this
+                    var d = {}
+                    d = {
+                        ObjTypeCode: 30235,
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, callback)
+                    function callback(data) {
+                        console.log(data)
+                        that.select = data.context.picklistValuesMap
+                    }
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        console.log(data)
+                        that.search[name] = data.listData
+                        var id = getQueryString('id')
+                        if (id != null) {
+                            var ID = that.list[name].Id
+                            var Name = that.list[name].Name
+                            var newlist = {
+                                ID: ID,
+                                Name: Name
+                            }
+                            if (ID) {
+                                if (JSON.stringify(that.search[name]).indexOf(JSON.stringify(newlist)) == -1) {
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                    }
+                },
+                searchlookup: function (query, Lktp, name, cb) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        if (cb) {
+                            var values = []
+                            for (var i = 0; i < data.listData.length; i++) {
+                                values.push({
+                                    value: data.listData[i].Name
+                                })
+                            }
+                            cb(values);
+                        } else {
+                            that.search[name] = data.listData
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        $('.save-checking').click(function () {
+            var that = this
+            if ($(this).hasClass('active')) {
+                function callback(data) {
+                    console.log(data)
+                    if (getQueryString('edit')) {
+                        parent.success2('编辑成功')
+                        parent.$('.popup-mask').hide()
+                        parent.$('#changeDiv').hide()
+                        parent.$('#iframe').hide()
+                    } else {
+                        parent.success2('添加成功')
+                        parent.$('.popup-mask').hide()
+                        parent.$('#changeDiv').hide()
+                        parent.$('#iframe').hide()
+                    }
+                      parent.refreshScoretable()
+                    //parent.$('#datagrid').datagrid();
+                    //parent.$('#Scoretable').html('')
+                    //parent.Evaluation.prototype.EvaluationTest()
+                }
+                var d = vum.list
+                var id = getQueryString('id')
+                var message = {}
+
+                var messages = {
+                    params: {
+                        recordRep: {
+                            objTypeCode: 30235,
+                            fields: d
+                        }
+                    }
+                }
+                if (id != null) {
+                    messages.params.recordRep.id = id
+                }
+                messages = JSON.stringify(messages)
+                var data = { message: messages };
+                var save = document.querySelectorAll('.save-checking.active');
+                if (save.length > 0) {
+                    ajaxMethodPostData('entity.saverecord', data, callback)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

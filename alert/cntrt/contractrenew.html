@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">合同续签</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>基本信息</span></div>
+                            <div class="shift-body-main">
+                               <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">合同名称</span>
+                                        <el-input :disabled="true" v-model="list.ContractId.Name"></el-input>      
+                                   </div>
+                                   <div class="item-right">
+                                           <span class="shift-name-title">合同金额</span>
+                                        <el-input  v-model="list.TotalPrice"></el-input>   
+                                      
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                               <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="required">*</span>
+                                       <span class="shift-name-title">开始日期</span>
+                                           <el-date-picker
+                                               class="save-checking-input"
+                                              v-model="list.ActiveOn"
+                                              type="date" value-format="yyyy-MM-dd"
+                                              placeholder="选择日期">
+                                            </el-date-picker>
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="required">*</span>
+                                            
+                                       <span class="shift-name-title">截止日期</span>
+                                           <el-date-picker
+                                               class="save-checking-input"
+                                              v-model="list.ExpiresOn"
+                                              type="date" value-format="yyyy-MM-dd"
+                                              placeholder="选择日期">
+                                            </el-date-picker> 
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                       <span class="shift-name-title">签字日期</span>
+                                           <el-date-picker
+                                              v-model="list.SignedDate"
+                                              type="date" value-format="yyyy-MM-dd"
+                                              placeholder="选择日期">
+                                            </el-date-picker> 
+                                   </div>
+                                   
+                                   <div class="item-right">
+                                       <span class="shift-name-title">签字人</span>
+                                          <el-select
+                                              class="save-checking-input"
+                                          v-model="list.AccountId.Id"
+                                          filterable
+                                          remote
+                                          @visible-change="getlookup('8','AccountId')"
+                                          :remote-method="function(query){searchlookup(query,'8','AccountId')}"
+
+                                          placeholder="请选择">
+                                          <el-option
+                                            v-for="item in search.AccountId"
+                                            :key="item.ID"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select>
+
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                 <div class="shift-item">
+                                   <div class="">
+                                       <span class="shift-name-title">合同内容</span>
+                                           <el-input
+                                              type="textarea"
+                                              :rows="4"
+                                              placeholder="请输入内容"
+                                              v-model="list.ContractLanguage">
+                                            </el-input>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+
+
+                               </div>
+                                
+                            
+                            
+                            <div class="shift-body-titme"><span>备注信息</span></div>
+                            <div class="shift-body-main">
+                                <span>备注</span>
+                               <div class="shift-item">
+                                    <el-input
+                                      type="textarea"
+                                      :rows="4"
+                                      placeholder="请输入内容"
+                                      v-model="list.Remark">
+                                    </el-input>
+                                   <div class="clear"></div>
+                               </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="active save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    TotalPrice: '',
+                    SignedDate: '',
+                    ActiveOn: '',
+                    ExpiresOn: '',
+                    ContractId: {
+                        id: '', Name: ''
+                    },
+                    Remark: '',
+                    ContractLanguage: '',
+                    AccountId: { id: '', Name: '' }
+                },
+                select: {
+                },
+                search: {
+                    AccountId:''
+                }
+            },
+            created: function () {
+                this.getData()
+                this.getselect()
+                var pid = getQueryString('pid')
+                var pname = getQueryString('pname')
+                this.list.ContractId = {
+                    id: pid, Name: pname
+                }
+            },
+            methods: {
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('id')
+                    if (id != null) {
+                        var ObjectTypeCode = ObjectTypeCode
+                        var d = {
+                            Id: id,
+                            ObjTypeCode: 1011
+                        }
+                        function callback(data) {
+                            console.log(data)
+                            that.list = data.record;
+                            that.list.ObjTypeCode = 1011
+                            for (item in that.search) {
+                                if (item != 'searchname') {
+                                    var name = item
+                                    var ID = that.list[name].Id
+                                    var Name = that.list[name].Name
+                                    var newlist = {
+                                        ID: ID,
+                                        Name: Name
+                                    }
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                        ajaxMethodGetData('entity.detail.get', d, callback)
+                    }
+                },
+                getselect: function () {
+                    var that = this
+                    var d = {}
+                    var ObjectTypeCode = '1090'
+                    d = {
+                        ObjTypeCode: ObjectTypeCode,
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, callback)
+                    function callback(data) {
+                        console.log(data)
+                        that.select = data.context.picklistValuesMap
+                    }
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                        var id = getQueryString('id')
+                        if (id != null) {
+                            var ID = that.list[name].Id
+                            var Name = that.list[name].Name
+                            var newlist = {
+                                ID: ID,
+                                Name: Name
+                            }
+                            if (ID) {
+                                if (JSON.stringify(that.search[name]).indexOf(JSON.stringify(newlist)) == -1) {
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                    }
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        var id = getQueryString('id')
+        if (id && id != null) {
+            $('.slds-text-heading--medium').html('编辑合同续签')
+        }
+
+
+        $('#Save').click(function () {
+            function callback(data) {
+                console.log(data)
+                parent.success('合同续签成功')
+                parent.$('#changeDiv').hide()
+                parent.entityAttachment.prototype.relatedgetlist()
+            }
+            var d = vum.list
+            var id = getQueryString('id')
+            var messages = {
+                params: {
+                    recordRep: {
+                        fields: d
+                    }
+                }
+            }
+            if (id != null) {
+                messages.params.recordRep.id = id
+            }
+            messages = JSON.stringify(messages)
+            var data = messages
+            var save = document.querySelectorAll('.save-checking.active');
+            ajaxMethodPostData('contract.renew', data, callback)
+        })
+    </script>
+</body>
+</html>

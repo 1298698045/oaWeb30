@@ -1,0 +1,781 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+        <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/easyui/js/treeLoader.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .slds-nav-vertical__title {
+            font-size: .75rem;
+            line-height: 1.25;
+            color: rgb(62, 62, 60);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: .0625rem;
+            padding: .5rem 1rem;
+            padding-left: 1.5rem;
+            margin: 0;
+            text-align: left;
+        }
+
+        .slds-nav-vertical__item {
+            position: relative;
+        }
+
+            .slds-nav-vertical__item.slds-is-active .slds-nav-vertical__action {
+                font-weight: bold;
+                box-shadow: inset 0.25rem 0 0 rgba(0, 112, 210, 1);
+            }
+
+        .slds-nav-vertical__action {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: .5rem 1.5rem .5rem 2rem;
+            color: rgb(8, 7, 7);
+            border-top: 0px solid transparent;
+            border-bottom: 0px solid transparent;
+            border-radius: 0;
+            box-shadow: inset 0 0 0 rgba(0, 112, 210, 1);
+            cursor: pointer;
+            text-decoration: none;
+            font-size: .8125rem;
+        }
+
+        .slds-is-active:before {
+            background: rgb(216, 237, 255);
+        }
+
+        .slds-nav-vertical__action:hover {
+            text-decoration: none;
+            box-shadow: inset 0.125rem 0 0 rgba(0, 112, 210, 1);
+            background: rgb(216, 237, 255);
+        }
+
+        .slds-nav-vertical__item:before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: '';
+        }
+
+        .body_right {
+            border-left: 1px solid rgb(221, 219, 218);
+        }
+
+        .body_right_div {
+            background-color: rgb(243, 242, 242)!important;
+            border-bottom: 1px solid rgb(221, 219, 218);
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        .slds-combobox__form-element {
+            flex: 1 1 auto;
+        }
+
+        .slds-input-has-icon {
+            position: relative;
+        }
+
+            .slds-input-has-icon .slds-input__icon {
+                width: .875rem;
+                height: .875rem;
+                position: absolute;
+                top: 50%;
+                margin-top: -.4375rem;
+                line-height: 1;
+                border: 0;
+                z-index: 2;
+                left: 2%;
+                fill: rgb(176, 173, 171);
+            }
+
+        .uiInputSearch .input {
+            padding: 0 2rem;
+            background-color: rgb(255, 255, 255);
+            color: rgb(8, 7, 7);
+            border: 1px solid rgb(221, 219, 218);
+            border-radius: .25rem;
+            width: 100%;
+            transition: border .1s linear,background-color .1s linear;
+            display: inline-block;
+            line-height: 1.875rem;
+            min-height: calc(2.125rem + 2px);
+        }
+
+        .slds-text-title {
+            font-size: .75rem;
+            line-height: 1.25;
+            color: rgb(62, 62, 60);
+            text-align: left;
+            margin-top: .5rem;
+        }
+
+        .slds-show {
+            display: block;
+            max-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .show_oneMultiTabListItem {
+            border-bottom: 1px solid rgb(221, 219, 218);
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+            display: flex;
+            align-items: center;
+            margin-top: 0!important;
+        }
+
+        .checkbox {
+            margin-left: .75rem;
+            margin-right: .75rem;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+            .checkbox input[type=checkbox] {
+                position: absolute;
+                margin: 0px;
+                padding: 0;
+                border: 0;
+                clip: rect(0 0 0 0);
+                overflow: hidden;
+                display: block;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                width: 1rem;
+                height: 1rem;
+                vertical-align: -.25em;
+                border: 1px solid rgb(221, 219, 218);
+                border-radius: .125rem;
+                background: rgb(255, 255, 255);
+                transition: .5s ease all;
+            }
+
+                .checkbox input[type=checkbox] ~ .slds-button {
+                    color: rgb(0, 112, 210);
+                    clear: both;
+                    float: left;
+                    display: inline-block;
+                    position: relative;
+                    width: 1rem;
+                    height: 1rem;
+                    line-height: 1;
+                    vertical-align: middle;
+                    border: 1px solid rgb(221, 219, 218);
+                    transition: border .15s linear;
+                    border-color: rgb(221, 219, 218);
+                    padding: 0;
+                    background: transparent;
+                    background-clip: border-box;
+                    border-radius: .25rem;
+                    text-decoration: none;
+                    -webkit-appearance: none;
+                    white-space: normal;
+                    user-select: none;
+                }
+
+        .ma_icon {
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            margin: auto;
+            border-radius: .25rem;
+            line-height: 0.85;
+        }
+
+            .ma_icon i {
+                font-size: 12px;
+                font-weight: 700;
+            }
+
+        .ma_icon_yes {
+            display: block;
+            background-color: rgb(75, 202, 129);
+            color: rgb(255, 255, 255);
+        }
+
+        .actionIcon {
+            height: 1.5rem;
+            width: 1.5rem;
+            background-color: #2ECBBE;
+            display: block;
+            text-align: center;
+            line-height: 1.75;
+            border-radius: .25rem;
+        }
+
+            .actionIcon img {
+                height: 1rem;
+                width: 1rem;
+            }
+
+        .slds-lookup__result-text {
+            /*max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;*/
+            display: block;
+            margin: 0;
+            font-size: .75rem;
+            padding-right:5px;
+        }
+
+        .slds-text-body--small {
+            font-size: .75rem;
+            display: block;
+            margin: 0;
+            color: rgb(62, 62, 60);
+        }
+
+        #Add.active{
+            background: rgb(224, 229, 238)!important;
+            border-color: rgb(224, 229, 238)!important;
+            color: rgb(255, 255, 255);
+        }
+
+
+        .slds-listbox-item {
+            display: flex;
+            list-style: none;
+            float: left;
+        }
+
+        .slds-pill {
+            display: inline-flex;
+            margin: .5rem .5rem 0 0;
+            align-items: center;
+            justify-content: space-between;
+            line-height: 1.5;
+            max-width: 100%;
+            padding: .125rem;
+            border: 1px solid rgb(221, 219, 218);
+            border-radius: .25rem;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            min-height: 1.625rem;
+            font-size: 14px;
+        }
+
+        .slds-pill__label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cha {
+            width: 1rem;
+            height: 1rem;
+            background: #fff;
+            border: 0;
+            position: relative;
+        }
+
+        .cuo {
+            font-size: 12px;
+            display: inline-block;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+        }
+
+        .slds-pill:hover {
+            background-color: rgb(244, 246, 249);
+        }
+
+        .slds-pill:active {
+            outline: 0;
+            border-radius: .25rem;
+            border-color: rgb(21, 137, 238);
+            box-shadow: 0 0 3px #0070d2;
+        }
+        .body_right_div {
+            background-color:white !important;
+        }
+        #orgTree,.easyui-fluid,#treePanel{
+            height:calc(100%);
+        }
+        #treePanel {
+            border:0;
+        }
+        .show_oneMultiTabListItem .checkbox {
+            border:0;
+        }
+        .slds-lookup__result-text {
+            color:#080707;
+            font-size:13px;
+        }
+        .show_oneMultiTabListItem:hover{
+            background-color:#f3f2f2;
+        }
+        .slds-scrollable_y.slds-show {
+            overflow-y:auto;
+            max-height:calc(100% - 60px)
+        }
+        .show_oneMultiTabListItemhead {
+            background-color:#f3f2f2;
+        }
+        #Button3 {
+             background: rgb(224, 229, 238)!important;
+             border-color: rgb(224, 229, 238)!important;
+        }
+        #Button3.active{
+             background-color: rgba(27, 82, 151, 1) !important;
+             color: rgb(255, 255, 255) !important;
+        }
+        .body-right-right {
+             border-left: 1px solid rgb(221, 219, 218);
+             overflow-y:auto;
+        }
+        .body-right-right-head {
+            color:#999;
+            font-size:12px;
+            padding:10px 25px 10px 10px;
+        }
+        #photo .uiModal--medium .modal-container {
+            width:80%;
+            max-width: 1000px;
+            min-width: 700px;
+        }
+        .body-right-right li {
+            margin:5px 15px 5px 10px;
+            border:1px solid #dddbda;
+            height:25px;
+            line-height:25px;
+            border-radius:4px;
+            color:#333;
+            font-size:13px;
+            text-align:left;
+            text-indent:10px;
+        }
+        .body-right-right li:hover{
+            background-color:#d8edff;
+        }
+        .body-right-right li img{
+            float:right;
+            height:11px;
+            width:11px;
+            margin-top:7px;
+            margin-right:10px;
+            cursor:pointer;
+        }
+        .slds-nav-vertical__title {
+            background:url('/img/images/rightArrow.png') no-repeat left 5px center;
+            background-size:12px;
+            background-color: #ececec;
+            cursor:pointer;
+        }
+        .slds-nav-vertical__title.active {
+            background:url('/img/images/Open.png') no-repeat left 5px center;
+            background-size:12px;
+            background-color: #ececec;
+        }
+        .slds-container--small {
+            display:none;
+        }
+        #treePane2 {
+            border: 0;
+        }
+        .body_left {
+            height: 100%;
+            overflow: auto;
+        }
+       .groupli-chook {
+            text-align:left;
+            font-size:13px;
+            height: 26px;
+            line-height:26px;
+            white-space: nowrap;
+            cursor: pointer;
+            padding-left:20px;
+        }
+        .groupli-chook:hover{
+            background-color:#e6e6e6;
+            color:#00438a;
+        }
+        .groupli-chook.active{
+                background: #0081c2;
+                color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">添加人员</h2>
+                            <button class="close slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content" style="height: 80%;">
+                            <div class="cuf-content slds-scope forceChatterUpdatePhoto" style="height: 100%;">
+                                <div class="updatePhotoPanel slds-text-align--center" style="display: flex; height: 100%;">
+                                    <div class="body_left">
+                                        <h2 class="slds-nav-vertical__title slds-text-title_caps">选择部门</h2>
+                                        <!----左侧--树---->
+                                        <div class="slds-container--small" >
+                                            <div class="objectManagerLeftNav" style="padding-top: 0; height: 100%; padding-bottom: 0;">
+                                                <div id="treePanel" class="easyui-panel" style="width: 240px; min-height: 0!important; height: calc(100% - 49px)!important; min-height: 100px;">
+                                                    <ul class="easyui-tree" id="orgTree" style="display: block; height: 100%;">
+                                                        <li></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                var treeNode = null;
+                                                var card = '';
+                                                $(document).ready(function () {
+                                                    //getTree("tree.get", "PABscCategory", "", bindTree);
+                                                    treeNode = new treeLoader("treePanel", "organizationtree", treeItemClick);
+                                                    treeNode.init();
+                                                    //var grid = new listGrid("datagrid", "P01");
+                                                    //grid.init();
+                                                });
+                                                function treeItemClick(node) {
+                                                    $(".groupli-chook").removeClass("active")
+
+                                                    var d = {
+                                                        businessUnitId: node.id
+                                                    }
+                                                    //treeNode.loadNodeItems("evaluation.index.search", "CategoryId=" + node.id, renderCards);
+                                                    ajaxMethodGetData("sys.user.search",d, renderCards)
+                                                }
+                                                function renderCards(data) {
+                                                    console.log(data);
+                                                    $('.show_oneMultiTabListItem').not('.show_oneMultiTabListItemhead').remove()
+                                                    if(data.listData.length>0){
+                                                        for (var i = 0; i < data.listData.length; i++) {
+                                                            var datas = data.listData[i]
+                                                            var FullName = datas.fullName
+                                                            var EvaluationIndexId = datas.systemUserId
+                                                            var DeptIdName = datas.BusinessUnitIdName
+                                                            var JobTitle = datas.JobTitle
+                                                            var MobileNumber = datas.EmployeeId
+                                                            $(".slds-show").append('<li class="show_oneMultiTabListItem" id="Li1" EvaluationIndexId="'+EvaluationIndexId+'">'
+                                                                    +'<div class="checkbox">'
+                                                                    +'<input type="checkbox" class=" uiInput uiInputCheckbox uiInput--default" />'
+                                                                    +'<div class="slds-button slds-button_icon-small slds-button--icon-border">'
+                                                                    +'<span class="ma_icon ma_icon_yes" style="display: none;">'
+                                                                        +'<i class="iconfont icon-duihao"></i>'
+                                                                    +'</span>'
+                                                                    +'<span class="ma_icon ma_icon_none">'
+                                                                    +'</span>'
+                                                                    +'</div>'
+                                                                    +'</div>'
+                                                                    +'<div style="flex: 1; text-align: left;">'
+                                                                    +'<h3  class="slds-lookup__result-text">'+FullName+'</h3>'                                               
+                                                                    +'</div>'
+                                                                    +'<div style="flex: 1; text-align: left;">'
+                                                                    +'<h3  class="slds-lookup__result-text">'+MobileNumber+'</h3>'                                               
+                                                                    +'</div>'
+                                                                    +'<div style="flex: 1; text-align: left;">'
+                                                                    +'<h3  class="slds-lookup__result-text">'+DeptIdName+'</h3>'                                            
+                                                                    +'</div></li>')
+                                                            }
+                                                        check()
+                                                    }
+                                                }
+                                            </script>
+                                        </div>
+                                        <h2 class="slds-nav-vertical__title slds-text-title_caps">选择小组</h2>
+                                        <!----左侧--小组---->
+                                        <div class="slds-container--small group-chook" >
+                                            <ul>
+                                            </ul>
+                                            <script>
+                                                var treeNode = null;
+                                                var card = '';
+                                                $(document).ready(function () {
+                                                    function callback(data){
+                                                        //console.log(data)
+                                                        for (var i = 0; i < data.listData.length; i++) {
+                                                            var datas = data.listData[i]
+                                                            var GroupId = datas.GroupId
+                                                            var Name = datas.Name
+                                                            $(".group-chook ul").append('<li GroupId="'+GroupId+'" class="groupli-chook">'+Name+'</li>')
+                                                        }
+                                                        $(".group-chook .groupli-chook").click(function(){
+                                                            $(".groupli-chook").removeClass("active")
+                                                            $(this).addClass("active")
+                                                            $(".tree-node").removeClass("tree-node-selected")
+                                                            treeItemClick2($(this).attr("GroupId"))
+                                                        })
+                                                        
+                                                    }
+                                                    ajaxMethodGetData("sys.group.search",null, callback)
+                                                });
+                                                function treeItemClick2(node) {
+                                                    var d = {
+                                                        groupId: node
+                                                    }
+                                                    ajaxMethodGetData("sys.groupusers.getlist",d, renderCards)
+                                                }
+                                            </script>
+                                        </div>
+                                        <h2 class="slds-nav-vertical__title slds-text-title_caps">选择角色</h2>
+                                        <!----左侧--角色---->
+                                        <div class="slds-container--small roles-chook" >
+                                            <ul>
+                                            </ul>
+                                            <script>
+                                                var treeNode = null;
+                                                var card = '';
+                                                $(document).ready(function () {
+                                                    function callback(data){
+                                                        //console.log(data)
+                                                        for (var i = 0; i < data.listData.length; i++) {
+                                                            var datas = data.listData[i]
+                                                            var RoleId = datas.RoleId
+                                                            var Name = datas.Name
+                                                            $(".roles-chook ul").append('<li RoleId="'+RoleId+'" class="groupli-chook">'+Name+'</li>')
+                                                        }
+                                                        $(".roles-chook .groupli-chook").click(function(){
+                                                            $(".groupli-chook").removeClass("active")
+                                                            $(this).addClass("active")
+                                                            $(".tree-node").removeClass("tree-node-selected")
+                                                            treeItemClick3($(this).attr("RoleId"))
+                                                        })
+                                                        
+                                                    }
+                                                    ajaxMethodGetData("sys.role.search",null,callback)
+                                                });
+                                                function treeItemClick3(node) {
+                                                    var d = {
+                                                        RoleId: node
+                                                    }
+                                                    ajaxMethodGetData("sys.rolemember.search",d, renderCards)
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="body_right" style="flex: 1;">
+                                        <div class="body_right_div">
+                                            <div class="slds-combobox__form-element slds-input-has-icon">
+                                                <span class="searchIcon icon-fallback-text slds-text-color--weak slds-input__icon slds-p-left--small slds-button__icon slds-icon-utility-search slds-icon_container forceIcon">
+                                                    <i class="iconfont icon-sousuo"></i>
+                                                </span>
+                                                <div class="uiInput uiInputSearch uiInput--default uiInput--input">
+                                                    <div>
+                                                        <input class=" input" type="search" placeholder="搜索人员..." />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<ul class="item" style="margin: 0; padding: 0;">
+                                                <li style="clear: both; opacity: 0;"></li>
+                                            </ul>
+                                            <div class="slds-text-title slds-m-top_x-small">已选择 <span id="number">0</span> 个项目</div>-->
+                                        </div>
+                                        <ul class="slds-scrollable_y slds-show">
+                                            <li class="show_oneMultiTabListItem show_oneMultiTabListItemhead" id="Li1">
+                                                <div class="checkbox">
+                                                <input type="checkbox" class="uiInput uiInputCheckbox uiInput--default" />
+                                                <div class="slds-button slds-button_icon-small slds-button--icon-border">
+                                                    <span class="ma_icon ma_icon_yes" style="display: none;">
+                                                        <i class="iconfont icon-duihao"></i>
+                                                    </span>
+                                                    <span class="ma_icon ma_icon_none">
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <div style="flex: 1; text-align: left;">
+                                                    <h3 class="slds-lookup__result-text">姓名</h3>                                               
+                                                </div>
+                                                <div style="flex: 1; text-align: left;">
+                                                    <h3 class="slds-lookup__result-text">工号</h3>                                               
+                                                </div>
+                                                <div style="flex: 1; text-align: left;">
+                                                    <h3 class="slds-lookup__result-text">部门</h3>                                               
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="body-right-right">
+                                        <div class="body-right-right-head"><span>已添加0个成员</span></div>
+                                        <ul>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="close slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class="label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Add" class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class="label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>   
+        var EvaluationIndexId = []
+        var EvaluationIndexName = []
+        $("#Add").addClass('active')
+        //删除
+        function delateitem(id){
+            $('.body-right-right ul li[itemid="' + id + '"]').remove();
+            var a = EvaluationIndexId.join(',');
+            var b = a.split(id);
+            var c = b.join('');
+            var d = c.split(',');
+            EvaluationIndexId = d.filter(function(s){
+                return s && s.trim;
+            })
+            $('[evaluationindexid="' + id + '"]').find('.ma_icon').hide();
+            if(EvaluationIndexId.length==0){
+                $("#Add").addClass('active');
+            }
+            var number = EvaluationIndexId.length;
+            $('.body-right-right-head span').html('已添加' + number + '个成员');
+            $('.show_oneMultiTabListItemhead .ma_icon').hide();
+        }
+
+        //添加
+        function additem(id,name){
+            EvaluationIndexId.push(id);
+            var number = EvaluationIndexId.length;
+            $('.body-right-right ul').append('<li itemid="'+id+'" >'+name+'<img onclick=delateitem("'+id+'") src="/img/images/Close.png"></li>')
+            $('.body-right-right-head span').html('已添加'+number+'个成员')
+            $("#Add").removeClass('active')
+        }
+
+
+        function check(){
+            $('.show_oneMultiTabListItem').off()
+            $('.checkbox').off()
+            $('.show_oneMultiTabListItemhead .ma_icon').hide()
+            var EvaluationIndexIds = EvaluationIndexId.join(',')
+            $('.show_oneMultiTabListItem').each(function(){
+                var id = $(this).attr('evaluationindexid')
+                if(EvaluationIndexIds.indexOf(id)!='-1'){
+                    $(this).find('.ma_icon').toggle()
+                }
+            })
+            //全选
+            $('.show_oneMultiTabListItemhead .checkbox').click(function(){
+                if($(this).find('.ma_icon_yes').css('display')=='none'){
+                    $(this).find('.ma_icon_yes').show()
+                    $('.show_oneMultiTabListItem').not('.show_oneMultiTabListItemhead ').each(function(){
+                        if($(this).find('.ma_icon_yes').css('display')=='none'){
+                            $(this).find('.ma_icon_yes').show()
+                            var id = $(this).attr('evaluationindexid')
+                            var name = $(this).find('.checkbox').next().find('h3').html()
+                            additem(id,name)
+                        }
+                    })
+                }else{
+                    $('.ma_icon').hide()   
+                    $('.show_oneMultiTabListItem').not('.show_oneMultiTabListItemhead ').each(function(){
+                        var id = $(this).attr('evaluationindexid')
+                        var name = $(this).find('.checkbox').next().find('h3').html()
+                        delateitem(id)
+                    })
+                }
+            })
+            $('.show_oneMultiTabListItem').not('.show_oneMultiTabListItemhead').click(function(){
+                $(this).find('.ma_icon').toggle()
+                var id = $(this).attr('evaluationindexid')
+                var name = $(this).find('.checkbox').next().find('h3').html()
+                if($(this).find('.ma_icon_yes').css('display')=='block'){
+                    $("#Add").removeClass('active')
+                    additem(id,name)
+                }else{
+                    delateitem(id)
+                }
+            })
+        }
+
+
+
+        $("#Add").click(function(){
+            if (!$(this).hasClass("active")) {
+                $(".body-right-right ul li").each(function () {
+                    window.EvaluationIndexName.push($(this).text())
+                })
+                if (getQueryString('lkid')) {
+                    var lkid = getQueryString('lkid');
+                }
+                if (getQueryString('lkname')) {
+                    var lkname = getQueryString('lkname');
+                }
+                if (getQueryString('type')) {
+                    var type = getQueryString('type');
+                }
+                var id = EvaluationIndexId.join(',')
+                var name = EvaluationIndexName.join(',')
+                parent.addplays(id, name, lkid, lkname, type)
+            }
+        })
+
+      
+
+        $('.close').click(function () {
+            parent.$('#addplays').remove()
+        })
+
+        $('.close').click(function () {
+            parent.$('#iframe').hide()
+            parent.$('#changeDiv').hide()
+            parent.$('.popup-mask').hide();
+        })
+
+
+        var d = {
+            search:""
+        }     
+        $("input[type='search']").keyup(function(event){
+            d.search = $(this).val()
+            if(event.keyCode=='13'){
+                ajaxMethodGetData("sys.user.search",d, renderCards)
+            }
+            
+        })   
+      
+        $('.slds-nav-vertical__title ').click(function(){
+            $(this).toggleClass('active').next().toggle()
+        })
+    </script>
+</body>
+</html>

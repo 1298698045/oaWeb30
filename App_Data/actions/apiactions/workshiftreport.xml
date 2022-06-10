@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="workshift.emphourstat.getlist" type="Youyou.HRCore.Actions.Shifts.EmpShifthourStatList,HRAttendance" desc="排班统计（按工时）"></Action>
+
+  <Action name="workshift.employee.workhour.list" type="Youyou.HRCore.Actions.Workshifts.Reports.WorkshiftEmployeeWorkhourList,HRAttendance" desc="排班统计（按工时）"></Action>
+
+  <Action name="workshift.emphourstat.export" type="Youyou.HRCore.Actions.Shifts.EmpShifthourStatExport,HRAttendance" desc="导出排班统计（按人员）"></Action>
+
+  <Action name="attendance.workshift.report" type="Youyou.HRCore.Actions.Reports.AttendanceWorkShiftReport,HRAttendance" desc="统计人员班次报表"></Action>
+  <Action name="workshift.employee.amount.list" type="Youyou.HRCore.Actions.Workshifts.Reports.WorkshiftEmployeeAmountList,HRAttendance" desc="统计人员班次金额 列表"></Action>
+
+  <Action name="attendance.workshift.export" type="Youyou.HRCore.Actions.Attendance.AttendanceWorkShiftExport,HRAttendance" desc="导出统计人员班次报表"></Action>
+  <Action name="attendance.workshift.report.export" type="Youyou.HRCore.Actions.Reports.AttendanceWorkShiftReportExport,HRAttendance" desc="导出统计人员班次报表"></Action>
+
+  <Action name="attendance.workshift.employee.export" type="Youyou.HRCore.Actions.Workshifts.Reports.WorkshiftEmployeeExport,HRAttendance" desc="排班统计-人员按工时或金额统计导出"></Action>
+
+  <Action name="attendance.workshift.calendar.month" type="Youyou.HRCore.Actions.Workshifts.WorkshiftCalendarMonth,HRAttendance" desc="排班查询 - 按月展示"></Action>
+  <Action name="attendance.workshift.calendar.week" type="Youyou.HRCore.Actions.Workshifts.WorkshiftCalendarWeek,HRAttendance" desc="排班查询 - 按周展示"></Action>
+
+  <Action name="attendance.workshift.calendar.month.export" type="Youyou.HRCore.Actions.Workshifts.WorkshiftCalendarMonthExport,HRAttendance" desc="排班查询 - 按月展示"></Action>
+  <Action name="attendance.workshift.calendar.week.export" type="Youyou.HRCore.Actions.Workshifts.WorkshiftCalendarWeekExport,HRAttendance" desc="排班查询 - 按周展示"></Action>
+
+</Actions>

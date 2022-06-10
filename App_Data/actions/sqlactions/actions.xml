@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <query>
+    <name>relatedattachment.byid.get</name>
+    <type>array</type>
+    <comments>根据文章id获取点赞列表</comments>
+    <parameters>
+      <ContentId>文章id</ContentId>
+    </parameters>
+    <sql>
+      SELECT AttachId,Name,FileLocation,FileExtension FROM dbo.RelatedAttachmentBase WHERE ParentId='#{ContentId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>columnlist.byid.get</name>
+    <type>array</type>
+    <comments>根据栏目ID获取列表</comments>
+    <parameters>
+      <ParentId>文章id</ParentId>
+    </parameters>
+    <sql>
+      SELECT ItemId,Name FROM dbo.ItemTreeBase WHERE ParentId='#{ParentId}' OR ItemId='#{ParentId}' ORDER BY SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+
+
+  <query>
+    <name>infectionhandbook.byid.get</name>
+    <type>obj</type>
+    <comments>根据ID院感数据</comments>
+    <parameters>
+      <ValueId>主键</ValueId>
+    </parameters>
+    <sql>
+      select a.*,b.Name as BusinessUnitName from H_InfectionHandbook__c as a
+      left join BusinessUnitBase as b on a.DeptId=b.BusinessUnitId
+      where a.ValueId='#{ValueId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>workload.dept.check</name>
+    <type>obj</type>
+    <comments>查询工作量是否保存过</comments>
+    <parameters>
+      <OwningBusinessUnit>文章id</OwningBusinessUnit>
+      <YearNumber>文章id</YearNumber>
+      <MonthNumber>文章id</MonthNumber>
+    </parameters>
+    <sql>
+      SELECT * FROM HRWorkloadDeptBase WHERE OwningBusinessUnit='#{OwningBusinessUnit}' and YearNumber=#{YearNumber} and MonthNumber=#{MonthNumber}
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>nursequality.dept.check</name>
+    <type>obj</type>
+    <comments>查询护理质量是否保存过</comments>
+    <parameters>
+      <OwningBusinessUnit>文章id</OwningBusinessUnit>
+      <YearNumber>文章id</YearNumber>
+      <MonthNumber>文章id</MonthNumber>
+    </parameters>
+    <sql>
+      SELECT * FROM NurseQualityDeptBase WHERE OwningBusinessUnit='#{OwningBusinessUnit}' and YearNumber=#{YearNumber} and MonthNumber=#{MonthNumber}
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>infection.handbook.check</name>
+    <type>obj</type>
+    <comments>院感检查是否保存过</comments>
+    <parameters>
+      <DeptId>文章id</DeptId>
+      <YearNumber>文章id</YearNumber>    
+    </parameters>
+    <sql>
+      SELECT * FROM H_InfectionHandbook__c WHERE DeptId='#{DeptId}' and YearNumber=#{YearNumber}
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+</root>
+

@@ -1,0 +1,540 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+   
+        .popup{
+            background:white;
+            border-radius:7px;
+        }
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: auto;
+            min-width: 242px;
+        }
+        .item-left1 {
+            min-width: 242px;
+            margin-right: 12px;
+        }
+        .item-right {
+            float: left;
+            min-width: 242px;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 420px;
+            overflow: auto;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+
+        .section-body {
+            padding: 0 20px;
+        }
+
+        .section {
+            padding-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+        .searchselect .layui-input{
+            height: 35px;
+            line-height: 35px;
+            border-radius: 4px;
+        }
+        .layui-form-select dl{
+            max-height:190px !important;
+        }
+        .selectUp .layui-form-select dl{
+        top: auto;
+        bottom: 36px;
+        }
+        .DateType .layui-input{
+            height: 30px;
+            padding: 0 1px !important;
+        }
+        .DateType .layui-form-select .layui-edge{
+            right: 5px !important;
+        }
+        .DateType .layui-form-selected dl{
+            height:auto !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            审计抽查
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+            <div class="section">
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red">*</span>
+                                <span class="item-title">随机抽查率：</span>
+                                <div class="layui-input-block">
+                                    <input id="Rate" type="number" name="samplerate" value="" placeholder="%" class="save-checking-input" style="width: 240px;"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-body">
+                                <span class="red">&nbsp;</span>
+                                <span class="item-title">审批类型：</span>
+                                <div class="layui-input-block searchselect">
+                                    <select lktp="5" lay-search lay-verify="" id="Categorycode">
+                                        <option value="">请选择</option>
+                                        <option value="2">政采</option>
+                                        <option value="3">科研</option>
+                                        <option value="1">经济</option>
+                                        <option value="4">精保所</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body">
+                                <span class="red">&nbsp;</span>
+                                <span class="item-title">合同状态：</span>
+                                <div class="layui-input-block searchselect">
+                                    <select lktp="5" lay-search lay-verify="" id="StateCode">
+                                        <option value="">请选择</option>
+                                        <option value=4>审签终止</option>
+                                        <option value=1>履约中</option>
+                                        <option value=2>履约完成</option>
+                                        <option value=2>审签完成</option>
+                                        <!--<option value=3>暂停</option>
+                                        <option value=4>终止</option>
+                                        <option value=5>解约</option>
+                                        <option value=6>变更中</option>-->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-body">
+                                <span class="red">&nbsp;</span>
+                                <span class="item-title">合同分类：</span>
+                                <div class="layui-input-block searchselect searchselect1">
+                                    <select lktp="5" lay-search lay-verify="" id="CategoryId">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="item divs">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <!--<span class="red">*</span>-->
+                                <!--<span class="item-title">筛选日期：</span>-->
+                                <div class="layui-input-block searchselect DateType" style="display: inline-block; width: 84px; margin-bottom: 6px;">
+                                    <select lktp="5" lay-search lay-verify="" id="DateType">
+                                        <option value=0>签订日期</option>
+                                        <option value=1>领取日期</option>
+                                        <option value=2>申请日期</option>
+                                        <option value=3>开始日期</option>
+                                    </select>
+                                </div>：
+                                <div class="layui-input-block">
+                                    <input datatype="D" id="BeginDate" class="laydate" autocomplete="off" style="width: 240px;"/>
+                                    <span style="margin:0,15px">-</span>
+                                    <input datatype="D" id="EndDate" class="laydate" autocomplete="off" style="width: 240px;"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="item divs">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <span class="red">&nbsp;&nbsp;</span>
+                                <span class="item-title">签订金额：</span>
+                                <div class="layui-input-block">
+                                    <input id="BeginPrice" type="text" name="name" value="" placeholder="￥" autocomplete="off" style="width: 240px;"/>
+                                    <span style="margin:0,15px">-</span>
+                                    <input id="EndPrice" type="text" name="name" value="" placeholder="￥" autocomplete="off" style="width: 240px;"/>
+                                </div>
+                            </div>
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    <div class="item divs">
+                        <div class="item-left item-left1">
+                            <div class="item-body selectUp">
+                                <span class="red">&nbsp;&nbsp;</span>
+                                <span class="item-title">申请部门：</span>
+                                <div class="layui-input-block searchselect searchselect2">
+                                    <select lktp="5" lay-search lay-verify="" id="unit1">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-body selectUp">
+                                <span class="red">&nbsp;&nbsp;</span>
+                                <span class="item-title">执行部门：</span>
+                                <div class="layui-input-block searchselect searchselect2">
+                                    <select lktp="5" lay-search lay-verify="" id="unit2">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <div class="popup-foot">
+            <div class="close">取消</div>
+            <div class="popup-foot-shur save-checking">执行抽查</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+    <script>
+        var form = ''
+        layui.use(['form'], function () {
+            form = layui.form
+        });
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('.save-checking').click(function () {
+            function callback(data) {
+                layer.msg(data.msg)
+                parent.$('#datagrid').datagrid('reload')
+                setTimeout(function () {
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                }, 3000)
+                    
+            }
+           
+            var save = document.querySelectorAll('.save-checking.active');
+            if (save.length > 0) {
+                ajaxMethodPostData('contract.audit.sample.post&Rate=' + $('#Rate').val() + '&DateType=' + $('#DateType').val() + '&BeginDate=' + $('#BeginDate').val() + '&EndDate=' + $('#EndDate').val() + '&BeginPrice=' + $('#BeginPrice').val() + '&EndPrice=' + $('#EndPrice').val() + '&Categorycode=' + $('#Categorycode').val() + '&CategoryId=' + $('#CategoryId').val() + '&StateCode=' + $('#StateCode').val() + '&ApplyBusinessUnit=' + $('#unit1').val() + '&OwningBusinessUnit=' + $('#unit2').val(), {}, callback)
+            }
+            //{ Rate: $('#Rate').val(), BeginDate: $('#BeginDate').val(), EndDate: $('#EndDate').val(), BeginPrice: $('#BeginPrice').val(), EndPrice: $('#EndPrice').val(), categorycode: $('#categorycode').val() }
+        })
+        getlookup()
+        function getlookup() {
+            $('.searchselect1').click(function () {
+                var that = this
+                d = {}
+                if ($(this).find('select option').length < 2) {
+                    $(this).find('input').off()
+                    searchlookup(d, that)
+                }
+                $(this).find('input').off()
+                $(this).find('input').keyup(function (event) {
+                    if (event.keyCode == '13') {
+                        $(this).find('input').off()
+                        d = {
+                            text: $(this).val()
+                        }
+                        searchlookup(d, that)
+                    }
+                })
+            })
+        }
+
+        function searchlookup(d, that) {
+            ajaxMethodGetData('oa.contractcategory.list', d, function (data) {
+                $(that).find('select').html('<option value="">请选择</option>')
+                $(that).find('.layui-anim.layui-anim-upbit').html('<dd lay-value="" class="layui-select-tips">请选择</dd>')
+                for (var i = 0; i < data.rows.length; i++) {
+                    $(that).find('select').append('<option value="' + data.rows[i].id + '">' + data.rows[i].text + '</option>')
+                    $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + data.rows[i].id + '">' + data.rows[i].text + '</dd>')
+                }
+                $(that).find('.layui-anim.layui-anim-upbit dd').off()
+                $(that).find('.layui-anim.layui-anim-upbit dd').click(function () {
+                    if ($(this).attr('lay-value') != '') {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', $(this).html())
+                    } else {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', '')
+                    }
+                    $(this).parent().find('dd').removeClass('layui-this')
+                    $(this).addClass('layui-this')
+                })
+            })
+        }
+        getunit()
+        function getunit() {
+            $('.searchselect2').click(function () {
+                var that = this
+                d = {}
+                if ($(this).find('select option').length < 2) {
+                    $(this).find('input').off()
+                    searchunit(d, that)
+                }
+                $(this).find('input').off()
+                $(this).find('input').keyup(function () {
+                    if (event.keyCode == '13') {
+                        $(this).find('input').off()
+                        d = {
+                            text: $(this).val()
+                        }
+                        if (d.text.length > 1) {
+                            searchunit(d, that)
+                        }
+                    }
+                })
+            })
+        }
+
+        function searchunit(d, that) {
+            ajaxMethodGetData('tree.get&entity=organizationtree', d, function (data) {
+                $(that).find('select').html('<option value="">请选择</option>')
+                $(that).find('.layui-anim.layui-anim-upbit').html('<dd lay-value="" class="layui-select-tips">请选择</dd>')
+                if (d.text) {
+                    for (var j = 0; j < data.rows.length; j++) {
+                        var rest = data.rows[j];
+                        if ((rest.text).indexOf(d.text)!=-1) {
+                            $(that).find('optgroup').append('<option value="' + rest.id + '">' + rest.text + '</option>')
+                            $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + rest.id + '">' + rest.text + '</dd>')
+                        }
+                    }
+                }
+                else {
+                    for (var i = 0; i < data.rows.length; i++) {
+                        var res = data.rows[i];
+                        if (res.pid == '') {
+                            $(that).find('select').append('<optgroup value="' + res.id + '">' + res.text + '</optgroup>')
+                            $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + res.id + '">' + res.text + '</dd>')
+                            for (var j = 0; j < data.rows.length; j++) {
+                                var rest = data.rows[j];
+                                if (rest.pid == res.id) {
+                                    $(that).find('optgroup').append('<option value="' + rest.id + '">' + rest.text + '</option>')
+                                    $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + rest.id + '">' + rest.text + '</dd>')
+                                }
+                            }
+                        }
+
+                    }
+                }
+                
+                $(that).find('.layui-anim.layui-anim-upbit dd').off()
+                $(that).find('.layui-anim.layui-anim-upbit dd').click(function () {
+                    if ($(this).attr('lay-value') != '') {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', $(this).html())
+                    } else {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', '')
+                    }
+                    $(this).parent().find('dd').removeClass('layui-this')
+                    $(this).addClass('layui-this')
+                })
+            })
+        }
+        $('.laydate').each(function () {
+            var id = $(this).attr('id')
+            var datatype = $(this).attr('datatype')
+            if (datatype == 'D') {
+                laydate.render({
+                    elem: '#' + id,
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'F') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'datetime',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Year') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Month') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    trigger: 'click',
+                    done: function (value) {
+                    }
+                });
+            }
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 358px;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+        #Description{
+            height:200px;
+        }
+        #IsFavor{
+            width:16px;
+            height:16px;
+            float:left;
+            margin-top:3px;
+            margin-left:5px;
+        }
+        .item-title{
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            收藏
+        </div>
+        <div class="popup-body">
+            <div class="modal-header"></div>
+            <div class="item divs">
+                <div class="item-left">
+                    <div class="item-body">
+                        <label>
+                            <span class="item-title">收藏</span>
+                            <input type="checkbox" id="IsFavor" checked="checked"/>
+                        </label>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="item divs">
+                <div class="">
+                    <div class="item-body">
+                        <span class="item-title">备注</span>
+                        <textarea  id="Description" rows="8"></textarea>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+
+            <div>
+
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div class="popup-foot-shur save-checking">确定</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/js/alert.js"></script>
+    <script>
+        laydate.render({
+            elem: '#CancelOn',
+            done: function (value) {
+            }
+        });
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('.save-checking').click(function () {
+
+            function callback(data) {
+                //console.log(data)
+                parent.success('保存成功')
+                parent.$('#iframe').hide()
+                parent.$('.popup-mask').hide()
+                parent.$('#datagrid').datagrid('reload')
+            }
+            var rows = parent.$('#datagrid').datagrid('getChecked')
+            for (var i = 0; i < rows.length; i++) {
+                var id = rows[i].ProcessInstanceId
+                var IsFavor = 1
+                if ($('#IsFavor').attr('checked') != 'checked') {
+                    IsFavor = 0
+                }
+                var messages = {
+                    params: {
+                        recordRep: {
+                            id: id,
+                            objTypeCode: 122,
+                            fields: {
+                                SupervisedRemark: $('#Description').val(),
+                                IsFavor: IsFavor
+                            }
+                        }
+                    }
+                }
+                messages = JSON.stringify(messages)
+                var data = { messages: messages }
+                var ProcessInstanceId = id;
+                if (i == rows.length - 1) {
+                    //ajaxMethodPostData('entity.saverecord', data, callback)  
+                    ajaxMethodGetData('process.request.collection&ProcessInstanceId=' + ProcessInstanceId, data, callback)
+                } else {
+                    //ajaxMethodPostData('entity.saverecord', data)
+                    ajaxMethodGetData('process.request.collection&ProcessInstanceId=' + ProcessInstanceId, data)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

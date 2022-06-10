@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+    <style>
+        .el-textarea {
+            margin-top: 8px;
+        }
+
+        .timechook {
+            width: 100%;
+            height: 40px;
+            margin-top: 21px;
+        }
+
+            .timechook .el-date-editor {
+                width: 47.5%;
+            }
+
+            .timechook .el-date-editor--time-select {
+                margin-left: 5%;
+            }
+
+        .shift-body-titme {
+            margin-top: 0;
+        }
+
+        .shift-body-main {
+            padding-bottom: 30px;
+        }
+
+        .slds-p-around--medium {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">新增AM用户</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>基本信息</span></div>
+                            <div class="shift-body-main">
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">用户名称</span>
+                                        <el-input class="save-checking-input" v-model="list.UserName"></el-input>
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">用户姓名</span>
+                                        <el-input class="save-checking-input" v-model="list.FullName"></el-input>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">全拼</span>
+                                        <el-input class="save-checking-input" v-model="list.PinYin"></el-input>
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">密码</span>
+                                        <el-input class="save-checking-input" v-model="list.Password"></el-input>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                            <div id="amresponse">
+
+                            </div>
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    UserName: '',
+                    FullName: {},
+                    PinYin: '',
+                    Password: '',
+                },
+                select: {
+                },
+                search: {
+
+                }
+            },
+            created: function () {
+
+            },
+            methods: {
+
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        $('#Save').click(function () {
+            var username = "11011";
+            var fullname = "jackliu";
+            var password = "123456";
+            /*==JS使用HTTP-POST方式调用WebService接口（仅IE调试）==*/
+            //var host_url = "http://localhost/Interface/Login.asmx/Login?UserName=" + username + "&Password=" + password ;
+            var url = "http://192.168.1.112:8089/AM8/chatAppWebService.asmx?op=CreateHREmployee";
+            //var xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            //xmlHttp.open("POST", url, false);
+            //xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            //xmlHttp.send("UserName=" + username + "&Password=" + password);
+            jQuery.ajax({
+                async: false, cache: false, dataType: "json",
+                data: {
+                    username: username,
+                    fullname: fullname,
+                    password: password,
+                },
+                error: function (request, textStatus, errorThrown) {
+
+                    errorThrown = String(errorThrown).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                },
+                success: function (data) {
+
+                },
+                type: "post",
+                url: "http://192.168.1.112:8089/AM8/chatAppWebService.asmx?op=CreateHREmployee"
+            });
+            //if (xmlHttp.readyState == 4) {
+            //    alert(3)
+
+            //    if (xmlHttp.status == 200) {
+            //        document.getElementById("page").innerHTML = xmlHttp.responseText;
+            //    } else {
+            //        alert(" not 200! =" + xmlHttp.status);
+            //    }
+            //} else {
+            //    alert(4)
+
+            //    alert(" not 4! =" + xmlHttp.readyState);
+            //}
+            /*==JS使用SOAP方式调用WebService接口（仅IE调试）==*/
+            //SOAP1.2请求数据格式
+            var data;
+            data = '<?xml version="1.0" encoding="utf-8"?>';
+            data = data + '<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">';
+            data = data + '<soap12:Body>';
+            data = data + '<Login xmlns="http://mmp.test.com/DataInterface/">';
+            data = data + '<UserName>' + username;
+            data = data + '</UserName>';
+            data = data + '<Password>' + password;
+            data = data + '</Password>';
+            data = data + '</Login>';
+            data = data + '</soap12:Body>';
+            data = data + '</soap12:Envelope>';
+
+            var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            xmlhttp.open("POST", "http://192.168.1.112:8089/AM8/chatAppWebService.asmx?op=CreateHREmployee", false);
+            xmlhttp.setRequestHeader("Content-Type", "application/soap+xml");
+            xmlhttp.send(data);
+            document.getElementById("amresponse").innerHTML = xmlhttp.responseText;
+        });
+    </script>
+</body>
+</html>

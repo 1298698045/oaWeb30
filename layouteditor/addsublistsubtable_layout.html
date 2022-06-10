@@ -1,0 +1,834 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        body,html{
+            height:100%;
+        }
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            padding:0 15px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+        .popup-foot .popup-foot-shur {
+            color: white;
+            background-color: #108af9;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 45%;
+            margin-left:2%;
+            box-sizing:border-box;
+        }
+        .item-left:first-child{
+            margin-right:6%;
+        }
+        .item-right {
+            float: right;
+
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            box-sizing:border-box;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+            width:100%;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .section-title {
+            padding:5px;
+            background-color:#f2f2f2;
+            border-radius:4px;
+        }
+        .section-body {
+            padding:10px;
+            width:100%;
+            box-sizing:border-box;
+
+        }
+        .section {
+            width:100%;
+            box-sizing:border-box;
+
+        }
+        .popup-body {
+            width:100%;
+            box-sizing:border-box;
+        }
+        .section .layui-input,.section .layui-select {
+            height:32px;
+            border-radius:4px;
+        }
+        .section .layui-input-block {
+            margin-left:0;
+        }
+        .save-checking-input.disstatus {
+            border:1px solid red;
+        }
+        .layui-input.layui-unselect.disstatus {
+            border:1px solid red;
+        }
+        .popup-body {
+            overflow-y:auto;
+            height:499px;
+        }
+        .popup {
+            background-color:white;
+        }
+        .layui-form input{
+            text-indent:5px !important;
+        }
+        .searchimg {
+            position:absolute;
+            width:14px;
+            height:14px;
+            right:8px;
+            top:8px;
+            cursor:pointer;
+        }
+        .searchselect {
+            position:relative;
+        }
+        .searchselect .layui-edge {
+            display:none;
+        }
+         .disabled {
+            pointer-events:none;
+        }
+        .tableinput,.layui-form-select,.layui-select-title {
+            width:100%;
+            height:100%;
+            border:0;
+        }
+        .section-body .layui-table-view .layui-table td,.section-body .layui-table-view .layui-table th {
+            padding:0;
+        }
+        .section-body .layui-table-view .layui-table th {
+            padding:0;
+            text-align:center;
+        }
+        .section-body .layui-table-cell {
+            padding:0;
+        }
+        .section-body .layui-table-cell, .section-body .layui-table-tool-panel li {
+            overflow: initial;
+        }
+        .layui-table .layui-input,.layui-table .laydate{
+            width:100%;
+            height:100%;
+            border:0;
+        }
+        .layui-table .layui-input-block {
+            width:100%;
+            height:100%;
+            min-height:0;
+        }
+        .section-body .layui-form-selectup dl {
+            top:35px ;
+            bottom:auto ;
+        }
+        .section-body .layui-table-body ,.section-body .layui-table-box{
+            overflow: inherit;
+        }
+        .section-body .layui-table .layui-form-selectup dl {
+            top:auto ;
+            bottom:35px ;
+        }
+        .section-body  .layui-table-grid-down {
+            display:none;
+        }
+        .tablebtn {
+            width:100%;
+            border:1px solid #dedede;
+            box-sizing:border-box;
+            text-align:right;
+            padding:5px;
+        }
+        .section-body .layui-table-view {
+            margin-top:-1px;
+        }
+        .tablebtn > span {
+            cursor:pointer;
+            font-size:18px;
+            border:1px solid #dedede;
+            border-radius:4px;
+            margin-right:10px;
+            padding:2px;
+        }
+        .tablebtn > span:hover{
+            background-color:#f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            
+        </div>
+        <div class="popup-body layui-form" lay-filter="layuiform">
+            <div class="modal-header"></div>
+            <div class="sublistsubtable">
+            </div>
+        </div>
+        <div>
+
+        </div>
+        <div class="popup-foot">
+        </div>
+    </div>
+    <script src="/js/jquery/1.12.4.jquery.min.js"></script>
+
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+
+    <script type="text/javascript" src="/js/formcomponents.js"></script>
+    <script src="/layouteditor/addsublistsubtable_layout.js"></script>
+    <script>
+        
+        var form = ''
+        layui.use(['form','table'], function () {
+            form = layui.form
+        });
+        var keyPrefix = ''
+        var objectTypeCode = ''
+
+        getlayout()
+
+        //获取布局
+        function getlayout() {
+            var entityName = getQueryString('entityName')
+            var type = getQueryString('type')
+            if (type == 'related') {
+                var inContextOfRecordId = parent.getQueryString('id')
+                if (!inContextOfRecordId) {
+                    inContextOfRecordId = getQueryString('inContextOfRecordId')
+                }
+                var message = {
+                    "actions": [{
+                        "params": {
+                            "record": null,
+                            "inContextOfRecordId": inContextOfRecordId,
+                            "inContextOfComponent": "",
+                            "entityApiNameOrKeyPrefix": entityName,
+                            "mode": "CREATE",
+                            "layoutType": "FULL",
+                            "layoutOverride": "",
+                            "defaultFieldValues": {
+                            },
+                            "changeRecordType": false,
+                            "navigationLocation": "RELATED_LIST",
+                            "navigationLocationId": "Contacts"
+                        },
+                        "storable": true
+                    }]
+                }
+                var id = getQueryString('id')
+                if (id && id != '') {
+                    message.actions[0].params.recordId = id
+                    message.actions[0].params.mode = 'EDIT'
+                }
+                var relatedObjectAttributeName = getQueryString('relatedObjectAttributeName')
+
+                if (relatedObjectAttributeName && relatedObjectAttributeName != '') {
+                    message.actions[0].params.defaultFieldValues[relatedObjectAttributeName] = inContextOfRecordId
+                }
+
+            } else {
+                var message = {
+                    "params": {
+                        "recordId": "",
+                        "record": null,
+                        "inContextOfComponent": "",
+                        "entityApiName": entityName,
+                        "mode": "CREATE",
+                        "layoutType": "FULL",
+                        "navigationLocation": "DETAIL"
+                    },
+                    "storable": true
+                }
+                var id = getQueryString('id')
+                if (id && id != '') {
+                    message.params.recordId = id
+                    message.params.mode = 'EDIT'
+                }
+            }
+            message = JSON.stringify(message)
+            var getlayoutdata = {
+                message: message
+            }
+
+            ajaxMethodPostData('entity.config.get', getlayoutdata, function (data) {
+                var id = getQueryString('id')
+                if (id) {
+                    $('.popup-head').html('编辑' + data.actions[0].returnValue.componentDef.localizedTitle)
+                } else {
+                    $('.popup-head').html('新建' + data.actions[0].returnValue.componentDef.localizedTitle)
+                }
+                window.keyPrefix = data.actions[0].returnValue.componentDef.keyPrefix
+                window.objectTypeCode = data.actions[0].returnValue.componentDef.objectTypeCode
+                $('.popup-head').html(data.localizedTitle)
+                addsection(data.actions[0].returnValue.componentDef.sections)
+                addbtns(data.actions[0].returnValue.componentDef.headerActions)
+                getselect(data.context.picklistValuesMap)
+                createddata(data.actions[0].returnValue.record, data.context.picklistValuesMap)
+                if (entityName == 'SuperviseReport') {
+                    var userId = data.context.appContextUser.userId
+                    userId = '2ec00cf2-a484-4136-8fef-e2a2719c5ed6'
+                    ajaxMethodGetData('entity.detail.get', { id: userId, objtypecode: 30020 }, function (data) {
+                        $('[name="ReportByUserId"]').append('<option value="' + userId + '">' + data.record.FullName + '</option>')
+                        $('[name="ReportByUserId"]').attr('layvalue', userId)
+                        $('[name="ReportByUserId"]').val(userId).attr('disabled', 'disabled')
+                        $('[name="ReportByUserId"]').parent().find('img').remove()
+
+                        $('[name="ReportByEmpNo"]').val(data.record.EmployeeNo).attr('disabled', 'disabled').addClass('layui-disabled')
+                        $('[name="ReportByMobilePhone"]').val(data.record.MobileNumber).attr('disabled', 'disabled').addClass('layui-disabled')
+
+                        $('[name="ReportByBusinessUnitId"]').append('<option value="' + data.record.DeptId.Id + '">' + data.record.DeptId.Name + '</option>')
+                        $('[name="ReportByBusinessUnitId"]').attr('layvalue', data.record.DeptId.Id)
+                        $('[name="ReportByBusinessUnitId"]').val(data.record.DeptId.Id).attr('disabled', 'disabled')
+                        $('[name="ReportByBusinessUnitId"]').parent().find('img').remove()
+
+                    })
+                }
+            })
+        }
+        //加载按钮
+        function addbtns(data) {
+            for (var i = 0; i < data.length; i++) {
+                var classname = ''
+                if (data[i].devNameOrId == 'SaveEdit') {
+                    classname = 'popup-foot-shur save-checking'
+                }
+                if (data[i].devNameOrId == 'SaveAndNew') {
+                    classname = 'save-checking'
+                    continue
+                }
+                $('.popup-foot').append('<div onclick="' + data[i].devNameOrId + '()" class="' + classname + '">' + data[i].label + '</div>')
+            }
+            $(".save-checking").off()
+            $(".save-checking").click(function () {
+                $(".save-checking-input").each(function () {
+                    if ($(this).val() == '') {
+                        if ($(this).find("input").length > 0 && $(this).find("input").val().length != 0) {
+                            $(".form-error").remove();
+                            $(".form-error2").remove();
+                            $(this).removeClass("disstatus");
+                            $(this).find("input").removeClass("disstatus");
+                            $(".save-status").remove();
+                            $(this).next().find('input').removeClass("disstatus")
+
+                            $(".save-checking").addClass("active");
+                        } else if ($(this).find("textarea").length > 0 && $(this).find("textarea").val().length != 0) {
+                            $(".form-error").remove();
+                            $(".form-error2").remove();
+                            $(this).removeClass("disstatus");
+                            $(this).find("input").removeClass("disstatus");
+                            $(this).next().find('input').removeClass("disstatus")
+
+                            $(".save-status").remove();
+                            $(".save-checking").addClass("active");
+                        } else {
+                            $(".form-error").remove();
+                            $(".form-error2").remove();
+                            $(".save-status").remove();
+                            $(this).parents(".item-left").append('<div class="save-status">请输入此字段</div>');
+                            $(this).next().find('input').addClass("disstatus")
+                            $(this).addClass("disstatus");
+                            $(this).find("input").addClass("disstatus");
+                            $(".modal-header").append("        <div class=\"form-error\">\u68C0\u67E5\u6B64\u9875\u9762\u4E0A\u7684\u9519\u8BEF</div>\n                <div class=\"form-error2\">\u5FC5\u987B\u586B\u5199\u8FD9\u4E9B\u5FC5\u586B\u5B57\u6BB5\n                <span></span>\n                </div>");
+                            $(".form-error2 span").html($(this).prev().html());
+                            $(".save-checking").removeClass("active");
+                            return false;
+                        }
+                    } else {
+                        $(".form-error").remove();
+                        $(".form-error2").remove();
+                        $(this).removeClass("disstatus");
+                        $(this).next().find('input').removeClass("disstatus")
+                        $(this).find("input").removeClass("disstatus");
+                        $(".save-status").remove();
+                        $(".save-checking").addClass("active");
+                    }
+                });
+                if ($(".save-checking").hasClass("active")) {
+                    $(".save-checking-inputgroup").each(function () {
+                        var save = 0
+                        $(this).find('input').each(function () {
+                            if ($(this).val() != '') {
+                                save = 1
+                            }
+                        })
+                        if (save == 0) {
+                            $(".form-error").remove();
+                            $(".form-error2").remove();
+                            $(".save-status").remove();
+                            $(this).parents(".divs").append('<div class="save-status">请输入此字段</div>');
+                            $(this).addClass("disstatus");
+                            $(this).find("input").addClass("disstatus");
+                            $(".modal-header").append("        <div class=\"form-error\">\u68C0\u67E5\u6B64\u9875\u9762\u4E0A\u7684\u9519\u8BEF</div>\n                <div class=\"form-error2\">\u5FC5\u987B\u586B\u5199\u8FD9\u4E9B\u5FC5\u586B\u5B57\u6BB5\n                <span></span>\n                </div>");
+                            $(".save-checking").removeClass("active");
+                            return false;
+                        } else {
+                            $(".form-error").remove();
+                            $(".form-error2").remove();
+                            $(this).removeClass("disstatus");
+                            $(".save-status").remove();
+                            $(".save-checking").addClass("active");
+                        }
+                    })
+                }
+            });
+        }
+
+        function CancelEdit() {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        }
+        function SaveEdit() {
+            savedata(callback)
+            function callback() {
+                var type = getQueryString('type')
+                if (type == 'related') {
+                    parent.getrelated()
+                } else if (type == 'iframe') {
+                    parent.$('#childreniframe')[0].contentWindow.getgrid();
+                } else if (parent.$('#layoutview').length > 0) {
+                    parent.getlayout()
+                } else {
+                    if (parent.$('#datagrid').length != 0) {
+                        parent.$('#datagrid').datagrid('reload')
+                    } else {
+                        parent.window.location.reload()
+                    }
+                }
+                if (window.objectTypeCode == '30300') {
+                    parent.getdata()
+                }
+                if (typeof parent.newdata != 'undefined') {
+                    parent.newdata()
+                }
+                parent.$('.popup-mask').hide()
+                parent.$('#iframe').hide()
+                parent.success2('保存成功')
+            }
+        }
+        function SaveAndNew() {
+            savedata(callback)
+            function callback() {
+                var entityName = getQueryString('entityName')
+                var type = getQueryString('type')
+                var src = '/layouteditor/add_layout_ie8.html?entityName=' + entityName
+                if (type) {
+                    src += '&type=' + type
+                }
+                parent.$('#iframe').show().attr('src', src)
+                parent.success2('保存成功')
+            }
+        }
+        //加载区块
+        function addsection(data) {
+            var html = ''
+            for (var i = 0; i < data.length; i++) {
+                html += '<div class="section">'
+                + '<div class="section-title">' + data[i].title + '</div>'
+                + '<div class="section-body">'
+
+                for (var j = 0; j < data[i].rows.length; j++) {
+                    html += '<div class="item divs">'
+
+                    for (var k = 0; k < data[i].rows[j].attributes.length; k++) {
+                        html += '<div class="item-left">'
+                        + '    <div class="item-body">'
+                        var classname = ''
+                        if (data[i].rows[j].attributes[k].attributes.required) {
+                            html += '<span class="red">*</span>'
+                            classname = 'save-checking-input'
+                        }
+                        var alwaysReadonly = data[i].rows[j].attributes[k].attributes.alwaysReadonly
+                        var disabled = ''
+                        if (alwaysReadonly == true) {
+                            disabled = 'disabled'
+                        } else {
+                            disabled = 'nodisabled'
+                        }
+                        html += '<span class="item-title">' + data[i].rows[j].attributes[k].label + '</span>'
+                        if (data[i].rows[j].attributes[k].attributes.type == 'S') {
+                            html += '<input ' + disabled + '="disabled" type="text" name="' + data[i].rows[j].attributes[k].localId + '"  autocomplete="off" class="layui-input ' + classname + '">'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'X' || data[i].rows[j].attributes[k].attributes.type == 'J') {
+                            html += ' <textarea ' + disabled + '="disabled" name="' + data[i].rows[j].attributes[k].localId + '" class="layui-textarea ' + classname + '"></textarea>'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'D') {
+                            html += '<input ' + disabled + '="disabled" datatype="D" id="laydate' + i + j + k + '" class="laydate ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '" lay-verify="' + classname + '" />'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'Year') {
+                            html += '<input ' + disabled + '="disabled" datatype="Year" id="laydate' + i + j + k + '" class="laydate ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '" lay-verify="' + classname + '" />'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'Month') {
+                            html += '<input ' + disabled + '="disabled" datatype="Month" id="laydate' + i + j + k + '" class="laydate ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '" lay-verify="' + classname + '" />'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'F') {
+                            html += '<input ' + disabled + '="disabled" datatype="F" id="laydate' + i + j + k + '" class="laydate ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '" lay-verify="' + classname + '" />'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'L' || data[i].rows[j].attributes[k].attributes.type == 'DT' || data[i].rows[j].attributes[k].attributes.type == 'LT') {
+                            html += '<div class="layui-input-block"><select ' + disabled + '="disabled"lay-verify="" id="' + data[i].rows[j].attributes[k].localId + '" class="selectcontent ' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '"><option value="">请选择</option></select></div>'
+                        } else if (data[i].rows[j].attributes[k].attributes.type == 'O' || data[i].rows[j].attributes[k].attributes.type == 'Y_MD' || data[i].rows[j].attributes[k].attributes.type == 'Y' || data[i].rows[j].attributes[k].attributes.type == 'U') {
+                            html += '<div Lktp="' + data[i].rows[j].attributes[k].attributes.referencedEntityObjectTypeCode + '" class="layui-input-block searchselect"><select ' + disabled + '="disabled" lay-search lay-verify="" id="' + data[i].rows[j].attributes[k].localId + '" class="' + classname + '" name="' + data[i].rows[j].attributes[k].localId + '"><option value="">请选择</option></select>'
+                            if (data[i].rows[j].attributes[k].attributes.sObjectType == '8') {
+                                html += ' <img  class="searchimg ' + disabled + '" onclick=choosepeople("' + data[i].rows[j].attributes[k].localId + '") src="/img/images/02.1-1.Search_.png" />'
+                            } else if (data[i].rows[j].attributes[k].attributes.sObjectType == '10') {
+                                html += ' <img  class="searchimg ' + disabled + '" onclick=choosedept("' + data[i].rows[j].attributes[k].localId + '") src="/img/images/02.1-1.Search_.png"/>'
+                            }
+                            html += '</div>'
+                        }
+                        else if (data[i].rows[j].attributes[k].attributes.type == 'MC' || data[i].rows[j].attributes[k].attributes.type == 'B') {
+                            html += '<div class="layui-input-block"><input ' + disabled + '="disabled" type="checkbox"name="' + data[i].rows[j].attributes[k].localId + '" lay-skin="primary"></div>'
+                        } else {
+                            html += '<input ' + disabled + '="disabled"  name="' + data[i].rows[j].attributes[k].localId + '"  class="' + classname + '">'
+                        }
+                        html += '</div>'
+                        html += '</div>'
+                    }
+                    html += '<div style="clear:both;"></div>'
+                    html += '</div>'
+                }
+                html += '</div>'
+                html += '</div>'
+
+
+            }
+            $('.popup-body').prepend(html)
+            getlookup()
+        }
+        //弹窗选人
+        function choosepeople(name) {
+            opencenterwindow('/_ui/common/data/UserLookResult.aspx?type=relatedchhoose&lknm=' + name, '', 1150, 600)
+        }
+        function lookupPick(formName, controlName, controlName2, null1, valId, valName) {
+            $('[name="' + controlName2 + '"]').attr('layvalue', valId)
+            $('[name="' + controlName2 + '"]').attr('value', valId)
+            $('[name="' + controlName2 + '"]').next().find('input').val(valName)
+
+        }
+        function choosedept(name) {
+            opencenterwindow('/alert/deptchose_form.html?type=relatedchhoose&lknm=' + name, '', 750, 520)
+        }
+        function lookupPickdept(id, label, name) {
+            $('[name="' + name + '"]').attr('layvalue', id);
+            $('[name="' + name + '"]').attr('value', id);
+            $('[name="' + name + '"]').next().find('input').val(label);
+        }
+        //填充数据
+        function createddata(data, picklistValuesMap) {
+            for (var item in data) {
+                if (data[item] != null) {
+                    if (data[item].objectTypeCode == 10 || data[item].objectTypeCode == 8) {
+                        if (data[item].Id) {
+                            $('[name="' + item + '"]').attr('layvalue', data[item].Id)
+                            $('[name="' + item + '"]').append('<option value="' + data[item].Id + '">' + data[item].Name + '</option>')
+                            $('[name="' + item + '"]').val(data[item].Id)
+                            $('[name="' + item + '"]').next().find('input').val(data[item].Name)
+                        }
+                    } else if (data[item] === 'true' || data[item] === 'True' || data[item] === true) {
+                        $('[name="' + item + '"]').attr('checked', 'checked')
+                        $('[name="' + item + '"]').next().addClass('layui-form-checked')
+                    }
+                    else {
+                        if (!data[item].Id) {
+                            if ($('[name="' + item + '"]').length > 0 && data[item] != '') {
+                                $('[name="' + item + '"]').val(data[item])
+                            }
+                        } else {
+                            if ($('[name="' + item + '"]').length > 0) {
+                                $('[name="' + item + '"]').attr('layvalue', data[item].Id)
+                                $('[name="' + item + '"]').append('<option value="' + data[item].Id + '">' + data[item].Name + '</option>')
+                                $('[name="' + item + '"]').val(data[item].Id)
+                                $('[name="' + item + '"]').next().find('input').val(data[item].Name)
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+
+        //获取下拉框枚举值
+        function getselect(picklistValuesMap) {
+            for (var item in picklistValuesMap) {
+                for (var i = 0; i < picklistValuesMap[item].length; i++) {
+                    $('#' + item).append('<option value="' + picklistValuesMap[item][i].value + '">' + picklistValuesMap[item][i].label + '</option>')
+                }
+            }
+        }
+        //搜索类型
+        function getlookup() {
+            $('.searchselect').click(function () {
+                var that = this
+                d = {
+                    Lktp: $(that).attr('Lktp'),
+                }
+                if ($(this).find('select option').length < 2) {
+                    $(this).find('input').off()
+                    searchlookup(d, that)
+                }
+                $(this).find('input').off()
+                $(this).find('input').keyup(function () {
+                    $(this).find('input').off()
+                    d = {
+                        Lktp: $(that).attr('Lktp'),
+                        Lksrch: $(this).val()
+                    }
+                    searchlookup(d, that)
+                })
+            })
+        }
+
+        function searchlookup(d, that) {
+            ajaxMethodGetData('ui.entity.lookup', d, function (data) {
+                $(that).find('select').html('<option value="">请选择</option>')
+                $(that).find('.layui-anim.layui-anim-upbit').html('<dd class="layui-select-tips" lay-value="">请选择</dd>')
+                for (var i = 0; i < data.listData.length; i++) {
+                    $(that).find('select').append('<option value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</option>')
+                    $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</dd>')
+                }
+                $(that).find('.layui-anim.layui-anim-upbit dd').off()
+                $(that).find('.layui-anim.layui-anim-upbit dd').click(function () {
+                    if ($(this).attr('lay-value') != '') {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', $(this).html())
+                    } else {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', '')
+                    }
+                    $(this).parent().find('dd').removeClass('layui-this')
+                    $(this).addClass('layui-this')
+                })
+            })
+        }
+
+
+        $('.laydate').each(function () {
+            var id = $(this).attr('id')
+            var datatype = $(this).attr('datatype')
+            if (datatype == 'D') {
+                laydate.render({
+                    elem: '#' + id,
+                    format: 'yyyy-MM-dd',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'F') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'datetime',
+                    format: 'yyyy-MM-dd HH:mm:ss',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Year') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    format: 'yyyy',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Month') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'month',
+                    format: 'yyyy-MM',
+                    done: function (value) {
+                    }
+                });
+            }
+
+        })
+
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        function savedata(callback) {
+            var objectTypeCode = window.objectTypeCode
+            setTimeout(function () {
+                var save = document.querySelectorAll('.save-checking.active');
+                if (save.length > 0 || $('.save-checking-input').length == 0) {
+                    var id = getQueryString('id')
+                    var d = {}
+                    for (var i = 0; i < $('input[name]').length; i++) {
+                        var key = $('input[name]').eq(i).attr('name')
+                        d[key] = $('input[name]').eq(i).val()
+                        if ($('input[name]').eq(i).attr('type') == 'checkbox') {
+                            if ($('input[name]').eq(i).attr('checked') == 'checked') {
+                                d[key] = true
+                            } else {
+                                d[key] = false
+                            }
+                        }
+                    }
+                    for (var i = 0; i < $('.selectcontent').length; i++) {
+                        var key = $('.selectcontent').eq(i).attr('name')
+                        d[key] = $('.selectcontent').eq(i).val()
+                    }
+                    for (var i = 0; i < $('textarea').length; i++) {
+                        var key = $('textarea').eq(i).attr('name')
+                        d[key] = $('textarea').eq(i).val()
+                    }
+                    for (var i = 0; i < $('.searchselect').length; i++) {
+                        var key = $('.searchselect select[name]').eq(i).attr('name')
+                        var Name = $('.searchselect select[name]').eq(i).next().find('input').val()
+                        var Id = $('.searchselect select[name]').eq(i).val()
+                        console.log(Id)
+                        d[key] = {}
+                        d[key].Name = Name
+                        d[key].Id = Id
+                        if (Id == null && $('.searchselect select[name]').eq(i).attr('layvalue') && $('.searchselect select[name]').eq(i).attr('layvalue') != '') {
+                            d[key].Id = $('.searchselect select[name]').eq(i).attr('layvalue')
+                        }
+                    }
+                    for (var i = 0; i < $('.openinpt').length; i++) {
+                        var key = $('.openinpt').eq(i).attr('name')
+                        var Name = $('.openinpt').eq(i).attr('layvalue')
+                        var Id = $('.openinpt').eq(i).val()
+                        d[key] = {}
+                        d[key].Name = Name
+                        d[key].Id = Id
+                    }
+                    var messages = {
+                        params: {
+                            recordRep: {
+                                objTypeCode: objectTypeCode,
+                                fields: d
+                            }
+                        }
+                    }
+                    if (id != null) {
+                        messages.params.recordRep.id = id
+                    }
+
+                    messages = JSON.stringify(messages)
+                    var data = { message: messages };
+                    ajaxMethodPostData('entity.saverecord', data, callback)
+                }
+            }, 500)
+        }
+
+    </script>  
+</body>
+</html>

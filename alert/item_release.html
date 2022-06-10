@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="photo">
+            <div class="DESKTOP uiContainerManager">
+                <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                    <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                    <div class="panel slds-modal slds-fade-in-open">
+                        <div class="modal-container slds-modal__container">
+                            <div class="modal-header slds-modal__header">
+                                <h2 class="title slds-text-heading--medium">发布会议</h2>
+                                <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                    <span>
+                                        <span style="font-size: 34px;">×</span>
+                                    </span>
+                                    <span class="slds-assistive-text">关闭此窗口</span>
+                                </button>
+                            </div>
+                            <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                                <div class="cuf-content slds-scope forceChatterUpdatePhoto">
+                                    <div class="updatePhotoPanel slds-text-align--center">
+                                        <p>是否确定发布？</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer slds-modal__footer">
+                                <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                    <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                        <span class=" label bBody">取消</span>
+                                    </button>
+                                    <button class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" id="Save" name="Save" title="附加文件 （新窗口）" type="button">
+                                        <span class=" label bBody">保存</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="/js/alert.js"></script>
+    <script src="/js/CommonUtils.js"></script>
+    <script src="/js/filter/filterGrid.js"></script>
+    <script>
+        $('#closeds').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        $('#closedsa').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        $('#Save').click(function () {
+            
+            var valueId = parent.getQueryString('id')
+            var d = {
+                valueId: valueId,
+                status:1
+            }
+            ajaxMethodGetData('meeting.update.status', d, function (data) {
+                console.log(data)
+                success2('会议发布成功')
+                parent.getdata()
+                parent.$('#changeDiv').hide()
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">新建问卷调查</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>基本信息</span></div>
+                            <div class="shift-body-main">
+                               <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">名称</span>
+                                        <el-input class="save-checking-input" v-model="list.Name"></el-input>     
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="shift-name-title">分类</span>
+                                        <el-input class="" v-model="list.CategoryId"></el-input>     
+
+                                          
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="required">*</span>
+
+                                        <span class="shift-name-title">类型</span>
+                                        <el-select class='save-checking-input'v-model="list.SurveyType" placeholder="请选择">
+                                                <el-option
+                                                  v-for="item in select.SurveyType"
+                                                  :key="item.value"
+                                                  :label="item.label"
+                                                  :value="item.value">
+                                                </el-option>
+                                             </el-select>     
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">目标人群</span>
+                                          <el-select class='save-checking-input'v-model="list.AudienceType" placeholder="请选择">
+                                                <el-option
+                                                  v-for="item in select.AudienceType"
+                                                  :key="item.value"
+                                                  :label="item.label"
+                                                  :value="item.value">
+                                                </el-option>
+                                             </el-select>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">匿名填写</span>
+                                        <el-checkbox v-model="list.IsAnonymouss"></el-checkbox>
+                                       </div>
+                                   <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">状态</span>
+                                          <el-select class='save-checking-input'v-model="list.StatusCode" placeholder="请选择">
+                                                <el-option
+                                                  v-for="item in select.StatusCode"
+                                                  :key="item.value"
+                                                  :label="item.label"
+                                                  :value="item.value">
+                                                </el-option>
+                                             </el-select>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">截止日期</span>
+                                        <el-date-picker
+                                              v-model="list.EndDate"
+                                              type="date" value-format="yyyy-MM-dd"
+                                              placeholder="选择日期">
+                                            </el-date-picker> 
+                                       </div>
+                                   <div class="item-right">
+                                        <span class="shift-name-title">科室</span>
+                                          <el-select
+                                          v-model="list.OwningBusinessUnit.Id"
+                                          filterable
+                                          remote
+                                          @visible-change="getlookup('10','OwningBusinessUnit')"
+                                          :remote-method="function(query){searchlookup(query,'10','OwningBusinessUnit')}"
+
+                                          placeholder="请选择">
+                                          <el-option
+                                            v-for="item in search.OwningBusinessUnit"
+                                            :key="item.ID"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                               </div>
+                            
+                            <div class="shift-body-titme"><span>其他信息</span></div>
+                            <div class="shift-body-main">
+                               <span>描述</span>
+                               <div class="shift-item">
+                                    <el-input
+                                      type="textarea"
+                                      :rows="4"
+                                      placeholder="请输入内容"
+                                      v-model="list.Description">
+                                    </el-input>
+                                   <div class="clear"></div>
+                               </div>
+                                <span>外部填写链接</span>
+                               <div class="shift-item">
+                                    <el-input
+                                      type="textarea"
+                                      :rows="2"
+                                      placeholder="请输入内容"
+                                      v-model="list.SurveyUrl">
+                                    </el-input>
+                                   <div class="clear"></div>
+                               </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    Name: '',
+                    SurveyUrl: '',
+                    SurveyType: '',
+                    AudienceType: '',
+                    StatusCode: '',
+                    IsAnonymous: '',
+                    OwningBusinessUnit: {},
+                    Description: '',
+                    SurveyUrl: '',
+                    CategoryId:''
+                },
+                select: {
+                },
+                search: {
+                    OwningBusinessUnit: [],
+                }
+            },
+            created: function () {
+                this.getData()
+                this.getselect()
+            },
+            methods: {
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('id')
+                    if (id != null) {
+                        var ObjectTypeCode = ObjectTypeCode
+                        var d = {
+                            Id: id,
+                            ObjTypeCode: 30300
+                        }
+                        function callback(data) {
+                            console.log(data)
+                            that.list = data.record;
+                            that.list.ObjTypeCode = 30300
+                            for (item in that.search) {
+                                if (item != 'searchname') {
+                                    var name = item
+                                    var ID = that.list[name].Id
+                                    var Name = that.list[name].Name
+                                    var newlist = {
+                                        ID: ID,
+                                        Name: Name
+                                    }
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                        ajaxMethodGetData('entity.detail.get', d, callback)
+                    }
+                },
+                getselect: function () {
+                    var that = this
+                    var d = {}
+                    var ObjectTypeCode = '30300'
+                    d = {
+                        ObjTypeCode: ObjectTypeCode,
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, callback)
+                    function callback(data) {
+                        console.log(data)
+                        that.select = data.context.picklistValuesMap
+                    }
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                        var id = getQueryString('id')
+                        if (id != null) {
+                            var ID = that.list[name].Id
+                            var Name = that.list[name].Name
+                            var newlist = {
+                                ID: ID,
+                                Name: Name
+                            }
+                            if (ID) {
+                                if (JSON.stringify(that.search[name]).indexOf(JSON.stringify(newlist)) == -1) {
+                                    that.search[name].push(newlist)
+                                    
+                                }
+                            }
+                        }
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                    }
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        $('#Save').click(function () {
+            var title = '新建问卷成功'
+            function callback(data) {
+                console.log(data)
+                parent.success(title)
+                parent.$('#changeDiv').hide()
+                parent.getdata()
+            }
+            var d = vum.list
+            var id = getQueryString('id')
+            var message = {}
+            if (id != null) {
+                $('h2.title ').html('编辑问卷调查')
+                title = '编辑问卷成功'
+            }
+            var messages = {
+                params: {
+                    recordRep: {
+                        id: id,
+                        objTypeCode: 30300,
+                        fields: d
+                    }
+                }
+            }
+
+            messages = JSON.stringify(messages)
+            var data = { message: messages };
+            var save = document.querySelectorAll('.save-checking.active');
+            if (save.length > 0) {
+                ajaxMethodPostData('entity.saverecord', data, callback)
+            }
+        })
+    </script>
+</body>
+</html>

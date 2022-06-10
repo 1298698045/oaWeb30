@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="chatter.post" type="Youyou.Chatters.Actions.ChatterPost,WorkReportCore" desc="发表讨论"></Action>
+  <Action name="chatter.delete" type="Youyou.Chatters.Actions.ChatterDelete,WorkReportCore" desc="讨论删除"></Action>
+  <Action name="chatter.search" type="Youyou.Slack.Actions.ChatterSearch,Youyou.Slack" desc="获取讨论列表"></Action>
+  
+  <Action name="chatter.comment.post" type="Youyou.Chatters.Actions.CommentPost,WorkReportCore" desc="发布讨论评论"></Action>
+  <Action name="chatter.comment.delete" type="Youyou.Chatters.Actions.CommentDelete,WorkReportCore" desc="讨论评论删除"></Action>
+  <Action name="chatter.comment.search" type="Youyou.Chatters.Actions.CommentSearch,WorkReportCore" desc="获取评论列表"></Action>
+  
+  <Action name="chatter.like.post" type="Youyou.Chatters.Actions.LikePost,WorkReportCore" desc="点赞"></Action>
+  <Action name="chatter.like.search" type="Youyou.Chatters.Actions.LikeSearch,WorkReportCore" desc="获取点赞列表"></Action>
+  
+</Actions>
+

@@ -1,0 +1,472 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height: 458px;
+            overflow: auto;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+
+        .section-body {
+            padding: 0 20px;
+        }
+
+        .section {
+            padding-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            新建文件夹
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+
+            <div class="section">
+                <div class="section-title">基本信息</div>
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <span class="red">*</span>
+                                <span class="item-title">名称</span>
+                                <div class="layui-input-block">
+                                    <input class="save-checking-input" id="name" type="text" name="name" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-body">
+                                <span class="item-title">父栏目</span>
+                                <div class="layui-input-block">
+                                    <input disabled="disabled" id="folderPicker" type="text" name="folderPicker" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <div class="item divs">
+                        <div class="item-left">
+                            <div class="item-body">
+                                <span class="item-title">序号</span>
+                                <div class="layui-input-block">
+                                    <input id="sortNumber" type="text" name="sortNumber" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-right">
+                            <div class="item-body">
+                                <span class="item-title">设置公用目录</span>
+                                <div class="layui-input-block" >
+                                    <input checked="checked" ay-skin="primary" id="isPublic" type="checkbox" name="" title="公用目录">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                  
+                
+
+
+
+
+
+                </div>
+
+            </div>
+            <div class="section">
+                <div class="section-title">备注信息</div>
+                <div class="section-body">
+                    <div class="item divs">
+                        <div class="">
+                            <div class="item-body">
+                                <span class="item-title">备注</span>
+                                <textarea style="height:100px;" class="" id="description"></textarea>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+
+            </div>
+           
+        </div>
+        <div class="popup-foot">
+            <div class="popup-foot-shur save-checking">确定</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script src="/js/alert.js"></script>
+    <script>
+        var id = getQueryString('id')
+        if (id && id != '') {
+            $('.popup-head').html('编辑文件夹')
+        }
+        var form = ''
+        layui.use(['form'], function () {
+            form = layui.form
+            $('#folderPicker').val(parent.$('.file-nav span:last').attr('name'))
+        });
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('.save-checking').click(function () {
+            function callback(data) {
+                parent.$('#iframe').hide()
+                parent.$('.popup-mask').hide()
+                    success2('文件夹保存成功')
+                    parent.$('#changeDiv').hide()
+                    var extSrch = parent.$('.slds-nav-vertical__item.slds-is-actives').attr('id')
+                    if (extSrch == '10010000-0000-0000-0000-000000000001') {
+                        extSrch = 'my'
+                    } else if (extSrch == '10010000-0000-0000-0000-000000000003') {
+                        extSrch = 'share'
+                    } else if (extSrch == '10010000-0000-0000-0000-000000000002') {
+                        extSrch = 'org'
+                    } else if (extSrch == '10010000-0000-0000-0000-000000000303') {
+                        extSrch = 'archive'
+                    } else {
+                        extSrch = 'latestuse'
+                    }
+                    if (parent.$('.file-nav span').length > 1) {
+                        parent.loadFolderData(parent.$('.file-nav span:last').attr('fileid'), extSrch)
+                    } else {
+                        parent.loadGrids(extSrch)
+                    }
+            }
+            
+                var d = {}
+                for (var i = 0; i < $('input').length; i++) {
+                    var key = $('input').eq(i).attr('id')
+                    d[key] = $('input').eq(i).val()
+                    if ($('input').eq(i).attr('type') == 'checkbox') {
+                        if ($('input').eq(i).attr('checked') == 'checked') {
+                            d[key] = 1
+                        } else {
+                            d[key] = 0
+                        }
+                    }
+                }
+                //console.log($('textarea'))
+                for (var i = 0; i < $('textarea').length; i++) {
+                    var key = $('textarea').eq(i).attr('id')
+                    d[key] = $('textarea').eq(i).val()
+                }
+                for (var i = 0; i < $('.selectcontent').length; i++) {
+                    var key = $('.selectcontent').eq(i).attr('name')
+                    d[key] = $('.selectcontent').eq(i).val()
+                }
+                for (var i = 0; i < $('.searchselect').length; i++) {
+                    var key = $('.searchselect select').eq(i).attr('id')
+                    var Name = $('.searchselect select').eq(i).next().find('input').val()
+                    var Id = $('.searchselect select').eq(i).val()
+                    d[key] = Id
+                }
+                if (getQueryString('id')) {
+                    d.id = getQueryString('id')
+                }
+                d.folderPicker = parent.$('.file-nav span:last').attr('fileid')
+                var id = getQueryString('id')
+                if (id && id != '') {
+                    d.id=id
+                }
+
+                var save = $('.save-checking.active').length
+                if (save > 0) {
+                    ajaxMethodPostData('folder.create', d, callback)
+                }
+
+        })
+
+        getlookup()
+        function getlookup() {
+            $('.searchselect').click(function () {
+                var that = this
+                d = {
+                    Lktp: $(that).attr('lktp'),
+                }
+                if ($(this).find('select option').length < 2) {
+                    $(this).find('input').off()
+                    searchlookup(d, that)
+                }
+                $(this).find('input').off()
+                $(this).find('input').keyup(function () {
+                    $(this).find('input').off()
+                    d = {
+                        Lktp: $(that).attr('lktp'),
+                        Lksrch: $(this).val()
+                    }
+                    searchlookup(d, that)
+                })
+            })
+        }
+
+        function searchlookup(d, that) {
+            ajaxMethodGetData('ui.entity.lookup', d, function (data) {
+               $(that).find('select').html('<option value="">请选择</option>')
+               $(that).find('.layui-anim.layui-anim-upbit').html('<dd lay-value="" class="layui-select-tips">请选择</dd>')
+               for (var i = 0; i < data.listData.length; i++) {
+                    $(that).find('select').append('<option value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</option>')
+                    $(that).find('.layui-anim.layui-anim-upbit').append('<dd class="layui-select-tips" lay-value="' + data.listData[i].ID + '">' + data.listData[i].Name + '</dd>')
+                }
+                $(that).find('.layui-anim.layui-anim-upbit dd').off()
+                $(that).find('.layui-anim.layui-anim-upbit dd').click(function () {
+                    if ($(this).attr('lay-value') != '') {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', $(this).html())
+                    } else {
+                        $(this).parent().parent().prev().val($(this).attr('lay-value'))
+                        $(this).parent().prev().find('input').prop('value', '')
+                    }
+                    $(this).parent().find('dd').removeClass('layui-this')
+                    $(this).addClass('layui-this')
+                })
+            })
+        }
+        $('.laydate').each(function () {
+            var id = $(this).attr('id')
+            var datatype = $(this).attr('datatype')
+            if (datatype == 'D') {
+                laydate.render({
+                    elem: '#' + id,
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'F') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'datetime',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Year') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    done: function (value) {
+                    }
+                });
+            } else if (datatype == 'Month') {
+                laydate.render({
+                    elem: '#' + id,
+                    type: 'year',
+                    done: function (value) {
+                    }
+                });
+            }
+        })
+        getData()
+        function getData() {
+            var that = this
+            var id = getQueryString('id')
+            if (id != null&&id!='') {
+                var d = {
+                    id: id,
+                }
+                function callback(data) {
+                    //console.log(data)
+                    var res = data.data
+                    var isPublic = res.isPublic
+                    if (isPublic == 0) {
+                        isPublic = false
+                    } else {
+                        isPublic = true
+                    }
+                    $('#name').val(res.name)
+                    $('#description').val(res.description)
+                    $('#sortNumber').val(res.sortNumber)
+                    if (isPublic) {
+                        $('#isPublic').attr('checked', 'checked')
+                        $('#isPublic').next().addClass('layui-form-checked')
+                    } else {
+                        $('#isPublic').prop('checked', '')
+                        $('#isPublic').next().removeClass('layui-form-checked')
+                    }
+                }
+                ajaxMethodGetData('folder.info', d, callback)
+            }
+        }
+
+    </script>
+</body>
+</html>

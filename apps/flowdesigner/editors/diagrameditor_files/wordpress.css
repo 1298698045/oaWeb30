@@ -1,0 +1,471 @@
+body {
+	background: url("../images/draw/drawbgcolor.jpg") rgb(213, 214, 215); text-align: center; color: rgb(51, 51, 51); font-family: "Lucida Grande", Verdana, Arial, Sans-Serif; font-size: 62.5%;
+}
+#page {
+	border: 1px solid rgb(149, 149, 150); border-image: none; text-align: left; background-color: white;
+}
+#header {
+	background: url("../images/draw/drawheader.jpg") no-repeat bottom rgb(115, 160, 197);
+}
+#headerimg {
+	margin: 7px 9px 0px; width: 740px; height: 62px;
+}
+#content {
+	font-size: 1.2em;
+}
+.widecolumn .entry p {
+	font-size: 1.05em;
+}
+.narrowcolumn .entry {
+	line-height: 1.4em;
+}
+.widecolumn .entry {
+	line-height: 1.4em;
+}
+.widecolumn {
+	line-height: 1.6em;
+}
+.narrowcolumn .postmetadata {
+	text-align: center;
+}
+.alt {
+	border-top-color: rgb(221, 221, 221); border-bottom-color: rgb(221, 221, 221); border-top-width: 1px; border-bottom-width: 1px; border-top-style: solid; border-bottom-style: solid; background-color: rgb(248, 248, 248);
+}
+pre {
+	background: rgb(248, 248, 248); padding: 8px; font-size: 12px;
+}
+#footer {
+	background: url("../images/draw/drawfooter.jpg") no-repeat top rgb(238, 238, 238); border: currentColor; border-image: none;
+}
+small {
+	line-height: 1.5em; font-family: Arial, Helvetica, Sans-Serif; font-size: 0.9em;
+}
+h1 {
+	font-family: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif; font-weight: bold;
+}
+h2 {
+	font-family: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif; font-weight: bold;
+}
+h3 {
+	font-family: "Trebuchet MS", "Lucida Grande", Verdana, Arial, Sans-Serif; font-weight: bold;
+}
+h1 {
+	text-align: center; font-size: 2em;
+}
+#headerimg .description {
+	text-align: center; font-size: 1.2em;
+}
+h2 {
+	font-size: 1.6em;
+}
+h2.pagetitle {
+	font-size: 1.6em;
+}
+#sidebar h2 {
+	font-family: "Lucida Grande", Verdana, Sans-Serif; font-size: 1.2em;
+}
+h3 {
+	font-size: 1.3em;
+}
+h1 {
+	color: white; text-decoration: none;
+}
+h1 a {
+	color: white; text-decoration: none;
+}
+h1 a:hover {
+	color: white; text-decoration: none;
+}
+h1 a:visited {
+	color: white; text-decoration: none;
+}
+#headerimg .description {
+	color: white; text-decoration: none;
+}
+h2 {
+	color: rgb(51, 51, 51);
+}
+h2 a {
+	color: rgb(51, 51, 51);
+}
+h2 a:visited {
+	color: rgb(51, 51, 51);
+}
+h3 {
+	color: rgb(51, 51, 51);
+}
+h3 a {
+	color: rgb(51, 51, 51);
+}
+h3 a:visited {
+	color: rgb(51, 51, 51);
+}
+h2 {
+	text-decoration: none;
+}
+h2 a {
+	text-decoration: none;
+}
+h2 a:hover {
+	text-decoration: none;
+}
+h2 a:visited {
+	text-decoration: none;
+}
+h3 {
+	text-decoration: none;
+}
+h3 a {
+	text-decoration: none;
+}
+h3 a:hover {
+	text-decoration: none;
+}
+h3 a:visited {
+	text-decoration: none;
+}
+#sidebar h2 {
+	text-decoration: none;
+}
+#wp-calendar caption {
+	text-decoration: none;
+}
+cite {
+	text-decoration: none;
+}
+.entry p a:visited {
+	color: rgb(184, 91, 90);
+}
+.commentlist li {
+	font: 0.9em/normal "Lucida Grande", Verdana, Arial, Sans-Serif; font-size-adjust: none; font-stretch: normal;
+}
+#commentform input {
+	font: 0.9em/normal "Lucida Grande", Verdana, Arial, Sans-Serif; font-size-adjust: none; font-stretch: normal;
+}
+#commentform textarea {
+	font: 0.9em/normal "Lucida Grande", Verdana, Arial, Sans-Serif; font-size-adjust: none; font-stretch: normal;
+}
+.commentlist li {
+	font-weight: bold;
+}
+.commentlist cite {
+	font-size: 1.1em; font-style: normal; font-weight: bold;
+}
+.commentlist cite a {
+	font-size: 1.1em; font-style: normal; font-weight: bold;
+}
+.commentlist p {
+	text-transform: none; line-height: 1.5em; font-weight: normal;
+}
+#commentform p {
+	font-family: "Lucida Grande", Verdana, Arial, Sans-Serif;
+}
+.commentmetadata {
+	font-weight: normal;
+}
+#sidebar {
+	font: 1em/normal "Lucida Grande", Verdana, Arial, Sans-Serif; font-size-adjust: none; font-stretch: normal;
+}
+small {
+	color: rgb(119, 119, 119);
+}
+#sidebar ul ul li {
+	color: rgb(119, 119, 119);
+}
+#sidebar ul ol li {
+	color: rgb(119, 119, 119);
+}
+.nocomments {
+	color: rgb(119, 119, 119);
+}
+.postmetadata {
+	color: rgb(119, 119, 119);
+}
+blockquote {
+	color: rgb(119, 119, 119);
+}
+strike {
+	color: rgb(119, 119, 119);
+}
+code {
+	font: 1.1em/normal "Courier New", Courier, Fixed; font-size-adjust: none; font-stretch: normal;
+}
+acronym {
+	letter-spacing: 0.07em; font-size: 0.9em;
+}
+abbr {
+	letter-spacing: 0.07em; font-size: 0.9em;
+}
+span.caps {
+	letter-spacing: 0.07em; font-size: 0.9em;
+}
+a {
+	color: rgb(0, 102, 204); text-decoration: none;
+}
+h2 a:hover {
+	color: rgb(0, 102, 204); text-decoration: none;
+}
+h3 a:hover {
+	color: rgb(0, 102, 204); text-decoration: none;
+}
+a:hover {
+	color: rgb(17, 68, 119); text-decoration: underline;
+}
+#wp-calendar #prev a {
+	font-size: 9pt;
+}
+#wp-calendar a {
+	text-decoration: none;
+}
+#wp-calendar caption {
+	font: bold 1.3em/normal "Lucida Grande", Verdana, Arial, Sans-Serif; text-align: center; font-size-adjust: none; font-stretch: normal;
+}
+#wp-calendar th {
+	text-transform: capitalize; font-style: normal;
+}
+body {
+	margin: 0px 0px 20px; padding: 0px;
+}
+#page {
+	margin: 20px auto; padding: 0px; border: 1px solid rgb(149, 149, 150); border-image: none; width: 760px; background-color: white;
+}
+#header {
+	margin: 0px 0px 0px 1px; padding: 0px; width: 758px; height: 70px; background-color: rgb(115, 160, 197);
+}
+#headerimg {
+	margin: 0px; width: 100%; height: 70px;
+}
+.narrowcolumn {
+	margin: 0px; padding: 0px 0px 20px 45px; width: 450px; float: left;
+}
+.widecolumn {
+	margin: 5px 0px 0px 150px; padding: 10px 0px 20px; width: 450px;
+}
+.post {
+	margin: 0px 0px 40px;
+}
+.widecolumn .post {
+	margin: 0px;
+}
+.narrowcolumn .postmetadata {
+	padding-top: 5px;
+}
+.widecolumn .postmetadata {
+	margin: 30px 0px;
+}
+.widecolumn .smallattachment {
+	margin: 5px 5px 5px 0px; width: 128px; text-align: center; float: left;
+}
+.widecolumn .attachment {
+	margin: 5px 0px; text-align: center;
+}
+.postmetadata {
+	clear: left;
+}
+#footer {
+	margin: 0px auto; padding: 0px; width: 760px; clear: both;
+}
+#footer p {
+	margin: 0px; padding: 20px 0px; text-align: center;
+}
+h1 {
+	margin: 0px; padding-top: 30px;
+}
+h2 {
+	margin: 30px 0px 0px;
+}
+h2.pagetitle {
+	text-align: center; margin-top: 30px;
+}
+#sidebar h2 {
+	margin: 5px 0px 0px; padding: 0px;
+}
+h3 {
+	margin: 30px 0px 0px; padding: 0px;
+}
+h3.comments {
+	margin: 40px auto 20px; padding: 0px;
+}
+p img {
+	padding: 0px; max-width: 100%;
+}
+img.centered {
+	margin-right: auto; margin-left: auto; display: block;
+}
+img.alignright {
+	margin: 0px 0px 2px 7px; padding: 4px; display: inline;
+}
+img.alignleft {
+	margin: 0px 7px 2px 0px; padding: 4px; display: inline;
+}
+.alignright {
+	float: right;
+}
+.alignleft {
+	float: left;
+}
+html > body .entry ul {
+	list-style: none; padding: 0px 0px 0px 10px; text-indent: -10px; margin-left: 0px;
+}
+html > body .entry li {
+	margin: 7px 0px 8px 10px;
+}
+.entry ul li::before {
+	content: "\00BB \0020";
+}
+#sidebar ul ul li::before {
+	content: "\00BB \0020";
+}
+.entry ol {
+	margin: 0px; padding: 0px 0px 0px 35px;
+}
+.entry ol li {
+	margin: 0px; padding: 0px;
+}
+.postmetadata ul {
+	display: inline; list-style-type: none; list-style-image: none;
+}
+.postmetadata li {
+	display: inline; list-style-type: none; list-style-image: none;
+}
+#sidebar ul {
+	margin: 0px; padding: 0px;
+}
+#sidebar ul ol {
+	margin: 0px; padding: 0px;
+}
+#sidebar ul li {
+	margin-bottom: 15px; list-style-type: none; list-style-image: none;
+}
+#sidebar ul p {
+	margin: 5px 0px 8px;
+}
+#sidebar ul select {
+	margin: 5px 0px 8px;
+}
+#sidebar ul ul {
+	margin: 5px 0px 0px 10px;
+}
+#sidebar ul ol {
+	margin: 5px 0px 0px 10px;
+}
+#sidebar ul ul ul {
+	margin: 0px 0px 0px 10px;
+}
+#sidebar ul ol {
+	margin: 0px 0px 0px 10px;
+}
+ol li {
+	list-style: decimal;
+}
+#sidebar ul ol li {
+	list-style: decimal;
+}
+#sidebar ul ul li {
+	margin: 3px 0px 0px; padding: 0px;
+}
+#sidebar ul ol li {
+	margin: 3px 0px 0px; padding: 0px;
+}
+#searchform {
+	margin: 10px auto; padding: 5px 3px; text-align: center;
+}
+#sidebar #searchform #s {
+	padding: 2px; width: 108px;
+}
+#sidebar #searchsubmit {
+	padding: 1px;
+}
+.entry form {
+	text-align: center;
+}
+select {
+	width: 130px;
+}
+#commentform input {
+	margin: 5px 5px 1px 0px; padding: 2px; width: 170px;
+}
+#commentform textarea {
+	padding: 2px; width: 100%;
+}
+#commentform #submit {
+	margin: 0px; float: right;
+}
+.alt {
+	margin: 0px; padding: 10px;
+}
+.commentlist {
+	padding: 0px;
+}
+.commentlist li {
+	list-style: none; margin: 15px 0px 3px; padding: 5px 10px 3px;
+}
+.commentlist p {
+	margin: 10px 5px 10px 0px;
+}
+#commentform p {
+	margin: 5px 0px;
+}
+.nocomments {
+	margin: 0px; padding: 0px; text-align: center;
+}
+.commentmetadata {
+	margin: 0px; display: block;
+}
+#sidebar {
+	padding: 20px 0px 10px; width: 190px; margin-left: 545px;
+}
+#sidebar form {
+	margin: 0px;
+}
+#wp-calendar {
+	margin: 10px auto 0px; width: 155px; empty-cells: show;
+}
+#wp-calendar #next a {
+	text-align: right; padding-right: 10px;
+}
+#wp-calendar #prev a {
+	text-align: left; padding-left: 10px;
+}
+#wp-calendar a {
+	display: block;
+}
+#wp-calendar caption {
+	width: 100%; text-align: center;
+}
+#wp-calendar td {
+	padding: 3px 0px; text-align: center;
+}
+#wp-calendar td.pad:hover {
+	background-color: rgb(255, 255, 255);
+}
+acronym {
+	cursor: help;
+}
+abbr {
+	cursor: help;
+}
+span.caps {
+	cursor: help;
+}
+acronym {
+	border-bottom-color: rgb(153, 153, 153); border-bottom-width: 1px; border-bottom-style: dashed;
+}
+abbr {
+	border-bottom-color: rgb(153, 153, 153); border-bottom-width: 1px; border-bottom-style: dashed;
+}
+blockquote {
+	margin: 15px 30px 0px 10px; padding-left: 20px; border-left-color: rgb(221, 221, 221); border-left-width: 5px; border-left-style: solid;
+}
+blockquote cite {
+	margin: 5px 0px 0px; display: block;
+}
+.center {
+	text-align: center;
+}
+a img {
+	border: currentColor; border-image: none;
+}
+.navigation {
+	text-align: center; margin-top: 10px; margin-bottom: 60px; display: block;
+}

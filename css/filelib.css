@@ -1,0 +1,306 @@
+﻿.safari-workaround-anchor {
+    position: relative;
+    height: 100%;
+}
+.safari-workaround {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.forceListViewManagerPrimaryDisplayManager {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.forceListViewManagerGrid {
+    height: 100%;
+}
+.listViewContent {
+    border-top: 0;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgb(250, 250, 249);
+}
+.uiScroller.native {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+.scroller {
+    width: 100%;
+    transform: none;
+    position: relative;
+}
+.resizable-cols {
+    width: 100%;
+    table-layout: fixed;
+    /* border-collapse: separate; */
+    border-bottom: 1px solid rgb(221, 219, 218);
+    background-color: rgb(255, 255, 255);
+    font-size: inherit;
+    font-size: .8125rem;
+}
+table {
+    border-collapse: collapse;
+}
+.slds-text-title--caps {
+    font-size: .75rem;
+    line-height: 1.25;
+    color: rgb(62, 62, 60);
+    text-transform: uppercase;
+    letter-spacing: .0625rem;
+}
+.slds-table--header-fixed thead th {
+    position: static;
+    padding: 0;
+    border-top: 0;
+    background-color: rgb(250, 250, 249);
+    color: rgb(81, 79, 77);
+    font-weight: 400;
+    white-space: nowrap;
+}
+.errorColumnHeader {
+    min-width: 50px;
+}
+.slds-cell-fixed {
+    background-color: rgb(250, 250, 249);
+    top: 0;
+    min-height: 2rem;
+}
+.slds-th__action {
+    min-width: 0;
+    padding-right: .25rem;
+    padding: .25rem .5rem;
+    height: 2rem;
+    background: rgb(250, 250, 249);
+    line-height: 2rem;
+}
+.slds-truncate {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.assistiveText {
+    position: absolute!important;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+}
+.selectionColumnHeader {
+    width: 40px;
+}
+.selectionColumnHeader .slds-th__action {
+    padding: 0;
+}
+.slds-checkbox {
+    display: inline-block;
+    position: relative;
+}
+input[type="checkbox"] {
+    position: relative;
+    opacity: 0;
+    transform: translateY(2px);
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+}
+.keyboardMode--trigger {
+    width: 18px;
+    height: 21px;
+    border: 0;
+    /* clip: rect(0 0 0 0); */
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    pointer-events: auto;
+    z-index: 9;
+    margin-top: 2px;
+}
+/*input[type="checkbox"]+label {
+    font-weight: 400;
+    padding-left: 6px;
+}*/
+/*input[type="checkbox"]+label:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 3px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    border: 1px #DCDCDC solid;
+    border-radius: 2px;
+    cursor: pointer;
+}*/
+.firsts:before {
+    /*margin-left: 9px;*/
+}
+/*input[type="checkbox"]:checked+label:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 19px;
+    height: .4rem;
+    width: .59rem;
+    transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+    border-bottom: 2px solid rgba(27, 82, 151, 1.0);
+    border-left: 2px solid rgba(27, 82, 151, 1.0);
+    border-radius: 2px;
+}*/
+.firsts:after {
+    /*margin-left: 9px;*/
+}
+.sortable {
+    width:18.5%;
+}
+.slds-text-link--reset {
+    cursor: pointer;
+    font-size: inherit;
+}
+.slds-text-link--reset {
+    color: inherit;
+    text-decoration: inherit;
+}
+.check {
+    background:#fff;
+}
+
+tbody {
+    transform: translateZ(0);
+}
+.slds-table tbody tr {
+    counter-increment: row-number;
+}
+.slds-table th, .slds-table td {
+    padding: .25rem .5rem;
+    white-space: nowrap;
+    position: relative;
+    border-top: 1px solid rgb(221, 219, 218);
+}
+.slds-table td{
+ overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.slds-m-horizontal--xx-small {
+    margin-left: .25rem;
+    margin-right: .25rem;
+}
+.forceStatusIcon {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+}
+.slds-text-body--small {
+    font-size: .75rem;
+}
+.slds-text-color--weak {
+    color: rgb(62, 62, 60);
+}
+.slds-row-number:after {
+    content: counter(row-number);
+}
+.forceOutputLookup {
+    display: inline;
+    white-space: normal;
+    text-overflow: initial;
+}
+.forceOutputLookup {
+    user-select: none;
+    display: block;
+    -webkit-user-drag: none;
+    color: rgb(0, 95, 178);
+}
+a {
+    color: rgb(0, 109, 204);
+    text-decoration: none;
+    transition: color .1s linear;
+}
+.slds-grid--align-spread {
+    justify-content: space-between;
+}
+.outputLookupLink  {
+    display: inline-block;
+}
+.showActionsButton {
+    width: 1.25rem;
+    height: 1.25rem;
+    position: absolute;
+        top: 4px;
+    right: 1.5rem;
+
+    padding: 0;
+    font-size: 1rem;
+    line-height:1;
+    background-color: rgb(255, 255, 255);
+    color: rgb(112, 110, 107);
+    border-color: rgb(221, 219, 218);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: .25rem;
+}
+.showActionsButton i {
+    background: #fff;
+}
+.slds-is-actives {
+     background: #E5F0FA;
+     border-left:4px solid rgb(0, 112, 210);
+}
+.slds-nav-vertical__item .slds-nav-vertical__action {
+    display:block;
+}
+.forceInlineEditCell, .uiOutputDate {
+        display: inline-block;
+    width: 100%;
+}
+.fell {
+    display: inline-block;
+    width: 14px;
+    height: 12px;
+    float: right;
+    margin-top: 8px;
+}
+/*.open {
+    background-image: url(/img/right_jiantou.png);
+    background-position: 97.5% 59%;
+    background-repeat:no-repeat;
+    background-size: .8125rem .8125rem,100% 100%;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/right_jiantou.png',  sizingMethod='scale');
+}
+.down {
+    background-image: url(/img/down_jiantou.png);
+    background-position: 97.5% 59%;
+    background-repeat:no-repeat;
+    background-size: .8125rem .8125rem,100% 100%;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/img/down_jiantou.png',  sizingMethod='scale');
+}*/
+.floder {
+    cursor:pointer;
+}
+.cencela {
+    width: 90px;
+    background: #fff;
+    display:none;
+    border: 1px solid #ccc;
+}
+.cencela li {
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    cursor:pointer;
+}
+.cencela li:hover {
+    background:#ccc;
+}

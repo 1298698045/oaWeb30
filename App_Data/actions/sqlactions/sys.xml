@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <query>
+    <name>sys.business.get</name>
+    <type>obj</type>
+    <comments>获取单个部门</comments>
+    <parameters>
+      <BusinessUnitId>部门ID</BusinessUnitId>
+    </parameters>
+    <sql>
+      SELECT * From BusinessUnitBase Where BusinessUnitId='#{BusinessUnitId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+</root>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="dr.deptoperationaldata.getlist" type="Supermore.WebAPI.DRDeptOperationalDataGetList,Business"></Action>
+  <Action name="dr.deptoperationaldata.save" type="Supermore.WebAPI.DRDeptOperationalDataSave,Business"></Action>
+
+  <Action name="dr.deptdetail.operationaldata.getlist" type="Supermore.WebAPI.DRDeptDetailOperationalDataGet,Business"></Action>
+  <Action name="dr.deptdetail.operationaldata.save" type="Supermore.WebAPI.DRDeptDetailOperationalDataSave,Business"></Action>
+
+
+  <Action name="dailyreport.operation.getlist" type=" Supermore.DailyReport.Actions.OperationalDailyReportDeptGetList,WorkReportCore"></Action>
+  <Action name="dailyreport.operation.fieldupdate" type="Supermore.DailyReport.Actions.OperationalDailyReportDeptFieldUpdate,WorkReportCore"></Action>
+  <Action name="dailyreport.operation.fieldchildupdate" type="Supermore.DailyReport.Actions.OperationalDailyReportDeptFieldChildUpdate,WorkReportCore"></Action>
+
+  <Action name="dailyreport.operation.submit" type="Supermore.DailyReport.Actions.OperationalDailyReportDeptSubmit,WorkReportCore"></Action>
+
+  <Action name="dailyreport.dept.get" type="Supermore.DailyReport.Actions.DailyReportDeptGet,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.submit" type="Supermore.DailyReport.Actions.DailyReportDeptSubmit,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.fieldupdate" type="Supermore.DailyReport.Actions.DailyReportDeptFieldUpdate,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.insertinfo" type="Supermore.DailyReport.Actions.DailyReportDeptAdd,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.deleteinfo" type="Supermore.DailyReport.Actions.DailyReportDeptDelete,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.updateinfo" type="Supermore.DailyReport.Actions.DailyReportDeptUpdate,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.pequery" type="Supermore.DailyReport.Actions.DailyReportDeptPeQuery,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.peupdate" type="Supermore.DailyReport.Actions.DailyReportDeptPeUpdate,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.breastclinicquery" type="Supermore.DailyReport.Actions.DailyBreastClinicQuery,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.breastclinicupdate" type="Supermore.DailyReport.Actions.DailyBreastClinicUpdate,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.deliveryroomupdate" type="Supermore.DailyReport.Actions.DailyDeliveryRoomUpdate,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.deliveryroomquery" type="Supermore.DailyReport.Actions.DailyDeliveryRoomQuery,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.monitorquery" type="Supermore.DailyReport.Actions.MonitorQuery,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.monitorupdate" type="Supermore.DailyReport.Actions.MonitorUpdate,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.monitorinsert" type="Supermore.DailyReport.Actions.MonitorInsert,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.monitorstatislist" type="Supermore.DailyReport.Actions.MonitorStatisList,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.monitordeptlist" type="Supermore.DailyReport.Actions.MonitorDeptList,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.monitorstatisinsert" type="Supermore.DailyReport.Actions.MonitorStatisInsert,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.monitordelete" type="Supermore.DailyReport.Actions.MonitorDelete,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.monitorexport" type="Supermore.DailyReport.Actions.MonitorDeptExcelExport,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.querymeeting" type="WorkReportCore.DailyReport.Actions.QueryMeetingRecBase,WorkReportCore"></Action>
+  <Action name="dailyreport.dept.deletemeeting" type="WorkReportCore.DailyReport.Actions.DeleteMeetingRecBase,WorkReportCore"></Action>
+</Actions>

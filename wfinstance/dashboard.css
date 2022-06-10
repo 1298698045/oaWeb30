@@ -1,0 +1,21 @@
+﻿.table tbody .sub-line:hover td {
+            background: #f4f7fd;
+        }
+ .table tbody .line:hover {
+            background-color: #f4f7fd;
+        }
+  .filter .group .cur, .filter .group .cur:hover {
+                    background-color: #4aa6fc;
+                }
+
+                .filter .group li:hover {
+                    background: #f3f4f4;
+                }
+        .drop-down-li:hover {
+            background-color: #4da7fd;
+            color: #fff;
+        }
+        .btns:hover {
+            border-color: #d9dbdc;
+            background-color: #f3f4f4;
+        }

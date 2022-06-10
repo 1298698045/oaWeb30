@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <style>
+        .slds-text-align--center {
+            text-align:left;
+        }
+        #remark {
+            margin-top:10px;
+            width:100%;
+            height:100px;
+        }
+        .slds-p-around--medium {
+            padding-bottom:20px;
+        }
+        .shift-body-main .el-checkbox {
+            width:auto;
+            margin-left:10px;
+        }
+        .el-textarea {
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo">
+            <div class="DESKTOP uiContainerManager" id="vueapp">
+                <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                    <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                    <div class="panel slds-modal slds-fade-in-open">
+                        <div class="modal-container slds-modal__container">
+                            <div class="modal-header slds-modal__header">
+                                <h2 class="title slds-text-heading--medium">备注</h2>
+                                <button class="close slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                    <span>
+                                        <span style="font-size: 34px;">×</span>
+                                    </span>
+                                    <span class="slds-assistive-text">关闭此窗口</span>
+                                </button>
+                            </div>
+                            <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                                <div class="cuf-content slds-scope forceChatterUpdatePhoto">
+                                    <div class="updatePhotoPanel slds-text-align--center">
+                                        <div class="shift-body-titme"><span>基本信息</span></div>
+                                            <div class="shift-body-main">
+                               
+                                                <div class="shift-item">
+                                                   <div class="">
+                                                        <span class="required">*</span>
+                                                        <span class="shift-name-title">标题</span>
+                                                        <el-input class="save-checking-input"v-model="list.Name"></el-input>  
+                                                   </div>
+                                   
+                                                   <div class="clear"></div>
+                                               </div>
+                                                <div class="shift-item">
+                                                   <div class="">
+                                                        <span class="shift-name-title">私有</span>
+                                                        <el-checkbox v-model="list.IsPriviate"></el-checkbox>
+                                                   </div>
+                                   
+                                                   <div class="clear"></div>
+                                               </div>
+                                                <div class="shift-item">
+                                                   <div class="">
+                                                        <span class="required">*</span>
+                                                        <span class="shift-name-title">备注</span>
+                                                        <el-input class="save-checking-input"v-model="list.Body"
+                                                            type="textarea"
+                                                            :rows="4"
+                                                            placeholder="请输入内容"></el-input>  
+                                                   </div>
+                                   
+                                                   <div class="clear"></div>
+                                               </div>
+                                               </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer slds-modal__footer">
+                                <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                    <button class="close slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                        <span class=" label bBody">取消</span>
+                                    </button>
+                                    <button class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" id="Save" name="Save" title="附加文件 （新窗口）" type="button">
+                                        <span class=" label bBody">保存</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    Name: '',
+                    IsPriviate: '',
+                    Body: '',
+                },
+                select: {
+                },
+                search: {
+                }
+            },
+            created: function () {
+                this.getData()
+            },
+            methods: {
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('id')
+                    if (id != null) {
+                        var ObjectTypeCode = ObjectTypeCode
+                        var d = {
+                            Id: id,
+                            ObjTypeCode: 5000
+                        }
+                        function callback(data) {
+                            console.log(data)
+                            that.list = data.record;
+                            that.list.ObjTypeCode = 5000
+                            for (item in that.search) {
+                                if (item != 'searchname') {
+                                    var name = item
+                                    var ID = that.list[name].Id
+                                    var Name = that.list[name].Name
+                                    var newlist = {
+                                        ID: ID,
+                                        Name: Name
+                                    }
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                        ajaxMethodGetData('entity.detail.get', d, callback)
+                    }
+                },
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        $('#Save').click(function () {
+            function callback(data) {
+                console.log(data)
+                parent.success('备注保存成功')
+                parent.$('#changeDiv').hide()
+            }
+            var d = vum.list
+            var id = getQueryString('id')
+            var objTypeCode = getQueryString('objTypeCode')
+            var parentId = getQueryString('parentId')
+            var message = {}
+            d.parentId = parentId
+            var messages = {
+                params: {
+                    recordRep: {
+                        objTypeCode: 1002,
+                        fields: d
+                    }
+                }
+            }
+            if (id != null) {
+                messages.params.recordRep.id = id
+            }
+            messages = JSON.stringify(messages)
+            var data = { message: messages };
+            var save = document.querySelectorAll('.save-checking.active');
+            if (save.length > 0) {
+                ajaxMethodPostData('entity.saverecord', data, callback)
+            }
+            parent.entityAttachment.prototype.relatedgetlist()
+        })
+        $('.close').click(function () {
+            parent.$('body').css('overflow','auto')
+        })
+    </script>
+</body>
+</html>

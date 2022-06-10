@@ -1,0 +1,269 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/mission-header.css">
+    <link rel="stylesheet" href="/css/cal/mission.css">
+    <link rel="stylesheet" href="/css/cntrt/cntrt.css">
+    <link rel="stylesheet" href="/css/cal/newmission.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/template/css/alert.css">
+
+
+    <style>
+        #popup-newmission {
+            display: block;
+            left: 50%;
+            top: 50%;
+            margin-left: -400px;
+            margin-top: -250px;
+            width: 800px;
+        }
+
+        .popup-mask {
+            display: block;
+        }
+
+        .form-element {
+            margin-left: 115px;
+            min-width: 300px !important;
+            width: 300px !important;
+        }
+
+            .form-element > input {
+                margin-top: -2px !important;
+                line-height: 25px !important;
+            }
+
+        #newmission .missmessage-body .tree span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+
+        #newmission .missmessage-body .appends span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+
+        .popup-foot > button:hover {
+            background-color: #f4f2f2;
+            color: #108af9;
+        }
+
+        .popup-foot > button {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        #popup-newmission {
+            overflow: visible;
+        }
+
+        .form-checking {
+            padding-left: 115px;
+            color: #ff6666;
+            font-size: 14px;
+            line-height: 30px;
+            height: 0;
+            position: absolute;
+            top: 35px;
+        }
+
+        .activity {
+            border: 1px solid #ff6666 !important;
+        }
+
+        .boxshaw {
+            top: -150px;
+        }
+
+        .form-error {
+            display: none;
+            width: 90%;
+            margin-left: 5%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            display: none;
+            color: rgb(194, 57, 52);
+            margin-left: 65px;
+            margin-top: 10px;
+            position: absolute;
+            font-size: 14px;
+        }
+
+        .popup-mask {
+            z-index: 199;
+        }
+
+        .popup {
+            z-index: 200;
+        }
+
+        #newmission .pinput3 {
+            width: 50% !important;
+        }
+
+        #newmission .pinput2 {
+            width: 35% !important;
+        }
+
+        .divinput {
+            width: auto;
+        }
+
+        .missmessage {
+            height: 80px !important;
+        }
+
+        .popup #newmission {
+            height: 330px;
+        }
+
+        #newmission .missmessage-body .time .sp {
+            height: 15px !important;
+            float: none !important;
+            width: 15px !important;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        #newmission .time {
+            height: 40px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup-newmission">
+        <div class="popup-exit"></div>
+        <div class="popup-head">会议室预约审批</div>
+        <div class="form-error">检查此页面上的错误</div>
+        <div class="form-error2">
+            必须填写这些必填字段
+            <span></span>
+        </div>
+        <form id="editPage" name="editPage">
+            <input type="hidden" name="objTypeCode" id="objTypeCode" value="1010" />
+            <div id="newmission">
+                <div class="missmessage">
+                    <div class="missmessage-head">
+                        审批信息
+                    </div>
+                    <div class="missmessage-body">
+                        <div class="missmessage-bodyright">
+                            <div class="time title">
+                                <label>
+                                    <input type="radio" value="1" name="sp" class="sp" />
+                                    通过
+                                </label>
+                                <label>
+                                    <input type="radio" value="2" name="sp" class="sp" />
+                                    不通过
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="markmessage">
+                    <div class="missmessage-head">
+                        备注信息
+                    </div>
+                    <div class="liuyan">意见</div>
+                    <div class="textarea-div">
+                        <textarea cols="140" rows="5" id="approve" name="Remark"></textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="popup-foot">
+            <button class="popup-foot-shur">保存</button>
+            <button class="close">取消</button>
+        </div>
+    </div>
+    <div class="popup-mask"></div>
+    <script type="text/javascript" src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/mission-header.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/schedule.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/js/formcontrol.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+
+    <script>
+        var id = getQueryString('id')
+
+        $('.popup-foot-shur').click(function () {
+            var approve = $('#approve').val()
+            var statecode = $('input:radio[name="sp"]:checked').val();
+            var d= {
+                id: id,
+                statecode: statecode,
+                approve: approve,
+            }
+            function callback(data){
+                console.log(data)
+                parent.$('#iframe').hide()
+                parent.$('.popup-mask').hide()
+                parent.getdata()
+            }
+            ajaxMethodPostData('meetingroom.reservation.businessapprove', d, callback)
+        })
+
+
+
+        $(".popup-exit").click(function () {
+            parent.$('#iframe').hide()
+            parent.$('.popup-mask').hide()
+        })
+        $(".close").off()
+        $(".close").click(function () {
+            parent.$('#iframe').hide()
+            parent.$('.popup-mask').hide()
+        })
+        function callback(data) {
+            console.log(data)
+            var Approve1 = data.record.Approve1
+            var StateCode = data.record.BusinessApproveStateCode
+            if (StateCode == 1) {
+                $('.sp').eq(0).prop('checked','checked')
+            }
+            if (StateCode == 2) {
+                $('.sp').eq(1).prop('checked', 'checked')
+            }
+            $('#Approve').val(Approve1)
+        }
+        var d = {
+            Id: id,
+            ObjTypeCode: 20035
+        }
+        ajaxMethodPostData('entity.detail.get', d, callback)
+
+    </script>
+</body>
+</html>

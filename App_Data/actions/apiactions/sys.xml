@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+
+  <Action name="stringmap.getlist" type="Youyou.Actions.EntityFramework.StringMapGetlist,OACore" desc="枚举值列表"></Action>
+  
+  <Action name="entity.form.rename" type="Supermore.Actions.EntityFormRename,Business" desc="表单重命名"></Action>
+  <!--
+  <Action name="entity.rename" type="Supermore.Actions.EntityRename,Business" desc="重命名"></Action>
+  <Action name="entity.save" type="Supermore.Forms.EntitySave,Business" desc="保存，旧，不用"></Action>
+  
+  <Action name="entity.saverecord" type="Youyou.Forms.EntitySaveRecord,Business" desc="保存表单数据,新"></Action>
+  <Action name="entity.detail.get" type="Supermore.Forms.EntityDetailGet,Business" desc="根据视图获取单条数据"></Action>
+  <Action name="entity.delete" type="Supermore.Forms.EntityDelete,Business" desc="通用数据删除"></Action>
+  
+  <Action name="entity.related.getlist" type="Youyou.WebAPI.EntityRelatedGetList,Business" desc="获取实体相关记录"></Action>
+  -->
+  <Action name="entity.grid.search" type="Youyou.WebAPI.EntityGridSearch,Business" desc="搜索"></Action>
+
+  <Action name="ui.form.save" type="Supermore.Forms.FormSaveAction,Business" desc="通用数据保存"></Action>
+  <!--<Action name="ui.entity.lookup" type="Youyou.Actions.UIEntityLookup,Business" desc="下拉字段搜索接口"></Action>-->
+  
+  
+  <Action name="ui.droplist" type="Youyou.Actions.UIDroplist,Business" desc="下拉选项数据选择"></Action>
+
+  <Action name="entity.attribute.getlist" type="Youyou.HRCore.Actions.EntityAttributeGetList,HRCore" desc="搜索"></Action>
+  <!--获取一科树-->
+  <!--
+  <Action name="tree.get" type="Youyou.Actions.TreeGet,HRCore"></Action>
+  <Action name="tree.add" type="Youyou.Actions.TreeAdd,HRCore"></Action>
+  <Action name="tree.save" type="Youyou.Actions.TreeSave,HRCore"></Action>
+  <Action name="tree.delete" type="Youyou.Actions.TreeDelete,HRCore"></Action>
+
+  <Action name="entity.filter.create" type="Youyou.Actions.Common.EntityFilterCreate,HRCore" desc="创建查询视图"></Action>
+  <Action name="entity.filter.share" type="Youyou.Actions.Common.EntityFilterShare,HRCore" desc="共享查询器"></Action>
+  <Action name="entity.filter.clone" type="Youyou.Actions.Common.EntityFilterClone,HRCore" desc="复制"></Action>
+  <Action name="entity.filter.pin" type="Youyou.Actions.Common.EntityFilterPin,HRCore" desc="固定住"></Action>
+  <Action name="entity.filter.get" type="Youyou.Actions.Common.EntityFilterGet,HRCore" desc="对象定义查询列表显示"></Action>
+  <Action name="entity.filter.getlist" type="Youyou.Actions.Common.EntityFilterGetList,HRCore" desc="对象定义查询列表显示"></Action>
+  <Action name="entity.filter.expression.save" type="Youyou.Actions.Common.EntityFilterExpressionSave,HRCore" desc="保存查询条件"></Action>
+  <Action name="entity.filter.column.save" type="Youyou.Actions.Common.EntityFilterColumnSave,HRCore" desc="保存显示列"></Action>
+
+  <Action name="entity.advance.search" type="Youyou.Actions.Common.AdvanceSearch,HRCore" desc="高级搜索"></Action>
+  -->
+  <!--获取查询字段-->
+  <!--
+  <Action name="grid.config.get" type="Youyou.HRCore.Actions.GridConfigGet,HRCore" desc="获取表格配置"></Action>
+  <Action name="grid.data.load" type="Youyou.HRCore.Actions.GridDataLoad,HRCore" desc="获取表格配置"></Action>
+  <Action name="grid.export" type="Youyou.GridBuilder.GridExport,HRCore" desc="导出数据"></Action>
+
+  <Action name="entitygrid.config.get" type="Youyou.HRCore.Actions.EntityGridConfigGet,HRCore" desc="获取表格配置"></Action>
+  <Action name="entitygrid.list" type="Youyou.HRCore.Actions.EntityGridList,HRCore" desc="获取表格配置"></Action>
+  -->
+  <Action name="query.sql.gridlist" type="Supermore.GridBuilder.QuerySqlGridlist,Business" desc="为列表提供SQL查询数据"></Action>
+  <Action name="grid.xml.list" type="Supermore.Actions.GridXmlList,Business"></Action>
+  <Action name="personal.device.unbind" type="Supermore.Actions.PersonalDeviceUnbind,Business"></Action>
+
+  <Action name="sys.organization.tree" type="Youyou.Actions.SysOrganizationTree,Business" desc="组织结构"></Action>
+  <Action name="sys.businessunit.search" type="Youyou.Security.Actions.BusinessUnitSearch,OACore" desc="搜索部门"></Action>
+  <Action name="sys.businessunitandchild.getlist" type="Youyou.Sys.SysBusinessUnitAndChildGetList,AppBusiness" desc="获取组织结构并且下级用户"></Action>
+  <Action name="businessunit.getchildren" type="Youyou.Security.Actions.BusinessUnitGetChildren,OACore" desc="获取部门子集"></Action>
+  <Action name="dept.getchildren" type="Youyou.Security.Actions.DeptChildrenGet,OACore" desc="获取部门子集"></Action>
+  <Action name="sys.organization.treepicker" type="Supermore.Actions.SysOrganizationTreePicker,Business" desc="获取组织结构树,跨组织选择"></Action>
+  <Action name="sys.organization.user.search" type="Supermore.Actions.SysOrganizationUserSearch,Business" desc="获取组织结构树,跨组织选择"></Action>
+  <Action name="sys.owndepts.getlist" type="WorkReportCore.Common.OwnDeptsGetList,WorkReportCore" desc="获用户部门、子部门列表"></Action>
+  
+  <Action name="group.user.getlist" type="Supermore.Actions.GroupUserGetList,Business" desc="获取组或者角色下的用户列表"></Action>
+  <Action name="group.member.list" type="Youyou.Actions.GroupMemberSearch,OACore" desc="获取小组成员，列表形式"></Action>
+  <Action name="sys.groupusers.getlist" type="OA.Web.Servlets.SysGroupUsersGetList,AppBusiness" desc="获取组下用户"></Action>
+  
+  <Action name="sys.group.search" type="Youyou.Security.Actions.GroupSearch,OACore" desc="搜索小组"></Action>
+  <Action name="sys.groups.search" type="OA.Web.Servlets.SysGroupsSearch,AppBusiness" desc="搜索小组"></Action>
+  <Action name="sys.group.copy" type="Youyou.Security.Actions.SysGroupCopy,OACore" desc="复制小组和人员"></Action>
+  
+  <Action name="sys.group.member.search" type="Youyou.Security.Actions.SysGroupMemberSearch,OACore" desc="获取小组成员"></Action>
+  <Action name="sys.group.member.remove" type="Supermore.Actions.SysGroupMemberRemove,Business" desc="移除组成员"></Action>
+  <Action name="sys.group.member.add" type="Supermore.Actions.SysGroupMemberAdd,Business" desc="添加组成员"></Action>
+  <Action name="group.user.export" type="Youyou.Security.Actions.SysGroupMemberExport,OACore" desc="小组成员导出"></Action>
+  
+  <Action name="sys.role.search" type="Youyou.Security.Actions.RoleSearch,OACore" desc="搜索所有角色"></Action>
+  <Action name="role.search" type="Youyou.Security.Actions.RoleSearch,OACore" desc="搜索所有角色"></Action>
+  <Action name="sys.rolemember.search" type="Supermore.Actions.SysRoleMemberSearch,Business" desc="搜索角色下用户"></Action>
+
+  <Action name="sys.role.member.remove" type="Supermore.Actions.RoleMemberRemove,Business" desc="移除角色成员"></Action>
+  <Action name="sys.role.member.add" type="Supermore.Actions.RoleMemberAdd,Business" desc="添加角色成员"></Action>
+  <Action name="role.member.sort" type="Youyou.Security.Actions.RoleMemberSort,OACore" desc="角色成员排序"></Action>
+
+  <Action name="role.member.add" type="Supermore.Actions.RoleMemberAdd,Business" desc="添加角色成员"></Action>
+  <Action name="role.member.remove" type="Supermore.Actions.RoleMemberRemove,Business" desc="移除角色成员"></Action>
+
+
+  <Action name="user.mybusiness.getlist" type="Youyou.Actions.UserMyBusinessUnitGetlist,OACore" desc="同部门用户"></Action>
+  <Action name="user.subordinate.getlist" type="Youyou.Actions.UserSubordinateGetlist,OACore" desc="我的下属"></Action>
+  <Action name="user.fullname.get" type="Youyou.Actions.UserFullNameGet,OACore" desc="获取登录用户的姓名"></Action>
+
+  <Action name="sys.user.avatar.get" type="OA.Web.Servlets.SysUserAvatarGet,OACore" desc="获取头像"></Action>
+  <Action name="sys.user.search" type="Youyou.Actions.Sys.SysUserSearch,Business" desc="搜索用户"></Action>
+  
+  <Action name="user.search" type="Youyou.Security.Actions.UserSearch,OACore" desc="搜索用户"></Action>
+
+  <Action name="user.info.get" type="Youyou.Security.Actions.UserInfoGet,OACore" desc="获取用户信息"></Action>
+  <Action name="sys.user.edit" type="Youyou.Security.Actions.SysUserEdit,OACore" desc="用户编辑"></Action>
+  
+  <Action name="user.businessunit.getlist" type="Youyou.Actions.Security.SystemUserBusinessUnitGetlist,OACore" desc="获取用户兼职部门"></Action>
+  <Action name="user.businessunit.save" type="Youyou.Security.Actions.SystemUserBusinessUnitSave,OACore" desc="兼职管理"></Action>
+  
+  <Action name="user.latestuse.getlist" type=" Supermore.Actions.UserLatestuseGetList,Business" desc="最近使用用户"></Action>
+  <Action name="sys.usersettings.get" type="OACore.Actions.UsersettingsGet,OACore" desc="获取用户邮件及优盘使用空间"></Action>
+  
+  <Action name="sys.profile.user.getlist" type="Youyou.Sys.SysProfileUserGetList,AppBusiness" desc="获取简档包含用户"></Action>
+
+  <Action name="sys.userprofile.adduser" type="Supermore.Actions.SysUserProfileUserAdd,Business" desc="添加间档用户"></Action>
+  <Action name="sys.userprofile.deleteuser" type="Supermore.Actions.SysUserProfileUserDelete,Business" desc="删除间档用户"></Action>
+
+  <Action name="security.profile.tabright.save" type="Youyou.Security.Actions.ProfileTabRightSave,SecurityCore" desc="旧简档权限保存"></Action>
+    
+  
+  <Action name="sys.file.htmltopdf" type="Youyou.Files.Actions.HTMLTOPDF,Youyou.Filelib" desc="html to pdf"></Action>
+  
+  <Action name="role.tree.list" type="Youyou.Actions.RoleTreeGridList,OACore" desc="角色数列表"></Action>  
+  <Action name="role.member.list" type="Youyou.Actions.RoleMemberSearch,OACore" desc="搜索角色下用户，列表形式"></Action>
+
+  <Action name="object.user.inviteall" type="Youyou.Security.Actions.ObjectUserInviteAll,OACore" desc="邀请所有人，信息与会议问卷"></Action>
+  
+
+  <Action name="comm.datatable.export" type="WorkReportCore.Common.ExportCommonDataTable,WorkReportCore" desc="导出表格数据"></Action>
+
+ 
+  <Action name="process.instance.log.getlist" type="Youyou.Security.Actions.ProcessInstanceLogGetList,OACore" desc="个人中心 -流程阅读记录列表"></Action>
+  <Action name="login.history.getlist" type="Youyou.Security.Actions.LoginHistoryGetList,OACore" desc="个人中心 -登陆记录列表"></Action>
+  <Action name="am.users.list" type="Youyou.Actions.AmUsersList,OACore" desc="AM用户列表"></Action>
+  <Action name="am.user.synchronization" type="Youyou.Actions.AmUsersSynchronization,OACore" desc="AM同步"></Action>
+  <Action name="sys.user.synchronizeam" type="Youyou.Security.Actions.SynchronizeAM,OACore" desc="同步AM"></Action>
+  
+  <Action name="entity.info.save" type="Youyou.Actions.EntityInfoAdd,OACore" desc="创建搜索布局"></Action>
+
+  <!--权限-->
+  <Action name="object.privilege.add" type="Youyou.Workflow.Actions.PrivilegeAdd,OACore" desc="权限增加"></Action>
+  <Action name="object.privilege.update" type="Youyou.Workflow.Actions.PrivilegeUpdate,OACore" desc="权限更新"></Action>
+  <Action name="object.privilege.remove" type="Youyou.Workflow.Actions.PrivilegeRemove,OACore" desc="权限删除"></Action>
+  <Action name="object.privilege.getlist" type="Youyou.Workflow.Actions.PrivilegeGetList,OACore" desc="权限列表"></Action>
+  <Action name="app.profile.getlist" type="Youyou.Apps.Actions.AppProfileGetList,OACore" desc="获取有权限的应用"></Action>
+  <!--HR修改密码-->
+  <Action name="sys.changepwd" type="Youyou.Security.Actions.SysChangePwd,OACore" desc="HR修改密码"></Action>
+  <Action name="sys.user.password.reset" type="Youyou.Security.Actions.SysChangePwd,OACore" desc="HR修改密码"></Action>
+  <Action name="sys.resetpwd" type="Youyou.Security.Actions.SysResetPwd,OACore" desc="重置密码"></Action>
+
+  <!--OA修改密码-->
+  <Action name="sys.oa.resetpwd" type="Youyou.Security.Actions.SysOAResetPwd,OACore" desc="重置密码"></Action>
+  
+  <!--消息提醒-->
+  <Action name="message.template.getlist" type="Youyou.Messages.Actions.MessageRemindType,OACore" desc="消息提醒类型"></Action>
+  <Action name="message.status.getlist" type="Youyou.Messages.Actions.MessageRemindSearch,OACore" desc="消息提醒列表"></Action>
+  <Action name="message.readestatus.update" type="Youyou.Messages.Actions.MessageReadStatusUpdate,OACore" desc="修改消息阅读状态"></Action>
+
+  <Action name="add.content.access" type="Youyou.Security.Actions.EntityAccessAdd,OACore" desc="实体对象权限"></Action>
+  <Action name="user.login.check" type="Youyou.Actions.UserLoginCheck,OACore" desc="用户登录验证"></Action>
+  <Action name="send.validation.sms" type="Youyou.Actions.SendValidation,OACore" desc="发送验证码"></Action>
+  
+  <Action name="user.subordinatetree.get" type=" Youyou.Security.Actions.UserSubordinateTreeGet,OACore" desc="获取我的下属树"></Action>
+</Actions>

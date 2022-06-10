@@ -1,0 +1,902 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+input,select,option{
+    outline: none;
+    border: 0;
+}
+.mission-header2 select {
+    border:0;
+    background:url("/img/cal/20.PNG") no-repeat center;
+    background-size:13px;
+    color:transparent;
+}
+ .mission-header2 select option {
+    color:#333;
+}
+.mission-header2 .end:hover,.mission-header2 .bianji:hover,.mission-header2 .shanchu:hover,.mission-header2 .genggai:hover,.mission-header2 .yaoqingchakanzhe:hover{
+    background-color:#f4f2f2 !important;
+}
+.mission{
+    width: 99%;
+    min-width: 1100px;
+    margin-top:-16px;
+    padding-left: 1%;
+    color: #505050;
+	background-color: white;
+    overflow:hidden;
+}
+.mission-left{
+    width: 65%;
+    min-width: 600px;
+    float: left;
+    padding: 1%;
+    background-color: #ffffff;
+}
+.mission-right{
+    width: 32%;
+    min-width: 300px;
+    height: 700px;
+    float: left;
+    background-color: #ffffff;
+}
+.mission-mi{
+    width: 10px;
+    height: 700px;
+    background:#f4f6f8;
+    float: left; 
+}
+
+.missionleft-head{
+    width: 100%;
+    height: 70px;
+}
+.missionleft-head ul{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #5050501a
+}
+.missionleft-head ul .first{
+    margin-left: 0;
+}
+.missionleft-head li{
+    cursor:pointer;
+    float: left;
+    padding: 10px;
+    margin-left: 110px;
+    text-align: center;
+    width: 75px;
+    font-size: 14px;
+    height: 20px;
+    line-height: 30px;
+}
+.missionleft-head li.active{
+    border-bottom: 4px solid #108af9; 
+}
+.missionleft-body>div{
+    margin-top: -10px;
+    width: 100%;
+    height: 628px;
+    float: left;
+    display: none;
+}
+.missionleft-body>div.active{
+    display: block;
+}
+.missionmession{
+    width: 100%;
+    height: 200px;
+}
+.missionmession-head{
+	width: 100%;
+    height: 32px;
+    line-height: 32px;
+	color: #505050;
+	background-color: #f2f2f2;
+	border-radius: 4px;
+	font-size: 14px;
+}
+.missionmession-head span{
+    margin-left: 20px;
+	width: 82px;
+	color: #505050e6;
+	font-size: 14px;
+}
+.missionmession .div-margin{
+    margin-left: 6%;
+}
+.missionmession-body>div{
+    width: 47%;
+    height: 30px;
+    padding: 10px;
+    padding-right:0; 
+    padding-left:0; 
+    float: left;
+    border-bottom: 1px solid #5050501a;
+    background-size: 18px;
+}
+.missionmession-body>div{
+    text-overflow: ellipsis;
+}
+.missionmession-body .neirong{
+    width: 96%;
+    height: 30px;
+    padding: 10px;
+    padding-right:0; 
+    padding-left:0; 
+    float: left;
+    border-bottom: 1px solid #5050501a;
+}
+.missionmession-body .name{
+    height: 30px;
+    line-height: 30px;
+    min-width: 85px;
+    width: 15%;
+    float: left;
+    font-size: 14px;
+}
+.missionmession-body .rightdiv .name.user {
+    min-width: 100px;
+    background: url(/img/cal/1.png) no-repeat 80px center;
+    background-size:18px;
+}
+.missionmession-body .name2{
+    width: 9%;
+}
+.missionmession-body>div img{
+    margin-top:5px;
+    float:right;
+    width:15px;
+    height:15px;
+    cursor: pointer;
+}
+.missionmession-body .main{
+    height: 30px;
+    line-height: 15px;
+    width: 70%;
+    float: left;
+    font-size: 14px;
+    font-weight: 600;
+}
+.blue{
+    color: #108af9;
+}
+.missionmession-body .neirong .main{
+    width: 70%;
+}
+.othermession-body{
+    height: 130px;
+}
+.systemmession-body{
+    height: 60px;
+}
+.mission .rightdiv{
+    margin-left: 6%;
+}
+.mission .user{
+    background: url(/img/cal/1.png) no-repeat 62px center;
+    background-size: 18px;
+}
+.people{
+    margin-left: 9px;
+    border: 1px solid #5050501a;
+
+}
+.people-head{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+.people-head ul{
+    border-bottom: 1px solid #5050501a;
+    height: 40px;
+    background-color: #5050500a;
+}
+.people-head li{
+    float: left;
+    font-size: 14px;
+    width: 130px;
+    text-align: center;
+}
+.people-head li.active{
+    border-bottom: 1px solid white;
+    background-color: white;
+    color: #108af9 ;
+}
+.people-sousuo{
+    height: 40px;
+}
+.people-sousuo p{
+    width: 98%;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 15px;
+    margin-left: 10px;
+    border: 1px solid #5050501a;
+    border-radius: 4px;
+    font-size: 14px;
+    text-indent: 1em;
+
+}
+.people-sousuo p input{
+    font-size: 12px;
+}
+.people-body li{
+    width: 100%;
+	height: 66px;
+	color: #505050;
+    background:url(/img/cal/1.png) no-repeat left 10px center;
+    background-size:35px;
+	font-size: 14px;
+	line-height: 50px;
+    border-bottom: 1px solid #5050501a;
+}
+.people-body li p{
+    margin-left: 70px;
+    height: 21px;
+}
+.people-body li .name{
+    color: #108af9
+}
+.people-body li .miaoshu{
+    color: #64646480
+}
+
+.mission .comment li{
+    width: 100%;
+    height: 80px;
+    padding-top: 10px;
+	color: #505050;
+    background:url(/img/cal/1.png) no-repeat left 10px top 15px;
+    background-size:35px;
+	font-size: 14px;
+	line-height: 30px;
+    border-bottom: 1px solid #4f4f4f1a;
+}
+.caozuo {
+    position:relative;
+}
+.mission .comment li p{
+    margin-left: 70px;
+    height: 21px;
+}
+.mission .comment li .name{
+    color: #108af9
+}
+.mission .comment li .miaoshu{
+    color: #64646480
+}
+
+
+
+.mission .page p{
+	width: 65px;
+    height: 32px;
+    line-height: 32px;
+	color: #505050;
+	background-color: #ffffff;
+	border-radius: 2px;
+	font-size: 14px;
+	border: #e4e8eb solid 1px;
+    text-align: center;
+    float: left;
+    margin-left: 10px;
+    cursor:pointer;
+}
+.mission .page {
+    width: 400px;
+    margin: auto;
+    margin-top: 15px;
+}
+.mission .page2{
+    margin-top: 25px;
+}
+.mission .page .to{
+    width: 80px;
+    border: 0;
+}
+.mission .page input{
+    width: 32px;
+    height: 32px;
+    text-align: center;
+}
+.page p.active{
+    color: white;
+    background-color:#108af9;
+
+}
+.mission-right{
+    padding: 10px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+.missionright-head{
+    margin-top: 10px;
+    color: #333333;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom: 5px;
+}
+.zirenwu-name {
+    color:#108af9;
+    cursor:pointer;
+}
+.zirenwu {
+    font-size:14px;
+    border-bottom:1px solid #e4e8eb;
+    margin:15px 10px 0 10px;
+    padding-bottom:10px;
+}
+.missionright-body2 {
+    margin-bottom:15px;
+    display:none;
+}
+.missionright-body2 .missionright-head p {
+    background: url(/img/cal/232.png) no-repeat center center;
+    background-size: 20px;
+    background-color:#1797c0;
+}
+.missionright-head p{
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url(/img/cal/9.png) no-repeat center center;
+    background-size: 18px;
+    background-color: #a0522d ;
+    margin-right: 20px;
+}
+.morefile{
+    display: block;
+    float: right;
+    font-size: 12px;
+    color:#108af9;
+    border:1px solid #dddbda;
+    padding:0 10px 0 10px;
+    height:28px;
+    line-height:28px;
+    text-align:center;
+    border-radius:4px;
+    cursor:pointer;
+
+}
+.missionright-body ul {
+    margin-top:5px;
+}
+.missionright-body .div1 .name span{
+    color:#108af9;
+    cursor:pointer;
+}
+.missionright-body3 {
+    padding-bottom:8px;
+}
+.missionright-body{
+    border: 1px solid #5050501a;
+    border-top:3px solid #b0adab;
+    border-radius:2px;
+}
+.missionright-body li{
+    height: 40px;
+    font-size: 12px;
+    padding: 10px 0 10px 0;
+    margin: 0px 10px 0px 10px;
+    background: url(/img/cal/10.png) no-repeat left center;
+    background-size: 40px;
+    border-bottom: 1px solid #5050501a;
+}
+.missionright-body li .div1{
+    margin-left: 60px;
+
+}
+.mission .div1{
+    float: left;
+    margin-top: 5px;
+}
+.mission .delete{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
+    border: 1px solid #5050501a;
+    float: right;
+    background: url(/img/cal/13.PNG) no-repeat center center;
+    background-size: 17px;
+    border-radius: 4px;
+
+}
+.mission .upfile{
+    display:none;
+	width: 160px;
+    height: 32px;
+    line-height: 32px;
+	color: #108af9 ;
+	border-radius: 4px;
+	font-size: 12px;
+    text-align: center;
+    margin: auto;
+    cursor:pointer;
+}
+#card .main .item::-webkit-scrollbar {
+    width: 4px;
+    }
+    #card .main .item::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px #00000033;
+    background: rgba(0,0,0,0.2);
+}
+#card .main .item::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 5px #00000033;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.1);
+}
+.mission .dayin {
+    float:right;
+    margin-top:5px;
+    cursor:pointer;
+}
+.mission .dayin img{
+    width:14px;
+    height:14px;
+}
+.mission .dayin span{
+    color:#108af9;
+    margin-right:20px;
+}
+.mission .deleteup {
+    font-size:12px;
+    line-height:12px;
+    color:#999999;
+    float:right;
+    margin-right:20px;
+    margin-top:5px;
+}
+.mission .deleteup-delete:hover{
+    color:#2a82e4;
+    cursor:pointer;
+}
+.mission .comment .name {
+    float:left;
+}
+.mission .deleteup > div {
+    float:left;  
+}
+.mission .deleteup img{
+    width:14px;
+    height:14px;
+    margin-left:2px;
+    cursor:pointer;
+}
+
+.mission .deleteup-delete span{
+     float:left;
+}
+.mission .deleteup-delete .border{
+    margin-left:10px;
+    border-right:1px solid #e4e8eb;
+    height:10px;
+}
+.mission .deleteup-up {
+    margin-left:10px;
+    line-height:12px;
+    margin-top:-4px;
+}
+.popup-mask {
+    position:absolute;
+    z-index:100;
+    background-color:#000;
+    opacity:0.2;
+    height:100%;
+    width:100%;
+    display:none;
+}
+.popup {
+    position:absolute;
+    z-index:101;
+    background-color:white;
+    width:86%;
+    left:7%;
+    top:25%;
+    border-radius:7px;
+    display:none;
+}
+
+.popup-head {
+    color:#333;
+    height:58px;
+    line-height:60px;
+    font-size:16px;
+    text-align:center;
+    border-bottom:2px solid #dcdcdc
+}
+.popup-body {
+    height:398px;
+}
+.popup-foot {
+    height:58px;
+    border-radius:7px;
+    background-color:#f2f2f2;
+
+}
+.popup-foot > div {
+        float:right;
+        background-color:white;
+        border:1px solid #dcdcdc;
+        color:#108af9;
+        height:32px;
+        border-radius:4px;
+        text-align:center;
+        line-height:32px;
+        margin-right:10px;
+        cursor:pointer;
+        margin-top:10px;
+        padding:0 10px;
+}
+.popup-sousuo {
+    height:90px;
+    background-color:#f2f2f2;
+    overflow:hidden;
+
+}
+.popup-sousuo input{
+    text-indent:8px;
+}
+.popup-sousuo-pinput {
+    border:1px solid #e4e8eb;
+    width:96%;
+    margin:auto;
+    background-color:white;
+    margin-top:8px;
+    height:32px;
+    line-height:32px;
+    margin-bottom:20px;
+}
+.tongji {
+    margin-left:2%;
+    color:#333;
+    font-size:14px;
+}
+.writecomment {
+    min-width:900px;
+}
+.writecomment .textarea {
+    width:80%;
+    height:44px;
+    border:1px solid #108af9;
+    float:left;
+    margin-left:60px;
+    box-sizing:border-box;
+}
+.writecomment textarea {
+    border:0;
+    outline:none;
+    width:100%;
+    resize:none;
+    padding:10px;
+    padding-bottom:0;
+}
+.writecomment #comment-btn {
+    float:left;
+    width:110px;
+    height:44px;
+    line-height:44px;
+    background-color:#108af9;
+    color:white;
+    margin:0;
+    text-align:center;
+    font-size:16px;
+    cursor:pointer;
+
+}
+.comment-foot {
+    height:46px;
+    width:100%;
+    background-color:#f2f2f2;
+}
+.mission .writecomment .comment-foot p{
+    float:right;
+    width:110px;
+    height:46px ;
+    line-height:46px;
+    background-color:#108af9;
+    color:white;
+    margin:0;
+    text-align:center;
+    font-size:16px;
+    cursor:pointer;
+
+}
+.mission-header {
+    overflow:hidden;
+    margin-top:20px;
+    height:78px;
+    position:relative;
+}
+.mission-header-leftlogo p {
+    line-height:45px;
+}
+.mission-header-leftlogo div {
+    position:absolute;
+    left:72px;
+    top:-3px;
+}
+.end.avtive {
+    color:white;
+    background:#108af9;
+    position:relative;
+}
+.end {
+    text-indent:10px;
+    background:url("/img/cal/23.check_1(14x14).png") no-repeat left 5px center;
+    background-size:14px;
+}
+ .end img {
+   display:none;
+}
+.end.avtive img{
+    display:block;
+    width:14px;
+    height:14px;
+    position:absolute;
+    left:8px;
+    top:8px;
+}
+.genggai-div2{
+    display:none;
+    position:absolute;
+    right:145px;
+    top:55px;
+    padding:10px;
+    padding-left:0;
+    padding-right:0;
+    z-index:10;
+    background-color:white;
+    border:1px solid #e4e8eb;
+    border-radius:4px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+}
+.genggai-div2 > div {
+   padding-left:10px;
+   padding-right:10px;
+   height:40px;
+   line-height:40px;
+   color:#108af9;
+   font-size:14px;
+   cursor:pointer;
+}
+.genggai-div2 > div:hover{
+    background-color:#f4f2f2;
+}
+.positiondiv1 {
+    position:relative;
+}
+#popup-zhuangtaichange {
+    padding:0;
+    width:50%;
+    margin-left:25%;
+    left:0;
+    top:30%;
+}
+ #popup-zhuangtaichange .popup-body {
+     height:100px;
+     padding:20px;
+     box-sizing:border-box;
+    font-size:14px;
+
+}
+#popup-zhuangtaichange .body-main {
+    margin-top:5px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #dcdcdc;
+    border-radius:4px;
+    font-size:14px;
+    color:#333;
+    text-indent:10px;
+    background:url("/img/cal/20.PNG") no-repeat right 10px center;
+    background-size:14px;
+}
+#popup-zhuangtaichange .popup-popup {
+    display:none;
+    width:90%;
+    margin-left:5%;
+    position:absolute;
+    top:10px;
+    background-color:white;
+    border:1px solid #dddbda;
+    border-radius:4px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    padding:5px 0 5px 20px;
+}
+#popup-zhuangtaichange .popup-popup div{
+    height:34px;
+    line-height:34px;
+    cursor:pointer;
+}
+#popup-zhuangtaichange .popup-popup div.active{
+    background:url("/img/cal/checkedgrey.png") no-repeat right 15px center;
+    background-size:16px;
+}
+.popup-exit {
+    width:20px;
+    height:20px;
+    position:absolute;
+    right:0;
+    top:-25px;
+    background:url("/img/cal/4.closeIcon(24x24).png") no-repeat center;
+    background-size:18px;
+    cursor:pointer;
+}
+
+
+
+
+#popup-youxianjichange {
+    padding:0;
+    width:50%;
+    margin-left:25%;
+}
+ #popup-youxianjichange .popup-body {
+     height:100px;
+     padding:20px;
+     box-sizing:border-box;
+    font-size:14px;
+
+}
+#popup-youxianjichange .body-main {
+    margin-top:5px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #dcdcdc;
+    border-radius:4px;
+    font-size:14px;
+    color:#333;
+    text-indent:10px;
+    background:url("/img/cal/20.PNG") no-repeat right 10px center;
+    background-size:14px;
+}
+#popup-youxianjichange .popup-popup {
+    display:none;
+    width:90%;
+    margin-left:5%;
+    position:absolute;
+    top:10px;
+    background-color:white;
+    border:1px solid #dddbda;
+    border-radius:4px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    padding:5px 0 5px 20px;
+}
+#popup-youxianjichange .popup-popup div{
+    height:34px;
+    line-height:34px;
+    cursor:pointer;
+}
+#popup-youxianjichange .popup-popup div.active{
+    background:url("/img/cal/checkedgrey.png") no-repeat right 15px center;
+    background-size:16px;
+}
+#popup-liuyanchange {
+    padding:0;
+    width:38%;
+    margin-left:31%;
+}
+#popup-liuyanchange textarea{
+    width:100%;
+    height:70px;
+    margin-top:5px;
+    padding:10px;
+    box-sizing:border-box;
+    
+}
+#popup-liuyanchange .popup-body {
+     height:130px;
+     padding:20px;
+     box-sizing:border-box;
+     font-size:14px;
+}
+.popup-finish {
+    width:50%;
+    left:25%;
+    padding:0;
+}
+.popup-finish .popup-body{
+    padding:20px;
+    height:220px;
+    box-sizing:border-box;
+}
+.popup-finish .popup-foot{
+    border-top:2px solid #dcdcdc;
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+}
+.start-time {
+    height:55px;
+    width:48%;
+    float:left;
+}
+.finish-time {
+    height:55px;
+    width:48%;
+    margin-left:4%;
+    float:left;
+}
+.finish-time-check {
+    width:100%;
+    margin-top:10px;
+}
+.finish-time-check > div {
+    float:left;
+    height:30px;
+    line-height:30px;
+    border:1px solid #e4e8eb;
+    border-radius:4px;
+    box-sizing:border-box;
+    padding-left:15px;
+}
+.finish-time-day {
+    width:73%;
+    cursor:pointer;
+}
+.finish-time-hour {
+    width:25%;
+    margin-left:2%;
+}
+.body-main {
+    margin-top:20px;
+    width:100%;
+}
+.body-main textarea{
+    width:100%;
+    height:72px;
+    padding:10px;
+    box-sizing:border-box;
+    margin-top:5px;
+    border-radius:4px;
+    outline:none;
+}
+.finish-time-check img {
+    width:14px;
+    height:14px;
+    float:right;
+    margin-top:7px;
+    margin-right:10px;
+}
+.ca {
+    left:150px;
+}
+.ca-time select {
+    width: 100%;
+    height: 30px;
+    border: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    text-indent: 10px;
+}
+.missionmession {
+    height:250px;
+}
+#iframe {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+}
+.morefile {
+    position:relative;
+}
+.people-sousuo input {
+    line-height:30px;
+    height:30px;
+    width:95%;
+}
+.people-body {
+    overflow-y:auto;
+    overflow-x:hidden;
+    max-height:500px;
+}

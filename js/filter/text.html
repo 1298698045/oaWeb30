@@ -1,0 +1,419 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        ul, li {
+            list-style:none;
+        }
+        
+    </style>
+    <link href="/js/filter/filter_ie8.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="filterbox">
+        <div class="filter-content">
+            <div class="filter-content-head">
+                <div class="filter-content-head-title">
+                    筛选器
+                </div>
+                <div class="filter-content-head-closebtn">
+                    <img src="/img/cal/closegray.png"/>
+                </div>
+            </div>
+            <div class="filter-content-head-save">
+                <div class="filter-quite ">取消</div>
+                <div class="filter-savedown">
+                    <img src="/img/cal/20.png"/>
+                </div>
+                <div class="filter-save">保存</div>
+                <div class="filter-savedown-content">
+                    <ul>
+                        <li>另存为</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="filter-content-body">
+                <div class="filter-content-body-title">匹配所有这些筛选器</div>
+                <div class="filter-content-body-list">
+                    <ul>
+                        <li class="filter-item" onclick="editrows(this)">
+                            <span class="filter-item-number">1.</span>
+                            <div class="filter-item-main">
+                                <div class="filter-item-name">收款类型</div>
+                                <div class="filter-item-predicate">
+                                    <span class="filter-item-operator">大于</span>
+                                    <span class="filter-item-value">付款合同</span>
+                                </div>
+                                <div class="filter-item-delete">
+                                    <img src="/img/cal/closegray.png" onclick="deleteitem(this)" />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="filter-content-foot">
+                <div class="addbtn">添加筛选器</div>
+                <div class="deletebtn">全部删除</div>
+            </div>
+        </div>
+        <div class="addfiltercontent">
+            <form class="layui-form" action="">
+                <div class="addfiltercontent-body">
+                    <div class="addfiltercontent-attributes">
+                        <span class="form-title">字段</span>
+                        <select lay-filter="attributeschook" lay-verify="required" id="attributeschook" name="city" lay-search>
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <div class="addfiltercontent-operator">
+                        <span class="form-title">运算符</span>
+                        <select lay-filter="operatorchook" lay-verify="required" id="operatorchook" name="city" lay-search>
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <div class="addfiltercontent-value">
+                        <span class="form-title">值</span>
+                        <div id="addfiltercontent-text">
+                            <input type="text" name="title" required lay-verify="required" placeholder="请输入值" autocomplete="off" class="layui-input">
+                        </div>
+                        <div id="addfiltercontent-datetime">
+                            <input type="text" class="layui-input" id="addfiltercontent-time1">
+                        </div>
+                        <div id="addfiltercontent-date">
+                            <input type="text" class="layui-input" id="addfiltercontent-time2">
+                        </div>
+                        <div id="addfiltercontent-scopedatetime">
+                            <input type="text" class="layui-input" id="addfiltercontent-time3">
+                        </div>
+                        <div id="addfiltercontent-year">
+                            <input type="text" class="layui-input" id="addfiltercontent-time4">
+                        </div>
+                        <div id="addfiltercontent-month">
+                            <input type="text" class="layui-input" id="addfiltercontent-time5">
+                        </div>
+                        <div id="addfiltercontent-Picklist">
+                            <div></div>
+                        </div>
+                        <div id="addfiltercontent-DroplistText">
+                            <div id="DroplistTextvalue">
+                                <span></span>
+                                <img class="downimg" src="/img/cal/20.png"/>
+                            </div>
+                            <div id="DroplistTextoptions">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="addfiltercontent-foot">
+                <div class="addfiltercontent-foot-finish">完成</div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <script>
+        $(document).click(function () {
+            $('.filter-savedown-content').hide()
+            $('#DroplistTextoptions').hide()
+            //$('.addfiltercontent').hide()
+        })
+        $('.filter-savedown').click(function () {
+            $('.filter-savedown-content').show()
+            return false
+        })
+        function deleteitem(that) {
+            $(that).parents('.filter-item').remove()
+            clearattributes()
+            $('.addfiltercontent').hide()
+            window.event ? window.event.cancelBubble = true : e.stopPropagation();
+        }
+        $('.deletebtn').click(function () {
+            $('.filter-item').remove()
+        })
+
+        $('.filter-quite').click(function () {
+            $('.filter-content-head-save').hide()
+        })
+
+        $('.addbtn').click(function (e) {
+            settop($(this))
+            $('.addfiltercontent').show()
+            if ($('.newfilter-item').length == 0) {
+                $('.filter-content-body-list ul').append('<li onclick="editrows(this)" class="filter-item newfilter-item">'
+                        + '    <span class="filter-item-number">' + (Number($('.filter-content-body-list ul li').length) + 1) + '.</span>'
+                        + '    <div class="filter-item-main">'
+                        + '        <div class="filter-item-name">字段名</div>'
+                        + '        <div class="filter-item-predicate">'
+                        + '            <span class="filter-item-operator">运算符</span>'
+                        + '            <span class="filter-item-value">值</span>'
+                        + '        </div>'
+                        + '        <div class="filter-item-delete">'
+                        + '            <img src="/img/cal/closegray.png" onclick="deleteitem(this)">'
+                        + '        </div>'
+                        + '    </div>'
+                        + '</li>')
+            }
+            
+            return false
+        })
+        $('#DroplistTextvalue').click(function () {
+            $('#DroplistTextoptions').show()
+            return false
+
+        })
+        $('.addfiltercontent-foot-finish').click(function () {
+            var namehtml = $('#attributeschook').next().find('input').val()
+            var name = $('#attributeschook').val()
+            var operatorhtml = $('#operatorchook').next().find('input').val()
+            var operator = $('#operatorchook').val()
+            var value = $('.valuecontnet').attr('value')
+            var valuehtml = ''
+            if ($('span.valuecontnet').length > 0) {
+                valuehtml = $('span.valuecontnet').html()
+            } else {
+                valuehtml = value
+            }
+            $('.addfiltercontent').hide()
+            $('.newfilter-item .filter-item-name').html(namehtml)
+            $('.newfilter-item .filter-item-name').attr('value',name)
+            $('.newfilter-item .filter-item-operator').html(operatorhtml)
+            $('.newfilter-item .filter-item-operator').attr('value',operator)
+            $('.newfilter-item .filter-item-value').html(valuehtml)
+            $('.newfilter-item .filter-item-value').attr('value',value)
+            $('.newfilter-item').removeClass('newfilter-item')
+
+            clearattributes()
+        })
+
+
+        var gridFilter = {
+            edattribute: [],
+            checkedattribute: {},
+            filter:[]
+        }
+
+
+
+        var form = ''
+        layui.use(['form'], function () {
+            form = layui.form
+
+            layui.use('laydate', function () {
+                var laydate = layui.laydate
+                laydate.render({
+                    elem: '#addfiltercontent-time1',
+                    type: 'datetime',
+                    format: 'yyyy-MM-dd HH-mm-ss'
+
+                });
+                laydate.render({
+                    elem: '#addfiltercontent-time2',
+                    type: 'date',
+                    format: 'yyyy-MM-dd'
+                });
+                laydate.render({
+                    elem: '#addfiltercontent-time3',
+                    type: 'datetime',
+                    format: 'yyyy-MM-dd HH-mm-ss',
+                    range: true
+                });
+                laydate.render({
+                    elem: '#addfiltercontent-time4',
+                    type: 'year',
+                    format: 'yyyy'
+                });
+                laydate.render({
+                    elem: '#addfiltercontent-time5',
+                    type: 'month',
+                    format: 'yyyy-mm'
+                });
+
+            });
+
+            form.on('select(attributeschook)', function (data) {
+                attributeschookchange(data)
+                
+            });
+
+            form.on('select(operatorchook)', function (data) {
+                operatorchookchange(data)
+            });
+
+            
+        });
+        function operatorchookchange(data) {
+            $('.valuecontnet').removeClass('valuecontnet')
+            $('.addfiltercontent-value>div').hide()
+            if (gridFilter.checkedattribute.dType == 'Picklist' || gridFilter.checkedattribute.dType == 'DroplistText') {
+                $('#DroplistTextoptions ul').html('')
+                $('#addfiltercontent-DroplistText').show()
+                $('#addfiltercontent-DroplistText').find('span').addClass('valuecontnet')
+                for (var i = 0; i < gridFilter.checkedattribute.filterValues.length; i++) {
+                    $('#DroplistTextoptions ul').append('<li value="' + gridFilter.checkedattribute.filterValues[i].name + '"><span>' + gridFilter.checkedattribute.filterValues[i].label + '</span><img src="/img/cal/checked.png"/></li>')
+                }
+                choosevalue()
+            } else if (gridFilter.checkedattribute.dType == 'DateTime') {
+                $('#addfiltercontent-datetime').show()
+                $('#addfiltercontent-datetime input').addClass('valuecontnet')
+            } else if (gridFilter.checkedattribute.dType == 'Date') {
+                $('#addfiltercontent-date').show()
+                $('#addfiltercontent-date input').addClass('valuecontnet')
+            } else if (gridFilter.checkedattribute.dType == 'Year') {
+                $('#addfiltercontent-year').show()
+                $('#addfiltercontent-year input').addClass('valuecontnet')
+            } else if (gridFilter.checkedattribute.dType == 'Month') {
+                $('#addfiltercontent-month').show()
+                $('#addfiltercontent-month input').addClass('valuecontnet')
+            } else {
+                $('#addfiltercontent-text').show()
+                $('#addfiltercontent-text input').addClass('valuecontnet')
+            }
+            if (data.value == 'between' && (gridFilter.checkedattribute.dType == 'DateTime' || gridFilter.checkedattribute.dType == 'Date')) {
+                $('.addfiltercontent-value>div').hide()
+                $('#addfiltercontent-scopedatetime').show()
+                $('#addfiltercontent-scopedatetime input').addClass('valuecontnet')
+            }
+        }
+
+        function attributeschookchange(data) {
+            for (var i = 0; i < gridFilter.edattribute.length; i++) {
+                if ($('#attributeschook').val() == gridFilter.edattribute[i].name) {
+                    gridFilter.checkedattribute = gridFilter.edattribute[i]
+                    setoperator()
+                    break
+                }
+            }
+        }
+
+        getfilter()
+
+        function getfilter() {
+            ajaxMethodGetData('entity.filter.get', { id: '550b0664-b974-462a-b9ba-7e190c1e4efa' }, function (data) {
+                gridFilter.edattribute = data.entity.attributes
+                gridFilter.filter = data.filter
+                for (var i = 0; i < data.entity.attributes.length; i++) {
+                    var res = data.entity.attributes[i]
+                    $('#attributeschook').append('<option value="' + res.name + '">' + res.label + '</option>')
+                }
+            })
+        }
+        
+        function setoperator() {
+            $('.addfiltercontent-value>div').hide()
+            $('#addfiltercontent-text').show()
+            $('.addfiltercontent-value input').val('')
+            $('#DroplistTextvalue span').attr('value','').html('')
+            $('#operatorchook').html('<option value="">请选择</option>')
+            for (var i = 0; i < gridFilter.checkedattribute.operator.length; i++) {
+                var res = gridFilter.checkedattribute.operator[i]
+                $('#operatorchook').append('<option value="' + res.operator + '">' + res.label + '</option>')
+            }
+            form.render();
+        }
+
+        function setvalue() {
+            console.log(gridFilter)
+        }
+
+        function choosevalue() {
+            $('#DroplistTextoptions li').click(function () {
+                var that = this
+                $(that).toggleClass('active')
+                var items = $(that).parent().find('li.active')
+                var names = []
+                var values = []
+                for (var i = 0; i < $(that).parent().find('li.active').length; i++) {
+                    values.push($(that).parent().find('li.active').eq(i).attr('value'))
+                    names.push($(that).parent().find('li.active').eq(i).find('span').html())
+                }
+                $('#DroplistTextvalue span').html()
+                $('#DroplistTextvalue span').html(names.join(','))
+                $('#DroplistTextvalue span').attr('value', values.join(','))
+                return false;
+            })
+        }
+        
+        function clearattributes() {
+            $('#attributeschook').val('')
+            $('#attributeschook').next().find('input').val('')
+            $('#operatorchook').val('')
+            $('#operatorchook').html('')
+            $('#operatorchook').next().find('input').val('')
+            $('#operatorchook').next().find('dd').remove()
+            $('.addfiltercontent-value>div').hide()
+            $('#addfiltercontent-text').show().val('')
+        }
+
+        function editrows(that) {
+            settop($(that))
+            $('.newfilter-item').removeClass('newfilter-item')
+            $(that).addClass('newfilter-item')
+
+            var namehtml = $(that).find('.filter-item-name').html()
+            var name = $(that).find('.filter-item-name').attr('value')
+
+            var operatorhtml = $(that).find('.filter-item-operator').html()
+            var operator = $(that).find('.filter-item-operator').attr('value')
+
+            var valuehtml = $(that).find('.filter-item-value').html()
+            var value = $(that).find('.filter-item-value').attr('value')
+
+            $('.addfiltercontent').show()
+            $('#attributeschook').val(name)
+            $('#attributeschook').next().find('input').val(namehtml)
+
+            attributeschookchange()
+
+            $('#operatorchook').val(operator)
+            $('#operatorchook').next().find('input').val(operatorhtml)
+
+            operatorchookchange({ value: operator })
+
+            if ($('span.valuecontnet').length > 0) {
+                $('.valuecontnet').attr('value',value)
+                $('.valuecontnet').html(valuehtml)
+                var value = value.split(',')
+                for (var i = 0; i < value.length; i++) {
+                    $('#DroplistTextoptions li[value="'+value[i]+'"]').addClass('active')
+                }
+            } else {
+                $('.valuecontnet').val(value)
+            }
+
+            
+        }
+
+        function settop(dom) {
+            var top = $(dom).offset().top
+            var margin = 0
+
+            if (top > 150) {
+                top = top - 150
+            } else {
+                top =10
+            }
+
+            if (top + 350 > $(window).height()) {
+                top = $(window).height()-350
+            }
+            $('.addfiltercontent').css({
+                "top": top,
+            })
+            
+        }
+    </script>
+</body>
+</html>

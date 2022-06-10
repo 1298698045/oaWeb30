@@ -1,0 +1,365 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/mission-header.css">
+    <link rel="stylesheet" href="/css/cal/mission.css">
+    <link rel="stylesheet" href="/css/cntrt/cntrt.css">
+    <link rel="stylesheet" href="/css/cal/newmission.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/template/css/alert.css">
+    <link rel="stylesheet" href="/template/css/share.css">
+
+
+    <style>
+        #popup-newmission {
+            display: block;
+            left: 50%;
+            top: 50%;
+            margin-left: -400px;
+            margin-top: -150px;
+            width:800px;
+        }
+
+        .popup-mask {
+            display: block;
+        }
+
+        #newmission .missmessage-body .tree span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+
+    .popup-foot > button:hover {
+    background-color: #f4f2f2;
+    color: #108af9;
+}
+    .popup-foot > button {
+
+    float: right;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    color: #108af9;
+    height: 32px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0 10px;
+}#popup-newmission{
+    overflow:visible;
+    }
+    .form-checking{
+        padding-left:115px;
+        color:#ff6666;
+        font-size:14px;
+    line-height:30px;
+    height:0;
+    position:absolute;
+    top:35px;
+    }
+    .activity{
+        border:1px solid #ff6666 !important;
+    }
+    .boxshaw{
+        top:-150px;
+    }
+    .form-error{
+        display:none;
+        width:90%;
+        margin-left:5%;
+        background: rgb(194, 57, 52);
+        padding:15px;
+        color:#fff;
+        border-radius:4px;
+        height:50px;
+        box-sizing:border-box;
+    }
+    .form-error2{
+        display:none;
+    color:rgb(194, 57, 52);
+    margin-left:65px;
+    margin-top:10px;
+    position:absolute;
+    font-size:14px;
+}
+    .popup-mask {
+            z-index:199;
+        }
+        .popup {
+            z-index:200;
+        }
+        #newmission .pinput3 {
+            width:50% !important;
+        }
+        #newmission .pinput2 {
+            width:35% !important;
+        }
+        .divinput {
+            width:auto;
+        }
+        .missmessage {
+            height:80px !important;
+        }
+        .popup #newmission {
+            height:130px;
+        }
+        .form-element {
+            width:100%;
+            margin-left:0;
+        }
+        .autocompleteWrapper .lookup {
+            height: 150px;
+            margin-top: 35px;
+            top:auto;
+            width: 84%;
+        }
+        #newmission > div {
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup-newmission">
+        <div class="popup-exit"></div>
+        <div class="popup-head">添加日历</div>
+        <div class="form-error">检查此页面上的错误</div>
+        <div class="form-error2">必须填写这些必填字段
+            <span></span>
+        </div>
+        <form id="editPage" name="editPage">
+            <input type="hidden" name="objTypeCode" id="objTypeCode" value="1010" />
+            <div id="newmission">
+                <div class="missmessage">
+                            <div class="">
+                                选择日历
+                                <div class="contentWrapper" style="border-color: rgb(221, 219, 218); box-shadow: rgb(255, 255, 255) 0px 0px 0px;">
+                                      <div class="contentWrapper_input slds-grid people_hidden" style="display: flex;">
+                                          <div class="entiyMenu">
+                                              <a href="#" class="entityMenuTrigger">  
+                                                  <div class="entityIcon" style="background-color: #65CAE4">
+                                                      <span class="uiImage">
+                                                          <img src="/img/images/user_120.png" class="icon " alt="人员" title="人员">
+                                                      </span>
+                                                  </div>
+                                                  <div class="contentWrapper_icon">
+                                                      <img src="/img/cal/20.png" alt="">
+                                                  </div>
+                                              </a>
+                                          </div>
+                                          <div class="autocompleteWrapper">
+                                              <div class="form-element">
+                                      <input type="text" id="employeeIdName" autocomplete="off" placeholder="搜索角色">
+                                      <input type="hidden" id="employeeId" name="employeeId" autocomplete="off" data-object="30020">
+                                      <div class="lookup" style="display: none;">
+                                          <ul>
+                                          </ul>
+                                      </div>
+                                      <img src="/img/images/lookup.png">
+                                      <ul id="employeeInfo">
+                                      </ul>
+                                  </div>
+                                             
+                                          </div>
+                                          <div class="contentWrapper_iconfont">
+                                              <i class="iconfont icon-sousuo"></i>
+                                          </div>
+                                      </div>
+                                      <div class="pillContainerWrapper noSeparator people_show">
+                                          <div class="uiPillContainer_default">
+                                              <ul class="orderedList">
+                                                 
+                                              </ul>
+                                          </div>
+                                      </div>
+                                      <div class="slds-dropdown slds-dropdown_right toop_second" style="width: 8rem; display: none;">
+                                      <ul class="dropdown__list">
+                                          <li class="slds-dropdown__item grid lista" object="1036">
+                                              <a href="javascript:;">
+                                                  <span class="slds-truncate">
+                                                      <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                          <img src="/img/images/user_120.png" class="icon " alt="人员" title="人员">
+
+                                                      </span>
+                                                      <span style="float: left">角色</span>
+                                                  </span>
+                                              </a>
+                                          </li>
+                                          <li class="slds-dropdown__item grid bans" object="9">
+                                              <a href="javascript:;">
+                                                  <span class="slds-truncate">
+                                                      <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                          <img src="/img/images/user_120.png" class="icon " alt="人员" title="人员">
+                                                     
+                                                      </span>
+                                                      <span style="float: left">小组</span>
+                                                  </span>
+                                              </a>
+                                          </li>
+                                          <li class="slds-dropdown__item grid tu" object="10">
+                                              <a href="javascript:;">
+                                                  <span class="slds-truncate">
+                                                      <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                          <img src="/img/images/user_120.png" class="icon " alt="人员" title="人员">
+                                                          
+                                                      </span>
+                                                      <span style="float: left">部门</span>
+                                                  </span>
+                                              </a>
+                                          </li>
+                                          <li class="slds-dropdown__item grid tu" object="8">
+                                              <a href="javascript:;">
+                                                  <span class="slds-truncate">
+                                                      <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                          <img src="/img/images/user_120.png" class="icon " alt="人员" title="人员">
+                                                      </span>
+                                                      <span style="float: left">用户</span>
+                                                  </span>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+            </div>
+        </form>
+        <div class="popup-foot">
+            <button class="popup-foot-shur">保存</button>           
+            <button class="close">取消</button>
+        </div>
+    </div>
+    <div class="popup-mask"></div>
+    <script type="text/javascript" src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/mission-header.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/schedule.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+
+    <script>
+        $('.popup-foot-shur').click(function () {
+            var d = {
+                statecode: statecode,
+                approve: approve,
+            }
+            function callback(data) {
+                console.log(data)
+                parent.$('#iframe').hide()
+                parent.getdata()
+            }
+            ajaxMethodPostData('meetingroom.reservation.approve', d, callback)
+        })
+        $(".popup-exit").click(function () {
+            parent.$('#iframe').hide()
+        })
+        $(".close").off()
+        $(".close").click(function () {
+            parent.$('#iframe').hide()
+        })
+
+        $('.entiyMenu').click(function(){
+            $('.toop_second').show()
+            return false;
+        })
+        $('.slds-dropdown__item').click(function(){
+            $('#employeeId').attr('data-object',$(this).attr('object'))
+            $('#employeeIdName').attr('placeholder','搜索'+$(this).find('.slds-truncate span').eq(1).html())
+            $(this).parent().parent().hide()
+        })
+        $(".form-element").each(function () {
+            var that = this
+            $("li").click(function () {
+                return false;
+            })
+            $("ul").click(function () {
+                return false;
+            })
+            $(this).find("img").click(function () {
+                $(this).parents(".form-element").parent().attr("status", "")
+                $(that).find("input[type=text]").show()
+                $(that).find("input[type=text]").prop("value", "")
+                $(this).prop("src", "/img/images/lookup.png")
+                $(that).removeClass("active")
+                $(this).next().find("li").remove()
+                return false;
+            })
+            $(this).click(function () {
+                $(".form-element").removeClass("element-active")
+                $(".lookup").hide()
+                $(this).addClass("element-active")
+                $(this).find(".lookup").show()
+                function callback(data) {
+                    $(that).find(".lookup li").remove()
+                    console.log(data)
+                    for (var i = 0; i < data.listData.length; i++) {
+                        var datas = data.listData[i]
+                        var id = datas.ID
+                        var name = datas.Name
+                        $(that).find(".lookup ul").append('<li id="' + id + '">' + name + '</li>')
+                        $('.pillContainerListItem').each(function(){
+
+                            if($(this).attr('id')==data.listData[i].ID){
+                                $(that).find(".lookup ul").find("#"+id).remove()
+                            }
+                        })
+                    
+                    }
+                    $(that).find(".lookup li").each(function () {
+                        $(this).click(function () {
+                            $('.orderedList').append(`<li class="pillContainerListItem" id="`+$('#employeeId').attr('data-object')+":"+$(this).attr('id')+`">
+                                     <a class="pill uiPill--default uiPill" href="#">
+                                         <span class="pillIcon" style="background-color: #65CAE4">
+                                             <span class="uiImage">
+                                                 <img src="/img/images/user_120.png" alt="用户">
+                                             </span>
+                                         </span>
+                                         <span class="pillText">`+$(this).html()+`</span>
+                                         <span class="pilldelete">×</span>
+                                     </a>
+                                 </li>`)
+                            $('.lookup').hide()
+                            $('.pilldelete').click(function(){
+                                $(this).parents('li').remove()
+                            })
+                            return false;
+                        })
+                    })
+
+                }
+                var Lktp = $(this).find("input[type=hidden]").attr("data-object")
+                var lksrch
+                var d = { Lktp: Lktp }
+                $(that).find("input[type=text]").keyup(function () {
+                    lksrch = $(this).val()
+                    d = { Lktp: Lktp, lksrch: lksrch }
+                    ajaxMethodGetData("ui.entity.lookup", d, callback)
+                })
+                ajaxMethodGetData("ui.entity.lookup", d, callback)
+
+                $(document).click(function (e) {
+                    if ($(e.target).parents(".form-element").length == 0) {
+                        $(that).removeClass("element-active")
+                        $(".lookup").hide()
+                    }
+                })
+                return false;
+            })
+        })
+        $('#employeeIdName').click(function(){
+            $('.people_show').show()
+        })
+        $(document).click(function(){
+            $('.toop_second').hide()
+        })
+    </script>
+</body>
+</html>

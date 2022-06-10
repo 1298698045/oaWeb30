@@ -1,0 +1,181 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/mission-header.css">
+    <link rel="stylesheet" href="/css/cal/mission.css">
+    <link rel="stylesheet" href="/css/cntrt/cntrt.css">
+    <link rel="stylesheet" href="/css/cal/newmission.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/template/css/alert.css">
+    <style>
+        .checkbox {
+            min-width: 0px !important;
+        }
+
+        #popup-newmission {
+            display: block;
+            left: 50%;
+            top: 50%;
+            margin-left: -500px;
+            margin-top: -330px;
+        }
+
+        .popup-mask {
+            display: block;
+        }
+
+        .form-element {
+            margin-left: 115px;
+            min-width: 300px !important;
+            width: 300px !important;
+        }
+
+            .form-element > input {
+                margin-top: -2px !important;
+                line-height: 25px !important;
+            }
+
+        #newmission .missmessage-body .tree span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+
+        #newmission .missmessage-body .appends span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+
+        .popup-foot > button:hover {
+            background-color: #f4f2f2;
+            color: #108af9;
+        }
+
+        .popup-foot > button {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        #popup-newmission {
+            overflow: visible;
+        }
+
+        .form-checking {
+            padding-left: 115px;
+            color: #ff6666;
+            font-size: 14px;
+            line-height: 30px;
+            height: 0;
+            position: absolute;
+            top: 35px;
+        }
+
+        .activity {
+            border: 1px solid #ff6666 !important;
+        }
+
+        .boxshaw {
+            top: -150px;
+        }
+
+        .form-error {
+            width: 90%;
+            margin-left: 5%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 65px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .popup-mask {
+            z-index: 199;
+        }
+
+        .popup {
+            z-index: 200;
+        }
+
+        .contentbody{
+            white-space: pre-wrap;
+            font-size:16px;
+            padding:10px 50px;
+            line-height:25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup-newmission">
+        <div class="popup-exit"></div>
+        <div class="popup-head">管理办法</div>
+        <div class="modal-header">
+        </div>
+
+        <form id="editPage" name="editPage">
+            <div id="newmission">
+                <div class="missmessage">
+                    <div class="contentbody">
+        第一条    会议室由院办公室统一管理和安排，负责使用登记、设备维护、卫生清洁等相关事宜。会议室中的多媒体设备和桌椅等设施由专人负责保管、管理与调试，未经允许不得擅自使用、挪动、接拉电源，不得操作标示告知勿动的设备。严禁安排院外人员代办以及操作会议室设备。
+        第二条    除重大、紧急会议外，使用会议室需至少提前1个工作日进行预约，至多提前30天预约会议室。登记表需明确使用时间、参会人数、使用的设备和物品设施等相关情况，以便提前做好准备工作。使用会议室前可领取会议室钥匙等物品。使用部门自行负责人员接待、会议记录、摄影摄像等事项。
+        第三条    使用部门应在预约时间内使用会议室。若长时间未到，则会议室使用权由院办公室另作安排。如取消使用会议室，需提前报送至院办公室。取消预约后再使用时，需重新预约申请。
+        第四条    会议室使用需遵循先登记先使用、先紧急后一般、先全局后部门的原则。各部门之间可本着重要、紧急优先的原则自行协商解决。如遇特殊情况、紧急会议，需先与院办公室负责人联系，可立即开启会议室先行使用，会后补办相关登记手续。
+        第五条    使用完毕后，需及时归还钥匙、桌签壳等所借物品，关好门窗、空调、电源等。由会议室管理人员进行检查并签字验收。
+        第六条    使用部门需爱护会议室的设备设施，保持会议室的整洁，严禁乱扔垃圾。会议室使用完成后应带走垃圾、恢复原状。如发现设备故障或公物损坏需及时反馈至院办公室，严禁隐瞒或自行处理。使用会议室时，申请者临时负责会议室安全，安全责任人为申请者所属部门负责人。
+        第七条    如违反上述规定，院办公室将采取通报警告或暂停使用等措施。
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="popup-foot">
+            <button class="popup-foot-shur">我已阅读并知晓</button>
+            <button class="close">取消</button>
+        </div>
+    </div>
+    <div class="popup-mask"></div>
+    <script type="text/javascript" src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+
+    <script>
+        $('.popup-exit').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        var nexturl = getQueryString('nexturl')
+        console.log(nexturl)
+        $('.popup-foot-shur').off()
+        $('.popup-foot-shur').click(function () {
+            window.location.href = nexturl
+        })
+    </script>
+</body>
+</html>

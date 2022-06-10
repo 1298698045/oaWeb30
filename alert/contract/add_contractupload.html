@@ -1,0 +1,449 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <link href="/element/element.css" rel="stylesheet" />
+
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            padding: 0 15px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 45%;
+            margin-left: 2%;
+            box-sizing: border-box;
+        }
+
+            .item-left:first-child {
+                margin-right: 6%;
+            }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        .section-body {
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .section {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .popup-body {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .section .layui-input, .section .layui-select {
+            height: 32px;
+            border-radius: 4px;
+        }
+
+        .section .layui-input-block {
+            margin-left: 0;
+        }
+
+        .save-checking-input.disstatus {
+            border: 1px solid red;
+        }
+
+        .layui-input.layui-unselect.disstatus {
+            border: 1px solid red;
+        }
+
+        .popup-body {
+            overflow-y: auto;
+            height: 442px;
+        }
+
+        .popup {
+            background-color: white;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+
+        .searchimg {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            right: 8px;
+            top: 8px;
+            cursor: pointer;
+        }
+
+        .searchselect {
+            position: relative;
+        }
+
+            .searchselect .layui-edge {
+                display: none;
+            }
+
+        .disabled {
+            pointer-events: none;
+        }
+
+        body #iframe {
+            position: fixed;
+            background-color: white;
+            width: 100%;
+            left: 0;
+            top: 50%;
+            margin-top: -300px;
+            border-radius: 7px;
+            display: block;
+            height: 620px;
+            border: 0;
+            overflow: hidden;
+            z-index: 9999;
+            display: none;
+        }
+
+        .popup-mask {
+            display: none;
+            position: fixed;
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            z-index: 999;
+            left: 0;
+            position: fixed;
+            background: url(/img/bgOverlayDialogBackground.png);
+            background-color: transparent;
+        }
+
+        .layui-tab-content {
+            padding: 0;
+        }
+
+        #vueapp {
+            text-align: center;
+            height: 180px;
+            padding-top: 80px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            签章版合同
+        </div>
+        <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+            <ul class="layui-tab-title">
+                <li>上传附件</li>
+            </ul>
+            <div class="layui-tab-content" style="display:block;">
+                <div id="vueapp">
+                    <!--<el-upload :action="actionurl"
+                               :limit="1"
+                               list-type="picture-card"
+                               :before-upload="beforeUpload"
+                               :on-preview="handlePictureCardPreview"
+                               :on-remove="handleRemove">
+                        <i class="el-icon-plus"></i>
+                    </el-upload>
+                    <el-dialog visible.sync="dialogVisible">
+                        <img width="100%" src="dialogImageUrl" alt="">
+                    </el-dialog>-->
+                    <el-upload class="upload-demo" :auto-upload="false" :on-change="openFile" :action="actionurl" :on-remove="handleRemove">
+                        <el-button size="small" type="primary">点击上传</el-button>
+                    </el-upload>
+                </div>
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div onclick="SaveEdit()" class="popup-foot-shur save-checking">保存</div>
+            <div onclick="CancelEdit()" class="">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+    <script src="/js/alert.js"></script>
+    <script src="/ckeditor/ckeditor-4.16/ckeditor.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script>
+        var saverule = false
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                actionurl:'',
+                dialogImageUrl: '',
+                dialogVisible: false,
+                fileList: [],
+                CategoryName: '',
+                formData: ''
+            },
+            created: function () {
+                if (getQueryString('type') == '归档') {
+                    $('.popup-head').html('上传归档文件')
+                }
+            },
+            methods: {
+                openFile(file) {
+                    //var that = this;
+                    //var reader = new FileReader();
+                    //reader.onload = function () {
+                    //    if (reader.result) {
+                    //    }
+                    //};
+                    //reader.readAsText(file.raw);
+                    //this.fileList = [file[file.length - 1]];
+                    //reader.readAsDataURL(file.raw);
+                    console.log(file);
+                    this.fileList.push(file.raw);
+                    var fd = new FormData();
+                    for (i = 0; i < this.fileList.length;i++){
+                        fd.append("files", this.fileList[i]);
+                    }
+                    fd.append("pid", getQueryString('id'));
+                    fd.append("CategoryName", '合同正文');
+                    this.formData = fd;
+                    console.log(this.fileList)
+                    console.log(fd.get("files"));
+                },
+                //beforeUpload() {
+                //    var id = getQueryString('id')
+                //    if (!id||id=='') {
+                //        layer.msg('');
+                //        return false
+                //    }
+                //},
+                handleRemove(file, fileList) {
+                    console.log(file, fileList);
+                },
+                //handlePictureCardPreview(file) {
+                //    console.log(file)
+                //    this.dialogImageUrl = file.url;
+                //    this.dialogVisible = true;
+                //},
+            }
+        })
+
+
+        layui.use('element', function () {
+            var element = layui.element;
+            element.on('tab(docDemoTabBrief)', function (data) {
+                console.log(data);
+                $('.layui-tab-content').hide()
+                $('.layui-tab-content').eq(data.index).show()
+            });
+        });
+
+        var CategoryName = ''
+        var url = 'contract.file.upload'
+        function CancelEdit() {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        }
+        function SaveEdit() {
+            //var d = {
+            //    CategoryName: '合同正文',
+            //    pid: getQueryString('id'),
+            //    file: vum.fileList
+            //}
+            //function callback(data) {
+            //    if (data.status == 1) {
+            //        layer.msg(data.msg);
+            //        setTimeout(function () {
+            //            parent.$('.popup-mask').hide()
+            //            parent.$('#iframe').hide()
+            //        }, 2000)
+            //    }
+            //}
+            if (getQueryString('type') == '归档') {
+                //ajaxMethodPostData('contract.archived.upload', d, callback)
+                url = 'contract.archived.upload'
+            }
+            $.ajax({
+                url: "/apps/CommandProcessor.ashx?cmd="+url,
+                type: "post",
+                data: vum.formData,
+                contentType: false,
+                processData: false,
+                mimeType: "multipart/form-data",
+                success: function (data) {
+                    if (data) {
+                        data = JSON.parse(data);
+                        if (data.msg) {
+                            layer.msg(data.msg);
+                        }
+                        if (data.status == 1) {
+                            setTimeout(function () {
+                                parent.$('.popup-mask').hide()
+                                parent.$('#iframe').hide()
+                            }, 2000)
+                        }
+                    }
+                },
+                error: function (error) {
+                    console.log("error", error)
+                },
+            })
+            
+        }
+
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+
+
+    </script>
+    <iframe id="iframe" frameborder="0" src=""></iframe>
+    <div class="popup-mask"></div>
+</body>
+</html>

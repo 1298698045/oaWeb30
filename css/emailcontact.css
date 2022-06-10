@@ -1,0 +1,212 @@
+﻿#quickaddr_div {
+    height: 362px;
+    width: 177px;
+}
+ a {
+    cursor: pointer;
+    outline: medium none;
+    text-decoration: none;
+}
+.cpright {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #7f9db9;
+}
+ .cptitle {
+    border-bottom: 1px solid #7f9db9;
+    height: 26px !important;
+}
+ .cptab {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #7f9db9 #7f9db9 currentcolor;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    height: 25px;
+    line-height: 24px;
+    position: absolute;
+    text-align: center;
+    width: 88px !important;
+}
+ .cpslt {
+    background: #fff none repeat scroll 0 0;
+    font-weight: bold;
+    height: 25px;
+}
+.cpslt a {
+    color: #000;
+    text-decoration: none;
+}
+.addrtips {
+    border-bottom: 1px solid #d8dee5;
+    color: #979ea5;
+    margin: 3px;
+    padding: 7px 0 3px 6px;
+}
+.addrsort {
+    background: #e0ecf8 none repeat scroll 0 0;
+    border-top: 1px solid #7f9db9;
+    cursor: pointer;
+    height: 23px;
+    line-height: 23px;
+    padding-left: 8px;
+}
+.bartools {
+    background: #fff none repeat scroll 0 0;
+    border-bottom: 1px solid #c5d8ee;
+}
+.colorpanel {
+    border: 1px solid #b8d3ed;
+}
+.colortitle {
+    background: #deeeff none repeat scroll 0 0;
+    border: 1px solid #fff;
+}
+.lm_sbar {
+    border-bottom: 1px solid #ccc;
+    height: 22px;
+    line-height: 11px;
+    padding: 7px 6px 4px;
+}
+.lm_sbar .lm_sopen {
+    background: rgba(0, 0, 0, 0) url("/img/email/compose207c92.png") no-repeat scroll 0 -312px;
+    border: medium none;
+    float: right;
+    height: 20px;
+    padding: 0;
+    width: 19px;
+}
+.lm_sbar .lm_sclose {
+    background: rgba(0, 0, 0, 0) url("/img/email/compose207c92.png") no-repeat scroll 0 -336px;
+    border: medium none;
+    float: right;
+    height: 20px;
+    padding: 0;
+    width: 19px;
+}
+input.txt {
+    line-height: 20px;
+    padding: 0 0 0 2px;
+}
+.lm_sbar .txt {
+    border-right: medium none;
+    color: rgb(160, 160, 160);
+    height: 18px;
+    margin: 0;
+    width: 100%;
+}
+input.txt, input.txt2, textarea.txt, .txt, .qm_txt {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #fff url("/img/email/today1e9c5d.gif") repeat-x scroll 0 -162px;
+    border-color: #7c7c7c #c3c3c3 #c3c3c3 #9a9a9a;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    line-height: 170%;
+    outline: medium none;
+}
+                            .lm_panel
+                            {
+                                /*height: 327px;*/
+                                overflow-x: hidden;
+                                overflow-y: auto;
+                            }
+
+                                .lm_panel .qqshowbd
+                                {
+                                    border-width: 0 0 1px;
+                                }
+.settingtable {
+    background-color: #eff5fb;
+}
+.settingtd {
+    border-bottom: 1px solid #c9d7e5;
+    border-top: 1px solid #f9fcff;
+}
+                            .settingtable .lm_rt
+                            {
+                                margin-top: -1px;
+                            }
+
+                            .groupopen .lm_rt
+                            {
+                                display: block;
+                                float: right;
+                                margin-right: 5px;
+                                margin-top: 3px;
+                            }
+
+                            .groupclose
+                            {
+                                overflow: hidden;
+                                width: 100%;
+                            }
+
+                            .lm_ca
+                            {
+                                font-weight: bold;
+                                line-height: 20px;
+                                overflow: hidden;
+                                padding: 0 2px 0 6px;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+                            .groupopen .lm_ca .lm_ico {
+    background: rgba(0, 0, 0, 0) url("/img/email/compose207c92.png") no-repeat scroll 0 -384px;
+    border: 0 none;
+    height: 12px;
+    margin: 2px 1px 0 2px;
+    padding: 0;
+    vertical-align: middle;
+    width: 14px;
+}
+                            .groupclose .lm_ca .lm_ico
+                            {
+                                background: rgba(0, 0, 0, 0) url("/img/email/compose207c92.png") no-repeat scroll 0 -360px;
+                                border: 0 none;
+                                height: 12px;
+                                margin: 2px 1px 0 2px;
+                                padding: 0;
+                                vertical-align: middle;
+                                width: 14px;
+                            }
+                            .groupopen .lm_rt {
+    display: block;
+    float: right;
+    margin-right: 5px;
+    margin-top: 3px;
+}
+.groupclose .lm_rt {
+    display: none;
+    float: right;
+}
+.groupclose .lm_cac {
+    margin-right: 5px;
+}
+.settingtable .lm_rt {
+    margin-top: -1px;
+}
+a.lm_addr, a.lm_addr:link, a.lm_addr:visited {
+    background: #fff none repeat scroll 0 0;
+    color: #494949;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    line-height: 20px;
+    outline: medium none;
+    overflow: hidden;
+    padding: 0 0 0 30px;
+    text-align: left;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: auto;
+}
+a.lm_addr:hover {
+    background: #ffeec2 none repeat scroll 0 0;
+}

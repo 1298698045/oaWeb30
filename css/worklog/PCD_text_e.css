@@ -1,0 +1,29 @@
+.PCD_text_e .m_wrap {
+ margin:-6px 0 -3px 0;
+}
+.PCD_text_e .t_tit {
+ width:100%;
+ margin-top:6px;
+}
+.PCD_text_e .t_tit img,.PCD_text_e .t_tit .t_ico {
+ display:inline-block;
+ width:16px;
+ height:16px;
+ margin-right:8px;
+ vertical-align:-4px;
+}
+.PCD_text_e .t_tit .t_ico img {
+ height:16px;
+ vertical-align:0;
+}
+.PCD_text_e .p_indent {
+ margin-left:24px;
+}
+.PCD_text_e p {
+ margin-top:6px;
+ line-height:20px;
+ word-wrap:break-word;
+}
+#js_style_css_module_pagecard_PCD_text_e {
+ height: 42px;
+}

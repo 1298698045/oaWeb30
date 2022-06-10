@@ -1,0 +1,477 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+        }
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+        .popup-body {
+            padding: 20px;
+            height: 118px;
+            overflow: hidden;
+        }
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+
+        .section-body {
+            padding: 0 20px;
+        }
+
+        .section {
+            padding-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            删除
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+
+            <div class="section" style="text-align:center;line-height:100px;font-size:20px;">
+                是否确定要删除？
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div class="popup-foot-shur save-checking">确定</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/alert.js"></script>
+    <script>
+
+        $('.close').click(function () {
+            parent.$('#iframe').hide()
+            parent.$('.popup-mask').hide()
+            parent.$('#changeDiv').hide()
+        })
+        $('.save-checking').click(function () {
+            parent.$('#iframe').hide()
+            parent.$('.popup-mask').hide()
+            parent.$('#changeDiv').hide()
+            var id = getQueryString('id')
+            var objTypeCode = getQueryString('objTypeCode')
+            //success2('删除成功')
+            var d = {
+                id: id
+            }
+            if (objTypeCode == 20392) {
+                ajaxMethodPostData('file.attachment.delete', d, function (data) {
+                    if (parent.entityFile) {
+                        parent.entityFile.load();
+                    }
+                    if (parent.entityAttachmentList) {
+                        parent.entityAttachmentList.load()
+                    }
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    parent.$('#changeDiv').hide()
+                })
+            } else if (objTypeCode == '问卷人员') {
+                var id = getQueryString('Id')
+                var surveyid = getQueryString('Surveyid')
+                var contactid = getQueryString('ContactId')
+                ajaxMethodGetData('survey.audience.delete', { Id: id, Surveyid: surveyid, ContactId: contactid }, function (data) {
+                    parent.deletenewdata(objTypeCode)
+                })
+            } else if (objTypeCode == 'chattercomment') {
+                var chatterId = getQueryString('chatterId')
+                var index = getQueryString('index')
+                ajaxMethodGetData('chatter.comment.delete', { id: id, chatterId: chatterId }, function (data) {
+                    var index = getQueryString('index')
+                    ajaxMethodGetData('chatter.comment.delete', { id: id, chatterId: chatterId }, function (data) {
+                        parent.showchattercomment(chatterId, index, 1)
+                    })
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    parent.$('#changeDiv').hide()
+                })
+            } else if (objTypeCode == 'chatter') {
+                ajaxMethodGetData('chatter.delete', { id: id }, function (data) {
+                    parent.getchatter()
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    parent.$('#changeDiv').hide()
+                })
+            } else if (objTypeCode == '文件') {
+                var IsFolder = getQueryString('type')
+                ajaxMethodGetData('filefolder.delete', { ID: id, IsFolder: IsFolder }, function (data) {
+                    if (data&&data.status == 1) {
+                        parent.success2('删除成功')
+                    } else {
+                        parent.error('删除失败')
+                    }
+                    var extSrch = parent.$('.slds-nav-vertical__item.slds-is-actives').attr('id')
+                    if (extSrch == '10010000-0000-0000-0000-000000000001') {
+                        extSrch = 'my'
+                    } else if (extSrch == '10010000-0000-0000-0000-000000000003') {
+                        extSrch = 'share'
+                    } else if (extSrch == '10010000-0000-0000-0000-000000000002') {
+                        extSrch = 'org'
+                    } else if (extSrch == '10010000-0000-0000-0000-000000000303') {
+                        extSrch = 'archive'
+                    } else {
+                        extSrch = 'latestuse'
+                    }
+                    if (parent.$('.file-nav span').length > 1) {
+                        parent.loadFolderData(parent.$('.file-nav span:last').attr('fileid'), extSrch)
+                    } else {
+                        parent.loadGrids(extSrch)
+                    }
+                })
+            } else if (objTypeCode == 5000) {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#changeDiv').hide()
+                    parent.getdata()
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    if (parent.$('#datagrid').length > 0) {
+                        parent.$('#datagrid').datagrid('reload')
+                    }
+                })
+            } else if (objTypeCode == 100201) {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#changeDiv').hide()
+                    //parent.getdata()
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    if (parent.$('#datagrid').length > 0) {
+                        parent.$('#datagrid').datagrid('reload')
+                    }
+                })
+            }
+
+            else if (objTypeCode == 'salarymonth') {
+                var d = {
+                    yearNumber: parent.$('#yearNumber').val(),
+                    monthNumber: parent.$('#monthNumber').val(),
+                }
+                ajaxMethodPostData('salary.month.clear', d, function (data) {
+                    parent.$('#changeDiv').hide()
+                    parent.$('#datagrid').datagrid('reload')
+
+                })
+            } else if (objTypeCode == '附件分类') {
+                d.objTypeCode = 100200
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    //parent.entityAttachmentList.load()
+                    if (parent.entityFile) {
+                        parent.entityFile.load();
+                    }
+                    if (parent.entityAttachmentList) {
+                        parent.entityAttachmentList.load()
+                    }
+                    parent.$('.buttonbtn.shituu.selectbuttonbtn').find('span').html('全部')
+                })
+            } else if (objTypeCode == '小组成员') {
+                d.userIds = id
+                d.groupId = parent.getQueryString('id')
+                ajaxMethodPostData('sys.group.member.remove', d, function (data) {
+                    parent.getpeople()
+                })
+            } else if (objTypeCode == '投票人员') {
+                var d = {}
+                d.userId = id
+                d.pollid = parent.getQueryString('id')
+                ajaxMethodPostData('poll.people.remove', d, function (data) {
+                    parent.grid.init()
+                })
+            } else if (objTypeCode == 'deleteSigna') {
+                d = {
+                    signatureId: id,
+                }
+                ajaxMethodPostData("process.signature.delete", d, callback);
+                function callback(data) {
+                    if (data.status == 1) {
+                        parent.success("删除成功");
+                        parent.$('#gridContainer').datagrid('reload')
+                    } else {
+                        parent.error("删除失败")
+                    }
+                }
+            }
+            else if (objTypeCode == '20240') {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    parent.$('#changeDiv').hide()
+                    parent.getmsgtemplate()
+                })
+            } else if (objTypeCode == 'iframedelete') {
+                var objTypeCode = getQueryString('entityobjTypeCode')
+                d.objTypeCode = objTypeCode
+                
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#childreniframe')[0].contentWindow.getgrid();
+                    parent.success2('操作成功')
+                })
+            } else if (objTypeCode == 'deleterelateditem') {
+                ajaxMethodPostData('layout.relatedlistitem.delete', d, function (data) {
+                    if (data.state == 1) {
+                        parent.getrelated()
+                        parent.success2('删除成功')
+                    } else {
+                        parent.error('删除失败')
+                    }
+                })
+            } else if (objTypeCode == 'deletegrouppeople') {
+                var Md0 = parent.$('#yearNumber').val() || '';
+                var Md1 = parent.$('#monthNumber').val() || '';
+                var DeptId = getQueryString('deptid') || '';
+                var GroupId = getQueryString('groupid') || '';
+                var EmployeeId = getQueryString('employeeId') || '';
+                var startDate = getQueryString('startDate') || ''
+                var endDate = getQueryString('endDate') || ''
+                var isWeek = getQueryString('isWeek')||''
+                var d = {
+                    Md0: Md0,
+                    Md1: Md1,
+                    yearNumber: Md0,
+                    monthNumber: Md1,
+                    DeptId: DeptId,
+                    GroupId: GroupId,
+                    EmployeeId: EmployeeId
+                }
+                if (isWeek) {
+                    d = {
+                        startDate: startDate,
+                        endDate: endDate,
+                        DeptId: DeptId,
+                        GroupId: GroupId,
+                        EmployeeId: EmployeeId,
+                        isWeek: isWeek
+                    }
+                }
+                ajaxMethodPostData('workshift.deptgroup.employee.remove', d, function (data) {
+                    if (data.actions[0].state == 'SUCCESS') {
+                        parent.editor.rendertable()
+                        parent.success2('删除成功')
+                    } else {
+                        parent.error('删除失败')
+                    }
+                })
+            } else if (objTypeCode == '135') {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    parent.$('#changeDiv').hide()
+                    parent.getdata()
+                })
+            } else if (objTypeCode == '30091') {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    parent.$('#changeDiv').hide()
+                    parent.$('#dg').datagrid('reload')
+                })
+            }
+            else if (objTypeCode == '30051') {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    parent.$('#changeDiv').hide()
+                    parent.refreshdata()
+                })
+            }
+            else if (parent.$('#addresslist').length > 0) {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    parent.$('#changeDiv').hide()
+                    parent.refreshdata()
+                })
+            }
+            else {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#iframe').hide()
+                    parent.$('.popup-mask').hide()
+                    parent.$('#changeDiv').hide()
+                    if (typeof parent.deletenewdata != 'undefined') {
+                        parent.deletenewdata(objTypeCode)
+                    }
+                    var type = getQueryString('type')
+                    if (type == 'iframe') {
+                        parent.$('#childreniframe')[0].contentWindow.gettable();
+                    }
+                    if (parent.$('#datagrid').length > 0) {
+                        parent.$('#datagrid').datagrid('reload')
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>

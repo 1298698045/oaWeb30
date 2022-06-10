@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<style>
+     .updatePhotoPanel{
+         font-size: 17px;
+         position: relative;
+         top: 50px;
+     }
+</style>
+<body>
+    <div id="photo">
+            <div class="DESKTOP uiContainerManager">
+                <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                    <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                    <div class="panel slds-modal slds-fade-in-open">
+                        <div class="modal-container slds-modal__container">
+                            <div class="modal-header slds-modal__header">
+                                <h2 class="title slds-text-heading--medium">删除</h2>
+                                <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                    <span>
+                                        <span style="font-size: 34px;">×</span>
+                                    </span>
+                                    <span class="slds-assistive-text">关闭此窗口</span>
+                                </button>
+                            </div>
+                            <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                                <div class="cuf-content slds-scope forceChatterUpdatePhoto">
+                                    <div class="updatePhotoPanel slds-text-align--center">
+                                        <p>是否确定要删除？</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer slds-modal__footer">
+                                <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                    <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                        <span label bBody">取消</span>
+                                    </button>
+                                    <button class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" id="Save" name="Save" title="附加文件 （新窗口）" type="button">
+                                        <span label bBody">确定</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="/js/alert.js"></script>
+    <script src="/js/CommonUtils.js"></script>
+    <script src="/js/filter/filterGrid.js"></script>
+    <script>
+        var id = getQueryString('id')
+        var objTypeCode = getQueryString('objTypeCode')
+        if (!objTypeCode) {
+            objTypeCode = getQueryString('type')
+        }
+        if (objTypeCode == 'salarymonth') {
+            $('.updatePhotoPanel.slds-text-align--center p').html('是否确定要删除' + parent.$('#yearNumber').val() + '年' + parent.$('#monthNumber').val() + '月的工资？')
+        }
+        $('#closeds').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        $('#closedsa').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        $('#Save').click(function () {
+            var id = getQueryString('id')
+
+            success2('删除成功')
+            var d = {
+                id: id
+            }
+            if (objTypeCode == 20392) {
+                ajaxMethodPostData('file.attachment.delete', d, function (data) {
+                    console.log(data)
+                    parent.entityAttachmentList.load()
+                })
+            } else if (objTypeCode == '问卷人员') {
+                var id = getQueryString('Id')
+                var surveyid = getQueryString('Surveyid')
+                var contactid = getQueryString('ContactId')
+                ajaxMethodGetData('survey.audience.delete', { Id: id, Surveyid: surveyid, ContactId: contactid }, function (data) {
+                    parent.deletenewdata(objTypeCode)
+                })
+            } else if (objTypeCode == 'chattercomment') {
+                var chatterId = getQueryString('chatterId')
+                var index = getQueryString('index')
+                ajaxMethodGetData('chatter.comment.delete', { id: id, chatterId: chatterId }, function (data) {
+                    parent.showchattercomment(chatterId, index,1)
+                })
+            } else if (objTypeCode == 'chatter') {
+                ajaxMethodGetData('chatter.delete', { id: id }, function (data) {
+                    parent.getchatter()
+                })
+            } else if (objTypeCode == '文件') {
+                var IsFolder = getQueryString('type')
+                ajaxMethodGetData('filefolder.delete', { ID: id, IsFolder: IsFolder }, function (data) {
+                    var extSrch = parent.$('.slds-nav-vertical__item.slds-is-actives').attr('id')
+                    if (extSrch == '10010000-0000-0000-0000-000000000001') {
+                        extSrch = 'my'
+                    } else if (extSrch == '10010000-0000-0000-0000-000000000003') {
+                        extSrch = 'share'
+                    } else if (extSrch == '10010000-0000-0000-0000-000000000002') {
+                        extSrch = 'org'
+                    } else {
+                        extSrch = 'latestuse'
+                    }
+                    if (parent.$('.file-nav span').length > 1) {
+                        parent.loadFolderData(parent.$('.file-nav span:last').attr('fileid'), extSrch)
+                    } else {
+                        parent.loadGrids(extSrch)
+                    }
+                })
+            } else if (objTypeCode == 'photoalbum') {
+                var IsFolder = getQueryString('type')
+                ajaxMethodGetData('filefolder.delete', { ID: id, IsFolder: IsFolder }, function (data) {
+                    if (IsFolder == 1) {
+                        parent.vum.getffolders()
+                    } else {
+                        parent.vum.getfile()
+                    }
+                })
+            } else if (objTypeCode == 5000) {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.$('#changeDiv').hide()
+                    parent.getdata()
+                })
+            } else if (objTypeCode == 'salarymonth') {
+                var d = {
+                    yearNumber:parent.$('#yearNumber').val(),
+                    monthNumber: parent.$('#monthNumber').val(),
+                }
+                ajaxMethodPostData('salary.month.clear', d, function (data) {
+                    parent.$('#changeDiv').hide()
+                    parent.$('#datagrid').datagrid('reload')
+
+                })
+            }
+            else if (objTypeCode == 5002) {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('meeting.people.invite.delete', d, function (data) {
+                    parent.deletenewdata(objTypeCode)
+                })
+            } else if (objTypeCode == '附件分类') {
+                d.objTypeCode = 100200
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.entityAttachmentList.load()
+                    parent.$('.buttonbtn.shituu.selectbuttonbtn').find('span').html('全部')
+                })
+            } else if (objTypeCode == 'fileclass') {
+                d.objTypeCode = 100200
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.entityAttachmentList.load()
+                    parent.$('.buttonbtn.shituu.selectbuttonbtn').find('span').html('全部')
+                })
+            } else if (objTypeCode == 'filedelete') {
+                ajaxMethodPostData('file.attachment.delete', d, function (data) {
+                    parent.entityAttachmentList.load();
+
+                })
+            }
+            else {
+                d.objTypeCode = objTypeCode
+                ajaxMethodPostData('entity.delete', d, function (data) {
+                    parent.deletenewdata(objTypeCode)
+                })
+            }
+            parent.$('#changeDiv').hide()
+        })
+    </script>
+</body>
+</html>

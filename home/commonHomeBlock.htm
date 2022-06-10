@@ -1,0 +1,274 @@
+﻿<table cellspacing="0" cellpadding="0" border="0" class="componentTable" width="100%">
+    <tbody>
+        <tr>
+            <td width="50%" class="dashMed col1">
+                <div class="bPageBlock brandSecondaryBrd secondaryPalette" style="height: 200px;">
+                    <div class="pbHeader">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="pbTitle1">
+                                        <img width="1" height="1" title="" class="minWidth" alt="" src="/s.gif"><img title=""
+                                            class="relatedListIcon" alt="" src="/s.gif"><h3 id="PendingProcessWorkitemsList_title">
+                                                待办事务</h3>
+                                    </td>
+                                    <td class="pbButton">
+                                    </td>
+                                    <td class="pbHelp">
+                                        <a href="javascript:widgetWFWaitingTask(fillWFWaitingTaskGrid,'');">流程</a>&nbsp;|&nbsp;<a
+                                            href="javascript:widgetWFWaitingTask(fillWFWaitingTaskGrid,'inform');">知会</a>&nbsp;|&nbsp;<a
+                                                href="javascript:widgetWFWaitingTask(fillWFWaitingTaskGrid,'share');">传阅</a>&nbsp;|&nbsp;<a
+                                                    href="javascript:widgetWFWaitingTask(fillWFWaitingTaskGrid,'remind');">催办</a>
+                                        <!--<a title="更多待办事务" id="mtqLink" href="/apps/wf/MyApplyList.aspx?t=122&src=2">更多&nbsp;>>&nbsp;</a>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="PendingProcessWorkitemsList_body" class="pbBody">
+                        <table cellspacing="0" cellpadding="0" border="0" class="list">                          
+                            <tbody id="PendingProcessWorkitemsList_gridbody">                                
+                            </tbody>
+                        </table>
+                    </div>
+                    <script type="text/javascript">
+                        //widgetWFWaitingTask
+                        jQuery(document).ready(function () {
+                            widgetWFWaitingTask(fillWFWaitingTaskGrid, "");
+                            //widgetWFWaitingTask(fillWFWaitingTaskGrid);
+                            widgetTopNewsTask(fillNewsGrid, "read", "news", "notreadList_body");
+                            widgetTopNewsTask(fillNewsGrid, "approve", "news", "notapproveList"); //待审信息 
+                        });
+                                          
+                    </script>
+                    <div class="pbFooter secondaryPalette">
+                        <div class="bg">
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td width="50%" class="dashMed col2">
+                <div class="bPageBlock brandSecondaryBrd secondaryPalette" style="height: 200px;">
+                    <div class="pbHeader">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="pbTitle1">
+                                        <img width="1" height="1" title="" class="minWidth" alt="" src="/s.gif"><img title=""
+                                            class="relatedListIcon" alt="" src="/s.gif"><a href="/apps/scontent/overviewContents.aspx"
+                                                style="text-decoration: none"><h3 id="H3">
+                                                    待阅信息>></h3>
+                                            </a>
+                                    </td>
+                                    <td class="pbButton">
+                                    </td>
+                                    <td class="pbHelp">
+                                        <a href="javascript:widgetTopNewsTask(fillNewsGrid, 'read', 'news', 'notreadList_body')">
+                                            新闻</a>&nbsp;|&nbsp;<a href="javascript:widgetTopNewsTask(fillNewsGrid, 'read', 'notice', 'notreadList_body')">通知</a><!--&nbsp;|&nbsp;<a  href="javascript:void()">传阅</a>&nbsp;|&nbsp;<a  href="javascript:void()">催办</a>-->
+                                        <!--<a title="更多待办事务" id="mtqLink" href="/apps/wf/MyApplyList.aspx?t=122&src=2">更多&nbsp;>>&nbsp;</a>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="Div3" class="pbBody">
+                        <table cellspacing="0" cellpadding="0" border="0" class="list" width="100%">
+                            <!-- <tr class="headerRow">
+                                                            <th scope="col" class="actionColumn"> </th>
+                                                            <th class=" zen-deemphasize" scope="col" style="width: 80px;">
+                                                                分类
+                                                            </th>
+                                                            <th class=" zen-deemphasize" scope="col">
+                                                                标题
+                                                            </th>
+                                                            <th class="zen-deemphasize" scope="col" style="width: 80px;">
+                                                                创建人
+                                                            </th>
+                                                            <th class="DateElement zen-deemphasize" scope="col" style="width: 80px;">
+                                                                日期
+                                                            </th>
+                                                        </tr>-->
+                            <tbody id="notreadList_body">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pbFooter secondaryPalette">
+                        <div class="bg">
+                            更多>>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td width="260" class="dashMed col1">
+                <div class="bPageBlock brandSecondaryBrd secondaryPalette" style="height: 200px;">
+                    <div class="pbHeader">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="pbTitle1">
+                                        <img width="1" height="1" title="" class="minWidth" alt="" src="/s.gif"><img title=""
+                                            class="relatedListIcon" alt="" src="/s.gif"><h3 id="H2">
+                                                待填数据</h3>
+                                    </td>
+                                    <td class="pbButton">
+                                    </td>
+                                    <td class="pbHelp">
+                                        <!--<a title="更多待办事务" id="mtqLink" href="/apps/wf/MyApplyList.aspx?t=122&src=2">更多&nbsp;>>&nbsp;</a>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="Div2" class="pbBody">
+                    </div>
+                </div>
+            </td>
+            <td width="250" class="dashMed col2">
+                <div class="bPageBlock brandSecondaryBrd secondaryPalette" style="height: 200px;">
+                    <div class="pbHeader">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="pbTitle1">
+                                        <img width="1" height="1" title="" class="minWidth" alt="" src="/s.gif"><img title=""
+                                            class="relatedListIcon" alt="" src="/s.gif"><h3 id="H1">
+                                                待审信息</h3>
+                                    </td>
+                                    <td class="pbButton">
+                                    </td>
+                                    <td class="pbHelp">
+                                        <!--<a href="javascript:void()">新闻</a>&nbsp;|&nbsp;<a  href="javascript:void()">通知</a>
+                                                                    <a title="更多待办事务" id="mtqLink" href="/apps/wf/MyApplyList.aspx?t=122&src=2">更多&nbsp;>>&nbsp;</a>-->
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="Div1" class="pbBody">
+                        <table cellspacing="0" cellpadding="0" border="0" class="list">
+                            <!-- <tr class="headerRow">
+                                                            <th scope="col" class="actionColumn">
+                                                            </th>
+                                                            <th class=" zen-deemphasize" scope="col">
+                                                                事务名称
+                                                            </th>
+                                                            <th class=" zen-deemphasize" scope="col">
+                                                                分配人
+                                                            </th>
+                                                            <th class="DateElement zen-deemphasize" scope="col" style="width: 80px;">
+                                                                日期
+                                                            </th>
+                                                        </tr>-->
+                            <tbody id="notapproveList">
+                                <tr class="dataRow odd">
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr class="dataRow even">
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr class="dataRow odd">
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr class="dataRow even">
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr class="dataRow odd">
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                                <tr class="dataRow even">
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                    <td class="dataCell">
+                                        &nbsp;
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

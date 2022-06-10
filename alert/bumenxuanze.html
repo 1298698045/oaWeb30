@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <style>
+        .c_selector_panel_box {
+            width:100%;
+        }
+        .c_selector_panel_box *{
+            box-sizing:border-box;
+        }
+        .c_selector_panel:first-child {
+            padding-right: 11px;
+        }
+        .c_selector_panel {
+            width: 50%;
+            float: left;
+        }
+        .c_selector_panel .title {
+            font-size: 16px;
+            color: #363636;
+            padding: 14px 0px;
+        }
+        .c_selector_panel .body {
+    width: 100%;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    background: #f4f6f8;
+    height: 362px;
+}
+.selector_left .ding_selector_input {
+    padding: 11px;
+}
+.selector_right .ding_selector_input {
+    padding: 11px;
+}
+        .c_search_content {
+    width: 100%;
+    position: relative;
+}
+        .c_search_content .search {
+    position: absolute;
+    top: 2px;
+    left: 11px;
+    font-size: 20px;
+    color: #949494;
+}
+        .c_search_content .c_ding_input {
+    padding: 6px 25px 6px 12px;
+    padding-left: 33px;
+}
+.c_ding_input {
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: auto;
+    line-height: 20px;
+    outline: none;
+}
+        .iconfont.search img{
+            height:14px;
+            width:14px;
+        }
+        .c_selector_navbar_item {
+    max-width: 33%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #38adff;
+    float: left;
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 22px;
+}
+        .c_selector_navbar_item:last-child {
+    color: #333333;
+    cursor: default;
+}
+        .c_selector_navbar_item img {
+    position: absolute;
+    left: 8px;
+    top:3px;
+    color: #333;
+    font-size: 12px;
+    height:12px;
+    width:8px;
+}
+.selector_left .ding_selector_navbar {
+    padding: 5px 11px;
+    overflow: hidden;
+    font-size: 12px;
+    cursor: pointer;
+}
+.selector_right .ding_selector_navbar {
+    padding: 5px 11px;
+    overflow: hidden;
+    font-size: 12px;
+    cursor: pointer;
+}
+        .c_list_item {
+    width: 100%;
+    list-style: none;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #363636;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+        .c_list_item:hover{
+            background-color:#eceff4;
+        }
+        .slds-p-around--medium {
+            padding: .5rem 1rem 2.5rem 2.5rem;
+        }
+        .c_list_main-delete {
+            height:12px;
+            width:12px;
+            float:right;
+            margin-right:5px;
+            margin-top:2px;
+            cursor:pointer;
+        }
+        .selector_right {
+            padding-top:10px;
+        }
+        .tochlidren {
+            color: #38adff;
+            float:right;
+        }
+        #photo .uiModal--medium .modal-container{
+            width:50% !important;
+            max-width: 840px;
+            min-width: 480px;
+            margin: 0 auto;
+            height: 75% !important;
+        }
+        #photo .slds-modal__content{
+            height: auto !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo">
+            <div class="DESKTOP uiContainerManager">
+                <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                    <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                    <div class="panel slds-modal slds-fade-in-open">
+                        <div class="modal-container slds-modal__container">
+                            <div class="modal-header slds-modal__header">
+                                <h2 class="title slds-text-heading--medium">选择部门</h2>
+                                <button class="closed slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                    <span>
+                                        <span style="font-size: 34px;">×</span>
+                                    </span>
+                                    <span class="slds-assistive-text">关闭此窗口</span>
+                                </button>
+                            </div>
+                            <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                                <div class="c_selector_panel_box">
+                                    <div class="c_selector_panel">
+                                        <div class="title"><span>选择</span><span>:</span></div>
+                                        <div class="body">
+                                            <div class="selector_left">
+                                                <div class="ding_selector_input">
+                                                    <div class="c_search_content">
+                                                        <i class="iconfont search">
+                                                            <img src="/img/images/lookup.png"/></i>
+                                                        <input value="" type="text" class="c_ding_input" placeholder="搜索">
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                                <div class="ding_selector_navbar" style="margin-top:-5px;">
+                                                    <div class="c_selector_navbar_box">
+                                                        <div class="c_selector_navbar_item">                                                       
+                                                            <span>部门</span>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="ding_selector_navbar" style="margin-top:-5px;">
+                                                    
+                                                </div>
+                                                <div class="c_list_main"style="padding:11px;padding-top:0;height:261px;overflow:auto;">
+                                                    
+                                                   
+
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c_selector_panel">
+                                        <div class="title"><span>已选</span><span>:</span></div>
+                                        <div class="body">
+                                            <div class="selector_right">
+                                                <div class="c_list_main"style="padding:11px;padding-top:0;height:360px;overflow:auto;">
+                                                 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer slds-modal__footer">
+                                <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                    <button class="closed slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                        <span class=" label bBody">取消</span>
+                                    </button>
+                                    <button class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" id="Save" name="Save" title="附加文件 （新窗口）" type="button">
+                                        <span class=" label bBody">确定</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script>
+        $('#closeds').click(function () {
+            parent.$('#changeDiv2').hide()
+        })
+        $('.closed').click(function () {
+            parent.$('#changeDiv2').hide()
+        })
+        $('#closedsa').click(function () {
+            parent.$('#changeDiv2').hide()
+        })
+        var Chidren = []
+        var d= {
+            parentId:'',
+            search:''
+        }
+            ajaxMethodGetData("sys.businessunit.getchild", d, callback)
+            
+
+        $('.c_ding_input').keyup(function(){
+            var d = {
+                search:$(this).val()
+            }
+            ajaxMethodGetData("sys.businessunit.getchild", d, callback)
+            
+        })
+        function callback(data) {
+            
+            console.log(data)
+            $('.selector_left .c_list_main .c_list_item').remove()
+            if (data && data.listData) {
+                for (var i = 0; i < data.listData.length; i++) {
+                    var res = data.listData[i]
+                    var BusinessUnitId = res.BusinessUnitId
+                    var Name = res.Name
+                    $('.selector_left .c_list_main').append('<li class="c_list_item" pid="' + BusinessUnitId + '">'
+                                       + '<input type="checkbox" />'
+                                       + '<span>' + Name + '</span></li>')
+                    if (res.Chidren.length > 0) {
+                        $('.selector_left .c_list_main .c_list_item').eq(i).append('<span class="tochlidren">下级</span>')
+                    }
+                    $('.selector_right .c_list_item').each(function () {
+                        var id = $(this).attr('id')
+                        if (BusinessUnitId == id) {
+                            $('.selector_left .c_list_main .c_list_item').eq(i).find('input').attr('checked', 'checked')
+                        }
+                    })
+                }
+            }
+            add()
+            $('.tochlidren').click(function(){
+                var name = $(this).prev().html()
+                var id = $(this).parent().attr('pid')
+                tochlid(name,id)
+            })
+        }
+        function add() { 
+            $('.selector_left .c_list_item input').off()
+            $('.selector_left .c_list_item input').click(function () {
+                var id = $(this).parent().attr('pid')
+                var html = $(this).parent().find('span').html()
+                if ($(this).parent().find('input:checked').length == 0) {
+                    $('#'+id).remove()
+                    
+                }else {
+                    $('.selector_right .c_list_main').append('<li class="c_list_item"id="'+id+'"><span>'+html+'</span>'
+                                                     +'       <img src="/img/images/close.png" class="c_list_main-delete">'
+                                                    +'</li>')
+                }
+                $('.c_list_main-delete').off()
+                $('.c_list_main-delete').click(function(){
+                    var id = $(this).parent().attr('id')
+                    $('.c_list_item[pid="'+id+'"]').find('input').prop('checked', '')
+                    $(this).parent().remove()
+                })
+            })
+        }
+        function tochlid(name, id) {
+                var d = {
+                    parentId:id,
+                    search: '',
+                    pageSize:200
+
+                }
+                function callback(data){
+                    console.log(data)
+                    $('.selector_left .c_list_main .c_list_item').remove()
+
+                    for (var i = 0; i < data.listData.length; i++) {
+                                var res = data.listData[i]
+                                var BusinessUnitId = res.BusinessUnitId
+                                var Name = res.Name
+                                $('.selector_left .c_list_main').append('<li class="c_list_item" pid="'+BusinessUnitId+'">'
+                                              + '    <input type="checkbox" />'
+                                              + '    <span>'+Name+'</span>'
+                                              + '</li>')
+                               if(res.Chidren.length>0){
+                                      $('.selector_left .c_list_main .c_list_item').eq(i).append('<span class="tochlidren">下级</span>')
+                                  }
+
+    
+                    }
+                    add()
+                    $('.c_selector_navbar_item').off()
+                    $('.c_selector_navbar_item').click(function () {
+                        $(this).nextAll().remove()
+                        var id = $(this).attr('id')
+                        tochlid('', id)
+                    })
+                    $('.tochlidren').off()
+                    $('.tochlidren').click(function () {
+                        var name = $(this).prev().html()
+                        var id = $(this).parent().attr('pid')
+                        tochlid(name, id)
+                    })
+
+                }
+                
+                ajaxMethodGetData("sys.businessunit.getchild", d, callback)
+
+                $('.c_selector_navbar_box').append('<div class="c_selector_navbar_item" id="'+id+'">'
+                                            +'    <img src="/img/images/img835116a30378ca0.png"/>'
+                                            +'    <span>'+name+'</span>'
+                                            +'</div>')
+            
+            
+        }
+        $('.c_selector_navbar_item').click(function(){
+            tochlid(name,"")
+        })
+        //搜索
+        save()
+        function save(){
+            $('#Save').click(function(){
+                var lknm=getQueryString('lkn');
+                var ids = ''
+                var names = ''
+                $('.selector_right .c_list_item').each(function(){
+                    if(ids==''){
+                        ids = $(this).attr('id')
+                        names = $(this).find('span').html()
+                    }else{
+                        ids += ','+$(this).attr('id')
+                        names += ','+$(this).find('span').html()
+                    }
+                })
+                parent.deptPicker(lknm,ids,names);
+                parent.$('#changeDiv2').hide()
+                parent.$('#changeDiv').hide()
+            })
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,650 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/mission-header.css">
+    <link rel="stylesheet" href="/css/cal/mission.css">
+    <link rel="stylesheet" href="/css/cntrt/cntrt.css">
+    <link rel="stylesheet" href="/css/cal/newmission.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/template/css/alert.css">
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <style>
+        .checkbox {
+            min-width:0px !important;
+        }
+        #popup-newmission {
+            display: block;
+            left: 50%;
+            top: 50%;
+            margin-left: -500px;
+            margin-top: -330px;
+        }
+
+        .popup-mask {
+            display: block;
+        }
+
+        .form-element {
+            margin-left: 115px;
+            min-width: 300px !important;
+            width: 300px !important;
+        }
+
+            .form-element > input {
+                margin-top: -2px !important;
+                line-height: 25px !important;
+            }
+
+        #newmission .missmessage-body .tree span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+
+        #newmission .missmessage-body .appends span {
+            height: 18px;
+            line-height: 18px;
+            display: inline-block;
+            float: none;
+        }
+    .popup-foot > button:hover {
+    background-color: #f4f2f2;
+    color: #108af9;
+}
+    .popup-foot > button {
+
+    float: right;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    color: #108af9;
+    height: 32px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 0 10px;
+}#popup-newmission{
+    overflow:visible;
+    }
+    .form-checking{
+        padding-left:115px;
+        color:#ff6666;
+        font-size:14px;
+    line-height:30px;
+    height:0;
+    position:absolute;
+    top:35px;
+    }
+    .activity{
+        border:1px solid #ff6666 !important;
+    }
+    .boxshaw{
+        top:-150px;
+    }
+    .form-error{
+        width:90%;
+        margin-left:5%;
+        background: rgb(194, 57, 52);
+        padding:15px;
+        color:#fff;
+        border-radius:4px;
+        height:50px;
+        box-sizing:border-box;
+    }
+    .form-error2{
+    color:rgb(194, 57, 52);
+    margin-left:65px;
+    margin-top:10px;
+    font-size:14px;
+}
+    .popup-mask {
+            z-index:199;
+        }
+        .popup {
+            z-index:200;
+        }
+        #newmission .pinput3 {
+            width:50% !important;
+        }
+        #newmission .pinput2 {
+            width:35% !important;
+        }
+        .divinput {
+            width:auto;
+        }
+        .missmessage {
+            height:320px !important;
+        }
+        .disstatus {
+            border-color:rgb(194, 57, 52) !important;
+        }
+        .checkbox.active {
+    background: url('/img/cal/checked.png') no-repeat center;
+    background-color: white !important;
+    border-radius: 2px !important;
+    background-size: 14px;
+}
+        #newmission .missmessage-body .time input{
+            width:100% !important;
+            background-color:transparent;
+        }
+        .approve{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup-newmission">
+        <div class="popup-exit"></div>
+        <div class="popup-head">会议室预约</div>
+        <div class="modal-header">
+        </div>
+        
+        <form id="editPage" name="editPage">
+            <input type="hidden" name="objTypeCode" id="objTypeCode" value="1010" />
+            <div id="newmission">
+                <div class="missmessage">
+                    <div class="missmessage-head">
+                        预约信息<span style="color:red">（如因工作冲突，请提前取消会议室预约）</span>
+                    </div>
+                    <div class="missmessage-body">
+                        <div class="missmessage-bodyleft">
+                            <div class="title">
+                                <b>*</b>
+                                <span class="spanact1">主题</span>
+                                <p class="pinput1 save-checking-input">
+                                    <input class="" type="text" required="required" style="width: 300px" id="Subject" />
+                                </p>
+                            </div>
+                            <div class="title">
+                            <b>*</b>
+                            <span class="spanact1">预约人</span>
+                            <div class="form-element save-checking-input">
+                                <input class="" type="text" placeholder="搜索联系人" />
+                                <input type="hidden" id="OwningUser" name="OwningUser" data-object="8" />
+                                <div class="lookup">
+                                    <ul></ul>
+                                </div>
+                                <img src="/img/images/02.1-1.Search_.png" />
+                                <ul></ul>
+                            </div>
+                        </div>
+                            <div class="title">
+                            <b>*</b>
+                            <span class="spanact1">联系电话</span>
+                             <p class="pinput1 save-checking-input">
+                                    <input type="text" style="width: 300px" id="TelePhone" />
+                                </p>
+                        </div>
+                            <div id="Attachs">
+                            <div class="title">
+                                <b></b>
+                                <span>会议室设备</span>
+                            </div>
+                                <div class="Attachsitem">
+                                    <div class="checkbox"></div>
+                                    <span class="checkbox-msg">电脑</span>
+                                    <div class="checkbox"></div>
+                                    <span class="checkbox-msg">投影</span>
+                                    <div class="checkbox"></div>
+                                    <span class="checkbox-msg">多媒体</span>
+                                    <div class="checkbox"></div>
+                                    <span class="checkbox-msg">视频同步</span>
+                                </div>
+                                </div>
+
+                        </div>
+                        <div class="missmessage-bodyright">
+                            <div class="title">
+                            <b>*</b>
+                            <span class="spanact1">会议室</span>
+                            <div class="form-element save-checking-input">
+                                <input type="text" placeholder="搜索会议室" />
+                                <input type="hidden" id="ResourceId" name="RoomId" data-object="20034" />
+                                <div class="lookup">
+                                    <ul></ul>
+                                </div>
+                                <img src="/img/images/02.1-1.Search_.png" />
+                                <ul></ul>
+                            </div>
+                        </div> 
+                            <div class="title">
+                            <b>*</b>
+                            <span class="spanact1 ">参加人数</span>
+                            <p class="pinput1 save-checking-input">
+                               <input class="" type="text" style="width: 300px" id="PeopleQty" />
+                            </p>
+                        </div>
+                         <div class="time title">
+                            <b>*</b>
+                            <span>开始</span>
+                        <div class="divinput">
+                            <p class="starttime pinput3 save-checking-input" style="margin-left: 0px">
+                            <span class="time-tishi">日期</span>
+                                <input class="" type="text" placeholder="--开始日期--" id="laydate1">
+                            </p>
+                            <p style="width: 150px;margin-left: 8px" class="starttime2 pinput2">
+                            <span class="time-tishi">时间</span>
+                                <input class="" type="text" placeholder="--开始时间--" id="starttime-time">
+                            </p>
+                        </div>
+                        </div>
+                            <div class="time title">
+                            <b>*</b>
+                            <span>结束</span>
+                        <div class="divinput">
+                            <p class="starttime pinput3 save-checking-input" style="margin-left: 0px" >
+                                <span class="time-tishi">日期</span>
+                                <input class="" type="text" placeholder="--结束日期--" id="laydate2">
+                            </p>
+                            <p style="width: 150px;margin-left: 8px" class="starttime2 pinput2">
+                            <span class="time-tishi">时间</span>
+                                <input class="" type="text" placeholder="--结束日期--" id="endtime-time">
+                            </p>
+                        </div>
+                        </div>
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+                
+                <div class="markmessage">
+                    <div class="missmessage-head">
+                        备注信息
+                    </div>
+                    <div class="liuyan">备注</div>
+                    <div class="textarea-div">
+                        <textarea cols="140" rows="5" id="Remark" name="Remark"></textarea>
+                    </div>
+                </div>
+
+                <div class="othermessage">
+                    <div class="missmessage-head">
+                        其他信息
+                    </div>
+                    <div class="missmessage-body">
+                        <div class="title">
+                                <b></b>
+                                <span>通知</span>
+                            <div class="checkbox active" id="notifySms"></div>
+                            <span class="checkbox-msg">短信管理员通知</span>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="popup-foot">
+            <button class="popup-foot-shur save-checking">保存</button>
+            <button class="close">取消</button>
+        </div>
+    </div>
+    <div class="popup-mask"></div>
+    <script type="text/javascript" src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/mission-header.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/schedule.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/js/formcontrol.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script>
+        function lookupchosecallback(id) {
+            getroomSundayAllow(id)
+        }
+        var ServiceableStartTime = '10:00:00'
+        var ServiceableEndTime = '20:59:59'
+        if (parent.getQueryString('approve')) {
+            $('.popup-foot-shur.save-checking').html('提交审批')
+            if (getQueryString('roomid') && getQueryString('roomid') != '') {
+                getroomSundayAllow(getQueryString('roomid'))
+            }
+        }
+        
+        function error3(type) {
+            $("body").append('<div class="success red red3" style="left: 45%;width: auto; z-index:9999;"><span class="success_icon" style="background: #C23934;border: 1px solid #fff;"><i class="iconfont icon-cuohao" style="top: -7px;position: relative;left: 2px;font-size: 20px;"></i></span><div class="toastContent slds-notify__content" style="flex: 1;"><div class="slds-align-middle slds-hyphenate" style="font-size: 16px;"><span class="toastMessage slds-text-heading--small forceActionsText"></span></div></div></div>')
+            if (type) {
+                $(".toastMessage").html(type)
+            }
+            setTimeout(function () {
+                $(".success").remove()
+                parent.$('#changeDiv').hide()
+            }, 3000)
+        }
+        var msgid = getQueryString('msgid')
+        getdetial()
+        function getdetial() {
+            var d = {
+                ObjTypeCode: 20035
+            }
+            function callback(data) {
+                if (data.context.picklistValuesMap.Attachs) {
+                    var Attachs = data.context.picklistValuesMap.Attachs
+                    $('#Attachs .Attachsitem').find('div').remove()
+                    $('#Attachs .Attachsitem').find('span').remove()
+                    for (var i = 0; i < Attachs.length; i++) {
+                        $('#Attachs .Attachsitem').append('<div class="checkbox"></div><span class="checkbox-msg">' + Attachs[i].label + '</span> ')
+                    }
+                    $('.checkbox').click(function () {
+                        $(this).toggleClass('active')
+                        if ($(this).hasClass('active')) {
+                            if (Attachs == '') {
+                                Attachs = $(this).next().html()
+                                //alert(Attachs)
+                            } else {
+                                Attachs = $(this).next().html()
+                                if (Attachs == "多媒体")
+                                {
+                                    //alert(123);
+                                }
+                            }
+                        }
+                    })
+                }
+
+            }
+            ajaxMethodGetAsyncData('entity.detail.get', d, false, callback)
+        }
+        $('.popup-foot-shur').click(function(){
+            var that =  this
+            var Subject = $('#Subject').val()
+            var OwningUser = $('#OwningUser').parent().children('ul').find('li').attr('id')
+            var ResourceId = $('#ResourceId').parent().children('ul').find('li').attr('id')
+            var ScheduledStart = $('#laydate1').val() + ' ' + $('#starttime-time').val()
+            var ScheduledEnd = $('#laydate2').val() + ' ' + $('#endtime-time').val()
+            
+            var Description = $('#Remark').val()
+            var Attachs = ''
+            $('#Attachs').find('.checkbox').each(function(){
+                if($(this).hasClass('active')){
+                    if(Attachs == ''){
+                        Attachs = $(this).next().html()
+                    }else{
+                        Attachs = Attachs+','+$(this).next().html()
+                    }
+                }
+            })
+            var TelePhone = $('#TelePhone').val()
+            var PeopleQty = $('#PeopleQty').val()
+
+            if (Date.parse(ScheduledStart)>Date.parse(ScheduledEnd)) {
+                error3('开始时间不能大于结束时间！')
+                return
+            }
+            else if (Date.parse(ScheduledStart) == Date.parse(ScheduledEnd)) {
+                error3('开始时间不能等于结束时间！')
+                return
+            }
+            
+            if (parent.getQueryString('approve')) {
+                if ($('#starttime-time').val().split(':').join('') < ServiceableStartTime.split(':')[0] + ServiceableStartTime.split(':')[1] || $('#endtime-time').val().split(':').join('') > ServiceableEndTime.split(':')[0] + ServiceableEndTime.split(':')[1]) {
+                    error3('预约时间只能位于' + ServiceableStartTime + '-' + ServiceableEndTime + '之间')
+                    return
+                }
+            }
+
+            if ($('#notifySms').hasClass('active')) {
+                var notifySms = true
+            } else {
+                var notifySms = false
+            }
+            var d= {
+                Subject:Subject,
+                OwningUser:OwningUser,
+                ResourceId:	ResourceId,
+                ScheduledStart:	ScheduledStart,
+                ScheduledEnd:ScheduledEnd,
+                Description:Description,
+                Attachs:Attachs,
+                TelePhone:TelePhone,
+                ObjTypeCode:20035,
+                PeopleQty: PeopleQty,
+                notifySms:notifySms
+            }
+            if(msgid){
+                d.Id = msgid
+            }
+            function callback(data){
+                
+                if (data.status != 1) {
+                    alert(data.msg);
+                } else {
+                    parent.$('#iframe').hide()
+                    parent.$('#changeDiv').hide()
+                    parent.getdata()
+                    parent.success2('保存成功')
+                }
+                //parent.window.location.reload()
+                
+            }
+            setTimeout(function () {
+                if ($(that).hasClass('active')) {
+                    ajaxMethodPostData('meetingroom.peoplenumber.check', {
+                        meetingRoomId: ResourceId,
+                        joinNumber: PeopleQty
+                    }, function (data) {
+                        if (data.status == 1) {
+                            ajaxMethodPostData('meetingroom.reservation.edit', d, callback)
+                        } else {
+                            alert(data.msg);
+                        }
+                    })
+
+                }
+            }, 500)
+        })
+        $(".form-tree").each(function () {
+            $(this).click(function () {
+                $(this).find(".element-tree").show()
+            })
+        })
+
+        
+        $(".popup-exit").click(function () {
+            parent.$('#iframe').hide()
+        })
+        $(".close").off()
+        $(".close").click(function () {
+            parent.$('#iframe').hide()
+            parent.$('#changeDiv').hide()
+        })
+        $(".currentDate").each(function () {
+            $(this).click(function () {
+                $(this).parents(".title").attr("status", "status")
+            })
+        })
+        laydate.render({
+            elem: '#laydate1',
+        })
+        laydate.render({
+            elem: '#laydate2',
+        })
+        laydate.render({
+            elem: '#starttime-time',
+            type: 'time',
+            format: 'HH:mm'
+        })
+        laydate.render({
+            elem: '#endtime-time',
+            type: 'time',
+            format: 'HH:mm'
+        })
+        var time = getQueryString('time')
+        var day = getQueryString('day')
+        var roomid = getQueryString('roomid')
+        var roomname = getQueryString('roomname')
+        if (time) {
+            $('.starttime2.pinput2 select').eq(0).val(time)
+            var endtime = parseInt(time.split(':')[0]) + 1
+            if (endtime < 10) {
+                endtime = '0' + endtime
+            }
+            endtime += ':00'
+            $('.starttime2.pinput2 select').eq(1).val(endtime)
+        }
+        if (day) {
+            $('#laydate1').val(day)
+            $('#laydate2').val(day)
+        }
+        if (!time) {
+            var myDate = new Date();
+            var h = myDate.getHours();
+            var eh = h+1
+            if(h<10){
+                h = '0'+h
+            }
+            if(eh<10){
+                eh = '0'+eh
+            }
+            $('#starttime-time').val(h + ':00')
+
+            $('#endtime-time').val(h + 1 + ':00')
+        }
+        if (roomid) {
+            $('.form-element').eq(1).addClass('active')
+            $('.form-element').eq(1).find('input').hide()
+            $('.form-element').eq(1).find('img').attr('src','/img/images/Close.png')
+            $('.form-element').eq(1).find('input').val(roomid)
+
+            $('.form-element').eq(1).children('ul').append('<li id="'+roomid+'">'+roomname+'</li>')
+        }
+        if(msgid){
+            var d = {
+                Id:msgid,
+                ObjTypeCode:20035
+            }
+            function callback(data){
+               
+                var res = data.record
+                var Subject = res.Subject
+                var ResourceId = res.ResourceId.Id
+                var Resourcename = res.ResourceId.Name
+                var OwningUser = res.OwningUser.Id
+                var OwningUsername = res.OwningUser.Name
+                var PeopleQty = res.PeopleQty
+                var Description = res.Description
+                var Attachs = res.Attachs
+                var ScheduledEnd = res.ScheduledEnd
+                var ed = ''
+                var sd = ''
+                var et = ''
+                var st = ''
+                if(ScheduledEnd.indexOf('/')){
+                    ed = ScheduledEnd.split(' ')[0].split('/').join('-')
+                }else if(ScheduledEnd.indexOf('-')){
+                    ed = ScheduledEnd.split(' ')[0]
+                }
+                var ScheduledStart = res.ScheduledStart
+                if(ScheduledStart.indexOf('/')){
+                    sd = ScheduledStart.split(' ')[0].split('/').join('-')
+                }else if(ScheduledStart.indexOf('-')){
+                    sd = ScheduledStart.split(' ')[0]
+                }
+                et = ScheduledEnd.split(' ')[1]
+                st = ScheduledStart.split(' ')[1]
+                $('#laydate1').val(sd)
+                $('#laydate2').val(ed)
+                if(et.length>5){
+                    et = et.substring(0,et.length-3)
+                }
+                if(et.length == 4){
+                    et = '0'+et
+                }
+                if(st.length>5){
+                    st = st.substring(0,st.length-3)
+                }
+                if(st.length == 4){
+                    st = '0'+st
+                }
+
+                if (Attachs != '') {
+                    Attachs = Attachs.split(',')
+                    for (var i = 0; i < $('.Attachsitem .checkbox-msg').length; i++) {
+                        for (var j = 0; j < Attachs.length; j++) {
+                            if (Attachs[j] == $('.Attachsitem .checkbox-msg').eq(i).html()) {
+                                $('.Attachsitem div').eq(i).addClass('active')
+                            }
+    
+                        }
+                    }
+                }
+
+                $('#starttime-time').val(st)
+                $('#endtime-time').val(et)
+                var TelePhone = res.TelePhone
+                $('#Subject').val(Subject)
+                $('#PeopleQty').val(PeopleQty)
+                $('#TelePhone').val(TelePhone)
+                $('#Remark').val(Description)
+                if(ResourceId!=''){
+                    $('.form-element').eq(1).addClass('active')
+                    $('.form-element').eq(1).find('input').hide()
+                    $('.form-element').eq(1).find('input').val(ResourceId)
+                    $('.form-element').eq(1).find('img').attr('src', '/img/images/Close.png')
+                    $('.form-element').eq(1).children('ul').append('<li id='+ResourceId+'>'+Resourcename+'</li>')
+                }
+                if(OwningUser!=''){
+                    $('.form-element').eq(0).addClass('active')
+                    $('.form-element').eq(0).find('input').hide()
+                    $('.form-element').eq(0).find('input').val(ResourceId)
+                    $('.form-element').eq(0).find('img').attr('src', '/img/images/Close.png')
+                    $('.form-element').eq(0).children('ul').append('<li id="'+OwningUser+'">'+OwningUsername+'</li>')
+                }
+                if(OwningUser==''){
+                    var OwningUser = parent.$('#iframe').attr('OwningUser')
+                    var OwningUsername = parent.$('#iframe').attr('OwningUsername')
+                    $('.form-element').eq(0).addClass('active')
+                    $('.form-element').eq(0).find('input').hide()
+                    $('.form-element').eq(0).find('input').val(OwningUser)
+
+                    $('.form-element').eq(0).find('img').attr('src', '/img/images/Close.png')
+                    $('.form-element').eq(0).children('ul').append('<li id="'+OwningUser+'">'+OwningUsername+'</li>')
+                }              
+            }
+            ajaxMethodPostData('entity.detail.get',d,callback)
+        
+        }
+        if(!msgid){
+            var OwningUser = parent.$('#iframe').attr('contextuserid')
+            var OwningUsername = parent.$('#iframe').attr('contextname')
+            $('.form-element').eq(0).addClass('active')
+            $('.form-element').eq(0).find('input').hide()
+            $('.form-element').eq(0).find('input').val(OwningUser)
+
+            $('.form-element').eq(0).find('img').attr('src', '/img/images/Close.png')
+            $('.form-element').eq(0).children('ul').append('<li id="'+OwningUser+'">'+OwningUsername+'</li>')
+        }
+       
+        function starttimechange(time) {
+            var h = Number(time.split(':')[0]) + 1
+            if (h < 10) {
+                h = '0' + h
+            }
+            var m = time.split(':')[1]
+            ntime = h + ':' + m
+            $('#endtime-time').val(ntime)
+        }
+        
+        function getroomSundayAllow(id) {
+            ajaxMethodGetData('entity.detail.get',{
+                id:id,
+                ObjTypeCode: 20034,
+            }, function (data) {
+                if (data.record.ServiceableStartTime && data.record.ServiceableStartTime!='') {
+                    ServiceableStartTime = data.record.ServiceableStartTime
+                    ServiceableEndTime = data.record.ServiceableEndTime
+                }
+            })
+        }
+    </script>
+</body>
+</html>

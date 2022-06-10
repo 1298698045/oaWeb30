@@ -1,0 +1,650 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>日程编辑</title>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <link href="/element/element.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/template/js/vuetemplate.js"></script>
+    <style>
+        .el-date-editor.el-input {
+            width:80%;
+        }
+        .el-select {
+            width:100%;
+            
+        }
+        .el-select-dropdown {
+            z-index:9999 !important;
+        }
+        .el-input-group__prepend .el-select{
+            width:100px;
+        }
+        .lookresultbtn{
+            top:29px ;
+            color:#666;
+        }
+        .searchtype,.searchbody{
+            float:left;
+        }
+        .searchtype{
+            width:30%;
+        }
+        .searchtype input{
+            border-right:0;
+            border-radius:4px 0 0 4px;
+        }
+        .search-body{
+            width:70%;
+        }
+        .search-body input{
+            border-radius: 0 4px 4px 0 ;
+        }
+        .slds-section__title{
+            margin:10px 0;
+        }
+        .lookresultbtn:hover {
+            color: #108def;
+        }
+        .lookresultbtn {
+            top: 29px;
+            color: #666;
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+        }
+        .el-popper{
+            z-index:99999 !important;
+        }
+         .modal-body {
+            padding: 20px !important;
+            padding-top:30px !important;
+        }
+        
+         .forcePageBlockItemEdit{
+            padding: 0 12px !important;
+         }
+         body #iframe {
+            width: 100% !important;
+            left: 0% !important;
+            top: 0% !important;
+            margin: 0 !important;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">新建日程</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="folderNameDialog analyticsHomeFolderNameDialog" data-aura-rendered-by="3:961;a" data-aura-class="analyticsHomeFolderNameDialog">
+                                <div class="folderNameField" data-aura-rendered-by="4:961;a">
+                                    <h3 class="slds-section__title slds-theme--shade primaryPaletteBorder test-id__section-header-container" data-aura-rendered-by="509:6476;a"><span class="test-id__section-header-title section-header-title slds-p-horizontal--small slds-truncate" data-aura-rendered-by="511:6476;a">日历详细信息</span></h3>
+                                    <div class="test-id__section-content slds-section__content section__content">
+                                        <div class="slds-form slds-form_stacked slds-is-editing">
+                                            <div class="slds-grid slds-gutters_small cols-2 forcePageBlockSectionRow">
+                                                <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                    <div class="slds-form-element slds-hint-parent">
+                                                        <div class="slds-form-element__control">
+                                                            <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                    <span class="" data-aura-rendered-by="12114:0">被分配人</span>
+                                                                    <span class="red" data-aura-rendered-by="8:6476;a" style="float:left;color:rgb(194, 57, 52)">*</span>
+                                                                </div>
+                                                                <lookupchooks-template
+                                                                    v-if="!OwningUserdisabled"
+                                                                    class="save-checking-input"
+                                                                    :disabled="OwningUserdisabled"
+                                                                    :checked="checked" 
+                                                                    vuename="vum" 
+                                                                    title="请选择姓名" 
+                                                                    ref="namechook" 
+                                                                    :search="search" 
+                                                                    :value="list.OwningUser" 
+                                                                    name="OwningUser" 
+                                                                    objtypecode="30020">
+                                                                </lookupchooks-template>
+                                                                <el-input v-if="OwningUserdisabled" disabled="disabled" v-model="list.OwningUserName"></el-input>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                    <div class="slds-form-element slds-hint-parent">
+                                                        <div class="slds-form-element__control">
+                                                            <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                    <span class="" data-aura-rendered-by="12114:0">主题</span>
+                                                                    <span class="required " data-aura-rendered-by="8:6476;a">*</span>
+                                                                </div>
+                                                                <el-input class="save-checking-input" v-model="list.Subject" placeholder="请输入内容"></el-input>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="slds-grid slds-gutters_small cols-2 forcePageBlockSectionRow">
+                                                <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                    <div class="slds-form-element slds-hint-parent">
+                                                        <div class="slds-form-element__control">
+                                                            <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                    <span class="" data-aura-rendered-by="12114:0">联系电话</span>
+                                                                </div>
+                                                                <el-input v-model="list.Phone" placeholder="请输入内容"></el-input>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                    <div class="slds-form-element slds-hint-parent">
+                                                        <div class="slds-form-element__control">
+                                                            <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                    <span class="" data-aura-rendered-by="12114:0">日程类型</span>
+                                                                    <span class="required " data-aura-rendered-by="8:6476;a">*</span>
+                                                                </div>
+                                                                <el-select class="save-checking-input" v-model="list.CalendarType" placeholder="请选择日程类型" @change="calendarTypechange">
+                                                                    <el-option value="工作" label="工作"></el-option>
+                                                                    <el-option value="个人" label="个人"></el-option>
+                                                                </el-select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                                <div class="slds-grid slds-gutters_small cols-2 forcePageBlockSectionRow">
+                                                    <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                        <div class="slds-form-element slds-hint-parent">
+                                                            <div class="slds-form-element__control">
+                                                                <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                    <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                        <span class="" data-aura-rendered-by="12114:0">位置</span>
+                                                                    </div>
+                                                                    <el-input v-model="list.Location" placeholder="请输入内容"></el-input>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                        <div class="slds-form-element slds-hint-parent">
+                                                            <div class="slds-form-element__control">
+                                                                <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                    <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                        <span class="" data-aura-rendered-by="12114:0">开始</span>
+                                                                        <span class="required " data-aura-rendered-by="8:6476;a">*</span>
+                                                                    </div>
+                                                                    <div class="form--stacked form-element__group">
+                                                                        <div class="dateTime-inputDate form-element form-element__control" data-aura-rendered-by="141:6476;a">
+                                                                            <label class="form-element__label" for="130:6476;a" data-aura-rendered-by="142:6476;a">日期</label>
+                                                                            <el-date-picker value-format="yyyy-MM-dd"
+                                                                                            class="save-checking-input"
+                                                                                            v-model="list.StartDateTime"
+                                                                                            type="date"
+                                                                                            placeholder="选择日期">
+                                                                            </el-date-picker>
+                                                                        </div>
+                                                                        <div v-if="list.IsAllDayEvent==false" class="dateTime-inputDate form-element form-element__control" data-aura-rendered-by="141:6476;a">
+                                                                            <label class="form-element__label" for="130:6476;a" data-aura-rendered-by="142:6476;a">时间</label>
+                                                                            <el-time-picker @change="timechange"
+                                                                                            value-format="HH:mm"
+                                                                                            class="save-checking-input"
+                                                                                            v-model="list.StartDateTime_time"
+                                                                                            placeholder="选择时间">
+                                                                            </el-time-picker>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-grid slds-gutters_small cols-2 forcePageBlockSectionRow">
+                                                   
+                                                    <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                        <div class="slds-form-element slds-hint-parent">
+                                                            <div class="slds-form-element__control">
+                                                                <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                    <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                        <span class="" data-aura-rendered-by="12114:0">相关项</span>
+                                                                    </div>
+                                                                    <div placeholder="请输入内容" class="input-with-select">
+                                                                        <el-select class="searchtype" v-model="list.RegardingObjectTypeCode" placeholder="请选择">
+                                                                            <el-option label="项目" :value="20290"></el-option>                                                                           
+                                                                            <el-option label="流程事务" :value="122"></el-option>
+                                                                            <el-option label="会议" :value="5000"></el-option>
+                                                                            <el-option label="客户、合作伙伴" :value="1"></el-option>
+                                                                            <el-option label="客户联系人" :value="2"></el-option>
+                                                                        </el-select>
+                                                                        <el-select class="search-body"
+                                                                                   v-model="list.RegardingObjectId.Id"
+                                                                                   filterable
+                                                                                   remote
+                                                                                   @visible-change="getlookup(list.RegardingObjectTypeCode,'RegardingObjectId')"
+                                                                                   :remote-method="function(query){searchlookup(query,list.RegardingObjectTypeCode,'RegardingObjectId')}"
+                                                                                   placeholder="请选择" @change="RegardingChanged">
+                                                                            <el-option v-for="item in search.RegardingObjectId"
+                                                                                       :key="item.ID"
+                                                                                       :label="item.Name"
+                                                                                       :value="item.ID">
+                                                                            </el-option>
+                                                                        </el-select>
+                                                                        <div @click="openslookup('RegardingObjectId',list.RegardingObjectTypeCode)" class="lookresultbtn">
+                                                                            <i class="el-icon-search"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                        <div class="slds-form-element slds-hint-parent">
+                                                            <div class="slds-form-element__control">
+                                                                <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                    <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                        <span class="" data-aura-rendered-by="12114:0">结束</span>
+                                                                        <span class="required " data-aura-rendered-by="8:6476;a">*</span>
+                                                                    </div>
+                                                                    <div class="form--stacked form-element__group">
+                                                                        <div class="dateTime-inputDate form-element form-element__control" data-aura-rendered-by="141:6476;a">
+                                                                            <label class="form-element__label" for="130:6476;a" data-aura-rendered-by="142:6476;a">日期</label>
+                                                                            <el-date-picker value-format="yyyy-MM-dd"
+                                                                                            class="save-checking-input"
+                                                                                            v-model="list.EndDateTime"
+                                                                                            type="date"
+                                                                                            placeholder="选择日期">
+                                                                            </el-date-picker>
+                                                                        </div>
+                                                                        <div v-if="list.IsAllDayEvent==false" class="dateTime-inputDate form-element form-element__control" data-aura-rendered-by="141:6476;a">
+                                                                            <label class="form-element__label" for="130:6476;a" data-aura-rendered-by="142:6476;a">时间</label>
+                                                                            <el-time-picker value-format="HH:mm"
+                                                                                            class="save-checking-input"
+                                                                                            v-model="list.EndDateTime_time"
+                                                                                            placeholder="选择时间">
+                                                                            </el-time-picker>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-grid slds-gutters_small cols-2 forcePageBlockSectionRow">
+                                                    <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                        <div class="slds-form-element slds-hint-parent">
+                                                            <div class="slds-form-element__control">
+                                                                <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                    <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                        <span class="" data-aura-rendered-by="12114:0">全天事件</span>
+                                                                    </div>
+                                                                    <el-checkbox id="IsAllDayEvent" class="" v-model="list.IsAllDayEvent"></el-checkbox>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                                        <div class="slds-form-element slds-hint-parent">
+                                                            <div class="slds-form-element__control">
+                                                                <div class="uiInput uiInputText uiInput--default uiInput--input" data-aura-class="uiInput uiInputText uiInput--default uiInput--input">
+                                                                    <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                                        <span class="" data-aura-rendered-by="12114:0">私有</span>
+                                                                    </div>
+                                                                    <el-checkbox id="IsAllDayEvent" class="" v-model="list.DisplayStatus"></el-checkbox>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-grid slds-gutters_small cols-2 forcePageBlockSectionRow">
+
+
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="folderDevNameDialog analyticsHomeFolderNameDialog" data-aura-rendered-by="1:966;a" data-aura-class="analyticsHomeFolderNameDialog">
+                                <div class="folderDevNameField" data-aura-rendered-by="2:966;a">
+                                    <div class="uiInput uiInputText uiInput--default uiInput--input">
+                                        <h3 class="slds-section__title slds-theme--shade primaryPaletteBorder test-id__section-header-container" data-aura-rendered-by="509:6476;a"><span class="test-id__section-header-title section-header-title slds-p-horizontal--small slds-truncate" data-aura-rendered-by="511:6476;a">提醒信息</span></h3>
+                                        <div style="padding:5px;" class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                            <div class="label inputLabel uiLabel-left form-element__label uiLabel" style="width: 100%;">
+                                                <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                    <span class="" data-aura-rendered-by="12114:0">提醒设置</span>
+                                                </div>
+                                                <el-checkbox id="IsAllDayEvent" class="" v-model="list.Reminder"></el-checkbox>
+                                             </div>
+                                        </div>
+                                        <div v-if="list.Reminder" style="padding:5px;" class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                            <div class="label inputLabel uiLabel-left form-element__label uiLabel" style="width: 50%;">
+                                                <div class="label inputLabel uiLabel-left form-element__label uiLabel">
+                                                    <span class="" data-aura-rendered-by="12114:0">提醒时间</span>
+                                                </div>
+                                                <el-select  v-model="list.ReminderTime" placeholder="请选择提醒时间">
+                                                    <el-option value="15" label="开始前15分钟"></el-option>
+                                                    <el-option value="30" label="开始前30分钟"></el-option>
+                                                    <el-option value="60" label="开始前60分钟"></el-option>
+                                                </el-select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="folderDevNameDialog analyticsHomeFolderNameDialog" data-aura-rendered-by="1:966;a" data-aura-class="analyticsHomeFolderNameDialog">
+                                <div class="folderDevNameField" data-aura-rendered-by="2:966;a">
+                                    <div class="uiInput uiInputText uiInput--default uiInput--input">
+                                        <h3 class="slds-section__title slds-theme--shade primaryPaletteBorder test-id__section-header-container" data-aura-rendered-by="509:6476;a"><span class="test-id__section-header-title section-header-title slds-p-horizontal--small slds-truncate" data-aura-rendered-by="511:6476;a">备注信息</span></h3>
+                                        <div class="slds-grid slds-col slds-is-editing slds-has-flexi-truncate full forcePageBlockItem forcePageBlockItemEdit">
+                                            <div class="label inputLabel uiLabel-left form-element__label uiLabel" style="width: 100%;">
+                                                <span class="" data-aura-rendered-by="12114:0">内容</span>
+                                                <textarea v-model="list.Description"class="textarea textarea uiInput uiInputTextArea uiInput--default uiInput--textarea" cols="20" rows="8" maxlength="32000" aria-describedby="quickTextKeyboardTip" role="textbox" placeholder="" id="518:6476;a" data-aura-rendered-by="545:6476;a" data-aura-class="uiInput uiInputTextArea uiInput--default uiInput--textarea" data-interactive-lib-uid="108"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class="label bBody">取消</span>
+                                </button>
+                                <button class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" id="Save" name="Save" title="附加文件 （新窗口）" type="button">
+                                    <span class="label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="changeDiv" style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 9999;display:none;">
+        <iframe id="iframe" style="width: 100%; height: 100%!important; position: fixed; top: 0; left: 0;"></iframe>
+    </div>
+    <script>
+        
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    RegardingObjectTypeCode: '20290',
+                    RegardingObjectId: {},
+                    Subject:'',
+                    StartDateTime: '',
+                    StartDateTime_time: '',
+                    ScheduledStart: '',
+                    ScheduledEnd:'',
+                    EndDateTime: '',
+                    EndDateTime_time: '',
+                    OwningUser: {},
+                    IsAllDayEvent: false,
+                    Location: '',
+                    Description: '',
+                    CalendarType: '',
+                    RegardingObjectIdName:''
+                },
+                OwningUserdisabled:false,
+                search: {
+                    OwningUser: [],
+                    RegardingObjectId:[],
+                    searchname: [{ Lktp: 8, name: 'OwningUser' }]
+                },
+                checked: {
+                    OwningUser: [],
+
+                }
+            },
+            
+            computed: {
+                ScheduledStart: function () {
+                    return this.list.StartDateTime + ' ' + this.list.StartDateTime_time
+                },
+                ScheduledEnd: function () {
+                    return this.list.EndDateTime + ' ' + this.list.EndDateTime_time
+                },
+
+            },
+            created: function () {
+                this.getData()
+                this.gettime()
+
+                
+            },
+            components: {
+                'lookupchooks-template': lookupchookstemplate,
+            },
+            methods: {
+                RegardingChanged: function (val) {
+                    var obj = {};
+                    obj = this.search.RegardingObjectId.find(function (item) {
+                        return item.ID === val;
+                    });
+                    this.list.RegardingObjectIdName=obj.Name
+                },
+                openslookup: function (name, objtypecode) {
+                    $('#changeDiv').show()
+                    if (objtypecode == 30020) {
+                        $('#iframe').attr('src', '/_ui/common/data/UserLookResult.html?name=' + name)
+                    } else if (objtypecode == 10) {
+                        $('#iframe').attr('src', '/_ui/common/data/deptchose_form.html?name=' + name)
+                    } else if (objtypecode == 8) {
+                        $('#iframe').attr('src', '/_ui/common/data/UserLookResult.html?name=' + name)
+                    } else {
+                        $('#iframe').attr('src', '/alert/lookupiframe2.html?name=' + name + '&objtypecode=' + objtypecode)
+                    }
+                },
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('msgid')
+                    if (id != null && id != '') {
+                        this.OwningUserdisabled = true
+                        var ObjectTypeCode = ObjectTypeCode
+                        var d = {
+                            Id: id,
+                            ObjTypeCode: 4200
+                        }
+                        function callback(data) {
+                            that.list = data.record
+                            that.list.ObjTypeCode = 4200
+                            that.$set(that.list, 'StartDateTime', data.record.ScheduledStart.split(' ')[0])
+                            that.$set(that.list, 'StartDateTime_time', data.record.ScheduledStart.split(' ')[1])
+                            that.$set(that.list, 'EndDateTime', data.record.ScheduledEnd.split(' ')[0])
+                            that.$set(that.list, 'EndDateTime_time', data.record.ScheduledEnd.split(' ')[1])
+                            that.$set(that.list, 'OwningUserName', data.record.OwningUser.Name)
+                            that.$set(that.list, 'OwningUser', { Id: [data.record.OwningUser.Id] })
+                            that.$set(that.list, 'Phone', data.record.Phone)
+                            that.$set(that.list, 'RegardingObjectId', { Id: data.record.RegardingObjectId.Id, Name: data.record.RegardingObjectIdName,objectTypeCode: "0",sobjectType: "0" })
+                            that.$set(that.search, 'RegardingObjectId', [{ ID: data.record.RegardingObjectId.Id, Name: data.record.RegardingObjectIdName, objectTypeCode: "0", sobjectType: "0" }])
+                            that.$set(that.list, 'RegardingObjectIdName', data.record.RegardingObjectIdName)
+                            that.$set(that.list, 'RegardingObjectTypeCode', data.record.RegardingObjectTypeCode ? data.record.RegardingObjectTypeCode : that.list.RegardingObjectTypeCode)
+                            that.$set(that.list, 'CalendarType', data.record.CalendarType)
+                            if (data.record.ReminderTime != '') {
+                                that.$set(that.list, 'Reminder', true)
+                            }
+                        }
+                        ajaxMethodGetData('entity.detail.get', d, callback)
+                    } else {
+                        that.$set(that.list, 'OwningUserName', getQueryString('OwningUserName'))
+                        that.$set(that.list, 'OwningUser', { Id: [getQueryString('OwningUser')] })
+                        if (JSON.stringify(this.search.OwningUser).indexOf(getQueryString('OwningUser')) == -1) {
+                            this.search.OwningUser.push({
+                                ID: getQueryString('OwningUser'),
+                                Name: getQueryString('OwningUserName')
+                            })
+                            this.checked.OwningUser.push({
+                                ID: getQueryString('OwningUser'),
+                                Name: getQueryString('OwningUserName')
+                            })
+                        }
+                    }
+
+                },
+                saveData: function () {
+
+                },
+                calendarTypechange: function (val) {
+                    console.log(val)
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                        var ids = getQueryString('msgid')
+                        if (ids != null&&ids!='') {
+                            var ID = that.list[name].Id
+                            var Name = that.list[name].Name
+                            var newlist = {
+                                ID: ID,
+                                Name: Name
+                            }
+                            if (ID) {
+                                if (JSON.stringify(that.search[name]).indexOf(JSON.stringify(newlist.ID)) == -1) {
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                    }
+                },
+                timechange: function () {
+                    console.log(this.list.StartDateTime_time)
+                    var h = ''
+                    h = parseInt(this.list.StartDateTime_time.split(':')[0]) + 1
+                    if (h<10) {
+                        this.list.EndDateTime_time = '0' + h + ':' + this.list.StartDateTime_time.split(':')[1]
+                    } else {
+                        this.list.EndDateTime_time = h + ':' + this.list.StartDateTime_time.split(':')[1]
+                    }
+                },
+                gettime: function () {
+                    var day = getQueryString('day')
+                    var time = getQueryString('time')
+                    var allday = getQueryString('allday')
+                    if (allday == 'true') {
+                        this.list.IsAllDayEvent=true
+                    }
+                    if (day&&day != null) {
+                        this.list.StartDateTime = day
+                        this.list.EndDateTime = day
+                    }
+                    if (time&&time != null) {
+                        
+                        this.list.StartDateTime_time = time
+                        this.timechange()
+                    }
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        $('#Save').click(function () {
+            function callback(data) {
+                parent.getdata()
+                parent.$('.popup-mask').hide()
+                parent.$('#changeDiv').hide()
+                parent.$('#iframe').hide()
+            }
+            vum.list.ScheduledStart = vum.ScheduledStart
+            vum.list.ScheduledEnd = vum.ScheduledEnd
+            var d = vum.list
+            var id = getQueryString('id')
+            //var message = {}
+            //if (id != null) {
+            //    message.id = id
+            //}
+            //message.ObjTypeCode = 30020
+            //message.fields = d
+            //var messages = {
+            //    message: message
+            //}
+            //messages = JSON.stringify(messages)
+            var IsAllDayEvent = vum.list.IsAllDayEvent
+            var ScheduledStart = vum.list.StartDateTime
+            if (!IsAllDayEvent) {
+                ScheduledStart = vum.list.ScheduledStart
+            }
+
+            var ScheduledEnd = vum.list.EndDateTime
+            if (!IsAllDayEvent) {
+                ScheduledEnd = vum.list.ScheduledEnd
+            }
+            var OwningUser = vum.list.OwningUser.Id
+            var data = {
+                Location: vum.list.Location,
+                Subject: vum.list.Subject,
+                IsAllDayEvent: vum.list.IsAllDayEvent,
+                Description: vum.list.Description,
+                ScheduledStart: ScheduledStart,
+                ScheduledEnd: ScheduledEnd,
+                CalendarType: vum.list.CalendarType,
+                Phone: vum.list.Phone,
+                RegardingObjectTypeCode: vum.list.RegardingObjectTypeCode,
+                RegardingObjectIdName: vum.list.RegardingObjectIdName,
+                RegardingObjectId: vum.list.RegardingObjectId.Id,
+                ReminderTime: vum.list.ReminderTime,
+            }
+            
+            setTimeout(function () {
+                var save = document.querySelectorAll('.save-checking.active');
+                console.log(save)
+                if (save.length > 0) {
+                    for (var i = 0; i < OwningUser.length; i++) {
+                        data.OwningUser = OwningUser[i]
+                        if (i == OwningUser.length - 1) {
+                            ajaxMethodPostData('calendar.event.edit', data, callback)
+                        } else {
+                            ajaxMethodPostData('calendar.event.edit', data)
+                        }
+                    }
+                }
+            },1000)
+           
+        })
+        $('#closeds').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+        $('#closedsa').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+    </script>
+</body>
+</html>

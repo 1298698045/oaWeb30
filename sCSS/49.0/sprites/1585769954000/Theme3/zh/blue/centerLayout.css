@@ -1,0 +1,319 @@
+.center {
+    margin-top: 64px;
+    background: #f0f2f6;
+}
+.layoutContent{
+    height: 100%;
+}
+.rightWrapper{
+    height: 100%;
+    overflow: auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+.rightWrapper .layoutContainer{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.rightWrapper .layoutContainer.todoListWrap{
+    display: none;
+}
+.treeTemplate{
+    width: 251px;
+    height: 100%;
+    background: #fff;
+    padding: 21px 10px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+.rightWrapper .layoutContainer .guideWrap{
+    flex: 1;
+    height: 100%;
+    padding: 16px 20px;
+    background: #fff;
+    border-left: 1px solid #dcdcdc;
+    box-sizing: border-box;
+    position: relative;
+}
+.rightWrapper .layoutContainer .guideWrap .sanlan{
+    position: absolute;
+    left: 0;
+    top: calc(50% - 56px);
+    border: 10px solid transparent;
+    border-left: 18px solid #d1d1d1;
+    height: 87px;
+    width: 0px;
+    cursor: pointer;
+}
+.rightWrapper .layoutContainer .guideWrap .sanlan.active .icon-xiala{
+    transform: rotate(270deg);
+}
+.rightWrapper .layoutContainer .guideWrap .sanlan .icon-xiala{
+    position: absolute;
+    left: -18px;
+    top: 38px;
+    transform: rotate(90deg);
+    color: #666666;
+}
+.rightWrapper .footInfo{
+    width: 192px;
+    margin: 40px auto 0;
+    text-align: center;
+    font-size: 12px;
+    color: #333333;
+    line-height: 2;
+}
+
+/* 新建事务 */
+.layoutContainer .newTodoWrap{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.panelModuleWrap{
+    width: 100%;
+    border-radius: 4px;
+    min-height: 184px;
+    overflow: auto;
+    background: #fff;
+    padding: 20px 20px 34px 20px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+.panelModuleWrap .panelModuleHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.panelModuleWrap .panelModuleHead .lTitle{
+    font-size: 14px;
+    font-weight: bold;
+    color: #1d2129;
+}
+.panelModuleWrap .panelModuleHead .rContent .search{
+    width: 256px;
+}
+
+.moduleBoxWrap{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.moduleBoxWrap .moduleBox{
+    width: 22%;
+    margin-right: 24px;
+    background: #f2f3f5;
+    box-shadow: rgba(229, 230, 235, 1) solid 1px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.moduleBoxWrap .moduleBox:nth-child(4n){
+    margin-right: 0;
+}
+.moduleBoxWrap .moduleBox .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.moduleBoxWrap .moduleBox .title .leftTitle{
+    font-size: 14px;
+    color: #1d2129;
+    font-weight: bold;
+}
+.moduleBoxWrap .moduleBox  .bottomInfo{
+    padding-top: 6px;
+    font-size: 12px;
+    color: #86909c;
+}
+.moduleBoxWrap .moduleBox .item {
+    margin: 4px;
+}
+.switchWrap{
+    margin-bottom: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* 通讯录看板右侧-头部 */
+.layoutBodyHead{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e6eb;
+}
+.layoutBodyHead .tabContainer{
+    border-bottom: none;
+}
+.rWrap{
+    display: flex;
+}
+.rWrap .btn{
+    margin-right: 8px;
+}
+.select{
+    min-width: 80px;
+    max-width: 160px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 2px;
+    margin-right: 8px;
+    font-size: 14px;
+    color: #4e5969;
+    padding: 5px 12px;
+    background: #f2f3f5;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #4e5969;
+    position: relative;
+    cursor: pointer;
+}
+.select .val{
+    flex: 1;
+}
+.select .arrowIcon{
+    width: 12px;
+    font-size: 12px;
+}
+.select.active{
+    border: 1px solid #165dff;
+    background: #ffff;
+}
+.dropMenuWapper.selectModal{
+    width: 100%;
+    min-height: 86px;
+    max-height: 188px;
+    border: 1px solid #e5e6eb;
+    box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.1);
+    top: 105%;
+    left: 0;
+}
+.dropMenuWapper .dropMenu .dropMenuItem .name{
+    padding-left: 12px;
+}
+.layoutBodyCenter{
+    height: calc(100% - 50px);
+    box-sizing: border-box;
+    padding: 20px;
+    overflow-y: auto;
+}
+.businessWrap{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.businessWrap .businessCartItem{
+    width: 23%;
+    height: 216px;
+    border: 1px solid #e5e6eb;
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.businessWrap .fake_item{
+    flex: 0 0 23%;
+    height: 0;
+}
+.businessWrap .businessCartItem:hover{
+    box-shadow: 4px 4px 10px 0 rgb(0 0 0 / 10%);
+}
+.businessWrap .businessCartItem .cartItemHead {
+    display: flex;
+}
+.businessWrap .businessCartItem .cartItemHead .cartAvatar{
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+.businessWrap .businessCartItem .cartItemHead .cartAvatar .iconfont{
+    color: #C9CDD4;
+    text-align: center;
+    font-size: 62px;
+}
+.businessWrap .businessCartItem .cartItemHead .cartInfo{
+    flex: 1;
+    margin-left: 10px;
+}
+.businessWrap .businessCartItem .cartItemHead .cartInfo .name{
+    font-size: 14px;
+    color: #1d2129;
+    font-weight: bold;
+}
+.businessWrap .businessCartItem .cartItemHead .cartInfo .depart{
+    font-size: 12px;
+    color: #4e5969;
+    line-height: 20px;
+}
+.businessWrap .businessCartItem .cartItemHead .cartInfo .desc{
+    font-size: 12px;
+    color: #86909c;
+}
+.businessWrap .businessCartItem .phoneBox{
+    margin-top: 24px;
+}
+.businessWrap .businessCartItem  .label{
+    font-size: 12px;
+    color: #86909c;
+}
+.businessWrap .businessCartItem .val{
+    color: #4e5969;
+    font-size: 14px;
+    line-height: 1.7;
+    
+}
+.businessWrap .businessCartItem .emailBox{
+    margin-top: 11px;
+}
+.businessWrap .businessCartItem .copyBoxWrap{
+    display: inline-block;
+}
+.businessWrap .businessCartItem .copyBoxWrap .copyIconBox{
+    display: inline-block;
+    position: relative;
+}
+.businessWrap .businessCartItem .copyBoxWrap:hover .child_tips{
+    display: block;
+}
+.businessWrap .businessCartItem .child_tips{
+    position: absolute;
+    bottom: 120%;
+    left: -22px;
+    border-radius: 2px;
+    width: 62px;
+    height: 34px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 2px 8px 0px rgb(0 0 0 / 20%);
+    color: #fff;
+    text-align: center;
+    line-height: 34px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    display: none;
+}
+.businessWrap .businessCartItem .child_tips .popper__arrow{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 6px;
+    bottom: -6px;
+    border-top-color: #303133;
+    border-bottom-width: 0;
+    left: calc(50% - 6px);
+}
+.personalWrap{
+    margin-top: 20px;
+}

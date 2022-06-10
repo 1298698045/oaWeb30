@@ -1,0 +1,177 @@
+﻿.filter-rowdelete-btn{
+    width:28px;
+    height:28px;
+    background-color:white;
+    border:1px solid #dedede;
+    border-radius:4px;
+    cursor:pointer;
+    text-align:center;
+}
+.filter-rowdelete-btn img{
+    width:15px;
+    height:15px;
+}
+.filter-main table{
+    width:100%;
+}
+.filter-main table td{
+    padding:0 5px;
+}
+.filter-row-head{
+    font-size:12px;
+}
+.filter-main{
+    margin-top:10px;
+    padding-left:30px;
+}
+.filter-addbtn{
+    height:30px;
+    width:30px;
+    color:#108def;
+    border:1px solid #dedede;
+    border-radius:4px;
+    text-align:center;
+    margin-left:35px;
+    margin-top:10px;
+}
+.filter-addbtn img{
+    width:14px;
+    height:14px;
+}
+.filter-addbtn:hover{
+    cursor:pointer;
+    background-color:#f2f2f2;
+}
+.addfiltercontent-value>div{
+    display:none;
+}
+#addfiltercontent-text{
+    display:block;
+}
+.filter-row{
+    height:45px;
+}
+.DroplistTextoptions,.searchDroplistTextoptions{
+    position:absolute;
+    top:-305px;
+    width:100%;
+    max-height:300px;
+    overflow-y:auto;
+    border:1px solid #dedede;
+    background-color:white;
+}
+.DroplistTextoptions li,.searchDroplistTextoptions li{
+    padding:8px;
+    color:#333;
+    cursor:pointer;
+}
+.DroplistTextoptions li:hover,.searchDroplistTextoptions li:hover{
+    background-color:#f2f2f2;
+}
+.DroplistTextoptions li img,.searchDroplistTextoptions li img{
+    height:14px;
+    width:14px;
+    float:right;
+    margin-right:15px;
+    margin-top:2px;
+    display:none;
+}
+.DroplistTextoptions li.active img,.searchDroplistTextoptions li.active img{
+    display:block;
+}
+.DroplistTextoptions,.searchDroplistTextoptions{
+    display:none;
+}
+.DroplistTextvalue,.searchDroplistTextvalue {
+    border:1px solid #dedede;
+    height:38px;
+    box-sizing:border-box;
+    position:relative;
+    cursor:pointer;
+    line-height:38px;
+    padding-left:10px;
+}
+.DroplistTextvalue .downimg,.searchDroplistTextvalue .downimg{
+    width:12px;
+    height:12px;
+    position:absolute;
+    right:10px;
+    top:10px;
+}
+.searchDroplistTextvalue>input{
+    height:30px;
+    line-height:30px;
+    width:100%;
+}
+.addfiltercontent-DroplistText,.addfiltercontent-searchDroplistText{
+    position:relative;
+}
+.addfiltercontent-searchDroplistText{
+    max-width:350px;
+}
+.searchDroplistTextvalue{
+    white-space:nowrap;
+    overflow:hidden;
+}
+.addfiltercontent-value .addfiltercontent-text{
+    display:block;
+}
+.valuecontnet{
+    min-width:200px;
+    display:inline-block;
+}
+.DroplistTextvalue{
+    white-space:nowrap;
+    overflow:hidden;
+    max-width:400px;
+    text-overflow:ellipsis;
+}
+.checkedlistitem{
+    float:left;
+    border:1px solid #dedede;
+    font-size:12px;
+    background-color:#f2f2f2;
+    padding:2px 5px;
+    border-radius:4px;
+    box-sizing:border-box;
+    height:26px;
+    line-height:22px;
+    margin:4px 3px;
+    position:relative;
+}
+.searchDroplistTextvalue{
+    padding-left:0;
+}
+.checkedlistitemdelete{
+    float:right;
+    color:#666;
+    font-size:12px;
+    height:14px;
+    width:14px;
+}
+.checkedlistitemdelete:hover{
+    color:#108def;
+    cursor:pointer;
+}
+.searchDroplistTextvalue{
+    height:auto;
+}
+.checkedlist{
+    overflow:hidden;
+}
+.addfiltercontent-value{
+    width:350px;
+}
+.searchimg{
+    width:14px;
+    height:14px;
+    position:absolute;
+    right:10px;
+    margin-top:10px;
+}
+.radioinput{
+    width:16px;
+    height:16px;
+    min-width:0;
+    margin-left:20px;
+}

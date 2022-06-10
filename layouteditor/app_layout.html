@@ -1,0 +1,831 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>移动布局设计</title>
+    <link href="/element/element.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #vueapp {
+            height: 100%;
+        }
+
+        .head-content {
+            background-color: #3296fa;
+            height: 60px;
+            border-bottom: 1px solid #dedede;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .body-content {
+            height: calc(100% - 60px);
+            overflow-y: auto;
+            background-color: #f6f6f6;
+        }
+
+        .leftcontent {
+            float: left;
+            width: 330px;
+            height: 100%;
+            border-right: 1px solid #dedede;
+            background-color: white;
+        }
+
+        .rightcontent {
+            float: right;
+            width: 330px;
+            height: 100%;
+            background-color: white;
+        }
+
+        #tab-first {
+            padding-left: 20px;
+        }
+
+        .el-tabs__active-bar.is-top {
+            padding: 0 20px;
+            margin-left: -20px;
+        }
+
+        .el-tabs--top .el-tabs__item.is-top:last-child {
+            padding-right: 20px;
+        }
+
+        .el-tabs__nav.is-top {
+            width: 100%;
+            display: flex;
+        }
+
+        .el-tabs__nav.is-top > div {
+            flex: 1;
+            text-align: center;
+        }
+
+        .list-group-item {
+            list-style: none;
+            height: 32px;
+            width: calc(50% - 10px);
+            float: left;
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            line-height: 32px;
+            margin: 5px;
+            cursor: move;
+            box-sizing: border-box;
+        }
+
+        .list-item {
+        }
+
+        .mi-content {
+            width: 370px;
+            background-color: white;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            margin-top: 20px;
+            height: 650px;
+            background:url(/img/phoneborder.png) no-repeat center;
+            background-size:cover;
+            padding:20px;
+        }
+
+        .content-main {
+            position:absolute;
+            background-color: #f6f6f6;
+            height: 500px;
+            width:300px;
+            margin:55px 33px;
+        }
+
+        .body-content {
+            position: relative;
+        }
+
+        .content-main {
+            background-color: #f6f6f6;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .list-item {
+            background-color: white;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .nav_ul_item {
+            list-style: none;
+        }
+
+        .list-group-item {
+            background-color: white;
+        }
+
+        .list-group .ghost {
+            height: 3px !important;
+            width: 100% !important;
+            background-color: red;
+            overflow: hidden;
+            margin: 10px 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 0;
+            border: 0 !important;
+        }
+
+            .list-group .ghost .removelistitem {
+                display: none !important;
+            }
+
+        .leftcontent .ghost {
+            display: none;
+        }
+
+        .leftcontent .list-group {
+            padding-left: 5px;
+        }
+
+        .content-main {
+            padding: 1px;
+        }
+        .content-main>.list-group {
+            height: 500px;
+            overflow-y:auto;
+        }
+
+        .mi-content .list-group {
+            min-height: 330px;
+        }
+
+        .nav_ul_item_div_title span {
+            font-size: 12px;
+            color: #333;
+            padding-left: 5px;
+        }
+
+        .mi-content .nav_ul_item_div_title span {
+            font-size: 14px;
+        }
+
+        .typeimg {
+            height: 20px;
+            width: 20px;
+            float: right;
+            margin: 6px;
+        }
+
+        .placeholderspan {
+            color: #999 !important;
+            float: right;
+        }
+
+        .list-item {
+            min-height: 50px;
+            line-height: 50px;
+            box-sizing: border-box;
+            padding: 0;
+            border: 1px solid transparent;
+        }
+
+        .placeholdrighticon {
+            margin-left: 5px;
+            font-size: 22px;
+            color: #dedede;
+            margin-top: 14px;
+            float: right;
+            margin-right: 5px;
+            font-weight: 700;
+        }
+
+        .rightcontent-head {
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #dedede;
+            padding-left: 15px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .rightcontent-item-subject {
+            font-size: 14px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .rightcontent-body {
+            padding: 15px;
+        }
+
+        .rightcontent-item-remarks {
+            font-size: 12px;
+            color: #999;
+            margin-left: 3px;
+        }
+
+        .rightcontent-item-title {
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+
+        .el-input__inner {
+            height: 30px;
+            line-height: 30px;
+        }
+
+        .rightcontent-remarks {
+            font-size: 12px;
+            color: #333;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .list-item:hover {
+            border: 1px dashed #1890ff;
+        }
+
+        .list-item {
+            position: relative;
+            cursor: move;
+        }
+
+        .removelistitem {
+            position: absolute;
+            right: 0;
+            height: 15px;
+            width: 15px;
+            background-color: #1890ff;
+            cursor: helpTexter;
+            color: white;
+            font-weight: 700;
+            line-height: 15px;
+            display: none;
+        }
+
+        .list-item:hover .removelistitem {
+            display: block;
+        }
+
+        .list-item.active {
+            border: 1px solid #1890ff;
+        }
+
+        .wfview {
+        }
+
+        .wfview .wf-componentview-area {
+            line-height: 50px;
+            height: 50px;
+            background-color: #ddeff3;
+            text-align: center;
+        }
+
+        .wfview .wf-componentview-area .emptytip {
+            color: #999;
+            font-size: 12px;
+        }
+
+        .wf-componentview-adddetail {
+            color: #008cee;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .wf-view .list-group {
+            min-height: 0;
+        }
+
+        .el-tabs {
+            height: 100%;
+        }
+
+        .el-tabs__header {
+            margin: 0;
+        }
+
+        .el-tabs__content {
+            padding: 15px 0;
+            height: calc(100% - 70px);
+            overflow: auto;
+        }
+        .el-input__icon {
+            line-height:30px;
+        }
+        .searchcontent {
+            padding:0 5px 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="vueapp">
+        <div class="head-content">
+            <div style="float:right;margin-top:15px;margin-right:15px;">
+                <el-button size="mini">取消</el-button>
+                <el-button size="mini">预览</el-button>
+                <el-button size="mini" @click="savedata">保存</el-button>
+            </div>
+
+        </div>
+        <div class="body-content">
+            <div class="leftcontent">
+                <el-tabs v-model="leftcontentactiveName">
+                    <el-tab-pane label="字段集" name="first">
+                        <div class="searchcontent">
+                            <el-input placeholder="请输入内容"
+                                      prefix-icon="el-icon-search"
+                                      type="search"
+                                      @input="searchfiled"
+                                      v-model="searchfiledkey">
+                            </el-input>
+                        </div>
+                        <draggable :list="list1"
+                                   :disabled="!enabled"
+                                   class="list-group"
+                                   ghost-class="ghost"
+                                   @start="dragging = true"
+                                   @end="dragging = false"
+                                   :group="{ name: 'people', put: false }">
+                            <div class="list-group-item"
+                                 v-for="(element,index) in list1"
+                                 v-if="element.category!='StandardRelatedList'"
+                                 v-show="!element.hide"
+                                 :key="index">
+                                <li class="nav_ul_item">
+                                    <div class="nav_ul_item_div">
+                                        <div class="nav_ul_item_div_title">
+                                            <span>{{ element.label }}</span>
+                                            <img class="typeimg" class="widgeticon" :src="element.typeimg" data-spm-anchor-id="0.0.0.i8.2eb74490psBgMe">
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </div>
+                        </draggable>
+                    </el-tab-pane>
+                    <el-tab-pane label="相关列表" name="second">
+                        <div class="searchcontent">
+                            <el-input placeholder="请输入内容"
+                                      prefix-icon="el-icon-search"
+                                      type="search"
+                                      @input="searchfiled"
+                                      v-model="searchfiledkey">
+                            </el-input>
+                        </div>
+                        <draggable :list="list1"
+                                   :disabled="!enabled"
+                                   class="list-group"
+                                   ghost-class="ghost"
+                                   @start="dragging = true"
+                                   @end="dragging = false"
+                                   :group="{ name: 'people', put: false }">
+                            <div class="list-group-item"
+                                 v-for="(element,index) in list1"
+                                 v-if="element.category=='StandardRelatedList'"
+                                 v-show="!element.hide"
+                                 :key="index">
+                                <li class="nav_ul_item">
+                                    <div class="nav_ul_item_div">
+                                        <div class="nav_ul_item_div_title">
+                                            <span>{{ element.label }}</span>
+                                            <img class="typeimg" class="widgeticon" :src="element.typeimg">
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </div>
+                        </draggable>
+                        <div v-for="(StandardRelatedListitem,index) in StandardRelatedList">
+                            <div v-show="!StandardRelatedListitem.hide" style="clear:both;padding-left:15px;">{{StandardRelatedListitem.label}}</div>
+                            <draggable :list="StandardRelatedList[index].fields"
+                                       :disabled="!enabled"
+                                       class="list-group"
+                                       ghost-class="ghost"
+                                       @start="dragging = true"
+                                       @end="dragging = false"
+                                       :group="{ name: StandardRelatedListitem.id, put: false }">
+                                <div class="list-group-item"
+                                     v-for="(element,indexs) in StandardRelatedList[index].fields"
+                                     v-show="!element.hide"
+                                     :key="indexs">
+                                    <li class="nav_ul_item">
+                                        <div class="nav_ul_item_div">
+                                            <div class="nav_ul_item_div_title">
+                                                <span>{{ element.label }}</span>
+                                                <img class="typeimg" class="widgeticon" :src="element.typeimg">
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </div>
+                            </draggable>
+                        </div>
+                        
+                    </el-tab-pane>
+                    <el-tab-pane label="人事套件" name="third">人事套件</el-tab-pane>
+                </el-tabs>
+            </div>
+            <div class="mi-content">
+                <div class="content-main">
+                    <draggable :list="list2"
+                               :disabled="!enabled"
+                               class="list-group"
+                               ghost-class="ghost"
+                               @start="dragging = true"
+                               @end="dragging = false"
+                               group="people">
+                        <div class="list-item"
+                             :class="{'active':listchose==element.id}"
+                             v-for="(element,index) in list2"
+                             :key="index"
+                             @click="itemchose(element)">
+                            <div class="removelistitem" @click="removelistitem(element,index)"><i class="el-icon-close"></i></div>
+
+                            <div class="nav_ul_item" v-if="!element.fields">
+                                <div class="nav_ul_item_div">
+                                    <div class="nav_ul_item_div_title">
+                                        <span>{{ element.label }}</span>
+                                        <i class="placeholdrighticon el-icon-arrow-right"></i>
+                                        <span class="placeholderspan">{{element.helpText}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nav_ul_item wfview" v-if="element.fields">
+                                <div class="nav_ul_item_div">
+                                    <div class="nav_ul_item_div_title">
+                                        <span>{{ element.label }}</span>
+                                        <div class="wf-view">
+                                            <draggable :list="element.fields"
+                                                       :disabled="!enabled"
+                                                       class="list-group"
+                                                       ghost-class="ghost"
+                                                       @start="dragging = true"
+                                                       @end="dragging = false"
+                                                       :group="element.id">
+                                                <div class="list-item"
+                                                     :class="{'active':element.listchose==elements.name&&fieldschose=='9999'}"
+                                                     v-for="(elements,index) in element.fields"
+                                                     :key="index"
+                                                     @click.stop="elementitemchose(element,elements,index)">
+                                                    <div class="removelistitem" @click="removelistfieldsitem(element.fields,elements,index)"><i class="el-icon-close"></i></div>
+                                                    <div class="nav_ul_item">
+                                                        <div class="nav_ul_item_div">
+                                                            <div class="nav_ul_item_div_title">
+                                                                <span>{{ elements.label }}</span>
+                                                                <i class="placeholdrighticon el-icon-arrow-right"></i>
+                                                                <span class="placeholderspan">{{elements.helpText}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="wf-componentview-area empty" v-if="element.fields.length==0">
+                                                    <span class="emptytip">可拖入多个组件（不包含明细组件）</span>
+                                                </div>
+                                            </draggable>
+                                            <div class="wf-componentview-adddetail">
+                                                <i class="el-icon-plus" style="font-weight:700;"></i>
+                                                添加
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </draggable>
+                </div>
+
+
+            </div>
+            <div class="rightcontent" v-show="listchose!=''">
+                <div>
+                    <div class="rightcontent-head">
+                        <span>{{rightdata.label}}</span>
+                    </div>
+                    <div class="rightcontent-body">
+                        <div class="rightcontent-item">
+                            <div class="rightcontent-item-title">
+                                <span class="rightcontent-item-subject">标题</span>
+                                <span class="rightcontent-item-remarks">最多20字</span>
+                            </div>
+                            <div class="rightcontent-item-input">
+                                <el-input v-model="rightdata.label" placeholder="请输入内容"></el-input>
+                            </div>
+                        </div>
+                        <div class="rightcontent-item">
+                            <div class="rightcontent-item-title">
+                                <span class="rightcontent-item-subject">提示文字</span>
+                                <span class="rightcontent-item-remarks">最多50字</span>
+                            </div>
+                            <div class="rightcontent-item-input">
+                                <el-input v-model="rightdata.helpText" placeholder="请输入内容"></el-input>
+                            </div>
+                        </div>
+                        <div class="item-typecountent">
+                            <div class="rightcontent-item">
+                                <span class="rightcontent-remarks">内容最多可填写1000个字</span>
+                            </div>
+                            <!--<div class="rightcontent-item">
+                                <div class="rightcontent-item-title">
+                                    <span class="rightcontent-item-subject">选项</span>
+                                    <span class="rightcontent-item-remarks">最多200项，每项最多50个字</span>
+                                </div>
+                                <div class="rightcontent-item-input">
+                                    <div>
+                                        <draggable
+                                          :list="list2"
+                                          :disabled="!enabled"
+                                          class="list-group"
+                                          ghost-class="ghost"
+                                          @start="dragging = true"
+                                          @end="dragging = false"
+                                          group="people"
+                                        >
+                                          <div
+                                            class="list-item"
+                                            :class="{'active':listchose==index}"
+                                            v-for="(element,index) in list2"
+                                            :key="index"
+                                              @click="itemchose(index)"
+                                          >
+                                              <div class="removelistitem" @click="removelistitem(index)"><i class="el-icon-close"></i></div>
+
+                                              <li class="nav_ul_item">
+                                                  <div class="nav_ul_item_div">
+                                                      <div class="nav_ul_item_div_title">
+                                                          <span>{{ element.label }}</span>
+                                                          <i  class="placeholdrighticon el-icon-arrow-right"></i>
+                                                          <span class="placeholderspan">请选择</span>
+                                                      </div>
+                                                  </div>
+                                              </li>
+                                          </div>
+                                        </draggable>
+                                        <el-input style="width:80%;" v-model="input" placeholder="请输入单位"></el-input>
+                                        <i style="cursor:helpTexter;font-size:18px;" class="el-icon-remove-outline"></i>
+                                        <i style="cursor:helpTexter;font-size:18px;color:#1890ff;" class="el-icon-circle-plus-outline"></i>
+                                    </div>
+                                </div>
+                             </div>-->
+
+                        </div>
+
+                        <div class="rightcontent-item">
+                            <div class="rightcontent-item-title">
+                                <span class="rightcontent-item-subject">验证</span>
+                            </div>
+                            <div class="rightcontent-item-input">
+                                <el-checkbox v-model="rightdata.required">必填</el-checkbox>
+                            </div>
+                        </div>
+                        <div class="rightcontent-item">
+                            <div class="rightcontent-item-title">
+                                <span class="rightcontent-item-subject">只读</span>
+                            </div>
+                            <div class="rightcontent-item-input">
+                                <el-checkbox v-model="rightdata.readOnly">只读</el-checkbox>
+                            </div>
+                            <div class="rightcontent-item-title" v-show="rightdata.readOnly">
+                                <span class="rightcontent-item-subject">默认值</span>
+                            </div>
+                            <div class="rightcontent-item-input" v-show="rightdata.readOnly">
+                                <el-input v-model="rightdata.readOnlytext" placeholder="请输入内容"></el-input>
+                            </div>
+                            
+                        </div>
+                        <div class="rightcontent-item">
+                            <div class="rightcontent-item-title">
+                                <span class="rightcontent-item-subject">打印</span>
+                            </div>
+                            <div class="rightcontent-item-input">
+                                <el-checkbox v-model="rightdata.IsPrint">参与打印</el-checkbox>
+                                <span class="rightcontent-item-remarks">(如不勾选，打印时不显示该项)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>    
+    <script src="/js/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+
+    <script src="/js/sortable.js"></script>
+    <script src="/js/draggable.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                input: '',
+                checked: '',
+                searchfiledkey: '',
+                searchRelatedListkey:'',
+                leftcontentactiveName: 'first',
+                list1: [
+                ],
+                list3: [
+                ],
+                list2: [],
+                StandardRelatedList:[],
+                listchose:'',
+                dragging: false,
+                enabled: true,
+                fieldschose: '0',
+                rightdata: {},
+            },
+            created:function(){
+                document.body.ondrop = function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                this.gettroughdata()
+                this.getdata()
+            },
+            methods: {
+                searchfiled: function (key) {
+                    for (var i = 0; i < this.list1.length; i++) {
+                        if (this.list1[i].label.indexOf(key) != -1) {
+                            this.list1[i].hide = false
+                        } else {
+                            this.list1[i].hide = true
+                        }
+                    }
+                    for (var i = 0; i < this.StandardRelatedList.length; i++) {
+                        if (this.StandardRelatedList[i].fields.length > 0) {
+                            this.$set(this.StandardRelatedList[i], 'hide', true)
+                            for (var j = 0; j < this.StandardRelatedList[i].fields.length; j++) {
+                                if (this.StandardRelatedList[i].fields[j].label.indexOf(key) != -1) {
+                                    this.$set(this.StandardRelatedList[i].fields[j], 'hide', false)
+                                    this.$set(this.StandardRelatedList[i], 'hide', false)
+                                } else {
+                                    this.$set(this.StandardRelatedList[i].fields[j], 'hide', true)
+                                }
+                            }
+                            
+                        }
+                    }
+                },
+                savedata: function () {
+                    var that = this;
+                    var list = [];                   
+                    for (var i = 0; i < this.list2.length; i++) {
+                        var d = {
+                            entityApiName: this.list2[i].entityApiName,
+                            "label": this.list2[i].label,
+                            "alwaysRequired": this.list2[i].alwaysRequired,
+                            "type": this.list2[i].type,
+                            "id": this.list2[i].id,
+                            "category": this.list2[i].category,
+                            "alwaysDisplayed": this.list2[i].alwaysDisplayed,
+                            "alwaysNotRequired": this.list2[i].alwaysDisplayed,
+                            "alwaysNotreadOnly": this.list2[i].alwaysDisplayed,
+                            "alwaysreadOnly": this.list2[i].alwaysreadOnly,
+                            "name": this.list2[i].name,
+                            "displayCategory": this.list2[i].displayCategory,
+                            "required": this.list2[i].required,
+                            "readOnly": this.list2[i].readOnly,
+                            "helpText": this.list2[i].helpText,
+                            "sObjectType": this.list2[i].sObjectType,
+                            readOnlytext: this.list2[i].readOnlytext,
+                            IsPrint: this.list2[i].IsPrint,
+                        }
+                        if (this.list2[i].fields) {
+                            d.fields = []
+                            d.type = 'RelatedList'
+                            d.displayCategory = 'RelatedList'
+                            for (var j = 0; j < this.list2[i].fields.length; j++) {
+                                d.fields.push({
+                                    entityApiName: this.list2[i].fields[j].entityApiName,
+                                    "label": this.list2[i].fields[j].label,
+                                    "alwaysRequired": this.list2[i].fields[j].alwaysRequired,
+                                    "type": this.list2[i].fields[j].type,
+                                    "id": this.list2[i].fields[j].name,
+                                    "category": this.list2[i].fields[j].category,
+                                    "alwaysDisplayed": this.list2[i].fields[j].alwaysDisplayed,
+                                    "alwaysNotRequired": this.list2[i].fields[j].alwaysNotRequired,
+                                    "alwaysNotreadOnly": this.list2[i].fields[j].alwaysNotreadOnly,
+                                    "alwaysreadOnly": this.list2[i].fields[j].alwaysreadOnly,
+                                    "displayCategory": this.list2[i].fields[j].displayCategory,
+                                    "required": this.list2[i].fields[j].required,
+                                    "readOnly": this.list2[i].fields[j].readOnly,
+                                    readOnlytext: this.list2[i].fields[j].readOnlytext,
+                                    "name": this.list2[i].fields[j].name,
+                                    "helpText": this.list2[i].fields[j].helpText,
+                                    "sObjectType": this.list2[i].fields[j].sObjectType,
+                                    IsPrint: this.list2[i].fields[j].IsPrint,
+                                })
+                            }
+                        } else {
+
+                        }
+                        list.push(d)
+                    }
+                    ajaxMethodPostData('pagelayout.mobile.save', {
+                        formId: getQueryString('formId'),
+                        formData: JSON.stringify(list)
+                    }, function (data) {
+                        that.getdata()
+                    })
+                },
+                itemchose: function (element) {
+                    this.listchose = element.id
+                    this.fieldschose = '0'
+                    this.rightdata = element
+                },
+                removelistitem: function (element,index) {
+                    this.list2.splice(index, 1)
+                    this.list1.push(element)
+                },
+                removelistfieldsitem: function (element,elements,index) {
+                    element.splice(index, 1)
+                    this.list3.push(elements)
+                },
+                elementitemchose: function (element, elements, index) {
+                    //console.log(elements.name)
+                    this.$set(element, 'listchose', elements.name)
+                    this.fieldschose = '9999'
+                    this.listchose = element.id
+                    this.rightdata = elements
+                },
+                getdata: function () {
+                    var that = this
+                    ajaxMethodGetData('mobileform.layout.get', {
+                        formId: getQueryString('formId')
+                    }, function (data) {
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].category == 'StandardRelatedList') {
+                                data[i]
+                            }
+                        }
+                        that.list2 = data
+                    })
+                    //console.log(that.list2)
+                },
+                gettroughdata: function () {
+                    var that = this
+                    var entityId = getQueryString('entityId');
+                    //layout.troughdata.get
+                    ajaxMethodGetData('mobileform.layout.troughdata.get', {
+                        entityId: entityId
+                    }, function (data) {
+                        that.list1 = []
+                        for (var i = 0; i < data.length; i++) {
+                            var res = data[i]
+                            var d = {
+                                label: res.label,
+                                id: res.id,
+                                helpText: res.helpText,
+                                required: res.required,
+                                readOnly: res.readonly,
+                                type: res.type,
+                                sObjectType: res.sObjectType,
+                                category: res.category,
+                                displayCategory: res.displayCategory,
+                                IsPrint: res.IsPrint,
+                                name: res.id,
+                                entityApiName: res.entityApiName
+                            }
+                            var type = res.type
+                            var img = ''
+                            if (type == 'S') {
+                                img = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAG1BMVEVHcEwZHiYZHiUaHyMdKCgZHiYaISQYHiQZHiYtE7tIAAAACXRSTlMAZVUSCTQmQxxVUCeiAAAA7ElEQVQoz9WSTW7CQAxGTQIlSz6XDFumvUBSUYklpTkAkXqAgkTXmS5YE1Gp167HM8micwK+ReK8/DzbCtG9Z4oyhTMghRnwmcDeoEugW7jH1NP10bS97SJ8wDVjvdsCfI0eFr+vXyAxAdYl5Wqy5SZ3HD1isUuiAgeiOcJXsSZqSz9DFQ/eI52/8ThIFU6bptmrid7PNsAaGjHl375Q2AYoJoeny2uAMF8SZ8TxPIiKsIyeaQIa4HzQVfVqvIzNzNBpdVTYhgXlWGT4mP5Ce/MD+lhT6D7Ao0feYDoBq53lf+ve3uSpn7v5C/8Auc4hwIODgzAAAAAASUVORK5CYII='
+                            } else if (type == 'O') {
+                                img = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAFVBMVEUZHiZHcEwXHiYaICYZHSMeHiAdHiYZxZwKAAAAB3RSTlNmAENWMxAi9bjpHAAAAMFJREFUKM/NkkEOgjAQRceWuLYorMGFa4iJa1APAMYegIi9/xH805EElCALTfyL/uQtms6bkhkJTcH2jJRDuCGOGsLQQ/0CdXf8EcRAJz3j8VHGcPlmKclH1M2A4dYnU9K1hysa5An1vpcOBr31xF+BtlIWc1oEdaV7bSiUoQuuNBItVMnCvZCFrL+hKnDuBnhwLgF0rmUIX2vA1JgCENf+CsJRBsgFyJ4a8jYDk3DlsRilmG2X5iLSjzh303/+M3wAUMtDWkvgsyEAAAAASUVORK5CYII='
+                            } else if (type == 'L' || type == 'DT' || type == 'Y') {
+                                img = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURaamqEdwTKenqaenqaamqaenrKqqqqenqqqqqqenqZuv1oYAAAAKdFJOU/8AlIfiMQZFDL35Dhp+AAAAlElEQVQoz2MQxAIYaCGY7MCABljMGAwYMAAzg0MhumZxFgYshjJQLKiKLhYEcoEaqlgSUKhVgTNRUBDqWmZBQbEJTBEMguIOimBjwEBQUIilEOT3AlZklQHs4AARYkI2UkERLCjKgizoEAgWlEBxKkMjbkGs2rFahM1J2ByP1ZtYAwR70NEgjrAmBqzJBmsCo1fyBgB5lTcf0sPU6QAAAABJRU5ErkJggg=='
+                            } else if (type == 'D') {
+                                img = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAG1BMVEUZHiVHcEwYHCNISEgZHyYYHycUHCwaJSUZICVNlGYDAAAACXRSTlNlAFEDVjYcC0MdqMEEAAAAy0lEQVQoz73TOw+CMBDA8VPEdrTUxypN3CVgXDU+4oivXRPjXDZGBhO/tkcLpiUqi/rf+C3XNgewF8F7vGz1V29tYOZoHNMnhkFGeIgFkvJQ4eAGjYzEgLmSdmCTIEZgIywQYxB+5uwENpLUE+AizggOInqQxEGyhQg+43E53WXMA40sPWvs3w00+z9Or0WJgerm6vZ1ODkW7b94zrDIxFM5vV1zJJ6KopePzH/5nnMbuzkOiY2yqXZpaaV2KYJK+dbxg22r4NOPUOkBusBGIdKfBoUAAAAASUVORK5CYII='
+                            } else {
+                                img = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoBAMAAAB+0KVeAAAAG1BMVEVHcEwZHiYZHiUaHyMdKCgZHiYaISQYHiQZHiYtE7tIAAAACXRSTlMAZVUSCTQmQxxVUCeiAAAA7ElEQVQoz9WSTW7CQAxGTQIlSz6XDFumvUBSUYklpTkAkXqAgkTXmS5YE1Gp167HM8micwK+ReK8/DzbCtG9Z4oyhTMghRnwmcDeoEugW7jH1NP10bS97SJ8wDVjvdsCfI0eFr+vXyAxAdYl5Wqy5SZ3HD1isUuiAgeiOcJXsSZqSz9DFQ/eI52/8ThIFU6bptmrid7PNsAaGjHl375Q2AYoJoeny2uAMF8SZ8TxPIiKsIyeaQIa4HzQVfVqvIzNzNBpdVTYhgXlWGT4mP5Ce/MD+lhT6D7Ao0feYDoBq53lf+ve3uSpn7v5C/8Auc4hwIODgzAAAAAASUVORK5CYII='
+                            }
+                            d.typeimg = img
+                            if (res.category == 'StandardRelatedList') {
+                                d.fields = []
+                            }
+                            that.list1.push(d)
+                            if (res.category == 'StandardRelatedList') {
+                                var dd = JSON.parse(JSON.stringify(d))
+                                dd.fields = res.selectableColumns
+                                that.StandardRelatedList.push(dd)
+                            }
+                        }
+                    })
+                }
+            },
+        })
+    </script>
+</body>
+</html>

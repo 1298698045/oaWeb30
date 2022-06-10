@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/css/cntrt/cntrt.css" rel="stylesheet" />
+    <link href="/css/cal/mission.css" rel="stylesheet" />
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+    <style>
+        #popup-sp {
+            display:block;
+        }
+        #popup-sp {
+            width:100%;
+            margin-left:0;
+            max-width:100%;
+            position:static;
+        }
+        .popup-exit {
+            right:10px;
+            top:10px;
+        }
+        .popup-body-list {
+            height:330px;
+        }
+        .popup-foot {
+            border-top-left-radius:0;
+            border-top-right-radius:0;
+        }
+        .step2 {
+            display:none;
+        }
+        .popup-body {
+            background-color:white;
+        }
+        .sousuoliucheng input {
+            height:32px;
+            width:80%;
+        }
+        #subject {
+            height:32px;
+            line-height:32px;
+            border:1px solid #dedede;
+            width:100%;
+        }
+        .form-item {
+            padding:15px 20px;
+            width:100%;
+            box-sizing:border-box;
+        }
+        select {
+            border:1px solid #dedede !important;
+        }
+        .item-left{
+            float:left;
+            width:49%;
+        }
+        .item-right{
+            float:right;
+            width:49%;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup-sp">
+        <div class="popup-exit close">
+            <img style="width:18px;height:18px;" src="/img/cal/closegray.png" alt="" />
+        </div>
+        <div class="popup-head">
+            选择流程
+        </div>
+        <div class="popup-body step1">
+            <div class="sousuoliucheng">
+                <input type="text" placeholder="搜索流程...">
+                <img src="/img/cal/7.png">
+            </div>
+            <div class="chook-number">
+
+            </div>
+            <div class="popup-body-list">
+                <ul>
+                    <li class="popup-body-listfirst">
+                        <span>名称</span>
+                    </li>
+                    <li class="hoverli" processid="a39549b4-6f8f-44fd-93c1-6455b845f765"><div class="checkbox active"><img src="/img/cal/23.check_2(12x12).png" class="active"></div><span>02 合同会签单</span></li>
+                    <li class="hoverli" processid="aeb0651f-bd71-4ff9-b8ad-0c84c5ec57ae"><div class="checkbox"><img src="/img/cal/23.check_2(12x12).png"></div><span>03 设备合同会签单</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="popup-body step2 layui-form"  style="display:none;">
+            <div class="form-item">
+                <span>名称</span>
+                <input id="subject" type="" name="name" value="" />
+            </div>
+            <div class="form-item">
+                <div class="item-left">
+                    <span>优先级:</span>
+                    <select id="Prority">
+                        <option value="0">低</option>
+                        <option value="1">中</option>
+                        <option value="2">高</option>
+                    </select>
+                </div>
+                <div class="item-right">
+                    <span>办理期限:</span>
+                    <select id="Deadline">
+                        <option value="1">1天</option>
+                        <option value="2">2天</option>
+                        <option value="3">3天</option>
+                    </select>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="form-item">
+                <span style="float:left;">备注</span>
+                <textarea id="Description" style="width:100%;height:100px;"></textarea>
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div class="popup-foot-shur step1">下一步</div>
+            <div class="popup-foot-shur step2" id="save">下一步</div>
+            <div class="popup-foot-prev step2">上一步</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/alert.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/layui/layui/layui.js"></script>
+
+    <script>
+        $('.close').click(function () {
+            parent.$('.popup-mask').hide()
+            parent.$('#iframe').hide()
+        })
+
+
+        var method = "wf.process.search"
+        var d = {}
+        d.EntityType = parent.webContext.objectTypeCode
+        $(".popup-body-list ul li.hoverli").remove()
+        getdata(d)
+        function getdata(d) {
+            ajaxMethodGetData(method, d, function (data) {
+                $('.popup-foot-shur').removeClass('active')
+                $(".popup-body-list li").remove()
+                for (var i = 0; i < data.listData.length; i++) {
+                    var datas = data.listData[i]
+                    var Name = datas.Name
+                    var ProcessId = datas.ProcessId
+                    $(".popup-body-list ul").append(
+                                '<li class="hoverli" ProcessId="' + ProcessId + '">'
+                               + '<div class="checkbox">'
+                               + '<img src="/img/cal/23.check_2(12x12).png"/>'
+                               + '</div>'
+                               + '<span>' + Name + '</span>'
+                            + '</li>')
+                }
+                $(".popup-body-list .checkbox").each(function () {
+                    $(this).click(function () {
+                        $(".popup-body-list .checkbox").removeClass("active")
+                        $(this).toggleClass("active")
+                        $(".popup-body-list .checkbox img").removeClass("active")
+                        $(this).find("img").toggleClass("active")
+                        if ($(".popup-body-list .checkbox.active").length != 0) {
+                            $("#popup-sp .popup-foot-shur").addClass("active")
+                            $(".chook-number span").eq(1).html(1)
+                            $(".chook-number span").css("color", "#108af9")
+                        }
+                        else {
+                            $("#popup-sp .popup-foot-shur").addClass("active")
+                        }
+                    })
+                })
+            })
+        }
+        $('.sousuoliucheng input').change(function () {
+            var d = {}
+            d.EntityType = parent.webContext.objectTypeCode
+            d.search = $(this).val()
+            getdata(d)
+        })
+        $('.popup-foot-shur').click(function () {
+            if ($(this).hasClass('active')) {
+                $('.step1').hide()
+                $('.step2').show()
+            }
+        })
+        $('.popup-foot-prev').click(function () {
+            $('.step1').show()
+            $('.step2').hide()
+        })
+        $('#save').click(function () {
+            if ($('#subject').val() == '') {
+                alert('请输入标题')
+            } else {
+                var ProcessId = $('.checkbox.active').parent().attr('processid')
+                var d = {
+                    "params": {
+                        "recordRep": {
+                            "fields": {
+                                "ProcessId": ProcessId,
+                                "Name": $('#subject').val(),
+                                "Priority": $('#Priority').val(),
+                                "Deadline": $('#Deadline').val(),
+                                "Description": $('#Description').val(),
+                            }
+                        }
+                    }
+                }
+                var message = JSON.stringify(d)
+                ajaxMethodPostData('process.instance.create', { message: message }, function (data) {
+                    if (data.actions[0].state == 'SUCCESS') {
+                        var url = data.actions[0].returnValue.ReturnURL
+                        window.open(url)
+                    } else {
+                        parent.error(data.actions[0].error)
+                    }
+                    
+                })
+
+
+                parent.$('#iframe').hide()
+                parent.$('.popup-mask').hide()
+            }
+        })
+
+        var form = ''
+        layui.use(['form'], function () {
+            form = layui.form
+
+
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1256 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <style>
+        #photo .uiModal--medium .modal-container {
+            width: 70%;
+            max-width: 1000px;
+            min-width: 680px;
+        }
+
+        #photo .slds-modal__content {
+            min-height: 400px;
+            padding: 0;
+        }
+
+        .hasMotif {
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            color: #333;
+            height: 100%;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .head {
+            background-color: #f2f2f2;
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #dedede;
+            position: absolute;
+            width: 100%;
+        }
+
+            .head img {
+                float: left;
+                width: 30px;
+                margin: 0 20px;
+                margin-top: 10px;
+            }
+
+        .nav-item {
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+            .nav-item.active {
+                color: #2db7f5;
+                border-bottom: 3px solid #2db7f5;
+            }
+
+        .body-nav {
+            float: left;
+        }
+
+        .body-search {
+            float: right;
+            margin-top: 10px;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .search-btn {
+            border: 1px solid #dedede;
+            padding: 0px 20px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .search-input {
+            height: 30px;
+            border: 1px solid #dedede;
+            border-right: 1px;
+        }
+
+            .search-input input {
+                border: 0;
+                outline: none;
+                height: 28px;
+                width: 100%;
+            }
+
+        .body-top {
+            border-bottom: 1px solid #dedede;
+            padding-right: 15px;
+        }
+
+        .main-item img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .main-item {
+            border-bottom: 1px solid #dedede;
+            padding: 10px 20px;
+        }
+
+        .item-mi {
+            margin-left: 20px;
+        }
+
+        .item-right img {
+            display: none;
+        }
+
+        .main-item.active img {
+            display: block;
+        }
+
+        .main-item.active {
+            background-color: #f2f2f2;
+        }
+
+        .main-item:hover {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+
+        .main {
+            display: none;
+        }
+
+        .foot {
+            border-top: 1px solid #dedede;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            z-index: 2;
+            background-color: white;
+        }
+
+            .foot > div {
+                float: right;
+            }
+
+                .foot > div > div {
+                    border: 1px solid #dedede;
+                    border-radius: 4px;
+                    float: left;
+                    margin-right: 15px;
+                    padding: 5px 15px;
+                    cursor: pointer;
+                }
+
+                    .foot > div > div:hover {
+                        background-color: #f2f2f2;
+                    }
+
+        .shur {
+            background-color: #0094ff;
+            color: white;
+        }
+
+            .shur:hover {
+                background-color: #20699c !important;
+            }
+
+        .body {
+            float: left;
+            width: 100%;
+            padding-top: 0px;
+            box-sizing: border-box;
+            padding-bottom: 0px;
+        }
+
+        .body-right {
+            float: left;
+            width: 20%;
+            border-left: 1px solid #dedede;
+            box-sizing: border-box;
+            padding: 5px 5px 60px 5px;
+            height: calc(100% - 54px);
+            overflow-y: auto;
+        }
+
+            .body-right img {
+                width: 14px;
+                float: right;
+                margin-top: 3px;
+                margin-right: 8px;
+                cursor: pointer;
+            }
+
+        .checked-item {
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            padding: 5px 0;
+            padding-left: 10px;
+            margin-top: 10px;
+        }
+
+            .checked-item:hover {
+                background-color: #f2f2f2;
+            }
+
+        .main-item-group,.main-item-role{
+            border-bottom: 1px solid #dedede;
+            padding: 5px 0;
+            cursor: pointer;
+        }
+
+        .main-item-group:hover,.main-item-role:hover {
+            background-color: #f2f2f2;
+        }
+
+        .body-main {
+            overflow-y: auto;
+            height: 100%;
+            box-sizing: border-box;
+            padding-bottom: 0px;
+            float: left;
+            width: 80%;
+        }
+
+        .panel-header {
+            border-top: 0 !important;
+        }
+
+        #treePanel {
+            border-bottom: 0 !important;
+        }
+
+        .panel.panel-htop {
+            float: left;
+        }
+
+        .zuzhijiegou-people, .changyongzu-people {
+            float: left;
+            box-sizing: border-box;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        #zuzhijiegou, #changyongzu,#juese {
+            height: 100%;
+            width: 100%;
+        }
+        #changyongzutree, #juesetree, #gerenzutree {
+            border-right: 1px solid #dedede;
+            float: left;
+            overflow: auto;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .juese-people{
+            position:relative;
+        }
+        .zuzhijiegou-people, .changyongzu-people, .juese-people, .gerenzu-people {
+            float: left;
+            box-sizing: border-box;
+            height: 100%;
+            overflow-y: auto;
+        }
+        .main-item .name {
+            color: blue;
+        }
+
+        #new {
+            height: 100%;
+        }
+
+        .hightsearch-head {
+            padding: 20px;
+            border-bottom: 1px solid #dedede;
+        }
+
+            .hightsearch-head > div {
+                padding: 0 20px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            .hightsearch-head select {
+                position: relative \9;
+                top: 10px \9;
+            }
+
+        .search-btn.active {
+            background-color: #0094ff;
+            color: white;
+        }
+
+        .search-name {
+            display: inline-block;
+            width: 60px;
+        }
+
+        .hightsearch-head .search-input {
+            border-right: 1px solid #dedede;
+            width: 220px;
+        }
+
+        .hightsearch-head > div > div {
+            padding: 0 20px;
+        }
+
+        .hightsearch-footbtn {
+            border-bottom: 1px solid #dedede;
+            height: 65px;
+            padding: 15px 0;
+            box-sizing: border-box;
+        }
+
+            .hightsearch-footbtn > div {
+                width: 300px;
+                margin: 0 auto;
+                height: 50px;
+            }
+
+        #treePanel, maincontent, #zuzhijiegou, .body {
+            height: 100%;
+        }
+
+        .body-main {
+            height: calc(100% - 54px);
+        }
+
+        .hightsearch-footbtn > div div {
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            float: left;
+            margin-right: 15px;
+            padding: 4px 15px;
+            cursor: pointer;
+        }
+
+            .hightsearch-footbtn > div div:hover {
+                background-color: #f2f2f2;
+            }
+
+        .hightsearch-footbtn .hightsearch-shur {
+            background-color: #0094ff;
+            color: white;
+        }
+
+            .hightsearch-footbtn .hightsearch-shur:hover {
+                background-color: #20699c;
+            }
+
+        .hightsearch-people {
+            overflow: auto;
+        }
+
+        .hightsearch {
+            display: none;
+        }
+
+        .main-item-group.active {
+            background-color: #f2f2f2;
+        }
+
+        .main-item-group {
+            padding: 10px 0;
+        }
+
+        .maincontent {
+            height: 100%;
+        }
+
+        .easyui-tree li {
+            margin-left: 0;
+        }
+
+        .allchose {
+            height: 30px;
+            line-height: 30px;
+            box-sizing: border-box;
+            padding: 0 15px;
+            background-color: #f2f2f2;
+            position: absolute;
+            width: 100%;
+            top: 0;
+        }
+
+        .maincontent {
+            position: relative;
+        }
+
+        .allchose label {
+            margin-right: 10px;
+        }
+
+        .zuzhijiegou-people, #latestusediv, #tongbumen, #wodexiashu, .changyongzu-people, .juese-people, #searchpeoplediv {
+            box-sizing: border-box;
+            padding-top: 31px;
+        }
+
+        #searchpeoplediv {
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        .right-people {
+            box-sizing: border-box;
+            padding-top: 31px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">选择人员</h2>
+                            <button class="cloase slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="body">
+                                <div class="body-top">
+                                    <div class="body-nav">
+                                        <div class="nav-item active">最近</div>
+                                        <div class="nav-item">同部门</div>
+                                        <div class="nav-item">我的下属</div>
+                                        <div class="nav-item">组织结构</div>
+                                        <div class="nav-item">小组</div>
+                                        <div class="nav-item">角色</div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="body-search">
+                                        <div class="search-input left">
+                                            <input type="type" name="name" value="" />
+                                        </div>
+                                        <div class="search-btn left">高级搜索</div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="body-main">
+                                    <div class="maincontent">
+                                        <div id="latestusediv" class="main" style="display: block;">
+                                            <div class="allchose">
+                                                <label>
+                                                    <input type="checkbox" name="" value="" />
+                                                    全选
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="" value="" />
+                                                    反选
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div id="tongbumen" class="main">
+                                            <div class="allchose">
+                                                <label>
+                                                    <input type="checkbox" name="" value="" />
+                                                    全选
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="" value="" />
+                                                    反选
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div id="wodexiashu" class="main">
+                                            <div class="allchose">
+                                                <label>
+                                                    <input type="checkbox" name="" value="" />
+                                                    全选
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="" value="" />
+                                                    反选
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div id="zuzhijiegou" class="main">
+                                            <div id="treePanel" class="easyui-panel" title="组织结构" style="width: 240px; min-height: 0!important;">
+                                                <ul class="easyui-tree" id="organizationTree" style="display: block;">
+                                                    <li></li>
+                                                </ul>
+                                            </div>
+                                            <div class="zuzhijiegou-people right-people">
+                                                <div class="allchose">
+                                                    <label>
+                                                        <input type="checkbox" name="" value="" />
+                                                        全选
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" name="" value="" />
+                                                        反选
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="changyongzu" class="main">
+                                            <div id="changyongzutree" style="width: 240px; min-height: 0!important;">
+                                            </div>
+                                            <div class="changyongzu-people right-people">
+                                                <div class="allchose">
+                                                    <label>
+                                                        <input type="checkbox" name="" value="" />
+                                                        全选
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" name="" value="" />
+                                                        反选
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="juese" class="main">
+                                            <div id="juesetree" style="width: 240px; min-height: 0!important;">
+                                            </div>
+                                            <div class="juese-people right-people">
+                                                <div class="allchose">
+                                                    <label>
+                                                        <input type="checkbox" name="" value="" />
+                                                        全选
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" name="" value="" />
+                                                        反选
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="searchpeoplediv" class="main">
+                                            <div class="allchose">
+                                                <label>
+                                                    <input type="checkbox" name="" value="" />
+                                                    全选
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox" name="" value="" />
+                                                    反选
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hightsearch">
+                                        <div class="hightsearch-head">
+                                            <div>
+                                                <div class="left">
+                                                    <span class="search-name">用户名:</span>
+                                                    <input class="search-input" type="" name="UserName" value="" />
+                                                </div>
+                                                <div class="left">
+                                                    <span class="search-name">姓名:</span>
+                                                    <input class="search-input" type="" name="FullName" value="" />
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="left">
+                                                    <span class="search-name">工号:</span>
+                                                    <input class="search-input" type="" name="EmployeeId" value="" />
+                                                </div>
+                                                <div class="left">
+                                                    <span class="search-name">岗位:</span>
+                                                    <select class="search-input" type="" name="PostId" id="PostId" value="">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="left">
+                                                    <span class="search-name">职级:</span>
+                                                    <select class="search-input" type="" name="TitleLevel" id="TitleLevel" value="">
+                                                        <option value=""></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hightsearch-footbtn">
+                                            <div>
+                                                <div class="hightsearch-shur">搜 索</div>
+                                                <div class="hightsearch-clear">重 置</div>
+                                                <div class="hightsearch-quite">取 消</div>
+                                            </div>
+
+                                        </div>
+                                        <div class="hightsearch-people">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="body-right"></div>
+
+                            </div>
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="cloase slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class="label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class="label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/alert.js"></script>
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/easyui/js/treeLoader.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script>
+
+        //头部导航
+        $('.nav-item').click(function () {
+            if ($(this).html() == '组织结构' || $(this).html() == '小组') {
+                $('.body-main').css('overflow', 'hidden')
+            } else {
+                $('.body-main').css('overflow', 'auto')
+            }
+            $('.nav-item').removeClass('active');
+            $(this).addClass('active');
+            $('.main').hide();
+            $('.main').eq($(this).index()).show();
+            $('.main-item').removeClass('active')
+            for (var i = 0; i < peoplename.length; i++) {
+                $('.main-item[valueid=' + peoplename[i].valueId + ']').addClass('active')
+            }
+        })
+        //最近使用人
+        getlatestuse();
+        function getlatestuse() {
+            ajaxMethodGetData('user.latestuse.getlist', null, function (data) {
+                //console.log(data)
+                $('#latestusediv .main-item').remove()
+                for (var i = 0; i < data.listData.length; i++) {
+                    var res = data.listData[i]
+                    var imgurl = '/img/cal/1.png'
+                    //if (res.PhotoUrl && res.PhotoUrl != '') {
+                    //    imgurl = res.PhotoUrl
+                    //}
+                    var userName = '';
+                    if (res.UserName) {
+                        userName = res.UserName;
+                    }
+                    if (res.EmployeeId) {
+                        var EmployeeId = res.EmployeeId
+                    } else {
+                        var EmployeeId = ''
+                    }
+                    $('#latestusediv').append('<div class="main-item" valueId="' + res.SystemUserId + '"BusinessUnitIdName="' + res.BusinessUnitIdName + '"EmployeeId="' + EmployeeId + '">'
+                        + '<img class="left" src="' + imgurl + '" alt="">'
+                        + '<div class="item-mi left">'
+                            + '<div><span class="name">' + res.FullName + '</span><span class="">/' + userName + '</span><span class="">/' + EmployeeId + '</span></div>'
+                            + '<div>' + res.BusinessUnitIdName + '</div>'
+                        + '</div>'
+                        + '<div class="item-right right">'
+                            + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                        + '</div>'
+                        + '<div class="clear"></div>'
+                    + '</div>')
+                }
+                checkpeople();
+            })
+        }
+        //同部门
+        $('.nav-item').eq(1).one('click', function () {
+            getmybusiness();
+        })
+        function getmybusiness() {
+            ajaxMethodGetData('user.mybusiness.getlist', null, function (data) {
+                //console.log(data)
+                $('#tongbumen .main-item').remove()
+                for (var i = 0; i < data.listData.length; i++) {
+                    var res = data.listData[i]
+                    var imgurl = '/img/cal/1.png'
+                    //if (res.PhotoUrl && res.PhotoUrl != '') {
+                    //    imgurl = res.PhotoUrl
+                    //}
+                    var userName = '';
+                    if (res.UserName) {
+                        userName = res.UserName;
+                    }
+                    if (res.EmployeeId) {
+                        var EmployeeId = res.EmployeeId
+                    } else {
+                        var EmployeeId = ''
+                    }
+                    $('#tongbumen').append('<div class="main-item" valueId="' + res.SystemUserId + '"BusinessUnitIdName="' + res.BusinessUnitIdName + '"EmployeeId="' + EmployeeId + '">'
+                        + '<img class="left" src="' + imgurl + '" alt="">'
+                        + '<div class="item-mi left">'
+                            + '<div><span class="name">' + res.FullName + '</span><span class="">/' + userName + '</span><span class="">/' + EmployeeId + '</span></div>'
+                            + '<div class="">' + res.BusinessUnitIdName + '</div>'
+                        + '</div>'
+                        + '<div class="item-right right">'
+                            + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                        + '</div>'
+                        + '<div class="clear"></div>'
+                    + '</div>')
+                }
+                checkpeople();
+            })
+        }
+        //选人
+        var peoplename = []
+        function checkpeople() {
+            $('.main-item').off()
+            $('.main-item').click(function () {
+                var EmployeeId = $(this).attr('valueid')
+                var name = $(this).find('.name').html()
+                $(this).toggleClass('active')
+                if ($(this).hasClass('active')) {
+                    var name = $(this).find('.name').html()
+                    var EmployeeId = $(this).attr('EmployeeId')
+                    var BusinessUnitIdName = $(this).attr('BusinessUnitIdName')
+                    var valueId = $(this).attr('valueId')
+                    peoplename.push({
+                        name: name,
+                        valueId: valueId,
+                        BusinessUnitIdName: BusinessUnitIdName,
+                        EmployeeId: EmployeeId
+                    })
+                    $('.body-right').append('<div class="checked-item" valueId="' + valueId + '"><span>' + name + '</span><img src="/img/cal/13.png" alt=""></div>')
+                    deletepeople()
+                } else {
+                    var id = $(this).attr('valueid')
+                    var peoplename2 = []
+                    for (var i = 0; i < peoplename.length; i++) {
+                        if (id == peoplename[i].valueId) {
+                        } else {
+                            peoplename2.push(peoplename[i])
+                        }
+                    }
+                    peoplename = peoplename2
+                    $('.body-right').find('div[valueId=' + id + ']').remove()
+                }
+            })
+        }
+        //小组
+        $('.nav-item').eq(4).one('click', function () {
+            getgroup();
+            $('.right-people').width($('.body-main').width() - 241)
+
+        })
+        function getgroup() {
+            ajaxMethodGetData('sys.group.search', null, function (data) {
+                //console.log(data)
+                for (var i = 0; i < data.listData.length; i++) {
+                    var res = data.listData[i]
+                    $('#changyongzutree').append('<div class=" main-item-group" groupId="' + res.GroupId + '">'
+                        + '<div class="item-mi left">'
+                            + '<div class="name">' + res.Name + '(' + res.Quantity + ')' + '</div>'
+                        + '</div>'
+                        + '<div class="item-right right">'
+                            + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                        + '</div>'
+                        + '<div class="clear"></div>'
+                    + '</div>')
+                }
+                gropupeople()
+            })
+        }
+        //组下选人
+        function gropupeople() {
+            $('.main-item-group').click(function () {
+                $(this).parent().find('.main-item-group').removeClass('active')
+                $(this).addClass('active')
+                var that = this;
+                var groupId = $(this).attr('groupId')
+                ajaxMethodGetData('sys.group.member.search', { groupId: groupId, disablePage: 1 }, function (data) {
+                    $('.changyongzu-people').find('.main-item').remove()
+                    for (var i = 0; i < data.listData.length; i++) {
+                        var res = data.listData[i]
+                        var imgurl = '/img/cal/1.png'
+                        //if (res.PhotoUrl && res.PhotoUrl != '') {
+                        //    imgurl = res.PhotoUrl
+                        //}
+                        var userName = '';
+                        if (res.UserName) {
+                            userName = res.UserName;
+                        }
+                        if (res.EmployeeId) {
+                            var EmployeeId = res.EmployeeId
+                        } else {
+                            var EmployeeId = ''
+                        }
+                        $('.changyongzu-people').append('<div class="main-item" valueId="' + res.SystemUserId + '"BusinessUnitIdName="' + res.BusinessUnitIdName + '"EmployeeId="' + EmployeeId + '">'
+                        + '<img class="left" src="' + imgurl + '" alt="">'
+                        + '<div class="item-mi left">'
+                            + '<div><span class="name">' + res.FullName + '</span><span class="">/' + userName + '</span><span class="">/' + EmployeeId + '</span></div>'
+                            + '<div>' + res.BusinessUnitIdName + '</div>'
+                        + '</div>'
+                        + '<div class="item-right right">'
+                            + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                        + '</div>'
+                        + '<div class="clear"></div>'
+                    + '</div>')
+                    }
+                    checkpeople()
+                })
+            })
+        }
+        //删除人
+        function deletepeople() {
+            $('.checked-item img').click(function () {
+                var id = $(this).parent().attr('valueId')
+                var peoplename2 = []
+                for (var i = 0; i < peoplename.length; i++) {
+                    if (id == peoplename[i].valueId) {
+                    } else {
+                        peoplename2.push(peoplename[i]);
+                    }
+                }
+                peoplename = peoplename2;
+                $('.body').find('div[valueId=' + id + ']').removeClass('active')
+                $(this).parent().remove()
+            })
+        }
+        $('.clearchook').click(function () {
+            $('.main-item').removeClass('active');
+            peoplename = [];
+        })
+        //角色
+        $('.nav-item').eq(5).one('click', function () {
+            $('.right-people').width($('.body-main').width() - 241)
+
+            ajaxMethodGetData('sys.role.search', null, function (data) {
+                for (var i = 0; i < data.listData.length; i++) {
+                    var res = data.listData[i]
+                    $('#juesetree').append('<div class=" main-item-role" RoleId="' + res.RoleId + '">'
+                        + '<div class="item-mi left">'
+                            + '<div class="name">' + res.Name + '</div>'
+                        + '</div>'
+                        + '<div class="item-right right">'
+                            + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                        + '</div>'
+                        + '<div class="clear"></div>'
+                    + '</div>')
+                }
+                $('.main-item-role').click(function () {
+                    $(this).parent().find('.main-item-role').removeClass('active')
+                    $(this).addClass('active')
+                    var that = this;
+                    var RoleId = $(this).attr('RoleId')
+                    ajaxMethodGetData('sys.rolemember.search', { roleid: RoleId }, function (data) {
+                        $('.juese-people').find('.main-item').remove()
+                        //console.log(data.listData)
+                        for (var i = 0; i < data.listData.length; i++) {
+                            var res = data.listData[i]
+                            var imgurl = '/img/cal/1.png'
+                            //if (res.PhotoUrl && res.PhotoUrl != '') {
+                            //    imgurl = res.PhotoUrl
+                            //}
+                            var userName = '';
+                            if (res.UserName) {
+                                userName = res.UserName;
+                            }
+                            if (res.EmployeeId) {
+                                var EmployeeId = res.EmployeeId
+                            } else {
+                                var EmployeeId = ''
+                            }
+                            $('.juese-people').append('<div class="main-item" valueId="' + res.SystemUserId + '"BusinessUnitIdName="' + res.BusinessUnitIdName + '"EmployeeId="' + EmployeeId + '">'
+                            + '<img class="left" src="' + imgurl + '" alt="">'
+                            + '<div class="item-mi left">'
+                                + '<div><span class="name">' + res.FullName + '</span><span class="">/' + userName + '</span><span class="">/' + EmployeeId + '</span></div>'
+                                + '<div>' + res.BusinessUnitIdName + '</div>'
+                            + '</div>'
+                            + '<div class="item-right right">'
+                                + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                            + '</div>'
+                            + '<div class="clear"></div>'
+                        + '</div>')
+                        }
+                        checkpeople()
+                    })
+                })
+            })
+
+        })
+        //部门
+        $('.nav-item').eq(3).one('click', function () {
+            treeNode = new treeLoader("organizationTree", "organizationtree", treeItemClick);
+            treeNode.init();
+            var screenHeight = getClientHeight();
+            $('.right-people').width($('.body-main').width() - 241)
+
+        })
+        function treeItemClick(node) {
+            var businessUnitId = node.id;
+            ajaxMethodGetData('sys.user.search', { businessUnitId: businessUnitId }, function (data) {
+                $('.zuzhijiegou-people .main-item').remove()
+                for (var i = 0; i < data.listData.length; i++) {
+                    var res = data.listData[i]
+                    var imgurl = '/img/cal/1.png'
+                    //if (res.PhotoUrl && res.PhotoUrl != '') {
+                    //    imgurl = res.PhotoUrl
+                    //}
+                    var classname = ''
+                    for (var j = 0; j < peoplename.length; j++) {
+                        if (res.systemUserId == peoplename[j].valueId) {
+                            classname = 'active'
+                        }
+                    }
+                    var userName = '';
+                    if (res.userName) {
+                        userName = res.userName;
+                    }
+                    if (res.EmployeeId) {
+                        var EmployeeId = res.EmployeeId
+                    } else {
+                        var EmployeeId = ''
+                    }
+                    $('.zuzhijiegou-people').append('<div class="main-item ' + classname + '" valueId="' + res.systemUserId + '"BusinessUnitIdName="' + res.BusinessUnitIdName + '"EmployeeId="' + EmployeeId + '">'
+                        + '<img class="left" src="' + imgurl + '" alt="">'
+                        + '<div class="item-mi left">'
+                        + '<div><span class="name">' + res.fullName + '</span><span class="">/' + userName + '</span><span class="">/' + EmployeeId + '</span></div>'
+                        + '<div>' + res.BusinessUnitIdName + '</div>'
+                        + '</div>'
+                        + '<div class="item-right right">'
+                            + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                        + '</div>'
+                        + '<div class="clear"></div>'
+                    + '</div>')
+                }
+                checkpeople()
+            })
+        }
+        //搜索人
+        function searchpeople(UserName, FullName, EmployeeId, PostId, type) {
+            $('.body-main').css('overflow', 'auto')
+            $('.main').hide();
+            $('#searchpeoplediv').show();
+            var search = $('.search-input input').val();
+            var d = {
+                search: search
+            }
+            if (UserName) {
+                d.UserName = UserName
+            }
+            if (FullName) {
+                d.FullName = FullName
+            }
+            if (EmployeeId) {
+                d.EmployeeId = EmployeeId
+            }
+            if (PostId) {
+                d.PostId = PostId
+            }
+            if (type == 1) {
+                d.search = ''
+            }
+            ajaxMethodGetData('sys.user.search', d, function (data) {
+                $('#searchpeoplediv .main-item').remove()
+                for (var i = 0; i < data.listData.length; i++) {
+                    var res = data.listData[i]
+                    var imgurl = '/img/cal/1.png'
+                    //if (res.PhotoUrl && res.PhotoUrl != '') {
+                    //    imgurl = res.PhotoUrl
+                    //}
+                    var classname = ''
+                    for (var j = 0; j < peoplename.length; j++) {
+                        if (res.systemUserId == peoplename[j].valueId) {
+                            classname = 'active'
+                        }
+                    }
+                    if (res.userName) {
+                        var userName = res.userName
+                    } else {
+                        var userName = ''
+                    }
+                    if (res.EmployeeId) {
+                        var EmployeeId = res.EmployeeId
+                    } else {
+                        var EmployeeId = ''
+                    }
+                    if (type == 1) {
+                        $('#searchpeoplediv').append('<div class="main-item ' + classname + '" valueId="' + res.systemUserId + '"BusinessUnitIdName="' + res.BusinessUnitIdName + '"EmployeeId="' + EmployeeId + '">'
+                        + '<img class="left" src="' + imgurl + '" alt="">'
+                        + '<div class="item-mi left">'
+                            + '<div><span class="name">' + res.fullName + '</span><span class="">/' + userName + '</span><span class="">/' + EmployeeId + '</span></div>'
+                            + '<div>' + res.BusinessUnitIdName + '</div>'
+                        + '</div>'
+                        + '<div class="item-right right">'
+                            + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                        + '</div>'
+                        + '<div class="clear"></div>'
+                    + '</div>')
+
+                    //    $('.hightsearch-people').append('<div class="main-item ' + classname + '" valueId="' + res.systemUserId + '"BusinessUnitIdName="' + res.BusinessUnitIdName + '"EmployeeId="' + EmployeeId + '">'
+                    //    + '<img class="left" src="' + imgurl + '" alt="">'
+                    //    + '<div class="item-mi left">'
+                    //        + '<div><span class="name">' + res.fullName + '</span><span class="">/' + userName + '</span><span class="">/' + EmployeeId + '</span></div>'
+                    //        + '<div>' + res.BusinessUnitIdName + '</div>'
+                    //    + '</div>'
+                    //    + '<div class="item-right right">'
+                    //        + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                    //    + '</div>'
+                    //    + '<div class="clear"></div>'
+                    //+ '</div>')
+                    } else {
+                        $('#searchpeoplediv').append('<div class="main-item ' + classname + '" valueId="' + res.systemUserId + '"BusinessUnitIdName="' + res.BusinessUnitIdName + '"EmployeeId="' + EmployeeId + '">'
+                        + '<img class="left" src="' + imgurl + '" alt="">'
+                        + '<div class="item-mi left">'
+                            + '<div><span class="name">' + res.fullName + '</span><span class="">/' + userName + '</span><span class="">/' + EmployeeId + '</span></div>'
+                            + '<div>' + res.BusinessUnitIdName + '</div>'
+                        + '</div>'
+                        + '<div class="item-right right">'
+                            + '<img style="width:30px;margin-top:5px;" src="/img/cal/checked.png" alt="">'
+                        + '</div>'
+                        + '<div class="clear"></div>'
+                    + '</div>')
+                    }
+                }
+                checkpeople();
+            })
+        }
+
+        //高级搜索
+        $('.search-btn').click(function () {
+            if ($(this).hasClass('active')) {
+                $('.hightsearch').hide()
+                $('.maincontent').show()
+                $(this).removeClass('active')
+            } else {
+
+                $('.hightsearch').show()
+                $('.maincontent').hide()
+                $(this).addClass('active')
+            }
+        })
+        $('.search-btn').one('click', function () {
+            ajaxMethodGetData('stringmap.getlist', {
+                objectTypeCode: 8,
+                Name: 'PostId'
+            }, function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    $('#PostId').append('<option value="' + data[i].value + '">' + data[i].label + '</option>')
+                }
+            })
+            ajaxMethodGetData('stringmap.getlist', {
+                objectTypeCode: 8,
+                Name: 'TitleLevel'
+            }, function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    $('#TitleLevel').append('<option value="' + data[i].value + '">' + data[i].label + '</option>')
+                }
+            })
+        })
+        $('.hightsearch-clear').click(function () {
+            $('.hightsearch input').val('')
+            $('.hightsearch option[value=""]').attr("selected", "selected");
+        })
+        $('.hightsearch-quite').click(function () {
+            $('.hightsearch').hide()
+            $('.maincontent').show()
+            $('.search-btn').removeClass('active')
+        })
+        $('.hightsearch-shur').click(function () {
+            var UserName = $('input[name="UserName"]').val()
+            var FullName = $('input[name="FullName"]').val()
+            var EmployeeId = $('input[name="EmployeeId"]').val()
+            var PostId = $('select[name="PostId"]').val()
+            searchpeople(UserName, FullName, EmployeeId, PostId, 1)
+            $('.hightsearch').hide()
+            $('.maincontent').show()
+            $('.search-btn').removeClass('active')
+        })
+
+        $('.search-input input').keyup(function (event) {
+            if (event.keyCode == 13) {
+                searchpeople()
+            }
+        })
+        $(window).resize(function () {
+            //window.location.reload()
+        })
+        $('.quite').click(function () {
+            window.close();
+        })
+        $('.shur').click(function () {
+            var ids = []
+            for (var i = 0; i < peoplename.length; i++) {
+                ids.push(peoplename[i].valueId)
+            }
+            window.opener.getcheckedpeople(peoplename)
+            ids = ids.join(',')
+            window.opener.ids = ids
+            window.close();
+        })
+
+        //$('.hightsearch-people').height($(window).height() - 385)
+
+        function lookupControlPick(id, name) {
+            var type = getQueryString('type')
+            if (type == 'addpeople') {
+                parent.vum.addpeople(id,name)
+            } else {
+                var pname = getQueryString('name')
+                var vum = getQueryString('vum')
+                var iframe = getQueryString('iframe')
+                if (vum && vum != '') {
+                    parent.$('#' + iframe)[0].contentWindow[vum].search[pname] = [{
+                        ID: id,
+                        Name: name
+                    }]
+                    parent.$('#' + iframe)[0].contentWindow[vum].list[pname] = {
+                        Id: id,
+                        Name: name
+                    }
+                    if (typeof parent.$('#' + iframe)[0].contentWindow[vum].lookupchange != 'undefined') {
+                        parent.$('#' + iframe)[0].contentWindow[vum].lookupchange(id, pname)
+
+                    }
+                } else {
+                    parent.vum.search[pname] = [{
+                        ID: id,
+                        Name: name
+                    }]
+                    parent.vum.list[pname] = {
+                        Id: id,
+                        Name: name
+                    }
+                    if (typeof parent.vum.lookupchange != 'undefined') {
+                        parent.vum.lookupchange(id, pname)
+
+                    }
+                }
+            }
+
+            parent.$('#changeDiv').hide()
+        }
+        $('.cloase').click(function () {
+            parent.$('#changeDiv').hide()
+
+        })
+        $('.allchose').each(function () {
+            $(this).find('label').eq(0).click(function () {
+                if ($(this).find('input').attr('checked') == 'checked') {
+                    $(this).parent().parent().find('.main-item').addClass('active')
+                } else {
+                    $(this).parent().parent().find('.main-item').removeClass('active')
+
+                }
+
+                choosepeople2(this)
+
+
+            })
+            $(this).find('label').eq(1).find('input').click(function () {
+                $(this).parent().parent().parent().find('.main-item').toggleClass('active')
+
+
+                choosepeople2($(this).parent())
+
+            })
+        })
+        function choosepeople2(that) {
+            $(that).parent().parent().find('.main-item').each(function () {
+                var EmployeeId = $(this).attr('valueid')
+                var name = $(this).find('.name').html()
+                if ($(this).hasClass('active')) {
+                    var name = $(this).find('.name').html()
+                    var EmployeeId = $(this).attr('EmployeeId')
+                    var BusinessUnitIdName = $(this).attr('BusinessUnitIdName')
+                    var valueId = $(this).attr('valueId')
+                    peoplename.push({
+                        name: name,
+                        valueId: valueId,
+                        BusinessUnitIdName: BusinessUnitIdName,
+                        EmployeeId: EmployeeId
+                    })
+                    $('.body-right').append('<div class="checked-item" valueId="' + valueId + '"><span>' + name + '</span><img src="/img/cal/13.png" alt=""></div>')
+                    deletepeople()
+                } else {
+                    var id = $(this).attr('valueid')
+                    var peoplename2 = []
+                    for (var i = 0; i < peoplename.length; i++) {
+                        if (id == peoplename[i].valueId) {
+                        } else {
+                            peoplename2.push(peoplename[i])
+                        }
+                    }
+                    peoplename = peoplename2
+                    $('.body-right').find('div[valueId=' + id + ']').remove()
+                }
+            })
+        }
+
+        $('#Save').click(function () {
+            var ids = []
+            var names = []
+            var names2= []
+            console.log(peoplename)
+            for (var i = 0; i < peoplename.length; i++) {
+                ids.push(peoplename[i].valueId)
+                names.push(peoplename[i].name)
+                names2.push(peoplename[i].name + '/' + peoplename[i].EmployeeId + '/' + peoplename[i].BusinessUnitIdName)
+            }
+            var vuename = getQueryString('vuename')
+            if (vuename && vuename != '') {
+                var pname = getQueryString('name')
+                var id = ids
+                var name = names
+                for (var i = 0; i < id.length; i++) {
+                    if (JSON.stringify(parent[vuename].list[pname].Id).indexOf(id[i]) == '-1') {
+                        parent[vuename].search[pname].push({
+                            ID: id[i],
+                            Name: name[i]
+                        })
+                        parent[vuename].checked[pname].push({
+                            ID: id[i],
+                            Name: name[i]
+                        })
+                        parent[vuename].list[pname].Id.push(id[i])
+                    }
+                }
+            }else if (parent.vum) {
+                parent.vum.invitepeople(ids, names, names2)
+
+            } else {
+                parent.invitepeople(ids, names, names2)
+            }
+            parent.$('#changeDiv').hide();
+        })
+    </script>
+</body>
+</html>

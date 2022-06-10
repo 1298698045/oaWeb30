@@ -1,0 +1,31 @@
+﻿ .related-item-body li > div {
+    float: left;
+    padding-left: 15px;
+    height: 30px;
+    margin-left: 3px;
+    padding-right: 15px;
+	width: 110px;
+	box-sizing:border-box;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap
+}
+.related-item-body .related-list-amend  {
+	width:20px !important;
+	padding:0;
+	margin-left:25px;
+	overflow:visible;
+
+}
+#popup-contpay .related-item-body li > div {
+    float: left;
+    padding-left: 15px;
+    height: 30px;
+    margin-left: 3px;
+    padding-right: 15px;
+	width: 110px;
+	box-sizing:border-box;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap
+}

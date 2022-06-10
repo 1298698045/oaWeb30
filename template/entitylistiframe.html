@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="/easyui/js/treeLoader.js"></script>
+
+    <script type="text/javascript" src="/js/jqueryui/1.8.17/jquery-ui.min.js"></script>
+
+
+    <link rel="stylesheet" href="/easyui/themes/bootstrap/easyui.css" type="text/css" />
+    <link rel="stylesheet" href="/easyui/themes/icon.css" type="text/css" />
+    <link href="/template/css/indexStyle.css" rel="stylesheet" />
+    <link href="/template/css/header.css" rel="stylesheet" />
+    <link href="/template/css/search.css" rel="stylesheet" />
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body, html {
+        height: 100%;
+    }
+
+    body {
+        font-size: 14px;
+        color: #333;
+        background-color:white;
+    }
+
+    .datagrid-header td {
+        background-color: #F3F2F2 !important;
+    }
+
+    .datagrid-header, .datagrid-td-rownumber {
+        background: #F3F2F2 !important;
+    }
+
+    .gridContainer {
+        height: 100%;
+    }
+
+    .slds-button {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        background: rgb(255, 255, 255);
+        background-clip: border-box;
+        border: 1px solid #dedede;
+        border-radius: .25rem;
+        line-height: 1.875rem;
+        text-decoration: none;
+        color: rgba(27, 82, 151, 1.0);
+        padding: 0 15px;
+    }
+
+        .slds-button:hover {
+            background-color: #f2f2f2;
+        }
+
+    .gridhead {
+        margin-bottom: 10px;
+    }
+
+    a {
+        cursor: pointer !important;
+    }
+
+    .gridContainer {
+        width: 100%;
+    }
+
+    .gridContainer-people {
+        margin-left: 5px;
+    }
+
+    .grid-body {
+        width: 100%;
+    }
+
+    .left-tree {
+        height: 100%;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .gridhead {
+        margin-top: 10px;
+    }
+
+    #treePanel, .panel-header {
+        border-right: 0;
+    }
+
+</style>
+<body style="padding: 15px; box-sizing: border-box;">
+    <div class="clear"></div>
+    <div class="grid-body">
+        <div class="gridhead" style="overflow:hidden;">
+            <div style="float:left" class="search-group" id="searchtext" name="name" type="text" text="名称">
+            </div>
+            <div style="float: right; margin-left: 10px;" class="slds-button" id="addntn">新建</div>
+        </div>
+        <div class="clear"></div>
+
+        <div class="gridContainer gridContainer-group">
+            <table id="datagrid" striped="true" rownumbers="true" fix="true" fitcolumns="true"></table>
+        </div>
+    </div>
+    <script>
+        var objTypeCode = ''
+        $('.gridContainer').height($(window).height() - 80)
+        $('#datagrid').height($(window).height() - 80)
+        parent.$('.breadcrumbDetail.uiOutputText').html(getQueryString('name'));
+        $(document).ready(function () {
+            $('#searchtext input').change(function () {
+                getgrid();
+            })
+        })
+        $('#addntn').click(function () {
+            var entityName = getQueryString('entityname')
+            parent.$('#iframe').show().attr('src', '/layouteditor/add_layout_ie8.html?entityName=' + entityName + '&type=iframe').height(620).css('margin-top', '-320px')
+            parent.$('.popup-mask').show()
+        })
+        function showEditDialog(id) {
+            var entityName = getQueryString('entityname')
+            parent.$('#iframe').show().attr('src', '/layouteditor/add_layout_ie8.html?entityName=' + entityName + '&id=' + id + '&type=iframe').height(620).css('margin-top', '-320px')
+            parent.$('.popup-mask').show()
+        }
+        function deleteConfirm(id) {
+            parent.$('.popup-mask').show()
+            parent.$('#iframe').attr('src', '/alert/delete_ie8.html?id=' + id + '&objTypeCode=iframedelete&entityobjTypeCode=' + objTypeCode).show().height(280).css('margin-top', '-140px')
+        }
+        getgrid();
+        function formatOper(val, row, index, entityType) {
+            var rowId = row.LIST_RECORD_ID;
+            var action = "<a style=\"color:#015ba7;font-size:13px;\" onclick=\"showEditDialog('" + rowId + "','" + entityType + "')\">修改</a>&nbsp;|&nbsp;<a style=\"color:#015ba7;font-size:13px;\" href=\"#\" onclick=\"deleteConfirm('" + rowId + "','应用程序')\">删除</a>";
+            return action;
+        }
+        function getgrid(search, starttime, endtime) {
+            var entityType = getQueryString('entityType')
+            var searchKey = $('input.search').val();
+            var columnsArray = [];
+            var col = {
+                field: 'ids',
+                checkbox: true
+            };
+            columnsArray.push(col);
+            var self = this;
+            var random = Math.ceil(Math.random() * 10000);
+            var data = {
+                gd: entityType,
+                entityType: entityType
+            }
+            ajaxData("entitygrid.config.get&_=" + random, data, function fn(data) {
+                if (data) {
+                    window.objTypeCode = data.ObjectTypeCode
+                    var cols = data.DataSet.Columns;
+                    var col = {
+                        field: "Action",
+                        title: "操作",
+                        formatter: function formatter(value, row, index) {
+                            return formatOper(value, row, index);
+                        }
+                    };
+                    columnsArray.push(col);
+                    for (var i = 0; i < cols.length; i++) {
+                        var c = cols[i];
+                        var col = {
+                            field: c.Name,
+                            title: c.Title,
+                            sortable: true,
+                        };
+                        if (c.Name == 'statecode') {
+                            var col = {
+                                field: c.Name,
+                                title: c.Title,
+                                sortable: true,
+                                formatter: function formatter(value, row, index) {
+                                    return formatOperstatecode(value, row, index);
+                                }
+                            };
+                            columnsArray.push({
+                                field: 's',
+                                title: '付款进度',
+                                sortable: true,
+                                formatter: function formatter(value, row, index) {
+                                    return formatOperprogeress(value, row, index);
+                                }
+                            })
+                        }
+
+                        columnsArray.push(col);
+                    }
+                    $('#datagrid').datagrid({
+                        columns: [columnsArray],
+                        fitCloumns: true,
+                        idField: "LIST_RECORD_ID",
+                        singleSelect: false,
+                        checkOnSelect: true,
+                        method: 'POST',
+                        pagination: true,
+                        rownumbers: true,
+                        url: '/apps/CommandProcessor.ashx?cmd=entitygrid.list&entityType=' + entityType,
+                        striped: false,
+                        pageSize: 15,
+                        pageList: [10, 15, 20, 25, 30, 50, 100],
+                        queryParams: {
+                            search:$('#searchtext input').val()
+                        },
+                        onDblClickRow: function onDblClickRow(index, row) {
+                        },
+                        onLoadSuccess: function () {
+                            $('#datagrid').datagrid('resize')
+                        }
+                    });
+
+                }
+            }, false, true);
+        }
+        $('#new-btn').click(function () {
+            parent.$('#changeDiv').show()
+            parent.$('#iframe').attr('src', '/setup/navigation/new_navlst.html')
+        })
+        
+        function deletepeople(id) {
+            parent.$('#changeDiv').show()
+            parent.$('#iframe').attr('src', '/alert/delete.html?id=' + id + '&type=grouppeople')
+        }
+        $('#searchbtn').click(function () {
+            var search = $('#searchtext input').val()
+            var starttime = $('#StartTime input').val()
+            var endtime = $('#EndTime input').val()
+            getgrid(search,starttime,endtime)
+        })
+    </script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/template/js/indexjs.js"></script>
+    <script src="/template/js/search.js"></script>
+</body>
+</html>

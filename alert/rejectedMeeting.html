@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+    <style>
+        .shift-body-main {
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">是否接受会议</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>基本信息</span></div>
+                            <div class="shift-body-main">
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">是否接受</span>
+                                        <el-select class='save-checking-input' v-model="list.statusCode" placeholder="请选择">
+                                            <el-option v-for="item in select.statusCode"
+                                                       :key="item.Value"
+                                                       :label="item.Name"
+                                                       :value="item.Value">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                    <div class="item-right" v-if="list.statusCode==2">
+                                        <span class="shift-name-title">拒绝原因</span>
+                                        <el-select v-model="list.leaveReason" placeholder="请选择">
+                                            <el-option v-for="item in select.leaveReason"
+                                                       :key="item.Name"
+                                                       :label="item.Name"
+                                                       :value="item.Name">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="shift-item">
+                                        <span class="shift-name-title" style="margin-bottom:5px;">备注</span>
+                                        <el-input type="textarea"
+                                                 :rows="4"
+                                                  placeholder="请输入内容"
+                                                  v-model="list.description">
+                                        </el-input>
+                                    <div class="clear"></div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class="label bBody">取消</span>
+                                </button>
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" style="margin-left:5px;" title="附加文件 （新窗口）" type="button">
+                                    <span class="label bBody">确定</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    meetingId:getQueryString('id'), 
+                    statusCode:1,
+                    description:'',
+                    leaveReason:''
+                },
+                select: {
+                    statusCode: [
+                        { Value:1, Name: '接受' }, { Value:2, Name: '拒绝' },
+                    ],
+                    leaveReason: [
+                        { Name: '请假' }, { Name: '公休' }, { Name: '公出' }, { Name: '开会' }, { Name: '手术' }, { Name: '其它' },
+                    ]
+                },
+            },
+            created: function () {
+                
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        $('#Save').click(function () {
+            function callback(data) {
+                parent.loadMyMeetings()
+                parent.$('#changeDiv').hide()
+                parent.$('.popup-mask').hide()
+                parent.$('#iframe').hide()
+            }
+            var d = vum.list
+            var save = document.querySelectorAll('.save-checking.active');
+            if (vum.list.statusCode!= '') {
+                ajaxMethodPostData('meeting.audience.accept', d, callback)
+            }
+        })
+    </script>
+</body>
+</html>

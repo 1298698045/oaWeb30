@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title></title> 
+  <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .clear {
+            clear:both;
+        }
+        .form {
+            margin-top:50px;
+            
+
+        }
+        .form-title {
+            text-align:center;
+            font-size:22px;
+            color:#555;
+            font-family:;
+        }
+        .form-head {
+            text-align:center;
+            width:620px;
+            margin:0 auto;
+            margin-top:20px;
+        }
+        .form-head > span {
+            margin:10px 0px;
+        }
+        .form-body>p{
+            padding:10px;
+        }
+        .hidecorderinput {
+            border:0;
+            outline:none;
+        }
+        .form-foot {
+            width:600px;
+            margin:0 auto;
+            text-align:right;
+        }
+         .form-foot>p{
+            margin:10px 0px;
+         }
+        .bottom-input {
+            border:0;
+            outline:none;
+            border-bottom:1px solid #333;
+        }
+        .form-body{
+            width:750px;
+            border:1px solid #333;
+            margin:0 auto;
+            padding-top:20px;
+            line-height:30px;
+        }
+      input[type='text'] {
+          outline:none; 
+      }
+      p {
+        padding:0 10px;
+      }
+      .red {
+        color:red;
+      }
+      .shuoming {
+            width:750px;
+            margin:0 auto;
+        
+      }
+      .shuoming-title {
+        font-family:仿宋;
+        color:#474646;
+      }
+      .shuoming-body {
+        font-family:仿宋;
+        color:#474646;
+      }
+      hr{
+        border: none;
+	    height: 1px;
+	    background-color: #000;
+     }
+  </style> 
+ </head> 
+ <body> 
+  <div class="form"> 
+   <div> 
+    <div class="form-title"> 
+     <span>中华人民共和国传染病报告卡</span> 
+    </div> 
+    <div class="form-head"> 
+     <span style="float:left;">卡片编号: <input type="text" class="hidecorderinput" style="width:100px;" /></span> 
+     <div style="float:right;"> 
+      <span>报卡类别:</span> 
+      <span>1、初次报告</span> 
+      <span>2、订正报告</span> 
+     </div> 
+     <div class="clear"></div> 
+    </div> 
+   </div> 
+   <div class="form-body"> 
+       <div>
+           <p>姓名*
+               <input type="text"class="bottom-input" />
+               （患儿家长姓名
+               <input type="text"class="bottom-input" />）
+           </p>
+           <p>有效证件号*
+               <input type="text"class="bottom-input" /></p>
+           <p>性别*
+               <label><input type="checkbox" />男</label>
+               <label><input type="checkbox" />女</label>
+           </p>
+           <p class="nowrap">出生日期*<input type="text"class="bottom-input" style="width:40px;"/>年<input type="text"class="bottom-input" style="width:25px;"/>月<input type="text"class="bottom-input" style="width:25px;"/>日
+               (如出生日期不详，实足年龄
+               <input type="text"class="bottom-input" style="width:30px;"/>年龄单位:<input type="text"style="width:15px;"/>岁<input type="text"style="width:15px;"/>月<input type="text"style="width:15px;"/>天)
+           </p>
+           <p>工作单位（学校）<input type="text" class="bottom-input" style="width:450px;"/></p>
+           <p>联系电话（学校）<input type="text" class="bottom-input" style="width:300px;"/></p>
+           <p>病人属于*
+               <label><input type="checkbox" />本县区</label>    
+               <label><input type="checkbox" />本市其他县区</label>
+               <label><input type="checkbox" />本省其他地市</label>
+               <label><input type="checkbox" />外省</label>
+               <label><input type="checkbox" />港澳台</label>
+               <label><input type="checkbox" />外籍</label>
+           </p>
+           <p class="nowrap">现住址(详填)*
+                <input type="text"class="bottom-input" style="width:50px;"/>省
+                <input type="text"class="bottom-input" style="width:40px;"/>市
+                <input type="text"class="bottom-input" style="width:40px;"/>县(区)
+                <input type="text"class="bottom-input" style="width:40px;"/>乡(镇、街道)
+                <input type="text"class="bottom-input" style="width:55px;"/>村
+                <input type="text"class="bottom-input" style="width:85px;"/>(门牌号)
+            </p>
+           <p>人群分类*
+               <label><input type="checkbox" />幼托儿童、</label>    
+               <label><input type="checkbox" />散居儿童、</label>
+               <label><input type="checkbox" />学生（大中小学）、</label>
+               <label><input type="checkbox" />教师、</label>
+               <label><input type="checkbox" />保育员及保姆、</label>
+               <label><input type="checkbox" />餐饮食品业、</label>
+               <label><input type="checkbox" />商业服务、</label>
+               <label><input type="checkbox" />医务人员、</label>
+               <label><input type="checkbox" />工人、</label>
+               <label><input type="checkbox" />民工、</label>
+               <label><input type="checkbox" />农民、</label>
+               <label><input type="checkbox" />牧民、</label>
+               <label><input type="checkbox" />渔（船）民、</label>
+               <label><input type="checkbox" />干部职员、</label>
+               <label><input type="checkbox" />离退人员、</label>
+               <label><input type="checkbox" />家务及待业、</label>
+               <label><input type="checkbox" />其他（<input type="text" class="hidecorderinput"style="width:25px;"/>）、</label>
+               <label><input type="checkbox" />不详、</label>
+           </p>
+           <p>病例分类*
+               （1）
+               <label><input type="checkbox" />疑似病例、</label>    
+               <label><input type="checkbox" />临床诊断病例、</label>    
+               <label><input type="checkbox" />确诊病例、</label>    
+               <label><input type="checkbox" />病原携带者、</label>    
+               <br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+               （2）
+                <label><input type="checkbox" />急性、</label>    
+               <label><input type="checkbox" />慢性（乙型肝炎*、血吸虫病*、丙肝）、</label>    
+           </p>
+           <hr />
+           <p>甲类传染病*：
+               <br />
+               <label><input type="checkbox" />鼠疫、</label>    
+               <label><input type="checkbox" />霍乱</label>    
+           </p>
+           
+           <hr />
+           <p>乙类传染病*：
+               <br />
+               <label><input type="checkbox" />传染性非典型肺炎、</label>
+               <label><input type="checkbox" />艾滋病（ 艾滋病病人 HIV）、</label>
+               <label><input type="checkbox" />病毒性肝炎（ 甲型 乙型 丙型 丁肝 戊型 未分型）、 </label>
+               <label><input type="checkbox" />脊髓灰质炎、 </label>
+               <label><input type="checkbox" />人感染高致病性禽流感、 </label>
+               <label><input type="checkbox" />麻疹、 </label>
+               <label><input type="checkbox" />流行性出血热、 </label>
+               <label><input type="checkbox" />狂犬病、</label>
+               <label><input type="checkbox" />流行性乙型脑炎、  </label>
+               <label><input type="checkbox" />登革热、</label>
+               <label><input type="checkbox" />炭疽（ 肺炭疽 皮肤炭疽 未分型）、</label>
+               <label><input type="checkbox" />痢疾（ 细菌性 阿米巴性）、</label>
+               <label><input type="checkbox" />肺结核（ 利福平耐药  病原学阳性 病原学阴性 无病原学结果）、</label>
+               <label><input type="checkbox" />伤寒（ 伤寒 副伤寒）、 </label>
+               <label><input type="checkbox" />流行性脑脊髓膜炎、 </label>
+               <label><input type="checkbox" />百日咳、 </label>
+               <label><input type="checkbox" />白喉、  </label>
+               <label><input type="checkbox" />新生儿破伤风、 </label>
+               <label><input type="checkbox" />猩红热、 </label>
+               <label><input type="checkbox" />布鲁氏菌病、 </label>
+               <label><input type="checkbox" />淋病、</label>
+               <label><input type="checkbox" />梅毒（ Ⅰ期 Ⅱ期 Ⅲ期 胎传 隐性）、 </label>
+               <label><input type="checkbox" />钩端螺旋体病、 </label>
+               <label><input type="checkbox" />血吸虫病、</label>
+               <label><input type="checkbox" />疟疾（ 间日疟 恶性疟 未分型）</label> 
+               <label><input type="checkbox" />人感染H7N9禽流感</label>    
+           </p>
+           <hr />
+           
+           <p>丙类传染病*：
+               <br />
+               <label><input type="checkbox" />流行性感冒、 </label> 
+               <label><input type="checkbox" />流行性腮腺炎、 </label> 
+               <label><input type="checkbox" />风疹、 </label> 
+               <label><input type="checkbox" />急性出血性结膜炎、 </label> 
+               <label><input type="checkbox" />麻风病、 </label> 
+               <label><input type="checkbox" />流行性和地方性斑疹伤寒、 </label> 
+               <label><input type="checkbox" />黑热病、 </label> 
+               <label><input type="checkbox" />包虫病、 </label> 
+               <label><input type="checkbox" />丝虫病、 </label> 
+               <label><input type="checkbox" />除霍乱、</label> 
+               <label><input type="checkbox" />细菌性和阿米巴性痢疾、</label> 
+               <label><input type="checkbox" />伤寒和副伤寒以外的感染性腹泻病、 </label> 
+               <label><input type="checkbox" />手足口病</label>    
+           </p>
+           <hr />
+           <p>其他法定管理以及重点监测传染病*：
+               <label class="red"><input type="checkbox" />迟缓性下肢乏力（AFP）、 </label> 
+               <label class="red"><input type="checkbox" />生殖道沙眼衣原体感染、 </label> 
+               <label class="red"><input type="checkbox" />尖锐湿疣、 </label> 
+               <label class="red"><input type="checkbox" />生殖器疱疹、 </label> 
+               <label class="red"><input type="checkbox" />水痘、 </label> 
+               <label class="red"><input type="checkbox" />恙虫病、 </label> 
+           </p>
+           <hr />
+           <p>订正病名：<input type="text"class="bottom-input" style="width:250px;"/>
+               &nbsp
+               &nbsp
+               &nbsp
+              退卡原因：<input type="text"class="bottom-input" style="width:250px;"/>
+           </p>
+           <p>报告单位：<input type="text"class="bottom-input" style="width:250px;"/>
+               &nbsp
+               &nbsp
+               &nbsp
+              联系电话：<input type="text"class="bottom-input" style="width:250px;"/>
+           </p>
+           <p>填卡医生*：<input type="text"class="bottom-input" style="width:240px;"/>
+               &nbsp
+               &nbsp
+               &nbsp
+              填卡日期*：<input type="text"class="bottom-input" style="width:50px;"/>年
+               <input type="text"class="bottom-input" style="width:50px;"/>月
+               <input type="text"class="bottom-input" style="width:50px;"/>日
+           </p>
+           <hr />
+           <p>备注：<input type="text"class="hidecorderinput" style="width:500px;"  /></p>
+           
+
+
+       </div>
+       
+    
+   </div> 
+   <div class="form-foot"> 
+    <p>报告人: <input type="text" class="hidecorderinput" style="width:100px;" /></p> 
+    <p>填卡日期: <input type="text" class="hidecorderinput" style="width:100px;" /></p> 
+    
+        
+   </div> 
+   <div class="shuoming">
+        <p class="MsoNormal" align="center" style="text-align:center;line-height:28.0pt;">
+            <b><span style="font-size:20.0pt;font-family:宋体;color:#474646;">《中华人民共和国传染病报告卡》填卡说明</span></b>
+        </p>
+        <p class="MsoNormal">
+            <b><span class="shuoming-title">卡片编码：</span></b>
+            <span class="shuoming-body">由报告单位自行编制填写。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">姓名：</span></b>
+            <span class="shuoming-body">填写患者或献血员的名字，姓名应当和身份证上的姓名一致。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">家长姓名：</span></b>
+            <span class="shuoming-body">14岁及以下的患儿要求填写患者家长姓名。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">有效证件号：</span></b>
+            <span class="shuoming-body">必须填写有效证件号，包括居民身份证号、护照、军官证、居民健康卡、社会保障卡、新农合医疗卡。尚未获得身份识别号码的人员用特定编码标识。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">性别：</span></b>
+            <span class="shuoming-body">在相应的性别前打√。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">出生日期：</span></b>
+            <span class="shuoming-body">出生日期与年龄栏只要选择一栏填写即可，不必同时填报出生日期和年龄。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">实足年龄：</span></b>
+            <span class="shuoming-body">对出生日期不详的用户填写年龄。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">年龄单位：</span></b>
+            <span class="shuoming-body">对于新生儿和只有月龄的儿童，注意选择年龄单位为天或月。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">工作单位（学校）：</span></b>
+            <span class="shuoming-body">填写患者的工作单位。学生、幼托儿童须详细填写所在学校及班级名称。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">联系电话：</span></b>
+            <span class="shuoming-body">填写患者的联系方式。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">实足年龄：</span></b>
+            <span class="shuoming-body">在相应的类别前打√。用于标识病人现住地址与就诊医院所在地区的关系。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">现住地址：</span></b>
+            <span class="shuoming-body">至少须详细填写到乡镇（街道）。现住址的填写，原则上是指病人发病时的居住地，不是户藉所在地址。如病人不能提供本人现住地址，则填写报告单位地址。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">职业：</span></b>
+            <span class="shuoming-body">在相应的职业名前打√。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">病例分类：</span></b>
+            <span class="shuoming-body">在相应的类别前打√。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">发病日期：</span></b>
+            <span class="shuoming-body">本次发病日期；病原携带者填初检日期或就诊时间；采供血机构报告填写献血者献血日期。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">诊断日期：</span></b>
+            <span class="shuoming-body">本次诊断日期，需填写至小时；采供血机构填写确认实验日期。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">死亡日期：</span></b>
+            <span class="shuoming-body">病例的死亡时间。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">疾病名称：</span></b>
+            <span class="shuoming-body">在作出诊断的病名前打√。其中利福平耐药结核病是指检测发现的对利福平耐药的患者，包含利福平单耐药、耐多药和其他利福平耐药等。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">其他法定管理以及重点监测传染病：</span></b>
+            <span class="shuoming-body">填写纳入报告管理的其他传染病病种名称。其中结核性胸膜炎归入肺结核分类统计，不再报告到“其他法定管理以及重点监测传染病”中。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">订正病名：</span></b>
+            <span class="shuoming-body">订正报告填写订正前的病名。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">退卡原因：</span></b>
+            <span class="shuoming-body">填写卡片填报不合格的原因。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">报告单位：</span></b>
+            <span class="shuoming-body">填写报告传染病的单位。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">填卡医生：</span></b>
+            <span class="shuoming-body">填写传染病报告卡的医生姓名。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">填卡日期：</span></b>
+            <span class="shuoming-body">填写本卡日期。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">备注：</span></b>
+            <span class="shuoming-body">用户可填写文字信息，如最终确诊非法定报告的传染病的病名等。</span>
+        </p>
+       <p class="MsoNormal">
+            <b><span class="shuoming-title">注：</span></b>
+            <span class="shuoming-body">报告卡带“*”部份为必填项目。</span>
+        </p>
+       
+
+   </div>
+
+
+  </div>   
+ </body>
+</html>

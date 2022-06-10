@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="video.folder.create" type="Supermore.Video.Actions.VideoFolderCreate,Youyou.Filelib" desc="创建视频文件夹"></Action>
+  <Action name="video.subfolder.list" type="Supermore.Video.Actions.SubFolderList,Youyou.Filelib" desc="获取子文件夹"></Action>
+  <Action name="video.folder.update" type="Supermore.Video.Actions.VideoFolderUpdate,Youyou.Filelib" desc="更新文件夹"></Action>
+  <Action name="video.folder.delete" type="Supermore.Video.Actions.VideoFolderDelete,Youyou.Filelib" desc="删除文件夹"></Action>
+  <Action name="video.video.upload" type="Supermore.Video.Actions.VideoFileUpload,Youyou.Filelib" desc="upload file"></Action>
+  <Action name="video.video.getitems" type="Supermore.Video.Actions.GetItemList,Youyou.Filelib" desc="获取内容"></Action>
+  <Action name="video.video.getvideo" type="Supermore.Video.Actions.GetVideoList,Youyou.Filelib" desc="获取视频"></Action>
+  <Action name="video.video.search" type="Supermore.Video.Actions.SearcVideoList,Youyou.Filelib" desc="search视频"></Action>
+  <Action name="video.video.delete" type="Supermore.Video.Actions.DeleteVideoFile,Youyou.Filelib" desc="删除视频"></Action>
+
+</Actions>

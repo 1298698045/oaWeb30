@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+
+  <Action name="calendar.holiday.getlist" type="Youyou.Calendars.HolidayGetlist,OACore"  desc="获取接假日"></Action>
+  
+  <Action name="attendance.employeeshift.search" type="Youyou.HRCore.Actions.Attendance.AttendanceEmployeeShiftSearch,HRAttendance"  desc="搜索排班,按部门"></Action>
+  
+  <Action name="attendance.groupmonth.search" type="Youyou.HRCore.Actions.Attendance.AttendanceGroupmonthSearch,HRAttendance"  desc="考勤期间,按组"></Action>
+  <Action name="businessunit.attendant.getlist" type="Youyou.HRCore.Actions.Attendance.BusinessUnitAttendantGetList,HRAttendance" desc="获取部门考勤员"></Action>
+
+  <Action name="attendance.leavetypeaccount.check" type="Youyou.Attendance.Actions.AttendanceLeaveTypeAccountCheck,HRAttendance" desc="检查考勤账户"></Action>
+  
+  <Action name="employee.attendance.search" type="Youyou.HRCore.Attendance.Actions.AttendanceGroupEmployeeSearch,HRAttendance" desc="组考勤，停用"></Action>
+  <Action name="attendance.group.employee.search" type="Youyou.HRCore.Attendance.Actions.AttendanceGroupEmployeeSearch,HRAttendance" desc="组考勤"></Action>
+  <Action name="attendance.dept.employee.search" type="Youyou.HRCore.Attendance.Actions.AttendanceDeptEmployeeSearch,HRAttendance"  desc="部门考勤"></Action>
+  
+  <Action name="attendance.dept.employee.export" type="Youyou.HRCore.Attendance.Actions.AttendanceDeptEmployeeExport,HRAttendance"  desc="部门考勤导出"></Action>
+  <Action name="attendance.group.employee.export" type="Youyou.HRCore.Attendance.Actions.AttendanceGroupEmployeeExport,HRAttendance"  desc="组考勤导出"></Action>
+  
+  <Action name="attendance.deptmonth.employee.synch" type="Youyou.HRCore.Attendance.Actions.AttendanceDeptMonthEmployeeSynch,HRAttendance"  desc="从员工表获取最新人员"></Action>
+  <Action name="attendance.month.employee.remark.save" type="Youyou.HRCore.Attendance.Actions.AttendanceMonthEmployeeRemarkSave,HRAttendance"  desc="备注保存"></Action>
+ 
+  <Action name="attendance.employee.month.transferdept" type="Youyou.HRCore.Attendance.Actions.AttendanceEmployeeMonthTransferDept,HRAttendance" desc="人员月部门考勤调入"></Action>
+  <Action name="attendance.employee.month.transferout" type="Youyou.HRCore.Attendance.Actions.AttendanceEmployeeMonthTransferout,HRAttendance" desc="月部门考勤调出"></Action>
+  <Action name="attendance.employee.month.borrowin" type="Youyou.HRCore.Attendance.Actions.AttendanceEmployeeMonthBorrowIn,HRAttendance" desc="借入"></Action>
+  <Action name="attendance.employee.month.lenddept" type="Youyou.HRCore.Attendance.Actions.AttendanceEmployeeMonthLenddept,HRAttendance" desc="借出"></Action>
+  
+  <Action name="attd.employee.ingroup" type="Youyou.HRCore.Attendance.Actions.TransferEmployeeAttenanceMonthInGroup,HRAttendance" desc="人员 组调入"></Action>
+  <Action name="attd.employee.outgroup" type="Youyou.HRCore.Attendance.Actions.TransferEmployeeAttenanceMonthOutGroup,HRAttendance" desc="人员 组调出"></Action>
+  
+  <Action name="attendance.monthattendancestate.export" type="Youyou.HRCore.Actions.Reports.AttendanceStatMonthExport,HRAttendance" desc="月考勤汇总导出"></Action>
+  
+  <Action name="attendance.leave.month.export" type="Youyou.HRCore.Actions.Reports.AttendanceStatLeaveMonthExport,HRAttendance" desc="月考勤类型按列月汇总导出"></Action>
+  <Action name="attendance.leave.year.export" type="Youyou.HRCore.Actions.Reports.AttendanceStatLeaveYearExport,HRAttendance" desc="月考勤类型按列年汇总导出"></Action>
+  
+  <Action name="attendance.dept.monthstatus.getlist" type="Youyou.HRCore.Actions.Attendance.AttendanceDeptMonthStatusGetlist,HRAttendance" desc="部门考勤上报审核"></Action>
+  
+  <Action name="attendance.month.submit" type="Youyou.HRCore.Actions.Attendance.AttendanceMonthSubmit,HRAttendance" desc="考勤上报提交"></Action>
+  
+  <Action name="attendance.deptorgroup.employee.sort" type="Youyou.HRCore.Attendance.Actions.DeptORGroupEmployeeSort,HRAttendance" desc="考勤排班人员排序"></Action>
+  <Action name="attendance.month.employeebatch" type="Youyou.HRCore.Actions.Attendance.AttendanceMonthEmployeeBatch,HRAttendance" desc="批量设置考勤"></Action>
+  <Action name="attend.rule.get" type="Youyou.HRCore.Actions.Attendance.AttendRuleGet,HRAttendance" desc="批量设置考勤包括周末和节假日 "></Action>
+  
+  <Action name="attendance.leaveday.delete" type="Youyou.HRCore.Actions.Attendance.AttendanceLeaveDayDelete,HRAttendance" desc="删除某一条上报"></Action>
+  <Action name="attendance.employee.monthleave.delete" type="Youyou.HRCore.Actions.Attendance.AttendanceEmployeeMonthLeaveDelete,HRAttendance" desc="删除选择人员月考勤"></Action>
+  <Action name="attendance.monthstat.calculate" type="Youyou.HRCore.Actions.Attendance.AttendaceMonthStatCalculate,HRAttendance" desc="考勤汇总计算"></Action>
+  <Action name="attendance.detail.report" type="Youyou.HRCore.Actions.Attendance.AttendanceDetailReport,HRAttendance" desc="考勤详细报表查询"></Action>
+  <Action name="attendance.shiftfee.export" type="Youyou.HRCore.Actions.Reports.AttendanceStatShiftFeeExport,HRAttendance" desc="班次费用导出"></Action>
+  
+  <Action name="attendance.statmonth.export" type="Youyou.HRCore.Actions.Reports.AttendanceStatMonthExport,HRAttendance" desc="月考勤汇总导出"></Action>
+
+
+  <Action name="attendance.personnelnotreported.export" type="Youyou.HRCore.Actions.Attendance.PersonnelNotReported,HRAttendance" desc="月考勤汇总导出"></Action>
+  <Action name="attendance.calendardetail.save" type="Youyou.HRCore.Actions.Attendance.AttendanceCalendarDetailSave,HRAttendance"></Action>
+  <Action name="attendance.calendardetail.getjson" type="Youyou.HRCore.Actions.Attendance.CalendarDetailGetjson,HRAttendance"></Action>
+  <Action name="attendance.workshift.getjson" type="Youyou.HRCore.Actions.Attendance.WorkShiftGetjson,HRAttendance"></Action>
+
+
+  
+  <Action name="attendance.leave.employee.day.set" type="Youyou.HRCore.Actions.Attendance.AttendanceLeaveEmployeeDaySet,HRAttendance" desc="员工日考勤填报提交"></Action>
+  <!--获取个人考勤信息-->
+  <Action name="attendance.summarypersonreport.getjson" type="Youyou.HRCore.Actions.Attendance.SummaryPersonReportGetjson,HRAttendance"></Action>
+  <!--获取部门日历-->
+  <Action name="attendance.calendarbusinessunit.getjson" type="Youyou.HRCore.Actions.Attendance.CalendarBusinessUnitGetjson,HRAttendance"></Action>
+  <!--设置部门日历-->
+  <Action name="attendance.calendarbusinessunit.save" type="Youyou.HRCore.Actions.Attendance.CalendarBusinessUnitSave,HRAttendance"></Action>
+  <!--获取班次费用-->
+  <Action name="attendance.shiftamount.getjson" type="Youyou.HRCore.Actions.Attendance.ShiftAmountGetjson,HRAttendance"></Action>
+  <!--新建日历-->
+  <Action name="attendance.calendar.save" type="Youyou.HRCore.Actions.Attendance.CalendarSave,HRAttendance"></Action>
+  
+  <Action name="attenance.employeeshift.copy" type="Youyou.HRCore.Actions.Attendance.AttendanceEmployeeShiftCopy,HRAttendance" desc="复制排班"></Action>
+ 
+  <Action name="attendance.leavetype.getlist" type="Youyou.HRCore.Attendance.Actions.AttendanceLeaveTypeGetList,HRAttendance" desc="获取请假类型"></Action>
+  <Action name="attendance.requestleave.search" type="Youyou.Attendance.AttendanceRequestleaveSearch,AppBusiness" desc="请假信息查询"></Action>
+    
+  <Action name="attendance.leave.remove" type="Youyou.HRCore.Actions.Attendance.AttendanceLeaveRemove,HRAttendance" desc="删除日考勤"></Action>
+  <Action name="attendance.report.close" type="Youyou.HRCore.Actions.Attendance.AttendanceReportClose,HRAttendance" desc="关闭考勤上报"></Action>
+
+  <Action name="attendance.group.owner.getlist" type="Youyou.HRCore.Actions.Attendance.AttendanceGroupOwnerGetList,HRAttendance" desc="获取我的小组"></Action>
+  <Action name="attendance.group.member.search" type="Youyou.HRCore.Actions.Attendance.AttendanceGroupMemberSearch,HRAttendance" desc="搜索小组成员"></Action>
+  <Action name="attendance.group.member.remove" type="Youyou.HRCore.Actions.Attendance.AttendanceGroupMemberRemove,HRAttendance" desc="移除组成员"></Action>
+  <Action name="attendance.group.member.add" type="Youyou.HRCore.Actions.Attendance.AttendanceGroupMemberAdd,HRAttendance" desc="添加组成员"></Action>
+  
+  <Action name="attendance.attendancenoclock.reason" type="Youyou.HRCore.Actions.Attendance.AttendanceNoClockReason,HRAttendance" desc="缺卡申请"></Action>  
+  <Action name="attendance.attendanceclock.auto" type="Youyou.HRCore.Attendance.Actions.AttendanceAutoClock,HRAttendance" desc="自动补卡"></Action>  
+  <Action name="attendance.attendanceclock.automultiperson" type="Youyou.HRCore.Actions.Attendance.AttendanceAutoClockMultiPerson,HRAttendance" desc="按照日期补卡"></Action>
+  
+  <Action name="attendance.calculation.workingyears" type="Youyou.HRCore.Actions.Attendance.AttendceCalculationWorkingYears,HRAttendance" desc="考勤账户计算工龄"></Action>
+  <Action name="attendance.leavetype.rulerun.setup" type="Youyou.HRCore.Attendance.Settings.Actions.AttendLeaveTypeRuleRunSetup,HRAttendance" desc="设置考勤类型计算假期"></Action>
+
+  <Action name="attd.montreport.read" type="Supermore.Attd.Actions.MonthRP,WorkReportCore" desc="读取月考勤"></Action>
+  <Action name="attd.montreport.readfields" type="Supermore.Attd.Actions.ReadRPFields,WorkReportCore" desc="读取月考勤字段定义"></Action>
+  <Action name="attd.montreport.leavedetail" type="Supermore.Attd.Actions.RequestLeaveDetail,WorkReportCore" desc="读取请假明细"></Action>
+  <Action name="attd.montreport.excelexport" type="Supermore.Attd.Actions.attendance.monthattendancestate.export,WorkReportCore" desc="导出月考勤"></Action>
+  
+  
+  
+  <Action name="attd.montreport.excelexportforcolumn" type="Supermore.Attd.Actions.ExportExcelForColumn,WorkReportCore" desc="按列导出考勤"></Action>
+  <Action name="attd.montreport.excelexportforcolumnoneyear" type="Supermore.Attd.Actions.ExportExcelForColumnOneYear,WorkReportCore" desc="按列导出年度考勤"></Action>
+
+  <Action name="attd.year.excelexport" type="Supermore.Attd.Actions.ExportYearAttendance,WorkReportCore" desc="导出(年/季度)考勤"></Action>
+  
+  <Action name="attd.excelexport.empshiftdata" type="Supermore.Attd.Actions.ExporEmpShiftData,WorkReportCore" desc="按照组导出考勤"></Action>
+  <Action name="attd.excelexport.deptmonthshift" type="Supermore.Attd.Actions.ExporDeptShiftMonthData,WorkReportCore" desc="按照部门导出月排班"></Action>
+
+  <Action name="attenance.approve.search" type="Youyou.HRCore.Attendance.Actions.AttenanceApproveSearch,HRAttendance" desc="部门考勤审核列表"></Action>
+  
+  <Action name="attd.excelexport.empshiftdatafordept" type="Supermore.Attd.Actions.ExporEmpShiftDataForDept,WorkReportCore" desc="按照部门导出考勤"></Action>
+  <Action name="attd.montreport.attendancesummary" type="Supermore.Attd.Actions.AttendanceSummary,WorkReportCore" desc="考勤打卡月汇总"></Action>
+  <Action name="attd.montreport.exportattendancesummary" type="Supermore.Attd.Actions.ExportAttendanceSummary,WorkReportCore" desc="导出考勤打卡月汇总"></Action>
+  <Action name="attd.deptshift.expor" type="Supermore.Attd.Actions.ExportDeptShift,WorkReportCore" desc="按照部门导出排班"></Action>
+
+  <Action name="attd.montreport.gorupordept" type="Supermore.Attd.Actions.PrtAttenStat,WorkReportCore" desc="按部门或组统计考勤"></Action>
+
+  <Action name="attd.empnightshift.list" type="Supermore.Attd.Actions.EmpNightShifts,WorkReportCore" desc="夜班费用列表"></Action>
+  <Action name="attd.empholidayshift.list" type="Supermore.Attd.Actions.EmpHolidayShifts,WorkReportCore" desc="节假日费用列表"></Action>
+  <Action name="attd.empmiddleshift.list" type="Supermore.Attd.Actions.EmpMiddleShifts,WorkReportCore" desc="中费用列表"></Action>
+  <Action name="attd.empdixiafangchaofei.list" type="Supermore.Attd.Actions.EmpDiXiaFangChao,WorkReportCore" desc="地下防潮费列表"></Action>
+  <Action name="attd.drivershift.list" type="Supermore.Attd.Actions.DriverShifts,WorkReportCore" desc="司机加班"></Action>
+ 
+  
+    <Action name="attd.empnightshift.hrlist" type="Supermore.Attd.Actions.AttdEmpnightShiftHrlist,WorkReportCore" desc="人力资源夜班费用列表"></Action>
+  
+  <Action name="attd.leaveplan.list" type="Supermore.Attd.Actions.LeavePlans,WorkReportCore" desc="部门人员年假获取"></Action>  
+  <Action name="attd.leaveplan.add" type="Supermore.Attd.Actions.LeavePlanAdd,WorkReportCore" desc="更新年假"></Action>
+  
+  <Action name="employee.annualleaveused.list" type="Youyou.HRCore.Actions.AttendSettings.AnnualleaveUsedList,HRAttendance" desc="获取未完成使用的年假计划"></Action>
+  
+  <Action name="attendance.deptclock.getlist" type="Supermore.Attd.Actions.DeptClockGetlist,WorkReportCore" desc="按部门获取打卡信息"></Action>
+
+
+  <Action name="attendance.yearowner.getlist" type="Youyou.HRCore.Attendance.Actions.AttenanceYearOwnerGetlist,HRAttendance" desc="获取个人年度考勤"></Action>
+  <Action name="attendance.clockdetail.search" type="Youyou.HRCore.Attendance.Actions.ClockDetailOwnerSearch,HRAttendance"  desc="获取个人打卡明细"></Action>
+  <Action name="attendance.attendancedaily.getlist" type="Youyou.HRCore.Attendance.Actions.LeavedetailOwnerSearch,HRAttendance" desc="个人中心 - 个人月考勤明细"></Action>
+
+  
+  
+  <!--嘉定排班 -->
+  <Action name="workshift.deptmonthjd.list" type="Youyou.HRCore.Attendance.Actions.DeptMonthEmployeeListAndSumJd,HRAttendance" desc="获取科室月考勤表 - 嘉定"></Action>
+  <Action name="workshift.deptmonthjd.export" type="Youyou.HRCore.Attendance.Actions.WorkshiftDeptMonthEmployeeExport,HRAttendance" desc="获取嘉定科室月考勤表导出下载excel"></Action>
+  <Action name="workshift.deptmonthjd.month.update" type="Youyou.HRCore.Attendance.Actions.UpdateWorkShiftEmpMonth,HRAttendance" desc="更新嘉定某人某月的月考勤数据"></Action>
+  <Action name="workshift.deptmonthjd.month.workday.update" type="Youyou.HRCore.Attendance.Actions.UpdateWorkShiftEmpWorkDays,HRAttendance" desc="更新嘉定某人某月的月考勤数据"></Action>
+  <Action name="workshift.rule.list" type="Youyou.HRCore.Attendance.Actions.GetAttendRuleList,HRAttendance" desc="获取考勤规则列表"></Action>
+
+  <!-- 良乡 更新考勤出勤天数 -->
+  <Action name="attendance.attenddays.update" type="Youyou.HRCore.Actions.Attendance.AttendDaysUpdate,HRAttendance" desc="良乡 更新考勤出勤天数"></Action>
+
+  <Action name="hr.attend.work.checkin" type="Youyou.HRCore.Actions.HRAttendWorkCheck,HRAttendance" desc="上下班打卡"></Action>
+  <Action name="hr.attend.empdaily.get" type="Youyou.HRCore.Actions.HRAttendEmpDailyGet,HRAttendance" desc="获取用户考勤打卡信息"></Action>
+
+  <Action name="hr.attend.deptmonth.getlist" type="Youyou.HRCore.Actions.AttendanceDeptMonthList,HRAttendance" desc="获取考勤期间科室考勤上报状态"></Action>
+
+  <Action name="attendance.leavetype.getgroulist" type="Youyou.HRCore.Attendance.Actions.AttendGroupGetList,HRAttendance" desc="获取考勤组类型"></Action>
+  
+  <Action name="attendance.monthreport.column.get" type="Youyou.HRCore.Attendance.Actions.AttendanceMonthreportColumn,HRAttendance" desc="获取月度汇总基础字段"></Action>
+  <Action name="attendance.monthreport.column.save" type="Youyou.HRCore.Attendance.Actions.AttendanceMonthreportColumnSave,HRAttendance" desc="月度汇总基础字段保存"></Action>
+  
+  <Action name="attendance.leave.search" type="Youyou.HRCore.Attendance.Actions.AttendanceLeaveSearch,HRAttendance" desc="考勤与排班请假单查询"></Action>
+  <Action name="attendance.empaccount.search" type="Youyou.HRCore.Attendance.Actions.AttendanceEmpaccountSearch,HRAttendance" desc="考勤账户"></Action>
+  <Action name="attendance.empleaveaccount.owner.search" type="Youyou.HRCore.Attendance.Actions.AttenanceEmpleaveaccountOwnerSearch,HRAttendance" desc="科室考勤账户"></Action>
+
+  <Action name="attendace.monthtips.number" type="Youyou.HRCore.Attendance.Actions.AttendaceMonthTipsNumber,HRAttendance" desc="提交报考勤月份人数对比"></Action>
+
+  <Action name="attendace.group.get" type="Youyou.HRCore.Attendance.Actions.AttendanceGroup,HRAttendance" desc="获取考勤组列表"></Action>
+
+  <Action name="attendance.holidayaccount.personal.getlist" type="Youyou.Attendance.Personal.AttendanceHolidayAccountPersonalGetlist,AppBusinesss" desc="获取当前用户所有假期账户列表"></Action>
+  <Action name="attendance.holidayaccount.balance.get" type="Youyou.Attendance.Personal.AttendanceHolidayAccountBalanceGetlist,AppBusinesss" desc="获取用户某个假期余额"></Action>
+  <Action name="attendance.account.export" type="Youyou.HRCore.Attendance.Actions.AttendanceAccountExport,HRAttendance" desc="考勤账户导出"></Action>
+ <Action name="employee.annualleave.calculate" type="Youyou.HRCore.Attendance.Actions.EmployeeAnnualleaveCalculate,HRAttendance" desc="计算年假"></Action>
+  <Action name="attendance.monthattendancestatecustom.export" type="Supermore.Attd.Actions.AttendanceStatMonthCustomExport,WorkReportCore" desc="内蒙古定制月考勤汇总导出"></Action>
+  <Action name="employee.medicalgroup.change" type="Youyou.HRCore.Actions.Attendance.EmployeeMedicalGroupChange,HRAttendance" desc="设置医疗组"></Action>
+  <Action name="nightfee.employee.runreport.export" type=" Supermore.Attd.Actions.NightFeeStatementEmployeeExport,WorkReportCore" desc="夜班费报表-导出"></Action>
+  <Action name="work.overtime.statistics.report" type=" Supermore.Attd.Actions.WorkOvertimeStatisticsReport,WorkReportCore" desc="节假日加班费报表"></Action>
+  <Action name="attenance.report.search" type="Youyou.HRCore.Attendance.Actions.AttenanceReportSearch,HRAttendance" desc="考勤上报月份状态"></Action>
+  <Action name="attendance.dutyshift.search" type="Youyou.HRCore.Attendance.Actions.AttendanceDutyshiftSearch,HRAttendance" desc="值班报表查询"></Action>
+  <Action name="attendance.dutyshift.export" type="Supermore.Attd.Actions.ExportAttendanceDutyshift,WorkReportCore" desc="值班报表导出"></Action>
+  
+  
+  <Action name="employee.attendmonthdetail.query" type="Youyou.Attendance.Actions.EmployeeAttendMonthDetailQuery,HRAttendance" desc="考勤异常详细查询"></Action>
+  <Action name="attendance.employee.change" type=" Youyou.Attendance.Actions.AttendanceEmployeeChange,HRAttendance"  desc="更换考勤员"></Action>
+  
+</Actions>

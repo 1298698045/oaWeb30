@@ -1,0 +1,44 @@
+﻿.ct {
+    width:88.8%;
+}
+.ct .header_list_ul {
+    padding:15px 0 0 0;
+}
+.ct .block {
+    width:1.33%;
+}
+.ct .header_list_ul_item {
+    width:24%;
+}
+.ct .index_left{
+    width:75.8%;
+}
+
+ .bodyDiv{
+     /*#e8edf4*/
+     background:#F8F8FF !important;
+ }
+ .content{
+     box-shadow: none !important;
+ }
+ .cont-head-message{
+     box-shadow: none !important;
+ }
+ .count_left{
+     padding:10px 5px !important;
+ }
+ .cont-head-message{
+     display:flex;
+ }
+ .cont-head-message li{
+     margin: 10px 0 10px 9px !important;
+ }
+ .cont-head-message li {
+            color:#333;
+ }
+ .tablebtn1{
+     width:260px !important;
+ }
+ .tablistcontent .tablebtn1{
+     width:800px !important;
+ }

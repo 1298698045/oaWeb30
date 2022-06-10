@@ -1,0 +1,431 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+input,select,option{
+    outline: none;
+    border: 0;
+}
+#allmission{
+    width:100%;
+    min-width: 900px;
+}
+
+.liftnav{
+    width: 17%;
+    min-width: 150px;
+	height: 730px;
+	color: #505050;
+	background-color: #f4f6f8;
+	font-size: 14px;
+    line-height: 150%;
+    float: left;
+}
+.liftnav li{
+    height: 40px;
+    line-height: 40px;
+	color: #505050;
+	background-color: #f4f6f8;
+    font-size: 14px;
+}
+.liftnav p{
+    float: left;
+    width: 40px;
+    height: 40px;
+}
+.liftnav li.active{
+	 background-color:#e1f1fe;
+     color:#108af9;
+}
+.main{
+    width: 83%;
+    float: left;
+    position:relative;
+}
+.main-head {
+    width: 100%;
+}
+#allmission .liftnav ul li{
+    margin-left:0;
+    padding-left:5px;
+}
+#allmission .liftnav ul li.active{
+    border-left:4px solid #108af9;
+    margin-left:0;
+    padding-left:5px;
+}
+#allmission .liftnav ul li:hover{
+    background-color:#e1f1fe;
+    color:#108af9;
+}
+.main-head span{
+    width: 20%;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    display: block;
+    float: left;
+    color: #505050ff;
+    color: #505050 \9;
+    margin-left: 1%;
+
+}
+.main-head p{
+    width: 75%;
+    float: left;
+    border: #e4e8eb solid 1px;
+    margin-left: 5px;
+    border-radius: 4px;
+    margin-left: 1%;
+
+}
+
+#allmission .main-head input,#allmission .main-head select{
+    float: left;
+	width: 100%;
+    height: 34px;
+    line-height: 34px;
+	color: #505050;
+	background-color: #ffffff;
+	border-radius: 4px;
+	font-size: 14px;
+    float: left;
+    text-indent: 1em;
+}
+#allmission .main-head select{
+	width: 100%;
+
+}
+.main-head>div{
+    float: left;
+    width: 30%;
+    padding: 10px;
+    margin-top: 10px;
+    
+}
+.chaxun p{
+    width: 64px;
+    height: 34px;
+    float: left;
+    margin-left: 10px;
+    border-radius: 4px;
+    border: #e4e8eb solid 1px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 14px;
+    color: #505050ff;
+    color: #505050 \9;
+    cursor:pointer;
+
+
+}
+.chaxun p.active{
+    background-color: #108af9;
+
+    color: white;
+}
+.chaxun .up{
+    color: #108af9;
+}
+.starttime{
+    background: url(/img/cal/3.PNG) no-repeat right 10px center ;
+    background-size: 18px;
+    position: relative;
+}
+.starttime img,.endtime img{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50% ;
+    right: 10px ;
+    margin-top: -9px;
+    display: block ;
+}
+.endtime{
+    background: url(/img/cal/3.PNG) no-repeat right 10px center ;
+    background-size: 18px;
+    position: relative;
+
+}
+.main-body > .body-head {
+    width:98.5%;
+    position:relative;
+}
+.body-head{
+    width: 100%;
+    height: 50px;
+    color: #505050;
+}
+.body-head p{
+    float: left;
+    font-size: 14px;
+    color: black;
+    line-height: 50px;
+    height: 50px;
+    font-weight: 500;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px solid #e4e8eb;
+}
+.body-main{
+	width: 100%;
+	height: 430px;
+    overflow:auto;
+}
+.body-main li{
+    width: 100%;
+    height:51px;
+}
+.body-main li:hover{
+    background-color:#f4f6f8;
+}
+.xiaodian
+{
+    display:inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    border:1px solid #108af9;
+    background-color: #108af9;
+    margin-right:10px;
+    position:relative;
+    top:-2px;  
+}
+.red{
+    color: red;
+}
+.blue{
+    color:#108af9;
+}
+#allmission .body-head .zhuti{
+    text-align: left;
+}
+#allmission .page p{
+	width: 65px;
+    height: 32px;
+    line-height: 32px;
+	color: #505050;
+	background-color: #ffffff;
+	border-radius: 2px;
+	font-size: 14px;
+	border: #e4e8eb solid 1px;
+    text-align: center;
+    float: left;
+    margin-left: 10px;
+    cursor:pointer;
+}
+#allmission .page {
+    float: right;
+    margin-right: 20px;
+    margin-top:15px;
+}
+#allmission .page .to{
+    width: 80px;
+    border: 0;
+}
+#allmission .page input{
+    width: 32px;
+    height: 32px;
+    text-align: center;
+}
+#allmission .page p.active{
+    color: white;
+    background-color:#108af9;
+
+}
+#allmission .body-head select {
+    margin-top:15px;
+}
+
+#allmission select {
+    width: 19px;
+    height: 19px;
+    /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
+    border: solid 1px #66666680;
+    border: solid 1px #302f2f \9;
+    border-radius: 4px;
+    /*很关键：将默认的select选择框样式清除*/
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    /*在选择框的最右侧中间显示小箭头图片*/
+    background: url("/img/cal/20.PNG") no-repeat scroll  right 4px center ;
+    background-size: 11px;
+    /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  }
+  /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+  select::-ms-expand { display: none; }
+
+
+.peoplechook {
+    position:relative;
+
+}
+.peoplechook .card-people {
+        left:150px;  
+    }
+#allmission .card-people {
+    left: 200px;
+    top:-100px;
+}
+.body-head .bianji-liebiaochook {
+    display:block;
+    position:absolute;
+    left:28%;
+    top:40px;
+    z-index:2;
+    background-color:white;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    border:1px solid #dddbda;
+	border-radius: 4px;
+    padding-top:10px;
+    padding-bottom:10px;
+    display:none;
+}
+.body-head .bianji-liebiaochook2 {
+    left:38%;
+}
+ .body-head .bianji-liebiaochook img {
+     width:15px;
+     height:15px;
+}
+ .body-head .bianji-liebiaochook li {
+    width:130px;
+    height:34px;
+    line-height:34px;
+    text-indent:20px;
+    position:relative;
+}
+  .body-head .bianji-liebiaochook li {
+    width:100px;
+}
+ .body-head .bianji-liebiaochook li img {
+        height:16px;
+        width:16px;
+        position:absolute;
+        right:15px;
+        top:5px;
+        display:none;
+    }
+ .body-head .bianji-liebiaochook li.active img {
+        display:block;
+    }
+ .body-head .bianji-liebiaochook li.active{
+    background-color:#f5f5f5;
+}
+ .body-head .bianji-liebiaochook li:hover{
+    background-color:#f5f5f5;
+}
+.body-main .sanjiao {
+    float:none;
+    display:inline-block;
+    width: 18px;
+    height: 18px;
+    margin-top:15px;
+}
+#allmission .miss-bianji {
+    top:40px;
+    left:-50px;
+    z-index:10;
+    height:150px;
+}
+.popup-mask {
+    position:absolute;
+    z-index:100;
+    background-color:#000;
+    opacity:0.2;
+    height:100%;
+    width:100%;
+    display:none;
+}
+.popup {
+    position:absolute;
+    z-index:101;
+    background-color:white;
+    width:86%;
+    left:7%;
+    top:25%;
+    border-radius:7px;
+    display:none;
+}
+
+.popup-head {
+    color:#333;
+    height:58px;
+    line-height:60px;
+    font-size:16px;
+    text-align:center;
+    border-bottom:1px solid #dcdcdc
+}
+.popup-body {
+    height:398px;
+}
+.popup-foot {
+    height:58px;
+    border-radius:7px;
+    background-color:#f2f2f2;
+
+}
+.popup-foot > div {
+        float:right;
+        background-color:white;
+        border:1px solid #dcdcdc;
+        color:#108af9;
+        width:58px;
+        height:32px;
+        border-radius:4px;
+        text-align:center;
+        line-height:32px;
+        margin-right:10px;
+        cursor:pointer;
+        margin-top:10px;
+}
+.popup-sousuo {
+    height:90px;
+    background-color:#f2f2f2;
+    overflow:hidden;
+
+}
+.popup-sousuo input{
+    text-indent:8px;
+}
+.popup-sousuo-pinput {
+    border:1px solid #e4e8eb;
+    width:96%;
+    margin:auto;
+    background-color:white;
+    margin-top:8px;
+    height:32px;
+    line-height:32px;
+    margin-bottom:20px;
+}
+.tongji {
+    margin-left:2%;
+    color:#333;
+    font-size:14px;
+}
+.zhuti span {
+    cursor:pointer;
+
+}
+.zhuti span:hover{
+    text-decoration:underline;
+}
+.body-head1 {
+    background-color:#f9f9f9;
+}
+.sanjiao {
+    cursor:pointer;
+}
+.cursor {
+    cursor:pointer;
+}
+.body-head input {
+    width:16px;
+    height:16px;
+    float:left;
+    margin-top:15px;
+}

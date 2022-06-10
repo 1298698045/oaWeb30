@@ -1,0 +1,96 @@
+﻿.missionright-head {
+    border-bottom:1px solid #e4e8eb;
+    padding-bottom:20px;
+}
+.missionright-body3 .sanjiao img {
+    margin-left: 4px;
+    margin-top: 4px;
+    width: 12px;
+    height: 12px;
+}
+.missionright-file-type {
+    height:30px;
+    padding:10px;
+}
+.missionright-file-type > div {
+    float:left;
+}
+.missionright-file-type .img2{
+    width:12px;
+    height:12px;
+    float:right;
+}
+.file-type-title {
+    line-height:30px;
+}
+.missionright-file-type .shituu{
+    width:70% !important;
+    margin-left:10px;
+    color:#333;
+    line-height:22px;
+    margin-right:10px;
+    position:relative;
+}
+.missionright-file-type .shuaxin {
+    float:right;
+}
+.selectlist {
+    margin-top:5px;
+    width:100%;
+    margin-left:-8px;
+}
+.selectlist li{
+    border:0;
+}
+.fileclass-head {
+    cursor:pointer;
+    height:32px;
+    line-height:32px;
+    font-weight:700;
+    color:#333;
+    padding-left:30px;
+    border-radius:4px;
+    margin:5px 10px;
+    background:url('/img/images/rightArrow.png') no-repeat left 10px center;
+    background-size:12px;
+    background-color:#f3f2f2;
+}
+.fileclass-head.active{
+    background:url('/img/images/Open.png') no-repeat left 10px center;
+    background-size:12px;
+    background-color:#f3f2f2;
+}
+.sanjiao {
+    position:static;
+}
+.related-item-body .sanjiao {
+    float:right !important;
+    margin-right:15px;
+}
+.related-item-body .sanjiao img{
+    margin-left: 3px;
+    margin-top: 3px;
+}
+.miss-bianji.miss-bianji2 {
+    border:1px solid #dedede \9;
+}
+.miss-bianji2 {
+    left: auto;
+    top: auto;
+    right:55px;
+    margin-top:-15px;
+    height:auto;
+}
+.mission-left {
+    overflow-y:visible;
+}
+.missionright-file-type span>.deletefileclass{
+    display:none;
+}
+.missionright-body3 ul li{
+    position:relative;
+}
+.miss-bianji2{
+    right: 22px !important;
+    top: 30px !important;
+}

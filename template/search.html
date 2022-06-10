@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link href="/template/css/search.css" rel="stylesheet" />
+    <link href="/template/css/indexStyle.css" rel="stylesheet" />
+</head>
+<body>
+     <div style="margin:50px;" class="search-cont">
+        <div class="search-group" 
+            name="statuscode"
+            type="select" 
+            text="名字">
+            <div class="search-name">状态:</div>
+            <div class="search-select selectinput">
+                <span name="0">全部</span>
+                <img src="/img/cal/20.png" alt="" />
+            </div>
+            <div class="selectlist">
+                <ul>
+                    <li value="0"><img src="/img/cal/checkedgrey.png" /><span>全部</span></li>
+                    <li value="0"><img src="/img/cal/checkedgrey.png" /><span>草稿</span></li>
+                    <li value="1"><img src="/img/cal/checkedgrey.png" /><span>未完成</span></li>
+                    <li value="2"><img src="/img/cal/checkedgrey.png" /><span>已完成</span></li>
+                    <li value="3"><img src="/img/cal/checkedgrey.png" /><span>123</span></li>
+                </ul>
+           </div>
+        </div>
+        <div class="search-group" 
+            name="name" 
+            type="text" 
+            text="名字">
+        </div>
+        <div class="search-group search-groupposition" 
+            name="deptid" 
+            type="search" 
+            text="部门" 
+            data-object="10">
+        </div>
+         <div class="search-group search-groupposition" 
+             name="starttime" 
+             type="time"
+             text="开始时间">
+        </div>
+         <div class="search-group search-groupposition"
+             name="timestart"
+             type="time"
+             text="时间">
+        </div>
+         <div class="search-group search-groupposition"
+             name="timestart"
+             type="time"
+             text="至">
+        </div>
+        </div>
+    <script src="/js/CommonUtils.js"></script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+    <script src="/template/js/search.js"></script>
+    <script src="/template/js/indexjs.js"></script>
+    
+    <script>
+        
+   
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="objectmanager.search" type="Youyou.ObjectManager.Actions.ObjectManagerSearch,HRCore"></Action>
+  <Action name="objectmanager.field.search" type="Youyou.ObjectManager.Actions.ObjectManagerFieldSearch,HRCore"></Action>
+
+  <Action name="objectmanager.objectdetail.getobjectdetailpage" type="Youyou.ObjectManager.Actions.ObjectDetailPageGet,HRCore"  desc="对象管理 - 基本信息"></Action>
+  <Action name="objectmanager.fieldsandrelationshipsdetaillist.querydetails" type="Youyou.ObjectManager.Actions.FieldsAndRelationshipsDetailListQueryDetails,HRCore"  desc="对象管理 - 获取字段详细"></Action>
+  <Action name="objectmanager.pagelayoutdetaillist.querydetails" type="Youyou.ObjectManager.Actions.PageLayoutDetailListQueryDetails,HRCore"  desc="对象管理 - 获取布局"></Action>
+
+  <Action name="objectmanager.entityrecent.getlist" type="Youyou.ObjectManager.Actions.EntityRecentGetlist,HRCore" desc="最近使用"></Action>
+
+  <!--获取最近使用的对象-->
+  <Action name="app.entityrecent.get" type="Youyou.ObjectManager.Actions.EntityRecentGetlist,HRCore" desc="获取最近使用的对象"></Action>
+  <Action name="template.field.sort" type="Youyou.ObjectManager.Actions.TemplateFieldSort,HRCore" desc="对象字段排序"></Action>
+  <Action name="template.field.delete" type="Youyou.ObjectManager.Actions.TemplateFieldDelete,HRCore" desc="对象字段删除"></Action>
+  <Action name="template.field.batchadd" type="Youyou.ObjectManager.Actions.TemplateFieldBatchAdd,HRCore" desc="对象字段批量新增"></Action>
+  <Action name="template.logicalfield.getlist" type="Youyou.ObjectManager.Actions.TemplateLogicalFieldGetlist,HRCore" desc="获取逻辑字段"></Action>
+
+  <Action name="template.form.getlist" type="Youyou.ObjectManager.Actions.TemplateFormGetlist,HRCore" desc="对象表单"></Action>
+  <Action name="template.form.search" type="Youyou.ObjectManager.Actions.TemplateFormSearch,HRCore" desc="对象表单"></Action>
+  <Action name="template.form.delete" type="Youyou.ObjectManager.Actions.TemplateFormDelete,HRCore" desc="对象表单删除"></Action>
+
+  <Action name="template.searchlayout.getlist" type="Youyou.ObjectManager.Actions.TemplateSearchlayoutGetlist,HRCore" desc="搜索布局"></Action>
+  <Action name="template.searchlayout.create" type="Youyou.ObjectManager.Actions.TemplateSearchlayoutCreate,HRCore" desc="搜索布局新增"></Action>
+
+
+  <Action name="entity.attributelookup.changeformmap.get" type="Youyou.ObjectManager.Actions.EntityAttributeLookupChangeFormMapGet,Yoyou.UIFramework" desc="创建查找对象字段匹配"></Action>
+  <Action name="entity.attributelookup.changeformmap.save" type="Youyou.ObjectManager.Actions.EntityAttributeLookupChangeFormMapSave,Yoyou.UIFramework" desc="保存映射"></Action>
+</Actions>

@@ -1,0 +1,497 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="ext-strict" style="display: none !important;">
+<head>
+    <script src="/static/js/perf/stub.js"></script>
+    <title>联系人: 主页 ~ Salesforce.com - Developer Edition</title>
+    <link href="/sCSS/31/sprites/Theme3/zh/base/zen-componentsCompatible.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/zh/base/elements.css" rel="stylesheet" type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/zh/base/common.css" rel="stylesheet" type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/zh/base/chatterCore.css" rel="stylesheet" type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/zh/base/GuidedTour.css" rel="stylesheet" type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/zh/base/HelpBubble.css" rel="stylesheet" type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/zh/base/chatterExtended.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/zh/base/AssociationQueue.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/zh/base/DataDotComClean.css" rel="stylesheet"
+        type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/base/dStandard.css" rel="stylesheet" type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/base/dCustom0.css" rel="stylesheet" type="text/css" />
+    <link href="/sCSS/31/sprites/Theme3/zh/base/extended.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+        try { (function () { var w = self, l, p, o; if (w && top) { for (; w !== top && (p = w.parent) && p !== w && (o = p.location) && o.protocol === (l = w.location).protocol && (o.host === l.host || (p.document && p.document.domain === w.document.domain)); w = p); if (w !== top) throw ""; } ({ f: function () { document.documentElement ? document.documentElement.style.display = "" : (!this.a && (this.a = 10), this.a < 1E5 && (window.sfdcRetryShowWindow = this) && setTimeout("sfdcRetryShowWindow.f()", this.a), this.a *= 2) } }.f()) })(); } catch (e) { if (top !== self) top.location = location; else throw e; }//]]></script>
+    <script src="/EXT/ext-3.0.0/ext-core.js"></script>
+    <script src="/jslibrary/sfdc/main.js"></script>
+    <script src="/jslibrary/jslabels/zh_CN.js"></script>
+    <script src="/jslibrary/sfdc/Chatter.js"></script>
+    <script src="/jslibrary/sfdc/DataDotComClean.js"></script>
+    <script src="/jslibrary/sfdc/DevContextMenu.js"></script>
+    <script src="/jslibrary/sfdc/GuidedTour.js"></script>
+    <script src="/jslibrary/sfdc/Scheduling.js"></script>
+    <script>        window.sfdcPage = new OverviewPage();
+        UserContext.initialize({ "networkId": "", "labelLastModified": "1413507464000", "locale": "zh_CN", "isDefaultNetwork": true, "timeFormat": "ah:mm", "today": "2014-10-24 上午9:56", "orgPreferences": [{ "index": 257, "name": "TabOrganizer", "value": true}], "userPreferences": [{ "index": 112, "name": "HideInlineEditSplash", "value": false }, { "index": 114, "name": "OverrideTaskSendNotification", "value": false }, { "index": 115, "name": "DefaultTaskSendNotification", "value": false }, { "index": 119, "name": "HideUserLayoutStdFieldInfo", "value": false }, { "index": 116, "name": "HideRPPWarning", "value": false }, { "index": 87, "name": "HideInlineSchedulingSplash", "value": false }, { "index": 88, "name": "HideCRUCNotification", "value": false }, { "index": 89, "name": "HideNewPLESplash", "value": false }, { "index": 90, "name": "HideNewPLEWarnIE6", "value": false }, { "index": 122, "name": "HideOverrideSharingMessage", "value": false }, { "index": 91, "name": "HideProfileILEWarn", "value": false }, { "index": 93, "name": "HideProfileElvVideo", "value": false }, { "index": 97, "name": "ShowPicklistEditSplash", "value": false }, { "index": 92, "name": "HideDataCategorySplash", "value": false }, { "index": 128, "name": "ShowDealView", "value": false }, { "index": 129, "name": "HideDealViewGuidedTour", "value": false }, { "index": 132, "name": "HideKnowledgeFirstTimeSetupMsg", "value": false }, { "index": 104, "name": "DefaultOffEntityPermsMsg", "value": false }, { "index": 135, "name": "HideNewCsnSplash", "value": false }, { "index": 101, "name": "HideBrowserWarning", "value": false }, { "index": 139, "name": "HideDashboardBuilderGuidedTour", "value": false }, { "index": 140, "name": "HideSchedulingGuidedTour", "value": false }, { "index": 180, "name": "HideReportBuilderGuidedTour", "value": false }, { "index": 183, "name": "HideAssociationQueueCallout", "value": false }, { "index": 194, "name": "HideQTEBanner", "value": false }, { "index": 193, "name": "HideChatterOnboardingSplash", "value": true }, { "index": 195, "name": "HideSecondChatterOnboardingSplash", "value": false }, { "index": 270, "name": "HideIDEGuidedTour", "value": false }, { "index": 282, "name": "HideQueryToolGuidedTour", "value": false }, { "index": 196, "name": "HideCSIGuidedTour", "value": false }, { "index": 271, "name": "HideFewmetGuidedTour", "value": false }, { "index": 272, "name": "HideEditorGuidedTour", "value": false }, { "index": 205, "name": "HideApexTestGuidedTour", "value": false }, { "index": 206, "name": "HideSetupProfileHeaderTour", "value": false }, { "index": 207, "name": "HideSetupProfileObjectsAndTabsTour", "value": false }, { "index": 213, "name": "DefaultOffArticleTypeEntityPermMsg", "value": false }, { "index": 214, "name": "HideSelfInfluenceGetStarted", "value": true }, { "index": 215, "name": "HideOtherInfluenceGetStarted", "value": false }, { "index": 216, "name": "HideFeedToggleGuidedTour", "value": false }, { "index": 268, "name": "ShowChatterTab178GuidedTour", "value": false }, { "index": 275, "name": "HidePeopleTabDeprecationMsg", "value": false }, { "index": 276, "name": "HideGroupTabDeprecationMsg", "value": false }, { "index": 224, "name": "HideUnifiedSearchGuidedTour", "value": false }, { "index": 226, "name": "ShowDevContextMenu", "value": true }, { "index": 227, "name": "HideWhatRecommenderForActivityQueues", "value": false }, { "index": 228, "name": "HideLiveAgentFirstTimeSetupMsg", "value": false }, { "index": 232, "name": "HideGroupAllowsGuestsMsgOnMemberWidget", "value": false }, { "index": 233, "name": "HideGroupAllowsGuestsMsg", "value": false }, { "index": 234, "name": "HideWhatAreGuestsMsg", "value": false }, { "index": 235, "name": "HideNowAllowGuestsMsg", "value": false }, { "index": 236, "name": "HideSocialAccountsAndContactsGuidedTour", "value": false }, { "index": 237, "name": "HideAnalyticsHomeGuidedTour", "value": false }, { "index": 238, "name": "ShowQuickCreateGuidedTour", "value": false }, { "index": 245, "name": "HideFilePageGuidedTour", "value": false }, { "index": 250, "name": "HideForecastingGuidedTour", "value": false }, { "index": 251, "name": "HideBucketFieldGuide", "value": false }, { "index": 263, "name": "HideSmartSearchCallOut", "value": false }, { "index": 265, "name": "HideSocialProfilesKloutSplashScreen", "value": false }, { "index": 273, "name": "ShowForecastingQuotaAttainment", "value": false }, { "index": 280, "name": "HideForecastingQuotaColumn", "value": false }, { "index": 301, "name": "HideManyWhoGuidedTour", "value": false }, { "index": 284, "name": "HideExternalSharingModelGuidedTour", "value": false }, { "index": 298, "name": "HideFileSyncBannerMsg", "value": false }, { "index": 299, "name": "HideTestConsoleGuidedTour", "value": false }, { "index": 302, "name": "HideManyWhoInlineEditTip", "value": false }, { "index": 303, "name": "HideSetupV2WelcomeMessage", "value": false }, { "index": 312, "name": "ForecastingShowQuantity", "value": false }, { "index": 313, "name": "HideDataImporterIntroMsg", "value": false }, { "index": 314, "name": "HideEnvironmentHubLightbox", "value": false }, { "index": 316, "name": "HideSetupV2GuidedTour", "value": false }, { "index": 317, "name": "HideFileSyncMobileDownloadDialog", "value": false }, { "index": 321, "name": "HideCustomEntityQuickActionCallout", "value": false }, { "index": 322, "name": "HideEnhancedProfileHelpBubble", "value": true }, { "index": 328, "name": "ForecastingHideZeroRows", "value": false }, { "index": 330, "name": "HideEmbeddedComponentsFeatureCallout", "value": false }, { "index": 341, "name": "HideDedupeMatchResultCallout", "value": false }, { "index": 340, "name": "HideS1BrowserUI", "value": false }, { "index": 346, "name": "HideS1Banner", "value": true}], "startOfWeek": "1", "isAccessibleMode": false, "ampm": ["上午", "下午"], "renderMode": "RETRO", "userId": "0059000000390Wh", "dateTimeFormat": "yyyy-M-d ah:mm", "dateFormat": "yyyy-M-d", "uiSkin": "Theme3", "language": "zh_CN", "siteUrlPrefix": "" });
+    </script>
+    <script type="text/javascript">
+        var MOTIF_KEY = 'Contact';</script>
+    <script>        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/zen-componentsCompatible.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/elements.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/common.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/chatterCore.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/GuidedTour.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/HelpBubble.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/chatterExtended.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/AssociationQueue.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/DataDotComClean.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/base/dStandard.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/1413771514000/Theme3/00D90000000yvHG/0059000000390Wh/base/dCustom0.css") } catch (e) { }
+        try { DynamicCss.addCssUrl("/sCSS/31/sprites/Theme3/zh/base/extended.css") } catch (e) { }
+        try { DynamicCss.doneLoading() } catch (e) { }</script>
+    <link rel="shortcut icon" href="http://ap1..com/favicon.ico" />
+    <script src="/jslibrary/sfdc/Security.js"></script>
+    <script>        //     ClientHash.prototype.needsClientHash('sid_Client', '000000390Wh0000000yvHG', '117.79.232.233', '/servlet/servlet.ClientHashValidator?ResponseRequestedURL=%2F003%2Fo');</script>
+</head>
+<body onload="if(this.bodyOnLoad)bodyOnLoad();" onunload="if(this.bodyOnUnload)bodyOnUnload();"
+    class="hasMotif contactTab  overviewPage  ext-gecko ext-gecko3 sfdcBody brandQuaternaryBgr"
+    onfocus="if(this.bodyOnFocus)bodyOnFocus();" onbeforeunload="if(this.bodyOnBeforeUnload){var s=bodyOnBeforeUnload();if(s)return s;}">
+    <!-- Main Body Starts Here -->
+    <form id="sessiontimeout" method="post" name="sessiontimeout" onsubmit="if (window.ffInAlert) { return false; }">
+    <input type="hidden" name="continueButton" id="continueButton" value="继续工作" /><input
+        type="hidden" name="doNotTimeoutLocation" id="doNotTimeoutLocation" value="/page/timeoutrefresh.jsp?sfdc.setJsDomain=1" /><input
+            type="hidden" name="doTimeoutLocation" id="doTimeoutLocation" value="https://login..com/?ec=301&amp;startURL=%2Fpage%2Ftimeoutrefresh.jsp%3Fsfdc.setJsDomain%3D1&amp;stbdtimeout=1" /><input
+                type="hidden" name="logoutButton" id="logoutButton" value="退出" /><input type="hidden"
+                    name="timeoutText" id="timeoutText" value="由于安全原因，您的 Salesforce 会话即将超时。<br><br>您希望作何选择？" /></form>
+    <script>        var secondsLeftValue = 7200, secondsPopupValue = 7170, lastPageActivityTime = (new Date).getTime(), forceLogout = true; function startSessionTimer() { schedulePopup(7200, 7170) } function schedulePopup(a, b) { null != timeoutUniqueId && clearTimeout(timeoutUniqueId); forceLogout && null != redirectUniqueId && clearTimeout(redirectUniqueId); if (forceLogout) { redirectUniqueId = setTimeout(logout, 1E3 * a); } timeoutUniqueId = setTimeout(alertTimeout, 1E3 * b) } function logout() { (forceLogout && "function" == typeof getRTimeout) ? getRTimeout() : doLogout() } function doLogout() { window.location = "/secur/logout.jsp" } var alertWindow = null, parentWindow = null, timeoutUniqueId = null; redirectUniqueId = null; function updateSessionTimeouts(a, b) { "undefined" != typeof a && (secondsLeftValue = a); "undefined" != typeof b && (secondsPopupValue = b); lastPageActivityTime = (new Date).getTime(); schedulePopup(secondsLeftValue, secondsPopupValue); if (window.Sfdc && Sfdc.require && "undefined" != typeof SFDCSessionVars) { Sfdc.require("SfdcApp.SfdcSession", function () { SfdcApp.SfdcSession.updateExpires({ oid: SFDCSessionVars.oid, uid: UserContext.userId, expire: lastPageActivityTime + (secondsLeftValue * 1000) }) }); } } function updateRedirectTimeouts(a) { "undefined" != typeof a && (secondsLeftValue = a); null != redirectUniqueId && clearTimeout(redirectUniqueId); redirectUniqueId = setTimeout(logout, 1E3 * (secondsLeftValue)); } function alertTimeout() { "function" == typeof getSTimeout ? getSTimeout() : doAlertTimeout() } function doAlertTimeout() { timeoutUniqueId = null; alertWindow = window.open("/page/timeoutwarn.jsp?sfdc.setJsDomain=1", "_sToap1_salesforce_com", "width=360,height=280,location=no,dependent=no,resizable=yes,toolbar=no,status=no,directories=no,menubar=no,scrollbars=yes", !1); parentWindow = window; !alertWindow && forceLogout && setTimeout(parentWindow.doLogout(), 25E3); document.body.onfocus = alertFocus } function checkSessionTimeout() { var a = (new Date).getTime(); 5 >= secondsLeftValue - (a - lastPageActivityTime) / 1E3 ? (a = window.location.pathname + window.location.hash, window.location.search && 1 < window.location.search.length && (a += window.location.search), a = "/?ec=302&startURL=" + encodeURIComponent(a), top.location = a) : (lastPageActivityTime = a, startSessionTimer()) } function alertFocus() { alertWindow && (alertWindow.closed ? (alertWindow = null, document.body.onfocus = closePopup) : alertWindow.focus()) }</script>
+    <a href="#skiplink" class="navSkipLink zen-skipLink zen-assistiveText">跳到主内容</a><div
+        id="contentWrapper">
+        <div class="bPageHeader" id="AppBodyHeader">
+            <table class="phHeader brandZeronaryBgr" border="0" cellpadding="0" cellspacing="0"
+                id="phHeader">
+                <tr>
+                    <td class="left">
+                        <img src="/img/seasonLogos/2015_winter_aloha.png" alt="Salesforce.com" width="175"
+                            height="65" id="phHeaderLogoImage" title="Salesforce.com" /><img src="/s.gif" alt=""
+                                width="1" height="1" class="spacer" title="" />
+                    </td>
+                    <td class="searchCell">
+                        <form action="/_ui/search/ui/UnifiedSearchResults" id="phSearchForm" method="GET"
+                        name="sbsearch" onsubmit="if (window.ffInAlert) { return false; }">
+                        <input type="hidden" name="searchType" id="searchType" value="2" /><div class="headerSearchContainer"
+                            id="phSearchContainer">
+                            <div class="headerSearchLeftRoundedCorner">
+                                <div class="searchBoxClearContainer">
+                                    <input autocomplete="off" id="phSearchInput" maxlength="100" name="str" placeholder="搜索..."
+                                        size="20" title="搜索..." type="text" value="" /><a class="headerSearchClearButton"
+                                            href="javascript: void(0);" id="phSearchClearButton" name="phSearchClearButton"
+                                            style="visibility: hidden" title="清除搜索词"></a></div>
+                                <div class="headerSearchRightRoundedCorner" id="searchButtonContainer">
+                                    <input value=" 搜索 " id="phSearchButton" type="button" /></div>
+                            </div>
+                        </div>
+                        </form>
+                    </td>
+                    <td class="right">
+                        <div class="multiforce">
+                            <div class="messages">
+                            </div>
+                            <div class="navLinks">
+                                <div class="linkElements">
+                                    <div class="menuButton menuButtonRounded" id="userNav" title="liu jack 的用户菜单">
+                                        <div class="menuButtonButton" id="userNavButton">
+                                            <span class="menuButtonLabel" id="userNavLabel" tabindex="0">liu jack</span><div
+                                                class="userNav-buttonArrow mbrButtonArrow" id="userNav-arrow">
+                                            </div>
+                                            <div class="userNavButton-btm mbrButton-btm mbrButton-rc">
+                                            </div>
+                                        </div>
+                                        <div class="menuButtonMenu" id="userNavMenu">
+                                            <div class="userNavMenu-tr mbrMenu-tr mbrMenu-rc">
+                                            </div>
+                                            <div class="userNavMenu-tl mbrMenu-tl mbrMenu-rc">
+                                            </div>
+                                            <div class="mbrMenuItems" id="userNav-menuItems">
+                                                <a href="/_ui/core/userprofile/UserProfilePage" class="menuButtonMenuLink firstMenuItem"
+                                                    title="我的简档">我的简档</a><a href="/ui/setup/Setup?setupid=PersonalSetup" class="menuButtonMenuLink"
+                                                        title="我的设置">我的设置</a><a href="javascript:openPopupFocus%28%27https%3A%2F%2Fap1.salesforce.com%2F_ui%2Fcommon%2Fapex%2Fdebug%2FApexCSIPage%27%2C%20%27DeveloperConsole%27%2C%201000%2C%20800%2C%20%27width%3D1000%2Cheight%3D800%2Cresizable%3Dyes%2Ctoolbar%3Dno%2Cstatus%3Dno%2Cscrollbars%3Dyes%2Cmenubar%3Dno%2Cdirectories%3Dyes%2Clocation%3Dno%2Cdependant%3Dno%27%2C%20false%2C%20false%29%3B"
+                                                            class="menuButtonMenuLink debugLogLink" title="开发人员控制台 （新窗口）">开发人员控制台</a><a href="/secur/logout.jsp"
+                                                                class="menuButtonMenuLink" title="退出">退出</a></div>
+                                            <div class="userNavMenu-br mbrMenu-br mbrMenu-rc">
+                                            </div>
+                                            <div class="userNavMenu-bc mbrMenu-bc">
+                                            </div>
+                                            <div class="userNavMenu-bl mbrMenu-bl mbrMenu-rc">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>                                        new MenuButtonRounded('userNav', false, 16);</script>
+                                    <a href="/setup/forcecomHomepage.apexp?setupid=ForceCom&amp;retURL=%2F003%2Fo" id="setupLink"
+                                        title="设置">设置</a><a href="javascript:openPopupFocusEscapePounds(%27https://login.salesforce.com/services/auth/sso/00D30000000XsfGEAS/HTAuthProvider?startURL=%252Fapex%252Fhtdoor%253Flanguage%253Dzh_CN%2526release%253D192.9.1%2526instance%253DAP1&amp;site=https%3A%2F%2Fhelp.salesforce.com%27, %27Help%27, 1024, 768, %27width=1024,height=768,resizable=yes,toolbar=yes,status=yes,scrollbars=yes,menubar=yes,directories=no,location=yes,dependant=no%27, false, false);"
+                                            class="brandZeronaryFgr" title="帮助 （新窗口）">帮助</a></div>
+                            </div>
+                            <div id="toolbar">
+                                <!-- TabSet drop down -->
+                                <div class="menuButton menuButtonRounded appSwitcher" id="tsid" title="Force.com 应用程序菜单">
+                                    <div class="menuButtonButton" id="tsidButton">
+                                        <span class="menuButtonLabel" id="tsidLabel" tabindex="0">Call Center</span><div
+                                            class="tsid-buttonArrow mbrButtonArrow" id="tsid-arrow">
+                                        </div>
+                                        <div class="tsidButton-btm mbrButton-btm mbrButton-rc">
+                                        </div>
+                                    </div>
+                                    <div class="menuButtonMenu" id="tsidMenu">
+                                        <div class="tsidMenu-tr mbrMenu-tr mbrMenu-rc">
+                                        </div>
+                                        <div class="tsidMenu-tl mbrMenu-tl mbrMenu-rc">
+                                        </div>
+                                        <div class="mbrMenuItems" id="tsid-menuItems">
+                                            <a href="/home/home.jsp?tsid=02u900000017n3K" class="menuButtonMenuLink firstMenuItem">
+                                                销售</a><a href="/home/home.jsp?tsid=02u900000017n3M" class="menuButtonMenuLink">市场营销</a><a
+                                                    href="/app/mgmt/applauncher/appLauncher.apexp?tsid=02u90000001A4Br" class="menuButtonMenuLink">应用程序启动器</a><a
+                                                        href="/home/home.jsp?tsid=02u90000001A4Bs" class="menuButtonMenuLink">社区</a><a href="/home/home.jsp?tsid=02u90000001A4Bt"
+                                                            class="menuButtonMenuLink">Site.com</a><a href="/home/home.jsp?tsid=02u90000001A4Bu"
+                                                                class="menuButtonMenuLink">Salesforce Chatter</a><a href="/home/home.jsp?tsid=02u90000001A4Bz"
+                                                                    class="menuButtonMenuLink">内容</a><a href="/servlet/servlet.Integration?lid=01r90000000wxsQ&amp;ic=1&amp;tsid=02u90000001A8WX"
+                                                                        class="menuButtonMenuLink">MailChimp for Salesforce</a><hr class="menuSeparator" />
+                                            <a href="https://www.salesforce.com/appexchange" class="menuButtonMenuLink" target="_blank">
+                                                AppExchange</a><a href="http://developer.force.com" class="menuButtonMenuLink" target="_blank">开发人员社区</a><a
+                                                    href="https://success.salesforce.com" class="menuButtonMenuLink" target="_blank">成功社区</a></div>
+                                        <div class="tsidMenu-br mbrMenu-br mbrMenu-rc">
+                                        </div>
+                                        <div class="tsidMenu-bc mbrMenu-bc">
+                                        </div>
+                                        <div class="tsidMenu-bl mbrMenu-bl mbrMenu-rc">
+                                        </div>
+                                    </div>
+                                </div>
+                                <script>                                    new MenuButtonRounded('tsid', false, 16);</script>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div class="zen">
+                <div class="zen-hasTabOrganizer zen-headerBottom brdPalette" id="tabContainer" role="navigation">
+                    <h1 class="zen-assistiveText">
+                        选项卡导航</h1>
+                    <nav><ul class="zen-inlineList zen-tabMenu" id="tabBar"><li class="zen-firstItem" id="home_Tab"><a href="/home/home.jsp" title="主页选项卡">主页</a></li><li id="Chatter_Tab"><a href="/_ui/core/chatter/ui/ChatterPage" title="Chatter选项卡">Chatter</a></li><li id="Account_Tab"><a href="/001/o" title="客户选项卡">客户</a></li><li class="brandPrimaryBgr zen-active primaryPalette" id="Contact_Tab"><a href="/003/o" class="brandPrimaryFgr" title="联系人选项卡 - 已选取">联系人</a><span class="zen-assistiveText">（当前选择的）</span></li><li id="Case_Tab"><a href="/500/o" title="个案选项卡">个案</a></li><li id="Solution_Tab"><a href="/501/o" title="解决方案选项卡">解决方案</a></li><li id="report_Tab"><a href="/00O/o" title="报表选项卡">报表</a></li><li id="Dashboard_Tab"><a href="/01Z/o" title="仪表板选项卡">仪表板</a></li><li id="AllTab_Tab"><a href="/home/showAllTabs.jsp">&nbsp;<img src="/s.gif" alt="所有选项卡"  class="allTabsArrow" title="所有选项卡"/>&nbsp;</a></li><li class="zen-notNeeded zen-lastItem zen-moreTabs" id="MoreTabs_Tab"><a href="javascript:void(0);" class="zen-assistiveLink" id="zen-moreTabsAssistiveLink" title="更多选项卡菜单（结束）"><b></b></a><ul id="MoreTabs_List"></ul>
+</li></ul>
+</nav>
+                </div>
+            </div>
+        </div>
+        <div class="bodyDiv brdPalette brandPrimaryBrd">
+            <table class="outer" width="100%" id="bodyTable" border="0" cellspacing="0" cellpadding="0">
+                <!-- Start page content table -->
+                <tr>
+                    <td id="sidebarCell" class=" sidebarCell">
+                        <div class="fixed sidebar" id="sidebarDiv">
+                            <div class="createNewModule sidebarModule">
+                                <div class="sidebarModuleBody sidebarModuleBodyNoHeader">
+                                    <div class="menuButton" id="createNew">
+                                        <div class="menuButtonButton" id="createNewButton">
+                                            <span class="menuButtonLabel" id="createNewLabel" tabindex="0">新建...</span></div>
+                                        <div class="menuButtonMenu" id="createNewMenu">
+                                            <a href="/00U/e?retURL=%2F003%2Fo" class="eventMru firstMenuItem menuButtonMenuLink">
+                                                <img src="/s.gif" alt="事件" class="mruIcon" title="事件" />事件</a><a href="/00T/e?retURL=%2F003%2Fo"
+                                                    class="menuButtonMenuLink taskMru"><img src="/s.gif" alt="任务" class="mruIcon" title="任务" />任务</a><a
+                                                        href="/001/e?retURL=%2F003%2Fo" class="menuButtonMenuLink accountMru"><img src="/s.gif"
+                                                            alt="客户" class="mruIcon" title="客户" />客户</a><a href="/003/e?retURL=%2F003%2Fo" class="contactMru menuButtonMenuLink"><img
+                                                                src="/s.gif" alt="联系人" class="mruIcon" title="联系人" />联系人</a><a href="/500/e?retURL=%2F003%2Fo"
+                                                                    class="caseMru menuButtonMenuLink"><img src="/s.gif" alt="个案" class="mruIcon" title="个案" />个案</a><a
+                                                                        href="/501/e?retURL=%2F003%2Fo" class="menuButtonMenuLink solutionMru"><img src="/s.gif"
+                                                                            alt="解决方案" class="mruIcon" title="解决方案" />解决方案</a><a href="/reportbuilder/reportType.apexp"
+                                                                                class="menuButtonMenuLink reportMru"><img src="/s.gif" alt="报表" class="mruIcon" title="报表" />报表</a></div>
+                                    </div>
+                                    <script>                                        new MenuButton('createNew', false);</script>
+                                </div>
+                            </div>
+                            <div class="recentItemModule sidebarModule">
+                                <div class="sidebarModuleHeader brandPrimaryBgr">
+                                    <h2 class="brandPrimaryFgr">
+                                        最近项目</h2>
+                                </div>
+                                <div class="sidebarModuleBody">
+                                    <div class="hidden" data-urlquerystr="retURL=%2F003%2Fo&amp;isAjaxRequest=1&amp;renderMode=RETRO&amp;nocache=1414115818481&amp;hl=06990000001823J%3A%2C0699000000181LB%3A%2C0699000000181a1%3A%2C0059000000390Wh%3A%2C0699000000181H4%3A%2C0699000000181La%3A%2C069900000017xZK%3A%2C08790000000Pfcb%3A%2C005900000039Sll%3A%2C0699000000181HJ%3A%2C"
+                                        id="urlQueryStr">
+                                    </div>
+                                    <div class="mruList individualPalette" data-hovdata="dir=chatterHover-right">
+                                        <div class="contentSearchBlock" data-hovid="0699000000181LB">
+                                            <div class="mruItem" id="mru0699000000181LB">
+                                                <a href="/0699000000181LB" class="contentSearchMru" accesskey="1" tabindex="0" title="[Alt+1]">
+                                                    <img src="/s.gif" alt="内容: rdn_5139272a8f129" class="mruIcon" title="内容: rdn_5139272a8f129" /><span
+                                                        class="mruText">rdn_5139272a8f129</span></a></div>
+                                        </div>
+                                        <div class="userBlock" data-hovid="005900000039Sll">
+                                            <div class="mruItem" id="mru005900000039Sll">
+                                                <a href="/005900000039Sll" class="userMru" accesskey="2" tabindex="0" title="[Alt+2]">
+                                                    <img src="/s.gif" alt="用户: 站点来宾用户 公司网站" class="mruIcon" title="用户: 站点来宾用户 公司网站" /><span
+                                                        class="mruText">站点来宾用户 公司网站</span></a></div>
+                                        </div>
+                                        <div class="userBlock" data-hovid="0059000000390Wh">
+                                            <div class="mruItem" id="mru0059000000390Wh">
+                                                <a href="/0059000000390Wh" class="userMru" accesskey="3" tabindex="0" title="[Alt+3]">
+                                                    <img src="/s.gif" alt="用户: liu jack" class="mruIcon" title="用户: liu jack" /><span
+                                                        class="mruText">liu jack</span></a></div>
+                                        </div>
+                                        <div class="ideaBlock" data-hovid="08790000000Pfcb">
+                                            <div class="mruItem" id="mru08790000000Pfcb">
+                                                <a href="/08790000000Pfcb" class="ideaMru" accesskey="4" tabindex="0" title="[Alt+4]">
+                                                    <img src="/s.gif" alt="意见: 关于吃饭问题" class="mruIcon" title="意见: 关于吃饭问题" /><span class="mruText">关于吃饭问题</span></a></div>
+                                        </div>
+                                        <div class="contentSearchBlock" data-hovid="06990000001823J">
+                                            <div class="mruItem" id="mru06990000001823J">
+                                                <a href="/06990000001823J" class="contentSearchMru" accesskey="5" tabindex="0" title="[Alt+5]">
+                                                    <img src="/s.gif" alt="内容: txt" class="mruIcon" title="内容: txt" /><span class="mruText">txt</span></a></div>
+                                        </div>
+                                        <div class="contentSearchBlock" data-hovid="0699000000181H4">
+                                            <div class="mruItem" id="mru0699000000181H4">
+                                                <a href="/0699000000181H4" class="contentSearchMru" accesskey="6" tabindex="0" title="[Alt+6]">
+                                                    <img src="/s.gif" alt="内容: Exp_20140828194... " class="mruIcon" title="内容: Exp_20140828194... " /><span
+                                                        class="mruText">Exp_20140828194... </span></a>
+                                            </div>
+                                        </div>
+                                        <div class="contentSearchBlock" data-hovid="0699000000181La">
+                                            <div class="mruItem" id="mru0699000000181La">
+                                                <a href="/0699000000181La" class="contentSearchMru" accesskey="7" tabindex="0" title="[Alt+7]">
+                                                    <img src="/s.gif" alt="内容: 饺子" class="mruIcon" title="内容: 饺子" /><span class="mruText">饺子</span></a></div>
+                                        </div>
+                                        <div class="contentSearchBlock" data-hovid="0699000000181a1">
+                                            <div class="mruItem" id="mru0699000000181a1">
+                                                <a href="/0699000000181a1" class="contentSearchMru" accesskey="8" tabindex="0" title="[Alt+8]">
+                                                    <img src="/s.gif" alt="内容: l1" class="mruIcon" title="内容: l1" /><span class="mruText">l1</span></a></div>
+                                        </div>
+                                        <div class="contentSearchBlock" data-hovid="0699000000181HJ">
+                                            <div class="mruItem" id="mru0699000000181HJ">
+                                                <a href="/0699000000181HJ" class="contentSearchMru" accesskey="9" tabindex="0" title="[Alt+9]">
+                                                    <img src="/s.gif" alt="内容: shopex" class="mruIcon" title="内容: shopex" /><span class="mruText">shopex</span></a></div>
+                                        </div>
+                                        <div class="contentSearchBlock" data-hovid="069900000017xZK">
+                                            <div class="mruItem" id="mru069900000017xZK">
+                                                <a href="/069900000017xZK" class="contentSearchMru" accesskey="0" tabindex="0" title="[Alt+0]">
+                                                    <img src="/s.gif" alt="内容: contact" class="mruIcon" title="内容: contact" /><span class="mruText">contact</span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recycleBinModule sidebarModule">
+                                <div class="sidebarModuleBody sidebarModuleBodyNoHeader">
+                                    <a href="/search/UndeletePage">
+                                        <img src="/s.gif" alt="回收站" class="recycleIcon" title="回收站" /><span class="recycleText">回收站</span></a></div>
+                            </div>
+                            <div class="quickCreateModule sidebarModule">
+                                <div class="sidebarModuleHeader brandPrimaryBgr">
+                                    <h2 class="brandPrimaryFgr">
+                                        快速创建</h2>
+                                </div>
+                                <div class="sidebarModuleBody">
+                                    <form action="/003/o" id="qcreate" method="post" name="qcreate" onsubmit="if (window.ffInAlert) { return false; }">
+                                    <input type="hidden" name="_CONFIRMATIONTOKEN" id="_CONFIRMATIONTOKEN" value="CCv39XCG6ICGAj.KgbYEVm2k3ahrOwxlGrZ0az5DR0l.q0.IG_RuyI5pZinMUy2RAsOS4Qz.z8rV_vWQdIaPR.tF_IVXb8af2UM..RNNVBpo9.b8ID5BMMkKf6i.J64xQD8fqQ==" /><input
+                                        type="hidden" name="quickCreate" id="quickCreate" value="qc" /><div class="requiredInput">
+                                            <div class="quickCreateField">
+                                                <label for="name_last">
+                                                    <span class="requiredMark">*</span>姓氏</label><br />
+                                                <input id="name_last" maxlength="80" name="name_last" size="20" type="text" /></div>
+                                        </div>
+                                    <div class="quickCreateField">
+                                        <label for="name_first">
+                                            名字</label><br />
+                                        <input id="name_first" maxlength="40" name="name_first" size="20" type="text" /></div>
+                                    <div class="quickCreateField">
+                                        <label for="account">
+                                            客户</label><br />
+                                        <input type="hidden" name="account_lkid" id="account_lkid" value="000000000000000" /><input
+                                            type="hidden" name="account_lkold" id="account_lkold" value="null" /><input type="hidden"
+                                                name="account_lktp" id="account_lktp" value="001" /><input type="hidden" name="account_lspf"
+                                                    id="account_lspf" value="0" /><input type="hidden" name="account_lspfsub" id="account_lspfsub"
+                                                        value="0" /><input type="hidden" name="account_mod" id="account_mod" value="0" /><span
+                                                            class="lookupInput"><input id="account" maxlength="255" name="account" onchange="getElementByIdCS('account_lkid').value='';getElementByIdCS('account_mod').value='1';"
+                                                                size="20" type="text" /><a href="javascript:%20openLookup%28%27%2F_ui%2Fcommon%2Fdata%2FLookupPage%3Flkfm%3Dqcreate%26lknm%3Daccount%26lkjsd%3Dtrue%26cnpa%3D0%26lktp%3D%27%20%2B%20getElementByIdCS%28%27account_lktp%27%29.value%2C670%2C%271%27%2C%27%26lksrch%3D%27%20%2B%20escapeUTF%28getElementByIdCS%28%27account%27%29.value.substring%280%2C%2080%29%29%29"
+                                                                    id="account_lkwgt" onclick="setLastMousePosition(event)" title="客户 查找（新窗口）"><img
+                                                                        src="/s.gif" alt="客户 查找（新窗口）" class="lookupIcon" onblur="this.className = 'lookupIcon';"
+                                                                        onfocus="this.className = 'lookupIconOn';" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';"
+                                                                        onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"
+                                                                        title="客户 查找（新窗口）" /></a></span></div>
+                                    <div class="quickCreateField">
+                                        <label for="phone1">
+                                            电话</label><br />
+                                        <input id="phone1" maxlength="40" name="phone1" size="20" type="text" /></div>
+                                    <div class="quickCreateField">
+                                        <label for="email">
+                                            电子邮件</label><br />
+                                        <input id="email" maxlength="80" name="email" size="20" type="text" /></div>
+                                    <input value=" 保存 " class="btn" name="save" title="保存" type="submit" /></form>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="oRight" id="bodyCell">
+                        <!-- Start page content -->
+                        <a name="skiplink">
+                            <img src="/s.gif" height='1' width='1' alt="内容在此开始" class="skiplink skipLinkTargetInner zen-skipLinkTarget"
+                                title="内容在此开始" /></a><div class="bPageTitle">
+                                    <div class="ptBody">
+                                        <div class="content">
+                                            <img src="/s.gif" alt="联系人" class="pageTitleIcon" title="联系人" /><h1 class="pageType">
+                                                联系人<span class="titleSeparatingColon">:</span></h1>
+                                            <h2 class="pageDescription">
+                                                主页</h2>
+                                            <div class="blank">
+                                                &nbsp;</div>
+                                        </div>
+                                        <div class="links">
+                                            <a href="javascript:openPopupFocusEscapePounds(%27https://login.salesforce.com/services/auth/sso/00D30000000XsfGEAS/HTAuthProvider?startURL=%252Fapex%252Fhtdoor%253Floc%253Dhelp%2526target%253Dcontacts_def.htm%2526section%253DContacts%2526language%253Dzh_CN%2526release%253D192.9.1%2526instance%253DAP1&amp;site=https%3A%2F%2Fhelp.salesforce.com%27, %27Help%27, 1024, 768, %27width=1024,height=768,resizable=yes,toolbar=yes,status=yes,scrollbars=yes,menubar=yes,directories=no,location=yes,dependant=no%27, false, false);"
+                                                class="configLinks zen-deemphasize" title="了解详细信息！ （新窗口）">了解详细信息！</a> | <a href="javascript:openPopupFocusEscapePounds(%27https://login.salesforce.com/services/auth/sso/00D30000000XsfGEAS/HTAuthProvider?startURL=%252Fapex%252Fhtdoor%253Floc%253Dhelp%2526target%253Dcontacts_overview.htm%2526section%253DContacts%2526language%253Dzh_CN%2526release%253D192.9.1%2526instance%253DAP1&amp;site=https%3A%2F%2Fhelp.salesforce.com%27, %27Help%27, 1024, 768, %27width=1024,height=768,resizable=yes,toolbar=yes,status=yes,scrollbars=yes,menubar=yes,directories=no,location=yes,dependant=no%27, false, false);"
+                                                    title="此页面的帮助 （新窗口）"><span class="helpLink">此页面的帮助</span><img src="/s.gif" alt=""
+                                                        class="helpIcon" /></a></div>
+                                    </div>
+                                    <div class="ptBreadcrumb">
+                                    </div>
+                                </div>
+                        <div class="filterOverview">
+                            <form action="/003" id="filter_element" method="GET" name="filter_element" onsubmit="if (window.ffInAlert) { return false; }">
+                            <div class="bFilterView">
+                                <span class="bFilter">
+                                    <label for="fcf" style="text-align: left; font-weight: bold; padding-right: .69em;">
+                                        <span class="requiredMark">*</span>视图：</label><span class="fBody"><select id="fcf"
+                                            name="fcf" onchange="javascript:this.form.submit();" title="视图："><option value="00B90000008ViBi">
+                                                New Last Week</option>
+                                            <option value="00B90000008ViBu">本月份生日</option>
+                                            <option value="00B90000008ViCR">全部联系人</option>
+                                            <option value="00B90000008ViCg" selected="selected">我的联系人</option>
+                                            <option value="00B90000008ViBs">新建本周</option>
+                                            <option value="00B90000008ViCU">最近已查看联系人</option>
+                                        </select>
+                                            <input value=" 转至！ " class="btn" name="go" onclick="javascript:this.form.submit();"
+                                                title="转至！" type="button" /></span><span class="fFooter"><a href="/ui/list/FilterEditPage?id=00B90000008ViCg&amp;retURL=%2F003&amp;cancelURL=%2F003%2Fo">编辑</a>
+                                                    | <a href="/ui/list/FilterEditPage?ftype=c&amp;retURL=%2F003&amp;cancelURL=%2F003%2Fo">
+                                                        新建视图</a></span></span></div>
+                            </form>
+                        </div>
+                        <!-- Begin RelatedListElement -->
+                        <div class="bRelatedList">
+                            <!-- Begin ListElement -->
+                            <!-- motif: Contact -->
+                            <!-- WrappingClass -->
+                            <div class="hotListElement">
+                                <div class="bPageBlock brandSecondaryBrd secondaryPalette">
+                                    <div class="pbHeader">
+                                        <form action="/003/o" id="hotlist" method="GET" name="hotlist" onsubmit="if (window.ffInAlert) { return false; }">
+                                        <table border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td class="pbTitle">
+                                                    <img src="/s.gif" alt="" width="1" height="1" class="minWidth" title="" />&nbsp;<h3>
+                                                        最近联系人</h3>
+                                                </td>
+                                                <td class="pbButton">
+                                                    <input value=" 新建 " class="btn" name="new" onclick="navigateToUrl('/003/e?retURL=%2F003%2Fo',null,'new');"
+                                                        title="新建" type="button" />
+                                                </td>
+                                                <td class="pbHelp">
+                                                    <select id="hotlist_mode" name="hotlist_mode" onchange="submit();" title="显示所选内容">
+                                                        <option value="2">最近创建</option>
+                                                        <option value="1">最近修改</option>
+                                                        <option value="3" selected="selected">最近查看</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        </form>
+                                    </div>
+                                    <div class="pbBody">
+                                        <table class="list" border="0" cellspacing="0" cellpadding="0">
+                                            <tr class="headerRow">
+                                                <th scope="col" class="noRowsHeader">
+                                                    无最近记录。单击“转至”或从下拉列表中选择视图来显示记录。
+                                                </th>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="pbFooter secondaryPalette">
+                                        <div class="bg">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listElementBottomNav">
+                            </div>
+                            <!-- End ListElement -->
+                        </div>
+                        <!-- End RelatedListElement -->
+                        <table class="toolsContent" id="toolsContent">
+                            <tr>
+                                <td>
+                                    <div class="toolsContentLeft">
+                                        <div class="bSubBlock brandSecondaryBrd secondaryPalette">
+                                            <h3 class="lbHeader">
+                                                报表</h3>
+                                            <div class="lbBody">
+                                                <ul>
+                                                    <li><a href="/00O?rt=11&amp;retURL=%2F003%2Fo&amp;interval_q=last7&amp;break0=EMAILTEMPLATENAME&amp;sort=OPENED&amp;sortdir=down&amp;details=yes&amp;format=t">
+                                                        HTML 电子邮件状态报表</a></li><li><a href="/00O?rt=45&amp;retURL=%2F003%2Fo&amp;edit=yes&amp;scope=user&amp;sort=ACCOUNT.NAME&amp;c=AO&amp;c=AN&amp;c=TY&amp;c=P_AN&amp;c=P_RO&amp;details=yes">
+                                                            合作伙伴客户</a></li><li><a href="/00O?rt=2&amp;retURL=%2F003%2Fo&amp;edit=yes&amp;scope=my&amp;sort=ACCOUNT.NAME&amp;colDt_c=CREATED_DATE&amp;colDt_s=2014-10-17&amp;c=SL&amp;c=FN&amp;c=LN&amp;c=TI&amp;c=AN&amp;c=A2ST&amp;c=A2CI&amp;c=A2SA&amp;c=A2ZI&amp;c=A2CO&amp;c=P1&amp;c=P2&amp;c=P3&amp;c=EM&amp;c=AO&amp;details=yes">
+                                                                邮寄列表</a></li><li><a href="/00O?rt=110&amp;retURL=%2F003%2Fo&amp;sortdir=down&amp;sort=CD&amp;sdate=2014-10-24&amp;edate=2014-10-24&amp;break0=CI&amp;c=FN&amp;c=LN&amp;c=OW&amp;c=CR&amp;c=FD&amp;c=OV&amp;c=NV&amp;c=CD&amp;details=yes&amp;format=t">
+                                                                    联系人历史报表</a></li><li><a href="/00O?rt=2&amp;retURL=%2F003%2Fo&amp;pc0=EMAIL_BOUNCED_REASON&amp;pn0=ne&amp;pv0=&amp;sort=EM&amp;c=FN&amp;c=LN&amp;c=CO&amp;c=EM&amp;c=EMAIL_BOUNCED_REASON&amp;c=EMAIL_BOUNCED_DATE&amp;details=yes">
+                                                                        已退回的联系人</a></li></ul>
+                                            </div>
+                                            <div class="lbBody">
+                                                <div class="mainLink">
+                                                    <a href="/00O/o?entityType=00O">转至报表</a>&nbsp;&#187;</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="toolsContentRight">
+                                        <div class="bSubBlock brandSecondaryBrd secondaryPalette">
+                                            <h3 class="lbHeader">
+                                                工具</h3>
+                                            <div class="lbBody">
+                                                <ul>
+                                                    <li><span><a href="/setup/imp/myimport_welcome.jsp">导入我的客户 &amp; 联系人</a></span></li><li>
+                                                        <span><a href="/setup/crmforoutlook/crmforoutlooksetup.apexp">同步到 Outlook</a></span></li><li>
+                                                            <span><a href="/setup/imp/orgimport_welcome.jsp">导入我的组织的客户 &amp; 联系人</a></span></li><li>
+                                                                <span><a href="/setup/own/massdelete.jsp?ftype=c&amp;retURL=%2F003%2Fo">批量删除联系人</a></span></li><li>
+                                                                    <span><a href="/ui/massmail/MassMailStageManager?setupid=MassMailFilter&amp;ftype=C&amp;wizardRetUrl=%2F003%2Fo">
+                                                                        批量发送电子邮件联系人</a></span></li><li><span><a href="/email/mass/massupdatefilter.jsp?ftype=Q&amp;retURL=%2F003%2Fo">
+                                                                            批量保持联系</a></span></li><li><span><a href="/ui/campaign/MassAddCampaignMembersWizard?macmw_type=Contact&amp;macmw_mode=Add&amp;wizardRetUrl=%2F003%2Fo">
+                                                                                批量添加联系人到市场活动</a></span></li></ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <script type="text/javascript">                  
+                                  window.sfdcPage.appendToOnloadQueue(function () {
+                                DevSlide.addTools([{ "title": "查看字段", "hoverText": "查看和管理此对象的字段", "newLinkHover": "将字段添加到此对象", "url": "/p/setup/layout/LayoutFieldList?type=Contact&setupid=ContactFields", "newUrl": "/p/setup/field/NewCustomFieldStageManager?entity=Contact&retURL=%2F003%2Fo&setupid=ContactFields", "newWindow": true, "newInNewWindow": true, "section": 0 }, { "title": "查看对象", "hoverText": "查看和管理此对象的详细信息", "newLinkHover": "创建对象", "url": "/ui/setup/Setup?setupid=Contact", "newUrl": "/01I/e?retURL=%2F003%2Fo&setupid=Contact", "newWindow": true, "newInNewWindow": false, "section": 0 }, { "title": "查看记录类型", "hoverText": "查看和管理此对象的记录类型", "newLinkHover": "为此对象添加记录类型", "url": "/ui/setup/rectype/RecordTypes?type=Contact&setupid=ContactRecords", "newUrl": "/setup/ui/recordTypeWizard.jsp?type=Contact&retURL=%2F003%2Fo&setupid=ContactRecords", "newWindow": true, "newInNewWindow": false, "section": 0 }, { "title": "查看验证规则", "hoverText": "查看和管理此对象的验证规则", "newLinkHover": "为此对象添加验证规则", "url": "/p/setup/custent/ValidationFormulaListUI/d?retURL=%2F003%2Fo&tableEnumOrId=Contact&setupid=ContactValidations", "newUrl": "/03d/e?retURL=%2F003%2Fo&TableEnumOrId=Contact&Active=1&setupid=ContactValidations", "newWindow": true, "newInNewWindow": false, "section": 0 }, { "title": "查看批准", "hoverText": "查看和管理此对象的批准过程", "newLinkHover": "使用跳转向导为此对象添加批准过程", "url": "/p/process/ProcessDefinitionSetup?TableEnumOrId=Contact&setupid=ApprovalProcesses", "newUrl": "/04a/e?TableEnumOrId=Contact&et=QUICK_CREATE&retURL=%2F003%2Fo&setupid=ApprovalProcesses", "newWindow": true, "newInNewWindow": false, "section": 0 }, { "title": "编辑应用程序", "hoverText": "自定义此应用程序的选项卡列表、简档分配和其他详细信息", "url": "/02u900000017n3L/e?retURL=%2F003%2Fo&setupid=TabSet", "newWindow": false, "newInNewWindow": false, "section": 1 }, { "title": "编辑列", "hoverText": "自定义此列表中的列", "url": "/p/setup/layout/ListLayoutEdit?LayoutEntity=Contact&retURL=%2F003%2Fo&LayoutType=KeyList&setupid=ContactSearchLayouts", "newWindow": false, "newInNewWindow": false, "section": 1 }, { "title": "导入数据", "hoverText": "将数据导入此对象中", "url": "/setup/imp/orgimport_welcome.aspx", "newWindow": true, "newInNewWindow": false, "section": 2}]);
+                                new DevSlide("\u003Cimg src=\"/s.gif\" alt=\"Force.com 快速访问菜单\"  class=\"menuArrow\" onblur=\"this.className = 'menuArrow';\" onfocus=\"this.className = 'menuArrowOn';\" onmouseout=\"this.className = 'menuArrow';\" onmouseover=\"this.className = 'menuArrowOn';\" title=\"Force.com 快速访问菜单\"/\u003E", "\u003Cimg src=\"/s.gif\" alt=\"转到“设置”\"  class=\"forceLogo\" onblur=\"this.className = 'forceLogo';\" onfocus=\"this.className = 'forceLogoOn';\" onmouseout=\"this.className = 'forceLogo';\" onmouseover=\"this.className = 'forceLogoOn';\" title=\"转到“设置”\"/\u003E", "\u003Ca href=\"javascript:openPopupFocusEscapePounds('', %27Help%27, 1024, 768, %27width=1024,height=768,resizable=yes,toolbar=yes,status=yes,scrollbars=yes,menubar=yes,directories=no,location=yes,dependant=no%27, false, false);\" class=\"helpLink\" title=\"帮助\"\u003E\u003Cimg src=\"/s.gif\" alt=\"帮助\"  class=\"helpIcon\" title=\"帮助\"/\u003E\u003C/a\u003E", "/setup/forcecomHomepage.aspx?setupid=ForceCom&retURL=%2F003%2Fo");
+                            });
+                        </script>
+                        <!-- Body events -->
+                        <script type="text/javascript">                            function bodyOnLoad() { if (typeof (startSessionTimer) != 'undefined') { startSessionTimer(); }; if (typeof (ActivityReminder) != 'undefined') { ActivityReminder.initialize([], false, false); }; if ((window.sfdcPage) && (sfdcPage.executeOnloadQueue)) { sfdcPage.executeOnloadQueue(); }; ; if (this.loadChatFrameJs) loadChatFrameJs(); SearchClickLoggingUtil.setClickLoggingServletPath("/_ui/search/logging/SearchClickLoggingServlet"); new UnifiedSearchAutoCompleteElement("phSearchInput", "/_ui/common/search/client/ui/UnifiedSearchAutoCompleteServlet", 1, {}, false, null, "phSearchForm", ["div", "searchOwner", "asPhrase", "sen"], {}, true, 3, 100); new UnifiedSearchButton("searchButtonContainer", "phSearchButton", "headerSearchRightRoundedCornerMouseOver", "phSearchForm"); SfdcApp.MruHovers.global_data.url = 'retURL=%2F003%2Fo&isAjaxRequest=1&renderMode=RETRO&nocache=1414115818481'; if (document.getElementById('sidebarDiv')) { Sidebar.prototype.theSidebar = new Sidebar(document.getElementById('sidebarDiv'), false); }; if (window.PreferenceBits) { window.PreferenceBits.prototype.csrfToken = "HuOSPurfCPkAugRZLcPLRywsoCmg4F9BOkcRjLFvyNm.b5coN2rXPvHnNtvOaaFDhgsXt4ARXHwUD_hATsiPuvNwKxQWcms.4xiSRriKOKG7Yjk0X4vJjkOmPbo49i7uGSp8gx5zlGwYj4qZ._rb3PuRoyD9PZVK3FylR9MJ88FKTArAbAwwj2PWlJKc4kiztvk0gw=="; }; } function bodyOnBeforeUnload() { if ((window.sfdcPage) && (sfdcPage.executeOnBeforeUnloadQueue)) { sfdcPage.executeOnBeforeUnloadQueue(); }; } function bodyOnFocus() { closePopupOnBodyFocus(); } function bodyOnUnload() { }</script>
+                        <!-- End page content -->
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bPageFooter noTableFooter">
+            <div>
+                <span class="brandQuaternaryFgr">Copyright © 2000-2014 .com, inc. 公司版权所有。保留所有权利。</span>&nbsp;|&nbsp;<a
+                    href="http://www..com/company/privacy.jsp" class="brandQuaternaryFgr"
+                    target="_blank" title="隐私声明 （新窗口）">隐私声明</a>&nbsp;|&nbsp;<a href="http://www..com/company/security.jsp"
+                        class="brandQuaternaryFgr" target="_blank" title="安全声明 （新窗口）">安全声明</a>&nbsp;|&nbsp;<a
+                            href="http://www..com/company/msa.jsp" class="brandQuaternaryFgr" target="_blank"
+                            title="使用条款 （新窗口）">使用条款</a>&nbsp;|&nbsp;<a href="javascript:openPopupFocusEscapePounds('', 'Help', 1024, 768, 'width=1024,height=768,resizable=yes,toolbar=yes,status=yes,scrollbars=yes,menubar=yes,directories=no,location=yes,dependant=no', false, false);"
+                                class="brandQuaternaryFgr" title="508 符合性 （新窗口）">508 符合性</a></div>
+        </div>
+        <div>
+        </div>
+    </div>
+    <script>        var SFDCSessionVars = { "uid": "0059000000390Wh", "exp": 1414123018000, "host": "", "oid": "00D90000000yvHG", "server": "", "act": "u" };</script>
+    <script defer="true" src="/jslibrary/sfdc/ChatterDefer.js"></script>
+    <script defer="true" src="/jslibrary/sfdc/Zen.js"></script>
+    <script>        var s = document.createElement('SCRIPT'); s.async = true; s.defer = true; s.src = '/jslibrary/sfdc/SfdcSessionBase190.js'; (document.body || document.getElementsByTagName('script')[0]).appendChild(s);</script>
+</body>
+</html>
+<!-- page generation time: 78ms -->

@@ -1,0 +1,5 @@
+/*
+ * This code is for Internal Salesforce use only, and subject to change without notice.
+ * Customers shouldn't reference this file in any web pages.
+ */
+table.operation{width:100%}#operationCtr .operation td{vertical-align:middle;padding-top:4px;padding-bottom:4px}#operationCtr .opSimple td{background-color:#e3ebf0;border-bottom:2px solid #8e9dbe}#filterSection{display:none}.opComplex{background-color:#f8f8d8}.opField{border-left:1px solid #8e9dbe;padding-left:10px;width:75%}#options{display:none}

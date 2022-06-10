@@ -1,0 +1,606 @@
+﻿{
+    "canPinFolder": true,
+    "list": [
+        {
+            "fid": "",
+            "text": "全部文件夹",
+            "isRoot": true,
+            "noEdit": true,
+            "leaf": true,
+            "type": ""
+        },
+        {
+            "fid": "00l90000000gRD2",
+            "text": "信息",
+            "resultsTruncated": false,
+            "isPinned": "true",
+            "leaf": true,
+            "type": "r",
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "Ed.K7YcGIEaj8O6R9EKc75qAZKz7un_5ybgD86GJ8diYHb9Swzrf_kUKGBkePVHpQzwAFx4tTnss
+.dialM.EriTcDr2BLyZXpibnphUNqWq4BQAOdIYwfZgja00LkCCyIxmwqmvcTC9I81Qu0pqWFMvAPC_3cJkGLrnzLkbR8r2PSxwlC1rRWMTnjGxqRfeA4zJY3kycZxnX54
+.S097PvldtpZ4=",
+                        "label": "共享"
+                    }
+                },
+                {
+                    "action": "EDIT",
+                    "extraInfo": {
+                        "label": "编辑",
+                        "url": "/00l90000000gRD2/e?cancelURL
+=%2F00O%3Ffcf%3D00l90000000gRD2&retURL=%2F00O%2Fo"
+                    }
+                },
+                {
+                    "action": "DELETE",
+                    "extraInfo": {
+                        "csrf": "2vbN7V5xqFUCjRESyFRzoNvSKNoIUhgBjkx
+
+=",
+                        "label": "删除"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00D90000000yvHG",
+            "text": "未归档公共报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "defaultFolders": "true",
+            "type": "r",
+            "canAddToFolder": true
+        },
+        {
+            "fid": "0059000000390Wh",
+            "text": "我的个人自定义报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "defaultFolders": "true",
+            "type": "r",
+            "canAddToFolder": true
+        },
+        {
+            "fid": "0059000000390Wh",
+            "text": "我的个人仪表板",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "defaultFolders": "true",
+            "type": "b",
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gWg5",
+            "text": "Milestones PM",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "type": "r",
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "RwssgXgDApd4c7r1QMppD3MXuRTy3RTY96H3mPvbHmKpb
+.fpjEATCAi4d9VEK9rSY_WdHseDJlW3TGifQV6vda4tJXakKprLEIOOXxOJ7v.kz9lL42W9i6ZWddjGfGYIu25A95q7U_yWqlgVFgSseIRRB8wTG1Os71tTU_LOSHHzCsFthpPKzyR67WRuTSFWuu1tb_7MsTGlLRthGEXTYs3I6P8
+=",
+                        "label": "共享"
+                    }
+                },
+                {
+                    "action": "EDIT",
+                    "extraInfo": {
+                        "label": "编辑",
+                        "url": "/00l90000000gWg5/e?cancelURL=%2F00O
+%3Ffcf%3D00l90000000gWg5&retURL=%2F00O%2Fo"
+                    }
+                },
+                {
+                    "action": "DELETE",
+                    "extraInfo": {
+                        "csrf": "O.7XnMlh9ei3IL
+.5GASnEXo0cOWosydZgmQx78c0UDBTy4djt21ukSM__qz4_oPUKDKUHQrwsL04uVNCBzbrysrvdXrTKAcn.QCvzc.G71LsTebyUagZItYbrR9td5XBpRv67RUbsnCvr
+.y_iw_9Xbqy_V0=",
+                        "label": "删除"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gWg6",
+            "text": "Milestones PM
+ Dashboards",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "type": "b",
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "1COjdExCkP_SsZSFo8n7UMlp.uLQ09U_lh75WUFxHJ_O1EDnUQUj
+nQq7VLWXHhNd5bqYWH_h8OPB_xZ9b61pARqG9NHniZUlIAT8DQsqoPC5yVH2Njm5Twd6szu1yJr6wq_REDchVC6Lvpji9G3iB7OtYnX9odgu7UAgDohmy6c_T0kU2_TtBd_4nRzWsLiKi0Nyu2nFS7UxNYlh8yLodvsJIN8
+=",
+                        "label": "共享"
+                    }
+                },
+                {
+                    "action": "EDIT",
+                    "extraInfo": {
+                        "label": "编辑",
+                        "url": "/00l90000000gWg6/e?cancelURL=%2F01Z
+%3Ffcf%3D00l90000000gWg6&retURL=%2F00O%2Fo"
+                    }
+                },
+                {
+                    "action": "DELETE",
+                    "extraInfo": {
+                        "csrf": "ZgY2GSJut._arnJTt8CQkU0gHzsLH1wc
+.ZgyMvvi9bjcrGZbumKXzqxW2X1BJlTb5llib8IqsiS024h8HcgAqk9eSB0MHx.vkWgchO7lXsnyhkwKzS1h_kYO_d1J0cN.LafedwBLHaEquKejxojZmlHF4dk
+=",
+                        "label": "删除"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJoy",
+            "text": "客户和联系人报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 0,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "gJqU4v7McN.hsN8mVmesjrISImtMBiuwUQ9x8qJY_xQMicMQ2JdJRxaif0VseTam2wU4LMkswuxmFhbkq
+.Sh9wEzfa0MP24whUHMjTVGzR2YWy7Ws2JBvC_WGPmIELKJFH8ihaeSVMbBAEDPT970CLkYzJ7VOv.q4m4l5vXgWkp_O20qlZDi4Xlvi_1r_9ealCWUNn_jfPUrAnF2cwSt4Ye9fWA
+=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJoz",
+            "text": "业务机会报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 1,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "P3FmeKM1Scu644qDN6qxT6dXOmPJXwG_621dDrVicMKHBvN5EpQzSlqn
+.fH_owspAFVJg5GjBfinW79EZafmJiHWp.ODpm7D4lDFUluQBVXHxVom8_C7eOK4aMAzRUXBo7y2AQ3sGIwD7.RydDYfJVypoUvOaeMZl9
+.HjJD1rtC5ZRL7DVy1f.j8YqrgzNkzLitpaGdT.j66RH8S3wTiMhrtQLg=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJp0",
+            "text": "销售报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 2,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "jSw2vVMqqas6hVz6L1IqqmnOn6WyxbubMnJKfQ8PRS_GYCkowia_vuoD6xcP1nudheSDAGzovI9to
+.pd2mWm2FCdmRlKzxZ9D.yNf93aZ6jATkSvc_.l8E.UrIApNvxK1lq8KDaKK_sMF5PXVTnsZJLwvDvz_g6.EnHkpoWNJLy.dBirNpUfQj7STEY_a42fmBLZOvbbsqMSw39mPq6kEUJ7xos
+=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJp1",
+            "text": "潜在客户报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 3,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "bBhAgOEPx2KwKbqwafFb3GoJG3Qu0rU_UBBKTB1RJiJu0Fq6mbdC
+2wY6R36WT4JsGaP4HCtiInezWzTdghdEaGi1O7u5QMoBXNO2avmADq7ORa91rW7kmV65szNoJYbNH4kzmWK8Ui8mfSSxf4eqZlzYo7jfMsEK7la2Ej3EMyNGYvs_AYiD5CkIJMvM_cGXdw0118PSJ9n7P2hnwFhSowxoMvw
+=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJp2",
+            "text": "支持报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 4,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "f_0ZPuYz4XHcg9I4MgO7itDP6XE.WnP8TDpmf9yIUtz32AuQDZejK9AB44SqhsxkV
+.mttgpaqSqSDDN5EeQUdaFEFnKvBtR0znrGJBGKEX7788KMM0zJZe5056uAtqBEqMbXyxO02YJpHXjPZlpd77Od84SClPPtETIS4WAyVnuxKSSLDXDbEM7su_yU98ClzoSFJYB6JOFU0fKSr07Xtk0wnKI
+=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJp3",
+            "text": "市场活动报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 5,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "6lqn8Fq8xRSgxLdKILg.fIz.RybVWmWBBCnzKyPAXqGH4weZCRxv
+TYmlAh6qbjYoceljLfCiRF_j53aL1oW_GaNe2n_jsY7HrLlDwq4gP04yVD5DaX9gmUfuvaswCWclI_CSbx8XkYyIaJLq5OSGOxjrmntHYAkMy5tnD24mJ8Q
+.b82Hb4rk9LccodsBEa_vgK1MreVXh00E7b6BoaQc3umETwY=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJp6",
+            "text": "管理报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 8,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "FuX8vn5ONOqkv0fdbvjj3dcddsWMa9L5e94hg9lYHWjie2cCjklbz6YDgGqUgr4pyiqCBCx4Aa
+.yd7e3mgneoB7lhWZjsi2rl6iq1Wb0.J_1xNhpnDIIJLKVL.mVwB_Krsiua75EuUv894IXiwrDt6YjJdM10EP15ndbsKRQD5odGcf_zYYnIoHd5my_1D8iQX4dTwok_SUznrg9cGHkbQ1F
+.Vk=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJp7",
+            "text": "活动报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 9,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "21aCDagZnahMuRYN.nRd2qXRmtmxI3NcJDT1N0BZKfU8Fwxd.coQovhXPWjaPDzl_HIOMnDiKmZH
+.Mklde0lkPH9AJbCKGKoH8WJTgUrQDHclLFdgZFqGeolMRHhyS6rCbqW2X3CTRl0DqvARAceFe5.j2BdSH.1crXCZCO6SuBQy9ajjflwKet_
+.hH0MqupHkSYdKbsyeDxM9nrECOilq1VuC4=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJp9",
+            "text": "产品和资产报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 11,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "Kt_R5gGFdzgavJGjvbvk2FHU4fFrRc0
+.LBv7LVAO7Mzo.FZ4hXKJN8PJ4VY9j8pKgRxfSmvezy_515.KKFziRG90BOPtxGQfkgpuUVd.WTLD54gte15tgvP6JR_6kX0nCj.IDeoCuocfWL2naF3HgPF4h
+.GPuP7rHtkC572wbs7TpPMTuG505uukEQsi.edlnQnctUtA7eBS4mRB4.bpzbuyyD0=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJpB",
+            "text": "电话支持中心报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 13,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固
+定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "WZmKNshc9OiSpcg4eMGxRqNCNpYSWTtgyZA0RZ4MKK7J4XIcjICIql2DzC9iMSEgHg30a_Bh2mhDfnlsULBxIIdjF118T4c1fZ1M23pdjLkmKdJC_lL4ehD00q0iS4D0ErRHCr
+.YFQq8HEf5EnYZr.Fh1TYYNwj2oqTU08hrsUqHmiRWuSzBkgKxbg2Zv59U2k5xMwzYKXon8EBZHXz2bpuf3fQ=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        },
+        {
+            "fid": "00l90000000gJpC",
+            "text": "文件和内容报表",
+            "resultsTruncated": false,
+            "isPinned": "false",
+            "leaf": true,
+            "isStandardFolder": true,
+            "type": "r",
+            "sfk": 14,
+            "actions": [
+                {
+                    "action": "PIN",
+                    "extraInfo": {
+                        "label": "固定到顶部"
+                    }
+                },
+                {
+                    "action": "UNPIN",
+                    "extraInfo": {
+                        "label": "取消固定"
+                    }
+                },
+                {
+                    "action": "SEPARATOR"
+                },
+                {
+                    "action": "SHARE",
+                    "extraInfo": {
+                        "sharingcsrf": "LDsXmfALzBKX3qV2QoWwzgWaM.2HSdrZWUh.q3I8fMCWzCkq.4kwQMOOzRppoIbFu2iXKvxWaHpYbWAtzac7gH2dUgf10m.SZn6D2GTjfqnDC1RO9LC3MR39X.4dauHjp76Jd4IuMbwlwfCR5476qlMNS0boL9gATYgPoSus.jZycPc9XuBokoh9KDN_pp9750d4hqfE6p2ervcdX7R7ff
+.L1XY=",
+                        "label": "共享"
+                    }
+                }
+            ],
+            "canAddToFolder": true
+        }
+    ]
+}

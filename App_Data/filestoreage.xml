@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<youyou>
+  <organization id="8D23D5E5-D7FB-445B-8E1B-66DB56F2FD99" name="北京市定安医院" customercode="">
+    <file id="email" root="D:\EmailFiles" name="邮件"></file>
+    <file id="attach" root="D:\OAFiles" name="附件"></file>
+    <file id="media" root="D:\MediaFiles" name="图片"></file>
+    <file id="file" root="D:\OAFiles" name="文件管理"></file>
+    <file id="signature" root="d:\MediaFiles" name="用户签名"></file>
+    <file id="form" root="d:\work\oa\OA\CloudOA\SysFiles\HTML" name="流程表单路径"></file>
+  </organization><!--
+  <organization id="" name="平水分院" customercode="">
+    <file id="email" root="E:\EmailFiles" name="邮件"></file>
+    <file id="attach" root="E:\OAFiles" name="附件"></file>
+    <file id="media" root="E:\MediaFiles" name="图片,视频"></file>
+    <file id="file" root="E:\OAFiles" name="文件管理"></file>
+    <file id="form" root="d:\Sites\oa_pc\SysFiles\HTML" name="流程表单路径"></file>
+  </organization>-->
+</youyou>

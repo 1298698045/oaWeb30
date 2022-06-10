@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+    <style>
+        .el-textarea {
+            margin-top: 8px;
+        }
+
+        .timechook {
+            width: 100%;
+            height: 40px;
+            margin-top: 21px;
+        }
+
+            .timechook .el-date-editor {
+                width: 47.5%;
+            }
+
+            .timechook .el-date-editor--time-select {
+                margin-left: 5%;
+            }
+
+        .shift-body-titme {
+            margin-top: 0;
+        }
+
+        .shift-body-main {
+            padding-bottom: 30px;
+        }
+
+        .slds-p-around--medium {
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">新增讨论</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>基本信息</span></div>
+                            <div class="shift-body-main">
+
+                                <div class="shift-item">
+                                    <div class="">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">主题</span>
+                                        <el-input class="save-checking-input" v-model="list.title"></el-input>
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>
+                                
+                                
+                               
+                                <!--<div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">分享类型</span>
+                                        <el-select class="save-checking-input"
+                                                   v-model="list.chatterTypeCode" placeholder="请选择">
+                                            <el-option v-for="item in select.chatterTypeCode"
+                                                       key="item.value"
+                                                       label="item.label"
+                                                       value="item.value">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">分享状态</span>
+                                        <el-select class="save-checking-input"
+                                                   v-model="list.description" placeholder="请选择">
+                                            <el-option v-for="item in select.description"
+                                                       key="item.value"
+                                                       label="item.label"
+                                                       value="item.value">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+
+                                    <div class="clear"></div>
+                                </div>-->
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">可见类型</span>
+                                        <el-select class="save-checking-input"
+                                                   v-model="list.visibleType" placeholder="请选择">
+                                            <el-option label="公开"
+                                                       value="0">
+                                            </el-option>
+                                            <el-option label="私有"
+                                                       value="0">
+                                            </el-option>
+                                            <el-option label="小组"
+                                                       value="3">
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                    <div class="item-right">
+
+                                    </div>
+                                    <div class="clear"></div>
+
+                                    </div>
+                                    <div class="shift-item">
+                                        <div class="item-left">
+                                            <span class="shift-name-title">地址</span>
+                                            <el-input v-model="list.location"></el-input>
+                                        </div>
+                                        <div class="item-right">
+                                            <span class="shift-name-title">标记建筑</span>
+                                            <el-input v-model="list.buidingName"></el-input>
+                                        </div>
+
+                                        <div class="clear"></div>
+                                    </div>
+                             
+                            </div>
+
+                            
+
+
+
+
+
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    title: '',
+                    chatterTypeCode: '5000',
+                    description: '',
+                    visibleType: '',
+                    buidingName: '',
+                    title:''
+                },
+                select: {
+                },
+                search: {
+                }
+            },
+            created: function () {
+                this.getselect()
+            },
+            methods: {
+                getselect: function () {
+                    var that = this
+                    var d = {}
+                    var ObjectTypeCode = '5000'
+                    d = {
+                        ObjTypeCode: ObjectTypeCode,
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, callback)
+                    function callback(data) {
+                        console.log(data)
+                        that.select = data.context.picklistValuesMap
+                    }
+                },
+                
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        var id = getQueryString('msgid')
+        vum.list.ObjectId = id
+
+        $('#Save').click(function () {
+            if ($(this).hasClass('active')) {
+                function callback(data) {
+                    console.log(data)
+                    parent.success('保存讨论成功')
+                    parent.$('#changeDiv').hide()
+                    parent.getchatter()
+                }
+                var d = vum.list
+                ajaxMethodPostData('chatter.post', d, callback)
+            }
+            
+        })
+    </script>
+</body>
+</html>

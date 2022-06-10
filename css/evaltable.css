@@ -1,0 +1,84 @@
+﻿.evalTable
+{
+    font-size:16px;
+    margin:0 auto; /* 居中 这个是必须的，，其它的属性非必须 */ 
+   
+}
+.evalTable .buttonBar
+{
+  text-align:right;
+}
+.evalTable .textScore
+{
+   width:80%;
+   line-height: 30px;
+}
+.evalTable h1
+{
+    font-size:16px;
+    text-align:center;
+    position:relative;
+}
+
+.evalTable table
+{
+    
+    padding: 20px;
+    border: 1px solid rgba(204, 204, 204, 0.7 );
+    /*text-align: left;*/
+    padding: 20px;
+    border-collapse: collapse;
+    width:80%;
+}
+
+.evalTable table th {
+    text-align: center;
+}
+
+.evalTable table td {
+    /*max-width: 70px;*/
+    min-width: 50px;
+    min-height: 32px;
+    text-align: center;
+    padding: 4px 2px;
+}
+
+.evalTable table .tdgroup {
+    max-width: 100px;
+    background: #fff;
+    vertical-align:middle;
+}
+
+.evalTable .opt {
+    width: 120px;
+}
+
+.evalTable .required {
+    color: navy;
+    font-weight: 600;
+}
+
+.evalTable .b {
+    font-weight: 600;
+}
+
+.evalTable .description {
+    font-size: 14px;
+    text-align: left;
+    text-indent: 30px;
+    letter-spacing: 1.5px;
+    line-height: 20px;
+}
+.cell {
+    /*font-family: Webdings !important;*/
+    font-size: 22px;
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+}
+.w100 {
+    width: 99%;
+}
+.tl {
+    text-align: left;
+}

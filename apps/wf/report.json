@@ -1,0 +1,733 @@
+﻿{
+    "children": [
+        {
+            "id": "categories\\/客户和联系人",
+            "apiValue": "accounts",
+            "text": "客户和联系人",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptacctlist.gif",
+                    "text": "客户",
+                    "cls": "file",
+                    "value": "ReportAccount",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptacctmail.gif",
+                    "text": "联系人和客户",
+                    "cls": "file",
+                    "value": "ReportContact",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptacctpart.gif",
+                    "text": "包括合作伙伴的客户",
+                    "cls": "file",
+                    "value": "ReportAccountPartner",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptacctteam.gif",
+                    "text": "包括客户小组的客户",
+                    "cls": "file",
+                    "value": "ReportAccountTeam",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptaccntcont.gif",
+                    "text": "包括联系人角色的客户",
+                    "cls": "file",
+                    "value": "ReportAccConRole",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptacctasset.gif",
+                    "text": "具有资产的客户",
+                    "cls": "file",
+                    "value": "ReportAccountAsset",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcontasset.gif",
+                    "text": "包括资产的联系人",
+                    "cls": "file",
+                    "value": "ReportContactAsset",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptacctaudhist.gif",
+                    "text": "客户历史",
+                    "cls": "file",
+                    "value": "AccountAuditHistory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcontaudhist.gif",
+                    "text": "联系人历史",
+                    "cls": "file",
+                    "value": "ContactAuditHistory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        },
+        {
+            "id": "categories\\/业务机会",
+            "apiValue": "opportunities",
+            "text": "业务机会",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptoppt.gif",
+                    "text": "业务机会",
+                    "cls": "file",
+                    "value": "ReportCustOppt",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptopptprod.gif",
+                    "text": "包括产品的业务机会",
+                    "cls": "file",
+                    "value": "ReportProductCust",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptopptcont.gif",
+                    "text": "包括联系人角色的业务机会",
+                    "cls": "file",
+                    "value": "ReportOpptCont",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptopptpart.gif",
+                    "text": "包括合作伙伴的业务机会",
+                    "cls": "file",
+                    "value": "ReportOpptPart",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptopptcomp.gif",
+                    "text": "包括竞争对手的业务机会",
+                    "cls": "file",
+                    "value": "ReportOpptComp",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptoppthist.gif",
+                    "text": "业务机会历史",
+                    "cls": "file",
+                    "value": "ReportOpptHist",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptopptfldhist.gif",
+                    "text": "机会字段历史",
+                    "cls": "file",
+                    "value": "OpportunityFieldAuditHistory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptoppttrend.gif",
+                    "text": "业务机会趋势",
+                    "cls": "file",
+                    "value": "ReportOpptTrend",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptopptcontprod.gif",
+                    "text": "包括联系人角色和产品的业务机会",
+                    "cls": "file",
+                    "value": "ReportOpptContProd",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptoppquoteprod.png",
+                    "text": "包括报价和报价行项目的业务机会",
+                    "cls": "file",
+                    "value": "ReportQuoteProduct",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptoppquotedoc.png",
+                    "text": "包括报价和报价 PDF的业务机会",
+                    "cls": "file",
+                    "value": "ReportQuoteDocument",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        },
+        {
+            "id": "categories\\/客户支持报表",
+            "apiValue": "cases",
+            "text": "客户支持报表",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcaselist.gif",
+                    "text": "个案",
+                    "cls": "file",
+                    "value": "ReportCase",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcaselifecycle.gif",
+                    "text": "个案有效期",
+                    "cls": "file",
+                    "value": "ReportCaseHistory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcasecont.gif",
+                    "text": "包括联系人角色的个案",
+                    "cls": "file",
+                    "value": "ReportCaseContactRole",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcaseasset.gif",
+                    "text": "包括资产的个案",
+                    "cls": "file",
+                    "value": "ReportCaseAsset",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcasesolution.gif",
+                    "text": "具有解决方案的个案",
+                    "cls": "file",
+                    "value": "ReportCaseSolution",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcaseaudhist.gif",
+                    "text": "个案历史",
+                    "cls": "file",
+                    "value": "CaseAuditHistory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptsolutionlist.gif",
+                    "text": "解决方案",
+                    "cls": "file",
+                    "value": "ReportSolu",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptsolutioncategory.gif",
+                    "text": "解决方案类别",
+                    "cls": "file",
+                    "value": "ReportSolutionCategory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptsolaudhist.gif",
+                    "text": "解决方案历史",
+                    "cls": "file",
+                    "value": "SolutionAuditHistory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        },
+        {
+            "id": "categories\\/潜在客户",
+            "apiValue": "leads",
+            "text": "潜在客户",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptleadlist.gif",
+                    "text": "潜在客户",
+                    "cls": "file",
+                    "value": "ReportLead",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptopptlead.gif",
+                    "text": "潜在客户（包括已转换潜在客户信息）",
+                    "cls": "file",
+                    "value": "ReportLeadLife",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptleadaudhist.gif",
+                    "text": "潜在客户历史",
+                    "cls": "file",
+                    "value": "LeadAuditHistory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        },
+        {
+            "id": "categories\\/市场活动",
+            "apiValue": "campaigns",
+            "text": "市场活动",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcmpgnlist.gif",
+                    "text": "市场活动",
+                    "cls": "file",
+                    "value": "ReportCampDetail",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcmpgncont.gif",
+                    "text": "包括联系人的市场活动",
+                    "cls": "file",
+                    "value": "ReportCampContactList",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcmpgnlead.gif",
+                    "text": "包括潜在客户的市场活动",
+                    "cls": "file",
+                    "value": "ReportCampLeadList",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcmpgnoppt.gif",
+                    "text": "包括业务机会的市场活动",
+                    "cls": "file",
+                    "value": "ReportCampOppList",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcmpgnwithcampaignmembers.gif",
+                    "text": "包括市场活动成员的市场活动",
+                    "cls": "file",
+                    "value": "ReportCampaignWithCampaignMembers",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcmpgnlead.gif",
+                    "text": "包括潜在客户和已转换潜在客户信息的市场活动",
+                    "cls": "file",
+                    "value": "ReportCampaignLeadLifetime",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcmpgninf.gif",
+                    "text": "包含受影响的业务机会的市场活动",
+                    "cls": "file",
+                    "value": "ReportCampaignInfluence",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        },
+        {
+            "id": "categories\\/活动",
+            "apiValue": "activities",
+            "text": "活动",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptopptactv.gif",
+                    "text": "任务与事件",
+                    "cls": "file",
+                    "value": "ReportActv",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rpteventattendee.gif",
+                    "text": "具有被邀请人的事件",
+                    "cls": "file",
+                    "value": "ReportEventAttendee",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptemailstatus.gif",
+                    "text": "HTML 电子邮件状态",
+                    "cls": "file",
+                    "value": "ReportEmailStatus",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptactvacct.png",
+                    "text": "包括客户的活动",
+                    "cls": "file",
+                    "value": "ReportActvAcct",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptactvcont.gif",
+                    "text": "包括联系人的活动",
+                    "cls": "file",
+                    "value": "ReportActvCont",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptactvoppt.gif",
+                    "text": "包括业务机会的活动",
+                    "cls": "file",
+                    "value": "ReportActvOppt",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptactvlead.gif",
+                    "text": "包括潜在客户的活动",
+                    "cls": "file",
+                    "value": "ReportActvLead",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptactvcmpgn.gif",
+                    "text": "包括市场活动的活动",
+                    "cls": "file",
+                    "value": "ReportActvCmpgn",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptactvcase.gif",
+                    "text": "包括个案的活动",
+                    "cls": "file",
+                    "value": "ReportActvCase",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptactvsol.gif",
+                    "text": "包括解决方案的活动",
+                    "cls": "file",
+                    "value": "ReportActvSol",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptactvctrc.gif",
+                    "text": "包括合同的活动",
+                    "cls": "file",
+                    "value": "ReportActvCtrc",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptactvprod.gif",
+                    "text": "包括产品的活动",
+                    "cls": "file",
+                    "value": "ReportActvProd",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        },
+        {
+            "id": "categories\\/合同和订单",
+            "apiValue": "busop",
+            "text": "合同和订单",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptctrclist.gif",
+                    "text": "合同",
+                    "cls": "file",
+                    "value": "ReportContractList",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcontractapproval.gif",
+                    "text": "包括批准的合同",
+                    "cls": "file",
+                    "value": "ReportContractApproval",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptcontracthistory.gif",
+                    "text": "合同历史",
+                    "cls": "file",
+                    "value": "ContractAuditHistory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/s.gif",
+                    "text": "包括订单的合同",
+                    "cls": "file",
+                    "value": "ReportContractOrder",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/s.gif",
+                    "text": "包括订单和产品的合同",
+                    "cls": "file",
+                    "value": "ReportContractOrderItem",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptconrctcont.gif",
+                    "text": "包括联系人角色的合同",
+                    "cls": "file",
+                    "value": "ReportContractContactRole",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/s.gif",
+                    "text": "订单",
+                    "cls": "file",
+                    "value": "ReportOrderList",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/s.gif",
+                    "text": "包括产品的订单",
+                    "cls": "file",
+                    "value": "ReportOrderItem",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/s.gif",
+                    "text": "订单历史",
+                    "cls": "file",
+                    "value": "OrderAuditHistory",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        },
+        {
+            "id": "categories\\/价格手册、产品和资产",
+            "apiValue": "products",
+            "text": "价格手册、产品和资产",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptproductlist.gif",
+                    "text": "产品",
+                    "cls": "file",
+                    "value": "ReportProductList",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptproductopps.gif",
+                    "text": "包括业务机会的产品",
+                    "cls": "file",
+                    "value": "ReportProductOpportunity",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptpricebookproduct.gif",
+                    "text": "包括产品的价格手册",
+                    "cls": "file",
+                    "value": "ReportPricebookProduct",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptprodasset.gif",
+                    "text": "包括资产的产品",
+                    "cls": "file",
+                    "value": "ReportProductAsset",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptassetlist.gif",
+                    "text": "资产",
+                    "cls": "file",
+                    "value": "ReportAsset",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptassetcase.gif",
+                    "text": "包括个案的资产",
+                    "cls": "file",
+                    "value": "ReportAssetCase",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        },
+        {
+            "id": "categories\\/管理报表",
+            "apiValue": "admin",
+            "text": "管理报表",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptuserlist.gif",
+                    "text": "用户",
+                    "cls": "file",
+                    "value": "ReportAdminUser",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptreportlist.gif",
+                    "text": "报表",
+                    "cls": "file",
+                    "value": "ReportAdminReport",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptdoclist.gif",
+                    "text": "文档",
+                    "cls": "file",
+                    "value": "ReportDocumentList",
+                    "leaf": true,
+                    "isDeployed": "true"
+                },
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptloginipemail.gif",
+                    "text": "新登录位置",
+                    "cls": "file",
+                    "value": "ReportLoginIpEmail",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        },
+        {
+            "id": "categories\\/文件和内容报表",
+            "apiValue": "content",
+            "text": "文件和内容报表",
+            "cls": "folder",
+            "children": [
+                {
+                    "isHidden": "false",
+                    "rtImg": "/img/rptfile.gif",
+                    "text": "文件和内容报表",
+                    "cls": "file",
+                    "value": "ReportFile",
+                    "leaf": true,
+                    "isDeployed": "true"
+                }
+            ],
+            "leaf": false
+        }
+    ]
+}

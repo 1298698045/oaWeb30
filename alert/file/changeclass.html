@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+    <style>
+        .el-cascader-panel {
+            width:auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">文件移动</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-main">
+                               <div class="shift-item" style="padding-bottom:20px;">
+                                        <span class="shift-name-title"style="display:block;margin-bottom:10px;float:none;">移动到</span>
+                                   <div style="display:flex">
+                                         <el-cascader-panel
+                                            class="save-checking-input"
+                                            v-model="DestinationId"
+                                            :options="options"
+                                            :props="{ expandTrigger: 'hover',checkStrictly: true,emitPath:false}"
+                                           ></el-cascader-panel>
+                                       </div>
+                                   <div class="clear"></div>
+                               </div>
+                                 
+                               
+                              
+                         
+                               </div>
+
+
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                options: [],
+                DestinationId:''
+            },
+            created: function () {
+                this.getoptions()
+            },
+            methods: {
+                getoptions: function () {
+                    var that = this
+                    ajaxMethodGetData('file.files.search', { srchType: 'foldertree' }, function (data) {
+                        that.options = data.data
+                    })
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        var name = getQueryString('name')
+        var id = getQueryString('id')
+        var IsFolder = getQueryString('type')
+        $('#Save').click(function () {
+            function callback(data) {
+                console.log(data)
+                success2('移动成功')
+                parent.$('#changeDiv').hide()
+                var extSrch = parent.$('.slds-nav-vertical__item.slds-is-actives').attr('id')
+                if (extSrch == '10010000-0000-0000-0000-000000000001') {
+                    extSrch = 'my'
+                } else if (extSrch == '10010000-0000-0000-0000-000000000003') {
+                    extSrch = 'share'
+                } else if (extSrch == '10010000-0000-0000-0000-000000000002') {
+                    extSrch = 'org'
+                } else {
+                    extSrch = 'latestuse'
+                }
+                if (parent.$('.file-nav span').length > 1) {
+                    parent.loadFolderData(parent.$('.file-nav span:last').attr('fileid'), extSrch)
+                } else {
+                    parent.loadGrids(extSrch)
+                }
+            }
+            var DestinationId = vum.DestinationId
+            var messages = {
+                ItemId: id,
+                DestinationId:DestinationId,
+                IsFolder: IsFolder
+            }
+            var save = document.querySelectorAll('.save-checking.active');
+            if (save.length > 0) {
+                ajaxMethodPostData('filefolder.move', messages, callback)
+            }
+        })
+    </script>
+</body>
+</html>

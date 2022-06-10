@@ -1,0 +1,202 @@
+.center {
+    margin-top: 64px;
+    width: 100%;
+    height: calc(100% - 64px);
+    background: #f0f2f6;
+}
+.layoutContent{
+    height: 100%;
+}
+.rightWrapper{
+    height: 100%;
+    /*overflow: auto;*/
+    padding: 24px;
+    box-sizing: border-box;
+    margin-left: 140px;
+}
+.rightWrapper .layoutContainer{
+    width: 100%;
+    display: none;
+}
+.rightWrapper .layoutContainer.todoListWrap{
+    display: flex !important;
+}
+.treeTemplate{
+    width: 220px;
+    height: 720px;
+    background: #fff;
+    padding: 21px 10px;
+    box-sizing: border-box;
+}
+.rightWrapper .layoutContainer .guideWrap{
+    flex: 1;
+    height: 720px;
+    padding: 16px 20px;
+    background: #fff;
+    border-left: 1px solid #dcdcdc;
+    box-sizing: border-box;
+    position: relative;
+}
+.rightWrapper .layoutContainer .guideWrap .sanlan{
+    position: absolute;
+    left: 0;
+    top: calc(50% - 56px);
+    border: 10px solid transparent;
+    border-left: 18px solid #d1d1d1;
+    height: 87px;
+    width: 0px;
+    cursor: pointer;
+}
+.rightWrapper .layoutContainer .guideWrap .sanlan.active .icon-xiala{
+    transform: rotate(270deg);
+}
+.rightWrapper .layoutContainer .guideWrap .sanlan .icon-xiala{
+    position: absolute;
+    left: -18px;
+    top: 38px;
+    transform: rotate(90deg);
+    color: #666666;
+}
+.rightWrapper .footInfo{
+    width: 192px;
+    margin: 40px auto;
+    text-align: center;
+    font-size: 12px;
+    color: #333333;
+    line-height: 2;
+}
+/* .tabs{
+    width: 100%;
+    flex: 1;
+}
+.tabs .tab .tabChild .name{
+    margin-left: 2px;
+    display: inline-block;
+}
+.tabs .tab .num.active{
+    color: #f53f3f;
+} */
+
+
+/* 新建事务 */
+.layoutContainer .newTodoWrap{
+    width: 100%;
+    height: 100%;
+}
+.layoutContainer .newTodoWrap .panelModuleWrap.panelModuleTop{
+    max-height: 295px;
+}
+.panelModuleWrap{
+    width: 100%;
+    border-radius: 4px;
+    min-height: 184px;
+    overflow: auto;
+    background: #fff;
+    padding: 20px 20px 34px 20px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+}
+.panelModuleWrap .panelModuleHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.panelModuleWrap .panelModuleHead .lTitle{
+    font-size: 16px;
+    font-weight: bold;
+    color: #1d2129;
+}
+.panelModuleWrap .panelModuleHead .rContent .search{
+    width: 256px;
+}
+
+.moduleBoxWrap{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.moduleBoxWrap .moduleBox{
+    width: 22%;
+    /*margin-right: 24px;*/
+    box-shadow: rgba(229, 230, 235, 1) solid 1px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    padding: 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color:  #f2f3f5;
+    border: 1px solid #e5e6eb;
+
+}
+.moduleBoxWrap .moduleBox:hover{
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,.1)
+}
+.moduleBoxWrap .moduleBox:nth-child(4n){
+    margin-right: 0;
+}
+.moduleBoxWrap .moduleBox .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.moduleBoxWrap .moduleBox .title .leftTitle{
+    font-size: 14px;
+    color: #1d2129;
+    font-weight: bold;
+}
+.moduleBoxWrap .moduleBox  .bottomInfo{
+    padding-top: 6px;
+    font-size: 12px;
+    color: #86909c;
+}
+.moduleBoxWrap .moduleBox .item {
+    margin: 4px;
+}
+.moduleBoxWrap .fake_item{
+    flex: 0 0 22%;
+    height: 0;
+}
+.moduleBoxWrap .moduleBox .rightIcon {
+    position: relative;
+    display:none;
+}
+.moduleBoxWrap .moduleBox:hover .rightIcon{
+    display:block;
+}
+.moduleBoxWrap .moduleBox .rightIcon .childTipsBox {
+    background-color: rgba(29, 33, 41, 1);
+    box-shadow: 0px 2px 8px 0px rgb(0 0 0 / 20%);
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    line-height: 1.2;
+    min-width: 10px;
+    font-size: 14px;
+    word-wrap: break-word;
+    position: absolute;
+    white-space: nowrap;
+    bottom: 135%;
+    left: -90%;
+    display:none;
+}
+.moduleBoxWrap .moduleBox .rightIcon:hover .childTipsBox{
+    display:block;
+}
+.moduleBoxWrap .moduleBox .rightIcon .childTipsBox.cancelTips{
+    left: -185%;
+}
+.moduleBoxWrap .moduleBox .rightIcon .childTipsBox .popper__arrow{
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 6px;
+    bottom: -6px;
+    border-top-color: #303133;
+    border-bottom-width: 0;
+    left: calc(50% - 6px);
+}

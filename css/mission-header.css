@@ -1,0 +1,333 @@
+﻿* {
+    margin:0;
+    padding:0;
+}
+.mission-header{
+    width: 1422px;
+    width: 100%;
+    height: 80px;
+    position: relative;
+}
+.mission-header input{
+    border:0;
+    background:none;
+    outline:none;
+}
+.mission-header-leftlogo{
+    width: 800px;
+    height: 45px;
+    float: left;
+
+}
+.mission-header-leftlogo .logo{
+    border-radius: 4px;
+    float: left;
+    width: 32px;
+    height: 32px;
+    background: url(/img/cal/21.png) no-repeat;
+    background-size: 28px;
+    background-color: #1797c0;
+
+}
+#qqq .mission-heade2 .mission-header-leftlogo {
+    width:300px;
+    overflow:hidden;
+}
+.mission-header-leftlogo p{
+    float: left;
+    font-size: 18px;
+    line-height: 45px;
+    margin-left: 20px;
+    height: 45px;
+    line-height: 35px;
+    font-weight: 700;
+    color:#505050;
+    margin-top:3px;
+}
+.mission-header-leftlogo .leftlogo-name {
+    margin-top:10px;
+}
+.mission-header-leftlogo div {
+    position:absolute;
+    left:75px;
+}
+.mission-hearder-message{
+    width: 1200px;
+    float: left;
+    font-size: 12px;
+    margin-left: 20px;
+    color: #666666;
+}
+.mission-hearder-right{
+    position: absolute;
+    padding: 0;
+    padding-right: 15px;
+    padding-top:0;
+    top: 0;
+    right: 0;
+}
+.mission-hearder-right>p{   
+    float: right; 
+	width: 86px;
+    height: 32px;
+    line-height: 30px;
+	color: #108af9;
+	background-color: #ffffff;
+	border: #e4e8eb solid 1px;
+	border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    box-sizing:border-box;
+}
+.mission-hearder-right>div{
+    padding-top: 3px;
+}
+.mission-hearder-right div>p{
+    height: 30px;
+    line-height: 32px;
+    margin-left: 8px;
+    float: left;
+    border: 1px solid #414040 \9;
+    border: 1px solid rgba(71, 71, 71, 0.2);
+
+}
+.mission-hearder-right div select{
+    border: solid 1px #50505033;
+    border: solid 1px #222222 \9;
+    float: left;
+    width: 45px;
+    height: 34px;
+    margin-left: 8px;
+}
+.mission-hearder-right div .sousuo{
+	width: 264px;
+    height: 30px;
+    line-height: 32px;
+    color: #505050;
+    background: url(/img/cal/7.PNG) no-repeat left 10px center;
+    background-size: 16px;
+	background-color: #ffffff;
+	box-shadow: #e4e8eb solid 1px;
+	border-radius: 4px;
+	font-size: 14px;
+    text-indent: 3em;
+}
+.mission-hearder-right div .sousuo input {
+    height: 30px;
+    line-height: 30px \9;
+    float:  \9;
+}
+.mission-hearder1 .mission-hearder-right div .sousuo input {
+    height: 30px;
+    line-height: 30px \9;
+    float:  \9;
+}
+.mission-hearder-right .delete{
+    border-radius: 4px;
+    width: 45px;
+    height: 32px;
+    line-height: 32px;
+    color: #505050b3;
+    color: #2b2b2b \9;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+.mission-hearder-right .delete:hover{
+    color: white;
+    background-color: #108af9cc;
+    background-color: #108af9 \9;
+
+}
+.mission-hearder-right .neww,.mission-hearder-right .set,.mission-hearder-right .ppp{
+    height: 30px;
+    width: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.select1{
+    border: none !important;
+   
+}
+.select2 {
+    border: none !important;
+    
+}
+
+.ppp{
+    position: relative;
+}
+.ppp img{
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -7px;
+}
+.mission-header1 {
+    border-bottom:1px solid #e4e8eb;
+}
+ .shituu{
+    border-radius:4px; 
+    width: 45px !important;
+    cursor: pointer;
+}
+ .shituu2 {
+    position:relative;
+}
+.card-table {
+    position:absolute;
+    top:75px;
+    z-index:20;
+    right:100px;
+    width:127px;
+    height:139px;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+    border:1px solid #e4e8eb;
+    border-radius:4px;
+    background-color:white;
+    color:#333;
+    font-size:14px;
+    display:none;
+}
+.card-table-div2 {
+    padding-left:40px;
+    background-color:#f2f2f2;
+    height:40px;
+    line-height:40px;
+    margin-top:5px;
+    position:relative;
+    cursor:pointer;
+
+}
+.card-table-div1 {
+    padding-left:15px;
+    height:40px;
+    line-height:40px;
+    margin-top:5px;
+
+
+}
+.card-table-div3 {
+    padding-left:40px;
+    height:40px;
+    line-height:40px;
+    margin-top:5px;
+    position:relative;
+        cursor:pointer;
+
+}
+.card-table-div3.active{
+        border-radius:4px
+    }    
+.card-table-div2.active{
+
+    border-radius:4px;
+}
+.card-table-div3 .img1 {
+    width:14px;
+    height:14px;
+    position:absolute;
+    right:15px;
+    top:12px;
+}
+.card-table-div2 .img1 {
+    width:14px;
+    height:14px;
+    position:absolute;
+    right:15px;
+    top:12px;
+}
+.card-table .img2 {
+    position:absolute;
+    left:10px;
+    top:12px;
+    width:14px;
+    height:14px;
+}
+.shituu2 .img2 {
+    width:10px;
+    height:10px;
+    position:absolute;
+    top:10px;
+    right:5px;
+}
+.posi {
+    position:absolute;
+    left:2px;
+    top:5px;
+}
+.sousuo-tishi {
+    display:none;
+    position:absolute;
+    background-color:#108af9;
+    width:245px;
+    color:white;
+    padding:10px;
+    z-index:10;
+    top:73px;
+    left:10px;
+    border-radius:4px;
+}
+
+.sousuo-tishi1{
+    display:none;
+
+    position:absolute;
+    width:0px;
+    z-index:10;
+    top:55px;
+    left:30px;
+    border: 10px solid transparent;
+    border-bottom:10px solid #108af9;
+}
+.head-bottbo {
+    margin-top: 52px;
+    height: 8px;
+    background-color: #f4f6f8;
+    border-top: 1px solid #e4e8eb;
+    border-bottom: 1px solid #e4e8eb;
+}
+.mission-header4 {
+    padding-top:15px;
+    overflow: hidden;
+}
+.logo {
+    background: none !important;
+}
+
+.logo img {
+    height: 30px;
+    width: 30px;
+}
+.cont-status-check img{
+   height:15px;
+   width:15px;
+   margin-left:15px;
+   cursor:pointer;
+}
+.mission-header-leftlogo div {
+    position: absolute;
+    left: 75px;
+}
+.mission-header {
+    overflow: hidden;
+    margin-top: 20px;
+    height: 78px;
+    position: relative;
+}
+.newmissq {
+    cursor: pointer;
+}
+.newmissq a {
+            color: #108af9;
+        }
+
+.newmissq:hover {
+            background-color: #f4f2f2;
+        }
+.clear {
+    clear:both;
+}

@@ -1,0 +1,128 @@
+﻿.comment{
+    position:relative;
+}
+.commentsearch {
+            float: none;
+            height: 50px;
+        }
+        .mission .comment>li {
+            border-bottom: 0;
+        }
+        .commentsearch .search-input {
+            width: 300px;
+        }
+        .mission .comment .name{
+            float:none;
+        }
+        .comment-main{
+            border:1px solid #dedede;
+            border-radius:4px;
+        }
+        .comment-foot{
+            border-top:1px solid #dedede;
+            border-bottom:1px solid #dedede;
+            height:30px;
+            margin-top:10px;
+            background-color:white;
+        }
+        .comment-foot>div{
+            float:left;
+            width:50%;
+            border-right:1px solid #dedede;
+            height:22px;
+            margin-top:4px !important;
+            margin-bottom:4px;
+            box-sizing:border-box;
+            text-align:center;
+            margin-left:0 !important;
+            cursor:pointer;
+            line-height:28px !important;
+            
+        }
+        .comment-main{
+            margin-top:20px;
+        }
+        .comment>ul{
+            margin-top:50px;
+        }
+        .comment-foot>div:last-child{
+            border-right:0;
+        }
+        .deleteup-up img{
+            width:12px;
+            height:12px;
+        }
+        .mission .comment li{
+            height:auto;
+            padding-bottom:3px;
+            margin-left:0;
+        }
+        .writecomment .textarea{
+            margin-left:0;
+        }
+        .writecomment{
+            min-width:500px;
+            width:98%;
+            margin-left:1%;
+            margin-top:10px !important;
+        }
+        .writecomment .textarea{
+            width:85% !important;
+        }
+        #comment-btn{
+            width:15% !important;
+        }
+        .comment-comment{
+            padding:10px;
+            border-bottom:1px solid #dedede;
+            background: url(/img/cal/1.png) no-repeat left 20px bottom 10px;
+            background-size:35px;
+            background-color:#f2f2f2;
+
+        }
+        .comment-comment .name{
+            float:left !important;
+        }
+        .writecomment .comment-btn {
+            float: left;
+            width: 110px;
+            height: 44px;
+            line-height: 44px;
+            background-color: #108af9;
+            color: white;
+            margin: 0;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .comment-btn {
+            width: 15% !important;
+        }
+        .mission .comment li{
+            border-bottom:0;
+            padding-bottom:0;
+        }
+        .mission .comment li.active{
+            border-bottom:1px solid #dedede;
+            padding-bottom:3px;
+
+        }
+        .comment-comment{
+                background: url(/img/cal/1.png) no-repeat left 20px top 10px;
+                background-size:35px;
+                background-color:#f2f2f2;
+        }
+        .comment-comment .comment-comment{
+            background:none;
+            background-color:white;
+            padding:5px;
+            margin-left:100px;
+            width:50%;
+            margin-top:5px;
+            line-height:32px;
+            border-radius:4px;
+        }
+        .mission .comment .comment-comment .comment-comment p{
+            margin-left:5px;
+            line-height:20px;
+        }

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="visibility: visible;">
+<head>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <title>查看短信或者电子邮件 | OA</title>
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" type="text/css" href="/css/sfdc_198.css" />
+    <style type="text/css">
+        html
+        {
+            visibility: hidden;
+        }
+
+        a
+        {
+            color: #0070d2;
+        }
+
+        body
+        {
+            background-color: #F4F6F9;
+        }
+
+        #content, .container
+        {
+            background-color: #ffffff;
+        }
+
+        #header
+        {
+            color: #16325c;
+        }
+
+        .verifyform
+        {
+            padding-top: 20px;
+        }
+
+        .askAdmin, .userNameMessage
+        {
+            padding-top: 10px;
+        }
+
+        .hiddenlink
+        {
+            display: none;
+        }
+    </style>
+    <style type="text/css">
+        html
+        {
+            visibility: hidden;
+        }
+    </style>
+    <script type="text/javascript">if (self == top) { document.documentElement.style.visibility = 'visible'; } else { document.write = ''; top.location = self.location; setTimeout(function () { document.body.innerHTML = ''; }, 1); window.self.onload = function (evt) { document.body.innerHTML = ''; }; }</script>
+    <script type="text/javascript">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         function setFocusOnLoad() { if (document.forgotPassword != null && document.forgotPassword.un != null) { document.forgotPassword.un.focus(); } else if (document.answerForm != null && document.answerForm.answer != null) { document.answerForm.answer.focus(); } } function checkCaps(e) { var key = 0; var shifted = false; if (document.all) { key = e.keyCode; } else { key = e.which; } shifted = e.shiftKey; var pwcaps = document.getElementById('pwcaps'); var upper = (key >= 65 && key <= 90); var lower = (key >= 97 && key <= 122); if ((upper && !shifted) || (lower && shifted)) { pwcaps.style.display = 'block'; } else if ((lower && !shifted) || (upper && shifted)) { pwcaps.style.display = 'none'; } }</script>
+</head>
+<body onload="this.bodyOnLoad&&bodyOnLoad();" onunload="this.bodyOnUnload&&bodyOnUnload();">
+    <div id="wrap">
+        <div id="main">
+            <div id="wrapper">
+                <div id="logo_wrapper" class="standard_logo_wrapper mb24">
+                    <h1 style="height: 100%; display: table-cell; vertical-align: bottom;">
+                        <img id="logo" class="standard_logo" src="/img/logo198.png" alt="Salesforce" border="0" name="logo"></h1>
+                </div>
+                <div id="header" class="mb24">查看电子邮件</div>
+                <div id="content">                   
+                    <div id="forgotPassForm">
+                        <div class="message">
+                            <p class="senttext mb12">我们已向您发送一封包含完成重置密码链接的电子邮件。</p>
+                            <p class="senttext mb12">无法找到电子邮件？请检查您的垃圾邮件文件夹。</p>
+                            <p class="senttext mb12">如果您仍未登录，请让我们<a href="/secur/forgotpassword.aspx?user=jackliu185@sina.com" id="resend-email" style="color: #0E9ECF">重新发送电子邮件</a>或联系您的 我们 管理员。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">&copy; 2015 .com, inc. 保留所有权利。</div>
+    <script>var p = document.getElementById('footer').parentNode; while (p.nodeName.toLowerCase() === 'div') { p.style.height = '100%'; p = p.parentNode; }</script>
+    <!-- Body events -->
+    <script type="text/javascript">function bodyOnLoad() { if (window.PreferenceBits) { window.PreferenceBits.prototype.csrfToken = "null"; }; } function bodyOnBeforeUnload() { } function bodyOnFocus() { } function bodyOnUnload() { }</script>
+</body>
+</html>

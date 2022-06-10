@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+  <title>艾滋病/梅毒/淋病附卡</title> 
+  <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        .clear {
+            clear:both;
+        }
+        .form {
+            margin-top:50px;
+            
+
+        }
+        .form-title {
+            text-align:center;
+            font-size:22px;
+            color:#000;
+            font-family:宋体;
+            font-weight:800;
+        }
+        .form-head {
+            text-align:center;
+            width:740px;
+            margin:0 auto;
+            margin-top:20px;
+        }
+        .form-head > span {
+            margin:10px 0px;
+        }
+        .form-body>p{
+            padding:10px;
+        }
+        .hidecorderinput {
+            border:0;
+            outline:none;
+        }
+        .form-foot {
+            width:600px;
+            margin:0 auto;
+            text-align:right;
+        }
+         .form-foot>p{
+            margin:10px 0px;
+         }
+        .bottom-input {
+            border:0;
+            outline:none;
+            border-bottom:1px solid #333;
+        }
+        .form-body{
+            width:765px;
+            border:1px solid #333;
+            margin:0 auto;
+            padding-top:20px;
+            line-height:30px;
+        }
+      input[type='text'] {
+          outline:none; 
+      }
+      input[type='checkbox'] {
+          position:relative;
+          top:1px;
+      }
+      p {
+        padding:0 10px;
+      }
+      .red {
+        color:red;
+      }
+      .shuoming {
+            width:750px;
+            margin:0 auto;
+        
+      }
+      .shuoming-title {
+        font-family:仿宋;
+        color:#474646;
+      }
+      .shuoming-body {
+        font-family:仿宋;
+        color:#474646;
+      }
+      hr{
+        border: none;
+	    height: 1px;
+	    background-color: #000;
+     }
+      .input-item1 {
+        display:inline-block;
+        padding:0 10px 0 10px;
+        width:100px;
+        font-size:14px;
+
+      }
+       .input-item2 {
+        display:inline-block;
+        padding:0 0px 0 0px;
+        width:185px;
+        font-size:14px;
+      }
+       .input-item3 {
+        display:inline-block;
+        padding:0 10px 0 0px;
+        width:80px;
+        font-size:14px;
+
+      }
+       .input-item4 {
+        display:inline-block;
+        width:49%;
+        font-size:14px;
+
+      }
+      .input-grip {
+        padding-left:10px;
+      }
+      .mask {
+        background-color:rgb(255,185,185);
+      }
+      label {
+        font-size:14px;
+      }
+      label+span{
+        font-size:14px;
+      }
+  </style> 
+ </head> 
+ <body> 
+  <div class="form"> 
+   <div> 
+    <div class="form-title"> 
+     <span>艾滋病/梅毒/淋病附卡</span> 
+    </div> 
+    <div class="form-head"> 
+     <span style="float:left;">卡片编号: <input type="text" class="bottom-input" style="width:200px;" /></span>  
+     <div class="clear"></div> 
+    </div> 
+   </div> 
+   <div class="form-body"> 
+       <div>
+           <p>患者姓名:
+               <input type="text"class="bottom-input" style="width:100px;"/>
+               （患儿家长姓名:
+               <input type="text"class="bottom-input" style="width:100px;"/>）
+               <span style="margin-left:100px;">民族:</span>
+               <input type="text"class="bottom-input"style="width:80px;" />族
+                
+           </p>
+           <div  class="input-grip">婚姻状况:
+               <div class="input-item1">
+                  <label><input type="checkbox" />未婚</label>
+               </div>
+               <div class="input-item1">
+                  <label><input type="checkbox" />已婚有配偶</label>
+               </div>
+               <div class="input-item1">
+                  <label><input type="checkbox" />离异或丧偶</label>
+               </div>
+               <div class="input-item1">
+                  <label><input type="checkbox" />不详</label>
+               </div>
+           </div>
+           <div  class="input-grip">文化程度:
+               <div class="input-item1">
+                  <label><input type="checkbox" />文盲</label>
+               </div>
+               <div class="input-item1">
+                  <label><input type="checkbox" />小学</label>
+               </div>
+               <div class="input-item1">
+                  <label><input type="checkbox" />初中</label>
+               </div>
+               <div class="input-item1">
+                  <label><input type="checkbox" />高中或中专</label>
+               </div>
+               <div class="input-item1">
+                  <label><input type="checkbox" />大专及以上</label>
+               </div>
+           </div>
+           <p class="nowrap">户籍地址(详填):
+                <input type="text" class="bottom-input" style="width:50px;">省
+                <input type="text" class="bottom-input" style="width:40px;">市
+                <input type="text" class="bottom-input" style="width:40px;">县(区)
+                <input type="text" class="bottom-input" style="width:40px;">乡(镇、街道)
+                <input type="text" class="bottom-input" style="width:55px;">村
+                <input type="text" class="bottom-input" style="width:85px;">(门牌号)
+            </p>
+           <p style="height:20px;"></p>
+           
+           <hr />
+           <div class="input-grip">疾病名称：
+               <br />
+               <label style="margin-right:200px;"><input type="checkbox" /> 艾滋病病毒感染</label>    
+               <label><input type="checkbox" /> 艾滋病</label>
+               <div>梅毒（
+                   <label><input type="checkbox" /> I期、</label>
+                   <label><input type="checkbox" /> Ⅱ期、</label>
+                   <label><input type="checkbox" /> Ⅲ期、</label>
+                   <label><input type="checkbox" /> 胎传、</label>
+                   <label><input type="checkbox" /> 隐性</label>
+                   ）
+                   <label style="margin-left:100px;"><input type="checkbox" /> 淋病</label>
+
+               </div>
+           </div>
+           
+           <hr />
+           <div class="input-grip">接触史(可多选)：
+               <div>
+                   <label title="选择此项，则要填后续的几人"><input type="checkbox" /><span class="mask">注射毒品史</span></label>
+                   <span>（在您记忆中有<input type="text" class="bottom-input" style="width:50px;">人与您共用过注射器？)</span>
+               </div>
+               <div>
+                   <label title="选择此项，则要选后续的非商业/商业"><input type="checkbox" /><span class="mask">非婚异性性接触史</span></label>
+                   ( <label><input type="checkbox" />非商业</label> <label><input type="checkbox" /> 商业</label>)
+                   <span>（在您记忆中有<input type="text" class="bottom-input" style="width:50px;">人与您有过非婚性行为？)</span>
+               </div>
+               <div>
+                   <label><input type="checkbox" /> 配偶/固定性伴阳性</label>
+                   <label><input type="checkbox" />男男性行为史</label>
+                   <span>（在您记忆中有<input type="text" class="bottom-input" style="width:50px;">人与您有过非婚性行为？)</span>
+               </div>
+           </div>
+           <div  class="input-grip">
+               <div class="input-item2">
+                  <label><input type="checkbox" />献血（浆）史</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />输血/血制品史</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />母亲阳性</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />职业暴露史</label>
+               </div>
+           </div>
+           <div  class="input-grip">
+               <div class="input-item2">
+                  <label><input type="checkbox" />手术史</label>
+               </div>
+               <div class="input-item2">
+                  <label title="选择此项，则要填写具体内容"><input type="checkbox" />
+                      <span class="mask">其他</span><input type="text" class="bottom-input" style="width:60px;">(请注明)</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />不详</label>
+               </div>
+           </div>
+           <hr />
+           <div  class="input-grip">
+               <div class="input-item3">
+                  <label><input type="checkbox" />性病史：</label>
+               </div>
+               <div class="input-item3">
+                  <label><input type="checkbox" />有</label>
+               </div>
+               <div class="input-item3">
+                  <label><input type="checkbox" />无</label>
+               </div>
+               <div class="input-item3">
+                  <label><input type="checkbox" />不详</label>
+               </div>
+           </div>
+           <hr />
+           <div  class="input-grip">
+               最可能的感染途径（单选）：
+               <br />
+               <div class="input-item2">
+                  <label><input type="checkbox" />注射毒品</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />异性传播</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />同性传播</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />性接触 + 注射毒品</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />采血(浆)</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />输血/血制品</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />母婴传播</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />职业暴露</label>
+               </div>
+               <div class="input-item2">
+                  <label title="选择此项，则要填写具体内容"><input type="checkbox" />
+                      <span class="mask">其他</span><input type="text" class="bottom-input" style="width:60px;">(请注明)</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />不详</label>
+               </div>
+           </div>
+           <div  class="input-grip">
+               样本检测来源（单选）：
+               <br />
+               <div class="input-item2">
+                  <label><input type="checkbox" />术前检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />受血(制品)前检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />性病门诊</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />其他就诊者检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />婚前检查(含涉外婚姻)</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />孕产期检查</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />检测咨询</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />阳性者配偶或性伴检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />女性阳性者子女检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />职业暴露检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />娱乐场所人员体检</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />有偿供血(浆)人员检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />无偿献血人员检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />出入境人员体检</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />新兵体检</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />强制/劳教戒毒人员检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />妇教所/女劳收教人员检测</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />其他羁押人员体检</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />专题调查</label>
+               </div>
+               <div class="input-item2">
+                  <label title="选择此项，则要填写具体内容"><input type="checkbox" />
+                      <span class="mask">其他</span><input type="text" class="bottom-input" style="width:60px;">(请注明)</label>
+               </div>
+           </div>
+           <hr />
+           <div  class="input-grip">
+               实验室检测结论：
+               <div class="input-item2">
+                  <label><input type="checkbox" />确证检测阳性</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />替代策略检测阳性</label>
+               </div>
+               <div class="input-item2">
+                  <label><input type="checkbox" />核酸检测阳性</label>
+               </div>
+           </div>
+           <div class="input-grip">
+               确证（替代策略）检测阳性日期：
+               <input type="text"class="bottom-input" style="width:60px;"/>年<input type="text"class="bottom-input" style="width:45px;"/>月<input type="text"class="bottom-input" style="width:45px;"/>日
+           </div>
+           <div class="input-grip">
+               确证（替代策略）检测单位：
+               <input type="text"class="bottom-input" style="width:200px;"/>
+           </div>
+           <hr />
+           <div  class="input-grip">
+               艾滋病确诊日期<span style="color:red;">*</span>：
+               <input type="text"class="bottom-input" style="width:60px;"/>年<input type="text"class="bottom-input" style="width:45px;"/>月<input type="text"class="bottom-input" style="width:45px;"/>日               
+           </div>
+           </div>
+           <hr />
+
+           <div  class="input-grip">
+               <div class="input-item4"><span>报告单位：</span><input type="text"class="bottom-input" style="width:250px;"/></div>
+               <div class="input-item4"><span>联系电话：</span><input type="text"class="bottom-input" style="width:250px;"/></div>
+               <div class="input-item4"><span>报告医生：</span><input type="text"class="bottom-input" style="width:250px;"/></div>
+               <div class="input-item4"><span>填卡日期：</span><input type="text"class="bottom-input" style="width:60px;"/>年<input type="text"class="bottom-input" style="width:45px;"/>月<input type="text"class="bottom-input" style="width:45px;"/>日               
+               </div>
+           </div>
+
+
+           <hr />
+
+           <p>备注：<input type="text"class="hidecorderinput" style="width:500px;"  /></p>
+       </div>
+       
+
+    
+   <div class="shuoming">
+       <span class="red">*</span>只有确诊为艾滋病病人时填写此项
+
+   </div>
+
+
+  </div>   
+ </body>
+</html>

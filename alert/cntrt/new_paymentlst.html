@@ -1,0 +1,500 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">新增合同付款单</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>基本信息</span></div>
+                            <div class="shift-body-main">
+                               <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">付款单名称</span>
+                                        <el-input class="save-checking-input" v-model="list.Name"></el-input>     
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">合同名称</span>
+                                          <el-select
+                                              class="save-checking-input"
+                                          v-model="list.ContractId.Id"
+                                          filterable
+                                          remote
+                                          @visible-change="getlookup('1010','ContractId')"
+                                          :remote-method="function(query){searchlookup(query,'1010','ContractId')}"
+
+                                          placeholder="请选择">
+                                          <el-option
+                                            v-for="item in search.ContractId"
+                                            :key="item.ID"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">付款单号</span>
+                                        <el-input  v-model="list.BillNo"></el-input>     
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">申请部门</span>
+                                          <el-select
+                                              class="save-checking-input"
+                                          v-model="list.DeptId.Id"
+                                          filterable
+                                          remote
+                                          @visible-change="getlookup('10','DeptId')"
+                                          :remote-method="function(query){searchlookup(query,'1010','DeptId')}"
+
+                                          placeholder="请选择">
+                                          <el-option
+                                            v-for="item in search.DeptId"
+                                            :key="item.ID"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                            <span class="required">*</span>
+                                            <span class="shift-name-title">申请日期</span>
+                                            <el-date-picker
+                                                class="save-checking-input"
+                                              v-model="list.ApplyOn"
+                                              type="date" value-format="yyyy-MM-dd"
+                                              placeholder="选择日期">
+                                            </el-date-picker> 
+                                        </div>
+                                   
+                                   <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">申请人</span>
+                                          <el-select
+                                              class="save-checking-input"
+                                          v-model="list.OwningUser.Id"
+                                          filterable
+                                          remote
+                                          @visible-change="getlookup('8','OwningUser')"
+                                          :remote-method="function(query){searchlookup(query,'8','OwningUser')}"
+                                          placeholder="请选择">
+                                          <el-option
+                                            v-for="item in search.OwningUser"
+                                            :key="item.ID"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select>
+                                   </div>
+                                   </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="required">*</span>
+
+                                        <span class="shift-name-title">付款金额</span>
+                                        <el-input class="save-checking-input" v-model="list.TotalAmount"></el-input>   
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="shift-name-title">付款金额大写</span>
+                                        <el-input v-model="list.contains"></el-input>   
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                       <div class="item-left">
+                                        <span class="shift-name-title">发票</span>
+                                         <el-select
+                                          v-model="list.InvoiceId.Id"
+                                          filterable
+                                          remote
+                                          @visible-change="getlookup('1090','InvoiceId')"
+                                          :remote-method="function(query){searchlookup(query,'1090','InvoiceId')}"
+                                          placeholder="请选择">
+                                          <el-option
+                                            v-for="item in search.InvoiceId"
+                                            :key="item.ID"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select>
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="shift-name-title">款项类别</span>
+                                            <el-select class=''v-model="list.PaymentCategory" placeholder="请选择">
+                                                <el-option
+                                                  v-for="item in select.PaymentCategory"
+                                                  :key="item.value"
+                                                  :label="item.label"
+                                                  :value="item.value">
+                                                </el-option>
+                                             </el-select>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                              
+                                  <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">实际付款日期</span>
+                                           <el-date-picker
+                                              v-model="list.PayedOn"
+                                              type="date" value-format="yyyy-MM-dd"
+                                              placeholder="选择日期">
+                                            </el-date-picker>   
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="required">*</span>
+
+                                        <span class="shift-name-title">收款单位全称</span>
+                                        <el-input  class="save-checking-input"v-model="list.AccountName"></el-input>   
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="required">*</span>
+
+                                        <span class="shift-name-title">收款单位开户行</span>
+                                        <el-input  class="save-checking-input"v-model="list.BankName"></el-input>   
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="required">*</span>
+
+                                        <span class="shift-name-title">收款单位银行账号</span>
+                                        <el-input  class="save-checking-input"v-model="list.BankNumber"></el-input>   
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">付款内容</span>
+                                        <el-input class="" v-model="list.Description"></el-input>     
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="shift-name-title">付款人</span>
+                                          <el-select
+                                          v-model="list.PayedBy.Id"
+                                          filterable
+                                          remote
+                                          @visible-change="getlookup('8','PayedBy')"
+                                          :remote-method="function(query){searchlookup(query,'1010','PayedBy')}"
+
+                                          placeholder="请选择">
+                                          <el-option
+                                            v-for="item in search.PayedBy"
+                                            :key="item.ID"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select>
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                       <span class="shift-name-title">付款方式</span>
+                                            <el-select class=''v-model="list.PaymentMethod" placeholder="请选择">
+                                                <el-option
+                                                  v-for="item in select.PaymentMethod"
+                                                  :key="item.value"
+                                                  :label="item.label"
+                                                  :value="item.value">
+                                                </el-option>
+                                             </el-select>
+                                         
+                                   </div>
+                                   <div class="item-right">
+                                       <span class="shift-name-title">付款比例</span>
+                                        <el-input  class=""v-model="list.Percentage"></el-input>   
+                                          
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">分管院长时间</span>
+                                           <el-date-picker
+                                              v-model="list.ApprovedOnOfIncharge"
+                                              type="date" value-format="yyyy-MM-dd"
+                                              placeholder="选择日期">
+                                            </el-date-picker>   
+                                   </div>
+                                   <div class="item-right">
+                                        <span class="shift-name-title">财务审批时间</span>
+                                           <el-date-picker
+                                              v-model="list.ApprovedOnOfFinancial"
+                                              type="date" value-format="yyyy-MM-dd"
+                                              placeholder="选择日期">
+                                            </el-date-picker>  
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                       <span class="shift-name-title">审计科日期</span>
+                                       <el-date-picker
+                                              v-model="list.ApprovedOnOfAudit"
+                                              type="date" value-format="yyyy-MM-dd"
+                                              placeholder="选择日期">
+                                            </el-date-picker> 
+                                
+                                   </div>
+                                   <div class="clear"></div>
+
+                               </div>
+
+                               </div>
+                                
+                            
+                            
+                            <div class="shift-body-titme"><span>备注信息</span></div>
+                            <div class="shift-body-main">
+                                <span>备注</span>
+                               <div class="shift-item">
+                                    <el-input
+                                      type="textarea"
+                                      :rows="4"
+                                      placeholder="请输入内容"
+                                      v-model="list.Description">
+                                    </el-input>
+                                   <div class="clear"></div>
+                               </div>
+                            </div>
+
+
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    ContractId: {},
+                    BillNo: '',
+                    DeptId: {},
+                    ApplyOn: '',
+                    OwningUser: {},
+                    TotalAmount: '',
+                    TotalAmountZh: '',
+                    PayedOn: '',
+                    AccountName: '',
+                    BankName: '',
+                    BankNumber: '',
+                    Description: '',
+                    PayedBy: {},
+                    ApprovedOnOfFinancial: '',
+                    ApprovedOnOfAudit: '',
+                    ApprovedOnOfIncharge: '',
+                    InvoiceId: {},
+                    PaymentMethod: '',
+                    PaymentCategory: '',
+                    Percentage:'',
+                },
+                select: {
+                },
+                search: {
+                    ContractId:[],
+                    DeptId: [],
+                    OwningUser: [],
+                    PayedBy: [],
+                    InvoiceId:[]
+                }
+            },
+            created: function () {
+                this.getData()
+                this.getselect()
+                
+            },
+            methods: {
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('id')
+                    if (id != null) {
+                        var ObjectTypeCode = ObjectTypeCode
+                        var d = {
+                            Id: id,
+                            ObjTypeCode: 10182
+                        }
+                        function callback(data) {
+                            console.log(data)
+                            that.list = data.record;
+                            that.list.ObjTypeCode = 10182
+                            for (item in that.search) {
+                                if (item != 'searchname') {
+                                    var name = item
+                                    var ID = that.list[name].Id
+                                    var Name = that.list[name].Name
+                                    var newlist = {
+                                        ID: ID,
+                                        Name: Name
+                                    }
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                        ajaxMethodGetData('entity.detail.get', d, callback)
+                    }
+                },
+                getselect: function () {
+                    var that = this
+                    var d = {}
+                    var ObjectTypeCode = '10182'
+                    d = {
+                        ObjTypeCode: ObjectTypeCode,
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, callback)
+                    function callback(data) {
+                        console.log(data)
+                        that.select = data.context.picklistValuesMap
+                    }
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                        var id = getQueryString('id')
+                        if (id != null) {
+                            var ID = that.list[name].Id
+                            var Name = that.list[name].Name
+                            var newlist = {
+                                ID: ID,
+                                Name: Name
+                            }
+                            if (ID) {
+                                if (JSON.stringify(that.search[name]).indexOf(JSON.stringify(newlist)) == -1) {
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                    }
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        var pid = getQueryString('pid')
+        var pname = getQueryString('pname')
+        if (pid) {
+            vum.list.ContractId = {
+                Id: pid,
+                Name: pname,
+            }
+            vum.search.ContractId = [{
+                ID: pid,
+                Name: pname,
+            }]
+            $('.item-right').eq(0).find('.el-input').addClass('is-disabled')
+        }
+        var id = getQueryString('id')
+        if (id && id != null) {
+            $('.slds-text-heading--medium').html('编辑付款单')
+        }
+
+        $('#Save').click(function () {
+            function callback(data) {
+                console.log(data)
+                parent.success('付款单保存成功')
+                parent.$('#changeDiv').hide()
+                parent.showfilterdata('')
+            }
+            var d = vum.list
+            var id = getQueryString('id')
+          
+            var messages = {
+                params: {
+                    recordRep: {
+                        objTypeCode: 10182,
+                        fields: d
+                    }
+                }
+            }
+            if (id != null) {
+                messages.params.recordRep.id = id
+            }
+
+            messages = JSON.stringify(messages)
+            var data = { message: messages };
+            var save = document.querySelectorAll('.save-checking.active');
+            if (save.length > 0) {
+                ajaxMethodPOSTData('entity.saverecord', data, function (data) {
+                    //更新合同金额
+                    var contractId = data.data.ContractId;
+                    ajaxMethodPostData('contract.amount.update', { id: contractId }, callback);
+                })
+
+                
+            }
+        })
+    </script>
+</body>
+</html>

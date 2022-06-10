@@ -1,0 +1,73 @@
+﻿<div class="filterOverview">
+    <form onsubmit="if (window.ffInAlert) { return false; }" name="filter_element" method="GET"
+    id="filter_element" action="/122/filter">
+    <div class="bFilterView">
+        <span class="bFilter">
+            <label style="text-align: left; font-weight: bold; padding-right: .69em;" for="fcf">
+                <span class="requiredMark">*</span>视图：</label><span class="fBody">
+                <select title="视图：" onchange="javascript:this.form.submit();" name="fcf" id="fcf">
+                   {!fcfoptions}
+                </select>
+                <input type="button" title="转至！" onclick="javascript:this.form.submit();" name="go"
+                        class="btn" value=" 转至！ " /></span><!--<span class="fFooter"><a href="/ui/list/FilterEditPage?id=00B90000008KS9g&amp;retURL=%2F701&amp;cancelURL=%2F701%2Fo">编辑</a>
+                                                        | <a href="/ui/list/FilterEditPage?ftype=0&amp;retURL=%2F701&amp;cancelURL=%2F701%2Fo">
+                                                            新建视图</a></span>--></span></div>
+    </form>
+</div>
+<!-- Begin RelatedListElement -->
+<div class="bRelatedList">
+    <!-- Begin ListElement -->
+    <!-- motif: Campaign -->
+    <!-- WrappingClass -->
+    <div class="hotListElement">
+        <div class="bPageBlock brandSecondaryBrd secondaryPalette">
+            <div class="pbHeader">
+                <form onsubmit="if (window.ffInAlert) { return false; }" name="hotlist" method="GET"
+                id="hotlist" action="/122/o">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="pbTitle">
+                                <img width="12" height="1" style="margin-right: 0.25em;" title="" class="minWidth"
+                                    alt="" src="/s.gif" />&nbsp;<h3>
+                                        最近的事务</h3>
+                            </td>
+                            <td class="pbButton">
+                                <input type="button" title="新建" onclick="navigateToUrl('/apps/wf/applyInstance.aspx?t=122',null,'new');"
+                                    name="new" class="btn" value=" 新建 " />
+                            </td>
+                            <td class="pbHelp">
+                                <select title="显示所选内容" onchange="submit();" name="hotlist_mode" id="hotlist_mode">
+                                    <option value="1">我创建的事务</option>
+                                    <option selected="selected" value="3">最近查看</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </form>
+            </div>
+            <div class="pbBody" id="gridContainer">
+                <!--
+                                            <table cellspacing="0" cellpadding="0" border="0" class="list">
+                                                <tbody>
+                                                    <tr class="headerRow">
+                                                        <th class="noRowsHeader" scope="col">
+                                                            无最近记录。单击“转至”或从下拉列表中选择视图来显示记录。
+                                                        </th>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            -->
+                {!gridlist}
+            </div>
+            <div class="pbFooter secondaryPalette">
+                <div class="bg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="listElementBottomNav">
+    </div>
+    <!-- End ListElement -->
+</div>

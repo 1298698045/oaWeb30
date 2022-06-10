@@ -1,0 +1,532 @@
+﻿
+.miss-bianji {
+    width: 100px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px rgba(56, 56, 56, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    left: 140px;
+    top: 0;
+    z-index: 10;
+}
+.missionright-body3 .missionright-body .div1 .name span {
+    color: #108af9;
+    cursor: pointer;
+}
+.missionright-body3 .sanjiao img {
+    margin-left: 4px;
+    margin-top: 4px;
+    width: 10px;
+    height: 10px;
+}
+.missionright-body3 ul li > img {
+    width: 40px;
+    height: 40px;
+    float: left;
+}
+.missionright-body3 li {
+    height: 40px;
+    font-size: 12px;
+    padding: 10px 0 10px 0;
+    margin: 0px 10px 0px 10px;
+    border-bottom: 1px solid #5050501a;
+}
+.sanjiao {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e4e8eb;
+    border-radius: 4px;
+    position:relative;
+    cursor:pointer;
+    float:right;
+}
+.missionright-body3 ul {
+    margin-top: 5px;
+}
+.missionright-body3 ul li .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.missionright-body3 .div1 .name span {
+    color: #108af9;
+    cursor: pointer;
+}
+.missionright-body3 .div1 {
+    float: left;
+    margin-top: 5px;
+    margin-left: 20px;
+    width: 70%;
+}
+.miss-bianji2 {
+    left: -100px;
+    width: 100px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 2px rgba(56, 56, 56, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    
+}
+.miss-bianji div {
+    padding-left: 20px;
+    height: 42px;
+    line-height: 42px;
+    margin-top: 5px;
+    color: #108af9;
+    text-align:left;
+}
+.miss-bianji > div:hover {
+    background-color:#ececec
+}
+input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    width: 100%;
+    height: 40px;
+    opacity: 0;
+    cursor: pointer;
+}
+.send {
+    position: relative;
+}
+.send:hover {
+    background: rgb(244, 246, 249)!important;
+}
+.send {
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    border-radius: 5px;
+    background: #fff;
+}
+.right_top {
+    padding: .75rem 1rem 0;
+    display: flex;
+}
+.content {
+    border: 0 !important;
+    box-shadow: none;
+}
+.content {
+    margin-bottom: .75rem;
+}
+.uiImage img {
+    display: inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.forceEntityIcon {
+    display: block;
+    border-radius: .125rem;
+}
+.extraSmall {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.right_top_title {
+    font-size: 1rem;
+    line-height: 2.25;
+}
+.second_bottom {
+    padding: .75rem 1rem;
+    text-align: center;
+    font-size: .8125rem;
+    border-top: 1px solid rgb(221, 219, 218);
+}
+.missionright-body3 {
+    padding-bottom: 8px;
+}
+.second_bottom a {
+    color: rgb(27, 82, 151);
+}
+.forceEntityIcon {
+    display: block;
+    border-radius: .125rem;
+}
+.extraSmall {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.slds-media__figure {
+    flex-shrink: 0;
+    margin-right: .75rem;
+    margin-top:5px;
+}
+.file-preview {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 300;
+}
+.file-preview-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8;
+}
+.file-preview-head {
+    position: relative;
+    z-index: 301;
+    height: 60px;
+    background-color: #000;
+    color: white;
+    line-height: 60px;
+}
+.file-preview-head>div {
+    float: left;
+}
+.file-preview-head-left>div {
+    float: left;
+}
+.file-preview-type img {
+    height: 32px;
+    width: 32px;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+.file-preview-head-left>div {
+    float: left;
+}
+.file-preview-name {
+    margin-left: 15px;
+}
+.file-preview-head-middle {
+    margin-left: 25%;
+}
+.file-preview-head-middle > div {
+    float: left;
+    overflow: hidden;
+    height: 36px;
+    width: 80px;
+    margin-top: 12px;
+    line-height: 36px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.file-preview-head-middle img {
+    margin-top: 8px;
+    float: left;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+.file-preview-head .file-preview-head-right {
+    float: right;
+}
+.file-preview-head-right img {
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.file-preview iframe {
+    height: 89%;
+    background-color: #ffffff;
+    width: 74%;
+    position: absolute;
+    z-index: 10;
+    left: 13%;
+    bottom: 0;
+    border: 0;
+}
+.delete-shur {
+    max-width: 600px;
+}
+.delete-shur {
+    position: fixed;
+    top: 40%;
+    z-index: 101;
+    background-color: white;
+    width: 40%;
+    left: 30%;
+    top: 40%;
+    height: 180px;
+    border-radius: 7px;
+    display: none;
+}
+.delete-shur .popup-exit {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    right: 0;
+    top: -25px;
+    background: url("/img/cal/4.closeIcon(24x24).png") no-repeat center;
+    background-size: 18px;
+    cursor: pointer;
+}
+.delete-shur > div {
+    height: 33%;
+}
+
+.delete-shur-head {
+    border-bottom: 2px solid #dcdcdc;
+}
+.delete-shur-head {
+    color: #333;
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+.delete-shur-body {
+    border-bottom: 2px solid #dcdcdc;
+}
+.delete-shur-body {
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    border-bottom: 1px solid #dcdcdc;
+    line-height: 60px;
+}
+.delete-shur-foot {
+    background-color: #f2f2f2;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.delete-shur-foot .delete-de {
+    background-color: rgba(27, 82, 151, 1);
+    color: rgb(255, 255, 255);
+}
+.delete-shur-foot .delete-de:hover{
+    background-color: rgba(0, 68, 135, 1);
+    color: rgb(255, 255, 255);
+}
+    .delete-shur-foot > div:hover {
+            background-color: rgb(244, 246, 249);
+    }
+.delete-shur-foot > div, .delete-bianji-foot > div {
+    float: right;
+    background-color: white;
+    border: 1px solid #dcdcdc;
+    color: rgba(27, 82, 151, 1.0);
+    width: 58px;
+    height: 32px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.delete-mask {
+    position: fixed;
+    z-index: 100;
+    background-color: #000;
+    opacity: 0.2;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+#RelatedListBlock .slds-tabs_card {
+    box-shadow: none;
+    border-top-width: 3px;
+    border-top-color: rgb(176, 173, 171);
+}
+#RelatedListBlock .right_select {
+    padding: 0;
+    margin-top: 10px;
+}
+#RelatedListBlock .details {
+    border:0;
+}
+#RelatedListBlock .slds-table--header-fixed thead th {
+    border-top: 1px solid rgb(221, 219, 218);
+}
+
+.newbtns {
+    position:absolute;
+    right:10px;
+}
+.right_top_titl {
+    font-size: 1rem;
+    line-height: 2.25;
+}
+#RelatedListBlock .slds-truncate {
+    padding:0 15px;
+}
+.tabs__content .slds-tabs_card {
+    box-shadow: none;
+    border-top-width: 3px;
+    border-top-color: rgb(176, 173, 171);
+}
+#RelatedListBlock .sanjiao img {
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 3px;
+    width: 11px;
+    height: 11px;
+}
+#RelatedListBlock td.dataCell {
+    padding-left:20px;
+}
+#RelatedListBlock .slds-table {
+    border: 0;
+}
+.missionright-head {
+    border-bottom:1px solid #e4e8eb;
+    padding-bottom:20px;
+}
+.missionright-body3 .sanjiao img {
+    margin-left: 4px;
+    margin-top: 4px;
+    width: 12px;
+    height: 12px;
+}
+.missionright-file-type {
+    height:30px;
+    padding:10px;
+}
+.missionright-file-type > div {
+    float:left;
+}
+.missionright-file-type .img2{
+    width:12px;
+    height:12px;
+    float:right;
+}
+.file-type-title {
+    line-height:30px;
+}
+.missionright-file-type .shituu{
+    width:70% !important;
+    margin-left:10px;
+    color:#333;
+    margin-right:10px;
+    position:relative;
+}
+.missionright-file-type .shuaxin {
+    float:right;
+}
+.selectlist {
+    margin-top:5px;
+    width:100%;
+    margin-left:-8px;
+}
+.selectlist li{
+    border:0;
+}
+.fileclass-head {
+    cursor:pointer;
+    height:32px;
+    line-height:32px;
+    font-weight:700;
+    color:#333;
+    padding-left:30px;
+    border-radius:4px;
+    margin:5px 10px;
+    background:url('/img/images/02.1.1-1.selection.png') no-repeat left 10px center;
+    background-size:12px;
+    background-color:#f3f2f2;
+}
+.fileclass-head.active{
+    background:url('/img/images/S01-5.Open.png') no-repeat left 10px center;
+    background-size:12px;
+    background-color:#f3f2f2;
+}
+.sanjiao {
+    position:static;
+}
+.miss-bianji2 {
+    left: auto;
+    top: auto;
+    right:55px;
+    margin-top:-15px;
+    height:auto;
+}
+.mission-left {
+    overflow-y:visible;
+}
+.fileclass-head img{
+    width:15px;
+    height:15px;
+    float:right;
+    margin-right:15px;
+    margin-top:8px;
+}
+.shituu {
+    padding: 5px 7px;
+}
+.shituu img{
+        width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+.buttonbtn {
+    border: 1px solid #dddbda;
+    border-radius: 4px;
+    background-color: white;
+    padding: 0 15px;
+    line-height: 30px;
+    height: 32px;
+    font-size: 12px;
+    color: #108af9;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.buttonbtn:hover {
+    background-color: #f2f2f2;
+}
+.shuaxin {
+    background: url('/img/cal/14.refresh_1(14x14).png') no-repeat center;
+    background-size: 14px;
+    background-color: white;
+}
+.file-type .selectlist {
+    margin-top: 5px;
+    margin-left: -8px;
+    width: 21% !important;
+}
+.selectlist {
+    display: none;
+    margin-left: -15px;
+    position: absolute;
+    border: 1px solid #dddbda;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    padding: 5px 0;
+    border-radius: 4px;
+    z-index: 1000;
+}
+.selectlist li {
+    padding: 0 30px 0 40px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #333;
+    width: auto;
+    margin: 0;
+}
+.selectlist.selectlistcheck li.active {
+    background: url('/img/cal/23.check_2(16x16).png') no-repeat left 13px center;
+    background-size: 15px;
+}
+.selectlist li:hover {
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+.newfileclass.rellist{
+    background:url('/img/images/13add.png') no-repeat left 15px center;
+    background-size:14px;
+}
+.missionright-body3>ul li{
+    padding:10px 0px;
+    margin-left:15px !important;
+}
+#RelatedListBlock .sanjiao{
+    float:left;
+}
+body>.miss-bianji{
+    position:absolute;
+}

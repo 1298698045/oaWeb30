@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="content.content.category.list" type="Supermore.Content.Actions.ContentCategoryList,WorkReportCore" desc="获取栏目"></Action>
+  <Action name="content.news.list.get" type="Supermore.Content.Actions.NewsList,WorkReportCore" desc="获取新闻列表"></Action>
+  <Action name="content.news.list.filter" type="Supermore.Content.Actions.NewsListFilter,WorkReportCore" desc="过滤新闻列表"></Action>
+  <Action name="content.news.content.get" type="Supermore.Content.Actions.NewsContent,WorkReportCore" desc="获取新闻详情"></Action>
+  <Action name="content.news.likeordislike.set" type="Supermore.Content.Actions.NewsLikeOrDisLike,WorkReportCore" desc="like or dislike"></Action>
+  <Action name="content.news.comment.add" type="Supermore.Content.Actions.NewsCommentAdd,WorkReportCore" desc="添加新闻评论"></Action>
+  <Action name="content.news.comment.list" type="Supermore.Content.Actions.NewsCommentList,WorkReportCore" desc="新闻评论列表"></Action>
+  <Action name="content.news.reader.list" type="Supermore.Content.Actions.NewsReaderList,WorkReportCore" desc="新闻Readers"></Action>
+  <Action name="content.news.related.list" type="Supermore.Content.Actions.NewsRelatedList,WorkReportCore" desc="相关新闻列表"></Action>
+  <Action name="content.customer.suborg.list" type="Supermore.Customer.Actions.GetSubOrganization,WorkReportCore" desc="获取下级单位"></Action>
+  <Action name="content.content.copyto" type="Supermore.Content.Actions.CopyContentToSuborg,WorkReportCore" desc="分发Content"></Action>
+
+  <Action name="content.search" type="Youyou.Contents.Actions.ContentSearch,ContentCore" desc="内容搜索"></Action>
+  <Action name="content.review.search" type="Youyou.Contents.Actions.ContentReviewSearch,ContentCore" desc="审核内容搜索"></Action>
+  
+  <Action name="content.delete" type="Youyou.Contents.Actions.ContentDelete,ContentCore" desc="删除内容，以及所有相关"></Action>
+  <Action name="content.publish" type="Youyou.Contents.Actions.ContentPublish,ContentCore" desc="内容发布或撤销"></Action>
+  <Action name="content.body.get" type="Youyou.Contents.Actions.ContentBodyGet,ContentCore" desc="获取内容"></Action>
+  <Action name="content.body.post" type="Youyou.Contents.Actions.ContentBodyPost,ContentCore" desc="更新内容"></Action>
+  <Action name="content.reader.invite" type="Youyou.Contents.Actions.ReaderInivite,ContentCore" desc="邀请阅读这"></Action>
+  <Action name="content.reader.search" type="Youyou.Contents.Actions.ReaderSearch,ContentCore" desc="获取阅读数据"></Action>
+  <Action name="content.reader.export" type="Youyou.Contents.Actions.ContentReaderExport,ContentCore" desc="信息 通知人员导出"></Action>
+  <Action name="content.waitapprove.search" type="Youyou.Contents.Actions.ContentApproveList,ContentCore" desc="待审信息"></Action>
+  <Action name="content.comment.post" type="Youyou.Contents.Actions.CommentPost,ContentCore" desc="评论"></Action>
+  <Action name="content.comment.delete" type="Youyou.Contents.Actions.CommentDelete,ContentCore" desc="评论删除"></Action>
+  <Action name="content.comment.search" type="Youyou.Contents.Actions.CommentSearch,ContentCore" desc="获取评论列表"></Action>
+
+  <Action name="content.like.post" type="Youyou.Contents.Actions.LikePost,ContentCore" desc="点赞"></Action>
+  <Action name="content.like.search" type="Youyou.Contents.Actions.LikeSearch,ContentCore" desc="获取点赞列表"></Action>
+  <Action name="content.category.add" type="Youyou.Contents.Actions.ContentCategoryAdd,ContentCore" desc="添加到分类"></Action>
+  <Action name="category.search" type="Youyou.Contents.Actions.CategorySearch,ContentCore" desc="获取内容隶属分类列表"></Action>
+  <Action name="content.category.list" type="Youyou.Contents.Actions.ContentCategoryList,ContentCore" desc="获取内容隶属分类列表"></Action>
+  <Action name="content.category.type" type="Youyou.Contents.Actions.CategoryItems,ContentCore" desc="获取隶属分类"></Action>
+
+  <Action name="content.category.item.gridlist" type="Youyou.Contents.Actions.CategoryItemGridList,ContentCore" desc="获取分类栏目"></Action>
+  <Action name="content.remind.send" type="Youyou.Contents.Actions.ContentRemindSend,ContentCore" desc="信息提醒"></Action>
+  <Action name="content.unread.search" type="Youyou.Contents.Actions.ContentUnreadSearch,ContentCore" desc="未阅读"></Action>
+  
+  <!--门户-->
+  <Action name="page.getlist" type="Youyou.Contents.Actions.PageGetlist,ContentCore" desc="门户页面"></Action>
+  <Action name="portal.page.sort" type="Youyou.Contents.Actions.PortalPageSort,ContentCore" desc="门户排序"></Action>
+  <Action name="page.block.getlist" type="Youyou.Contents.Actions.PageBlockList,ContentCore" desc="门户页面区块"></Action>
+  <Action name="page.block.content.getlist" type="Youyou.Contents.Actions.PageBlockContentList,ContentCore" desc="门户页面区块内容"></Action>
+  <Action name="page.block.sort" type="Youyou.Contents.Actions.PageBlockSort,ContentCore" desc="门户区块排序"></Action>
+  <Action name="page.block.position" type="Youyou.Contents.Actions.PageBlockPosition,ContentCore" desc="门户区块布局"></Action>
+  <Action name="content.notice.unread.getlist" type="Youyou.Contents.Actions.NoticeUnReadList,ContentCore" desc="未读通知"></Action>
+
+  <Action name="content.folder.approveright.check" type="Youyou.Contents.Actions.FolderApproveRightCheck,ContentCore" desc="检查当前是否要审批，以及审批人是否是自己，来影响当前按钮"></Action>
+  <Action name="content.detail.canpublish.check"   type="Youyou.Contents.Actions.ConentDetailCanPublishCheck,ContentCore" desc="信息详情是否显示发布按钮"></Action>
+
+  <Action name="knowledge.subject.treeget"   type="Youyou.Knowledges.Actions.KnowledgeSubjectTreeGet,ContentCore" desc="知识目录获取"></Action>
+  <Action name="knowledge.subjecttreeandatricle.get"   type="Youyou.Knowledges.Actions.KnowledgeSubjectTreeAndArticleGet,ContentCore" desc="知识文章目录获取"></Action>
+  <Action name="knowledge.search"   type="Youyou.Contents.Knowledges.Actions.KnowledgeSearch,ContentCore" desc="知识文章列表获取"></Action>
+
+  <Action name="content.item.category.list" type="Youyou.Contents.Actions.ContentCategoryTree,ContentCore" desc="获取有权限栏目"></Action>
+  <Action name="content.item.access.control" type="Youyou.Contents.Actions.ContentItemAccessControl,ContentCore" desc="同步栏目权限"></Action>
+  <Action name="group.member.check" type="Youyou.Security.Actions.GroupMemberCheck,OACore" desc="公用小组检查"></Action>
+  
+  <Action name="hd.publicity.content.list" type="Youyou.Contents.HDPublicity.PublicityContentList,ContentCore" desc="海淀宣传栏目"></Action>
+</Actions>

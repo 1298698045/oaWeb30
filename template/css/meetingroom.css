@@ -1,0 +1,468 @@
+﻿* {
+    margin:0;
+    padding:0;
+}
+li, ul {
+    list-style:none;
+}
+.calendarTop {
+    padding-top: 40px;
+    position: relative;
+    z-index: 2;
+}
+.calendar2 .calendarTop {
+    padding-top: 45px;
+}
+.calendarUserTimezoneOffset {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    text-align: center;
+    z-index: 3;
+    background-color:white;
+}
+.calendarDayHeaders {
+    padding: 0 0 0 80px;
+    padding-right: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 1px;
+    z-index: 1;
+    border-right: 1px solid rgb(221, 219, 218);
+    overflow:hidden;
+}
+.calenderDayHeader {
+    position: relative;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    font-size: .75rem;
+    width:220px;
+    display:block;
+    float:left;
+}
+.calendarKey {
+    border-bottom: 1px solid rgb(221, 219, 218);
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+    height:780px;
+    position:absolute;
+    z-index:3;
+    top:-1px;
+}
+.calendarKey strong {
+    display: block;
+    height: 60px;
+    border-top: 1px solid rgb(221, 219, 218);
+    padding: 10px 0 0 0;
+    font-size: .8125rem;
+    color: rgb(62, 62, 60);
+    font-weight: normal;
+    box-sizing:border-box;
+}
+.calendarKey span {
+    position: relative;
+    top: -20px;
+    padding: 6px;
+    background: #fff;
+}
+.rili_calender_strong {
+    line-height: 40px;
+    font-weight: 400;
+    color: #333;
+    font-size: 11px;
+}
+.calendarDay {
+    height: 900px;
+    position: relative;
+}
+.eventList {
+    height: 900px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    border-left: 1px solid rgb(221, 219, 218);
+    border-bottom: 1px solid rgb(221, 219, 218);
+    background: linear-gradient(rgba(0, 0, 0, .1) 1px, transparent 1.01px);
+    background-size: 100% 30px;
+    width:220px;
+    background-color:#fcfcfc;
+    cursor:pointer;
+}
+.eventList:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-size: 100% 4.16666666%;
+}
+.rowCore > div {
+    float:left;
+}
+.calendar {
+    width: calc(100% - 300px);
+    float:left;
+
+}
+.rowCore {
+    width:calc(100% - 80px);
+    overflow:auto;
+    float:left;
+    margin-left:80px;
+    overflow:auto;
+    border-right:1px solid rgb(221, 219, 218);
+}
+.calendarKey {
+    float:left;
+    border-right:1px solid rgb(221, 219, 218);
+}
+.calendarDay {
+    float:left;
+}
+.scroll {
+    width:2000px;
+}
+.calendarRow {
+    overflow:hidden;
+    position:relative;
+    border-right: 1px solid rgb(221, 219, 218);
+}
+.meetingroom-message {
+    width:218px;
+    color:#080707;
+    font-size:12px;
+    border-left-width:3px;
+    border-left-style:solid;
+    height:60px;
+    padding:10px;
+    box-sizing:border-box;
+    
+}
+.calendar1 .meetingroom-message {
+    min-height:59px;
+}
+.eventList .meetingroom-message {
+    position:absolute;
+}
+.meetingroom-message3 {
+    border-color:#b3b3b3;
+    background-color:#e6e6e6;
+}
+.meetingroom-message3:hover{
+    background-color:#d9d9d9;
+}
+.meetingroom-message5 {
+    border-color:#0070d2;
+    background-color:#ebf7ff;
+}
+.meetingroom-message5:hover{
+    background-color:#d7efff;
+}
+.meetingroom-message2 {
+    border-color:#81cf9f;
+    background-color:#eafdf3;
+}
+.meetingroom-message2:hover{
+    background-color:#d6fbe7;
+}
+.meetingroom-message1 {
+    border-color:#f7aa2d;
+    background-color:#fef7ea;
+}
+.meetingroom-message1:hover{
+    background-color:#fcedd4;
+}
+.meetingroom-message-hover-title>div{
+    float:left;
+}
+.header-left-logo {
+    background-color:#1797c0;
+    float:left;
+    border-radius:4px;
+    height:32px;
+    width:32px;
+}
+.header-left-logo img{
+    height:32px;
+    width:32px;
+}
+.header-left-title {
+    margin-left:10px;
+    margin-top:-3px
+}
+.header-left-title-name {
+    font-size:18px;
+    color:#333;
+    font-weight:700;
+    margin-top:8px;
+}
+.meetingroom-message-hover {
+    width:430px;
+    height:216px;
+    background-color:#f3f2f2;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+    border:1px solid #dddbda;
+    border-radius: 5px;
+    box-sizing:border-box;
+    position:absolute;
+}
+.meetingroom-message-hover-title {
+    height:50px;
+}
+.meetingroom-message-hover-body-message {
+    float:left;
+    width:50%;
+    font-size:12px;
+
+}
+.meetingroom-message-hover-body-message p{
+    width:100%;
+    height:20px;
+}
+.meetingroom-message-hover-foot {
+    margin-top:10px;
+    float:left;
+    width:100%;
+}
+.meetingroom-message-hover-left {
+    float:left;
+    color:#006dcc;
+    font-size:13px;
+    margin-top:5px;
+    cursor:pointer;
+}
+.meetingroom-message-hover-foot-right {
+    float:right;
+}
+.meetingroom-message-hover-foot-right>div{
+    float:left;
+    margin-left:10px;
+}
+.close {
+    cursor:pointer;
+    position:absolute;
+    right:5px;
+    top:5px;
+    width:32px;
+    height:32px;
+    background:url('/img/cal/closegray.png') no-repeat center;
+    background-size:14px;
+}
+.calendar {
+    border-top:1px solid rgb(221, 219, 218);
+    overflow:hidden;
+}
+.calendar2 .calendarUserTimezoneOffset{
+    border-right:1px solid rgb(221, 219, 218);
+}
+.calendar2 .calenderDayHeader {
+    border-right:1px solid rgb(221, 219, 218);
+    box-sizing:border-box;
+}
+.calendarTop.bumpForScrollBar {
+    border-bottom:1px solid rgb(221, 219, 218);
+}
+.calendarRow strong:first-child {
+    border-top:0;
+}
+.rowCore {
+    margin-top:-1px;
+}
+.widthitem2 {
+    width:100%;
+}
+.widthitem1 {
+    width:50px;
+}
+.calendar2 .calenderDayHeader {
+    line-height:20px;
+    margin-top:1px;
+    font-weight:600;
+
+}
+.weekend {
+    color:red;
+}
+.calendar2 .calendarKey {
+    background-color:#f5f6f9;
+}
+.calendar2 strong {
+    height:100px;
+
+}
+.calendar2 .calendarKey strong {
+    text-align:left;
+    position:relative;
+}
+.calendar2 .eventList {
+    background-size: 100% 100px;
+}
+.calendar2 .calendarKey span {
+    position: absolute;
+    transform:translateY(-50%);
+    padding: 0;
+    top:50%;
+    background-color:transparent;
+    margin:0 10px; 
+}
+.widthitem2 p {
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:130px;
+}
+.meetingroom-message-hover .header-left-title{
+    width:calc(100% - 50px);
+}
+.header-left-title-name{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+table{
+    table-layout:fixed
+}
+.meetingroom-message.widthitem2 {
+    height:39px;
+    padding:5px;
+}
+.widthitem3 {
+    width:14.15%;
+}
+.calendar3 {
+    width:calc(100% - 300px);
+}
+.calendar3 .calendarTop{
+    width:100%;
+}
+.calendar3 .calendarDay  {
+    width:14.27%;
+}
+.eventList.widthitem3 {
+    width:100%;
+}
+.calendar3 .calenderDayHeader {
+    line-height:40px;
+}
+.calendar3 .calendarDayHeaders {
+    left:0 !important;
+}
+.calendar3 .calendarDayHeaders strong {
+    height:46px;
+    line-height:46px;
+
+}
+.calendar3 .calendarKey strong {
+    height:100px;
+    text-align: left;
+    position: relative;
+}
+.calendar3 strong span {
+    position: absolute;
+    transform: translateY(-50%);
+    padding: 0;
+    top: 50%;
+    background-color: transparent;
+    margin: 0 10px;
+}
+.calendar3 .calendarKey {
+    background-color: #f5f6f9;
+}
+.calendar3 .calendarTop {
+    padding-top:45px;
+}
+.calendar3 .rili_calender_strong {
+    text-align:left;
+    display:block;
+    padding-left:10px;
+}
+.calendar3 .eventList {
+    background-size: 100% 100px;
+}
+.calendar3 {
+    float:left;
+}
+
+.meetingroom-moremessage {
+    width:100%;
+    height:28px;
+    line-height:20px;
+    padding:5px 10px;
+}
+.meetingroom-message-hover2 .meetingroom-message-hover-body {
+    max-height:145px;
+    overflow-y:auto;
+    margin-top:-5px;
+}
+.calendar2, .calendar1{
+    display:none;
+}
+.meetingroom-message-hover {
+    display:none;
+}
+.calendar3 .calendarKey {
+    height:auto;
+}
+.calendar2 .calendarKey {
+    height:auto;
+}
+.more {
+    position:absolute;
+    color:#006dcc;
+    cursor:pointer;
+    font-size:12px;
+}
+.weekend {
+    color:red;
+    font-weight:700;
+}
+.card-hover-point {
+    position:absolute;
+    top: 38%;
+    left: -11px;
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #dddbda;
+    transform: rotate(45deg);
+    z-index:1000;
+
+}
+.meetingroom-message-hover1 > div {
+    position:relative;
+    z-index:1001;
+    background-color: #f3f2f2;
+    padding: 12px;
+}
+.clear {
+    clear:both;
+}
+.card-hover-point {
+    left:-1000px;
+}
+.meetingroom-message-hover.meetingroom-message-hover2 .meetingroom-message {
+    margin-top:1px;
+}
+.calderlist {
+    display:none;
+}
+
+.meetingroom-message{
+    cursor:pointer;
+}

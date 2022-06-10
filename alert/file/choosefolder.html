@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+    <style>
+        .crumb-nav {
+            font-size:18px;
+            color:#333333;
+            font-weight:700;
+            line-height:50px;
+            padding:0 20px;
+            background-color:#fafaf9;
+        }
+        .folder-search {
+            padding: 5px 20px;
+            height:50px;
+            box-sizing:border-box;
+        }
+        .el-input__inner {
+            height:32px;
+            line-height:32px;
+        }
+        .el-input__icon {
+            line-height:32px;
+        }
+        .folder-choosebody {
+            border-top:1px solid #dedede;
+        }
+        .folder-choosebody>div{
+            float:left;
+            width:50%;
+            height:280px;
+            overflow:auto;
+        }
+        .choose-bodyleft {
+            border-right:1px solid #dedede;
+            box-sizing:border-box;
+
+        }
+        .choose-bodyright {
+            box-sizing:border-box;            
+        }
+        .folder-choosebody li {
+            line-height:38px;
+            color:#108af9;
+            border-bottom:1px solid #dedede;
+            font-size:14px;
+            padding-left:20px;
+        }
+        .folder-choosebody li:hover{
+            background-color:#f2f2f2;
+            cursor:pointer;
+        }
+        .folder-choosebody i {
+            color:#666;
+            font-size:18px;
+        }
+        .folder-choosebody .el-icon-caret-right {
+            float:right;
+            margin:10px 15px;
+        }
+        .choose-bodyright-nofolder {
+            text-align:center;
+        }
+        .nofoldermessage1 {
+            color:#3e3c3c;
+            font-size:24px;
+            font-weight:700;
+            margin-top:100px;
+        }
+        .nofoldermessage2 {
+            color:#3e3c3c;
+            font-size:16px;
+        }
+        .folder-choosebody li.active {
+            background-color:#f2f2f2;
+        }
+        .crumb-nav .active {
+            color:#108af9;
+            cursor:pointer;
+        }
+        .crumb-nav span span{
+            color:#333 !important;
+        }
+        #changeDiv {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 99999;
+            display: none;
+        }
+        #iframe {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            height: 100%;
+        }
+        .el-message {
+            z-index:999999 !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">存盘</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="crumb-nav">
+                                <span class="active"
+                                    v-if="index<foldernavlist.length-1" 
+                                    v-for="(item,index) in foldernavlist" 
+                                    @click="getinto(item.id,item.type,item.name,'nav')"
+                                    >{{item.name}}
+                                    <span>
+                                        >
+                                    </span>
+                                </span>
+                                <span v-if="index==foldernavlist.length-1" v-for="(item,index) in foldernavlist" 
+                                    
+                                    >{{item.name}}
+                                </span>
+                            </div>
+                            <div class="folder-search">
+                                  <el-input
+                                    placeholder="搜索文件夹"
+                                    prefix-icon="el-icon-search"
+                                    v-model="search">
+                                  </el-input>
+                            </div>
+                            <div class="folder-choosebody">
+                                <div class="choose-bodyleft" v-show="!folderstep">
+                                    <ul>
+                                        <li :class="{'active':foldertpe=='my'}" @click="getinto('my',0,'我的文件')"><span>我的文件</span><i class="el-icon-caret-right"></i></li>
+                                        <li :class="{'active':foldertpe=='share'}"@click="getinto('share',0,'共享文件')"><span>共享文件</span><i class="el-icon-caret-right"></i></li>
+                                        <li :class="{'active':foldertpe=='org'}"@click="getinto('org',0,'单位文件')"><span>单位文件</span><i class="el-icon-caret-right"></i></li>
+                                    </ul>
+                                </div>
+                                <div v-show="folderstep" class="choose-bodyright" style="border-right:1px solid #dedede;">
+                                    <ul>
+                                        <li :class="{'active':folderid==item.id}" v-for="item in folderlist2" @click="getinto(item.id,1,item.name)"><img style="width:15px;height:15px;float:left;margin:11px 5px 0 0;" src="/img/images/floader.png" /><span>{{item.name}}</span><i class="el-icon-caret-right"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="choose-bodyright" v-show="folderdata" style="border-right:1px solid #dedede;">
+                                    <ul>
+                                        <li :class="{'active':folderid==item.id}" v-for="item in folderlist" @click="getinto(item.id,2,item.name)"><img style="width:15px;height:15px;float:left;margin:11px 5px 0 0;" src="/img/images/floader.png" /><span>{{item.name}}</span><i class="el-icon-caret-right"></i></li>
+                                    </ul>
+                                </div>
+                                <div class="choose-bodyright choose-bodyright-nofolder" v-show="!folderdata">
+                                    <div class="nofoldermessage1">此处尚无任何内容</div>
+                                    <div class="nofoldermessage2">此文件夹没有子文件夹</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button style="float:left;" class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">新建文件夹</span>
+                                </button>
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">选择文件夹</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="changeDiv">
+        <iframe src="" id="iframe"></iframe>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                search: '',
+                type:0,
+                foldertpe: 'my',
+                folderid: '',
+                foldername:'',
+                folderstep:false,
+                folderdata: true,
+                folderlist: [],
+                folderlist2: [],
+                foldernavlist: [
+                    {
+                        type:0,
+                        id: 'my',
+                        name:'我的文件'
+                    }
+                ],
+                list: {
+                    NewName: '',
+                },
+            },
+            created: function () {
+                this.getinto('my','0','我的文件')
+            },
+            methods: {
+                getinto: function (id, type, name, nav) {
+                    var that = this
+                    this.type = type
+                    var srchType = ''
+                    var folderid = ''
+                    if (type == 0) {
+                        srchType = id
+                        this.foldertpe = srchType
+                        this.folderstep = false
+                        this.folderid = ''
+                    } else {
+                        srchType = this.foldertpe
+                        this.folderstep = true
+                        this.folderid = id
+                        this.foldername = name
+                    }
+                    if (type == 2 && nav != 'nav') {
+                        var list = JSON.stringify(this.folderlist)
+                        this.folderlist2 = JSON.parse(list)
+                        for (var i = 0; i < this.foldernavlist.length; i++) {
+                            if (id == this.foldernavlist[i].id) {
+                                break;
+                            }
+                            if (i == this.foldernavlist.length - 1) {
+                                this.foldernavlist.push({
+                                    type: type,
+                                    id: id,
+                                    name: name
+                                })
+                            }
+                        }
+                    } else {
+                        this.foldernavlist.splice(this.foldernavlist.length - 1, 1)
+                        this.foldernavlist.push({
+                            type: type,
+                            id: id,
+                            name: name
+                        })
+                    }
+                    if (nav == 'nav') {
+                        var number = 0
+                        for (var i = 0; i < this.foldernavlist.length; i++) {
+                            if (id == this.foldernavlist[i].id) {
+                                number = i
+                                this.foldernavlist.splice(i+1, this.foldernavlist.length - i)
+                                break;
+                            }
+                        }
+                        var d = {
+                            srchType: srchType,
+                        }
+                        if (id != '' && type != 0) {
+                            if (number - 1 > 0) {
+                                d.folderid = this.foldernavlist[number - 1].id
+                            }
+                        }
+                        ajaxMethodPostData('file.files.search', d, function (data) {
+                            that.folderdata = true
+                            that.folderlist2 = data.folders
+                        })
+                    }
+
+                    var d = {
+                        srchType: srchType
+                    }
+                    if (id != '' && type != 0) {
+                        d.folderid = id
+                    }
+                    
+
+                    ajaxMethodPostData('file.files.search', d, function (data) {
+                        if (data.folders.length == 0) {
+                            that.folderdata = false
+                        } else {
+                            that.folderdata = true
+                            that.folderlist = data.folders
+                            
+                        }
+                    })
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        $('#Button1').click(function () {
+            $('#changeDiv').show()
+            $('#iframe').attr('src', '/alert/editFolder2.html')
+        })
+        $('#Save').click(function () {
+            var id = vum.folderid
+            if (id == '') {
+                vum.$message({
+                    message: '请先选中文件夹',
+                    type: 'warning'
+                });
+            } else {
+                var d = {
+                    attachId: getQueryString('id'),
+                    folderId: id
+                }
+                ajaxMethodPostData('email.attachfile.saveusbfolder', d, function (data) {
+                    parent.vum.$message({
+                        message: '存盘成功',
+                        type: 'success'
+                    });
+                    parent.$('#changeDiv').hide()
+                })
+            }
+        })
+    </script>
+</body>
+</html>

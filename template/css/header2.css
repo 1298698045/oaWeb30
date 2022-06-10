@@ -1,0 +1,168 @@
+﻿.clear {
+    float:none !important;
+    clear:both;
+}
+.miss-header {
+    padding:19px 15px;
+    box-sizing:border-box;
+    background-color:#f3f2f2;
+    min-width:1300px;
+}
+.miss-header>div{
+    float:left;
+}
+.header-left-logo {
+    background-color:#1797c0;
+    float:left;
+    border-radius:4px;
+    height:32px;
+    width:32px;
+}
+.header-left-logo img{
+    height:32px;
+    width:32px;
+}
+.miss-header .header-left-title {
+    margin-left:10px;
+    margin-top:-3px
+}
+.miss-header .header-left-title-name {
+    font-size:12px;
+    color:#666666;
+    margin-top:0;
+}
+.miss-header .header-left-title-time {
+    font-size:18px;
+    color:#333;
+    font-weight:700;
+}
+.header-mi-sign {
+    padding:10px;
+    margin-left:10%;
+}
+.sign-item {
+    float:left;
+}
+.sign-item > div {
+    float:left;
+    margin-left:10px;
+}
+.sign-item-color {
+    width:10px;
+    height:10px;
+    margin-top:3px;
+}
+.color-sp {
+    background-color:#f7aa2d;
+}
+.color-notstart {
+    background-color:#0070d2;
+}
+.color-started {
+    background-color:#81cf9f;
+}
+.color-end {
+    background-color:#b3b3b3;
+}
+.sign-item-name {
+    font-size:12px;
+    color:#333;
+}
+.header-right-buttonbtn {
+    float:right;
+}
+.buttonbtn-group {
+    border:1px solid #dddbda;
+    border-radius:4px;
+    height:32px;
+    background-color:white;
+    cursor:pointer;
+    box-sizing:border-box;
+
+}
+.buttonbtn-group>div{
+    border:0;
+    border-radius:0;
+    background-color:transparent;
+
+}
+.buttonbtn-group>div{
+    float:left;
+    border-right:1px solid #dddbda;
+    height:30px;
+
+}
+.buttonbtn-group>div:hover{
+    background-color:#f2f2f2;
+}
+.buttonbtn-group>div:last-child{
+    border-right:0;
+
+}
+.prev-buttonbtn {
+    height:30px;
+    width:32px;
+    background:url('/img/images/leftArrow.png') no-repeat center;
+    background-size:12px;
+
+}
+.next-buttonbtn {
+    height:30px;
+    width:32px;
+    background:url('/img/images/rightArrow.png') no-repeat center;
+    background-size:12px;
+}
+.miss-header .header-right-buttonbtn {
+    float:right;
+}
+.header-right-buttonbtn > div {
+    float:left;
+    margin-left:10px;
+}
+.buttonbtn {
+    border:1px solid #dddbda;
+    border-radius:4px;
+    background-color:white;
+    padding:0 15px;
+    line-height:30px;
+    height:32px;
+    font-size:12px;
+    color:#108af9;
+    cursor:pointer;
+    box-sizing:border-box;
+}
+.buttonbtn:hover{
+    background-color:#f2f2f2;
+}
+.header-right-buttonbtn .shuaxin {
+    margin-left:25px;
+    background:url('/img/cal/refresh.png') no-repeat center;
+    background-size:14px;
+    background-color:white;
+}
+.header-right-buttonbtn .shuaxin:hover{
+    background:url('/img/cal/14.refresh_2(14x14).png') no-repeat center;
+    background-size:14px;
+    background-color:white;
+}
+ .header-right-buttonbtn .calander {
+    background:url('/img/images/02.Programme.png') no-repeat left 8px center,url('/img/cal/20.png') no-repeat right 6px center;
+    background-size:14px,10px;
+    background-color:white;
+    width:45px;
+}
+.header-right-buttonbtn .sort {
+    color:#000;
+    background:url('/img/images/02.4.Sort.png') no-repeat center ;
+    background-size:14px;
+    background-color:white;
+}
+.header-right-buttonbtn .sort.active {
+    background:url('/img/images/3.rows_3(14x14).png') no-repeat center ;
+    background-size:14px;
+    background-color:#108af9;
+}
+.tody-true {
+    color:#e5e5e5 !important;
+    border:1px solid #dddbda !important;
+}

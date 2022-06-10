@@ -1,0 +1,756 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html style="">
+<head>
+    <script src="/static/js/perf/stub.js"></script>
+    <title>关联事务</title>
+    <meta http-equiv="PRAGMA" content="NO-CACHE" />
+    <style>
+        .hasMotif {
+            margin: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            color: #333;
+            height: 100%;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .head {
+            background-color: #f2f2f2;
+            height: 50px;
+            line-height: 50px;
+            border-bottom: 1px solid #dedede;
+            position: absolute;
+            width: 100%;
+        }
+
+            .head img {
+                float: left;
+                width: 30px;
+                margin: 0 20px;
+                margin-top: 10px;
+            }
+
+        .nav-item {
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+            .nav-item.active {
+                color: #2db7f5;
+                border-bottom: 3px solid #2db7f5;
+            }
+
+        .body-nav {
+            float: left;
+        }
+
+        .body-search {
+            float: right;
+            margin-top: 10px;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .search-btn {
+            border: 1px solid #dedede;
+            padding: 0px 20px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+
+        .search-input {
+            height: 30px;
+            border: 1px solid #dedede;
+            border-right: 1px;
+        }
+
+            .search-input input {
+                border: 0;
+                outline: none;
+                height: 28px;
+                width: 100%;
+            }
+
+        .body-top {
+            border-bottom: 1px solid #dedede;
+            padding-right: 15px;
+        }
+
+        .main-item img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .right {
+            float: right;
+        }
+
+        .main-item {
+            border-bottom: 1px solid #dedede;
+            padding: 10px 20px;
+        }
+
+        .item-mi {
+            margin-left: 20px;
+        }
+
+        .item-right img {
+            display: none;
+        }
+
+        .main-item.active img {
+            display: block;
+        }
+
+        .main-item.active {
+            background-color: #f2f2f2;
+        }
+
+        .main-item:hover {
+            background-color: #f2f2f2;
+            cursor: pointer;
+        }
+
+        .main {
+            display: none;
+        }
+
+        .foot {
+            border-top: 1px solid #dedede;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            z-index: 2;
+            background-color: white;
+        }
+
+        .foot > div {
+            float: right;
+        }
+        
+        .foot > div > div {
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            float: left;
+            margin-right: 15px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        .foot > div > div:hover {
+            background-color: #f2f2f2;
+        }
+        
+        .shur {
+            background-color: #0094ff;
+            color: white;
+        }
+
+        .shur:hover {
+            background-color: #20699c !important;
+        }
+
+        .body {
+            float: left;
+            width: 100%;
+            padding-top: 51px;
+            box-sizing: border-box;
+            height: 100%;
+            padding-bottom: 74px;
+        }
+
+        .body-right {
+            float: left;
+            width: 20%;
+            border-left: 1px solid #dedede;
+            box-sizing: border-box;
+            padding:5px 5px 60px 5px;
+            height: 100%;
+            overflow-y:auto;
+        }
+
+        .body-right img {
+            width: 14px;
+            float: right;
+            margin-top: 3px;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .checked-item {
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            padding: 5px 0;
+            padding-left: 10px;
+            margin-top: 10px;
+        }
+
+            .checked-item:hover {
+                background-color: #f2f2f2;
+            }
+
+        .main-item-group,.main-item-role {
+            border-bottom: 1px solid #dedede;
+            padding: 5px 0;
+            cursor: pointer;
+        }
+
+            .main-item-group:hover,.main-item-role:hover {
+                background-color: #f2f2f2;
+            }
+
+        .body-main {
+            overflow-y: auto;
+            height: 100%;
+            box-sizing: border-box;
+            padding-bottom: 53px;
+            float:left;
+            width:100%;
+        }
+
+        .panel-header {
+            border-top: 0 !important;
+        }
+
+        #treePanel {
+            border-bottom: 0 !important;
+        }
+
+        .panel.panel-htop {
+            float: left;
+        }
+
+        .zuzhijiegou-people, .changyongzu-people ,.juese-people{
+            float: left;
+            box-sizing: border-box;
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        #zuzhijiegou, #changyongzu,#juese {
+            height: 100%;
+            width: 100%;
+        }
+
+        #changyongzutree,#juesetree {
+            border-right: 1px solid #dedede;
+            float: left;
+            overflow: auto;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .main-item .name {
+            color: blue;
+        }
+
+        #new {
+            height: 100%;
+        }
+
+        .hightsearch-head {
+            padding: 20px;
+            border-bottom: 1px solid #dedede;
+        }
+
+            .hightsearch-head > div {
+                padding: 0 20px;
+                height: 50px;
+                line-height: 50px;
+            }
+
+            .hightsearch-head select {
+                position: relative \9;
+                top: 10px \9;
+            }
+
+        .search-btn.active {
+            background-color: #0094ff;
+            color: white;
+        }
+
+        .search-name {
+            display: inline-block;
+            width: 60px;
+        }
+
+        .hightsearch-head .search-input {
+            border-right: 1px solid #dedede;
+            width: 300px;
+        }
+
+        .hightsearch-head > div > div {
+            padding: 0 20px;
+        }
+
+        .hightsearch-footbtn {
+            border-bottom: 1px solid #dedede;
+            height: 65px;
+            padding: 15px 0;
+            box-sizing: border-box;
+        }
+
+            .hightsearch-footbtn > div {
+                width: 300px;
+                margin: 0 auto;
+                height: 50px;
+            }
+
+        .hightsearch-footbtn > div div {
+            border: 1px solid #dedede;
+            border-radius: 4px;
+            float: left;
+            margin-right: 15px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+            .hightsearch-footbtn > div div:hover {
+                background-color: #f2f2f2;
+            }
+
+            .hightsearch-footbtn .hightsearch-shur {
+                background-color: #0094ff;
+                color: white;
+            }
+
+                .hightsearch-footbtn .hightsearch-shur:hover {
+                    background-color: #20699c;
+                }
+
+        .hightsearch-people {
+            overflow: auto;
+        }
+
+        .hightsearch {
+            display: none;
+        }
+
+        .main-item-group.active,.main-item-role.active {
+            background-color: #f2f2f2;
+        }
+
+        .main-item-group,.main-item-role {
+            padding: 10px 0;
+        }
+
+        .maincontent {
+            height: 100%;
+            
+        }
+
+        .easyui-tree li {
+            margin-left: 0;
+        }
+        .allchose {
+            height:30px;
+            line-height:30px;
+            box-sizing:border-box;
+            padding:0 15px;
+            background-color:#f2f2f2;
+            position:absolute;
+            width:100%;
+            top:0;
+        }
+        .maincontent {
+            position:relative;
+        }
+        .allchose label{
+            margin-right:10px;
+        }
+        .zuzhijiegou-people,#latestusediv,#tongbumen,#wodexiashu,.changyongzu-people,.juese-people,#searchpeoplediv{
+            box-sizing:border-box;
+            padding-top:31px;
+        }
+        #searchpeoplediv {
+            overflow-y:auto;
+            height:100%;
+        }
+        .right-people {
+            box-sizing:border-box;
+            padding-top:31px;
+        }
+        .search-btn:hover{
+            background-color:#0094ff;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Body Starts Here -->
+    <div class="head">
+        <img src="/img/images/Personal1.png" alt="选择流程事务" />
+        <span>选择流程事务</span>
+    </div>
+    <div class="body">
+        <div class="body-top">
+            <div class="body-nav">
+                <div class="nav-item active">我创建的</div>
+                <div class="nav-item">已办理的</div>
+                <div class="clear"></div>
+            </div>
+            <div class="body-search">
+                <div class="search-input left">
+                    <input type="search" name="name" value="" />
+                </div>
+                <div class="search-btn left">高级搜索</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="body-main">
+            <div class="maincontent">
+                <div id="latestusediv" class="main" style="display: block;">
+                    <table id="datagrid" style="width:100%;"></table>
+                </div>
+            </div>
+            <div class="hightsearch">
+                <div class="hightsearch-head">
+                    <div>
+                        <div class="left">
+                            <span class="search-name">名称:</span>
+                            <input class="search-input" type="text" name="Name" value="" />
+                        </div>
+                        <div class="left">
+                            <span class="search-name">流程:</span>
+                            <input class="search-input" type="text" name="processName" value="" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="">
+                            <span class="search-name">时间:</span>
+                            <input id="time" class="search-input" type="text" name="time" value="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="hightsearch-footbtn">
+                    <div>
+                        <div class="hightsearch-shur">搜 索</div>
+                        <div class="hightsearch-clear">重 置</div>
+                        <div class="hightsearch-quite">取 消</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="foot">
+        <div>
+           <!--<div class="clearchook">清除</div>-->
+           <div class="quite">取消</div>
+           <div class="shur">确定</div>
+        </div>
+    </div>
+
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/CommonUtils.js"></script>
+    <link href="/easyui/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/easyui/js/treeLoader.js"></script>
+    <script type="text/javascript" src="/easyui/js/GridEasy.js"></script>
+    <script type="text/javascript" src="/easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="/easyui/locale/easyui-lang-zh_CN.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+
+    <script>
+        var url = "";
+        var filterQuery = "";
+        
+        var columnsArray1 = [{
+            field: '',
+            title: '流程名称',
+            checkbox: true,
+            sortable: true
+        }, {
+            field: 'Name',
+            title: '流程名称',
+            sortable: true
+        }, {
+            field: 'ProcessIdName',
+            title: '流程名称',
+            sortable: true
+        }, {
+            field: 'ToActivityName',
+            title: '当前环节',
+            sortable: true
+        }, {
+            field: 'BusinessUnitIdName',
+            title: '身份部门',
+            sortable: true
+        }, {
+            field: 'StateCodeName',
+            title: '流程状态',
+            sortable: true
+        }, {
+            field: 'Deadline',
+            title: '办理期限',
+            sortable: true
+        }, {
+            field: 'CreatedOn',
+            title: '创建时间',
+            sortable: true
+        }, {
+            field: 'ModifiedOn',
+            title: '上一次办理时间',
+            sortable: true
+        }];
+
+        var columnsArray2 = [{
+            field: '',
+            title: '流程名称',
+            checkbox: true,
+            sortable: true
+        }, {
+            field: 'Name',
+            title: '流程名称',
+            sortable: true
+        }, {
+            field: 'ProcessIdName',
+            title: '流程名称',
+            sortable: true
+        }, {
+            field: 'FromActivityName',
+            title: '来源环节',
+            sortable: true
+        }, {
+            field: 'ToActivityName',
+            title: '办理环节',
+            sortable: true
+        }, {
+            field: 'BusinessUnitIdName',
+            title: '发起人部门',
+            sortable: true
+        }, {
+            field: 'StartByName',
+            title: '发起人姓名',
+            sortable: true
+        }, {
+            field: 'InstanceStateCodeName',
+            title: '流程状态',
+            sortable: true
+        }, {
+            field: 'CreatedOn',
+            title: '接收时间',
+            sortable: true
+        }, {
+            field: 'ModifiedOn',
+            title: '办理完成时间',
+            sortable: true
+        }];
+        var columnsArray = columnsArray1;
+
+        $('.search-input input').change(function () {
+           
+            if ($('.nav-item').eq(0).hasClass('active')) {
+                filterQuery = '\nStateCode\tgt\t0'
+                url = '/apps/CommandProcessor.ashx?cmd=process.instance.owner.search'
+            } else {
+                url = '/apps/CommandProcessor.ashx?cmd=process.instance.finishedtask.search'
+            }
+            var search = $(this).val()
+            $('#datagrid').datagrid({
+                columns: [columnsArray],
+                /*toolbar: [this.toolbar],
+                toolbar: this.toolbar,*/
+                fitCloumns: true,
+                idField: "LIST_RECORD_ID",
+                singleSelect: false,
+                checkOnSelect: true,
+                method: 'POST',
+                pagination: true,
+                rownumbers: true,
+                url: url,
+                striped: false,
+                // 隔行变色特性
+                pageSize: 15,
+                pageList: [10, 15, 20, 25, 30, 50, 100],
+                queryParams: {
+                    search:search,
+                    entityType: 'WFProcessInstances',
+                    filterQuery: filterQuery
+                }
+            });
+        })
+        laydate.render({
+            elem: '#time',
+            range: true
+        });
+        $('.search-btn').click(function () {
+            $(this).toggleClass('active')
+            $('.hightsearch').toggle()
+            $('.maincontent').toggle()
+        })
+        $('.hightsearch-clear').click(function () {
+            $('.hightsearch input').val('')
+            $('.hightsearch option[value=""]').attr("selected", "selected");
+        })
+        $('.hightsearch-quite').click(function () {
+            $('.hightsearch').hide()
+            $('.maincontent').show()
+            $('.search-btn').removeClass('active')
+        })
+        $('.hightsearch-shur').click(function () {
+            $('.hightsearch').hide()
+            $('.maincontent').show();
+            //debugger;
+           // alert('ok');
+            var filterQuery = "";
+            var Name = $('input[name="Name"]').val()
+            var processName = $('input[name="processName"]').val()
+            var time = $('input[name="time"]').val()
+            if ($('.nav-item').eq(0).hasClass('active')) {
+                filterQuery = '\nStateCode\tgt\t0'
+                url = '/apps/CommandProcessor.ashx?cmd=process.instance.owner.search';
+                columnsArray = columnsArray1;
+            } else {
+                url = '/apps/CommandProcessor.ashx?cmd=process.instance.finishedtask.search';
+                columnsArray = columnsArray2;
+                alert('1');
+            }
+            if (Name != '') {
+                filterQuery += '\nName\tcontains\t' + Name
+            }
+            if (processName != '') {
+                filterQuery += '\nProcessIdName\tcontains\t' + processName
+            }
+            if (time != '') {
+                filterQuery += '\ncreatedon\tge\t' + time.split(' - ')[0]
+                filterQuery += '\ncreatedon\tle\t' + time.split(' - ')[1]+' 23:59'
+            }
+            $('#datagrid').datagrid({
+                columns: [columnsArray],
+                /*toolbar: [this.toolbar],
+                toolbar: this.toolbar,*/
+                fitCloumns: true,
+                idField: "LIST_RECORD_ID",
+                singleSelect: false,
+                checkOnSelect: true,
+                method: 'POST',
+                pagination: true,
+                rownumbers: true,
+                url: url,
+                striped: false,
+                // 隔行变色特性
+                pageSize: 15,
+                pageList: [10, 15, 20, 25, 30, 50, 100],
+                queryParams: {
+                    entityType: 'WFProcessInstances',
+                    filterQuery: filterQuery
+                }
+            });
+
+            
+            $('.search-btn').removeClass('active')
+        })
+
+        $('#datagrid').height($(window).height() - 250)
+        url = '/apps/CommandProcessor.ashx?cmd=process.instance.owner.search'
+
+        var filterQuery = '\nStateCode\tgt\t0'
+       
+        $('#datagrid').datagrid({
+            columns: [columnsArray],
+            /*toolbar: [this.toolbar],
+            toolbar: this.toolbar,*/
+            fitCloumns: true,
+            idField: "LIST_RECORD_ID",
+            singleSelect: false,
+            checkOnSelect: true,
+            method: 'POST',
+            pagination: true,
+            rownumbers: true,
+            url: url,
+            striped: false,
+            // 隔行变色特性
+            pageSize: 15,
+            pageList: [10, 15, 20, 25, 30, 50, 100],
+            queryParams: {
+                entityType: 'WFProcessInstances',
+                filterQuery: filterQuery
+            }
+        });
+
+        //头部导航
+        $('.nav-item').click(function () {
+            if ($(this).html() == '我创建的') {
+                filterQuery = '\nStateCode\tgt\t0'
+                url = '/apps/CommandProcessor.ashx?cmd=process.instance.owner.search';
+            } else if ($(this).html() == '已办理的') {
+                url = '/apps/CommandProcessor.ashx?cmd=process.instance.finishedtask.search';
+            }
+            $('.nav-item').removeClass('active');
+            $(this).addClass('active');
+            $('.main-item').removeClass('active')
+            $('#datagrid').datagrid({
+                columns: [columnsArray],
+                /*toolbar: [this.toolbar],
+                toolbar: this.toolbar,*/
+                fitCloumns: true,
+                idField: "LIST_RECORD_ID",
+                singleSelect: false,
+                checkOnSelect: true,
+                method: 'POST',
+                pagination: true,
+                rownumbers: true,
+                url: url,
+                striped: false,
+                // 隔行变色特性
+                pageSize: 15,
+                pageList: [10, 15, 20, 25, 30, 50, 100],
+                queryParams: {
+                    entityType: 'WFProcessInstances',
+                    filterQuery: filterQuery
+                }
+            });
+        })
+       
+        $(window).resize(function () {
+            //window.location.reload()
+        })
+        $('.quite').click(function () {
+            window.close();
+        })
+        $('.shur').click(function () {
+            var row = $('#datagrid').datagrid('getChecked')
+            var relatedInstanceId = []
+            for (var i = 0; i < row.length; i++) {
+                relatedInstanceId.push(row[i].ProcessInstanceId)
+            }
+            relatedInstanceId = relatedInstanceId.join(',')
+            var InstanceId = getQueryString('InstanceId');
+            ajaxMethodGetData('process.instance.relate', {
+                InstanceId: InstanceId,
+                relatedInstanceIds: relatedInstanceId
+            }, function () {
+                if (opener.refreshRelatedInstances) {
+                    opener.refreshRelatedInstances()
+                } else {
+                    opener.getrelated()
+                }
+                window.close();
+            })
+        })
+
+       
+
+    </script>
+
+</body>
+</html>

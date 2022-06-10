@@ -1,0 +1,403 @@
+﻿<script language="javascript" type="text/javascript">
+    function limitText(limitField, limitNum) {
+        var inputLen = limitField.value.length;
+        if (inputLen > 70)
+            limitNum = 67;
+        else
+            limitNum = 70;
+
+        var remain = limitNum - limitField.value.length;
+        var c = countMultiples(inputLen, limitNum);
+        //jq("#countCharaters").html("条数:" + c + ",已经输入" + inputLen + "字，还剩" + remain + "字");
+        jQuery("#countCharaters").html("已经输入<span style='color:#3300FF;'>" + inputLen + "</span>字，当前计费: <span style='color:#3300FF;'><strong>" + c + "</strong></span>条数");
+    }
+    function countMultiples(total, limit) {
+        var count = Math.ceil(total / limit);
+        return count;
+    }
+    function sentTestSms2() {
+        var mobile = jQuery("#testmobile").val();
+        var msg = jQuery("#smsContent").val();
+        if (mobile == "") {
+            alert("测试号码必须输入！");
+            return false;
+        }
+        if (msg == "")
+            alert("短信内容必须输入！");
+        sentTestSms(mobile, msg, 0);
+    }
+</script>
+<form onsubmit="if (window.ffInAlert) { return false; } if (this.submitted) { return false; } this.submitted = true;" name="stageForm" method="POST" id="stageForm" action="/apps/mobile/SendSmsStage.aspx">
+    {!hiddens}
+    <div class="bWizardBlock tertiaryPalette">
+        <div class="pbWizardTitle tertiaryPalette brandTertiaryBgr">
+            <div class="ptRightTitle">
+                第 2 步，共 2 步
+       
+            </div>
+            <h2>步骤 2. 审核和确认发送
+            </h2>
+        </div>
+        <div class="pbBody">
+
+            <div class="pbWizardHeader">
+                <div style="white-space: nowrap" class="pbTopButtons">
+                    <!--<input type="submit" title="上一页" name="goPrevious" class="btn" value=" 上一页 ">&nbsp;--><input type="submit" title="发送" name="save" class="btn" value=" 发送 " onclick="if (!verifySend(stageForm)) { return false; } "><input type="submit" title="取消" name="cancel" class="btnCancel" value=" 取消 ">
+                </div>
+            </div>
+
+            <div class="pbJumpTo">
+            </div>
+
+            <div class="pbDescription ">
+                当前已选取 <strong>{!Total} 位收件人</strong>接收此短信。
+         
+            </div>
+
+            <div class="pbWizardBody">
+
+
+                <div id="ep" class="bPageBlock brandSecondaryBrd bEditBlock secondaryPalette">
+                    <div class="pbHeader pbHeaderEmpty">
+                        <table cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                                <tr>
+                                    <td class="pbTitle">
+                                        <img width="1" height="1" title="" class="minWidth" alt="" src="/s.gif"><h2 class="mainTitle"></h2>
+                                    </td>
+                                    <td id="topButtonRow" class="pbButton">&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pbBody">
+                        <div style="display: none" id="errorDiv_ep" class="pbError">
+                            错误：无效数据。<br>
+                            请查看下列所有错误消息以纠正数据。
+                        </div>
+                        <div class="pbSubsection">
+                            <table cellspacing="0" cellpadding="0" border="0" class="detailList">
+                                <tbody>
+                                    <tr class="last detailRow">
+                                        <td colspan="4"><span class="errorMsg">
+                                            <!--今天不能发送此批量电子邮件，因为再发送 10 封电子邮件就达到每日极限。如果您要在今天发送，请返回选择 10 位或更少的收件人。您可以计划在未来的某个日期发送此邮件。-->
+                                        </span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="head_1_ep" class="brandTertiaryBgr pbSubheader tertiaryPalette">
+                            <span class="pbSubExtra"><span class="requiredLegend brandTertiaryFgr"><span class="requiredExampleOuter"><span class="requiredExample">&nbsp;</span></span><span class="requiredMark">*</span><span class="requiredText"> = 必填信息</span></span></span><h3>处理选项<span class="titleSeparatingColon">:</span></h3>
+                        </div>
+                        <div class="pbSubsection">
+                            <table cellspacing="0" cellpadding="0" border="0" class="detailList">
+                                <tbody>
+                                    <tr>
+                                        <td class="labelCol">
+                                            <label for="mm_bcc_self">抄送一条给我</label></td>
+                                        <td colspan="3" class="data2Col">
+                                            <input type="checkbox" value="1" name="mm_bcc_self" id="mm_bcc_self" checked="checked"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="labelCol last requiredInput">
+                                            <label for="mm_confirmation_title"><span class="assistiveText">*</span>活动名称</label></td>
+                                        <td colspan="3" class="last data2Col">
+                                            <div class="requiredInput">
+                                                <div class="requiredBlock"></div>
+                                                <input id="Name" maxlength="120" name="Name" size="40" tabindex="1" type="text" value="{!Name}" />
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="labelCol">
+                                            <label for="mm_use_signature">短信内容</label></td>
+                                        <td colspan="3" class="data2Col">
+                                            <div class="requiredInput">
+                                                <div class="requiredBlock">
+                                                </div>
+                                                <textarea cols="82" id="smsContent" maxlength="500" name="smsContent" onkeyup="limitText(this,70);"
+                                                    onkeydown="limitText(this,70);" onchange="handleTextAreaElementChangeWithByteCheck('smsContent', 500, 0, '剩余', '超出极限');"
+                                                    onclick="handleTextAreaElementChangeWithByteCheck('smsContent', 500, 0, '剩余', '超出极限');"
+                                                    onmousedown="handleTextAreaElementChangeWithByteCheck('smsContent', 500, 0, '剩余', '超出极限');"
+                                                    rows="10" tabindex="2" type="text" wrap="soft">{!Message}</textarea>
+                                                <div style="background-color: #FDFBDB; border: 1px dashed gray; padding: 5px 5px 5px 5px; width: 295px;">
+                                                    <span id="countCharaters" style="color: gray;">还可以输入70个字</span>
+                                                </div>
+                                                注意：单条短信70个字，多条短信67字一条，最多可以输入500个字。
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="labelCol">
+                                            <label for="mm_store_activity">测试号码</label></td>
+                                        <td colspan="3" class="data2Col">
+                                            <input type="text" style="width: 445px" value="" name="testmobile" id="testmobile"><input
+                                                class="btn-small" type="button" value="测试发送" title="测试发送" onclick="sentTestSms2()" />
+                                            <br />
+                                            (手机号之间用半角逗号（,)隔开 但最多10个手机号)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="labelCol">收选接收人</td>
+                                        <td colspan="3" class="dataCol">
+                                            <input type="hidden" name="p24_lkid" id="p24_lkid" value="">
+                                            <input type="hidden" name="p24_lktp" id="p24_lktp" value="">
+                                            <textarea wrap="soft" cols="82" id="p24" maxlength="5000" name="p24" rows="10" title="发送到"
+                                                type="text">{!ReceiverNames}</textarea>&nbsp;<a href="javascript:openLookup('/_ui/common/data/MutiContactPicker.aspx?lkfm=editPage&amp;lknm=p24&amp;lktp=' + getElementByIdCS('p24_lktp').value,680,'1','&amp;lksrch=' + escapeUTF(getElementByIdCS('p24').value.substring(0, 80)))"
+                                                    id="p24_lkwgt" onclick="setLastMousePosition(event)" title="发送到 查找（新窗口）"><img src="/s.gif"
+                                                        alt="接收人 查找（新窗口）" class="lookupIcon" onblur="this.className = 'lookupIcon';"
+                                                        onfocus="this.className = 'lookupIconOn';" onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';"
+                                                        onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"
+                                                        title="接收人 查找（新窗口）"></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="head_2_ep" class="brandTertiaryBgr pbSubheader tertiaryPalette">
+                            <h3>发送时间选项<span class="titleSeparatingColon">:</span></h3>
+                        </div>
+                        <div class="pbSubsection">
+                            <table cellspacing="0" cellpadding="0" border="0" class="detailList">
+                                <tbody>
+                                    <tr class="detailRow">
+                                        <td colspan="4">
+                                            <input type="radio" value="1" name="mm_send_now" id="mm_send_now1" checked="checked"><label for="mm_send_now1">立即发送</label><script>document.getElementById("mm_send_now1").checked = true;</script></td>
+                                    </tr>
+                                    <tr class="last detailRow">
+                                        <td colspan="4">
+                                            <input type="radio" value="0" name="mm_send_now" id="mm_send_now0" disabled="disabled"><label for="mm_send_now0">交付日期计划</label>&nbsp;<span class="dateInput"><input type="text" value="{!now}" size="20" onfocus="var radioElem = document.getElementById('mm_send_now0');radioElem.checked = true;DatePicker.pickDate(false, 'mm_scheduled_date_time', true);" name="mm_scheduled_date_time" id="mm_scheduled_date_time" data-uidsfdc="17"></span><!--&nbsp;<label>时区</label>&nbsp;<select name="mm_time_zone" id="mm_time_zone"><option value="80">(GMT+14:00) Line 岛时间 (Pacific/Kiritimati)</option>
+                                                <option value="76">(GMT+13:00) 菲尼克斯群岛时间 (Pacific/Enderbury)</option>
+                                                <option value="84">(GMT+13:00) 东加时间 (Pacific/Tongatapu)</option>
+                                                <option value="75">(GMT+12:45) 查萨姆标准时间 (Pacific/Chatham)</option>
+                                                <option value="31">(GMT+12:00) 彼得罗巴甫洛夫斯克时间 (Asia/Kamchatka)</option>
+                                                <option value="74">(GMT+12:00) 新西兰标准时间 (Pacific/Auckland)</option>
+                                                <option value="77">(GMT+12:00) 斐济时间 (Pacific/Fiji)</option>
+                                                <option value="82">(GMT+11:30) 诺福克时间 (Pacific/Norfolk)</option>
+                                                <option value="78">(GMT+11:00) 所罗门群岛时间 (Pacific/Guadalcanal)</option>
+                                                <option value="54">(GMT+10:30) 豪公标准时间 (Australia/Lord_Howe)</option>
+                                                <option value="52">(GMT+10:00) 东部标准时间 (昆士兰) (Australia/Brisbane)</option>
+                                                <option value="56">(GMT+10:00) 东部标准时间 (新南威尔斯) (Australia/Sydney)</option>
+                                                <option value="51">(GMT+09:30) 中央标准时间 (南澳大利亚) (Australia/Adelaide)</option>
+                                                <option value="53">(GMT+09:30) 中央标准时间 (北领地) (Australia/Darwin)</option>
+                                                <option value="40">(GMT+09:00) 韩国标准时间 (Asia/Seoul)</option>
+                                                <option value="46">(GMT+09:00) 日本标准时间 (Asia/Tokyo)</option>
+                                                <option value="27">(GMT+08:00) 香港时间 (Asia/Hong_Kong)</option>
+                                                <option value="34">(GMT+08:00) 马来西亚时间 (Asia/Kuala_Lumpur)</option>
+                                                <option value="36">(GMT+08:00) 菲律宾时间 (Asia/Manila)</option>
+                                                <option selected="selected" value="57">(GMT+08:00) 中国标准时间 (Asia/Shanghai)</option>
+                                                <option value="41">(GMT+08:00) 新加坡时间 (Asia/Singapore)</option>
+                                                <option value="42">(GMT+08:00) 中国标准时间 (Asia/Taipei)</option>
+                                                <option value="55">(GMT+08:00) 西部标准时间 (澳大利亚) (Australia/Perth)</option>
+                                                <option value="22">(GMT+07:00) 印度支那时间 (Asia/Bangkok)</option>
+                                                <option value="39">(GMT+07:00) 印度支那时间 (Asia/Ho_Chi_Minh)</option>
+                                                <option value="28">(GMT+07:00) 西印度尼西亚时间 (Asia/Jakarta)</option>
+                                                <option value="37">(GMT+06:30) 缅甸时间 (Asia/Rangoon)</option>
+                                                <option value="25">(GMT+06:00) 孟加拉时间 (Asia/Dhaka)</option>
+                                                <option value="33">(GMT+05:45) 尼泊尔时间 (Asia/Kathmandu)</option>
+                                                <option value="24">(GMT+05:30) 印度标准时间 (Asia/Colombo)</option>
+                                                <option value="23">(GMT+05:30) 印度标准时间 (Asia/Kolkata)</option>
+                                                <option value="91">(GMT+05:00) 亚塞拜然夏令时 (Asia/Baku)</option>
+                                                <option value="32">(GMT+05:00) 巴基斯坦时间 (Asia/Karachi)</option>
+                                                <option value="43">(GMT+05:00) 乌兹别克斯坦时间 (Asia/Tashkent)</option>
+                                                <option value="47">(GMT+05:00) Yekaterinburg 时间 (Asia/Yekaterinburg)</option>
+                                                <option value="30">(GMT+04:30) 阿富汗时间 (Asia/Kabul)</option>
+                                                <option value="45">(GMT+04:30) 伊朗夏令时 (Asia/Tehran)</option>
+                                                <option value="26">(GMT+04:00) 波斯湾标准时间 (Asia/Dubai)</option>
+                                                <option value="44">(GMT+04:00) 乔治亚时间 (Asia/Tbilisi)</option>
+                                                <option value="93">(GMT+04:00) 亚美尼亚时间 (Asia/Yerevan)</option>
+                                                <option value="1">(GMT+03:00) 东欧夏令时 (Africa/Cairo)</option>
+                                                <option value="3">(GMT+03:00) 东非时间 (Africa/Nairobi)</option>
+                                                <option value="21">(GMT+03:00) 阿拉伯标准时间 (Asia/Baghdad)</option>
+                                                <option value="90">(GMT+03:00) 东欧夏令时 (Asia/Beirut)</option>
+                                                <option value="29">(GMT+03:00) 以色列夏令时 (Asia/Jerusalem)</option>
+                                                <option value="35">(GMT+03:00) 阿拉伯标准时间 (Asia/Kuwait)</option>
+                                                <option value="38">(GMT+03:00) 阿拉伯标准时间 (Asia/Riyadh)</option>
+                                                <option value="59">(GMT+03:00) 东欧夏令时 (Europe/Athens)</option>
+                                                <option value="62">(GMT+03:00) 东欧夏令时 (Europe/Bucharest)</option>
+                                                <option value="64">(GMT+03:00) 东欧夏令时 (Europe/Helsinki)</option>
+                                                <option value="65">(GMT+03:00) 东欧夏令时 (Europe/Istanbul)</option>
+                                                <option value="68">(GMT+03:00) 莫斯科标准时间 (Europe/Minsk)</option>
+                                                <option value="69">(GMT+03:00) 莫斯科标准时间 (Europe/Moscow)</option>
+                                                <option value="2">(GMT+02:00) 南非标准时间 (Africa/Johannesburg)</option>
+                                                <option value="58">(GMT+02:00) 中欧夏令时 (Europe/Amsterdam)</option>
+                                                <option value="60">(GMT+02:00) 中欧夏令时 (Europe/Berlin)</option>
+                                                <option value="61">(GMT+02:00) 中欧夏令时 (Europe/Brussels)</option>
+                                                <option value="70">(GMT+02:00) 中欧夏令时 (Europe/Paris)</option>
+                                                <option value="71">(GMT+02:00) 中欧夏令时 (Europe/Prague)</option>
+                                                <option value="72">(GMT+02:00) 中欧夏令时 (Europe/Rome)</option>
+                                                <option value="88">(GMT+01:00) 中欧时间 (Africa/Algiers)</option>
+                                                <option value="92">(GMT+01:00) 西欧夏令时 (Africa/Casablanca)</option>
+                                                <option value="63">(GMT+01:00) 爱尔兰夏令时 (Europe/Dublin)</option>
+                                                <option value="66">(GMT+01:00) 西欧夏令时 (Europe/Lisbon)</option>
+                                                <option value="67">(GMT+01:00) 英国夏令时 (Europe/London)</option>
+                                                <option value="98">(GMT+00:00) 东格林岛夏令时 (America/Scoresbysund)</option>
+                                                <option value="94">(GMT+00:00) 亚速尔群岛夏令时 (Atlantic/Azores)</option>
+                                                <option value="73">(GMT+00:00) 格林威治时间 (GMT)</option>
+                                                <option value="49">(GMT-01:00) 佛德角时间 (Atlantic/Cape_Verde)</option>
+                                                <option value="50">(GMT-02:00) 南乔治亚标准时间 (Atlantic/South_Georgia)</option>
+                                                <option value="19">(GMT-02:30) 纽芬兰夏令时 (America/St_Johns)</option>
+                                                <option value="6">(GMT-03:00) 阿根廷时间 (America/Argentina/Buenos_Aires)</option>
+                                                <option value="10">(GMT-03:00) 大西洋夏令时 (America/Halifax)</option>
+                                                <option value="87">(GMT-03:00) 智利时间 (America/Santiago)</option>
+                                                <option value="18">(GMT-03:00) 巴西利亚时间 (America/Sao_Paulo)</option>
+                                                <option value="48">(GMT-03:00) 大西洋夏令时 (Atlantic/Bermuda)</option>
+                                                <option value="85">(GMT-04:00) 东部夏令时 (America/Indiana/Indianapolis)</option>
+                                                <option value="14">(GMT-04:00) 东部夏令时 (America/New_York)</option>
+                                                <option value="17">(GMT-04:00) 大西洋标准时间 (America/Puerto_Rico)</option>
+                                                <option value="7">(GMT-04:30) 委内瑞拉时间 (America/Caracas)</option>
+                                                <option value="5">(GMT-05:00) 哥伦比亚时间 (America/Bogota)</option>
+                                                <option value="8">(GMT-05:00) 中央夏令时 (America/Chicago)</option>
+                                                <option value="11">(GMT-05:00) 秘鲁时间 (America/Lima)</option>
+                                                <option value="13">(GMT-05:00) 中央夏令时 (America/Mexico_City)</option>
+                                                <option value="15">(GMT-05:00) 东部标准时间 (America/Panama)</option>
+                                                <option value="9">(GMT-06:00) Mountain 夏令时 (America/Denver)</option>
+                                                <option value="86">(GMT-06:00) 中央标准时间 (America/El_Salvador)</option>
+                                                <option value="100">(GMT-06:00) Mountain 夏令时 (America/Mazatlan)</option>
+                                                <option value="12">(GMT-07:00) 太平洋夏令时 (America/Los_Angeles)</option>
+                                                <option value="16">(GMT-07:00) Mountain 标准时间 (America/Phoenix)</option>
+                                                <option value="20">(GMT-07:00) 太平洋夏令时 (America/Tijuana)</option>
+                                                <option value="4">(GMT-08:00) 阿拉斯加夏令时 (America/Anchorage)</option>
+                                                <option value="95">(GMT-08:00) 皮特康岛标准时间 (Pacific/Pitcairn)</option>
+                                                <option value="97">(GMT-09:00) 夏威夷-阿留申群岛夏令时 (America/Adak)</option>
+                                                <option value="96">(GMT-09:00) 冈比亚时间 (Pacific/Gambier)</option>
+                                                <option value="99">(GMT-09:30) 马克萨斯时间 (Pacific/Marquesas)</option>
+                                                <option value="79">(GMT-10:00) 夏威夷标准时间 (Pacific/Honolulu)</option>
+                                                <option value="81">(GMT-11:00) 纽威岛时间 (Pacific/Niue)</option>
+                                                <option value="83">(GMT-11:00) 萨摩亚群岛标准时间 (Pacific/Pago_Pago)</option>
+                                            </select>
+                                            -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="pbFooter secondaryPalette">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+                <script>if (window.sfdcPage && window.sfdcPage.initButtons) { window.sfdcPage.initButtons([]); }</script>
+
+
+
+            </div>
+            <div class="pbWizardFooter">
+                <div class="pbBottomButtons">
+                    <!--<input type="submit" title="上一页" name="goPrevious" class="btn" value=" 上一页 ">&nbsp;--><input type="submit" title="发送" name="save" class="btn" value=" 发送 " onclick="if (!verifySend(stageForm)) { return false; } "><input type="submit" title="取消" name="cancel" class="btnCancel" value=" 取消 " />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    function verifySend(form) {
+        var actName = document.getElementById("Name").value;
+        if (actName == "") {
+            alert("短信活动名称必须输入！");
+            return false;
+        }
+        //stageForm
+        var msg = document.getElementById("smsContent").value;
+        //var msg = jQuery("#smsContent").val();
+        if (msg == "") {
+            alert("短信内容必须输入！");
+            return false;
+        }
+        return true;
+    }
+
+</script>
+<div id="datePicker" class="datePicker" style="display: none; left: 148px; top: 303px;">
+    <div class="dateBar">
+        <img title="上月" onmouseover="this.className = 'calLeftOn';" onmouseout="this.className = 'calLeft';" onfocus="this.className = 'calLeftOn';" onclick="DatePicker.datePicker.prevMonth();" onblur="this.className = 'calLeft';" class="calLeft" alt="上月" src="/s.gif"><select title="月" name="calMonthPicker" id="calMonthPicker"><option value="0">一月</option>
+            <option value="1">二月</option>
+            <option value="2">三月</option>
+            <option value="3">四月</option>
+            <option value="4">五月</option>
+            <option value="5">六月</option>
+            <option value="6">七月</option>
+            <option value="7">八月</option>
+            <option value="8">九月</option>
+            <option value="9">十月</option>
+            <option value="10">十一月</option>
+            <option value="11">十二月</option>
+        </select><img title="下月" onmouseover="this.className = 'calRightOn';" onmouseout="this.className = 'calRight';" onfocus="this.className = 'calRightOn';" onclick="DatePicker.datePicker.nextMonth();" onblur="this.className = 'calRight';" class="calRight" alt="下月" src="/s.gif"><select title="年" name="calYearPicker" id="calYearPicker"><option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+        </select>
+    </div>
+    <div class="calBody">
+        <table cellspacing="0" cellpadding="0" border="0" id="datePickerCalendar" class="calDays">
+            <tbody>
+                <tr>
+                    <th scope="col" class="dayOfWeek">星期日</th>
+                    <th scope="col" class="dayOfWeek">星期一</th>
+                    <th scope="col" class="dayOfWeek">星期二</th>
+                    <th scope="col" class="dayOfWeek">星期三</th>
+                    <th scope="col" class="dayOfWeek">星期四</th>
+                    <th scope="col" class="dayOfWeek">星期五</th>
+                    <th scope="col" class="dayOfWeek">星期六</th>
+                </tr>
+                <tr id="calRow1" class="calRow">
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend prevMonth">26</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday prevMonth">27</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday prevMonth">28</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday prevMonth">29</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday prevMonth">30</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday prevMonth">31</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">1</td>
+                </tr>
+                <tr id="calRow2" class="calRow">
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">2</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">3</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">4</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">5</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">6</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">7</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">8</td>
+                </tr>
+                <tr id="calRow3" class="calRow">
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">9</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">10</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">11</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">12</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">13</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">14</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">15</td>
+                </tr>
+                <tr id="calRow4" class="calRow">
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">16</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">17</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">18</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday todayDate">19</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday selectedDate">20</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">21</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">22</td>
+                </tr>
+                <tr id="calRow5" class="calRow">
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">23</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">24</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">25</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">26</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">27</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">28</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">29</td>
+                </tr>
+                <tr id="calRow6" class="calRow">
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend">30</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday">31</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday nextMonth">1</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday nextMonth">2</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday nextMonth">3</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekday nextMonth">4</td>
+                    <td onmouseover="hiOn(this);" onmouseout="hiOff(this);" onfocus="hiOn(this);" onclick="DatePicker.datePicker.selectDate(this);" onblur="hiOff(this);" class="weekend nextMonth">5</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="buttonBar"><a onclick="DatePicker.datePicker.selectDate('today');return false;" class="calToday" href="javascript:%20void%280%29%3B">今天</a></div>
+    </div>
+</div>

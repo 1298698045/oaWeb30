@@ -1,0 +1,191 @@
+﻿<div id="setupNavTree" class="mTreeSelection">
+    <div class="quickfindContainer">
+        <input type="text" title="快速查找" size="20" name="setupSearch" maxlength="80" id="setupSearch"
+            class="quickfindInput ghostText"></div>
+    <div id="setupSearchError">
+        找不到匹配的项目</div>
+    <div style="display: none;" id="treeInformation" font="_font" child="_child" icon="_icon"
+        leaf="_leaf" expand="展开" collapse="折叠" plussrc="/img/alohaSkin/setup/setup_plus_lev1.gif"
+        minussrc="/img/alohaSkin/setup/setup_minus_lev1.gif" highlightclass="setupHighlightLeaf"
+        leafclass="setupLeaf" lasthighlight="none">
+    </div>
+    <!--<div style="height:5px;"></div>-->
+    <div id="AutoNumber5">
+        <img height="1" width="205" title="" alt="" src="/s.gif">
+          {!items}
+        <!--
+        <div class="setupNavtree">
+            <h2 class="highlight">
+                <a id="PersonalSetup_font" class="setupSection" href="/ui/setup/Setup?setupid=PersonalSetup">
+                    我的设置1</a></h2>
+            <hr>
+        </div>
+        <div class="setupNavtree" style=" border-top:none;">
+            <h2 class="highlight1" style="padding:0px;margin-left:0px">
+                <a id="A1" class="setupSection" href="/ui/setup/Setup?setupid=PersonalSetup">
+                    我的设置2</a></h2>
+          
+        </div>-->
+        <!--
+           <div class="parent" id="DisplayAndLayout1">
+            <a class="header setupFolder">
+                <span class="folderIcon DisplayAndLayout_icon"></span><span class="folderText" id="DisplayAndLayout1_font">考勤管理</span>
+                <span class="accordionIcon expand_icon"></span></a>
+                <div id="DisplayAndLayout1_child" style="display: none;" class="childContainer"></div>
+        </div>-->
+        <!--
+        <div class="parent" id="PersonalInfo">
+            <a href="javascript:HTMLTreeNode.prototype.toggleHTMLTree('PersonalInfo');" class="header setupFolder">
+                <span class="folderIcon PersonalInfo_icon"></span><span id="PersonalInfo_font" class="folderText">
+                    个人</span><span class="accordionIcon expand_icon"></span></a><div id="PersonalInfo_child"
+                        style="display: none;" class="childContainer">
+                        <div class="setupLeaf">
+                            <a id="PersonalInformation_font" href="/setup/personalInformationSetup.apexp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo&amp;setupid=PersonalInformation">
+                                <span id="PersonalInformation_font" class="leafText">个人信息</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="ChangePassword_font" href="/_ui/system/security/ChangePassword?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo&amp;setupid=ChangePassword">
+                                <span id="ChangePassword_font" class="leafText">更改我的密码</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="LanguageAndTimeZone_font" href="/setup/languageAndTimeZoneSetup.apexp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo&amp;setupid=LanguageAndTimeZone">
+                                <span id="LanguageAndTimeZone_font" class="leafText">语言与时区</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="GrantLoginAccess_font" href="/partnerbt/grantLoginAccess.apexp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo&amp;setupid=GrantLoginAccess">
+                                <span id="GrantLoginAccess_font" class="leafText">授予客户登录访问权限</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="Groups_font" href="/setup/own/personalgroups.jsp?setupid=Groups&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo">
+                                <span id="Groups_font" class="leafText">我的小组</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="ResetApiToken_font" href="/_ui/system/security/ResetApiTokenEdit?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo&amp;setupid=ResetApiToken">
+                                <span id="ResetApiToken_font" class="leafText">重新设置我的安全标记</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="Connections_font" href="/ui/setup/personal/ConnectionsSetupPage?setupid=Connections&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo">
+                                <span id="Connections_font" class="leafText">连接</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="LoginHistory_font" href="/ui/setup/personal/LoginHistorySetupPage?setupid=LoginHistory&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo">
+                                <span id="LoginHistory_font" class="leafText">登录历史</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="ApproverSettings_font" href="/ui/setup/personal/ApproverSettingsSetupPage?setupid=ApproverSettings&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo">
+                                <span id="ApproverSettings_font" class="leafText">批准人设置</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="AdvancedUserDetails_font" href="/0059000000390Wh?noredirect=1&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo&amp;setupid=AdvancedUserDetails">
+                                <span id="AdvancedUserDetails_font" class="leafText">高级用户详细信息</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="ExternalObjectUserSettings_font" href="/0XU?setupid=ExternalObjectUserSettings&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalInfo">
+                                <span id="ExternalObjectUserSettings_font" class="leafText">我的外部验证设置</span></a></div>
+                    </div>
+        </div>
+        <div class="parent" id="DisplayAndLayout">
+            <a href="javascript:HTMLTreeNode.prototype.toggleHTMLTree('DisplayAndLayout');" class="header setupFolder">
+                <span class="folderIcon DisplayAndLayout_icon"></span><span id="DisplayAndLayout_font"
+                    class="folderText">显示与布局</span><span class="accordionIcon expand_icon"></span></a><div
+                        id="DisplayAndLayout_child" style="display: none;" class="childContainer">
+                        <div class="setupLeaf">
+                            <a id="CustomizeTabs_font" href="/p/setup/layout/ConfigureMyTabs?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDisplayAndLayout&amp;setupid=CustomizeTabs">
+                                <span id="CustomizeTabs_font" class="leafText">自定义我的选项卡</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="CustomizeDisplay_font" href="/ui/setup/user/CustomizeMyDisplayPage?setupid=CustomizeDisplay&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDisplayAndLayout">
+                                <span id="CustomizeDisplay_font" class="leafText">自定义我的页面</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="SocialProfileUserSettings_font" href="/ui/setup/socialcrm/SocialProfilesUserSettingsPage?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDisplayAndLayout&amp;setupid=SocialProfileUserSettings">
+                                <span id="SocialProfileUserSettings_font" class="leafText">我的社交客户和联系人</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="Accessibility_font" href="/ui/setup/personal/AccessibilitySetupPage?setupid=Accessibility&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDisplayAndLayout">
+                                <span id="Accessibility_font" class="leafText">辅助功能</span></a></div>
+                    </div>
+        </div>
+        <div class="parent" id="EmailSetup">
+            <a href="javascript:HTMLTreeNode.prototype.toggleHTMLTree('EmailSetup');" class="header setupFolder">
+                <span class="folderIcon EmailSetup_icon"></span><span id="EmailSetup_font" class="folderText">
+                    电子邮件</span><span class="accordionIcon expand_icon"></span></a><div id="EmailSetup_child"
+                        style="display: none;" class="childContainer">
+                        <div class="setupLeaf">
+                            <a id="EmailSettings_font" href="/p/email/UserEmailPrefEdit?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DEmailSetup&amp;setupid=EmailSettings">
+                                <span id="EmailSettings_font" class="leafText">我的电子邮件设置</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="EmailTemplates_font" href="/00X?setupid=EmailTemplates&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DEmailSetup">
+                                <span id="EmailTemplates_font" class="leafText">电子邮件模板</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="MassMails_font" href="/07A?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DEmailSetup&amp;setupid=MassMails">
+                                <span id="MassMails_font" class="leafText">批量发送电子邮件</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="ContactUpdateSettings_font" href="/cntc/cntcupdate/settings.jsp?setupid=ContactUpdateSettings&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DEmailSetup">
+                                <span id="ContactUpdateSettings_font" class="leafText">我的保持联系设置</span></a></div>
+                    </div>
+        </div>
+        <div class="parent" id="PersonalCollaboration">
+            <a href="javascript:HTMLTreeNode.prototype.toggleHTMLTree('PersonalCollaboration');"
+                class="header setupFolder"><span class="folderIcon PersonalCollaboration_icon"></span>
+                <span id="PersonalCollaboration_font" class="folderText">Chatter</span><span class="accordionIcon expand_icon"></span></a><div
+                    id="PersonalCollaboration_child" style="display: none;" class="childContainer">
+                    <div class="setupLeaf">
+                        <a id="CollaborationMyFeedsSettings_font" href="/_ui/core/chatter/ui/MyFeedsSettingsPage?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalCollaboration&amp;setupid=CollaborationMyFeedsSettings">
+                            <span id="CollaborationMyFeedsSettings_font" class="leafText">我的摘要</span></a></div>
+                    <div class="setupLeaf">
+                        <a id="CollaborationEmailSettings_font" href="/_ui/core/feeds/notification/FeedsNotificationPrefEdit?setupid=CollaborationEmailSettings&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalCollaboration">
+                            <span id="CollaborationEmailSettings_font" class="leafText">电子邮件通知</span></a></div>
+                </div>
+        </div>
+        <div class="parent" id="CalendarAndReminders">
+            <a href="javascript:HTMLTreeNode.prototype.toggleHTMLTree('CalendarAndReminders');"
+                class="header setupFolder"><span class="folderIcon CalendarAndReminders_icon"></span>
+                <span id="CalendarAndReminders_font" class="folderText">日历和提醒</span><span class="accordionIcon expand_icon"></span></a><div
+                    id="CalendarAndReminders_child" style="display: none;" class="childContainer">
+                    <div class="setupLeaf">
+                        <a id="CalendarSharing_font" href="/p/share/CalendarSharingDetail?pp=1&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DCalendarAndReminders&amp;setupid=CalendarSharing">
+                            <span id="CalendarSharing_font" class="leafText">日历共享</span></a></div>
+                    <div class="setupLeaf">
+                        <a id="Reminders_font" href="/ui/core/activity/ReminderSettingsPage?setupid=Reminders&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DCalendarAndReminders">
+                            <span id="Reminders_font" class="leafText">提醒 &amp; 警报</span></a></div>
+                </div>
+        </div>
+        <div class="parent" id="DesktopIntegration">
+            <a href="javascript:HTMLTreeNode.prototype.toggleHTMLTree('DesktopIntegration');"
+                class="header setupFolder"><span class="folderIcon DesktopIntegration_icon"></span>
+                <span id="DesktopIntegration_font" class="folderText">桌面加载项</span><span class="accordionIcon expand_icon"></span></a><div
+                    id="DesktopIntegration_child" style="display: none;" class="childContainer">
+                    <div class="setupLeaf">
+                        <a id="CheckForClientUpdate_font" href="/ui/setup/user/ClientUpdatePage?setupid=CheckForClientUpdate&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDesktopIntegration">
+                            <span id="CheckForClientUpdate_font" class="leafText">检查更新</span></a></div>
+                    <div class="setupLeaf">
+                        <a id="OutlookEdition_font" href="/setup/crmforoutlook/crmforoutlooksetup.apexp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDesktopIntegration&amp;setupid=OutlookEdition">
+                            <span id="OutlookEdition_font" class="leafText">Salesforce for Outlook</span></a></div>
+                    <div class="setupLeaf">
+                        <a id="OfflineEdition_font" href="/setup/offline/offline2setup.jsp?setupid=OfflineEdition&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDesktopIntegration">
+                            <span id="OfflineEdition_font" class="leafText">Force.com Connect Offline</span></a></div>
+                    <div class="setupLeaf">
+                        <a id="ChatterDesktop_font" href="/setup/chatterdesktop/chatterdesktopsetup.apexp?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDesktopIntegration&amp;setupid=ChatterDesktop">
+                            <span id="ChatterDesktop_font" class="leafText">Chatter Desktop</span></a></div>
+                    <div class="setupLeaf">
+                        <a id="FileSync_font" href="/ui/setup/filesync/FileSyncPage?setupid=FileSync&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DDesktopIntegration">
+                            <span id="FileSync_font" class="leafText">Salesforce Files</span></a></div>
+                </div>
+        </div>
+        <div class="parent" id="Import">
+            <a href="javascript:HTMLTreeNode.prototype.toggleHTMLTree('Import');" class="header setupFolder">
+                <span class="folderIcon Import_icon"></span><span id="Import_font" class="folderText">
+                    导入</span><span class="accordionIcon expand_icon"></span></a><div id="Import_child"
+                        style="display: none;" class="childContainer">
+                        <div class="setupLeaf">
+                            <a id="ImportContacts_font" href="/setup/imp/myimport_welcome.jsp?setupid=ImportContacts&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DImport">
+                                <span id="ImportContacts_font" class="leafText">导入我的客户和联系人</span></a></div>
+                        <div class="setupLeaf">
+                            <a id="DataImporter_font" href="/ui/setup/dataimporter/DataImporterLandingPage?retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DImport&amp;setupid=DataImporter">
+                                <span id="DataImporter_font" class="leafText">数据导入向导</span></a></div>
+                    </div>
+        </div>
+        <div class="parent" id="PersonalWorkDotComSetting">
+            <a href="javascript:HTMLTreeNode.prototype.toggleHTMLTree('PersonalWorkDotComSetting');"
+                class="header setupFolder"><span class="folderIcon PersonalWorkDotComSetting_icon">
+                </span><span id="PersonalWorkDotComSetting_font" class="folderText">Work.com</span><span
+                    class="accordionIcon expand_icon"></span></a><div id="PersonalWorkDotComSetting_child"
+                        style="display: none;" class="childContainer">
+                        <div class="setupLeaf">
+                            <a id="WorkDotComEmailUserSettings_font" href="/_ui/sfdc/work/notification/WorkNotificationPrefEdit?setupid=WorkDotComEmailUserSettings&amp;retURL=%2Fui%2Fsetup%2FSetup%3Fsetupid%3DPersonalWorkDotComSetting">
+                                <span id="WorkDotComEmailUserSettings_font" class="leafText">电子邮件设置</span></a></div>
+                    </div>
+        </div>
+        -->
+    </div>
+    <script>        new SetupTreeNode("AutoNumber5", "setupSearch");
+</script>
+</div>

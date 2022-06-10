@@ -1,0 +1,40 @@
+﻿<html>
+<body>
+    <table>
+        <tr>
+            <td class="dataCol">
+                <div class="requiredInput">
+                    <div class="requiredBlock">
+                    </div>
+                    <!--
+                    lkid：代码弹出选择
+                    lkold：原始值
+                    ktp:代表是 查询或者对象
+                    -->
+                    <input type="hidden" value="000000000000000" id="evt1_lkid" name="evt1_lkid">
+                    <input type="hidden" value="" id="evt1_lkold" name="evt1_lkold">
+                    <input type="hidden" value="StandardUserLookup" id="evt1_lktp" name="evt1_lktp"> 
+                    <input type="hidden" value="0" id="evt1_lspf" name="evt1_lspf">
+                    <input type="hidden" value="0" id="evt1_lspfsub" name="evt1_lspfsub">
+                    <input type="hidden" value="0" id="evt1_mod" name="evt1_mod">
+                    <input type="hidden" value="document.editPage.focusThisFieldOnLoad.value='evt1';setTimeout('document.editPage.submit()', 50);"
+                        name="evt1_onpk" id="evt1_onpk">
+                    <span class="lookupInput">
+                        <input type="text" value="" tabindex="9" size="20" onchange="getElementByIdCS('evt1_lkid').value='';getElementByIdCS('evt1_mod').value='1';document.editPage.focusThisFieldOnLoad.value='evt1';setTimeout('document.editPage.submit()', 50);"
+                            name="evt1" maxlength="255" id="evt1" class="error" />
+                        <a title="被分配人 查找（新窗口）" tabindex="9" onclick="setLastMousePosition(event)" id="evt1_lkwgt"
+                            href="javascript:openLookup('/_ui/common/data/LookupPage?lkfm=editPage&lknm=evt1&lktp='+getElementByIdCS('evt1_lktp').value,670,'1','&lksrch='+escapeUTF(getElementByIdCS('evt1').value.substring(0,80)))">
+                            <img title="被分配人 查找（新窗口）" onmouseover="this.className = 'lookupIconOn';this.className = 'lookupIconOn';"
+                                onmouseout="this.className = 'lookupIcon';this.className = 'lookupIcon';" onfocus="this.className = 'lookupIconOn';"
+                                onblur="this.className = 'lookupIcon';" class="lookupIcon" alt="被分配人 查找（新窗口）"
+                                src="/s.gif">
+                        </a>
+                     </span>
+                    <div class="errorMsg">
+                        <strong>错误:</strong> 必须输入一个值</div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

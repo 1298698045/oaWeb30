@@ -1,0 +1,5 @@
+/*
+ * This code is for Internal Salesforce use only, and subject to change without notice.
+ * Customers shouldn't reference this file in any web pages.
+ */
+.nameHoverOuter,.nameHoverOuterRight{visibility:hidden;position:relative;float:left;margin:0 -330px 0 0;padding:1px 5px;opacity:.8}.nameHoverOuterRight{float:right;margin:0 0 0 0}.nameHoverInner,.nameHoverInnerRight{overflow:visible;white-space:nowrap;font-weight:bold;color:#008040;font-size:.92em}.even td .nameHoverOuter,.even td .nameHoverOuterRight{background-color:#f9f9f9}.odd td .nameHoverOuter,.odd td .nameHoverOuterRight{background-color:#fff}.nameHoverOptions{padding:2px}.nameHoverOptions #showNameToggle{font-size:.92em}.nameHoverOptions .infoIcon{margin-left:2px}div.mouseOverInfoOuter{position:absolute}body .print{min-width:700px}div#editNewEventDialogContent div#ep.bPageBlock.bEditBlock div.pbBottomButtons{margin:15px 0 0 0}.bCalendar td{vertical-align:top}

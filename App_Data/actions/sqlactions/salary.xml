@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <query>
+    <name>hr.salaryfield.getbyvalueid</name>
+    <type>obj</type>
+    <comments>根据主键获取账套的字段</comments>
+    <parameters>
+      <FieldValuedId>账套字段表的ID</FieldValuedId>
+    </parameters>
+    <sql>
+      select * from HRSalaryAccountFieldBase  where ValueId ='#{FieldValuedId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salaryfieldbymonthpayid.getList</name>
+    <type>array</type>
+    <comments>根据工资发放表的ID获取其对应类别的所有字段</comments>
+    <parameters>
+      <ValueId>工资发放表的ID</ValueId>
+      <FieldCategory>类别</FieldCategory>
+    </parameters>
+    <sql>
+      select * from 	HRSalaryAccountFieldBase where SalaryAccountId=(select SalaryAccountId from HRSalaryPayBase where valueId='#{ValueId}')
+      and  FieldCategory='#{FieldCategory}'
+      order by SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.rewarditembydeptid.getList</name>
+    <type>array</type>
+    <comments>根据部门id获取薪资项目</comments>
+    <parameters>
+      <DeptId>部门ID</DeptId>
+      <YearNumber>年</YearNumber>
+      <MonthNumber>月</MonthNumber>
+    </parameters>
+    <sql>
+      select a.*,b.Name as DeptIdName from [HRPerformancePayDeptItemBase]  as a
+      left join BusinessUnitBase as b on b.BusinessUnitId=a.DeptId
+      where a.DeptId='#{DeptId}' and a.YearNumber='#{YearNumber}' and a.MonthNumber='#{MonthNumber}' order by a.ItemNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salaryfieldbyaccid.getlist</name>
+    <type>array</type>
+    <comments>根据工资类别的ID获取其对应类别的所有字段</comments>
+    <parameters>
+      <salaryAccountId>工资类别ID</salaryAccountId>
+      <FieldCategory>类别</FieldCategory>
+    </parameters>
+    <sql>
+      select * from 	HRSalaryAccountFieldBase where SalaryAccountId='#{salaryAccountId}'   and  FieldCategory='#{FieldCategory}'     order by SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.SalaryPayBasebyId.get</name>
+    <type>obj</type>
+    <comments>根据工资发放表的ID获取其对应类别的所有字段</comments>
+    <parameters>
+      <ValueId>工资发放表的ID</ValueId>
+    </parameters>
+    <sql>
+      select * from HRSalaryPayBase where valueId='#{ValueId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salarypaybasebyaccid.get</name>
+    <type>obj</type>
+    <comments>根据工资类别ID获取还没提交的月工资的所有字段</comments>
+    <parameters>
+      <salaryAccountId>工资类别ID</salaryAccountId>
+    </parameters>
+    <sql>
+      SELECT * from HRSalaryPayBase where StatusCode=0 and SalaryAccountId='#{salaryAccountId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salaryfieldbyaccountid.getlist</name>
+    <type>array</type>
+    <comments>根据账套ID获取所有字段</comments>
+    <parameters>
+      <SalaryAccountId>套账ID</SalaryAccountId>
+    </parameters>
+    <sql>
+      select * from HRSalaryAccountFieldBase  where SalaryAccountId ='#{SalaryAccountId}' order by SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.employee.getEMmpAndSalary</name>
+    <type>obj</type>
+    <comments>根据用户ID获取员工信息及工资信息</comments>
+    <parameters>
+      <EmployeeId>员工ID</EmployeeId>
+    </parameters>
+    <sql>
+      SELECT * From HREmployee as a
+      left join HRSalaryEmployeeBase as b on a.EmployeeId=b.EmployeeId
+      Where a.EmployeeId='#{EmployeeId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salaryfield.getlist</name>
+    <type>array</type>
+    <comments>获取工资标准字段</comments>
+    <parameters>
+    </parameters>
+    <sql>
+      SELECT Name,DisplayName,ValueId FROM   HRSalaryFieldBase WHERE StatusCode='1' ORDER BY SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salarychangedetail.getlist</name>
+    <type>array</type>
+    <comments>根据工资变更申请单获取所对应的变更明细</comments>
+    <parameters>
+      <BillId>变更申请单ID</BillId>
+    </parameters>
+    <sql>
+      SELECT * FROM   HRSalaryEmpChangeDetailBase WHERE BillId='#{BillId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.alaryaccountfield.ifhad</name>
+    <type>obj</type>
+    <comments>根据套账id和字段id判断该字段是否在该套账中</comments>
+    <parameters>
+      <SalaryAccountId>套账ID</SalaryAccountId>
+      <FieldId>字段ID</FieldId>
+    </parameters>
+    <sql>
+      select * from HRSalaryAccountFieldBase where SalaryAccountId='#{SalaryAccountId}' and FieldId='#{FieldId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salaryleveldetail.getlist</name>
+    <type>array</type>
+    <comments>根据标准岗位表的岗位ID获取明细</comments>
+    <parameters>
+      <SalaryLevelPostId>标准岗位表ID</SalaryLevelPostId>
+    </parameters>
+    <sql>
+      select B.*,A.Name AS LevelName,A.SalaryPostCode as SalaryPostCodeA from HRSalaryLevelPostBase   AS A
+      LEFT JOIN HRSalaryLevelDetailBase AS B ON B.SalaryLevelPostId=A.ValueId
+      where A.ValueId='#{SalaryLevelPostId}' order by SalaryLevel,FieldId
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salaryleveldetail.getsalarypostcode</name>
+    <type>array</type>
+    <comments>获取标准岗位表的得岗位类型</comments>
+    <parameters>
+    </parameters>
+    <sql>
+      select SalaryPostCode from HRSalaryLevelPostBase
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.performancedeptbydeptid.getlist</name>
+    <type>array</type>
+    <comments>根据部门ID获取设置该部门的人员所管辖的部门</comments>
+    <parameters>
+      <deptId>部门ID</deptId>
+    </parameters>
+    <sql>
+      select a.*,b.Name as deptIdName from DataReportorSettingBase  as a join BusinessUnitBase as b on a.DeptId=b.BusinessUnitId
+      where a.PerformanceReportorBy IN (ELECT PerformanceReportorBy FROM DataReportorSettingBase WHERE DeptId='#{deptId}')
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.performancedeptbydemployeeid.getlist</name>
+    <type>array</type>
+    <comments>根据用户ID获取可以上报的部门</comments>
+    <parameters>
+      <EmployeeId>用户ID</EmployeeId>
+    </parameters>
+    <sql>
+      select a.*,b.Name as deptIdName from DataReportorSettingBase a Join BusinessUnitBase as b on a.DeptId=b.BusinessUnitId
+      WHERE a.PerformanceReportorBy='#{EmployeeId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+
+  <query>
+    <name>hr.salaryleveldetail.getlistbypostcode</name>
+    <type>array</type>
+    <comments>根据岗位获取薪级</comments>
+    <parameters>
+      <SalaryPostCode>岗位编码</SalaryPostCode>
+    </parameters>
+    <sql>
+      select distinct SalaryLevel from HRSalaryLevelDetailBase where SalaryPostCode='#{SalaryPostCode}' order by SalaryLevel
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salaryleveldetail.getlistbypostcodelevel</name>
+    <type>array</type>
+    <comments>根据岗位，薪级获取字段</comments>
+    <parameters>
+      <SalaryPostCode>岗位编码</SalaryPostCode>
+      <SalaryLevel>岗位编码</SalaryLevel>
+    </parameters>
+    <sql>
+      select * from HRSalaryLevelDetailBase where SalaryPostCode='#{SalaryPostCode}' and SalaryLevel='#{SalaryLevel}' order by SalaryLevel,FieldId
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salarychange.get</name>
+    <type>obj</type>
+    <comments>根据ValueId获取工资变更主表信息</comments>
+    <parameters>
+      <BillId>变更申请单ID</BillId>
+    </parameters>
+    <sql>
+      SELECT * FROM   HRSalaryEmpChangeApplyBase  WHERE ValueId='#{BillId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.levelup.getlist</name>
+    <type>array</type>
+    <comments>岗位晋升提醒</comments>
+    <parameters>
+      <SalaryPostCode>岗位类别</SalaryPostCode>
+      <SalaryLevel>级别</SalaryLevel>
+      <YearLimit>年限</YearLimit>
+    </parameters>
+    <sql>
+      select * from  LevelUp
+      where datediff(DAY,SalaryStart,getdate())>='#{YearLimit}' and isnull(SalaryPostCode,'')='#{SalaryPostCode}' and isnull(SalaryLevel,'')='#{SalaryLevel}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.emphastwentyfiveyear.getlist</name>
+    <type>array</type>
+    <comments>获取满足25年人员名单</comments>
+    <parameters>
+    </parameters>
+    <sql>
+      select * from LevelUp where datediff(DAY,JoinDate,getdate())>='9125'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.empquitfiveyear.getlist</name>
+    <type>array</type>
+    <comments>获取近5年退休名单</comments>
+    <parameters>
+    </parameters>
+    <sql>
+      select * from LevelUp where QuitOn>DATEADD(YY,-5,GETDATE()) and EmpPool='4'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salarypayfield.getlist</name>
+    <type>array</type>
+    <comments>根据工资发放表获取表头</comments>
+    <parameters>
+      <salaryAccountId>工资类别ID</salaryAccountId>
+    </parameters>
+    <sql>
+      select * from HRSalaryAccountFieldBase where SalaryAccountId='#{salaryAccountId}' order by SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salarypaymonth.getlist</name>
+    <type>array</type>
+    <comments>根据工资发放表获取月</comments>
+    <parameters>
+      <salaryAccountId>工资类别ID</salaryAccountId>
+      <yearNumber>年份</yearNumber>
+    </parameters>
+    <sql>
+      select distinct MonthNumber as MonthNumber from HRSalaryPayBase where StatusCode='1' and SalaryAccountId='#{salaryAccountId}' AND  YearNumber='#{yearNumber}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>hr.salarypayyear.getlist</name>
+    <type>array</type>
+    <comments>根据工资发放表获取年</comments>
+    <parameters>
+      <salaryAccountId>工资类别ID</salaryAccountId>
+    </parameters>
+    <sql>
+      select distinct YearNumber as YearNumber from HRSalaryPayBase where StatusCode='1' and SalaryAccountId='#{salaryAccountId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <!--<query>
+    <name>hr.salarymonthpay.getlist</name>
+    <type>array</type>
+    <comments>获取月工资</comments>
+    <parameters>
+      <StartNumber>开始行</StartNumber>
+      <EndNumber>结束行</EndNumber>
+    </parameters>
+    <sql>
+      select * from ( select  ROW_NUMBER() over(order by valueId) as num,*  from HRSalaryMonthBase) as a
+      where num between '#{StartNumber}' and '#{EndNumber}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>-->
+  <!--<query>
+    <name>hr.salarymonthpaytotal.getlist</name>
+    <type>array</type>
+    <comments>获取月工资</comments>
+    <parameters>
+    </parameters>
+    <sql>
+     select  count(0) as count  from HRSalaryMonthBase
+    </sql>
+    <msg>查询成功！</msg>
+  </query>-->
+</root>

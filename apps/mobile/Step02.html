@@ -1,0 +1,40 @@
+﻿<form action="/ui/massmail/MassMailStageManager" id="stageForm" method="POST" name="stageForm" onsubmit="if (window.ffInAlert) { return false; } if (this.submitted) { return false; } this.submitted = true;">
+    <input name="_CONFIRMATIONTOKEN" id="_CONFIRMATIONTOKEN" value="VmpFPSxNakF4TmkweE1TMHdNVlF4TXpvME5Ub3hNaTQ1TURSYSxnWEc3QkZtUWs3anVjUnloQWhNZEVCLE9XVm1NbVF3" type="hidden"><input name="currentStage" id="currentStage" value="0" type="hidden"><input name="mm_type" id="mm_type" value="Contact" type="hidden"><input name="setupid" id="setupid" value="MassMailFilter" type="hidden"><input name="visited_0" id="visited_0" value="1" type="hidden"><input name="wizardRetUrl" id="wizardRetUrl" value="/003/o" type="hidden">
+    <div class="bWizardBlock tertiaryPalette">
+        <div class="pbWizardTitle tertiaryPalette brandTertiaryBgr">
+            <div class="ptRightTitle">
+                第 1 步，共 4 步
+       
+            </div>
+            <h2>步骤 1. 指定要包括的收件人
+        </h2>
+        </div>
+        <div class="pbBody">
+            <div class="pbWizardHeader">
+                <div class="pbTopButtons" style="white-space: nowrap">
+                    <input value=" 下一页 " class="btn" disabled="true" name="goNext" title="下一页" type="submit"><input value=" 取消 " class="btnCancel" name="cancel" title="取消" type="submit">
+                </div>
+            </div>
+            <div class="pbJumpTo">
+            </div>
+            <div class="pbDescription ">
+                选择以下视图之一（其中包含此手机号码的收件人）。 
+     
+            </div>
+            <div class="pbWizardBody">
+                <div id="selectLabel" name="selectLabel" style="display: none;">选择</div>
+                <div id="deselectLabel" name="deselectLabel" style="display: none;">取消选择</div>
+                <div id="listEmptyLabel" name="listEmptyLabel" style="display: none;">未选择任何行</div>
+                <div class="available">
+                    <iframe id="available" name="available" scrolling="no" src="/p/mobile/mass/pages/MassMobileFilterStage$MassMobileAvailableUsersFrame?mm_type=AddressList&amp;filterType=C&amp;link_returl=%252Fui%252Fmassmail%252FMassMailStageManager%253FcurrentStage%253D0%2526mm_type%253DContact%2526setupid%253DMassMailFilter%2526visited_0%253D1%2526wizardRetUrl%253D%25252F003%25252Fo" title="可用" width="1290" height="46" frameborder="0"></iframe>
+                </div>
+                <input id="selectedIds" name="selectedIds" value="" type="hidden"><input id="msl_selectAll" name="msl_selectAll" value="false" type="hidden"><input id="msl_totalRowCount" name="msl_totalRowCount" value="" type="hidden"><input id="msl_totalRowCountFilter" name="msl_totalRowCountFilter" value="" type="hidden"><input id="id_fcf" name="id_fcf" value="" type="hidden">
+            </div>
+            <div class="pbWizardFooter">
+                <div class="pbBottomButtons">
+                    <input value=" 下一页 " class="btn" disabled="true" name="goNext" title="下一页" type="submit"><input value=" 取消 " class="btnCancel" name="cancel" title="取消" type="submit">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

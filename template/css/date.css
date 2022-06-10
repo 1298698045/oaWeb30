@@ -1,0 +1,89 @@
+﻿.calendarListPanel-item-head-left {
+    font-size:16px; 
+    color:#333;
+    float:left;
+}
+.calendarListPanel-item-head-right {
+    height:22px;
+    width:22px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    float:right;
+    cursor:pointer;
+    background:url('/img/cal/settings_1.png') no-repeat center;
+    background-size:12px;
+}
+.calendarListPanel-item-head {
+    height:26px;
+    padding:5px 15px;
+}
+.item-color {
+    height:14px;
+    width:14px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    float:left;
+}
+.calendarlist-item-name {
+    font-size:14px;
+    color:#333;
+    float:left;
+    margin-left:10px;
+    line-height:16px;
+    font-weight:700;
+}
+.calendarListPanel-item-body {
+    height:26px;
+    padding:5px 15px;
+}
+.calendarListPanel-item-body-right {
+    height:22px;
+    width:22px;
+    border:1px solid #ccc;
+    border-radius:4px;
+    float:right;
+    cursor:pointer;
+    background:url('/img/cal/20.png') no-repeat center;
+    background-size:12px;
+}
+.selectlist2 {
+    display: none;
+    margin-top: 25px;
+    position: absolute;
+    border: 1px solid #dddbda;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.16);
+    background-color: #fff;
+    padding: 5px 0;
+    border-radius: 4px;
+    z-index: 1000;
+    width:auto;
+    right:10px;
+}
+.selectlist2 li {
+    padding: 0 30px 0 10px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
+    color: #333;
+    width: auto;
+    margin: 0;
+    white-space:nowrap;
+}
+.colorItem {
+   display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: .25rem;
+}
+.calendarCalendarColorMenuItem {
+    float:left;
+    padding:2px 2px 5px 5px !important;
+    height:20px !important;
+}
+.calendarListPanel {
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.calendarListPanel .selectlist2 {
+    max-width:165px;
+}

@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>批量录入</title>
+    <link href="/layouteditor/addsublistsubtable_layout.css" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+
+        .popup-head {
+            color: #333;
+            height: 58px;
+            line-height: 60px;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 2px solid #dcdcdc;
+        }
+
+        #popup-zhuangtaichange .popup-body {
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        .popup-foot > div {
+            width: 65px;
+        }
+
+        .popup-foot > div {
+            float: right;
+            background-color: white;
+            border: 1px solid #dcdcdc;
+            color: #108af9;
+            height: 32px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .popup-foot {
+            border-radius: 0;
+            border-top: 2px solid #dcdcdc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            padding-bottom: 15px;
+            height: 40px;
+        }
+
+            .popup-foot .popup-foot-shur {
+                color: white;
+                background-color: #108af9;
+            }
+
+        .red {
+            color: red;
+        }
+
+        .item-left {
+            float: left;
+            width: 49%;
+        }
+
+        .item-right {
+            float: right;
+            width: 49%;
+        }
+
+        .popup-body {
+            padding: 20px;
+            height:520px;
+        }
+
+        .item-body {
+            margin-top: 5px;
+        }
+
+        input {
+            height: 32px;
+            line-height: 32px;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 50px;
+        }
+
+        input, textarea {
+            width: 100%;
+            border: 1px solid #dedede;
+        }
+
+        .item {
+            margin-top: 10px;
+        }
+
+        .popup-foot .popup-foot-shur:hover {
+            color: white;
+            background-color: #0d7ade !important;
+        }
+
+        .disstatus {
+            border-color: red;
+        }
+
+        .save-status {
+            font-size: 12px;
+            color: red;
+        }
+
+        .form-error {
+            margin-top: 10px;
+            text-align: left;
+            width: 100%;
+            background: rgb(194, 57, 52);
+            padding: 15px;
+            color: #fff;
+            border-radius: 4px;
+            height: 50px;
+            box-sizing: border-box;
+        }
+
+        .form-error2 {
+            color: rgb(194, 57, 52);
+            margin-left: 15px;
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .item-title {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            padding: 5px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"] {
+            width: 14px;
+            height: 14px;
+        }
+
+        .popup-body .layui-input-block {
+            margin-left: 0;
+        }
+
+        .section-body {
+            padding: 0 20px;
+        }
+
+        .section {
+            padding-bottom: 20px;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .layui-form input {
+            text-indent: 5px !important;
+        }
+
+        .popup-exit {
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: url('/img/cal/closegray.png') no-repeat center;
+            background-size: 18px;
+            cursor: pointer;
+        }
+         .section-body .layui-table-body{
+             overflow:auto;
+             min-height:370px;
+         }
+         .section-body{
+             padding:0px !important;
+         }
+         .item{
+             margin-top:0;
+         }
+         .section-body .item{
+             margin-top:10px;
+             padding:0;
+         }
+    </style>
+</head>
+<body>
+    <div class="popup" style="display: block;">
+        <div class="popup-exit close"></div>
+        <div class="popup-head">
+            批量录入
+        </div>
+        <div class="popup-body layui-form">
+            <div class="modal-header"></div>
+            <div class="item divs">
+                <div class="sublistsubtable"></div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+        <div class="popup-foot">
+            <div id="Save" class="popup-foot-shur save-checking">保存</div>
+            <div class="close">取消</div>
+        </div>
+    </div>
+    <script src="/js/jquery/1.12.4.jquery.min.js"></script>
+
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script src="/js/alert.js"></script>
+    <script src="/js/laydate/laydate.js"></script>
+
+    <script src="/layui/layui/layui.js"></script>
+    <link href="/layui/layui/css/layui.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/js/formcomponents.js"></script>
+    <script src="/layouteditor/addsublistsubtable_layout.js"></script>
+    <script>
+        var edititem = 'edititem'
+        var tablename = ''
+        var objectTypeCode = ''
+        var ApiName=''
+        var deleteRecords=[]
+        ajaxMethodGetAsyncData('entity.relatedlistanddata.get', {
+            layoutid: getQueryString('layoutid'),
+            templateid: getQueryString('templateId'),
+            masterEntityId: getQueryString('masterEntityId'),
+        }, false, function (data) {
+            var returnValue = data.actions[0].returnValue
+            var selectdata = data.context.picklistValuesMap
+            var listComponent = returnValue.listComponent
+            tablename = listComponent.relatedSObject||''
+            objectTypeCode = listComponent.objectTypeCode||''
+            ApiName = listComponent.relatedListApiName||''
+            var cols = [{ field: '', title: 'ID', width: 40, type: 'checkbox', fixed:'left' },
+                        { field: '', title: '序号', width: 50, type: 'numbers', fixed: 'left' },
+                        { field: 'Id', title: '', width: 50, hide: 'true' }, ]
+            for (var i = 0; i < listComponent.selectedColumns.length; i++) {
+                var selectedColumn = listComponent.selectedColumns[i]
+                cols.push({
+                    field: selectedColumn.name,
+                    title: selectedColumn.label,
+                    name: listComponent.relatedSObject,
+                    objtypecode: selectedColumn.sObjectType,
+                    type: selectedColumn.type,
+                    minWidth: 150,
+                    required: selectedColumn.required,
+                    templet: function (d) {
+                        return sublistsubtableformatOper(d)
+                    }
+                })
+            }
+            $('.popup-head').html(listComponent.label)
+            var sublistsubtabletemplaterow = []
+            for (var recordId in returnValue.recordIds) {
+                for (var item in returnValue.records) {
+                    var record = returnValue.records[item][recordId].record
+                    record.fields.Id = record.id
+                    sublistsubtabletemplaterow.push(record.fields)
+                }
+            }
+
+            sublistsubtabledata = [listComponent]
+            sublistsubtabletemplate[listComponent.relatedSObject] = {
+                cols: cols,
+                data: sublistsubtabletemplaterow,
+                selectdata: selectdata,
+            }
+        })
+        $(document).ready(function () {
+            $(".layui-icon-subtraction").off('click')
+            $(".layui-icon-subtraction").click(function () {
+                var row = $('.layui-table-body').eq(0).find('tr');
+                $(".layui-table-fixed .layui-table-body").find(".layui-form-checked").each(function () {
+                    var index = $(this).parents('tr').attr('data-index');
+                    var length = $(this).parents('tr').parent().find('tr').length;
+                    if (length != 1) {
+                        var rowid0 = row.eq(index).find('td[data-field="Id"]').find('div').html();
+                        var rowid = (rowid0 != '[object Object]' ? rowid0 : '');
+                        if (rowid) {
+                            deleteRecords.push({
+                                id: rowid,
+                                objTypeCode: objectTypeCode
+                            })
+                        }
+                        $(this).parents('tr').remove();
+                        row.eq(index).remove();
+                    }
+                    else {
+                        row.eq(index).find('input').val('');
+                        row.eq(index).find('select').val('');
+                    }
+                })
+                //$(".layui-table-body").eq(0).find(".layui-form-checked").each(function () {
+                //    var index = $(this).parents('tr').index()
+                //    var length = $(this).parents('tr').parent().find('tr').length;
+                //    if (length != 1) {
+                //        var rowid0 = row.eq(index).find('td[data-field="Id"]').find('div').html();
+                //        var rowid = (rowid0 != '[object Object]' ? rowid0 : '');
+                //        if (rowid) {
+                //            deleteRecords.push({
+                //                id: rowid,
+                //                objTypeCode: objectTypeCode
+                //            })
+                //        }
+                //        $(this).parents('tr').remove();
+                //        row.eq(index).remove();
+                //    }
+                //    else {
+                //        row.eq(0).find('input').val('')
+                //        row.eq(0).find('select').val('')
+                //    }
+                //})
+                formcomponents.layoutform.render()
+                $(".layui-table-fixed .layui-table-body").find('.laytable-cell-numbers').each(function () {
+                    $(this).html($(this).parents('tr').index() + 1)
+                    $(this).parents('tr').attr('data-index', $(this).parents('tr').index())
+                })
+                $(".layui-table-body").eq(0).find('.laytable-cell-numbers').each(function () {
+                    $(this).html($(this).parents('tr').index() + 1)
+                    $(this).parents('tr').attr('data-index', $(this).parents('tr').index())
+                })
+            })
+
+            //$(".layui-table-body .layui-unselect.layui-form-checkbox").off('click')
+            //$(".layui-table-body .layui-unselect.layui-form-checkbox").click(function () {
+            //    $(this).toggleClass('layui-form-checked');
+            //    var checkednum = $(".layui-table-fixed .layui-table-body").find(".layui-form-checked").length;
+            //    var sum = $(".layui-table-fixed .layui-table-body").find("tr").length;
+            //    console.log(checkednum, sum);
+            //    if (checkednum == sum) {
+            //        $(".layui-table-header .layui-unselect.layui-form-checkbox").removeClass('layui-form-checked');
+            //        $(".layui-table-header .layui-unselect.layui-form-checkbox").addClass('layui-form-checked');
+            //    }
+            //    else {
+            //        $(".layui-table-header .layui-unselect.layui-form-checkbox").removeClass('layui-form-checked');
+            //    }
+            //    var checkednum1 = $(".layui-table-body").eq(0).find(".layui-form-checked").length;
+            //    var sum1 = $(".layui-table-body").eq(0).find("tr").length;
+            //    console.log(checkednum1, sum1);
+            //    if (checkednum1 == sum1) {
+            //        $(".layui-table-header .layui-unselect.layui-form-checkbox").removeClass('layui-form-checked');
+            //        $(".layui-table-header .layui-unselect.layui-form-checkbox").addClass('layui-form-checked');
+            //    }
+            //    else {
+            //        $(".layui-table-header .layui-unselect.layui-form-checkbox").removeClass('layui-form-checked');
+            //    }
+            //})
+         
+
+        })
+        
+        $(".save-checking").click(function () {
+            var relatedRecords = []
+            var row = $('.layui-table-body').eq(0).find('tr');
+            for (var i = 0; i < row.length; i++) {
+                var d = {
+                    
+                }
+                d[getQueryString('foreigFieldName')] = {
+                    Id: getQueryString('masterEntityId')
+                }
+                for (var j = 0; j < row.eq(i).find('td').length; j++) {
+                    var value = row.eq(i).find('td').eq(j).find('input').val()
+                    if (row.eq(i).find('td').eq(j).find('select').length > 0) {
+                        value = row.eq(i).find('td').eq(j).find('select').val()
+                        if (row.eq(i).find('td').eq(j).find('.searchselect').length > 0) {
+                            value = {
+                                Id: row.eq(i).find('td').eq(j).find('select').val(),
+                                Name: row.eq(i).find('td').eq(j).find('input').val()
+                            }
+                        }
+                    }
+                    d[row.eq(i).find('td').eq(j).attr('data-field')] = value
+                }
+                var rowid = ''
+                if (row.eq(i).find('td[data-field="Id"]').length > 0) {
+                    var rowid0=row.eq(i).find('td[data-field="Id"]').find('div').html();
+                    var rowid = rowid0 != '[object Object]' ? rowid0 : '';
+                }
+                relatedRecords.push({
+                    id: rowid,
+                    apiName: ApiName,
+                    objTypeCode: objectTypeCode,
+                    fields: d
+                })
+            }
+            var processInstanceId = parent.document.getElementById("instanceId").value || '';
+            var processId = parent.document.getElementById("_processId").value || '';
+            var ruleLogId = parent.document.getElementById("ruleLogId").value || getQueryString('ruleLogId');
+            var messages = {
+                actions: [
+                  {
+                    params: {
+                        processId: processId,
+                        processInstanceId: processInstanceId,
+                        ruleLogId: ruleLogId,
+                        relatedRecords: relatedRecords,
+                        deleteRecords: deleteRecords
+                    }
+                  }
+                ]
+            }
+
+            messages = JSON.stringify(messages)
+            ajaxMethodPostData('process.instance.relatedlist.batchsave', { message: messages }, function (data) {
+                parent.success2('保存成功')
+                parent.$('.popup-mask').hide()
+                parent.$('#iframe').hide()
+                //window.parent.closeDialog(true)
+                //parent.$('#iWFForm').reload()
+            })
+
+        })
+        $('.close').click(function () {
+            parent.$('#iframe').hide()
+            parent.$('.popup-mask').hide()
+        })
+     </script>
+</body>
+</html>

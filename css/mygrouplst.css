@@ -1,0 +1,227 @@
+﻿         .table_body {
+            width: 100%;
+        }
+
+        .re {
+            width: 100%;
+            border: 1px solid #95b8e7;
+            box-sizing: border-box;
+            outline: 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        .re th {
+            height: 25px;
+            line-height: 25px;
+            vertical-align: top;
+            border-right: 1px #ddd solid;
+            padding: 0 4px;
+        }
+
+        .re th {
+            background: linear-gradient(to bottom, #f9f9f9, #f1f1f1);
+        }
+
+        .re td {
+            height: 25px;
+            padding: 0 4px;
+            border: 1px solid #ddd;
+        }
+        .delete {
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 4px 12px;
+            margin: 5px 0;
+            cursor:pointer;
+        }
+        .delete:hover {
+            background:#ccc;
+        }
+        #tbody tr:hover {
+            background-color: #e3f3ff;
+        }
+        #groupsContainer div {
+            margin-right:10px;
+            display: inline-block;
+            height:30px;
+            line-height:30px;
+        }
+        li {
+            list-style:none;
+        }
+        .search {
+            width:100%;
+            float: right;
+        }
+        .holder {
+            height: auto !important;
+            background: inherit;
+            background-color: rgb(255, 255, 255);
+            box-sizing: border-box;
+            border-radius: 5px;
+            width: 65%!important;
+            float: left;
+            border: 1px solid #999;
+            padding: 4px 5px 0;
+            overflow: hidden;
+            margin: 0;
+        }
+        ul.holder li {
+            float: left;
+            list-style-type: none;
+            margin: 6px 5px 4px 5px;
+            white-space: nowrap;
+        }
+        #select3_annoninput {
+            margin: 0;
+        }
+        ul.holder li.bit-input input {
+            width: auto;
+            overflow: visible;
+            margin: 0;
+            border: 0px;
+            outline: 0;
+            padding: 3px 0px 2px;
+            font: 11px "Lucida Grande", "Verdana";
+            height: 32px;
+            background: inherit;
+            background-color: rgb(255, 255, 255);
+            box-sizing: border-box;
+            border-radius: 5px;
+            width: 100%!important;
+            float: right;
+
+        }
+        .facebook-auto {
+            display:none;
+            width: 45%!important; 
+            position: absolute;
+            bottom: -27px;
+            border: 1px solid #ccc;
+            background: #fff;
+            left: 74px;
+        }
+        .default {
+            padding: 5px 0;
+        }
+        .text {
+            display: inline-block;
+            height: 100%;
+            margin-right: 13px;
+            line-height: 39px;
+            float: left;
+        }
+        .add {
+            padding: 8px 13px;
+            background: #fff;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            margin-left: 20px;
+        }
+        .add:hover ,.search_btn:hover{
+            background:#ccc;
+        }
+        #select3_feed {
+            overflow: auto;
+            width: 100%!important;
+            top: -26px;
+        }
+        .facebook-auto ul {
+            width: 700px;
+            display: block;
+            height: 192px;
+            overflow: auto;
+            display: none;
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            position: absolute;
+            z-index: 9999;
+        }
+        .facebook-auto ul li {
+            padding: 5px 12px;
+            z-index: 1000;
+            cursor: pointer;
+            margin: 0;
+            list-style-type: none;
+            border: 1px solid #ccc;
+            border-width: 0 1px 1px;
+            font: 11px "Lucida Grande", "Verdana";
+            background-color: #fff;
+        }
+        .facebook-auto ul li em {
+            font-weight: bold;
+            font-style: normal;
+            background: rgb(242, 242, 242);
+        }
+        .facebook-auto ul li:hover {
+            background: rgb(242, 242, 242);
+            color:#000;
+        }
+        ul.holder li.bit-box, #apple-list ul.holder li.bit-box {
+            padding-right: 15px;
+            position: relative;
+            z-index: 1000;
+        }
+        ul.holder li.bit-box {
+            -moz-border-radius: 6px;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            border: 1px solid #CAD8F3;
+            background: #DEE7F8;
+            padding: 1px 14px 2px;
+        }
+        ul.holder li.bit-box a.closebutton {
+            position: absolute;
+            right: 4px;
+            top: 5px;
+            display: block;
+            width: 7px;
+            height: 7px;
+            font-size: 1px;
+            background: url(/img/close.gif);
+        }
+.search_name {
+    height: 38px;
+    background: inherit;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 80%!important;
+    float: left;
+    border: 1px solid #999;
+    padding: 4px 5px 0;
+    overflow: hidden;
+    margin: 0;
+}
+.search_btn {
+ padding: 8px 13px;
+            background: #fff;
+            border: 1px solid #ccc;
+            font-size: 15px;
+            margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

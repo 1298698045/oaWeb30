@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/css/jquery.slideBox.css" rel="stylesheet" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/js/jquery.slideBox.js"></script>
+    <script src="/js/ejs.min.js"></script>
+    <style>
+        /*.tips {
+            bottom:30px!important;
+        }*/
+        div.slideBox div.tips div.title {
+            background-color: transparent !important;
+        }
+
+            div.slideBox div.tips div.title a {
+                font-size: 16px;
+            }
+    </style>
+    <script>
+
+        jQuery(function ($) {
+            $.ajax({
+                url: "/apps/CommandProcessor.ashx?cmd=home.image.getlist",
+                type: 'get',
+                data: {
+                    _radom: Math.random()
+                },
+                dataType: 'json',
+                async: true,
+                cache: false,
+                success: function (data) {
+                // console.log(data)
+                  //$('#ul_pic').html(ejs.render($('#template_focuspic').html(), data));
+                    var html = "";
+                    if (data.length > 0) {
+                        for (var t = 0; t < data.length; t++) {
+                            html += " <li><a href='javascript:;' valueid='" + data[t].ValueId + "' title='" + data[t].Name + "'>" +
+                                    " <img src='" + data[t].Img + "' style='height:240px;width:310px;'/></a></li>";
+                        }
+                        $("#ul_pic").html(html);
+                        $("#ul_pic a").click(function () {
+                            window.parent.location = "viewArticle.aspx?id=" + $(this).attr("valueid") + "";
+                        })
+                        $('#Div1').slideBox();
+                    }
+                }
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div id="Div1" class="slideBox">
+        <ul class="items" id="ul_pic"></ul>
+    </div>
+    <!-- <script type="text/template" id="template_focuspic">
+          <%for(var t=0;t<result.length;t++){ %>
+                 <li><a href="javascript:;" valueid="<%=result[t].ValueId%>" title="<%=result[t].Name%>">
+                     <img src="<%=result[t].Img%>" style="width: 1000px; height: 380px;" /></a></li>
+         <%}%>
+     </script>-->
+</body>
+</html>

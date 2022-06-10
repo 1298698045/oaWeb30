@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  
+  <Action name="employee.autocomplete.search" type="Supermore.Actions.Employees.EmployeeAutoCompleteSearch,Business" desc="人员搜索"></Action>
+  <Action name="employee.change.quit" type="Youyou.HRCore.Actions.EmployeeChangeQuit,HRCore" desc="离职、退休"></Action>
+  <Action name="employee.salarypost.change" type="Youyou.HRCore.Actions.EmployeeSalaryPostChange,HRCore" desc="岗位设置"></Action>
+  <Action name="employee.change.endprobation" type="Youyou.HRCore.Actions.EmployeeChangeEndProbation,HRCore" desc="转正"></Action>
+  <!--部门异动-->
+  <Action name="employee.transfer.save" type="Youyou.HRCore.Actions.EmployeeTransferSave,HRCore" desc="部门异动"></Action>
+  <Action name="employee.deptchange.save" type="Youyou.HRCore.Actions.EmployeeDeptChangeSave,HRCore" desc="人员异动生效"></Action>
+  <Action name="employee.deptchange.batch" type="Youyou.HRCore.Actions.Employees.EmployeeDeptChangeBatch,HRCore" desc="部门批量变更异动"></Action>
+  
+  <Action name="employee.annualleave.calculate" type="Youyou.HRCore.Actions.Employees.EmployeeAnnualLeaveCalculate,HRCore" desc="计算年度公休加"></Action>
+  <Action name="employee.annualleave.search" type="Youyou.HRCore.Actions.Employees.EmployeeAnnualLeaveSearch,HRCore" desc="搜索人员年假"></Action>
+  <Action name="employee.annualleave.update" type="Youyou.HRCore.Actions.Employees.EmployeeAnnualLeaveUpdate,HRCore" desc="修改年假"></Action>
+</Actions>

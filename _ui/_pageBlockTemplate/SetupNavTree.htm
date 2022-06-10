@@ -1,0 +1,41 @@
+﻿<div id="setupNavTree" class="mTreeSelection">
+    <div class="quickfindContainer">
+        <form name="name" method="GET" autocomplete="off" action="/ui/setup/SetupSearchResultsPage">
+        <div class="searchBoxContainer">
+            <input type="text" title="搜索所有设置..." size="20" name="setupSearch" maxlength="80"
+                id="setupSearch" class="quickfindInput ghostText version2"><div tabindex="0" onmouseover="addMouseOver(this)"
+                    onfocus="addMouseOver(this)" id="thisisid" class="searchBarInfo mouseOverInfoOuter">
+                    <img title="" class="infoIcon" alt="" src="/s.gif"><div style="display: none;" id="thisisid_inner"
+                        class="mouseOverInfo">
+                        此框有双重功能。在此键入可缩小设置树页面。按 Enter 或点击搜索图标返回匹配的自定义字段、自定义对象、用户和其他设置项。</div>
+                </div>
+            <input type="submit" id="setupSearchButton" class="setupSearchButton" value="  "></div>
+        </form>
+    </div>
+    <div class="setupControlLinks">
+        <a id="setupNavExpandAll" href="#" data-uidsfdc="3">全部展开</a>|<a id="setupNavCollapseAll"
+            href="#" data-uidsfdc="4">全部折叠</a></div>
+    <div id="setupSearchError">
+        按 Enter 以使用高级设置搜索</div>
+    <div style="display: none;" id="treeInformation" font="_font" child="_child" icon="_icon"
+        leaf="_leaf" expand="展开" collapse="折叠" plussrc="/img/alohaSkin/setup/setup_plus_lev1.gif"
+        minussrc="/img/alohaSkin/setup/setup_minus_lev1.gif" highlightclass="setupHighlightLeaf"
+        leafclass="setupLeaf" lasthighlight="none">
+    </div>
+    <div id="AutoNumber5">
+        <img height="1" width="205" title="" style="margin-right: 0.25em; margin-right: 0.25em;"
+            alt="" src="/s.gif"><!--<div class="setupNavtree">
+                <h2>
+                    <span><a id="Salesforce1SetupSection2_font" class="setupSection" href="/ui/setup/salesforce1/Salesforce1SetupHomePage2?setupid=Salesforce1SetupSection2&amp;retURL=%2Fui%2Fsetup%2FSetup">
+                        Salesforce1 设置</a><span class="newFlag">新！</span></span></h2>
+            </div>
+        <div class="setupNavtree">
+            <h2>
+                <a id="ForceCom_font" class="setupSection" href="/setup/forcecomHomepage.apexp?setupid=ForceCom&amp;retURL=%2Fui%2Fsetup%2FSetup">
+                    Force.com 主页</a></h2>
+        </div>-->
+       {!items}
+    </div>
+    <script>        new SetupTreeNode("AutoNumber5", "setupSearch");
+</script>
+</div>

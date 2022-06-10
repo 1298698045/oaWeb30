@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+      <script src="/EXT/ext-3.3.3/ext.js"></script>
+    <script src="/jslibrary/sfdc/main_source.js"></script>
+    <script src="/jslibrary/jslabels/zh_CN.js"></script>
+    <script src="/jslibrary/sfdc/Chatter.js"></script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+     <script src="/js/CommonUtils.js"></script>
+    <style>
+        .upsort{
+            border:7px solid transparent;
+            border-bottom:7px solid rgba(27, 82, 151, 1);
+            margin:5px 5px 10px 5px;
+        }
+        .downsort{
+            border:7px solid transparent;
+            border-top:7px solid rgba(27, 82, 151, 1);
+            margin:10px 5px 5px 5px;
+        }
+        #b1 {
+            border: 7px solid transparent !important;
+            border-left: 7px solid rgba(27, 82, 151, 1)!important;
+            margin:8px 0px 8px 10px ;
+        }
+        #b3 {
+            border: 7px solid transparent !important;
+            border-right: 7px solid rgba(27, 82, 151, 1)!important;
+            margin:8px 5px 8px 0px ;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo">
+        <div class="DESKTOP uiContainerManager">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">选择要显示的字段</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="cuf-content slds-scope forceChatterUpdatePhoto">
+                                <div class="updatePhotoPanel slds-text-align--center">
+                                    <form id="editPage" name="editPage">
+                                    <table cellpadding="0" cellspacing="8" style="width: 100%;">
+                                        <tr>
+                                            <td style="font-size: .8125rem; text-align: left;">可选字段</td>
+                                            <td>&nbsp;</td>
+                                            <td style="font-size: .8125rem; text-align: left;">可视字段</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;">
+                                                <select id="duel_select_0" name="duel_select_0" style="width:300px; height: 220px;" multiple="multiple">
+                                                </select>
+                                            </td>
+                                            <td width="50px">
+                                                <p>
+                                                    <button type="button" class="s1 slds-button" style="background: none; border: 0;">
+                                                        <div id="b1"></div>
+                                                    </button>
+                                                </p>
+                                                <!--<p>
+                                                    <button type="button" id="b2" class="s1 slds-button">全部向右</button>
+                                                </p>-->
+                                                <p>
+                                                    <button type="button" class="s1 slds-button" style="background: none; border: 0;">
+                                                        <div id="b3"></div>
+                                                    </button>
+                                                </p>
+                                              <!--  <p>
+                                                    <button type="button" id="b4" class="s1 slds-button">全部向左</button>
+                                                </p>-->
+                                            </td>
+                                            <td>
+                                                <select id="duel_select_1" name="duel_select_1" style="width:300px; height: 220px;" multiple="multiple">
+                                                </select></td>
+                                                 <td width="50px">
+                                                <p>
+                                                    <button id="upsort" type="button" class="s1 slds-button" style="background: none; border: 0;" onclick="javascript:window.editPage_DLBEInstance.instMoveUp(document.editPage.duel_select_1, 'NAME', null, '排班对象无法删除，并且必须是被排班的人。','editPage_duel_errorMsg');">
+                                                        <div class="upsort"></div>
+                                                    </button>
+                                                </p>
+                                                <!--<p>
+                                                    <button type="button" id="b2" class="s1 slds-button">全部向右</button>
+                                                </p>-->
+                                                <p>
+                                                    <button type="button" id="downsort" class="s1 slds-button" style="background: none; border: 0;" onclick="javascript:window.editPage_DLBEInstance.instMoveDown(document.editPage.duel_select_1, 'NAME', null, '排班对象无法删除，并且必须是被排班的人。','editPage_duel_errorMsg');">
+                                                        <div class="downsort"></div>
+                                                        
+                                                    </button>
+                                                </p>
+                                              <!--  <p>
+                                                    <button type="button" id="b4" class="s1 slds-button">全部向左</button>
+                                                </p>-->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    </form>
+                                     <script>window.editPage_DLBEInstance = new DuelingListBoxesElement(['duel_select_0', 'duel_select_1'], 'editPage_duel_errorMsg');</script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <button class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" id="Save" name="Save" title="保存" type="button" ;">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('#b1').click(function () {
+            $obj = $('select option:selected').clone(true);
+            if ($obj.size() == 0) {
+                //alert("璇疯嚦灏戦€夋嫨涓€鏉�!");
+            }
+            $('#duel_select_1').append($obj);
+            $('select option:selected').remove();
+        });
+
+        //$('#b2').click(function () {
+        //    $('#s2').append($('#s1 option'));
+        //});
+
+        $('#b3').click(function () {
+            $obj = $('select option:selected').clone(true);
+            if ($obj.size() == 0) {
+                //alert("璇疯嚦灏戦€夋嫨涓€鏉�!");
+            }
+            $('#duel_select_0').append($obj);
+            $('select option:selected').remove();
+        });
+
+        //$('#b4').click(function () {
+        //    $('#s1').append($('#s2 option'));
+        //});
+
+
+        $('#closeds').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        $('#closedsa').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+    </script>
+    <script>
+        var objectTypeCode = parent.webContext.objectTypeCode
+        var id = parent.webContext.defaultFilterId
+        console.log(objectTypeCode)
+        //console.log(objectTypeCode)
+        //console.log(id)
+        var d = { 
+            objTypeCode:objectTypeCode,showAllField:1
+        };
+        ajaxMethodPostData('entity.attribute.getlist', d, renderOptions);
+        function renderOptions(data)
+        {
+            console.log(data)
+
+            $('#duel_select_0').find('option').remove();
+            $('#duel_select_1').find('option').remove();
+            var datas = data.attributes
+            console.log(datas)
+
+            var displayCols = parent.displayColumnApiNames
+            // console.log(datas2)
+            for (var i = 0; i < datas.length; i++) {
+                var res = datas[i]
+                var name = res.fieldName
+                var label = res.label
+                $('#duel_select_0').append('<option value="'+name+'">'+label+'</option>');
+
+                for (var j = 0; j < displayCols.length; j++) {
+                    if(name==displayCols[j]){
+                        $('option[value="'+name+'"]').remove()
+                        $('#duel_select_1').append('<option value="'+name+'">'+label+'</option>');
+                    }
+                }
+            }
+            $('option').dblclick(function () {
+                var flag = $(this).parent().attr('id');
+                if (flag == "duel_select_0") {
+                    var $obj = $(this).clone(true);
+                    $('#duel_select_1').append($obj);
+                    $(this).remove();
+                } else {
+                    var $obj = $(this).clone(true);
+                    $('#duel_select_0').append($obj);
+                    $(this).remove();
+                }
+            });
+        }
+        
+        $('#Save').click(function(){
+            var displayCols = []
+            var displayColstitle = []
+            $('#duel_select_1 option').each(function(){
+                displayCols.push($(this).val())
+                displayColstitle.push($(this).html())
+                
+            })
+            //console.log(data)
+            parent.displayColumnApiNames = displayCols
+            parent.displayColumnApiNamestitle = displayColstitle
+            parent.$('#changeDiv').hide();
+            parent.success('字段选择成功')
+            parent.addColumn()
+        })
+
+        
+    </script>
+</body>
+</html>

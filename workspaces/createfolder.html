@@ -1,0 +1,85 @@
+﻿<div class="container overlayDialog" id="container_bubble" style="width: 600px; height: auto; left: 383px; top: 50px; position: fixed;">
+    <div id="bubble_point" class="hidden"></div>
+    <div class="topRight">
+        <div class="topLeft">
+            <a onclick="Shepherd.run('bubble', 'hide', {shepherdToken : 'VmpFPSxNakF4TlMweE1TMHhOVlF4TVRvek5qbzFNQzQ0TURKYSx1X2dKX0dwcFQzMVp5UzEyOVRaejh4LE9HVTVNamd6'});return false;" title="关闭" style="cursor: pointer; display: block;" class="dialogClose" id="bubble_close" href="javascript:void(0);"></a>
+            <h2>&nbsp;</h2>
+        </div>
+    </div>
+    <div class="middle">
+        <div id="content_container" class="innerContent overlaycontentbox">
+            <form onsubmit="Shepherd.submitForm('workspace','create',this, {}, '文档库已创建。');" enctype="multipart/form-data" method="POST" action="javascript:void(null);" class=" editPage" name="createWorkspaceForm" id="createWorkspaceForm">
+                <blockquote style="display: none;" id="createWorkspaceFormFormMessageHolder" class="error">
+                    <strong>错误:</strong>
+                    <ul id="createWorkspaceFormFormMessage" class="errorMsg"></ul>
+                </blockquote>
+                <div class="bPageBlock brandSecondaryBrd nochrome " id="">
+                    <h1 class="handle">新建文档库向导</h1>
+                    <h2>第 1 步，共 3 步：定义 文档库 信息</h2>
+                    <h3></h3>
+                    <div class="requiredMsg">
+                        <span class="requiredLegend"><span class="requiredExampleOuter"><span class="requiredExample"></span></span>
+                            <span class="requiredText">= 必填信息</span></span>
+                    </div>
+                    <div style="height: px;" class="pbBody">
+                        <table cellspacing="0" cellpadding="0" border="0" class="detailList">
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                </tr>
+                                <tr id="Tr1">
+                                    <td class="labelCol requiredInput">
+                                        <label class="requiredInput" for="workspaceName">名称</label></td>
+                                    <td colspan="1" class="dataCol">
+                                        <div class="requiredInput">
+                                            <div class="requiredBlock"></div>
+
+                                            <input type="" lang="" onfocus="" onblur="" onchange="" value="" tabindex="100" id="workspaceName" name="workspaceName" class=" text">
+                                            <span id="workspaceNameMessage" class="errorMsg"></span>
+
+                                        </div>
+                                    </td>
+                                    <td colspan="2">&nbsp;</td>
+                                    <!-- 
+		
+		
+		
+			<span class="comment"></span>
+		
+	-->
+                                </tr>
+                                <tr id="Tr2">
+                                    <td class="labelCol ">
+                                        <label class="" for="description">描述</label></td>
+                                    <td colspan="1" class="dataCol">
+                                        <textarea lang="" tabindex="100" onblur="" onchange="" class="" name="description" id="description"></textarea>
+                                        <span id="descriptionMessage" class="errorMsg"></span>
+
+                                    </td>
+                                    <td colspan="2">&nbsp;</td>
+                                    <!-- 		
+			<span class="comment"></span>
+		
+	-->
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input type="submit" value="" style="background-color: transparent; border: 0px; position: absolute; z-index: -1; top: 0px;" tabindex="-1">
+                    </div>
+                    <div class="buttons">
+                        <button onclick=";Shepherd.runForm('workspace','create',this, {shepherdToken : 'VmpFPSxNakF4TlMweE1TMHhOVlF4TWpveE5UbzBOaTR6TkRsYSw5TEVNMWRlam5ZYUpKWUg5LUJaUmVoLE5qSmtNMk5r'}, '文档库已创建。');return false;" title="" class="btn  " id="workspacecreate_saveAndClose_">保存并关闭</button>
+                        <button onclick=";Shepherd.runForm('workspace','create',this, {addMembers : true, shepherdToken : 'VmpFPSxNakF4TlMweE1TMHhOVlF4TWpveE5UbzBOaTR6TlRGYSxjRDVEYm9hbHpkSXhMR1hWaTB1ZHNJLE5qSmtNMk5r'}, '文档库已创建。');return false;" title="" class="btn  " id="workspacecreate_saveAndAddMembers_">保存并添加成员</button>
+                        <button onclick="Shepherd.run('bubble', 'hide', {shepherdToken : 'VmpFPSxNakF4TlMweE1TMHhOVlF4TWpveE5UbzBOaTR6TlROYSw0QjU5a3VjSzBQSFlLalBxZm11dGJILE9HVTVNamd6'});return false;" title="" style="cursor: pointer;" class="btn " id="_button_bubblehide_cancel_">取消</button>
+                    </div>
+                </div>
+                <input type="hidden" lang="" onfocus="" onblur="" onchange="" value="VmpFPSxNakF4TlMweE1TMHhOVlF4TWpveE5UbzBOaTR6TkRWYSxLbjdVQ0hFcC13b3I5X290VWNzcTU4LE5qSmtNMk5r" tabindex="100" id="shepherdToken" name="shepherdToken" class=" text">
+            </form>
+            <!--s-cript>
+		window.setTimeout("Shepherd.getHelper('view').focusForm($('createWorkspaceForm'));", 500);
+</s-cript-->
+        </div>
+    </div>
+    <div class="bottomRight">
+        <div class="bottomLeft"></div>
+    </div>
+</div>

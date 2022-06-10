@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="survey.unfinished.notify" type="Supermore.Survey.SurveyUnfinishedNotify,SurveyCore"></Action>
+  <!--问卷-->
+  <Action name="survey.search" type="OA.Web.AppActions.SurveySearch,AppBusiness"></Action>
+
+  <Action name="survey.get" type="Youyou.Survey.Actions.SurveyGet,SurveyCore"></Action>
+  <Action name="survey.clone" type="Youyou.Survey.Actions.SurveyClone,SurveyCore" desc="问题复制"></Action>
+
+  <Action name="survey.question.get" type="Youyou.Survey.Actions.QuestionGet,SurveyCore" desc="问题获取"></Action>
+  <Action name="survey.question.edit" type="Youyou.Survey.Actions.QuestionEdit,SurveyCore" desc="问题编辑"></Action>
+
+  <Action name="survey.status.change" type="Youyou.Survey.Actions.SurveyStatusChange,SurveyCore" desc="状态修改"></Action>
+
+  <Action name="survey.audience.add" type="Youyou.Survey.Actions.SurveyAudienceAdd,SurveyCore" desc="添加成员"></Action>
+  <Action name="survey.audience.remove" type="Youyou.Survey.Actions.SurveyAudienceRemove,SurveyCore" desc="删除成员"></Action>
+  <Action name="survey.audience.search" type="Youyou.Survey.Actions.SurveyAudienceSearch,SurveyCore" desc="查询成员"></Action>
+  <Action name="survey.audience.getlist" type="Youyou.Survey.Actions.SurveyAudienceGetlist,SurveyCore" desc="单个文件详细人员"></Action>
+
+  <Action name="survey.audience.reset" type="Youyou.Survey.Actions.SurveyAudienceReset,SurveyCore"  desc="问卷详情人员重填"></Action>
+  <Action name="survey.audience.delete" type="Youyou.Survey.Actions.SurveyAudienceDelete,SurveyCore"  desc="问卷详情人员删除"></Action>
+  
+  <Action name="survey.question.sort" type="Youyou.Survey.Actions.QuestionsSort,SurveyCore"  desc="排序"></Action>
+  <Action name="survey.question.delete" type="Youyou.Survey.Actions.QuestionDelete,SurveyCore"  desc="排序"></Action>
+
+  <Action name="survey.common.analyze.get" type="Youyou.Survey.Actions.SurveyCommonAnalyzeGet,SurveyCore"  desc="普通问卷分析"></Action>
+  <Action name="survey.points.analyze.get" type="Youyou.Survey.Actions.SurveyPointsAnalyzeGet,SurveyCore"  desc="分值问卷分析"></Action>
+
+  <Action name="survey.responselist" type="Youyou.Survey.Actions.SurveyResponseList,SurveyCore"  desc="获取问题某个选项的全部人员"></Action>
+  <Action name="survey.stdquestion.get" type="Youyou.Survey.Actions.SurveyStdQuestion,SurveyCore"  desc="通过问题关键字获取问题题库及选项明细"></Action>
+
+  <Action name="survey.export.excel" type="Youyou.Survey.Actions.ExportExcel,SurveyCore"  desc="问卷分析导出excel"></Action>
+  <Action name="survey.audience.export" type="Youyou.Survey.Actions.AudienceExport,SurveyCore"  desc="问卷人员导出excel"></Action>
+
+  <Action name="survey.test.submit" type="Youyou.Survey.Actions.SurveyTestSubmit,SurveyCore"  desc="问卷提交"></Action>
+  <Action name="survey.user.getlist" type="Youyou.Survey.Actions.SurveyUserGetlist,SurveyCore" desc="我的问卷"></Action>
+  <!--投票-->
+  <Action name="poll.update" type="OA.Web.AppActions.PollUpate,AppBusiness"></Action>
+  <Action name="poll.publish" type="OA.Web.AppActions.PollPublish,AppBusiness"></Action>
+
+  <Action name="poll.get" type="OA.Web.AppActions.PollGet,AppBusiness"></Action>
+  <Action name="poll.status.change" type="OA.Web.AppActions.PollStatusChange,AppBusiness" desc="修改状态"></Action>
+  <Action name="poll.delete" type="OA.Web.AppActions.PollDelete,AppBusiness" desc="删除"></Action>
+  <Action name="poll.search" type="OA.Web.AppActions.PollSearch,AppBusiness"></Action>
+  <Action name="poll.share" type="OA.Web.AppActions.PollShare,AppBusiness"></Action>
+  <Action name="poll.response" type="OA.Web.AppActions.PollResponse,AppBusiness"></Action>
+  <Action name="poll.people.invite" type="OA.Web.AppActions.PollPeopleInvite,AppBusiness"></Action>
+  <Action name="poll.people.remove" type="OA.Web.AppActions.PollPeopleRemove,AppBusiness"></Action>
+  <Action name="poll.people.getlist" type="OA.Web.AppActions.PollPeopleGetList,AppBusiness"></Action>
+  <Action name="poll.people.export" type="OA.Web.AppActions.PollPeopleExport,AppBusiness"  desc="投票人员导出excel"></Action>
+  <Action name="poll.optionimage.upload" type="OA.Web.AppActions.PollUploadOptionImage,AppBusiness"></Action>
+
+  <Action name="poll.insertvotepoll.info" type="OA.Web.AppActions.PollInsertVotePollInfo,AppBusiness"></Action>
+  <Action name="poll.insert.pollinfo" type="OA.Web.AppActions.PollInsertPollInfo,AppBusiness"></Action>
+  <Action name="poll.query.listuser" type="OA.Web.AppActions.PollQueryListUser,AppBusiness"></Action>
+
+</Actions>

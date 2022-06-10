@@ -1,0 +1,50 @@
+﻿<!-- Begin RelatedListElement -->
+<div class="first bRelatedList" id="{!id}_RelatedAttachmentList">
+    <a name="{!id}_RelatedAttachmentList_target"></a>
+    <!-- Begin ListElement -->
+    <!-- motif: Campaign -->
+    <!-- WrappingClass -->
+    <div class="noStandardTab">
+        <div class="bPageBlock brandSecondaryBrd secondaryPalette">
+            <div class="pbHeader">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="pbTitle">
+                            <img src="/s.gif" alt="" width="1" height="1" class="minWidth" title="" /><img src="/s.gif"
+                                alt="" class="relatedListIcon" title="" /><h3 id="70190000000uODU_RelatedAttachmentList_title">
+                                    附件</h3>
+                        </td>
+                        <td class="pbButton">{!buttons}<!--
+                            <input value=" 附加文件 " class="btn" name="attachFile" onclick="navigateToUrl('/p/attach/NoteAttach?pid=70190000000uODU&parentname=GC+Product+Webinar+-+Jan+7%2C+2002&retURL=%2F70190000000uODU',null,'attachFile');"
+                                title="附加文件" type="button" />-->&nbsp;
+                        </td>
+                        <td class="pbHelp">
+                            <span class="help" title="附件 帮助 （新窗口）"><a  target="_blank" href="javascript:openPopupFocusEscapePounds(%27%27, %27Help%27, 1024, 768, %27width=1024,height=768,resizable=yes,toolbar=yes,status=yes,scrollbars=yes,menubar=yes,directories=no,location=yes,dependant=no%27, false, false);"
+                                class="linkCol"><span class="linkSpan">附件帮助</span>
+                                <img src="/s.gif" alt="附件 帮助 （新窗口）" class="helpIcon" title="附件 帮助 （新窗口）" /></a></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="pbBody" id="{!id}_RelatedAttachmentList_body">
+                {!tablelist}
+            </div>
+            <div class="pbFooter secondaryPalette">
+                <div class="bg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="listElementBottomNav">
+    </div>
+    <script>
+        try {
+
+            sfdcPage.registerRelatedList('{!id}_RelatedAttachmentList', '{!totalrows}', '附件', false, '/70190000000uODU', 'relatedListId=RelatedAttachmentList&hideDL=1&noh=1&keepPref=1', false, false, true, 'RelatedAttachmentList');
+        } catch (e) {
+
+        }
+    </script>
+    <!-- End ListElement -->
+</div>
+<!-- End RelatedListElement -->

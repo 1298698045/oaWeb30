@@ -1,0 +1,648 @@
+.nav__bar .uiContainerManager {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    -moz-box-orient: horizontal;
+    -moz-box-pack: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -ms-flex-direction: row;
+    box-orient: horizontal;
+    box-pack: center;
+    box-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal #sortable li {
+    width:22%!important;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal .appTileTitle:hover {
+    text-decoration:underline;
+}
+.nav__bar .slds-backdrop {
+    transition-duration: .4s;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(8, 7, 7, 0.6);
+    z-index: 9000;
+}
+.nav__bar .slds-backdrop--open{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .4s linear;
+}
+.nav__bar .slds-modal {
+    transition: transform .1s linear,opacity .1s linear;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9001;
+}
+.nav__bar .slds-modal--large .slds-modal__container{
+    width: 90%;
+    max-width: none;
+    min-width: 40rem;
+}
+.nav__bar .slds-modal__container{
+    margin: 0 auto;
+    width: 50%;
+    max-width: 40rem;
+    min-width: 20rem;
+}
+.nav__bar .slds-modal__container {
+    position: relative;
+    transform: translate(0, 0);
+    transition: transform .1s linear,opacity .1s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    height: 90%;
+    padding: 3rem 0;
+    border-radius: .25rem;
+}
+.nav__bar .slds-modal__header {
+    position: relative;
+    border-top-right-radius: .25rem;
+    border-top-left-radius: .25rem;
+    border-bottom: 2px solid rgb(221, 219, 218);
+    padding: 1rem;
+    text-align: center;
+    flex-shrink: 0;
+    background: rgb(255, 255, 255);
+}
+.nav__bar .slds-text-heading--medium{
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.25;
+}
+.nav__bar .slds-text-body--regular{
+    font-size: .8125rem;
+}
+.nav__bar .slds-m-left--small{
+    margin-left: .75rem;
+}
+.nav__bar .slds-grid--vertical-align-center{
+    align-items: center;
+    align-content: center;
+}
+.nav__bar .slds-grid--align-spread{
+    justify-content: space-between;
+}
+.nav__bar [class*=slds-size--]{
+    flex: none;
+}
+.nav__bar .slds-size--1-of-3{
+    width: 33.3333333333%;
+}
+.nav__bar .salesforceIdentitySearchInput.appl-search {
+    flex-grow: 5;
+    margin: 0 auto;
+    max-width: 25rem;
+    font-weight: 400;
+}
+.nav__bar .slds-form-element {
+    position: relative;
+    min-width: 0;
+}
+.nav__bar .salesforceIdentitySearchInput.appl-search .slds-form-element__label {
+    line-height: 1;
+    position: absolute;
+    left: 1rem;
+    top: .5rem;
+}
+.nav__bar .slds-form-element__label {
+    display: inline-block;
+    color: rgb(62, 62, 60);
+    font-size: .75rem;
+    margin-right: .5rem;
+    padding-top: .25rem;
+    margin-bottom: .125rem;
+}
+.nav__bar .nav__bar .salesforceIdentitySearchInput.appl-search .icon-utility-search {
+    fill: #54698d;
+    height: 1rem;
+    width: 1rem;
+    margin-top: 1.5px;
+}
+.nav__bar .slds-form-element__control {
+    clear: left;
+}
+.nav__bar .uiInput--default .form-element__label {
+    color: rgb(62, 62, 60);
+    line-height: 1.5;
+    margin-bottom: .25rem;
+}
+.nav__bar .salesforceIdentitySearchInput.appl-search .slds-input {
+    padding-left: 2.6rem;
+    padding-top: 2px;
+    line-height: 1.75rem;
+    min-height: 2rem;
+}
+.nav__bar .slds-button_neutral, .slds-button--neutral {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid rgb(221, 219, 218);
+    transition: border .15s linear;
+    border-color: rgb(221, 219, 218);
+    background-color: rgb(255, 255, 255);
+}
+.nav__bar .slds-modal__close {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: -2.5rem;
+    right: -.5rem;
+}
+.nav__bar .slds-button_icon-inverse{
+    color: rgb(255, 255, 255);
+    line-height: 1;
+    vertical-align: middle;
+}
+
+/* 内容 */
+.nav__bar .slds-modal__content:last-child {
+    border-bottom-right-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+}
+.nav__bar .slds-p-around--medium{
+    padding: 1rem;
+}
+.nav__bar .slds-modal__content {
+    overflow: hidden;
+    overflow-y: auto;
+}
+.nav__bar .slds-modal__content{
+    background: rgb(255, 255, 255);
+}
+.nav__bar .slds-section {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+.nav__bar .slds-p-left--small{
+    padding-left: .75rem;
+}
+.nav__bar .slds-p-bottom--x-small{
+    padding-bottom: .5rem;
+}
+.nav__bar .slds-section__titlea {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1.875rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal .slds-button{
+    background: transparent;
+    border: 0;
+
+}
+.program,.project {
+    background-image: url(/css/themes/lightning/images/jiantou.jpg)!important;
+    background-position: 1% 51%!important;
+    background-repeat: no-repeat!important;
+    padding-left: 2rem!important;
+}
+.up {
+     background-image: url(/css/themes/lightning/images/jiantou1.jpg)!important;
+     padding-left: 2rem!important;
+}
+.nav__bar .slds-m-right--small{
+    margin-right: .75rem;
+}
+.nav__bar .slds-section__title-action {
+    display: flex;
+    align-items: center;
+    /* background: rgb(243, 242, 242); */
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    color: currentColor;
+    font-size: inherit;
+    padding: 0 .5rem;
+}
+.nav__bar .slds-icon_container{
+    display: inline-block;
+    border-radius: .25rem; 
+}
+.nav__bar .block{
+    background: url(../image/jiantou1.jpg) no-repeat;
+}
+.nav__bar .slds-button__icon_left{
+    margin-right: .5rem; 
+}
+.nav__bar .slds-button__icon {
+    width: .875rem;
+    height: .875rem;
+    fill: currentColor;
+}
+
+
+
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal #cards {
+    margin-right: 0;
+    text-align: center;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal .app-grid {
+    width: 100%;
+    display: inline-block;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal #sortable {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.nav__bar .slds-wrap {
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/*.nav__bar .salesforceIdentityAppLauncherDesktopInternal #sortable li {
+    width: 23%;
+}
+.nav__bar .slds-p-horizontal_small{
+    padding-left: .75rem;
+    padding-right: .75rem;
+}*/
+/*.nav__bar .salesforceIdentityAppLauncherDesktopInternal #sortable li {
+    float: left;
+}*/
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal .dragArea {
+    padding: 0;
+    overflow: hidden;
+    height: 96px;
+    width: auto;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal .uiDraggable {
+    outline: none;
+}
+.nav__bar .uiDraggable {
+    cursor: move;
+    -webkit-user-drag: element;
+}
+.nav__bar .slds-text-link_reset{
+    color: inherit;
+    text-decoration: inherit;
+    line-height: inherit;
+    font-size: inherit;
+}
+.nav__bar .slds-app-launcher__tile {
+    display: flex;
+    align-items: stretch;
+    margin: .5rem 0;
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;
+    cursor: move;
+}
+.nav__bar .slds-app-launcher__tile.slds-is-draggable .slds-app-launcher__tile-figure {
+    padding-bottom: .25rem;
+}
+.nav__bar .slds-app-launcher__tile-figure {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: .75rem;
+    color: rgb(255, 255, 255);
+    border-radius: .25rem 0 0 .25rem;
+    text-align: center;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal .appImageClass {
+    height: auto;
+    max-height: 3rem;
+    width: auto;
+    max-width: 3rem;
+}
+.nav__bar .slds-avatar_large{
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.25;
+}
+.nav__bar .slds-avatar {
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: .25rem;
+    line-height: 1;
+    font-size: .875rem;
+    color: rgb(255, 255, 255);
+}
+.nav__bar img {
+    max-width: 100%;
+    height: auto;
+}
+.nav__bar .slds-app-launcher__tile-body {
+    flex: 1 1 auto;
+    background: rgb(243, 242, 242);
+    padding: .5rem .75rem;
+    border-radius: 0 .25rem .25rem 0;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal .appTileTitle {
+    font-size: 12pt;
+    color: rgb(0, 109, 204);
+    display: block;
+    text-align: left;
+    max-width: 250px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal .appDescription {
+    display: inline-block;
+    width: 100%;
+    max-width: 250px;
+    float: left;
+    clear: both;
+    word-break: break-all;
+    white-space:pre-wrap;
+}
+.nav__bar .slds-text-color_default{
+    color: rgb(8, 7, 7); 
+}
+.nav__bar .slds-section.slds-is-open .slds-section__content{
+    overflow: visible;
+    visibility: visible;
+    opacity: 1;
+    padding: .5rem 30px 0 30px;
+    height: auto;
+}
+.nav__bar .slds-grid--pull-padded{
+    margin-right: -.75rem;
+    margin-left: -.75rem;
+}
+.nav__bar .oneAppLauncherItem {
+    width: 16%;
+}
+.nav__bar .slds-p-vertical_xx-small{
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+.nav__bar .slds-col--padded{
+    padding-right: .75rem;
+    padding-left: .75rem;
+}
+.nav__bar .oneAppLauncherItem .app-launcher-link {
+    display: inline-block;
+    margin: .25rem 0;
+    align-items: stretch;
+}
+.nav__bar .salesforceIdentityAppLauncherDesktopInternal a ,.nav__bar .salesforceIdentityAppLauncherDesktopInternal a  span{
+    color: #0070d2!important;
+}
+.nav__bar .slds-text-link--reset{
+    cursor: pointer;
+    line-height: inherit;
+    font-size: inherit;
+}
+.nav__bar .slds-text-link--reset{
+    text-decoration: inherit;
+}
+.nav__bar .slds-app-launcher__tile--small{
+    flex-direction: column;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.nav__bar .oneAppLauncherItem .label-ctr {
+    padding: 0;
+    text-align: left;
+}
+.nav__bar .slds-app-launcher__tile-body {
+    flex: 1 1 auto;
+    background: rgb(243, 242, 242);
+    padding: .5rem .75rem;
+    border-radius: 0 .25rem .25rem 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.nav__bar .slds-app-launcher__tile-body--small{
+    border: 0;
+}
+.nav__bar .oneAppLauncherItem .label {
+    display: block;
+    font-size: .8125rem;
+
+}
+.nav__bar .oneAppLauncherItem:hover a{
+    text-decoration: underline;
+}
+.nav__bar .slds-medium-size_1-of-3:hover .uiDraggable{
+    border: 1px solid rgb(21, 137, 238);
+}
+/*.slds-medium-size_1-of-3 {
+    width: 33.3333333333%;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

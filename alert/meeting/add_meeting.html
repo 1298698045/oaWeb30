@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <link href="/element/element.css" rel="stylesheet" />
+    <link href="/template/css/alert.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <style>
+        .el-textarea {
+            margin-top:8px;
+        }
+        .timechook {
+            width:100%;
+            height:40px;
+            margin-top:21px;
+        }
+        .timechook .el-date-editor {
+            width:47.5%;
+        }
+        .timechook .el-date-editor--time-select{
+            margin-left:5%;
+        }
+        .shift-body-titme {
+            margin-top:0;
+        }
+        .shift-body-main {
+            padding-bottom:30px;
+        }
+        .slds-p-around--medium {
+            padding-top:20px;
+        }
+        #photo .slds-backdrop{
+            background:none;
+        }
+         .lookresultbtn{
+            font-size:14px;
+        }
+        .lookresultbtn{
+            top:36px;
+        }
+        .item-left,.item-right{
+            position:relative;
+        }
+        body #iframe {
+            position: fixed;
+            background-color: white;
+            width: 100% !important;
+            left: 0% !important;
+            top: 0% !important;
+            margin-top: -300px;
+            border-radius: 7px;
+            display: block;
+            height:620px;
+            border:0;
+            overflow:hidden;
+            z-index:9999;
+            display:none;
+        }
+        .popup-mask {
+            display:none;
+            position: fixed;
+            background-color:transparent;
+            width:100%;
+            height:100%;
+            top:0;
+            z-index:999;
+            left:0;
+            position:fixed;
+            background: url(/img/bgOverlayDialogBackground.png) ;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo" class="photo1">
+        <div class="DESKTOP uiContainerManager" id="vueapp">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">新增会议</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            <div class="shift-body-titme"><span>基本信息</span></div>
+                            <div class="shift-body-main">
+                               
+                                <div class="shift-item">
+                                   <div class="">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">主题</span>
+                                        <el-input class="save-checking-input"v-model="list.Name"></el-input>  
+                                   </div>
+                                   
+                                   <div class="clear"></div>
+                               </div>
+                                <div style="margin-top:20px;" class="save-checking-inputgroup">
+                                     <span class="required">*</span>
+                                     <span style="font-size:14px;">地点</span>
+                                <div class="shift-item">
+                                    <div class="item-left">
+                                         <span class="shift-name-title">地址</span>
+                                        <el-input v-model="list.Location"></el-input>  
+                                    </div>
+                                    <div class="item-right">
+                                        <span class="shift-name-title">会议室</span>
+                                          <el-select
+                                          v-model="list.RoomId.Id"
+                                          filterable
+                                          remote
+                                          @visible-change="getlookup('20034','RoomId')"
+                                          :remote-method="function(query){searchlookup(query,'20034','RoomId')}"
+                                          placeholder="请选择">
+                                          <el-option
+                                            v-for="(item,index) in search.RoomId"
+                                            :key="index"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select>
+                                        <div @click="openslookup('RoomId',20034,'会议室')" class="lookresultbtn">
+                                            <i class="el-icon-search"></i>
+                                        </div>
+                                   </div>
+                                    <div class="clear"></div>
+                               </div>
+                                    </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">召集人</span>
+                                          <el-select
+                                              v-model="list.OwningUser.Id"
+                                              filterable
+                                              remote
+                                              @visible-change="getlookup('8','OwningUser')"
+                                              :remote-method="function(query){searchlookup(query,'8','OwningUser')}"
+                                              placeholder="请选择">
+                                          <el-option
+                                            v-for="(item,index) in search.OwningUser"
+                                            :key="index"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select>
+                                       <div @click="openslookup('OwningUser',8,'召集人')" class="lookresultbtn">
+                                           <i class="el-icon-search"></i>
+                                       </div> 
+                                   </div>
+                                    <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">开始时间</span>
+                                            <el-date-picker 
+                                                type="datetime"
+                                               class="save-checking-input"
+                                                v-model="list.ScheduledStart"  
+                                                :default-value="new Date()"
+                                                value-format ="yyyy-MM-dd HH:mm"
+                                                placeholder="选择日期">
+                                            </el-date-picker>
+   
+                                   </div>
+                                   
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">类型</span>
+                                        <el-select v-model="list.MeetingType" placeholder="请选择">
+                                           <el-option
+                                             v-for="(item,index) in select.MeetingType"
+                                             :key="index"
+                                             :label="item.label"
+                                             :value="item.value"
+                                             >
+                                           </el-option>
+                                        </el-select>  
+                                   </div>
+                                    <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">结束时间</span>
+                                            <el-date-picker 
+                                                type="datetime"
+                                               class="save-checking-input"
+                                                v-model="list.ScheduledEnd"  
+                                                :default-value="new Date()"
+                                                value-format ="yyyy-MM-dd HH:mm"
+                                                placeholder="选择日期">
+                                            </el-date-picker>
+                                   </div>
+                                   
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">主持人</span>
+                                          <el-select
+                                              v-model="list.HostName.Id"
+                                              filterable
+                                              remote
+                                              @visible-change="getlookup('8','HostName')"
+                                              :remote-method="function(query){searchlookup(query,'8','HostName')}"
+                                              placeholder="请选择">
+                                          <el-option
+                                            v-for="(item,index) in search.HostName"
+                                            :key="index"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select> 
+                                       <div @click="openslookup('HostName',8,'主持人')" class="lookresultbtn">
+                                           <i class="el-icon-search"></i>
+                                       </div> 
+                                   </div>
+                                    <div class="item-right">
+                                       
+                                   </div>
+                                   
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">会议联系人</span>
+                                          <el-select
+                                              v-model="list.ContactUser.Id"
+                                              filterable
+                                              remote
+                                              @visible-change="getlookup('8','ContactUser')"
+                                              :remote-method="function(query){searchlookup(query,'8','ContactUser')}"
+                                              placeholder="请选择">
+                                          <el-option
+                                            v-for="(item,index) in search.ContactUser"
+                                            :key="index"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select> 
+                                       <div @click="openslookup('ContactUser',8,'会议联系人')" class="lookresultbtn">
+                                           <i class="el-icon-search"></i>
+                                       </div> 
+                                   </div>
+                                    <div class="item-right">
+                                        <span class="required">*</span>
+                                        <span class="shift-name-title">状态</span>
+                                        <el-select 
+                                            class="save-checking-input"
+                                            v-model="list.StatusCode" placeholder="请选择">
+                                           <el-option
+                                             v-for="(item,index) in select.StatusCode"
+                                             :key="index"
+                                             :label="item.label"
+                                             :value="item.value">
+                                           </el-option>
+                                        </el-select>  
+                                   </div>
+                                   
+                                   <div class="clear"></div>
+                               </div>
+                                 <div class="shift-item">
+                                   <div class="item-left">
+                                        <span class="shift-name-title">会议记要填写人</span>
+                                          <el-select
+                                              v-model="list.MeetingMgrId.Id"
+                                              filterable
+                                              remote
+                                              @visible-change="getlookup('8','MeetingMgrId')"
+                                              :remote-method="function(query){searchlookup(query,'8','MeetingMgrId')}"
+                                              placeholder="请选择">
+                                          <el-option
+                                            v-for="(item,index) in search.MeetingMgrId"
+                                            :key="index"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select> 
+                                       <div @click="openslookup('MeetingMgrId',8,'会议记要填写人')" class="lookresultbtn">
+                                           <i class="el-icon-search"></i>
+                                       </div> 
+                                   </div>
+                                    <div class="item-right">
+                                        <span class="shift-name-title">科室</span>
+                                        <el-select
+                                              v-model="list.OwningBusinessUnit.Id"
+                                              filterable
+                                              remote
+                                              @visible-change="getlookup('10','OwningBusinessUnit')"
+                                              :remote-method="function(query){searchlookup(query,'10','OwningBusinessUnit')}"
+                                              placeholder="请选择">
+                                          <el-option
+                                            v-for="(item,index) in search.OwningBusinessUnit"
+                                            :key="index"
+                                            :label="item.Name"
+                                            :value="item.ID">
+                                          </el-option>
+                                        </el-select> 
+                                        <div @click="openslookup('OwningBusinessUnit',10,'科室')" class="lookresultbtn">
+                                            <i class="el-icon-search"></i>
+                                        </div> 
+                                   </div>
+                                   
+                                   <div class="clear"></div>
+                               </div>
+                                <div class="shift-item">
+                                   <div class="item-left">
+                                       <el-checkbox v-model="list.IsPublic">公开会议(全部人员可以查看）</el-checkbox>
+                                   </div>
+                                   <div class="item-right">
+                                       <el-checkbox v-model="list.AllowInviteeCheckin">仅允许受邀请人手机APP签到（非邀请人员不可签到）</el-checkbox>
+                                   </div>
+                                   <div class="clear"></div>
+                                 </div>
+                               </div>
+
+                         <div class="shift-body-titme"><span>会议内容信息</span></div>
+                            <div class="shift-body-main">
+                                <div class="shift-item">
+                                   <div class="">
+                                        <span class="shift-name-title">内容</span>
+                                            <el-input
+                                              type="textarea"
+                                              :rows="4"
+                                              placeholder="请输入内容"
+                                              v-model="list.MeetingContent">
+                                            </el-input>  
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                            </div>
+                            <div class="shift-body-titme"><span>提醒</span></div>
+                            <div class="shift-body-main">
+                                <div class="shift-item">
+                                   <div class="">
+                                       提醒
+                                       <el-checkbox v-model="list.IsReminderSet">
+                                           <select v-model="list.ReminderTime">
+                                                <option value="0">0分钟</option>
+                                                <option value="5">5分钟</option>
+                                                <option value="15">15分钟</option>
+                                                <option value="30">30分钟</option>
+                                                <option value="60">1小时</option>
+                                                <option value="120">2小时</option>
+                                                <option value="180">3小时</option>
+                                                <option value="240">4小时</option>
+                                                <option value="300">5小时</option>
+                                                <option value="360">6小时</option>
+                                                <option value="420">7小时</option>
+                                                <option value="480">8小时</option>
+                                                <option value="540">9小时</option>
+                                                <option value="600">10小时</option>
+                                                <option value="660">11小时</option>
+                                                <option value="720">0.5天</option>
+                                                <option value="1080">18小时</option>
+                                                <option value="1440">1天</option>
+                                                <option value="2880">2天</option>
+                                                <option value="4320">3天</option>
+                                                <option value="5760">4天</option>
+                                                <option value="10080">1星期</option>
+                                                <option value="20160">2星期</option>
+                                            </select>
+                                       </el-checkbox>
+                                         
+                                   </div>
+                                   <div class="clear"></div>
+                               </div>
+                            </div>
+
+
+                               
+
+
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <!--<button class="save slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="Button1">
+                                    <span class=" label bBody">保存并继续</span>
+                                </button>-->
+                                <button id="Save" class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">保存</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                list: {
+                    Name: '',
+                    MeetingType: '',
+                    ScheduledStart: '',
+                    ScheduledEnd: '',
+                    ReminderTime: '',
+                    RoomId: {
+                        Id:'',
+                    },
+                    Location: '',
+                    HostName: {
+                        Id: '',
+                    },
+                    MeetingContent: '',
+                    OwningBusinessUnit: {
+                        Id: '',
+                    },
+                    IsPublic: '',
+                    OwningUser: {
+                        Id: '',
+                    },
+                    ContactUser: {
+                        Id: '',
+                    },
+                    MeetingMgrId: {
+                        Id: '',
+                    },
+                    StatusCode: '',
+                    AllowInviteeCheckin: '',
+                },
+                select: {
+                },
+                search: {
+                    RoomId: [],
+                    OwningBusinessUnit: [],
+                    OwningUser: [],
+                    ContactUser: [],
+                    MeetingMgrId: [],
+                    HostName:[]
+                }
+            },
+            created: function () {
+                this.getData()
+                this.getselect()
+                this.getlookup('20034', 'RoomId')
+                this.getlookup('10', 'OwningBusinessUnit')
+                this.getlookup('8', 'OwningUser')
+                this.getlookup('8', 'ContactUser')
+                this.getlookup('8', 'HostName')
+                this.getlookup('8', 'MeetingMgrId')
+            },
+            methods: {
+                getData: function () {
+                    var that = this
+                    var id = getQueryString('msgid')
+                    if (id != null) {
+                        var ObjectTypeCode = ObjectTypeCode
+                        var d = {
+                            Id: id,
+                            ObjTypeCode: 5000
+                        }
+                        function callback(data) {
+                            console.log(data)
+                            that.list = data.record;
+                            if (that.list.ScheduledStart.indexOf('/') != -1) {
+                                var stime = that.list.ScheduledStart.split('/')
+                                stime = stime.join('-')
+                                that.list.ScheduledStart = stime
+                            }
+                            if (that.list.ScheduledEnd.indexOf('/') != -1) {
+                                var etime = that.list.ScheduledEnd.split('/')
+                                etime = etime.join('-')
+                                that.list.ScheduledEnd = etime
+                            }
+                            that.list.ObjTypeCode = 5000
+                            for (item in that.search) {
+                                if (item != 'searchname') {
+                                    var name = item
+                                    var ID = that.list[name].Id
+                                    var Name = that.list[name].Name
+                                    var newlist = {
+                                        ID: ID,
+                                        Name: Name
+                                    }
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                        ajaxMethodGetData('entity.detail.get', d, callback)
+                    }
+                },
+                openslookup: function (name, objtypecode, title) {
+                    if (objtypecode == 10) {
+                        opencenterwindow('/alert/deptchose_form.html?type=relatedchhoose&lknm=' + name, '', 750, 520)
+                    } else if (objtypecode == 8) {
+                        opencenterwindow('/_ui/common/data/UserLookResult.aspx?type=relatedchhoose&lknm=' + name, '', 1150, 600)
+                    } else {
+                        $('#iframe').show().attr('src', '/alert/lookupiframe.html?objtypecode=' + objtypecode + '&lknm=' + name + '&title=' + title + '&search=').height(665).css('margin-top', '-320px')
+                        $('.popup-mask').show()
+                    }
+                },
+                getselect: function () {
+                    var that = this
+                    var d = {}
+                    var ObjectTypeCode = '5000'
+                    d = {
+                        ObjTypeCode: ObjectTypeCode,
+                    }
+                    ajaxMethodGetData('entity.detail.get', d, callback)
+                    function callback(data) {
+                        console.log(data)
+                        that.select = data.context.picklistValuesMap
+                    }
+                },
+                getlookup: function (Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                        var id = getQueryString('id')
+                        if (id != null) {
+                            var ID = that.list[name].Id
+                            var Name = that.list[name].Name
+                            var newlist = {
+                                ID: ID,
+                                Name: Name
+                            }
+                            if (ID) {
+                                if (JSON.stringify(that.search[name]).indexOf(JSON.stringify(newlist)) == -1) {
+                                    that.search[name].push(newlist)
+                                }
+                            }
+                        }
+                    }
+                },
+                searchlookup: function (query, Lktp, name) {
+                    var that = this
+                    var d = {}
+                    d = {
+                        Lktp: Lktp,
+                        Lksrch: query
+                    }
+                    ajaxMethodGetData('ui.entity.lookup', d, callback)
+                    function callback(data) {
+                        that.search[name] = data.listData
+                    }
+                }
+            }
+        })
+    </script>
+    <script src="/js/alert.js"></script>
+    <script>
+        var id = getQueryString('msgid')
+
+        
+        if (id && id != '') {
+            $('.slds-text-heading--medium').html('编辑会议')
+        } else {
+            var day = getQueryString('day')
+            var time = getQueryString('time')
+            var stime = new Date()
+            var etime = new Date()
+            if (day) {
+                stime = day
+                etime = day
+            }
+            if (time) {
+                stime = stime + ' ' + time
+                etime = stime.split(' ')[1]
+                etime2 = etime.split(':')[1]
+                etime = etime.split(':')[0]
+                etime = parseInt(etime) + 1
+                etime = stime.split(' ')[0] + ' ' + etime + ':' + etime2
+            }
+            vum.list.ScheduledStart = stime
+            vum.list.ScheduledEnd = etime
+        }
+
+        
+        $('#Save').click(function () {
+            function callback(data) {
+                console.log(data)
+                parent.success('保存会议成功')
+                parent.$('#changeDiv').hide()
+                parent.getdata()
+            }
+            var d = vum.list
+            var id = getQueryString('msgid')
+            var message = {}
+            var messages = {
+                params: {
+                    recordRep: {
+                        objTypeCode: 5000,
+                        fields: d
+                    }
+                }
+            }
+            if (id != '') {
+                messages.params.recordRep.id = id
+            }
+            messages = JSON.stringify(messages)
+            var data = { message: messages };
+            var save = document.querySelectorAll('.save-checking.active');
+            if (save.length > 0) {
+                ajaxMethodPostData('entity.saverecord', data, callback)
+            }
+        })
+        function lookupPick(formName, controlName, controlName2, null1, valId, valName) {
+            var a = JSON.stringify(vum.search[controlName2])
+            if (a.indexOf(valId) == -1) {
+                vum.search[controlName2].push({ ID: valId, Name: valName })
+            }
+            vum.list[controlName2] = { Id: valId, Name: valName }
+        }
+        function lookupPickdept(id, label, name) {
+            var b = JSON.stringify(vum.search[name])
+            if(b.indexOf(id)==-1){
+                vum.search[name].push({ ID: id, Name: label })
+            }
+            vum.list[name] = { Id: id, Name: label }
+        }
+    </script>
+    <iframe id="iframe" frameborder="0" src=""></iframe>
+    <div class="popup-mask"></div>
+</body>
+</html>

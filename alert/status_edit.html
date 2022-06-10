@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>更改状态</title>
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/iconfont.css" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/CommonUtils.js"></script>
+
+    <style>
+        .forceChatterUpdatePhoto {
+            text-align:center;
+            font-size:22px;
+            padding:50px;
+        }
+        input {
+            height:16px;
+            width:16px;
+            position:relative;
+            top:3px;
+        }
+        .el-loading-mask {
+            z-index:99999 !important;
+        }
+        .el-popper {
+            z-index:9999 !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="photo"  >
+        <div id="vueapp" class="DESKTOP uiContainerManager">
+            <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                <div class="panel slds-modal slds-fade-in-open">
+                    <div class="modal-container slds-modal__container">
+                        <div class="modal-header slds-modal__header">
+                            <h2 class="title slds-text-heading--medium">更改状态</h2>
+                            <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                <span>
+                                    <span style="font-size: 34px;">×</span>
+                                </span>
+                                <span class="slds-assistive-text">关闭此窗口</span>
+                            </button>
+                        </div>
+                        <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                            状态:
+                            <el-select v-model="state" placeholder="请选择">
+                                <el-option
+                                  label="草稿"
+                                  value="0">
+                                </el-option>
+                                <el-option
+                                  label="已发布"
+                                  value="1">
+                                </el-option>
+                                <el-option
+                                  label="已完成"
+                                  value="2">
+                                </el-option>
+                                <el-option
+                                  label="已取消"
+                                  value="3">
+                                </el-option>
+                              </el-select>
+                        </div>
+                        <div class="modal-footer slds-modal__footer">
+                            <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                               <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                    <span class=" label bBody">取消</span>
+                                </button>
+                                <button class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" id="Save" name="Save" title="附加文件 （新窗口）" type="button">
+                                    <span class=" label bBody">确定</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <link href="/element/element.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/element/vue.js"></script>
+    <script type="text/javascript" src="/element/element.js"></script>
+    <script type="text/javascript" src="/element/vue-resource.js"></script>
+    <script>
+        var vum = new Vue({
+            el: '#vueapp',
+            data: {
+                state: ''
+            },
+            methods: {
+
+            }
+        })
+        $('#closeds').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        $('#closedsa').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        $("#Save").click(function () {
+            var state = vum.state
+            var id = parent.getQueryString('id')
+            var d = {
+                valueId: id,
+                status: state
+            }
+            ajaxMethodGetData("meeting.update.status", d, callback)
+            function callback(data) {
+                console.log(data)
+                parent.success("更改状态成功")
+                //parent.getdata()
+                parent.location.reload();
+                window.parent.document.getElementById("changeDiv").style.display = "none";
+                
+            }
+            function errorcallback() {
+                parent.error()
+            }
+        })
+    </script>
+</body>
+</html>

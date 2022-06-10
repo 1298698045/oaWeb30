@@ -1,0 +1,1591 @@
+﻿ul,ol{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 100%;
+}
+label{
+    margin-bottom: 0;
+}
+.viewport{
+    overflow: visible;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.section{
+    left: 0;
+    right: 0;
+    transition: left .25s;
+    position: absolute;
+    overflow: visible;
+    width: auto;
+    z-index: 0;
+    display: flex;
+    -webkit-box-orient: vertical;
+    flex-flow: column;
+}
+.slds-global-header_container{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transform: translate3d(0,0,0);
+    display: block;
+}
+.slds-brand-band{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.slds-brand-band-zhou{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.slds-brand-band-ri{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.slds-brand-band-yue{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.slds-template__container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.center{
+    overflow: visible;
+    background-color: transparent;
+    max-width: 100%;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    transition: transform .25s ease-in;
+    outline: none;
+}
+.oneContent{
+    display: block;
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+}
+.calendarHome{
+    overflow: hidden;
+}
+.forceCalendar{
+    min-width: 780px;
+    border-radius: .25rem;
+    transition: 600ms;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+}
+.calendarHeader{
+    position: relative;
+    z-index: 2;
+}
+.slds-page-header{
+    margin: 0;
+    padding-left: 16px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    background: rgb(243, 242, 242);
+    background-clip: padding-box;
+    border: 1px solid rgb(221, 219, 218);
+}
+.slds-page-header_joined{
+    border-bottom: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem .25rem 0 0;
+    box-shadow: none;
+}
+.slds-grid{
+    display: flex;
+}
+.slds-has-flexi-truncate {
+    flex: 1 1 0%;
+    min-width: 0;
+}
+.slds-media {
+    display: flex;
+    align-items: flex-start;
+}
+.slds-grow {
+    flex-grow: 1;
+}
+.slds-no-space {
+    min-width: 0;
+    padding-top: 5px;
+}
+.slds-media__figure{
+    flex-shrink: 0;
+    margin-right: .75rem;
+}
+.uiImage{
+    display: inherit;
+}
+.uiImage i{
+    display: inherit;
+    max-width: 100%;
+    height: auto;
+}
+.slds-media__body{
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 0;
+}
+.slds-line-height--reset{
+    margin-bottom: 0;
+    font-size: .75rem;
+    margin-top: 5px;
+}
+.slds-truncate {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.slds-m-right--small {
+    margin-right: .75rem;
+}
+
+.slds-align-middle {
+    vertical-align: middle;
+    align-self: center;
+}
+.slds-page-header__title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 21px;
+    display: block;
+}
+.slds-align-top {
+    vertical-align: top;
+    align-self: flex-start;
+}
+.slds-no-flex {
+    flex: none;
+}
+.slds-grid {
+    display: flex;
+}
+.slds_top{
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+}
+.rili_calender_header_jiantou{
+    display: inline-flex;
+    margin-top: 8px;
+}
+.rili_btn{
+    background-color: rgb(255, 255, 255);
+    line-height: 1;
+    vertical-align: middle;
+    color: rgb(112, 110, 107);
+    border: 1px solid rgb(221, 219, 218);
+    transition: border .15s linear;
+    border-color: rgb(221, 219, 218);
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    background: transparent;
+    background-clip: border-box;
+    text-decoration: none;
+    -webkit-appearance: none;
+    white-space: normal;
+    user-select: none;
+}
+.rili_btn_left{
+    border-right: 0;
+    border-radius: .25rem 0 0 .25rem;
+}
+.rili_btn_left:hover i{
+    color: rgba(27, 82, 151, 1.0);
+}
+.rili_btn_right:hover i{
+    color: rgba(27, 82, 151, 1.0);
+}
+.rili_btn_right{
+    border-radius:0 .25rem  .25rem 0;
+}
+.rili_btn_right,.rili_btn_left i{
+    color:rgb(112, 110, 107);
+}
+.rili_button{
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    background: transparent;
+    background-clip: border-box;
+    border-radius: .25rem;
+    line-height: 1.875rem;
+    text-decoration: none;
+    -webkit-appearance: none;
+    white-space: normal;
+    user-select: none;
+    cursor: default;
+    height: 2rem;
+    color: rgba(27, 82, 151, 1.0);
+    margin-top: 8px;
+}
+.today{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid rgb(221, 219, 218);
+    transition: border .15s linear;
+}
+.now{
+    background-color: rgb(255,255,255);
+    cursor: default;
+    margin-left: .25rem;
+}
+.rili_empty{
+    margin-left: 1.5rem;
+}
+.rili_back{
+    margin-top:8px;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1;
+    vertical-align: middle;
+    border: 1px solid rgb(221, 219, 218);
+    transition: border .15s linear;
+    border-color: rgb(221, 219, 218);
+}
+.rili_filed{
+    background-color: rgb(255, 255, 255);
+}
+.rili_filed i{
+    color: rgb(112, 110, 107);
+    font-weight: bolder;
+}
+.rili_rili{
+    margin-left: .25rem;
+    display: inline-flex;
+    position: relative;
+    margin-top: 8px;
+}
+.rili_rili_a{
+    border-radius: .25rem;
+    width: auto;
+    line-height: 1.875rem;
+    padding: 0 .5rem;
+    border: 1px solid rgb(221, 219, 218);
+    background-color: rgb(255, 255, 255);
+    color: rgb(112, 110, 107);
+    text-align: center;
+    height: 2rem;
+    position: relative;
+}
+.rili_rili_a:hover{
+    color: rgba(27, 82, 151, 1.0);
+}
+.tab{
+    width: 100px;
+    border: 1px solid #ccc;
+    background: #fff;
+    position: absolute;
+    top: 33px;
+    left: 0px;
+    z-index: 9999;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+}
+.tab_ul{
+    margin-bottom: 0;
+}
+.tab_li{
+    line-height: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+}
+.tab_li:hover{
+    background: rgb(236, 235, 234);
+}
+.tab-rili{
+    display: block;
+    width: 78%;
+    float: right;
+    font-size: .75rem;
+}
+.i{
+    display: none;
+}
+.rili_rili_iconfont{
+    display: inline-block;
+    border-radius: .25rem;
+    width: .875rem;
+    height: .875rem;
+    fill: currentColor;
+}
+.rili_rili_right{
+    margin-left: .5rem;
+}
+.nows{
+    color: rgba(27, 82, 151, 1.0);
+    background-color: rgb(255,255,255);
+    cursor: default;
+    margin-left: .25rem;
+    font-size: 13px;
+}
+.rili_emptys{
+    margin-left: .25rem;
+}
+.rili_san{
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(27, 82, 151, 1.0);
+    border-color: rgba(27, 82, 151, 1.0);
+    color: rgb(255, 255, 255);
+    line-height: 1;
+    vertical-align: middle;
+    border: 1px solid rgb(221, 219, 218);
+    transition: border .15s linear;
+}
+.calendar{
+    display: flex;
+    flex-direction: column;
+    top: 69px;
+    right: 304px;
+    z-index: 1;
+    transition: 600ms;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+        width: calc(100% - 321px);
+}
+.assistiveText{
+    position: absolute!important;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+}
+.calendarTop{
+    flex-shrink: 0;
+    padding-top: 40px;
+    background: rgba(255, 255, 255, .95);
+    position: relative;
+    z-index: 2;
+}
+.calendarUserTimezoneOffset{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    text-align: center;
+    z-index: 2;
+}
+.rili_calender_strong{
+    line-height: 40px;
+    font-weight: 400;
+    color: rgb(112, 110, 107);
+    font-size: 11px;
+}
+.calendarDayHeaders{
+    padding: 0 0 0 80px;
+    padding-right: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-right: 1px solid rgb(221, 219, 218);
+    display: flex;
+}    
+.calenderDayHeader{
+    position: relative;
+    line-height: 40px;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: normal;
+    flex-basis: 100%;
+    font-size: .75rem;
+}
+.calenderDayHeader:after {
+    content: '';
+    position: absolute;
+    border-left: 1px solid rgb(221, 219, 218);
+    top: 40px;
+    bottom: 0;
+    left: 0;
+}
+.presentDay{
+    color: rgb(0, 112, 210);
+}
+.calendarTrough{
+    height: 24px;
+    padding-right: 15px;
+    position: relative;
+    width: calc(100% - 80px);
+    min-height: 20px;
+    max-height: 100px;
+    margin: 0;
+    margin-bottom: -1px;
+    border: 1px solid rgb(221, 219, 218);
+    border-bottom-width: 2px;
+    border-right: none;
+    border-left: none;
+    padding-top: 1px;
+    padding-bottom: 10px;
+    z-index: 2;
+    overflow: hidden;
+    transition: 300ms ease-in-out;
+    padding: 0 0 0 80px;
+    flex-basis: 100%;
+}
+.calendarTroughContainer {
+    position: inherit;
+    margin-top: 0;
+    padding-left: 0;
+    list-style: none;
+}
+.calendarRow{
+    flex: 1;
+    overflow-y: scroll;
+    display: flex;
+    /*border-right: 1px solid rgb(221, 219, 218);*/
+}
+.slds-assistive-text{
+    position: absolute!important;
+    margin: -1px!important;
+    border: 0!important;
+    padding: 0!important;
+    width: 1px!important;
+    height: 1px!important;
+    overflow: hidden!important;
+    clip: rect(0 0 0 0)!important;
+    text-transform: none!important;
+    white-space: nowrap!important;
+}
+.rowCore {
+    max-height: 1692px;
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+.calendarKey{
+    margin-top: 20px;
+    height: 1692px;
+    box-sizing: content-box;
+    border-bottom: 1px solid rgb(221, 219, 218);
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+.calendarKey strong {
+    display: block;
+    height: 3.515%;
+    border-top: 1px solid rgb(221, 219, 218);
+    padding: 10px 0 0 0;
+    font-size: .8125rem;
+    color: rgb(62, 62, 60);
+    font-weight: normal;
+}
+.calendarKey span {
+    position: relative;
+    top: -20px;
+    padding: 6px;
+    background: #fff;
+}
+.currentTimeMarker{
+    margin-top: 20px; 
+    z-index: 10;
+    transition: .5s;
+    position: absolute;
+    border-top: 2px solid rgb(234, 130, 136);
+    right: 0;
+    list-style-type: none;
+}
+.calendarDay{
+    margin-top: 20px; 
+    height: 1692px;
+    position: relative;
+}
+.eventList{
+    height: 1692px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: content-box;
+    border-left: 1px solid rgb(221, 219, 218);
+    border-bottom: 1px solid rgb(221, 219, 218);
+    background: linear-gradient(rgba(0, 0, 0, .1) 1px, transparent 1.01px);
+    background-size: 100% 2.08333333%;
+}
+.eventList:before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background-size: 100% 4.16666666%;
+}
+.calendarSidebar{
+    /*transition: 600ms;*/
+    /*width: 304px;
+    position: absolute;*/
+    /*right: 0;
+    bottom: 0;
+    top: 69px;*/
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*display: flex;*/
+    flex-direction: column;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+        float: right;
+        height: calc(100% - 4.1rem);
+            width: 322px;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+        padding: 8px 2px!important;
+}
+.uiDatePicker {
+    display: block!important;
+    /*z-index: 0;
+    border: none;
+    padding: 10px;
+    box-shadow: none;
+    flex: 0 0 auto;*/
+}
+.visible{
+    opacity: 1;
+    display: block;
+}
+.uiDatePicker--inline {
+    /*margin-top: 0;
+    position: relative;
+    transform: none;*/
+}
+.uiDatePicker--default{
+    /*margin-top: .25rem;
+    margin-left:10.5rem;
+    padding: 0;*/
+    font-size: .75rem;
+    /*display: none;*/
+    font-weight: 400;
+}
+.uiDatePicker--default {
+    background: rgb(255, 255, 255);
+    /* box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16); */
+    /* border: 1px solid rgb(221, 219, 218); */
+    border-radius: .25rem;
+    padding: .5rem 0;
+    z-index: 9;
+    /*float: left;
+    position: absolute;
+    min-width: 289px;
+    max-width: 400px;
+    transform: translateX(-50%);*/
+}
+.slds-datepicker {
+    padding: 0;
+    font-size: .75rem;
+}
+.dateBar{
+    display: flex;
+    position: relative;
+    padding: .25rem;
+}
+.datepicker__filter--month {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 12px;
+    position:relative;
+}
+.prevLinks {
+    float: left;
+    text-align: left;
+    margin-left: .75rem;
+    position:absolute;
+    top:1.6rem;
+}
+.prevLinks i {
+    font-size:24px;
+}
+.slds-align-middle {
+    vertical-align: middle;
+    align-self: center;
+}
+.prevMonth {
+    /*background: url(../image/left.svg) no-repeat;*/
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    bottom: 11px;
+}
+.nextLinks{
+    float: right;
+    text-align: right;
+    margin-right: .75rem;
+    order: 3;
+    position:absolute;
+    top:1.6rem;
+    right: 43px;
+}
+.nextLinks i {
+    font-size:24px;
+}
+.nextMonth {
+    /*background: url(../image/right.svg) no-repeat;*/
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    bottom: 11px;
+}
+.monthYear{
+    font-size: .75rem;
+    text-transform: uppercase;
+    padding-left: 21px;
+    font-weight: inherit;
+    margin: 0;
+    padding: 0;
+    margin-left: 62px;
+    margin-right: 62px;
+    width: 34px;
+}
+.slds-shrink-none{
+    flex-shrink: 0;
+        position: relative;
+}
+.picklist__label{
+    font-size: .75rem;
+    font-weight: 400;
+}
+.slds-select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 0 30px 0 14px;
+    /*background-image: url(../image/jian.svg);*/
+    background-repeat: no-repeat;
+    background-position: 95% 50%;
+    background-size: .8125rem .8125rem,100% 100%;
+    font-family: 'Salesforce Sans',Arial,sans-serif;
+    background-color: rgb(255, 255, 255);
+    color: rgb(8, 7, 7);
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;
+    font-weight: 300;
+    font-size: 1rem;
+    width: 100%;
+    transition: border .1s linear,background-color .1s linear;
+    height: 1.875rem;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.dayOfWeek{
+    text-transform: lowercase;
+    padding: .5rem;
+    font-weight: 400;
+    text-align: center;
+    color: rgb(62, 62, 60);
+}
+.calRow{
+    background: rgb(255, 255, 255);
+}
+.uiDayInMonthCell{
+    padding: .25rem;
+    text-align: center;
+    font-size: .75rem;
+    cursor: pointer;
+}
+.slds-disabled-text {
+    color: rgb(221, 219, 218);
+}
+.uiDayInMonthCell--default{
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    position: relative;
+    min-width: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    margin: auto;
+    background: rgb(255, 255, 255);
+}
+.calendarListPanel{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0rem;
+}
+.calendarListGroup{
+    padding: 0 0 0 .5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+}
+.calendarPanelHeader{
+    padding-left: .25rem;
+    position: relative;
+}
+.calendarSettingsMenu{
+    height: 1.75rem;  
+    float: right;
+}
+.uiMenu{
+    display: inline-block;
+    margin-right: 1rem;
+    vertical-align: middle;
+    position: relative;
+}
+.forceMenuTriggerIcon{
+    height: 1.75rem;
+}
+.slds-button{
+    line-height: 1.5rem;
+    padding: 0 .25rem;
+    height: 1.75rem;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    background: transparent;
+    background-clip: border-box;
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;
+    line-height: 1.875rem;
+    text-decoration: none;
+    -webkit-appearance: none;
+    white-space: normal;
+    user-select: none;
+}
+.slds-button--icon-more{
+    width: auto;
+    line-height: 1.875rem;
+    padding: 0 .5rem;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(221, 219, 218);
+    color: rgb(112, 110, 107);
+    vertical-align: middle;
+}
+.slds-button i{
+    color: rgb(112, 110, 107);
+}
+.mine {
+    font-size: 1rem;
+    margin-left: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+    display: inline-block;
+    font-size: 16px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: inherit;
+}
+.uiMenuList{
+    left: auto;
+    right: 16px;
+    transform: translateX(0);
+    background: rgb(255, 255, 255);
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16);
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;
+    padding: .5rem 0;
+    float: left;
+    position: absolute;
+    width: 165px;
+    margin-top: 28px;
+    z-index: 9999;
+}
+/*.scrollable li:hover{
+    background: rgb(236, 235, 234);
+}*/
+.scrollable{
+    overflow-y: auto;
+    max-height: 25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.scrollable_new{
+    display: block;
+    padding: .5rem .75rem;
+    color: rgb(8, 7, 7);
+    position: relative;
+    white-space: nowrap;
+    font-size: .75rem;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+}
+.xinjian,.shijian,.tianjias,.yanse{
+    display: none;
+}
+.calendarList{
+    padding-left: 0;
+    padding-top: 2px;
+        margin-bottom: 1rem;
+}
+.calendarListItem {
+    list-style: none;
+    clear: both;
+    display: flex;
+    height: 2rem;
+    line-height: 2rem;
+    position: relative;
+}
+.calendarLabel{
+    vertical-align: middle;
+    display: block;
+    text-decoration: none;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    flex: 1;
+    padding-right: .25rem;
+}
+input.uiInput--checkbox[type=checkbox]:checked {
+    border-color: rgb(21, 137, 238);
+    box-shadow: 0 0 3px #0070d2;
+}
+input.uiInput--checkbox[type=checkbox]:checked {
+    background-color: rgb(21, 137, 238);
+    background-image: url(../image/two.svg);
+    background-size: cover;
+    border-color: rgb(21, 137, 238);
+}
+.calVisCb{
+    overflow: hidden;
+    display: inline-block;
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+}
+input.uiInput--checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1rem;
+    vertical-align: -.25em;
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .125rem;
+    background: rgb(255, 255, 255);
+    transition: .5s ease all;
+}
+.calendarItemLabel{
+    vertical-align: middle;
+    cursor: pointer;
+    max-width: calc(100% - 3px);
+    display: inline-flex;
+    line-height: 1.5rem;
+    position: relative;
+    left: 3px;
+}
+.visibilityToggle {
+    width: 1rem;
+    height: 1rem;
+    min-width: 1rem;
+    margin-right: .5rem;
+    display: block;
+    border-radius: .25rem;
+    border: 1px solid rgb(221, 219, 218);
+    margin: .25rem .5rem .25rem 0;
+}
+.name{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
+.uiMenu{
+    display: inline-block;
+    margin-right: 1rem;
+    vertical-align: middle;
+    position: relative;
+}
+.forceMenuTriggerIcon{
+    height: 1.75rem;
+}
+.forceMenuTriggerIcon a{
+    line-height: 1.75rem;
+}
+.icon-f11 {
+    font-size:22px;
+}
+.scrollable_new{
+    display: block;
+    padding: .5rem .75rem;
+    color: rgb(8, 7, 7);
+    position: relative;
+    white-space: nowrap;
+    font-size: .75rem;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+}
+.calendarCalendarColorMenuItem.l{
+    margin-left: .75rem!important;
+}
+.calendarCalendarColorMenuItem.t{
+    margin-top: .5rem!important;
+}
+.calendarCalendarColorMenuItem{
+    padding: 0!important;
+    display: inline;
+    margin: .125rem 0 0 .125rem!important;
+}
+.calendarCalendarColorMenuItem a{
+    margin-top: .5rem!important;
+    color: rgb(8, 7, 7);
+    position: relative;
+    white-space: nowrap;
+    font-size: .75rem;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    width: 1rem;
+    height: 1rem;
+    border-radius: .25rem;
+    padding: 0!important;
+    margin: .125rem 0 0 .125rem!important;
+}
+.colorItem {
+    display: inline-block!important;
+    width: 1rem;
+    height: 1rem;
+    border-radius: .25rem;
+}
+.colorItem:hover{
+    width: 1.05rem;
+    height: 1.05rem;
+    box-shadow:0px 0px 5px 0px #000
+}
+
+.currentTimeMarkers{
+    z-index: 10;
+    transition: .5s;
+    border-top: 2px solid rgb(234, 130, 136);    
+    margin-top: 20px;    
+    right: 0;    
+    position: absolute;
+    list-style-type: none;
+}
+
+
+
+.calendarWeekList{
+    height: calc(100% - 25px);
+    margin-top: 25px!important;
+    position: relative;
+    padding-left: 0;
+    overflow: hidden;
+}
+.calendarWeekList_lis{
+    margin-bottom: 1px;
+    position: absolute!important;
+    border-left: 2px solid transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 1px;
+    border-right: 1px solid transparent;
+    display: block;
+    user-select: text;
+}
+.yulan{
+    padding: 3px 4px;
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+}
+.timeDatas{
+    opacity: .7;
+    flex: none;
+    font-weight: 700;
+    display: flex;
+}
+.eventDescriptions{
+    flex: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: .7;
+}
+.neighbor{
+    background: rgb(243, 242, 242);
+}
+.i{
+    display: none;
+}
+
+/* 弹窗 */
+.uiPanel{
+    display: none;
+    position: absolute;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow: visible;
+    top: 0;
+    left: 0;
+    -webkit-transform: translate3d(0,0,0);
+}
+.containers{
+    position: relative;
+    z-index: 2;
+}
+.panel-header{
+    position: relative;
+}
+.closeBtn {
+    position: absolute;
+    right: 0;
+    font-family: Arial;
+    font-size: 25px;
+    overflow: visible;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    top: 0;
+    z-index: 1;
+}
+.closeBtn {
+    color: rgb(176, 173, 171);
+    padding-right: .5rem;
+}
+.slds-button--neutral {
+    padding-left: 1rem;
+    /* padding-right: 1rem; */
+    text-align: center;
+    vertical-align: middle;
+    /* border: 1px solid rgb(221, 219, 218); */
+    transition: border .15s linear;
+    /* border-color: rgb(221, 219, 218); */
+    /* background-color: rgb(255, 255, 255); */
+}
+.slds-button {
+    /* position: relative; */
+    display: inline-block;
+    padding: 0;
+    /* background: transparent; */
+    /* background-clip: border-box; */
+    /* border: 1px solid transparent; */
+    border-radius: .25rem;
+    line-height: 1.5rem;
+    text-decoration: none;
+    /* color: rgba(27, 82, 151, 1.0); */
+    -webkit-appearance: none;
+    white-space: normal;
+    /* -webkit-user-select: none; */
+    /* -moz-user-select: none; */
+    /* -ms-user-select: none; */
+    user-select: none;
+}
+.uiButton {
+    padding-right: 10px;
+    cursor: pointer;
+}
+.scrollable{
+    overflow: auto;
+    height: 100%;
+}
+.forceCalendarExternalEventPreview{
+    width: 380px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.forceCalendarExternalEventPopup{
+    background-color: rgb(243, 242, 242);
+    padding: .75rem;
+}
+.profilePicPrimaryFieldWrapper{
+    padding-bottom: .75rem;
+}
+.profilePicWrapper{
+    float: left;
+    position: relative;
+    width: 3.125rem;
+    height: 3.125rem;
+}
+.forceEntityIcon{
+    display: block;
+    border-radius: .125rem;
+}
+.uiImage{
+    display: inherit;
+}
+.uiImage img{
+    width: 100%;
+    height: auto;
+}
+.primaryFieldWrapper{
+    float: left;
+    padding: .75rem;
+}
+.highlightsH1{
+    font-weight: 300;
+    font-size: 24px;
+    word-wrap: break-word;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 240px;
+    line-height: 1.25;
+}
+.highlightsH1_a{
+    color: rgb(0, 109, 204);
+    text-decoration: none;
+    transition: color .1s linear;
+}
+.secondaryFieldsWrapper{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.secondaryFieldGrid{
+    width: 50%;
+    padding-right: .25rem;
+    padding-bottom: .5rem;
+}
+.forceListRecordItem{
+    line-height: 1.25;
+    display: inline;
+}
+.label{
+    max-width: none;
+    font-size: .75rem;
+    color: rgb(62, 62, 60);
+}
+.truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.value{
+    font-size: .75rem;
+    color: rgb(8, 7, 7);
+    min-height: 1rem;
+}
+.moreDetails{
+    padding-bottom: .75rem;
+    border-bottom: none;
+    background-color: rgb(243,242,242);
+    padding:.75rem;
+}
+.moreDetails a{
+    color: rgb(0, 109, 204);
+    text-decoration: none;
+    transition: color .1s linear;
+}
+.pointer{
+    border: 0;
+    border-left: 1px solid #d8dde6;
+    border-bottom: 1px solid #d8dde6;
+    background: rgb(243, 242, 242);    
+    z-index: 1;
+    width: calc(1.25rem + .0625rem);
+    height: calc(1.25rem + .0625rem);
+    transform: rotate(45deg);
+}
+
+.wu{
+    display: none;
+}
+.you{
+    display: block;
+}
+.monthViewContainer{
+    height: 100%;
+}
+.forceCalendarMonthView{
+    height: calc(100% - 40px);
+    /*border-top: 1px solid rgb(221, 219, 218);*/
+    border-bottom: 1px solid rgb(221, 219, 218);
+    overflow-y: auto;
+    z-index: 1;
+}
+.calendarWeek{
+    border-top: 1px solid rgb(221, 219, 218);
+    /* border-bottom: 1px solid rgb(221, 219, 218); */
+    width: 100%;
+    position: relative!important;
+}
+.calendarWeekBackground{
+    height: 100%;
+    position: absolute;
+    display: table;
+    width: inherit;
+}
+.calendarWeekDays{
+    width: 14.28571428571429%;
+    display: table-cell;
+    height: 100%;
+    border-right: 1px solid rgb(216, 221, 230);
+    position: relative;
+}
+.dayHeader{
+    padding: 5px 0 0 5px;
+    color: rgb(8, 7, 7);
+    font-size: .75rem;
+}
+.neighbor{
+    background: rgb(243, 242, 242);
+}
+.calendarWeekLists{
+    height: calc(100% - 25px);
+    margin-top: 20px!important;
+    position: relative;
+    padding-left: 0;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.calendarWeekLists_li{
+    white-space: nowrap;
+    overflow: hidden;
+    /* border-left: 2px solid transparent; */
+    /* border-right: 1px solid transparent; */
+    position: absolute!important;
+    margin-bottom: 1px;
+    top: 0px;
+    left: 28.611428571428573%;
+    height: 27px;
+    width: 14.199%;
+}
+.calendarWeekLists_a{
+    padding: 3px 4px;
+    display: flex;
+    flex-flow: row nowrap;
+    position: relative;
+    height: 100%;
+    color: rgb(255, 255, 255);
+    font-size: .75rem;
+    overflow: hidden;
+    z-index: 1;
+}
+.timeData{
+    flex: none;
+    font-weight: 700;
+    display: flex;
+}
+.eventTimes{
+    flex: 1 0 auto;
+    margin-right: .25rem;
+    font-size: .75rem;
+}
+.eventDescriptions{
+    flex: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#iframe{
+    width: 840px;
+    z-index: 999;
+    position: absolute;
+    top: 4%;
+    left: 28%;
+    border: 0;
+    height: 87%;
+}
+.black{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(8, 7, 7, 0.6);
+    display: none;
+}
+
+
+.guanbi {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 45px;
+    z-index: 9999999;
+    color: #ccc;
+    font-size: 20px;
+    background: none;
+    box-shadow: 0 0 5px #fff;
+    border: 0;
+    display: none;
+    top: 10px;
+}
+.guanbi:hover{
+    color: #fff;
+}
+.eventListContainerS{
+    width: 95%;
+    height: 100%;
+    position: relative;
+    margin-top: 0;
+}
+.forceCalendarEventTimed{
+    padding: 1px 1px 0 0;
+    color: rgb(0, 57, 107);
+    position: absolute;
+    display: block;
+}
+.eventBox{
+    /* box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16); */
+    z-index: 10;
+    color: rgb(255, 255, 255);
+    transition: all .1s;
+    width: 100%;
+    padding: 4px 6px;
+    position: relative;
+    display: block;
+    height: 100%;
+    font-size: .75rem;
+    overflow: hidden;
+}
+.timeDatab{
+    font-weight: 700;
+    display: flex;
+}
+.previewReferenceElement{
+    position: absolute;
+    width: calc(100% - 13.5px);
+    height: 1px;
+    z-index: 0;
+}
+.eventTime{
+    flex: 1 0 auto;
+    margin-right: .25rem;
+}
+.eventDescription a{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.xiala::-ms-expand { 
+    display: none; 
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    -ms-appearance:none;
+}       
+
+
+
+
+
+
+
+
+
+
+
+
+.actionIcon{
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    pointer-events: none;
+    margin-right: .75rem;
+    border-radius: .25rem;
+    float: left;
+}
+ .actionIcon img {
+    height: 1rem;
+    margin: 3px auto 0;
+    width: 1rem;
+    display: block;
+    max-width: 100%;
+}
+.actionIcons{
+    display: block;
+    height: 1.9rem;
+    width: 2rem;
+    pointer-events: none;
+    margin-left: .75rem;
+    border-radius: .25rem;
+    float: left;
+}
+ .actionIcons img {
+    height:100%;
+    margin: 3px auto 0;
+    width:100%;
+    display: block;
+    max-width: 100%;
+}
+.unsNotificationsListRow:first-child {
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+}
+
+.unsNotificationsVirtualList li {
+    list-style: none;
+}
+.unsNotificationsListRow {
+    border-top: 1px solid #ccc;
+}
+.unsNotificationsListRow .notification-link {
+    display: block;
+    padding: .75rem .75rem 1rem .75rem;
+}
+.unsNotificationsListRow .notification-content {
+    overflow: hidden;
+}
+.unsNotificationsListRow .notification-avatar {
+    margin-right: .75rem;
+    float: left;
+}
+.unsNotificationsListRow .notification-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: .25rem;
+}
+.forceChatterEntityPhoto.standardSize {
+    height:30px;
+    width: 30px;
+}
+.forceChatterEntityPhoto.entityPhotoSpecificity {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    box-sizing: content-box;
+    flex-grow: initial;
+}
+.forceChatterEntityPhoto .image {
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.unsNotificationsListRow .notification-content {
+    overflow: hidden;
+    text-align: left;
+}
+.unsNotificationsListRow .notification-text-title {
+    display: block;
+    color: rgb(8, 7, 7);
+    font-weight: 700;
+    font-size: .8125rem;
+}
+.unsNotificationsListRow .notification-text {
+    display: block;
+    color: rgb(8, 7, 7);
+    font-weight: 400;
+    font-size: .8125rem;
+    margin: 0 0 1rem 0;
+    word-wrap: break-word;
+    line-height: 2;
+}
+.forceCalendarSidebar tr.calRow>td>span{
+    background: rgb(255, 255, 255);
+}
+.forceCalendarSidebar tr.has-multi-row-selection {
+    border-collapse: collapse;
+    background: rgb(243, 242, 242);
+    transition: background .15s linear;
+}
+.forceCalendarSidebar tr.calRow>td.is-selected-multi>span.highlight, .forceCalendarSidebar tr.calRow>td.slds-is-selected>span.highlight{
+    color: rgb(8, 7, 7);
+    background: rgb(243, 242, 242);
+    transition: background .15s linear;
+}
+.forceCalendarSidebar td.is-selected-multi>span.highlight {
+    border: none;
+}
+.slds-datepicker td>.slds-day {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    position: relative;
+    min-width: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    margin: auto;
+}
+.DeptsContainor-checked {
+    line-height:65px;
+    max-width:230px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+#vueapp .rili_calender_header_jiantou .el-date-editor.el-input {
+    width: 140px;
+    height: 36px;
+}
+
+#iframe {
+    margin-left:0 !important;
+}
+.remarkList li a {
+    padding: 0;
+    text-align: left;
+    width: 150px;
+}
+.rili_rili ul {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    text-align: center;
+    top: 35px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 3px #999;
+    display: none;
+}
+.rili_rili ul li {
+    background-color: white;
+    padding: 5px;
+}
+.rili_rili span {
+    float: left;
+}
+
+
+
+
+
+
+

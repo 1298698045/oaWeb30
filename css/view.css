@@ -1,0 +1,307 @@
+﻿        .bPageBlock .detailList .recurrenceTable td {
+            vertical-align: middle;
+            padding: 10px;
+        }
+
+        #bodyCell {
+            padding: 0;
+        }
+
+        .bodyDiv {
+            padding: 0;
+        }
+
+        .sidebarCell {
+            padding: 0;
+        }
+
+        .caozuo {
+            margin-right: 20px;
+        }
+
+        .genggai-div2 {
+            right: 20px;
+        }
+
+        .othermession {
+            height: 120px;
+        }
+
+
+        .mission-header-leftlogo div {
+            top: 20px;
+        }
+        .head-bottbo {
+            margin-top: 0px;
+            border-bottom: 0;
+            background-color:#158bb1;
+            border:0;
+            height:15px;
+        }
+
+        .mission {
+            margin-top: 0px;
+            background-color:#158bb1;
+        }
+        .mission-mi {
+            background-image: linear-gradient(#158bb1, #127595);
+        }
+        .contract-message {
+            height: 70px;
+            overflow: hidden;
+            background-color: white;
+            border-bottom-left-radius:4px;
+            border-bottom-right-radius:4px;
+        }
+
+            .contract-message ul {
+                height: 20px;
+            }
+
+                .contract-message ul li {
+                    float: left;
+                    width: 150px;
+                    font-size: 12px;
+                }
+
+        .contract-message-head {
+            margin-top: 20px;
+        }
+
+        .edit-btn {
+            position: absolute;
+            top: 60px;
+            z-index: 400;
+            width: 64%;
+            left: 13%;
+            background-color: white;
+            padding: 10px 5%;
+            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .related-item-body {
+            max-width: 100%;
+            width: 100%;
+            overflow-x: auto;
+        }
+
+            .related-item-body ul {
+                border-bottom: 1px solid #dddbda;
+            }
+
+        .lookall {
+            border-top: 0;
+        }
+
+
+        .related-item {
+            margin-top: 15px;
+        }
+
+        input[type="date"] {
+            width: 130px !important;
+        }
+
+        .save-again {
+            width: 70px !important;
+        }
+
+        .sanjiao {
+            width: 20px !important;
+            height: 20px !important;
+            padding: 0 !important;
+            margin-top: 5px;
+            overflow: visible !important;
+        }
+
+        .related .miss-bianji {
+            display: none;
+        }
+
+        .related .red {
+            float: left;
+            margin-right: 5px;
+        }
+
+        .form-element {
+            width: 100%;
+        }
+
+        .contract-message li {
+            height: 20px;
+        }
+
+        .mission-left {
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        #zhenwen {
+            width: 100%;
+            border: 0;
+            height: 100%;
+        }
+
+        .missionleft-body .related {
+            height: auto;
+        }
+       
+        .missionmession-body .main {
+            line-height:30px;
+        }
+        .mission-left {
+            border-radius:4px;
+        }
+        .mission-right {
+            border-radius:4px;
+            
+        }
+        #bodyCell {
+            background:#71b2c6;
+        }
+        body {
+            padding-bottom:20px;
+            height:auto;
+        }
+        .related-item-head {
+            padding-bottom:5px;
+        }
+        .miss-header {
+            background-color:#f3f2f2;
+            border-radius:4px 4px 0 0;
+            margin-top:10px;
+        }
+        .missionleft-head li {
+            margin-left:20px;
+        }
+        .people {
+            padding:10px;
+            margin:0;
+        }
+        .people-body {
+            margin-top:10px;
+        }
+        .panel-body {
+            box-sizing:border-box;
+        }
+        .missionleft-body > div {
+            height:auto;
+        }
+        .mission > div {
+            height:auto;
+            box-shadow:0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+        }
+        .mission .mission-mi {
+            height:100%;
+        }
+        .mission-right {
+            margin-left:1%;
+        }
+        .oRight .mission {
+            background-color:transparent;
+            margin-top:12px;
+            padding-bottom:10px;
+        }
+        #bodyCell {
+            background-color:transparent;
+        }
+        .bodyDiv {
+            background-color:transparent;
+            box-shadow:none;            
+        }
+        .mission .comment li {
+            margin-left:0;
+        }
+        .missionright-file-type .selectlist {
+            margin-top:5px;
+            margin-left:-8px;
+            width:21% !important;
+
+        }
+        .morebtn .selectlist li {
+            padding-left:15px;
+        }
+        .missionright-file-type .shituu {
+            position:static !important;
+        }
+        .missionright-body3 {
+            padding-bottom:20px;
+        }
+        .mission-right {
+            padding-bottom:20px;
+        }
+        .task .miss-header,.megti .miss-header {
+                min-height: 50px;
+        }
+        .task,.megti {
+            border:1px solid #dedede;
+            border-top:3px solid #b0adab;
+            border-radius:4px;
+        }
+        .task-item {
+            width:50%;
+            float:left;
+            padding:10px;
+            box-sizing:border-box;
+            position:relative;
+        }
+        .task-foot {
+            border-top:1px solid #dedede;
+            height:40px;
+            line-height:40px;
+            text-align:center;
+            color:#108af9;
+            cursor:pointer;
+        }
+        .task a,.megti a {
+            color:#108af9;
+            
+        }
+        .task-item-body {
+            line-height:20px;
+            color:#333;
+            font-size:14px;
+        }
+        .task-item-btn {
+            width:18px !important;
+            height:18px !important;
+            padding:0 !important;
+            border:1px solid #dedede;
+            border-radius:4px;
+            cursor:pointer;
+            position:absolute;
+            right:10px;
+            top:15px;
+            background:url('/img/cal/20.png') no-repeat center;
+            background-size:12px;
+        }
+        .task .selectlist,.megti .selectlist {
+            min-width:100px;
+            margin-top:22px;
+        }
+        .task .selectlist li,.megti .selectlist li{
+            padding-left:15px;
+            color:#108af9;
+        }
+        .task-item-head {
+            width:90%;
+        }
+        .related-item-body li>div {
+            width: 117px;
+        }
+        .related-item-body .miss-bianji {
+            right:auto;
+            margin-top:8px;
+        }
+        .summary {
+            padding:20px;
+        }
+        .missionmession {
+            height:auto;
+        }
+.oRight .mission-header {
+    background-color:#f3f2f2;
+    border-radius:4px 4px 0 0;
+    margin-top:10px;
+}

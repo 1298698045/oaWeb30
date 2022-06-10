@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <!--工资变更申请-->
+  <Action name="salary.changer.save" type="Youyou.HRCore.Salary.SalaryChangeSave,HRCore" desc="工资变更申请"></Action>
+  <!--工资套账字段保存-->
+  <Action name="salary.account.save" type="Youyou.HRCore.Actions.SalaryAccountSave,HRCore" desc="工资套账保存"></Action>
+  <Action name="salary.accountfieid.save" type="Youyou.HRCore.Salary.SalaryAccountFieldSave,HRCore" desc="工资套账字段保存"></Action>
+  <Action name="salary.accountfieid.updatecategory" type="Youyou.HRCore.Salary.SalaryAccountFieldSave,HRCore" desc="修改字段分类"></Action>
+  <!--修改工资套账字段类型-->
+  <Action name="salary.accountfieidsetfieldcategory.save" type="Youyou.HRCore.Salary.SalaryAccountFieldSetFieldCategory,HRCore" desc="修改工资套账字段类型"></Action>
+
+  <!--修改工资套账字段排序-->
+  <Action name="salary.accountfieidsetsortnumber.save" type="Youyou.HRCore.Salary.SalaryAccountFieldSetSortNumber,HRCore" desc="修改工资套账字段排序"></Action>
+  <!--工资套账字段公式保存-->
+  <Action name="salary.accountfield.updateformula" type="Youyou.HRCore.Salary.SalaryAccountFieldSetFormulaText,HRCore" desc="工资套账字段公式保存"></Action>
+
+  <!--月工资显示-->
+  <Action name="salary.salarymonthpay.getlist" type="Youyou.HRCore.Salary.SalaryMonthSalaryGetList,HRCore" desc="工资套账字段公式保存"></Action>
+  <!--生成月工资-->
+  <Action name="salary.month.pay.save" type="Youyou.HRCore.Salary.SalaryPayMonthSave,HRCore" desc="创建月工资"></Action>
+  <Action name="salary.month.create" type="Youyou.HRCore.Salary.SalaryMonthCreate,HRCore" desc="创建工资"></Action>
+  <Action name="salary.month.pay.submit" type="Youyou.HRCore.Salary.SalaryPayMonthSubmit,HRCore" desc="提交本次工资，提交后不可以修改"></Action>
+  <Action name="salary.month.generate" type="Youyou.HRCore.Salary.SalaryMonthGenerate,HRCore" desc="对已经创建的工资，重新生成月工资"></Action>
+  <Action name="salary.month.field.calculate" type="Youyou.HRCore.Salary.SalaryMonthFieldCalculate,HRCore" desc="计算选定字段值"></Action>
+  <Action name="salary.month.field.importdata" type="Youyou.HRCore.Salary.SalaryMonthFieldImportData,HRCore" desc="导入选定字段值"></Action>
+  <Action name="salary.month.field.copylast" type="Youyou.HRCore.Salary.SalaryMonthFieldCopyLast,HRCore" desc="复制引入上月工资"></Action>
+  <Action name="salary.month.field.batchupdate" type="Youyou.HRCore.Salary.SalaryMonthFieldBatchUpdate,HRCore" desc="批量修改工资项目"></Action>
+  <Action name="salary.month.people.add" type="Youyou.HRCore.Salary.SalaryMonthPeopleAdd,HRCore" desc="为月工资引入人员"></Action>
+  <Action name="salary.month.people.delete" type="Youyou.HRCore.Actions.Salary.SalaryMonthPeopleDelete,HRCore" desc="删除人员工资"></Action>
+
+  <!--工资标准详细保存-->
+  <Action name="salary.salarylevel.savedetail" type="Youyou.HRCore.Salary.StandardSalaryPostDetailSave,HRCore" desc="工资套账字段公式保存"></Action>
+  <!--税率表设置-->
+  <Action name="salary.taxrate.save" type="Youyou.HRCore.Actions.Salary.SalaryTaxrateSave,HRCore" desc="工资套账字段公式保存"></Action>
+  <!--税率表详细删除-->
+  <Action name="salary.taxratedetail.delete" type="Youyou.HRCore.Actions.Salary.SalaryTaxratedetailDelete,HRCore" desc="工资套账字段公式保存"></Action>
+
+  <!--批量工资变更满年限升薪级-->
+  <Action name="salary.levelchangemass.save" type="Youyou.HRCore.Actions.LevelChangeMassSave,HRCore" desc="批量工资变更满年限升薪级"></Action>
+
+  <!--保存月保险-->
+  <Action name="salary.monthsal.save" type="Youyou.HRCore.Salary.MonthSalSave,HRCore" desc="保存月保险"></Action>
+
+
+
+  <!--保存所得税-->
+  <Action name="salary.monthtax.save" type="Youyou.HRCore.Salary.MonthTaxSave,HRCore" desc="保存所得税"></Action>
+  <!--删除所得税-->
+  <Action name="salary.monthtax.delete" type="Youyou.HRCore.Salary.MonthTaxDelete,HRCore" desc="删除所得税"></Action>
+
+  <Action name="salary.deptbonus.batchupdate" type="Youyou.WebAPI.HRCore.SalaryBonusDeptBatchUpdate,HRCore"></Action>
+  <Action name="salary.datareportorsetting.update" type="Youyou.WebAPI.HRCore.DataReportorSettingUpdate,HRCore"></Action>
+  <Action name="salary.bonus.dept.getlist" type="Youyou.WebAPI.HRCore.SalaryBonusDeptGetList,HRCore"></Action>
+  <!--从系统里面获取部门奖金数据-->
+  <Action name="performancebonus.dept.retrive" type="Youyou.HRCore.Actions.PerformanceBonusDeptRetrive,HRCore"></Action>
+  <Action name="salary.bonus.dept.reset" type="Youyou.WebAPI.HRCore.SalaryBonusDeptReset,HRCore"></Action>
+  <Action name="salary.bonusdept.get" type=" Youyou.WebAPI.HRCore.SalaryBonusDeptGet,HRCore"></Action>
+  <Action name="salary.bonus.employee.add" type="Youyou.WebAPI.HRCore.SalaryBonusEmployeeAdd,HRCore"></Action>
+  <Action name="salary.bonus.employee.delete" type="Youyou.WebAPI.HRCore.SalaryBonusEmployeeDelete,HRCore"></Action>
+  <Action name="salary.bonus.employee.getlist" type="Youyou.WebAPI.HRCore.SalaryBonusEmployeeGetList,HRCore"></Action>
+  <Action name="salary.employeebonus.batchupdate" type="Youyou.WebAPI.HRCore.SalaryBonusEmployeeBatchUpdate,HRCore"></Action>
+  <!--饭卡更新保存-->
+  <Action name="salary.mealcard.update" type="Youyou.HRCore.Salary.SalaryMealCardUpdate,HRCore"></Action>
+  <!--伙食补贴的更新保存-->
+  <Action name="salary.mealallowance.update" type="Youyou.HRCore.Salary.SalaryMealAllowanceUpdate,HRCore"></Action>
+
+  <!--统计工资汇总表-->
+  <Action name="salary.total.caculte" type="Youyou.HRCore.Salary.TotalCaculte,HRCore"></Action>
+
+
+  <!--饭卡、餐补扣款计算-->
+  <Action name="attendance.absentdays.caculte" type="Youyou.HRCore.Actions.Attendance.AttendanceAbsentCaculte,HRCore"></Action>
+
+  <Action name="salary.month.clear" type="Youyou.Salary.Actions.SalaryMonthClear,OACore" desc="删除月上传工资"></Action>
+</Actions>

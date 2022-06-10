@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+            <link rel="stylesheet" href="/css/themes/lightning/addpeople.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/tasklist.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/css/themes/lightning/alerts.css" />
+    <script src="/js/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="photo">
+            <div class="DESKTOP uiContainerManager">
+                <div class="DESKTOP uiModal--medium uiModal forceModal open active" style="z-index: 1;">
+                    <div class="modal-glass slds-backdrop fadein slds-backdrop--open" style="opacity: 1;"></div>
+                    <div class="panel slds-modal slds-fade-in-open">
+                        <div class="modal-container slds-modal__container">
+                            <div class="modal-header slds-modal__header">
+                                <h2 class="title slds-text-heading--medium">复制列表视图</h2>
+                                <button class="slds-button slds-modal__close closeIcon slds-button_icon-bare slds-button_icon-inverse" type="button" title="关闭此窗口" id="closeds">
+                                    <span>
+                                        <span style="font-size: 34px;">×</span>
+                                    </span>
+                                    <span class="slds-assistive-text">关闭此窗口</span>
+                                </button>
+                            </div>
+                            <div class="modal-body scrollable slds-modal__content slds-p-around--medium">
+                                <div class="cuf-content slds-scope forceChatterUpdatePhoto">
+                                    <div class="updatePhotoPanel slds-text-align--center">
+                                        <div style="margin-bottom: 2rem;">
+                                            <div class="divs">
+                                                <div class="divs_title"><span class="divs_red">*</span>列表名称</div>
+                                                <input class="save-checking-input divs_input" type="type" value="全部 的副本" id="Name"/>
+                                            </div>
+                                            <div class="divs">
+                                                <span class="divs_red">*</span>
+                                                <div class="divs_title">List API Name</div>
+                                                <input class="save-checking-input divs_input" type="type" value="" id="ListApiName"/>
+                                            </div>
+                                        </div>
+                                        <fieldset style="padding-top: .25rem;">
+                                            <legend style="margin-bottom: .5rem;">谁可以查看此列表视图？</legend>
+                                            <div class="slds-form-element__control">
+                                                <span class="slds-radio">
+                                                    <input type="radio" id="radio-302" name="visibility" value="PRIVATE">
+                                                    <label for="radio-302" class="slds-radio__label">
+                                                        <span class="slds-radio_faux"></span>
+                                                        <span class="">只有我可以查看此列表视图</span>
+                                                    </label>
+                                                </span>
+                                            </div>
+                                            <div class="slds-form-element__control">
+                                                <span class="slds-radio">
+                                                    <input type="radio" id="radio-303" name="visibility" value="GLOBAL">
+                                                    <label for="radio-303" class="slds-radio__label">
+                                                        <span class="slds-radio_faux"></span>
+                                                        <span class="">所有用户均可以查看此列表视图</span>
+                                                    </label>
+                                                </span>
+                                            </div>
+                                            <div class="slds-form-element__control">
+                                                <span class="slds-radio">
+                                                    <input type="radio" id="radio-304" name="visibility" value="SHARED">
+                                                    <label for="radio-304" class="slds-radio__label">
+                                                        <span class="slds-radio_faux"></span>
+                                                        <span class="">与用户小组共享列表视图</span>
+                                                    </label>
+                                                </span>
+                                            </div>
+                                                                                    <div class="slds_section__content_div_col_element" style="display: none;">
+                                                    <label class="slds_section__content_div_col_element_label">
+                                                        <span class="">搜索</span>
+                                                        <span class="required "></span>
+                                                    </label>
+                                                    <div>
+                                                        <div class="contentWrapper" style="border-color: rgb(221, 219, 218); box-shadow: rgb(255, 255, 255) 0px 0px 0px;">
+                                                            <div class="contentWrapper_input slds-grid people_hidden" style="display: flex;">
+                                                                <div class="entiyMenu">
+                                                                    <a href="#" class="entityMenuTrigger">
+                                                                        <div class="entityIcon" style="background-color: #65CAE4">
+                                                                            <span class="uiImage">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="contentWrapper_icon">
+                                                                            <img src="/img/cal/20.png" alt="">
+                                                                        </div>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="autocompleteWrapper">
+                                                                    <div class="form-element">
+                                                            <input type="text" id="employeeIdName" placeholder="搜索角色">
+                                                            <input type="hidden" id="employeeId" name="employeeId" data-object="30020">
+                                                            <div class="lookup" style="display: none;">
+                                                                <ul>
+                                                                </ul>
+                                                            </div>
+                                                            <img src="/img/images/lookup.png">
+                                                            <ul id="employeeInfo">
+                                                            </ul>
+                                                        </div>
+                                                                   
+                                                                </div>
+                                                                <div class="contentWrapper_iconfont">
+                                                                    <i class="iconfont icon-sousuo"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="pillContainerWrapper noSeparator people_show">
+                                                                <div class="uiPillContainer_default">
+                                                                    <ul class="orderedList">
+                                                                       
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="slds-dropdown slds-dropdown_right toop_second" style="width: 8rem; display: none;">
+                                                            <ul class="dropdown__list">
+                                                                                         <li class="slds-dropdown__item grid lista" object="1036">
+                                                                    <a href="javascript:;">
+                                                                        <span class="slds-truncate">
+                                                                            <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+
+                                                                            </span>
+                                                                            <span style="float: left">角色</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="slds-dropdown__item grid bans" object="9">
+                                                                    <a href="javascript:;">
+                                                                        <span class="slds-truncate">
+                                                                            <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+                                                                           
+                                                                            </span>
+                                                                            <span style="float: left">小组</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="slds-dropdown__item grid tu" object="10">
+                                                                    <a href="javascript:;">
+                                                                        <span class="slds-truncate">
+                                                                            <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+                                                                                
+                                                                            </span>
+                                                                            <span style="float: left">部门</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="slds-dropdown__item grid tu" object="8">
+                                                                    <a href="javascript:;">
+                                                                        <span class="slds-truncate">
+                                                                            <span style="display: inline-block; float: left; width: 20px; height: 20px;background-color: #65CAE4;">
+                                                                                <img src="https://ap8.salesforce.com/img/icon/t4v35/standard/user_120.png" class="icon " alt="人员" title="人员">
+                                                                            </span>
+                                                                            <span style="float: left">用户</span>
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer slds-modal__footer">
+                                <div data-aura-rendered-by="9549:0" class="forceModalActionContainer--footerAction forceModalActionContainer">
+                                    <button class="slds-button slds-button--neutral uiButton forceActionButton" type="button" title="取消" id="closedsa">
+                                        <span class="label bBody">取消</span>
+                                    </button>
+                                    <button class="save-checking slds-button slds-button--neutral uiButton--default uiButton--brand uiButton forceActionButton" id="Save" name="Save" title="附加文件 （新窗口）" type="button">
+                                        <span class="label bBody">保存</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/alert.js"></script>
+    <script src="/js/CommonUtils.js"></script>
+    <script src="/js/filter/filterGrid.js"></script>
+
+    <script>
+        $('#closeds').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        $('#closedsa').click(function () {
+            window.parent.document.getElementById("changeDiv").style.display = "none";
+        })
+        copy()
+    </script>
+</body>
+</html>

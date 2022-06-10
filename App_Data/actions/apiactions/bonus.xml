@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+
+  <Action name="bonus.dept.add" type="Youyou.Bonus.Actions.DataReportorAdd,BonusCore" desc="添加科室奖金"></Action>
+  <Action name="bonus.dept.adds" type="Youyou.Bonus.Actions.BonusDeptAdds,BonusCore" desc="批量添加科室奖金"></Action>
+  
+  <Action name="bonus.dept.getlist" type="Youyou.Bonus.Actions.BonusDeptGetList,BonusCore" desc="获取财务奖金"></Action>
+  <Action name="bonus.dept.getuserlist" type="Youyou.Bonus.Actions.BonusDeptUserGetList,BonusCore" desc="获取当前用户管理的科室奖金"></Action>
+  
+  <Action name="bonus.dept.batchupdate" type="Youyou.Bonus.Actions.BonusDeptBatchUpdate,BonusCore" desc="批量保存科室奖金"></Action>
+  <Action name="bonus.dept.batchstatus" type="Youyou.Bonus.Actions.BonusDeptBatchStatus,BonusCore" desc="批量科室奖金状态"></Action>
+  <Action name="bonus.dept.deletes" type="Youyou.Bonus.Actions.BonusDeptBatchDeletes,BonusCore" desc="批量删除科室奖金"></Action>
+
+  <Action name="bonus.dept.owner.getlist" type="Youyou.Bonus.Actions.BonusDeptOwnerGetList,BonusCore" desc="从部门中删除上报员工"></Action>
+  
+  <Action name="bonus.dept.reset" type="Youyou.Bonus.Actions.BonusDeptReset,BonusCore" desc="部门充填"></Action>
+
+  <Action name="bonus.dept.owner.getlist" type="Youyou.Bonus.Actions.BonusDeptOwnerGetList,BonusCore" desc="获取我负责的要上报的部门"></Action>
+  
+  <Action name="bonus.dept.employee.getlist" type="Youyou.Bonus.Actions.BonusDeptEmployeeGetList,BonusCore" desc="获取科室员工奖金明细"></Action>
+  
+  <Action name="bonus.depts.employee.getlist" type="Youyou.Bonus.Actions.BonusDeptItemGetList,BonusCore" desc="获取子科室员工奖金明细"></Action>
+  
+  <Action name="bonus.dept.employee.batchupdate" type="Youyou.Bonus.Actions.BonusDeptEmployeeBatchUpdate,BonusCore" desc="批量保存科室员工奖金"></Action>
+
+  <Action name="bonus.employee.add" type="Youyou.Bonus.Actions.BonusEmployeeAdd,BonusCore" desc="添加上报员工到部门上报"></Action>
+  <Action name="bonus.employee.adds" type="Youyou.Bonus.Actions.BonusEmployeeAdds,BonusCore" desc="批量添加上报员工到部门上报"></Action>
+  
+  <Action name="bonus.employee.delete" type="Youyou.Bonus.Actions.BonusEmployeeDelete,BonusCore" desc="从部门中删除上报员工"></Action>
+  <Action name="bonus.dept.withdrow" type="Youyou.Bonus.Actions.WithdrawDept,BonusCore" desc="重新上报"></Action>
+  <Action name="bonus.employee.excel" type="Youyou.Bonus.Actions.ExportExcel,BonusCore" desc="导出科室奖金"></Action>
+
+  <Action name="bonus.fielddict.add" type="Youyou.Bonus.Actions.BonusFieldDictAdd,BonusCore" desc="新增自定义字段"></Action>
+  <Action name="bonus.field.monthset" type="Youyou.Bonus.Actions.BonusFieldMonthSet,BonusCore" desc="获取自定义字段设置"></Action>
+  <Action name="bonus.field.monthget" type="Youyou.Bonus.Actions.BonusFieldMonthGet,BonusCore" desc="获取某月自定义字段"></Action>
+  <Action name="bonus.field.monthupdate" type="Youyou.Bonus.Actions.BonusFieldMonthUpdate,BonusCore" desc="更新某月自定义字段"></Action>
+ 
+  <Action name="dinner.dept.getlist" type="Youyou.Bonus.Actions.DinnerDeptGetList,BonusCore" desc="获取全部月夜班部门餐费"></Action>
+  <Action name="dinner.dept.getmylist" type="Youyou.Bonus.Actions.DinnerDeptGetMyList,BonusCore" desc="获取我的月夜班部门餐费"></Action>
+  <Action name="dinner.fee.getlist" type="Youyou.Bonus.Actions.DinnerFeeGetList,BonusCore" desc="获取月夜班部门人员餐费"></Action>
+  <Action name="dinner.detail.getlist" type="Youyou.Bonus.Actions.DinnerEmpDetailGetList,BonusCore" desc="获取人员餐费项目明细"></Action>
+  <Action name="dinner.item.getlist" type="Youyou.Bonus.Actions.DinnerItemGetList,BonusCore" desc="获取餐费项目列表"></Action>
+  
+  <Action name="dinner.fee.query" type="Youyou.Bonus.Actions.DinnerFeeQuery,BonusCore" desc="查询部门人员餐费明细(含子部门)"></Action>
+  <Action name="dinner.fee.query.excel" type="Youyou.Bonus.Actions.DinnerDeptExportExcel,BonusCore" desc="查询部门人员餐费明细导出excel"></Action>
+  
+  <Action name="dinner.dept.adds" type="Youyou.Bonus.Actions.DinnerDeptAdds,BonusCore" desc="批量添加上报员工到部门上报"></Action>
+  <Action name="dinner.fee.adds" type="Youyou.Bonus.Actions.DinnerFeeAdds,BonusCore" desc="批量添加上报员工到部门上报"></Action>
+
+  <Action name="dinner.dept.delete" type="Youyou.Bonus.Actions.DinnerDeptDelete,BonusCore" desc="删除部门费记录"></Action>
+  <Action name="dinner.fee.delete" type="Youyou.Bonus.Actions.DinnerFeeDelete,BonusCore" desc="删除人员餐费记录"></Action>
+  <Action name="dinner.detail.delete" type="Youyou.Bonus.Actions.DinnerEmpDetailDelete,BonusCore" desc="删除人员餐费项目记录"></Action>
+
+  <Action name="dinner.dept.batchstatus" type="Youyou.Bonus.Actions.DinnerDeptBatchStatus,BonusCore" desc="批量更新部门餐费状态"></Action>
+  <Action name="dinner.detail.batchupdate" type="Youyou.Bonus.Actions.DinnerEmpDetailBatchUpdate,BonusCore" desc="批量保存人员餐费项目明细"></Action>
+
+  <!-- 科室收支  -->
+  <Action name="bonus.inex.update.excel" type="Youyou.Bonus.Actions.UploadExcel,BonusCore" desc="Excel上传导入"></Action>
+  <Action name="bonus.inex.import.list" type="Youyou.Bonus.Actions.InExImportList,BonusCore" desc="科室收支导入"></Action>
+  <Action name="bonus.inex.dept.list" type="Youyou.Bonus.Actions.InExImportList,BonusCore" desc="科室收支查看"></Action>
+  <Action name="bonus.inex.import.deletes" type="Youyou.Bonus.Actions.InExDeptBatchDeletes,BonusCore" desc="删除科室收支"></Action>
+
+  <Action name="bonus.inex.fielddict.add" type="Youyou.Bonus.Actions.CustomFieldDictAdd,BonusCore" desc="新增自定义字段"></Action>
+  <Action name="bonus.inex.field.monthset" type="Youyou.Bonus.Actions.CustomFieldMonthSet,BonusCore" desc="获取自定义字段设置"></Action>
+  <Action name="bonus.inex.field.monthget" type="Youyou.Bonus.Actions.CustomFieldMonthGet,BonusCore" desc="获取某月自定义字段"></Action>
+  <Action name="bonus.inex.field.monthupdate" type="Youyou.Bonus.Actions.CustomFieldMonthUpdate,BonusCore" desc="更新某月自定义字段"></Action>
+
+  <!-- 工资查询密码  -->
+  <Action name="bonus.salary.isnotset" type="Youyou.Bonus.Actions.MySalaryPasswordIsNotSet,BonusCore" desc="查询我的工资密码是否未设置"></Action>
+  <Action name="bonus.salary.set" type="Youyou.Bonus.Actions.MySalaryPasswordSet,BonusCore" desc="我的工资密码设置"></Action>
+  <Action name="bonus.salary.validation" type="Youyou.Bonus.Actions.MySalaryPasswordValidation,BonusCore" desc="我的工资密码验证"></Action>
+
+  <Action name="bonus.temp.excel" type="Youyou.Bonus.Actions.ExportTempExcel,BonusCore" desc="下载导入模板"></Action>
+  <Action name="bonus.inex.view.get" type="Youyou.Bonus.Actions.InExViewGet,BonusCore" desc="获取我的绩效"></Action>
+
+  <Action name="bonus.inex.depts" type="Youyou.Bonus.Actions.DeptList,BonusCore" desc="获取部门列表"></Action>
+  
+</Actions>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <Action name="attd.montreport.attendancesummary" type="Supermore.Attd.Actions.AttendanceSummary,WorkReportCore" desc="考勤打卡月汇总"></Action>
+  <Action name="attd.montreport.exportattendancesummary" type="Supermore.Attd.Actions.ExportAttendanceSummary,WorkReportCore" desc="导出考勤打卡月汇总"></Action>
+
+  <Action name="attend.month.summary" type="Youyou.HRCore.Actions.Reports.AttendMonthSummary,HRAttendance" desc="月度考勤汇总"></Action>
+  <Action name="attend.month.summary.detail.export" type="Youyou.HRCore.Actions.Reports.AttendMonthSummaryDetailExport,HRAttendance" desc="月度考勤明细导出"></Action>
+  <Action name="attend.month.summary.export" type="Youyou.HRCore.Actions.Reports.AttendMonthSummaryExport,HRAttendance" desc="月度考勤汇总导出"></Action>
+  
+  <Action name="attendace.stat.summary.search" type="Youyou.HRCore.Actions.Attendance.Reports.AttendanceStatSummarySearch,HRAttendance" desc="考勤汇总（月份范围）"></Action>
+  <Action name="attendace.stat.summary.export" type="Youyou.HRCore.Actions.Attendance.Reports.AttendanceStatSummaryExport,HRAttendance" desc="考勤汇总（月份范围）导出"></Action>
+  
+  <Action name="attendance.empleave.search" type="Youyou.HRCore.Actions.Attendance.AttendanceEmpleaveSearch,HRAttendance" desc="考勤上报查询"></Action>
+  <Action name="attendance.empleave.summary" type="Youyou.HRCore.Actions.Attendance.EmployeeLeaveSummary,HRAttendance" desc="考勤类型数据汇总"></Action>
+  <Action name="attendance.empleave.summary.export" type="Youyou.HRCore.Actions.Attendance.EmployeeLeaveSummaryExport,HRAttendance" desc="考勤类型数据汇总-导出"></Action>
+
+  <Action name="attendance.month.summary.calendar" type="Youyou.HRCore.Actions.Attendance.AttendMonthSummaryCalendar,HRAttendance" desc="月度汇总(日历)"></Action>
+  <Action name="attendance.month.summary.calendar.export" type="Youyou.HRCore.Actions.Attendance.AttendMonthSummaryCalendarExport,HRAttendance" desc="月度汇总(日历)-导出"></Action>
+
+  <!--月度考勤导出-->
+  <Action name="attendance.attendmonth.dept.export" type="Youyou.HRCore.Attendance.Actions.AttendMonthByDeptExport,HRAttendance" desc="考勤月度汇总-按部门分组导出"></Action>
+  <Action name="attendace.rules.getlist" type="Supermore.Attd.Actions.AttendaceRuleGetlist,WorkReportCore" desc="动态读取月考勤字段定义"></Action>
+</Actions>

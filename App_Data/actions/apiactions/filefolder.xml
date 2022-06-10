@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+  <!-- 附件 -->
+  <Action name="attachment.category.getlist" type="Youyou.Files.Attachments.AttachmentCategoryGetList,Youyou.Filelib" desc="获取附件分类"></Action>
+  <Action name="attachment.category.edit" type="Youyou.Files.Attachments.AttachmentCategoryEdit,Youyou.Filelib" desc="获取附件分类"></Action>
+  <Action name="attachment.category.delete" type="Youyou.Files.Attachments.AttachmentCategoryDelete,Youyou.Filelib" desc="附件分类删除"></Action>
+  <Action name="attachment.delete" type="Youyou.Files.Attachments.FileAttachmentDelete,Youyou.Filelib" desc="附件删除"></Action>
+  <Action name="attachment.sort" type="Youyou.Files.Attachments.FileAttachmentSort,Youyou.Filelib" desc="附件排序"></Action>
+  <!-- 附件 -->
+  <Action name="file.attachment.getlist" type="Youyou.Files.Attachments.FileAttachmentGetList,Youyou.Filelib" desc="获取附件列表"></Action>
+  <Action name="file.attachment.get" type="Youyou.Files.Attachments.FileAttachmentGet,Youyou.Filelib" desc="获取单个附件信息"></Action>
+  <Action name="file.attachment.delete" type="Youyou.Files.Attachments.FileAttachmentDelete,Youyou.Filelib" desc="附件删除"></Action>
+
+  <Action name="file.upload" type="Youyou.Files.Attachments.FileUpload,Youyou.Filelib" desc="文件模块上传"></Action>
+  <Action name="image.upload" type="Youyou.Media.Actions.ImageUpload,Youyou.Filelib" desc="文章图片上传"></Action>
+  <Action name="attachment.upload" type="Youyou.Files.Attachments.AttachmentUpload,Youyou.Filelib" desc="对象附件上传"></Action>
+  <Action name="file.attachment.upload" type="Youyou.Files.Attachments.AttachmentUpload,Youyou.Filelib" desc="对象附件上传"></Action>
+
+  <Action name="file.attachment.downloadall" type="Youyou.Files.Attachments.AttachmentDownloadAll,Youyou.Filelib" desc="下载附件压缩文件zip"></Action>
+  <Action name="file.attachment.rename" type="Youyou.Files.Attachments.AttachmentRename,Youyou.Filelib" desc="附件重命名"></Action>
+  <!-- 文件夹 -->
+  <Action name="folder.create" type="Youyou.Files.Actions.FolderCreate,Youyou.Filelib" desc="文件夹创建"></Action>
+  <Action name="folder.info" type="Youyou.Files.Actions.FolderInfo,Youyou.Filelib" desc="文件夹信息"></Action>
+  <Action name="folder.share" type="Youyou.Files.Actions.FolderShare,Youyou.Filelib" desc="文件夹共享"></Action>
+  <Action name="folder.share.access" type="Youyou.Files.Actions.FolderShareAccessList,Youyou.Filelib" desc="获取文件共享授权记录"></Action>
+  <!-- 文件 -->
+  <Action name="filefolder.rename" type="Youyou.Files.Actions.Rename,Youyou.Filelib" desc="文件文件夹重命名"></Action>
+  <Action name="filefolder.move" type="Youyou.Files.Actions.Move,Youyou.Filelib" desc="文件文件夹移动"></Action>
+  <Action name="filefolder.delete" type="Youyou.Files.Actions.Delete,Youyou.Filelib" desc="文件文件夹移动"></Action>
+
+  
+  <Action name="file.position.set" type="Youyou.Files.Actions.FilePositionSet,Youyou.Filelib" desc="单个文件排序"></Action>
+  <Action name="file.sort" type="Youyou.Actions.FileSort,Youyou.Filelib"  desc="文件批量排序"></Action>
+  
+
+  <Action name="removecontentaccess" type="Youyou.Files.Actions.ContentAccessDelete,Youyou.Filelib" desc="删除共享授权记录"></Action>
+  
+  <!-- 文件 -->
+  <Action name="file.log.search" type="Youyou.Files.Actions.FileLogSearch,Youyou.Filelib" desc="获取某个文件的阅读记录或下载记录"></Action>
+  <Action name="file.log.total" type="Youyou.Files.Actions.FileLogTotal,Youyou.Filelib" desc="获取某个文件的阅读和下载次数汇总"></Action>
+
+  <Action name="file.advance.search" type="Youyou.Files.Actions.FileAdvanceSearch,Youyou.Filelib" desc="高级搜索"></Action>
+
+ 
+
+  <!--文件-->
+  <Action name="file.latestuse.search" type="Youyou.Files.Actions.FileLatestUseSearch,Youyou.Filelib" desc="最近使用文件"></Action>
+  <Action name="file.files.search" type="Youyou.Files.Actions.FileFilesSearch,Youyou.Filelib" desc="搜索文件"></Action>
+  <Action name="file.my.search" type="Youyou.Files.Actions.FileMySearch,Youyou.Filelib" desc="我的文件"></Action>
+  <Action name="file.files.searchnew" type="Youyou.Files.Actions.FileFilesSearchNew,Youyou.Filelib" desc="搜索文件"></Action>
+  <Action name="file.myimage.search" type="Youyou.Files.Actions.FileMyImageSearch,Youyou.Filelib" desc="我的图片"></Action>
+  <Action name="file.share.search" type="Youyou.Files.Actions.FileShareSearch,Youyou.Filelib" desc="共享文件"></Action>
+  <Action name="file.organization.search" type="Youyou.Files.Actions.FileOrgnizationSearch,Youyou.Filelib" desc="单位文件"></Action>
+
+  <Action name="file.delete" type="Youyou.Files.Actions.FileDelete,Youyou.Filelib" desc="文件删除"></Action>
+  <Action name="file.rename" type="Youyou.Files.Actions.FileRename,Youyou.Filelib" desc="文件名"></Action>
+  <Action name="file.move" type="Youyou.Files.Actions.FileMove,Youyou.Filelib" desc="文件移动"></Action>
+  <Action name="file.share" type="Youyou.Files.Actions.FileShare,Youyou.Filelib" desc="文件分享"></Action>
+
+  <Action name="file.directory.rename" type="Youyou.Files.Actions.FileDirectoryRename,Youyou.Filelib" desc="目录改名"></Action>
+  <Action name="file.directory.move" type="Youyou.Files.Actions.FileDirectoryMove,Youyou.Filelib" desc="移动目录"></Action>
+  <Action name="file.directory.delete" type="Youyou.Files.Actions.FileDirectoryDelete,Youyou.Filelib" desc="目录删除，有文件提示不允许删除"></Action>
+  <Action name="file.directory.share" type="Youyou.Files.Actions.FileDirectoryShare,Youyou.Filelib" desc="目录共享设置"></Action>
+
+  <Action name="media.delete" type="Youyou.Media.Actions.ImageDelete,Youyou.Filelib"  desc="图片删除"></Action>
+  <Action name="wfprocess.archived.file" type="Youyou.Actions.WFProcessArchivedFile,Youyou.Filelib" desc="流程归档文件"></Action>
+</Actions>

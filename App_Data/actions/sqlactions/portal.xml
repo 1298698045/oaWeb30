@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <!--
+  <query>
+    <name>content.newsfolder.getlist</name>
+    <type>array</type>
+    <comments>获取新闻栏目列表</comments>
+    <parameters>
+    </parameters>
+    <sql>
+      select ItemId,Name,ParentId from ItemTreeBase Where ObjectTypeCode=100201 ORDER BY SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>content.noticefolder.getlist</name>
+    <type>array</type>
+    <comments>获取通知栏目列表</comments>
+    <parameters>
+    </parameters>
+    <sql>
+      select ItemId,Name,ParentId from ItemTreeBase Where ObjectTypeCode=100202 ORDER BY SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>content.get</name>
+    <type>obj</type>
+    <comments>获取单个新闻或者通知</comments>
+    <parameters>
+      <ContentId>内容id</ContentId>
+    </parameters>
+    <sql>
+      select * from Content Where ContentId='#{ContentId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>contentpage.block.getlist</name>
+    <type>array</type>
+    <comments>获取首页板块</comments>
+    <parameters>
+    </parameters>
+    <sql>
+      select ContentBlockId,Name,DisplayRows,QueryCondition,SortNumber,BlockType,ObjectTypeCode from ContentPageBlockBase where ContentPageId='4dce3406-9173-490b-8a5d-a28332ab4bb1' ORDER BY SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>contentbase.byid.get</name>
+    <type>obj</type>
+    <comments>根据文章id获取文章内容</comments>
+    <parameters>
+      <ContentId>文章id</ContentId>
+    </parameters>
+    <sql>
+      WITH ItemTreeBaseDB AS ( SELECT ItemId AS ParentId , Name AS ParentName, ItemId , Name FROM dbo.ItemTreeBase WHERE  ParentId IS NULL UNION ALL SELECT b.ItemId AS ParentId , b.Name AS ParentName , a.ItemId , a.Name FROM dbo.ItemTreeBase AS a , ItemTreeBaseDB AS b WHERE a.ParentId = b.ItemId ) SELECT d.ParentId,D.ParentName, C.FolderId, B.ReadCount , C.Title AS ContentTitle , ContentBody , C.CreatedOn , T.Name AS ModelName , UB.Name AS BusinessName FROM ItemTreeBaseDB AS D JOIN ContentBase AS B ON B.FolderId=d.ItemId JOIN dbo.Content AS C ON B.ContentId = C.ContentId LEFT JOIN ItemTreeBase AS T ON T.ItemId = C.FolderId LEFT JOIN dbo.BusinessUnitBase AS UB ON UB.BusinessUnitId = C.BusinessUnitId WHERE C.ContentId='#{ContentId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>contentcomments.byid.get</name>
+    <type>array</type>
+    <comments>根据文章id获取评论列表</comments>
+    <parameters>
+      <ContentId>文章id</ContentId>
+      <RowNum>数量</RowNum>
+    </parameters>
+    <sql>
+      SELECT TOP 10 * FROM(SELECT ROW_NUMBER() OVER(ORDER BY C.CreatedOn DESC) AS RowNum,C.Comment,c.CreatedOn,S.UserName FROM dbo.ContentComments AS C JOIN dbo.SystemUserBase AS S ON c.CreatedBy=S.SystemUserId WHERE c.ContentId='#{ContentId}') AS A WHERE A.RowNum>#{RowNum}
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>contentcomments.countnum</name>
+    <type>obj</type>
+    <comments>根据文章id获取评论数量</comments>
+    <parameters>
+      <ContentId>文章id</ContentId>
+    </parameters>
+    <sql>
+      SELECT COUNT(0) AS CountNum FROM ContentComments WHERE ContentId='#{ContentId}'
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>content.top.get</name>
+    <type>array</type>
+    <comments>获取文章前10天</comments>
+    <sql>
+      SELECT TOP 10 C.ContentId,C.Title FROM dbo.Content AS C JOIN dbo.ContentBase AS B ON c.ContentId=b.ContentId WHERE B.ContentTypeCode=1
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>read.top.get</name>
+    <type>array</type>
+    <comments>阅读排行前10条</comments>
+    <sql>
+      SELECT TOP 10 ContentId,Title FROM dbo.Content ORDER BY ReadCount DESC
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>comment.top.get</name>
+    <type>array</type>
+    <comments>获取评论数前10条</comments>
+    <sql>
+      SELECT TOP 10 C.ContentId , Title FROM dbo.Content AS C  LEFT JOIN ( SELECT ContentId, COUNT(0) AS CommentNum FROM dbo.ContentComments GROUP BY ContentId) AS M ON M.ContentId = C.ContentId ORDER BY M.CommentNum DESC
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>contentpasshot.img.get</name>
+    <type>array</type>
+    <comments>获取轮播图</comments>
+    <sql>
+      select Top 6 Name,Img,ValueId from ContentPassHot order by CreatedOn desc
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+
+  <query>
+    <name>contentread.byid.get</name>
+    <type>array</type>
+    <comments>根据文章id获取阅读列表</comments>
+    <parameters>
+      <ContentId>文章id</ContentId>
+      <RowNum>数量</RowNum>
+    </parameters>
+    <sql>
+      SELECT TOP 10 * FROM(SELECT ROW_NUMBER() OVER(ORDER BY C.CreatedOn DESC) AS RowNum,C.ReaderName,C.CreatedOn FROM dbo.ContentReaders AS C WHERE c.ContentId='#{ContentId}') AS A WHERE A.RowNum>#{RowNum}
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+
+  <query>
+    <name>contentlikes.byid.get</name>
+    <type>array</type>
+    <comments>根据文章id获取点赞列表</comments>
+    <parameters>
+      <ContentId>文章id</ContentId>
+      <RowNum>数量</RowNum>
+    </parameters>
+    <sql>
+      SELECT TOP 10 * FROM(SELECT ROW_NUMBER() OVER(ORDER BY C.CreatedOn DESC) AS RowNum,c.CreatedOn,S.UserName FROM dbo.ContentLikes AS C JOIN dbo.SystemUserBase AS S ON c.CreatedBy=S.SystemUserId WHERE c.ContentId='#{ContentId}') AS A WHERE A.RowNum>#{RowNum}
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>contentlikes.byfolderid.get</name>
+    <type>array</type>
+    <comments>根据栏目ID获取文章列表</comments>
+    <parameters>
+      <FolderId>文章id</FolderId>
+      <RowNum>数量</RowNum>
+    </parameters>
+    <sql>
+      SELECT TOP 15 * FROM(SELECT COUNT(ContentId) OVER() [Total],ROW_NUMBER() OVER(ORDER BY CreatedOn DESC) AS RowNum,CreatedOn,Title,ContentId FROM ContentBase
+      WHERE FolderId='#{FolderId}' AND StateCode=1  ) AS A WHERE A.RowNum>#{RowNum}
+    </sql>
+    <msg>查询成功！</msg>
+  </query>
+  <query>
+    <name>itemtree.children.getlist</name>
+    <type>array</type>
+    <comments>根据栏目ID获取子栏目列表</comments>
+    <parameters>
+      <ParentId>文章id</ParentId>
+    </parameters>
+    <sql>
+      SELECT ItemId,Name FROM ItemTreeBase WHERE ParentId='#{ParentId}' ORDER BY SortNumber
+    </sql>
+    <msg>查询成功！</msg>
+  </query>-->
+</root>

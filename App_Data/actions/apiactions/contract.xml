@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Actions>
+
+  <Action name="contract.category.tree" type="Youyou.ContractCore.Actions.ContractCategroyTree,ContractCore" desc="获取合同分类"></Action>
+  <Action name="contract.owner.getlist" type="Youyou.ContractCore.Actions.ContractOwnerGetlist,ContractCore" desc="获取个人合同列表"></Action>
+  <!--合同-->
+  <Action name="contract.invoice.notpay.getlist" type="Youyou.ContractCore.Actions.ContractNotPayingGetlist,ContractCore" desc="付款收票未付款"></Action>
+  <Action name="contract.collect.invoice.receipt.getlist" type="Youyou.ContractCore.Actions.ContractCollectReceiptGetlist,ContractCore" desc="收款开票未付款"></Action>
+  <Action name="contract.plan.getlist" type="Youyou.ContractCore.Actions.ContractPlanBaseGetList,ContractCore" desc="应付计划"></Action>
+  <Action name="contract.payment.getlist" type="Youyou.ContractCore.Actions.ContractPaymentGetList,ContractCore" desc="合同付款"></Action>
+  <Action name="contract.signing.report" type="Youyou.ContractCore.Actions.ContractSigningReport,ContractCore" desc="合同签订报表"></Action>
+  <Action name="contract.printed.items.report" type="Youyou.ContractCore.Actions.ContractPrintedItemsReport,ContractCore" desc="印花税目报表"></Action>
+  <Action name="contract.get" type="Youyou.ContractCore.Actions.ContactGet,ContractCore" desc="获取合同信息"></Action>
+  <Action name="contract.subcontractlist" type="Youyou.Contract.Actions.SubcontractList,ContractCore" desc="获取子合同列表"></Action>
+  <Action name="contract.payment.edit" type="Youyou.Forms.EntitySaveRecord,Business" desc="编辑合同付款单"></Action>
+  <Action name="contract.receipt.edit" type="Youyou.Forms.EntitySaveRecord,Business" desc="编辑收款单"></Action>
+  <Action name="contract.renew" type="Youyou.ContractCore.Actions.ContractRenew,ContractCore" desc="续签合同"></Action>
+  <Action name="contract.terminate" type="Youyou.ContractCore.Actions.ContractTerminate,ContractCore" desc="中止合同"></Action>
+  <Action name="contract.summary.statistics.get" type="Youyou.ContractCore.Actions.SummaryStatisticsGet,ContractCore" desc="合同首页汇总统计"></Action>
+  <Action name="contract.summary.abstrac.get" type="Youyou.ContractCore.Actions.SummaryAbstractGet,ContractCore" desc="合同看板摘要统计"></Action>
+  <Action name="contract.expiring.search" type="Youyou.ContractCore.Actions.ExpiringSearch,ContractCore" desc="即将过期合同，按过期时间排序"></Action>
+  <Action name="contract.expiried.search" type="Youyou.ContractCore.Actions.ExpiriedSearch,ContractCore" desc="已过期合同，按过期时间排序"></Action>
+  <Action name="contract.plan.paymentsixty.search" type="Youyou.ContractCore.Actions.PlanPaymentSixtySearch,ContractCore" desc="待付款 待收款"></Action>
+  <Action name="contract.amount.update" type="Youyou.ContractCore.Actions.UpdateAmountSum,ContractCore" desc="更新合同主表已付,未付,已收金额"></Action>
+  <Action name="contract.home.invoice" type="Youyou.ContractCore.Actions.ContractHomeInvoice,ContractCore" desc="合同首页-未付款已付款发票"></Action>
+
+  <Action name="contract.invoice.upload" type="Youyou.ContractCore.Actions.ContractInvoiceUpload,ContractCore" desc="发票上传"></Action>
+  <Action name="contract.invoice.distinguish" type="Youyou.ContractCore.Actions.ContractInvoiceDistinguish,ContractCore" desc="发票识别"></Action>
+
+  <Action name="contract.invoice.batch.create" type="Youyou.ContractCore.Actions.ContractInvoiceBatchCreate,ContractCore" desc="发票批量添加"></Action>
+  <!--<Action name="contract.summary.leader.get" type="Youyou.ContractCore.Actions.SummaryLeaderGet,ContractCore" desc="仪表板 - 领导驾驶舱统计"></Action>-->
+
+  <Action name="contract.plan.bulk.add" type="Youyou.ContractCore.Actions.ContractPlanBulkAdd,ContractCore" desc="批量添加合同计划"></Action>
+
+  <Action name="contract.archived.bulk.add" type="Youyou.ContractCore.Actions.ContractArchivedBulkAdd,ContractCore" desc="批量归档合同"></Action>
+
+  <Action name="contract.payment.plan.owner.list" type="Youyou.ContractCore.Actions.ContractPaymentPlanOwnerList,ContractCore" desc="我的合同-付款计划"></Action>
+
+  <Action name="contract.payment.not.invoice.list" type="Youyou.ContractCore.Actions.ContractPaymentNotInvoiceList,ContractCore" desc="付款管理-已付款未开发票"></Action>
+
+  <Action name="contract.file.upload" type="Youyou.ContractCore.Actions.ContractFileUpload,ContractCore" desc="上传签章版合同文件"></Action>
+
+  <Action name="contract.archived.upload" type="Youyou.ContractCore.Actions.ContractArchivedUpload,ContractCore" desc="上传归档合同文件"></Action>
+  <!--合同审计评价-->
+  <Action name="contract.auditCompleted.getlist" type="Youyou.ContractCore.Actions.ContractAuditCompletedList,ContractCore" desc="获取完成审计合同列表"></Action>
+  <Action name="contract.inAudit.getlist" type="Youyou.ContractCore.Actions.ContractInAuditList,ContractCore" desc="获取审计中合同列表"></Action>
+  
+  
+  <Action name="contract.audit.getlist" type="Youyou.ContractCore.Actions.ContractAuditList,ContractCore" desc="获取合同审计列表"></Action>
+  <Action name="contract.audit.delete" type="Youyou.ContractCore.Actions.ContractAuditDelete,ContractCore" desc="合同审计删除"></Action>
+  <Action name="contract.audit.sample.post" type="Youyou.ContractCore.Actions.ContractAuditSamplePost,ContractCore" desc="合同审计抽查提交"></Action>
+  <Action name="contract.audit.create" type="Youyou.ContractCore.Actions.ContractAuditCreate,ContractCore" desc="合同审计意见生成"></Action>
+  <Action name="contract.audit.post" type="Youyou.ContractCore.Actions.ContractAuditPost,ContractCore" desc="合同审计评价提交"></Action>
+
+  <Action name="contract.audit.getcount" type="Youyou.ContractCore.Actions.ContractAuditGetCount,ContractCore" desc="审计tab页显示行数"></Action>
+
+  <!--合同审计报告-->
+  <Action name="contract.auditreport.getlist" type="Youyou.ContractCore.Actions.ContractAuditReportList,ContractCore" desc="获取合同报告列表"></Action>
+  <Action name="contract.auditreport.post" type="Youyou.ContractCore.Actions.AuditReportCreate,ContractCore" desc="合同审计报告生成"></Action>
+  <Action name="contract.auditreport.create" type="Youyou.ContractCore.Actions.AuditReportCreate,ContractCore" desc="审计报告生成"></Action>
+  
+  
+  
+  <Action name="contract.report.parameter.search" type="Youyou.ContractCore.Actions.ContractReportByParameter,ContractCore" desc="合同台账报表查询"></Action>
+  <Action name="contract.report.stampduty.search" type="Youyou.ContractCore.Actions.ContractReportByStampDuty,ContractCore" desc="合同印花税报表查询"></Action>
+
+  <Action name="contract.report.dept.summary" type="Youyou.ContractCore.Actions.ContractReportDeptSummary,ContractCore" desc="部门汇总报表"></Action>
+  <Action name="contract.report.dept.list" type="Youyou.ContractCore.Actions.ContractReportDeptList,ContractCore" desc="部门明细报表"></Action>
+
+  <Action name="contract.report.department.search" type="Youyou.ContractCore.Actions.ContractReportByDepartment,ContractCore" desc="按部门统计时间范围报表"></Action>
+
+  
+  <Action name="contract.plan.payment.getlist" type="Youyou.ContractCore.Actions.ContractPlanPaymentGetList,ContractCore" desc="首页合同状态"></Action>
+  <Action name="contract.department.report" type="Youyou.ContractCore.Actions.ContractDepartmentReport,ContractCore" desc="仪表板科室合同报表"></Action>
+  <Action name="contract.category.report" type="Youyou.ContractCore.Actions.ContractCategoryReport,ContractCore" desc="仪表板合同分类报表"></Action>
+  <Action name="contract.states.report" type="Youyou.ContractCore.Actions.ContractStatesReport,ContractCore" desc="仪表板合同状态统计报表"></Action>
+  
+  <Action name="contract.annual.report" type="Youyou.ContractCore.Actions.ContractAnnualReport,ContractCore" desc="仪表板年份合同统计报表"></Action>
+
+  
+  
+  <!--领导看板-->
+  <Action name="contract.category.leader.report" type="Youyou.ContractCore.Actions.ContractCategoryLeaderReport,ContractCore" desc="仪表板合同分类报表"></Action>
+  <Action name="contract.states.leader.report" type="Youyou.ContractCore.Actions.ContractStatesLeaderReport,ContractCore" desc="仪表板合同状态统计报表"></Action>
+  <Action name="contract.annual.leader.report" type="Youyou.ContractCore.Actions.ContractAnnualLeaderReport,ContractCore" desc="仪表板年份合同统计报表"></Action>
+  <Action name="contract.categorycode.leader.report" type="Youyou.ContractCore.Actions.ContractCategoryCodeLeaderReport,ContractCore" desc="仪表板合同审批类型统计报表"></Action>
+  <Action name="contract.flow.leader.report" type="Youyou.ContractCore.Actions.ContractFlowLeaderReport,ContractCore" desc="仪表板流程状态统计报表"></Action>
+
+  <Action name="contract.flow.leader.report" type="Youyou.ContractCore.Actions.ContractFlowLeaderReport,ContractCore" desc="仪表板流程状态统计报表"></Action>
+  
+  
+  
+  <Action name="contract.collection.leader.report" type="Youyou.ContractCore.Actions.ContractCollectionLeaderReport,ContractCore" desc="统计收款"></Action>
+  <Action name="contract.payment.leader.report" type="Youyou.ContractCore.Actions.ContractPaymentLeaderReport,ContractCore" desc="统计付款"></Action>
+  <Action name="contract.other.leader.report" type="Youyou.ContractCore.Actions.ContractOtherLeaderReport,ContractCore" desc="统计其他"></Action>
+  <Action name="contract.header.leader.report" type="Youyou.ContractCore.Actions.ContractHeaderLeaderReport,ContractCore" desc="头部综合统计"></Action>
+ 
+ 
+  <!--合同审批-->
+  <Action name="contract.workflow.owner.task.getlist" type="Youyou.ContractCore.Actions.ContractWorkflownerTaskList,ContractCore" desc="我的待办"></Action>
+  <Action name="contract.workflow.owner.getlist" type="Youyou.ContractCore.Actions.ContractWorkFlownerList,ContractCore" desc="我的已办"></Action>
+ 
+ 
+  <!--合同变更-->
+  <Action name="contract.change.getlist" type="Youyou.ContractCore.Actions.ContractChangeGetList,ContractCore" desc="合同变更|采购类合同|销售类合同"></Action>
+  <Action name="contract.change.summary.get" type="Youyou.ContractCore.Actions.ContractChangeSummaryGet,ContractCore" desc="合同变更统计"></Action>
+
+
+  
+  <!-- 合同 主页组件 -->
+  <!--摘要-->
+  <Action name="contract.summary.statistics" type="Youyou.ContractCore.Actions.ContractPaymentStatistics,ContractCore" desc="摘要"></Action>
+
+  <!--list-->
+  <Action name="contract.plan.uncollected.getlist" type="Youyou.ContractCore.Actions.ContractPlanUncollectedList,ContractCore" desc="待收款"></Action>
+  <Action name="contract.plan.unpaid.getlist" type="Youyou.ContractCore.Actions.ContractPlanUnpaidList,ContractCore" desc="待付款"></Action>
+  <Action name="contract.noplan.getlist" type="Youyou.ContractCore.Actions.ContractNoPlanList,ContractCore" desc="未制定计划合同"></Action>
+  <Action name="contract.noarchived.getlist" type="Youyou.ContractCore.Actions.ContractNoarchivedList,ContractCore" desc="未归档合同"></Action>
+  <Action name="contract.expiring.getlist" type="Youyou.ContractCore.Actions.ContractExpiringList,ContractCore" desc="过期提醒"></Action>
+  <Action name="contract.workflow.getlist" type="Youyou.ContractCore.Actions.ContractWorkflowList,ContractCore" desc="合同审批"></Action>
+  <Action name="contract.sign.report" type="Youyou.ContractCore.Actions.ContractSignReport,ContractCore" desc="合同签订报表"></Action>
+  <Action name="contract.collandpay.report" type="Youyou.ContractCore.Actions.ContractCollAndPayReport,ContractCore" desc="收付款分析"></Action>
+
+  <Action name="contract.report.gukoubumen.getlist" type="Youyou.ContractCore.Actions.ContractReportGukoubumenGetlist,ContractCore" desc="归口部门"></Action>
+
+  <!-- 合同提醒 -->
+  <Action name="contract.remind.expiring.getliset" type="Youyou.ContractCore.ContractRemind.Actions.ContractRemindExpiringGetList,ContractCore" desc="即将过期 || 已过期"></Action>
+
+  <Action name="contract.plan.remind.getliset" type="Youyou.ContractCore.ContractRemind.Actions.ContractPlanRemindGetList,ContractCore" desc="付款计划提醒"></Action>
+  
+
+
+</Actions>

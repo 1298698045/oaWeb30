@@ -1,0 +1,252 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+input{
+    outline: none;
+    border: 0;
+}
+ul,li{
+    list-style: none;
+}
+.invite>div{
+    height: 500px;
+}
+.invite{
+    width: 90%;
+    min-width: 900px;
+    padding: 0 5%;
+}
+.invitepeople{
+    margin-top: 30px;
+}
+.invitepeople-head{
+    width: 100%;
+    height: 32px;
+    line-height: 32px;
+	background-color: #50505033;
+	border-radius: 4px;
+	font-size: 14px;
+    text-indent: 1em;
+}
+.invitepeople-body{
+    width: 100%;
+}
+.invitepeople-body>div{
+    float: left;
+    width: 30%;
+    height: 400px;
+}
+.invite .name{
+    width: 90%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+}
+.invite .divmargin{
+    margin-left: 5% !important; 
+}
+.invite .main{
+    width: 80%;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    border: 1px solid #50505026;
+    min-width: 300px;
+    padding-top:10px;
+}
+#invite li {
+    margin:0;
+    padding-left:20px;
+}
+#invite .sousuo{
+	width: 95%;
+    height: 32px;
+    line-height: 32px;
+	color: #505050;
+	border: #e4e8eb solid 1px;
+	border-radius: 4px;
+    font-size: 12px;
+    text-indent: 1em;
+    background: url(/img/cal/7.PNG) no-repeat right 12px center;
+    background-size: 14px; 
+    position: relative;
+    margin-left:10px;
+}
+#invite .sousuo img{
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top: 50%;
+    right: 12px;
+    margin-top: -7px;
+}
+    #invite .sousuo input {
+    height: 32px;
+    height: 30px \9;
+    line-height:32px;
+    }
+.invite .main .ul1 li{
+    width: 100%;
+    height: 44px;
+}
+.invite .main .ul1 li:hover{
+    background-color: #eff9ff;
+}
+.invite .main .ul1 li p{
+    margin-top: 10px;
+    width: 24px;
+    height: 24px;
+    float: left;
+    background: url(/img/cal/15.png) no-repeat center;
+    background-size: 22px;
+    background-color: #108af9;
+    background-color:#108AF9  \9;
+    position: relative;
+}
+.invite .main .ul1 li p img{
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    width: 22px;
+    height: 22px;
+    display: none;
+    display: block \9;
+}
+.invite .main .ul1 li span{
+    float: left;
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 44px;
+}
+.invitepeople-body .pingbi{
+    width: 31%;
+    margin-left: 4% !important; 
+}
+
+.pingbi .main .ul1 li p{
+    background: url(/img/cal/16.png) no-repeat center;
+    background-size: 22px;
+    background-color: #58c29a;
+    position: relative;
+}
+.pingbi .main .ul1 li p img{
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    width: 22px;
+    height: 22px;
+    display: none;
+    display: block \9;
+}
+.tongzhi{
+    margin-top: 30px;
+}
+.invite .tongzhi{
+	height: 300px;
+}
+.red{
+    color: red;
+}
+.tongzhi-body{
+    width: 500px;
+}
+.tongzhi-body>div{
+    margin: 10px;
+
+}
+.tongzhi-body p,.tongzhi-body span{
+    float: left;
+    display: block;
+    height: 32px;
+    line-height: 32px;
+}
+.invite .red{
+    width: 15px;
+    margin-top:10px;
+}
+#invite .tongzhi-body .name{
+    width: 80px;
+    text-align: left;
+}
+#invite .tongzhi-body .biaotidiv{
+    height: 40px;
+
+}
+#invite .tongzhi-body .biaoti{
+    text-indent: 1em;
+    margin-top:10px;
+    width: 380px;
+    border: 1px solid #50505026;
+    border: 1px solid #3f3f3f \9;
+}
+.tongzhi-body .biaoti input{
+    width: 360px;
+    line-height:32px;
+    height: 28px;
+    height: 30px \9;
+}
+.invite textarea{
+    float: left;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 25px;
+}
+.tongzhi-body .neirong{
+    width: 600px;
+    height: 110px;
+}
+.invite .tixing{
+    width: 350px;
+}
+#invite .tixing p{
+    color: #505050;
+    margin-left:-35px;
+}
+.invite .tixing span{
+    width: 100px;
+    height: 50px;
+}
+.ul1 input{
+    float: left;
+    margin-left: 5px;
+    margin-top: 15px;
+    margin-right: 15px;
+    width: 14px;
+    height: 14px;
+}
+.invite .send{
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+}
+.invite .send p{
+    float: left;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 4px;
+    border: 1px solid #50505026;
+    border: 1px solid #525151 \9;
+    margin-left: 15px;
+    color: #108af9;
+    font-size: 14px;
+}
+.invite .send p.active{
+    color: white;
+    background-color: #108af9;
+    background-color:#108AF9  \9;
+
+}
+.invite .main::-webkit-scrollbar {
+    width: 8px;
+    }
+.invite .main::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px #00000033;
+    background: #00000033;
+}

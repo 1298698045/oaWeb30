@@ -1,0 +1,148 @@
+﻿<div class="bRelatedList">
+    <!-- Begin ListElement -->
+    <!-- motif: Calendar -->
+    <!-- WrappingClass -->
+    <div class="bMyTask">
+        <div class="bPageBlock brandSecondaryBrd secondaryPalette">
+            <form onsubmit="return CalendarTaskList.verifySelected(actionForm, 'ids', '请至少选择一行')"
+            name="actionForm" method="POST" id="actionForm" action="/_ui/core/activity/TaskMassAction?retURL=/home/home.aspx">
+            <input type="hidden" value="/home/home.aspx" id="taskList_retURL" name="retURL" />
+            <div class="pbHeader">
+                <table cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td class="pbTitle">
+                                <img width="1" height="1" title="" class="minWidth" alt="" src="/s.gif" />&nbsp;<h3>
+                                    我的任务</h3>
+                            </td>
+                            <td class="pbButton">
+                                <input type="button" title="新建任务" onclick="navigateToUrl('/00T/e?retURL=/home/home.aspx',null,'newTask');"
+                                    name="newTask" class="btn" value=" 新建 " />
+                            </td>
+                            <td class="pbHelp">
+                                <!--<a title="无法解析的电子邮件和任务" id="mtqLink" href="/6AC?src=8">无法解析的电子邮件和任务</a>--><select onchange="this.form.action='/home/home.aspx';submit();"
+                                    name="tasklist_mode" id="tasklist_mode"><option selected="selected" value="0">逾期</option>
+                                    <option value="1">今天</option>
+                                    <option value="2">今天 + 逾期</option>
+                                    <option value="3">明天</option>
+                                    <option value="4">未来 7 天</option>
+                                    <option value="5">未来 7 天 + 逾期</option>
+                                    <option value="6">本月</option>
+                                    <option value="7">所有未处理</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pbBody">
+                <table cellspacing="0" cellpadding="0" border="0" class="list">
+                    <tbody>
+                        <tr class="headerRow">
+                            <th scope="col" class="actionColumn">
+                                完成
+                            </th>
+                            <th class="DateElement zen-deemphasize" scope="col" style="width:67px;">
+                                日期
+                            </th>
+                            <th class=" zen-deemphasize" scope="col"  style="width:45px;">
+                                状态
+                            </th>
+                            <th class=" zen-deemphasize" scope="col">
+                                主题
+                            </th>
+                            <th class=" zen-deemphasize" scope="col">
+                                名称
+                            </th>
+                            <th class=" zen-deemphasize" scope="col">
+                                相关项
+                            </th>
+                            <th class=" zen-deemphasize" scope="col">
+                                客户
+                            </th>
+                        </tr>
+                        <!-- ListRow -->
+                        {!griddata}
+                    </tbody>
+                </table>
+                <!--
+                <div style="visibility: hidden;" onmouseover="ActivityHover.getHover('TaskHoverPage_00T900000101I72').showHover(event, '/ui/core/activity/TaskHoverPage?retURL=/home/home.jsp&amp;id=00T900000101I72&amp;isHvr=1&amp;nocache=1410773134076&amp;shBus=true')"
+                    onmouseout="ActivityHover.getHover('TaskHoverPage_00T900000101I72').hideHover()"
+                    onmousemove="ActivityHover.getHover('TaskHoverPage_00T900000101I72').setPosition(event)"
+                    id="TaskHoverPage_00T900000101I72" class="hoverDetail">
+                    <div class="hoverOuter noStatusBar">
+                        <div class="hoverInner">
+                            <div id="TaskHoverPage_00T900000101I72_content" class="hoverContentLoading hoverContent">
+                                正在加载...<div class="pbFooter">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="visibility: hidden;" onmouseover="ActivityHover.getHover('TaskHoverPage_00T900000101I6s').showHover(event, '/ui/core/activity/TaskHoverPage?retURL=/home/home.jsp&amp;id=00T900000101I6s&amp;isHvr=1&amp;nocache=1410773134076&amp;shBus=true')"
+                    onmouseout="ActivityHover.getHover('TaskHoverPage_00T900000101I6s').hideHover()"
+                    onmousemove="ActivityHover.getHover('TaskHoverPage_00T900000101I6s').setPosition(event)"
+                    id="TaskHoverPage_00T900000101I6s" class="hoverDetail">
+                    <div class="hoverOuter noStatusBar">
+                        <div class="hoverInner">
+                            <div id="TaskHoverPage_00T900000101I6s_content" class="hoverContentLoading hoverContent">
+                                正在加载...<div class="pbFooter">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="visibility: hidden;" onmouseover="ActivityHover.getHover('TaskHoverPage_00T900000101I71').showHover(event, '/ui/core/activity/TaskHoverPage?retURL=/home/home.jsp&amp;id=00T900000101I71&amp;isHvr=1&amp;nocache=1410773134077&amp;shBus=true')"
+                    onmouseout="ActivityHover.getHover('TaskHoverPage_00T900000101I71').hideHover()"
+                    onmousemove="ActivityHover.getHover('TaskHoverPage_00T900000101I71').setPosition(event)"
+                    id="TaskHoverPage_00T900000101I71" class="hoverDetail">
+                    <div class="hoverOuter noStatusBar">
+                        <div class="hoverInner">
+                            <div id="TaskHoverPage_00T900000101I71_content" class="hoverContentLoading hoverContent">
+                                正在加载...<div class="pbFooter">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="visibility: hidden;" onmouseover="ActivityHover.getHover('TaskHoverPage_00T900000101I6z').showHover(event, '/ui/core/activity/TaskHoverPage?retURL=/home/home.jsp&amp;id=00T900000101I6z&amp;isHvr=1&amp;nocache=1410773134076&amp;shBus=true')"
+                    onmouseout="ActivityHover.getHover('TaskHoverPage_00T900000101I6z').hideHover()"
+                    onmousemove="ActivityHover.getHover('TaskHoverPage_00T900000101I6z').setPosition(event)"
+                    id="TaskHoverPage_00T900000101I6z" class="hoverDetail">
+                    <div class="hoverOuter noStatusBar">
+                        <div class="hoverInner">
+                            <div id="TaskHoverPage_00T900000101I6z_content" class="hoverContentLoading hoverContent">
+                                正在加载...<div class="pbFooter">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="visibility: hidden;" onmouseover="ActivityHover.getHover('TaskHoverPage_00T900000101I6x').showHover(event, '/ui/core/activity/TaskHoverPage?retURL=/home/home.jsp&amp;id=00T900000101I6x&amp;isHvr=1&amp;nocache=1410773134076&amp;shBus=true')"
+                    onmouseout="ActivityHover.getHover('TaskHoverPage_00T900000101I6x').hideHover()"
+                    onmousemove="ActivityHover.getHover('TaskHoverPage_00T900000101I6x').setPosition(event)"
+                    id="TaskHoverPage_00T900000101I6x" class="hoverDetail">
+                    <div class="hoverOuter noStatusBar">
+                        <div class="hoverInner">
+                            <div id="TaskHoverPage_00T900000101I6x_content" class="hoverContentLoading hoverContent">
+                                正在加载...<div class="pbFooter">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+                <script>      if (window.Hover) { setTimeout(Hover.disableHovers, 7195000) }</script>
+            </div>
+            </form>
+            <div class="pbFooter secondaryPalette">
+                <div class="bg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="listElementBottomNav">
+    </div>
+    <script>        try { ListElement.createListElement('actionForm'); } catch (e) { }</script>
+    <!-- End ListElement -->
+</div>

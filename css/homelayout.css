@@ -1,0 +1,224 @@
+﻿ .count_left {
+            width: 65%;
+            height: 100%;
+            float: left;
+            padding: 10px 5px 10px 0;
+            box-sizing:border-box;
+
+        }
+        .count_right {
+            width: 35%;
+            height: 100%;
+            float: right;
+            padding: 10px 0 10px 5px;
+            box-sizing:border-box;
+        }
+        .bodyDiv{
+            background-color:transparent;
+            box-shadow:none;
+        }
+        .item-content>div {
+            padding: 5px;
+            float:left;
+            box-sizing:border-box;
+        }
+        .content {
+            position: relative;
+            padding: 0;
+            background: rgb(255, 255, 255);
+            border: 1px solid rgb(221, 219, 218);
+            border-radius: .25rem;
+            background-clip: padding-box;
+            box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%);
+        }
+        #bodyCell{
+            padding:0;
+        }
+        .item {
+            padding: 10px 10px 0;
+            margin: 0 0 10px;
+        }
+        .span {
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 600;
+            font-size: 17px;
+        }
+        .tableqx {
+            height: 50px;
+            padding-right: 20px;
+        }
+        .tableqx {
+            position: absolute;
+            right: 15px;
+            top: 20px;
+        }
+        .tableqx div:first-child {
+    border: 1px solid #e4e8eb;
+    border-radius: 0 4px 4px 0;
+}
+.tableqx>div {
+    float: right;
+    cursor: pointer;
+    color: #ccc;
+    padding: 5px 10px;
+    line-height:16px;
+}
+.tableqx div:last-child {
+    border: 1px solid #e4e8eb;
+    border-radius: 4px 0 0 4px;
+    border-right: 0;
+}
+.tableqx>div.active {
+    background-color: #1b5297;
+    color: #fff;
+}
+.content-item{
+    padding:20px;
+    height:300px;
+}
+.zen .zen-tabMenu a{
+    font-size:13px;
+}
+.bodyDiv {
+    padding: 0;
+}
+.sidebarCell {
+    padding: 0;
+}
+.logo {
+    background: none !important;
+}
+.logo img {
+    height: 30px;
+    width: 30px;
+}
+#bodyWrapper .newmissq a {
+    color: #108af9;
+}
+#bodyWrapper .newmissq:hover {
+    background-color: #f4f2f2;
+}
+.cont-head-message li {
+    float:left;
+    width:auto;
+    box-sizing:border-box;
+    border:1px solid #dedede;
+    border-radius:4px;
+    margin-left:0;
+    padding:10px;
+    margin:0 5px;
+    font-size:14px;
+    margin-bottom:10px;
+}
+.head-message-amount, .head-message-money {
+    margin-top:10px;
+}
+.head-message-amount span, .head-message-money span{
+    font-size:16px;
+    margin-left:5px;
+}
+.head-message-title {
+    font-weight:700;
+    font-size:16px;
+}
+.cont-head-message {
+    border-radius:4px;
+    /*box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);*/
+    background-color:white;
+    overflow:hidden;
+}
+.bodyDiv {
+    background-color:transparent;
+    box-shadow:none;
+}
+.cont-item {
+    padding:15px;
+    border-radius:4px;
+    margin-top:10px;
+    background-color:white;
+    width:100%;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.3);
+    box-sizing:border-box;
+    float:left;
+    height:440px;
+}
+.cont-item-body{
+    height:440px;
+    overflow:hidden;
+    padding:0 15px;
+    border-radius:4px;
+}
+.cont-item-head {
+    font-size:16px;
+    color:#333;
+    font-weight:700;
+
+}
+.cont-item-body table {
+    border-collapse:collapse;
+    border:1px solid #dedede;
+    width:100%;
+    margin-top:15px;
+}
+.cont-item-body td, .cont-item-body th {
+    padding:8px 10px;
+    border-top:1px solid #dedede;
+    border-bottom:1px solid #dedede;
+}
+.cont-item-body th {
+    background-color:#f2f2f2;
+}
+.tab_header_right {
+    float:right;
+}
+.tab_header_right div {
+    border: 1px solid #dddbda;
+    border-radius: 4px;
+    behavior: url(/home/ie-css3.htc);
+    position: relative;
+    z-index: 2;
+    float: left;
+    height: 28px;
+    width: 28px;
+    margin-left: 10px;
+    background-color: white;
+    cursor:pointer;
+}
+.tab_header_right img {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    left: 7px;
+    top: 7px;
+}
+.cont-item.right {
+    float:right;
+}
+.clear {
+    clear:both;
+}
+.cont-item-body tr:hover {
+    background-color:#f2f2f2;
+}
+.cont-item-body tr{
+    height:40px;
+}
+#bodyWrapper .newmissq:hover {
+    background-color: #f4f2f2;
+}
+.tablebtn1{
+    color:#666666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    white-space:nowrap;
+    width: 200px;
+}
+.tablebtn1:hover{
+    color:#2b8cf9;
+}
+ .TotalQuantity{
+     font-size:14px !important;
+ }       

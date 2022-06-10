@@ -1,0 +1,151 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><META HTTP-EQUIV="content-type" CONTENT="text/html; charset=GB2312">
+<title>网页签章演示</title>
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+<SCRIPT language=javaScript src="main.js"> </SCRIPT>
+<style  type="text/css">  
+BODY  
+{  
+           scrollbar-face-color:  #DEE3E7;  
+           scrollbar-highlight-color:  #FFFFFF;  
+           scrollbar-shadow-color:  #DEE3E7;  
+           scrollbar-3dlight-color:  #D1D7DC;  
+           scrollbar-arrow-color:    #006699;  
+           scrollbar-track-color:  #EFEFEF;  
+           scrollbar-darkshadow-color:  #98AAB1;              
+}  
+</style>  
+</head>
+<body>
+<?xml version="1.0" encoding="iso-8859-1"?>  
+<SCRIPT language=javaScript src="Loadwebsign.js"> </SCRIPT>
+<div id="page">
+	<div id="header">
+	</div>
+	<div class="content">
+	  <h1 align="center"><b>&nbsp;&nbsp;&nbsp;HTML文件批办单演示程序</font> </h1> 
+		<span style='mso-ignore:vglayout;position:
+relative;z-index:1;left:-3px;top:7px;width:558px;height:14px'>
+	<img width=620
+height=7 src="image/image001.gif" v:shapes="_x0000_s1032"></span>
+<form name="form1">
+<table name="" class="MsoNormalTable" border="1" cellspacing=0 cellpadding=0  width="95%"  >
+<tr>
+<td width="16%">来文单位：</td>
+<td width="41%"><input type="text" name="laiwendanwei"  onpropertychange="checkData()"/></td>
+<td width="12%">来文日期：</td>
+<td width="31%"><input type="text" name="laiwenDate"  onpropertychange="checkData()"/></td>
+</tr>
+<tr>
+<td>事由：</td>
+<td><input type="text" name="shiyou"  onpropertychange="checkData()"/></td>
+<td>时间要求：</td>
+<td><input type="text" name="time"  onpropertychange="checkData()"/></td>
+</tr>
+<tr>
+<td height="98">拟办意见：<br>
+<input type="button" name="seal_niban" onClick="addseal('niban')" value="盖章" />
+<input type="button" name="write_niban" onClick="handwrite('niban')" value="手写" /></td>
+<td colspan="3" valign="top" id="nibansealpostion" >意见：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<textarea name="niban" cols="60" rows="8"  onpropertychange="checkData()"></textarea></td>
+</tr>
+<tr>
+<td height="98">主办意见：
+  <input type="button" name="seal_zhuban" onClick="addseal('zhuban')" value="盖章" />
+  <input type="button" name="write_zhuban" onClick="handwrite('zhuban')" value="手写" /></td>
+<td colspan="3" id="zhubansealpostion">意见：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<textarea name="zhuban" cols="60" rows="8"  onpropertychange="checkData()" ></textarea></td>
+</tr>
+<tr>
+<td height="98">领导意见：
+  <input type="button" name="seal_lingdao" onClick="addseal('lingdao')" value="盖章" />
+  <input type="button" name="write_lingdao" onClick="handwrite('lingdao')" value="手写" /></td>
+<td colspan="3" id="lingdaosealpostion">意见：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<textarea name="lingdao" cols="60" rows="8"  onpropertychange="checkData()"></textarea></td>
+</tr>
+<tr>
+<td height="98">处理结果：
+  <input type="button" name="seal_jiego" onClick="addseal('chuli')" value="盖章" />
+  <input type="button" name="write_jiego" onClick="handwrite('chuli')" value="手写" /></td>
+<td colspan="3" id="chulisealpostion">意见：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<textarea name="chuli" cols="60" rows="8"  onpropertychange="checkData()"></textarea></td>
+</tr>
+</table>
+<br>
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=639>
+  <tr>
+    <td width="635" height="73"><input name="GetValue" type="button" id="GetValue" value="获取数据" onClick="GetValue_onclick()">
+        <input name="SetValue" type="button" id="SetValue" value="设置数据" onClick="SetValue_onclick()">
+        <input name="popshouxie" type="button" id="popshouxie" value="弹出框手写"  onClick="popshouxie_onClick()">
+        <!--<input name="PirntDoc" type="button" id="PirntDoc" value="打印文档" onClick="PirntDoc_onclick()">-->
+      <br>
+        <textarea name="SealData" cols="60" rows="6" id="SealData"></textarea>
+    </td>
+  </tr>
+</table>
+</form>
+</div> <!-- content -->
+</div> 
+<script language=javascript>	
+<!--
+  function addseal(objectname){
+  	/* vSealName:印章名称
+  	   vSealPostion:印章绑定的位置
+  	   vSealSignData:印章绑定的数据
+    */
+    var vSealName = objectname;
+    var vSealPostion = objectname + "sealpostion";
+    var vSealSignData = objectname;
+  	WebSign_AddSeal(vSealName,vSealPostion,vSealSignData);
+  }
+  function handwrite(objectname){
+  	/* vSealName:印章名称
+  	   vSealPostion:印章绑定的位置
+  	   vSealSignData:印章绑定的数据
+    */
+    var vSealName = objectname+"handwrite";
+    var vSealPostion = objectname + "sealpostion";
+    var vSealSignData = objectname;
+  	WebSign_HandWrite(vSealName, vSealPostion,vSealSignData);
+  }
+ 
+	function checkData() {
+		try{ 
+				var strObjectName ;
+				strObjectName = document.all.DWebSignSeal.FindSeal("",0);
+				while(strObjectName  != ""){ 			 
+					document.all.DWebSignSeal.VerifyDoc(strObjectName); 
+					strObjectName = document.all.DWebSignSeal.FindSeal(strObjectName,0);
+				} 
+		}catch(e) {
+		  //alert("控件没有安装，请刷新本页面，控件会自动下载。\r\n或者下载安装程序安装。" +e);
+		}
+ }
+	
+	function GetValue_onclick(){
+		var v = document.all.DWebSignSeal.GetStoreData();
+		if(v.length < 200){
+			alert("必须先盖章才可以提交");
+			return false;
+		}
+		document.all.SealData.value = v;
+	}
+	function SetValue_onclick(){
+		document.all.DWebSignSeal.SetStoreData(document.all.SealData.value); 
+		document.all.DWebSignSeal.ShowWebSeals();
+	}
+ 	function popshouxie_onClick(){
+  //	document.all.DWebSignSeal.SetCurrUser("盖章人");
+  //	document.all.DWebSignSeal.HttpAddress = "127.0.0.1:1127";				
+ 	//	alert(document.all.DWebSignSeal.Login());
+	 
+		HandWritePop_onclick();
+	}
+</script>   
+</body>
+</html>

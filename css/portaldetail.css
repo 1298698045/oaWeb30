@@ -1,0 +1,348 @@
+﻿
+address, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#article-main .article-title {
+    color: #222;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 48px;
+}
+#article-main .artilce-info {
+    color: #777;
+    font-size: 14px;
+}
+#article-main .article-content {
+    margin-bottom: 24px;
+}
+#article-main .article-content pre {
+    white-space: normal;
+}
+#article-main .article-content > div, #article-main .article-content {
+    color: #222;
+    font-size: 16px;
+    line-height: 28px;
+    overflow-wrap: break-word;
+}
+#article-main .article-content > div > p, #article-main .article-content > p {
+    margin: 16px 0;
+}
+#article-main .article-content > div strong, #article-main .article-content > div em, #article-main .article-content > div b, #article-main .article-content strong, #article-main .article-content em, #article-main .article-content b {
+    font-weight: 700;
+}
+#article-main .article-content > div ol li, #article-main .article-content > div ul li, #article-main .article-content ol li, #article-main .article-content ul li {
+    list-style: inherit;
+}
+#article-main .article-content > div ol, #article-main .article-content ol {
+    list-style: outside none decimal;
+}
+#article-main .article-content > div ul, #article-main .article-content ul {
+    list-style: outside none square;
+}
+#article-main .article-content > div > ol, #article-main .article-content > div > ul, #article-main .article-content > ol, #article-main .article-content > ul {
+    color: #222;
+    padding: 20px 30px;
+}
+#article-main .article-content > div h1, #article-main .article-content h1 {
+    color: #222;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin: 36px 0 22px;
+}
+#article-main .article-content > div blockquote, #article-main .article-content blockquote {
+    background: #f4f5f6 none repeat scroll 0 0;
+    border: 1px solid #e8e8e8;
+    color: #999;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 1em 0;
+    padding: 12px 10px;
+    position: relative;
+}
+#article-main .article-content > div blockquote > ul, #article-main .article-content > div blockquote > ol, #article-main .article-content blockquote > ul, #article-main .article-content blockquote > ol {
+    color: #222;
+    padding: 20px 30px;
+}
+#article-main .article-content > div img, #article-main .article-content img {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+}
+#article-main .article-content > div img[inline="1"], #article-main .article-content img[inline="1"] {
+    display: inline-block;
+    margin: 0 auto;
+}
+#article-main .article-content > div hr, #article-main .article-content hr {
+    background: #ed4040 none repeat scroll 0 0;
+    border: 0 none;
+    height: 4px;
+    margin: 40px auto;
+    outline: 0 none;
+    width: 64px;
+}
+#article-main .article-content > div a, #article-main .article-content a {
+    color: #406599;
+}
+#article-main .article-content > div a:visited, #article-main .article-content a:visited {
+    color: #406599;
+}
+#article-main .article-content > div a:hover, #article-main .article-content a:hover {
+    color: rgba(64, 101, 153, 0.6);
+}
+#article-main .article-content > div table, #article-main .article-content table {
+    background-color: #fff;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    font-size: 16px;
+    margin-bottom: 15px;
+    max-width: 100%;
+    width: 100%;
+}
+#article-main .article-content > div table td, #article-main .article-content > div table th, #article-main .article-content table td, #article-main .article-content table th {
+    border: 1px solid #eee;
+    color: #656b79;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+#article-main .article-content > div table th, #article-main .article-content table th {
+    background-color: #f4f5f7;
+    font-weight: 400;
+    padding: 8px;
+}
+#article-main .article-content > div .pgc-img-caption, #article-main .article-content .pgc-img-caption {
+    color: #777;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 0;
+    text-align: center;
+}
+#article-main .article-content .ttplayer-js {
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    height: 360px;
+    line-height: 1;
+    width: 640px;
+}
+#article-main .article-actions {
+    margin-bottom: 28px;
+}
+.labelList {
+    display: inline-block;
+}
+.labelList i {
+    color: #cacaca;
+    display: inline-block;
+    font-size: 21px;
+    vertical-align: middle;
+}
+.labelList .label-list {
+    display: inline-block;
+    vertical-align: middle;
+}
+.labelList .label-item {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 8px;
+}
+.labelList .label-item .label-link {
+    color: #406599;
+}
+.labelList .label-item::before {
+    color: #e0e0e0;
+    content: "/";
+    padding-right: 10px;
+}
+.labelList .label-item:first-child::before {
+    content: "";
+}
+.articleInfo {
+    font-size: 13px;
+    margin-bottom: 20px;
+    margin-top: 12px;
+}
+.articleInfo span {
+    color: #777;
+    margin-right: 2px;
+}
+.articleInfo .original {
+    border: 1px solid #999;
+    display: inline-block;
+    height: 12px;
+    line-height: 12px;
+    padding: 2px;
+}
+.container {
+    margin: 0 auto;
+    width: 1120px;
+}
+.container .index-left {
+    margin-right: 30px;
+    min-height: 200px;
+    width: 100px;
+}
+.container .index-middle {
+    width: 660px;
+}
+.container .index-middle .index-cut-line {
+    background-color: #3f404c;
+    height: 4px;
+}
+.container .index-right {
+    min-height: 800px;
+    width: 300px;
+}
+.container .index-right #adindexhover, .container .index-right #imagindexhover {
+    display: none;
+}
+
+#J_rindex .right-lm-img {
+    padding: 0;
+}
+
+.module {
+    background-color: #f4f5f6;
+    border-top: 2px solid #ed4040;
+    margin-bottom: 30px;
+    width: 300px;
+}
+.module-head {
+    color: #222;
+    font-size: 18px;
+    font-weight: 700;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+.module-head a:visited {
+    color: #222;
+}
+.module-head a:hover {
+    color: #406599;
+}
+.module-title {
+    color: #222;
+}
+.module-title:hover {
+    color: #406599;
+}
+
+.pgcInfo {
+    padding: 15px 15px 20px;
+}
+.pgc-head {
+    height: 54px;
+}
+.pgc-head img {
+    background: #ddd none repeat scroll 0 0;
+    border: 1px solid #e8e8e8;
+    border-radius: 100%;
+    display: inline-block;
+    height: 52px;
+    width: 52px;
+}
+.pgc-username {
+    display: inline-block;
+    margin-left: 12px;
+    vertical-align: top;
+}
+.pgc-username span {
+    color: #222;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 26px;
+}
+.pgc-description {
+    border-bottom: 1px solid #e8e8e8;
+    color: #777;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 8px 0 10px;
+}
+.pgc-article {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 12px;
+    padding-left: 9px;
+    position: relative;
+}
+.pgc-article::before {
+    background: #999 none repeat scroll 0 0;
+    content: "";
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 6px;
+    width: 4px;
+}
+.pgc-article-link {
+    color: #222;
+    line-height: 20px;
+}
+.pgc-article-link:visited {
+    color: #222;
+}
+
+.pane-module {
+    width: 340px;
+    border-top: 2px solid #ed4040;
+    background-color: #f4f5f6;
+    margin-bottom: 16px;
+    padding: 15px 20px 20px;
+}
+.pane-module .module-head {
+    color: #222;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+
+html {
+ line-height:1.15;
+ -ms-text-size-adjust:100%;
+ -webkit-text-size-adjust:100%
+}
+
+ol, ul {
+
+    list-style: none;
+
+}
+.container .index-right .right-img {
+    padding: 20px;
+    margin-bottom: 16px;
+    background-color: #f4f5f6;
+    position: relative;
+    z-index: 1;
+}
+
+.module-content li[data-v-567273e5] {
+    list-style: none;
+    line-height: 1.4;
+    padding: 0;
+    margin: 0 0 12px;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.module-content li .search-no-1[data-v-567273e5] {
+    color: #f85959;
+}
+.module-content li .search-no[data-v-567273e5], .module-content li .search-text[data-v-567273e5] {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
